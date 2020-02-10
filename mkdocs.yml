@@ -1,0 +1,791 @@
+site_name: eZ Commerce Documentation
+repo_url: https:/github.com/ezsystems/commerce-documentation
+copyright: "Copyright 1999-2020 eZ Systems AS and others"
+pages:
+    - 'Documentation': 'index.md'
+    - Product description:
+        - 'product_description/product_description.md'
+        - 'product_description/content_and_commerce.md'
+        - 'product_description/contact_forms_and_legal_aspects.md'
+        - 'product_description/catalog_and_search.md'
+        - 'product_description/customer_registration.md'
+        - 'product_description/ordering_process.md'
+        - 'product_description/payment_and_shipping_options.md'
+        - 'product_description/order_history.md'
+        - 'product_description/addons_and_plugins.md'
+        - 'product_description/template_set_and_design.md'
+        - 'product_description/ecommerce_administration.md'
+        - 'product_description/manage_products_prices_and_stock.md'
+        - 'product_description/erp_integration.md'
+        - 'product_description/monitoring_and_control.md'
+        - 'product_description/user_management.md'
+    - Getting started:
+        - 'getting_started/getting_started.md'
+        - 'getting_started/requirements.md'
+        - 'getting_started/installation.md'
+        - 'getting_started/first_steps_in_the_frontend_and_backend.md'
+        - 'getting_started/base_configuration.md'
+        - Extending the shop:
+            - 'getting_started/extending_the_shop/extending_the_shop_how_to_start.md'
+            - 'getting_started/extending_the_shop/step_1_install_the_digitalproductbundle.md'
+            - 'getting_started/extending_the_shop/step_2_add_new_field_for_products_in_the_backend.md'
+            - 'getting_started/extending_the_shop/step_3_display_the_new_fields_on_the_products_detail_page.md'
+            - 'getting_started/extending_the_shop/step_4_show_download_in_the_basket.md'
+            - 'getting_started/extending_the_shop/step_5_deliver_the_download_to_the_customer.md'
+        - Extending the frontend:
+            - 'getting_started/extending_the_frontend/extending_the_frontend.md'
+            - 'getting_started/extending_the_frontend/change_product_template.md'
+            - 'getting_started/extending_the_frontend/how_to_change_button_color_css.md'
+            - 'getting_started/extending_the_frontend/how_to_change_button_color_scss.md'
+            - 'getting_started/extending_the_frontend/frontend_workflow_with_sass.md'
+            - 'getting_started/extending_the_frontend/how_to_change_catalog_layout.md'
+            - 'getting_started/extending_the_frontend/how_to_change_logo.md'
+    - Enhanced configuration:
+        - Configuration:
+            - 'enhanced_configuration/configuration/configuration.md'
+            - 'enhanced_configuration/configuration/session_handling.md'
+            - 'enhanced_configuration/configuration/how_to_store_sessions_in_memcache_using_stash_and_separate_them_from_other_stash_caches.md'
+            - 'enhanced_configuration/configuration/setup_a_new_language.md'
+            - 'enhanced_configuration/configuration/required_crontab_tasks.md'
+            - 'enhanced_configuration/configuration/rotation_for_logfiles.md'
+            - 'enhanced_configuration/configuration/advanced_configuration.md'
+            - 'enhanced_configuration/configuration/email_server.md'
+            - 'enhanced_configuration/configuration/configure_erp_connection.md'
+        - Installation details:
+            - 'enhanced_configuration/installation_details/php_settings.md'
+            - 'enhanced_configuration/installation_details/cluster_setup.md'
+            - 'enhanced_configuration/installation_details/varnish_vcl.md'
+            - 'enhanced_configuration/installation_details/installation_and_configuration_faqs.md'
+    - User manual:
+        - General:
+            - 'user_manual/general/general.md'
+            - 'user_manual/general/dashboard.md'
+            - 'user_manual/general/login_and_logout.md'
+        - Shop administration:
+            - 'user_manual/shop_administration/shop_administration.md'
+            - 'user_manual/shop_administration/cockpit.md'
+            - 'user_manual/shop_administration/components.md'
+            - 'user_manual/shop_administration/configuration_settings.md'
+            - 'user_manual/shop_administration/manage_orders.md'
+            - 'user_manual/shop_administration/manage_prices_and_stock.md'
+            - 'user_manual/shop_administration/manage_products_and_categories_with_the_econtent_db.md'
+            - 'user_manual/shop_administration/manage_products_and_categories_with_the_ez_dataprovider.md'
+            - 'user_manual/shop_administration/manage_users.md'
+            - 'user_manual/shop_administration/roles_and_rights.md'
+            - Translations for the shop:
+                - 'user_manual/shop_administration/translations_for_the_shop/translations_for_the_shop.md'
+                - 'user_manual/shop_administration/translations_for_the_shop/content_translation.md'
+                - 'user_manual/shop_administration/translations_for_the_shop/static_texts_short_text_elements_working_with_onesky.md'
+                - 'user_manual/shop_administration/translations_for_the_shop/working_with_text_modules_longer_text_elements.md'
+        - Managing content:
+            - 'user_manual/managing_content/homepage.md'
+            - 'user_manual/managing_content/how_to_handle_assets.md'
+            - 'user_manual/managing_content/embed_product.md'
+            - 'user_manual/managing_content/landingpages.md'
+            - 'user_manual/managing_content/navigation_structure.md'
+            - 'user_manual/managing_content/legal_documents.md'
+            - 'user_manual/managing_content/silver_module.md'
+            - ContentPluginBundle:
+                - 'user_manual/managing_content/contentpluginbundle/contentpluginbundle.md'
+                - 'user_manual/managing_content/contentpluginbundle/article.md'
+                - 'user_manual/managing_content/contentpluginbundle/folder_blog.md'
+                - 'user_manual/managing_content/contentpluginbundle/blog_post.md'
+                - 'user_manual/managing_content/contentpluginbundle/contact.md'
+                - 'user_manual/managing_content/contentpluginbundle/event.md'
+                - 'user_manual/managing_content/contentpluginbundle/folder.md'
+                - 'user_manual/managing_content/contentpluginbundle/folder_contacts.md'
+                - 'user_manual/managing_content/contentpluginbundle/folder_events.md'
+                - 'user_manual/managing_content/contentpluginbundle/folder_news.md'
+                - 'user_manual/managing_content/contentpluginbundle/news.md'
+    - Developer manual:
+        - 'developer_manual/developer_manual.md'
+        - Basket:
+            - 'developer_manual/basket/basket.md'
+            - Basket features:
+                - 'developer_manual/basket/basket_features/basket_features.md'
+                - 'developer_manual/basket/basket_features/product_quantity_validation.md'
+                - 'developer_manual/basket/basket_features/messages.md'
+                - 'developer_manual/basket/basket_features/calculating_prices.md'
+                - 'developer_manual/basket/basket_features/storing_parts_of_the_product_in_the_basket_line.md'
+                - 'developer_manual/basket/basket_features/additional_data_in_the_basket_line.md'
+                - 'developer_manual/basket/basket_features/basketcommand_remove_outdated_anonymous_baskets.md'
+                - 'developer_manual/basket/basket_features/handling_of_discontinued_products.md'
+            - Basket API:
+                - 'developer_manual/basket/basket_api/basket_api.md'
+                - 'developer_manual/basket/basket_api/basket_data_model.md'
+                - 'developer_manual/basket/basket_api/basketservice.md'
+                - Basket events:
+                    - 'developer_manual/basket/basket_api/basket_events/basket_events.md'
+                    - 'developer_manual/basket/basket_api/basket_events/basket_eventlistener_in_the_standard.md'
+                - 'developer_manual/basket/basket_api/basket_routing.md'
+            - Basket UI:
+                - 'developer_manual/basket/basket_ui/basket_add_products_to_a_stored_basket_or_wishlist.md'
+                - 'developer_manual/basket/basket_ui/basket_add_products_to_the_basket.md'
+                - 'developer_manual/basket/basket_ui/basket_ui.md'
+            - 'developer_manual/basket/basket_faq.md'
+        - Bestseller:
+            - 'developer_manual/bestseller/bestseller.md'
+            - 'developer_manual/bestseller/bestseller_cookbook.md'
+            - 'developer_manual/bestseller/bestseller_ui.md'
+            - 'developer_manual/bestseller/bestseller_api.md'
+            - 'developer_manual/bestseller/bestseller_faq.md'
+        - Breadcrumbs:
+            - 'developer_manual/breadcrumbs/breadcrumbs.md'
+            - Breadcrumbs API:
+                - 'developer_manual/breadcrumbs/breadcrumbs_api/breadcrumbs_api.md'
+                - 'developer_manual/breadcrumbs/breadcrumbs_api/catalogbreadcrumbsgenerator.md'
+                - 'developer_manual/breadcrumbs/breadcrumbs_api/ezcontentbreadcrumbsgenerator.md'
+                - 'developer_manual/breadcrumbs/breadcrumbs_api/postsilvermodulebreadcrumbsgenerator.md'
+                - 'developer_manual/breadcrumbs/breadcrumbs_api/routesbreadcrumbsgenerator.md'
+            - 'developer_manual/breadcrumbs/breadcrumbs_cookbook.md'
+            - 'developer_manual/breadcrumbs/breadcrumbs_templates.md'
+            - 'developer_manual/breadcrumbs/breadcrumbs_faq.md'
+        - Caching in the shop:
+            - 'developer_manual/caching_in_the_shop/caching_in_the_shop.md'
+            - Content cache refresh:
+                - 'developer_manual/caching_in_the_shop/content_cache_refresh/content_cache_refresh.md'
+                - 'developer_manual/caching_in_the_shop/content_cache_refresh/content_cache_refresh._technical_implementation.md'
+                - 'developer_manual/caching_in_the_shop/content_cache_refresh/http_caching.md'
+            - 'developer_manual/caching_in_the_shop/caching_faq.md'
+            - 'developer_manual/caching_in_the_shop/translations_cache_for_textmodules.md'
+        - Catalog:
+            - 'developer_manual/catalog/catalog.md'
+            - Catalog feature list:
+                - 'developer_manual/catalog/catalog_feature_list/catalog_feature_list.md'
+                - Product variants:
+                    - 'developer_manual/catalog/catalog_feature_list/product_variants/product_variants.md'
+                    - 'developer_manual/catalog/catalog_feature_list/product_variants/variants_and_erp_system.md'
+                    - 'developer_manual/catalog/catalog_feature_list/product_variants/how_to_manage_variants_backend.md'
+                - 'developer_manual/catalog/catalog_feature_list/generate_pdf.md'
+                - 'developer_manual/catalog/catalog_feature_list/supported_field_types_for_products_in_ez.md'
+                - 'developer_manual/catalog/catalog_feature_list/catalog_data_providers_products_from_different_sources.md'
+                - 'developer_manual/catalog/catalog_feature_list/urls_for_categories_and_products.md'
+            - Catalog API:
+                - 'developer_manual/catalog/catalog_api/catalog_api.md'
+                - 'developer_manual/catalog/catalog_api/access_dataprovider_via_php.md'
+                - 'developer_manual/catalog/catalog_api/product_category_catalogelement.md'
+                - 'developer_manual/catalog/catalog_api/productnode_and_orderableproductnode.md'
+                - VariantProductsNode and OrderableVariantNode:
+                    - 'developer_manual/catalog/catalog_api/variantproductsnode_and_orderablevariantnode/how_to_create_variantproductnode.md'
+                    - 'developer_manual/catalog/catalog_api/variantproductsnode_and_orderablevariantnode/simplevariantcharacteristics.md'
+                    - 'developer_manual/catalog/catalog_api/variantproductsnode_and_orderablevariantnode/variantproductnode_and_orderablevariantnode.md'
+                    - 'developer_manual/catalog/catalog_api/variantproductsnode_and_orderablevariantnode/variant_services.md'
+                - 'developer_manual/catalog/catalog_api/producttype.md'
+                - 'developer_manual/catalog/catalog_api/producttype_search.md'
+                - Catalog URLs:
+                    - 'developer_manual/catalog/catalog_api/catalog_urls/catalog_urls.md'
+                    - 'developer_manual/catalog/catalog_api/catalog_urls/routing_system.md'
+                - 'developer_manual/catalog/catalog_api/customer_skus.md'
+                - 'developer_manual/catalog/catalog_api/cms_dataprovider.md'
+            - Catalog UI:
+                - 'developer_manual/catalog/catalog_ui/catalog_ui.md'
+                - 'developer_manual/catalog/catalog_ui/templates_for_catalog.md'
+                - 'developer_manual/catalog/catalog_ui/product_category_ui.md'
+                - 'developer_manual/catalog/catalog_ui/products_ui.md'
+                - 'developer_manual/catalog/catalog_ui/product_variants_ui.md'
+            - Catalog cookbook:
+                - 'developer_manual/catalog/catalog_cookbook/how_to_extend_a_catalogfactory.md'
+                - 'developer_manual/catalog/catalog_cookbook/how_to_export_products.md'
+                - 'developer_manual/catalog/catalog_cookbook/how_to_setup_variants_from_external_source.md'
+            - 'developer_manual/catalog/catalog_configuration.md'
+            - 'developer_manual/catalog/catalog_faq.md'
+        - eContent:
+            - 'developer_manual/econtent/econtent.md'
+            - eContent features:
+                - 'developer_manual/econtent/econtent_features/econtent_features.md'
+                - 'developer_manual/econtent/econtent_features/econtent_dataprovider_database_model.md'
+                - 'developer_manual/econtent/econtent_features/switching_the_data_provider.md'
+                - 'developer_manual/econtent/econtent_features/econtent_dataprovider_catalog_segmentation.md'
+                - 'developer_manual/econtent/econtent_features/econtent_providing_variants.md'
+                - Indexing eContent data:
+                    - 'developer_manual/econtent/econtent_features/indexing_econtent_data/indexing_econtent_data.md'
+                    - 'developer_manual/econtent/econtent_features/indexing_econtent_data/dedicated_solr_cores_for_econtent.md'
+                    - 'developer_manual/econtent/econtent_features/indexing_econtent_data/how_econtent_indexer_works.md'
+                - 'developer_manual/econtent/econtent_features/econtent_staging_system.md'
+                - 'developer_manual/econtent/econtent_features/econtent_backend_features.md'
+            - 'developer_manual/econtent/econtent_api.md'
+            - 'developer_manual/econtent/econtent_faq.md'
+            - eContent cookbook:
+                - 'developer_manual/econtent/econtent_cookbook/econtent_dataprovider_how_to_extend_econtentcatalogfactory_class.md'
+                - eContent search cookbook:
+                    - 'developer_manual/econtent/econtent_cookbook/econtent_search_cookbook/how_to_implement_a_custom_sorting_handler_for_econtent.md'
+                    - 'developer_manual/econtent/econtent_cookbook/econtent_search_cookbook/solr_minimum_match_specification_for_econtent.md'
+                    - 'developer_manual/econtent/econtent_cookbook/econtent_search_cookbook/how_to_implement_a_custom_indexer_plugin_for_econtent.md'
+                - eContent how to import products:
+                    - 'developer_manual/econtent/econtent_cookbook/econtent_how_to_import_products/how_to_import_products_api.md'
+                    - 'developer_manual/econtent/econtent_cookbook/econtent_how_to_import_products/how_to_import_and_index_data_sql.md'
+            - 'developer_manual/econtent/econtent_configuration.md'
+        - Checkout:
+            - 'developer_manual/checkout/checkout.md'
+            - Checkout features:
+                - 'developer_manual/checkout/checkout_features/general_logic_in_checkout.md'
+                - Order:
+                    - 'developer_manual/checkout/checkout_features/order/confirmation_of_the_order.md'
+                    - 'developer_manual/checkout/checkout_features/order/confirmation_e_mail.md'
+                    - 'developer_manual/checkout/checkout_features/order/local_order_process_with_invoice_in_pdf.md'
+                    - 'developer_manual/checkout/checkout_features/order/order_splitting_for_multishop.md'
+                - 'developer_manual/checkout/checkout_features/rma_process.md'
+            - Checkout API:
+                - 'developer_manual/checkout/checkout_api/checkoutcontroller.md'
+                - 'developer_manual/checkout/checkout_api/ajaxcheckoutcontroller.md'
+                - 'developer_manual/checkout/checkout_api/checkout_events.md'
+                - Forms:
+                    - 'developer_manual/checkout/checkout_api/forms/configuration_for_checkout_forms.md'
+                    - 'developer_manual/checkout/checkout_api/forms/checkout_invoice_address_form.md'
+                    - 'developer_manual/checkout/checkout_api/forms/checkout_delivery_address_form.md'
+                    - 'developer_manual/checkout/checkout_api/forms/checkout_shipping_payment_form.md'
+                    - Checkout summary form:
+                        - 'developer_manual/checkout/checkout_api/forms/checkout_summary_form/checkout_summary_form.md'
+                        - 'developer_manual/checkout/checkout_api/forms/checkout_summary_form/order_summary.md'
+                    - Services for checkout forms:
+                        - 'developer_manual/checkout/checkout_api/forms/services_for_checkout_forms/interfaces_for_checkout_services.md'
+                        - 'developer_manual/checkout/checkout_api/forms/services_for_checkout_forms/invoiceaddresscheckoutformservice.md'
+                        - 'developer_manual/checkout/checkout_api/forms/services_for_checkout_forms/deliveryaddresscheckoutformservice.md'
+                        - 'developer_manual/checkout/checkout_api/forms/services_for_checkout_forms/shippingpaymentcheckoutformservice.md'
+                        - 'developer_manual/checkout/checkout_api/forms/services_for_checkout_forms/summarycheckoutformservice.md'
+            - Checkout cookbook:
+                - 'developer_manual/checkout/checkout_cookbook/checkout_cookbook.md'
+                - 'developer_manual/checkout/checkout_cookbook/adapt_the_checkout.md'
+            - 'developer_manual/checkout/checkout_templates.md'
+            - 'developer_manual/checkout/checkout_faq.md'
+        - Customers:
+            - 'developer_manual/customers/customers.md'
+            - Customers API:
+                - 'developer_manual/customers/customers_api/customers_api.md'
+                - 'developer_manual/customers/customers_api/customer_fields_in_the_cms.md'
+                - Customer profile data components:
+                    - 'developer_manual/customers/customers_api/customer_profile_data_components/customer_profile_data_components.md'
+                    - 'developer_manual/customers/customers_api/customer_profile_data_components/customer_profile_data_model.md'
+                    - 'developer_manual/customers/customers_api/customer_profile_data_components/customer_profile_data_services.md'
+                    - 'developer_manual/customers/customers_api/customer_profile_data_components/customer_profile_data_events.md'
+                    - 'developer_manual/customers/customers_api/customer_profile_data_components/customer_profile_data_listeners.md'
+                - 'developer_manual/customers/customers_api/configuration_for_customer_data.md'
+                - 'developer_manual/customers/customers_api/customer_profile_data_controller.md'
+            - 'developer_manual/customers/customers_cookbook.md'
+            - 'developer_manual/customers/customers_templating.md'
+            - 'developer_manual/customers/customers_faq.md'
+            - 'developer_manual/customers/vat_handling.md'
+        - 'developer_manual/delegate_function.md'
+        - Integrate ERP Systems:
+            - 'developer_manual/integrate_erp_systems/integrate_erp_systems.md'
+            - 'developer_manual/integrate_erp_systems/how_does_the_shop_communicate_with_the_erp.md'
+            - ERP communication:
+                - 'developer_manual/integrate_erp_systems/erp_communication/erp_communication.md'
+                - Guides:
+                    - 'developer_manual/integrate_erp_systems/erp_communication/guides/guide_how_to_get_product_data_from_the_erp.md'
+                    - How to create a new ERP message:
+                        - 'developer_manual/integrate_erp_systems/erp_communication/guides/how_to_create_a_new_erp_message/how_to_create_a_new_erp_message.md'
+                        - 'developer_manual/integrate_erp_systems/erp_communication/guides/how_to_create_a_new_erp_message/create_a_project_specific_message_selectmodified_data.md'
+                        - 'developer_manual/integrate_erp_systems/erp_communication/guides/how_to_create_a_new_erp_message/create_a_standard_message_updatecustomer.md'
+                    - 'developer_manual/integrate_erp_systems/erp_communication/guides/how_to_implement_erp_nav_delivery_address_creation_and_updates.md'
+                    - 'developer_manual/integrate_erp_systems/erp_communication/guides/usage_of_ubl.md'
+                - 'developer_manual/integrate_erp_systems/erp_communication/erp_logging.md'
+                - 'developer_manual/integrate_erp_systems/erp_communication/additionallines.md'
+                - ERP components:
+                    - 'developer_manual/integrate_erp_systems/erp_communication/erp_components/erp_components.md'
+                    - 'developer_manual/integrate_erp_systems/erp_communication/erp_components/erp_component_mapping.md'
+                    - ERP component messages:
+                        - 'developer_manual/integrate_erp_systems/erp_communication/erp_components/erp_component_messages/erp_component_messages.md'
+                        - 'developer_manual/integrate_erp_systems/erp_communication/erp_components/erp_component_messages/erp_message_instantiation.md'
+                        - 'developer_manual/integrate_erp_systems/erp_communication/erp_components/erp_component_messages/erp_message_class_generator.md'
+                        - 'developer_manual/integrate_erp_systems/erp_communication/erp_components/erp_component_messages/erp_message_calculatesalesorder_createsalesorder.md'
+                        - 'developer_manual/integrate_erp_systems/erp_communication/erp_components/erp_component_messages/erp_message_selectcontact.md'
+                        - 'developer_manual/integrate_erp_systems/erp_communication/erp_components/erp_component_messages/erp_message_select_customer.md'
+                        - 'developer_manual/integrate_erp_systems/erp_communication/erp_components/erp_component_messages/erp_message_invoice_detail.md'
+                        - 'developer_manual/integrate_erp_systems/erp_communication/erp_components/erp_component_messages/erp_message_updatecustomer.md'
+                        - 'developer_manual/integrate_erp_systems/erp_communication/erp_components/erp_component_messages/erp_messages.md'
+                    - 'developer_manual/integrate_erp_systems/erp_communication/erp_components/erp_component_service.md'
+                    - 'developer_manual/integrate_erp_systems/erp_communication/erp_components/erp_component_transport.md'
+                - 'developer_manual/integrate_erp_systems/erp_communication/erp_faq.md'
+                - ERP configuration:
+                    - 'developer_manual/integrate_erp_systems/erp_communication/erp_configuration/erp_configuration.md'
+                    - Adapt the mappings for ERP functions:
+                        - 'developer_manual/integrate_erp_systems/erp_communication/erp_configuration/adapt_the_mappings_for_erp_functions/adapt_the_mappings_for_erp_functions.md'
+                        - 'developer_manual/integrate_erp_systems/erp_communication/erp_configuration/adapt_the_mappings_for_erp_functions/example_ubl_for_price_calculation.md'
+                    - 'developer_manual/integrate_erp_systems/erp_communication/erp_configuration/configuration_for__webservice_based_erps.md'
+                    - 'developer_manual/integrate_erp_systems/erp_communication/erp_configuration/curl_configuration.md'
+                    - 'developer_manual/integrate_erp_systems/erp_communication/erp_configuration/web_connector_configuration.md'
+            - Price calculation:
+                - 'developer_manual/integrate_erp_systems/price_calculation/remotepriceprovider.md'
+            - Checkout order:
+                - ERP order synchronisation:
+                    - Failed order process:
+                        - 'developer_manual/integrate_erp_systems/checkout_order/erp_order_synchronisation/failed_order_process/failed_order_process.md'
+                        - 'developer_manual/integrate_erp_systems/checkout_order/erp_order_synchronisation/failed_order_process/lost_orders.md'
+                    - Order submission:
+                        - 'developer_manual/integrate_erp_systems/checkout_order/erp_order_synchronisation/order_submission/order_submission.md'
+                        - 'developer_manual/integrate_erp_systems/checkout_order/erp_order_synchronisation/order_submission/order_format.md'
+        - Logging:
+            - 'developer_manual/logging/logging.md'
+            - 'developer_manual/logging/logging_api.md'
+            - 'developer_manual/logging/logging_faq.md'
+            - Logging feature list:
+                - 'developer_manual/logging/logging_feature_list/tokencontroller_logging.md'
+        - Login and registration:
+            - 'developer_manual/login_and_registration/login_and_registration.md'
+            - 'developer_manual/login_and_registration/forgot_change_password.md'
+            - 'developer_manual/login_and_registration/login_and_registration_configuration.md'
+            - 'developer_manual/login_and_registration/login_and_registration_cookbook.md'
+            - 'developer_manual/login_and_registration/login_and_registration_faq.md'
+            - 'developer_manual/login_and_registration/login_and_registration_templates.md'
+        - Navigation:
+            - 'developer_manual/navigation/navigation.md'
+            - 'developer_manual/navigation/navigation_api.md'
+            - 'developer_manual/navigation/navigation_cookbook.md'
+            - 'developer_manual/navigation/navigation_templates.md'
+            - 'developer_manual/navigation/navigation_cache.md'
+            - 'developer_manual/navigation/navigation_faq.md'
+        - Newsletter:
+            - 'developer_manual/newsletter/newsletter.md'
+            - Newsletter API:
+                - 'developer_manual/newsletter/newsletter_api/newsletter_configuration.md'
+                - 'developer_manual/newsletter/newsletter_api/newsletter_interface.md'
+            - Newsletter cookbook:
+                - 'developer_manual/newsletter/newsletter_cookbook/how_to_send_additional_data_to_the_newsletter_provider.md'
+            - 'developer_manual/newsletter/newsletter__templates.md'
+        - One-page forms:
+            - 'developer_manual/one_page_forms/one_page_forms.md'
+            - One-page forms API:
+                - 'developer_manual/one_page_forms/one_page_forms_api/one_page_forms_api.md'
+                - Dataprocessors:
+                    - Dataprocessors after submitting:
+                        - 'developer_manual/one_page_forms/one_page_forms_api/dataprocessors/dataprocessors_after_submitting/dataprocessors_after_submitting.md'
+                        - 'developer_manual/one_page_forms/one_page_forms_api/dataprocessors/dataprocessors_after_submitting/createcustomerprofiledatadataprocessor.md'
+                        - 'developer_manual/one_page_forms/one_page_forms_api/dataprocessors/dataprocessors_after_submitting/createregistrationtokendataprocessor.md'
+                        - 'developer_manual/one_page_forms/one_page_forms_api/dataprocessors/dataprocessors_after_submitting/ezcreateuserdataprocessor.md'
+                        - 'developer_manual/one_page_forms/one_page_forms_api/dataprocessors/dataprocessors_after_submitting/ezuserdisabledataprocessor.md'
+                        - 'developer_manual/one_page_forms/one_page_forms_api/dataprocessors/dataprocessors_after_submitting/ezuserlogindataprocessor.md'
+                        - 'developer_manual/one_page_forms/one_page_forms_api/dataprocessors/dataprocessors_after_submitting/hasformchangeddataprocessor.md'
+                        - 'developer_manual/one_page_forms/one_page_forms_api/dataprocessors/dataprocessors_after_submitting/sendcancellationemaildataprocessor.md'
+                        - 'developer_manual/one_page_forms/one_page_forms_api/dataprocessors/dataprocessors_after_submitting/sendconfirmationmaildataprocessor.md'
+                        - 'developer_manual/one_page_forms/one_page_forms_api/dataprocessors/dataprocessors_after_submitting/sendcontactemaildataprocessor.md'
+                        - 'developer_manual/one_page_forms/one_page_forms_api/dataprocessors/dataprocessors_after_submitting/sendrmaemaildataprocessor.md'
+                        - 'developer_manual/one_page_forms/one_page_forms_api/dataprocessors/dataprocessors_after_submitting/updatebuyerdataprocessor.md'
+                        - 'developer_manual/one_page_forms/one_page_forms_api/dataprocessors/dataprocessors_after_submitting/updatecustomerprofiledataprocessor.md'
+                        - 'developer_manual/one_page_forms/one_page_forms_api/dataprocessors/dataprocessors_after_submitting/updatemyaccountdataprocessor.md'
+                        - 'developer_manual/one_page_forms/one_page_forms_api/dataprocessors/dataprocessors_after_submitting/validatebusinessactivationdataprocessor.md'
+                    - Predataprocessors before submitting:
+                        - 'developer_manual/one_page_forms/one_page_forms_api/dataprocessors/predataprocessors_before_submitting/predataprocessors_before_submitting.md'
+                        - 'developer_manual/one_page_forms/one_page_forms_api/dataprocessors/predataprocessors_before_submitting/prefillbuyerdataprocessor.md'
+                        - 'developer_manual/one_page_forms/one_page_forms_api/dataprocessors/predataprocessors_before_submitting/prefillcontactdataprocessor.md'
+                        - 'developer_manual/one_page_forms/one_page_forms_api/dataprocessors/predataprocessors_before_submitting/prefillmyaccountdataprocessor.md'
+                    - 'developer_manual/one_page_forms/one_page_forms_api/dataprocessors/detail_events_before_and_after_a_dataprocessor.md'
+                - Form interfaces:
+                    - 'developer_manual/one_page_forms/one_page_forms_api/form_interfaces/form_interfaces.md'
+                    - 'developer_manual/one_page_forms/one_page_forms_api/form_interfaces/abstractformentity.md'
+            - 'developer_manual/one_page_forms/one_page_forms_cookbook.md'
+            - 'developer_manual/one_page_forms/one_page_forms_templates.md'
+            - 'developer_manual/one_page_forms/one_page_forms_faq.md'
+        - Order history:
+            - 'developer_manual/order_history/orderhistory.md'
+            - Order history features:
+                - 'developer_manual/order_history/order_history_features/orderhistory_functions.md'
+                - 'developer_manual/order_history/order_history_features/orderhistory_erp_messages.md'
+                - 'developer_manual/order_history/order_history_features/orderhistory_local_orders_when_erp_not_available.md'
+            - Order history API:
+                - 'developer_manual/order_history/order_history_api/orderhistory_api.md'
+                - 'developer_manual/order_history/order_history_api/install_order_history.md'
+            - 'developer_manual/order_history/orderhistory_templates.md'
+            - 'developer_manual/order_history/orderhistory_cookbook.md'
+            - 'developer_manual/order_history/orderhistory_configuration.md'
+            - 'developer_manual/order_history/orderhistory_faq.md'
+        - Landing Page with Page Builder:
+            - 'developer_manual/landingpage_with_page_builder/landingpage_with_page_builder.md'
+            - 'developer_manual/landingpage_with_page_builder/landingpage_api.md'
+            - 'developer_manual/landingpage_with_page_builder/landingpage_ui.md'
+        - Payment:
+            - 'developer_manual/payment/payment.md'
+            - 'developer_manual/payment/payment_api.md'
+            - Payment cookbook:
+                - 'developer_manual/payment/payment_cookbook/building_new_payment_plugins.md'
+            - 'developer_manual/payment/payment_faq.md'
+            - Payment configuration:
+                - 'developer_manual/payment/payment_configuration/telecash.md'
+                - 'developer_manual/payment/payment_configuration/paypal.md'
+                - 'developer_manual/payment/payment_configuration/invoice.md'
+                - 'developer_manual/payment/payment_configuration/ogone.md'
+        - Price engine:
+            - 'developer_manual/price_engine/price_engine.md'
+            - Price engine API:
+                - Data model for prices:
+                    - 'developer_manual/price_engine/price_engine_api/data_model_for_prices/price.md'
+                - Price engine services:
+                    - PriceFactoryInterface:
+                        - 'developer_manual/price_engine/price_engine_api/price_engine_services/pricefactoryinterface/pricefactoryinterface.md'
+                        - 'developer_manual/price_engine/price_engine_api/price_engine_services/pricefactoryinterface/standardpricefactory.md'
+                    - ScaledPriceServiceInterface:
+                        - 'developer_manual/price_engine/price_engine_api/price_engine_services/scaledpriceserviceinterface/scaledpriceserviceinterface.md'
+                        - 'developer_manual/price_engine/price_engine_api/price_engine_services/scaledpriceserviceinterface/ez5scaledpriceservice.md'
+                    - VATServiceInterface:
+                        - 'developer_manual/price_engine/price_engine_api/price_engine_services/vatserviceinterface/vatserviceinterface.md'
+                        - 'developer_manual/price_engine/price_engine_api/price_engine_services/vatserviceinterface/localvatservice.md'
+                    - Chainpriceservice:
+                        - 'developer_manual/price_engine/price_engine_api/price_engine_services/chainpriceservice/chainpriceservice.md'
+                        - Price providers:
+                            - 'developer_manual/price_engine/price_engine_api/price_engine_services/chainpriceservice/price_providers/price_providers.md'
+                            - 'developer_manual/price_engine/price_engine_api/price_engine_services/chainpriceservice/price_providers/localpriceprovider.md'
+                    - 'developer_manual/price_engine/price_engine_api/price_engine_services/standardcountryzoneservice.md'
+                    - 'developer_manual/price_engine/price_engine_api/price_engine_services/standardtemplatedebitorservice.md'
+                - 'developer_manual/price_engine/price_engine_api/price_engine_constants.md'
+            - Price engine cookbook:
+                - 'developer_manual/price_engine/price_engine_cookbook/price_engine_cookbook.md'
+                - 'developer_manual/price_engine/price_engine_cookbook/recipe_how_to_implement_new_price_provider.md'
+                - 'developer_manual/price_engine/price_engine_cookbook/recipe_how_to_work_with_pricerequest_and_priceresponse.md'
+            - Price engine templates:
+                - 'developer_manual/price_engine/price_engine_templates/price_engine_templates.md'
+                - 'developer_manual/price_engine/price_engine_templates/rendering_for_prices.md'
+            - 'developer_manual/price_engine/price_engine_faq.md'
+        - Product comparison:
+            - 'developer_manual/product_comparison/product_comparison.md'
+            - 'developer_manual/product_comparison/product_comparison_features.md'
+            - 'developer_manual/product_comparison/product_comparison_api.md'
+            - 'developer_manual/product_comparison/product_comparison_templates.md'
+            - 'developer_manual/product_comparison/product_comparison_faq.md'
+        - Quickorder:
+            - 'developer_manual/quickorder/quickorder.md'
+            - 'developer_manual/quickorder/quickorder_api.md'
+            - 'developer_manual/quickorder/quickorder_templates.md'
+            - 'developer_manual/quickorder/quickorder_faq.md'
+        - Search:
+            - 'developer_manual/search/search.md'
+            - Search features:
+                - Search autosuggest:
+                    - 'developer_manual/search/search_features/search_autosuggest/search_autosuggest.md'
+                    - 'developer_manual/search/search_features/search_autosuggest/autosuggest_filters.md'
+                - Search indexing:
+                    - 'developer_manual/search/search_features/search_indexing/additional_indexing_of_ez_pdf_content_and_other_file_content.md'
+                    - 'developer_manual/search/search_features/search_indexing/additional_indexing_user_email_data_from_ez.md'
+                    - 'developer_manual/search/search_features/search_indexing/search_indexing_product_data_from_the_cms.md'
+                - 'developer_manual/search/search_features/search_statistics.md'
+            - Search API:
+                - 'developer_manual/search/search_api/search_api.md'
+                - 'developer_manual/search/search_api/important_things_to_consider.md'
+            - 'developer_manual/search/search_templates.md'
+            - Search cookbook:
+                - 'developer_manual/search/search_cookbook/search_cookbook.md'
+                - 'developer_manual/search/search_cookbook/how_to_modify_the_search_query.md'
+                - 'developer_manual/search/search_cookbook/how_to_search_for_products.md'
+                - 'developer_manual/search/search_cookbook/how_to_use_solr_spellcheck.md'
+                - 'developer_manual/search/search_cookbook/solr_managed_resources.md'
+            - 'developer_manual/search/search_faq.md'
+            - Search configuration:
+                - 'developer_manual/search/search_configuration/search_configuration.md'
+        - Templating:
+            - 'developer_manual/templating/templating.md'
+            - Templates for the shop:
+                - 'developer_manual/templating/templates_for_the_shop/templates_for_the_shop.md'
+                - 'developer_manual/templating/templates_for_the_shop/reusable_address_template.md'
+                - 'developer_manual/templating/templates_for_the_shop/reusable_message_template.md'
+            - 'developer_manual/templating/template_resolver.md'
+            - Twig extension:
+                - 'developer_manual/templating/twig_extension/twig_extension.md'
+                - 'developer_manual/templating/twig_extension/st_tag_selector_tagging_for_behat_and_google_tag_manager.md'
+            - ezdesign engine:
+                - 'developer_manual/templating/ezdesign_engine/ez_design_engine.md'
+                - 'developer_manual/templating/ezdesign_engine/set_up_new_project_design.md'
+        - 'developer_manual/job_system.md'
+        - Translations:
+            - 'developer_manual/translations/translations.md'
+            - 'developer_manual/translations/onesky.md'
+        - Vouchers from ERP:
+            - 'developer_manual/vouchers_from_erp/vouchers_from_erp.md'
+            - 'developer_manual/vouchers_from_erp/vouchers_api.md'
+            - 'developer_manual/vouchers_from_erp/vouchers_faq.md'
+            - 'developer_manual/vouchers_from_erp/vouchers_templates.md'
+        - Wishlist and stored baskets:
+            - 'developer_manual/wishlist_and_stored_baskets/wishlist_and_stored_baskets.md'
+            - 'developer_manual/wishlist_and_stored_baskets/wishlist_and_stored_basket_wishlist.md'
+            - 'developer_manual/wishlist_and_stored_baskets/wishlist_and_stored_basket_stored_baskets.md'
+            - 'developer_manual/wishlist_and_stored_baskets/wishlist_and_stored_basket_api.md'
+            - 'developer_manual/wishlist_and_stored_baskets/wishlist_and_stored_basket_templates.md'
+    - Cookbook:
+        - How to adapt UI for configuration:
+            - 'cookbook/how_to_adapt_ui_for_configuration/how_to_adapt_the_ui_for_configuration.md'
+            - 'cookbook/how_to_adapt_ui_for_configuration/store_silver.eshop_backend_configuration_in_.yml_file.md'
+        - Frontend customizing:
+            - 'cookbook/frontend_customizing/frontend_customizing.md'
+            - 'cookbook/frontend_customizing/0._browser_quirks.md'
+            - 'cookbook/frontend_customizing/1._introduction.md'
+            - 'cookbook/frontend_customizing/2._faq.md'
+            - 'cookbook/frontend_customizing/3._templates.md'
+            - 4. Front-end stack in details:
+                - 'cookbook/frontend_customizing/4_front_end_stack_in_details/4._front_end_stack_in_details.md'
+                - 'cookbook/frontend_customizing/4_front_end_stack_in_details/4.1_foundation_framework.md'
+                - 4.2 Customized Foundation framework:
+                    - 'cookbook/frontend_customizing/4_front_end_stack_in_details/4.2_customized_foundation_framework/4.2._customized_foundation_framework.md'
+                    - 'cookbook/frontend_customizing/4_front_end_stack_in_details/4.2_customized_foundation_framework/4.2.1_quick_introduction_to_sass.md'
+                    - 4.2.2 Components:
+                        - 'cookbook/frontend_customizing/4_front_end_stack_in_details/4.2_customized_foundation_framework/4.2.2_components/4.2.2_components.md'
+                        - 'cookbook/frontend_customizing/4_front_end_stack_in_details/4.2_customized_foundation_framework/4.2.2_components/component_cookie_policy_cookie_consent.md'
+                        - 'cookbook/frontend_customizing/4_front_end_stack_in_details/4.2_customized_foundation_framework/4.2.2_components/component_account.md'
+                        - 'cookbook/frontend_customizing/4_front_end_stack_in_details/4.2_customized_foundation_framework/4.2.2_components/component_autocomplete.md'
+                        - 'cookbook/frontend_customizing/4_front_end_stack_in_details/4.2_customized_foundation_framework/4.2.2_components/component_basket.md'
+                        - 'cookbook/frontend_customizing/4_front_end_stack_in_details/4.2_customized_foundation_framework/4.2.2_components/component_card.md'
+                        - 'cookbook/frontend_customizing/4_front_end_stack_in_details/4.2_customized_foundation_framework/4.2.2_components/component_checkout.md'
+                        - 'cookbook/frontend_customizing/4_front_end_stack_in_details/4.2_customized_foundation_framework/4.2.2_components/component_comparison.md'
+                        - 'cookbook/frontend_customizing/4_front_end_stack_in_details/4.2_customized_foundation_framework/4.2.2_components/component_css_tooltip.md'
+                        - 'cookbook/frontend_customizing/4_front_end_stack_in_details/4.2_customized_foundation_framework/4.2.2_components/component_dropdown_menu.md'
+                        - 'cookbook/frontend_customizing/4_front_end_stack_in_details/4.2_customized_foundation_framework/4.2.2_components/component_dropzone.md'
+                        - 'cookbook/frontend_customizing/4_front_end_stack_in_details/4.2_customized_foundation_framework/4.2.2_components/component_facets.md'
+                        - 'cookbook/frontend_customizing/4_front_end_stack_in_details/4.2_customized_foundation_framework/4.2.2_components/component_flyout.md'
+                        - 'cookbook/frontend_customizing/4_front_end_stack_in_details/4.2_customized_foundation_framework/4.2.2_components/component_image_zoom.md'
+                        - 'cookbook/frontend_customizing/4_front_end_stack_in_details/4.2_customized_foundation_framework/4.2.2_components/component_landingpage.md'
+                        - 'cookbook/frontend_customizing/4_front_end_stack_in_details/4.2_customized_foundation_framework/4.2.2_components/component_list.md'
+                        - 'cookbook/frontend_customizing/4_front_end_stack_in_details/4.2_customized_foundation_framework/4.2.2_components/component_list_blog.md'
+                        - 'cookbook/frontend_customizing/4_front_end_stack_in_details/4.2_customized_foundation_framework/4.2.2_components/component_list_event.md'
+                        - 'cookbook/frontend_customizing/4_front_end_stack_in_details/4.2_customized_foundation_framework/4.2.2_components/component_mega_menu.md'
+                        - 'cookbook/frontend_customizing/4_front_end_stack_in_details/4.2_customized_foundation_framework/4.2.2_components/component_nav_meta.md'
+                        - 'cookbook/frontend_customizing/4_front_end_stack_in_details/4.2_customized_foundation_framework/4.2.2_components/component_page_footer.md'
+                        - 'cookbook/frontend_customizing/4_front_end_stack_in_details/4.2_customized_foundation_framework/4.2.2_components/component_page_header.md'
+                        - 'cookbook/frontend_customizing/4_front_end_stack_in_details/4.2_customized_foundation_framework/4.2.2_components/component_pagination.md'
+                        - 'cookbook/frontend_customizing/4_front_end_stack_in_details/4.2_customized_foundation_framework/4.2.2_components/component_price_toggler.md'
+                        - 'cookbook/frontend_customizing/4_front_end_stack_in_details/4.2_customized_foundation_framework/4.2.2_components/component_print.md'
+                        - 'cookbook/frontend_customizing/4_front_end_stack_in_details/4.2_customized_foundation_framework/4.2.2_components/component_quickorder.md'
+                        - 'cookbook/frontend_customizing/4_front_end_stack_in_details/4.2_customized_foundation_framework/4.2.2_components/component_scroll.md'
+                        - 'cookbook/frontend_customizing/4_front_end_stack_in_details/4.2_customized_foundation_framework/4.2.2_components/component_search.md'
+                        - 'cookbook/frontend_customizing/4_front_end_stack_in_details/4.2_customized_foundation_framework/4.2.2_components/component_social_share.md'
+                        - 'cookbook/frontend_customizing/4_front_end_stack_in_details/4.2_customized_foundation_framework/4.2.2_components/component_spinner.md'
+                        - 'cookbook/frontend_customizing/4_front_end_stack_in_details/4.2_customized_foundation_framework/4.2.2_components/component_stored_basket.md'
+                        - 'cookbook/frontend_customizing/4_front_end_stack_in_details/4.2_customized_foundation_framework/4.2.2_components/component_tagcloud.md'
+                        - 'cookbook/frontend_customizing/4_front_end_stack_in_details/4.2_customized_foundation_framework/4.2.2_components/component_text_buttons.md'
+                        - 'cookbook/frontend_customizing/4_front_end_stack_in_details/4.2_customized_foundation_framework/4.2.2_components/component_toggler.md'
+                        - 'cookbook/frontend_customizing/4_front_end_stack_in_details/4.2_customized_foundation_framework/4.2.2_components/component_user_menu.md'
+                        - 'cookbook/frontend_customizing/4_front_end_stack_in_details/4.2_customized_foundation_framework/4.2.2_components/component_variants.md'
+                    - 4.2.3 Extends:
+                        - 'cookbook/frontend_customizing/4_front_end_stack_in_details/4.2_customized_foundation_framework/4.2.3_extends/extend_accordion.md'
+                        - 'cookbook/frontend_customizing/4_front_end_stack_in_details/4.2_customized_foundation_framework/4.2.3_extends/extend_alert_boxes.md'
+                        - 'cookbook/frontend_customizing/4_front_end_stack_in_details/4.2_customized_foundation_framework/4.2.3_extends/extend_buttons.md'
+                        - 'cookbook/frontend_customizing/4_front_end_stack_in_details/4.2_customized_foundation_framework/4.2.3_extends/extend_datatables.md'
+                        - 'cookbook/frontend_customizing/4_front_end_stack_in_details/4.2_customized_foundation_framework/4.2.3_extends/extend_datepicker.md'
+                        - 'cookbook/frontend_customizing/4_front_end_stack_in_details/4.2_customized_foundation_framework/4.2.3_extends/extend_dropdown.md'
+                        - 'cookbook/frontend_customizing/4_front_end_stack_in_details/4.2_customized_foundation_framework/4.2.3_extends/extend_forms.md'
+                        - 'cookbook/frontend_customizing/4_front_end_stack_in_details/4.2_customized_foundation_framework/4.2.3_extends/extend_grid.md'
+                        - 'cookbook/frontend_customizing/4_front_end_stack_in_details/4.2_customized_foundation_framework/4.2.3_extends/extend_icon_bar.md'
+                        - 'cookbook/frontend_customizing/4_front_end_stack_in_details/4.2_customized_foundation_framework/4.2.3_extends/extend_inline_list.md'
+                        - 'cookbook/frontend_customizing/4_front_end_stack_in_details/4.2_customized_foundation_framework/4.2.3_extends/extend_label.md'
+                        - 'cookbook/frontend_customizing/4_front_end_stack_in_details/4.2_customized_foundation_framework/4.2.3_extends/extend_offcanvas.md'
+                        - 'cookbook/frontend_customizing/4_front_end_stack_in_details/4.2_customized_foundation_framework/4.2.3_extends/extend_panels.md'
+                        - 'cookbook/frontend_customizing/4_front_end_stack_in_details/4.2_customized_foundation_framework/4.2.3_extends/extend_reveal_modal.md'
+                        - 'cookbook/frontend_customizing/4_front_end_stack_in_details/4.2_customized_foundation_framework/4.2.3_extends/extend_side_nav.md'
+                        - 'cookbook/frontend_customizing/4_front_end_stack_in_details/4.2_customized_foundation_framework/4.2.3_extends/extend_slick.md'
+                        - 'cookbook/frontend_customizing/4_front_end_stack_in_details/4.2_customized_foundation_framework/4.2.3_extends/extend_tabs.md'
+                        - 'cookbook/frontend_customizing/4_front_end_stack_in_details/4.2_customized_foundation_framework/4.2.3_extends/extend_tooltip.md'
+                        - 'cookbook/frontend_customizing/4_front_end_stack_in_details/4.2_customized_foundation_framework/4.2.3_extends/extend_visibility.md'
+                    - 4.2.4 Objects:
+                        - 'cookbook/frontend_customizing/4_front_end_stack_in_details/4.2_customized_foundation_framework/4.2.4_objects/object_media.md'
+                    - 4.2.5 Utilities:
+                        - 'cookbook/frontend_customizing/4_front_end_stack_in_details/4.2_customized_foundation_framework/4.2.5_utilities/4.2.5_utilities.md'
+                        - 'cookbook/frontend_customizing/4_front_end_stack_in_details/4.2_customized_foundation_framework/4.2.5_utilities/utility_border.md'
+                        - 'cookbook/frontend_customizing/4_front_end_stack_in_details/4.2_customized_foundation_framework/4.2.5_utilities/utility_colors.md'
+                        - 'cookbook/frontend_customizing/4_front_end_stack_in_details/4.2_customized_foundation_framework/4.2.5_utilities/utility_display.md'
+                        - 'cookbook/frontend_customizing/4_front_end_stack_in_details/4.2_customized_foundation_framework/4.2.5_utilities/utility_ellipsis.md'
+                        - 'cookbook/frontend_customizing/4_front_end_stack_in_details/4.2_customized_foundation_framework/4.2.5_utilities/utility_float.md'
+                        - 'cookbook/frontend_customizing/4_front_end_stack_in_details/4.2_customized_foundation_framework/4.2.5_utilities/utility_overflow.md'
+                        - 'cookbook/frontend_customizing/4_front_end_stack_in_details/4.2_customized_foundation_framework/4.2.5_utilities/utility_position.md'
+                        - 'cookbook/frontend_customizing/4_front_end_stack_in_details/4.2_customized_foundation_framework/4.2.5_utilities/utility_spacing.md'
+                        - 'cookbook/frontend_customizing/4_front_end_stack_in_details/4.2_customized_foundation_framework/4.2.5_utilities/utility_typography.md'
+                        - 'cookbook/frontend_customizing/4_front_end_stack_in_details/4.2_customized_foundation_framework/4.2.5_utilities/utility_whitespace.md'
+                        - 'cookbook/frontend_customizing/4_front_end_stack_in_details/4.2_customized_foundation_framework/4.2.5_utilities/utility_width.md'
+                    - 'cookbook/frontend_customizing/4_front_end_stack_in_details/4.2_customized_foundation_framework/4.2.6_custom_fonts.md'
+                - 4.3 JavaScript:
+                    - 'cookbook/frontend_customizing/4_front_end_stack_in_details/4.3_javascript/4.3.2_page_specific_components.md'
+                    - 'cookbook/frontend_customizing/4_front_end_stack_in_details/4.3_javascript/4.3.3_translations_javascript.md'
+                    - 'cookbook/frontend_customizing/4_front_end_stack_in_details/4.3_javascript/4.3_javascript.md'
+                    - 4.3.1 Globally available components:
+                        - 'cookbook/frontend_customizing/4_front_end_stack_in_details/4.3_javascript/4.3.1_globally_available_components/extended_reveal_modal.md'
+                        - 'cookbook/frontend_customizing/4_front_end_stack_in_details/4.3_javascript/4.3.1_globally_available_components/navigation_component.md'
+                        - 'cookbook/frontend_customizing/4_front_end_stack_in_details/4.3_javascript/4.3.1_globally_available_components/non_blocking_notifications_aka_toastr.md'
+                        - 'cookbook/frontend_customizing/4_front_end_stack_in_details/4.3_javascript/4.3.1_globally_available_components/scroll_to_top.md'
+                        - 'cookbook/frontend_customizing/4_front_end_stack_in_details/4.3_javascript/4.3.1_globally_available_components/toggler.md'
+                - 4.4 Phalanx:
+                    - 'cookbook/frontend_customizing/4_front_end_stack_in_details/4.4_phalanx/4.4_phalanx.md'
+                    - 4.4.1 How to create Hoplite:
+                        - 'cookbook/frontend_customizing/4_front_end_stack_in_details/4.4_phalanx/4.4.1_how_to_create_hoplite/4.4.1_how_to_create_a_hoplite.md'
+                        - 'cookbook/frontend_customizing/4_front_end_stack_in_details/4.4_phalanx/4.4.1_how_to_create_hoplite/tutorial_create_a_hoplite.md'
+                    - 'cookbook/frontend_customizing/4_front_end_stack_in_details/4.4_phalanx/4.4.2_hoplite_basket.md'
+                    - 'cookbook/frontend_customizing/4_front_end_stack_in_details/4.4_phalanx/4.4.3_hoplite_checkout.md'
+                    - 'cookbook/frontend_customizing/4_front_end_stack_in_details/4.4_phalanx/4.4.4_hoplite_dashboard_cockpit.md'
+                    - 'cookbook/frontend_customizing/4_front_end_stack_in_details/4.4_phalanx/4.4.5_hoplite_list.md'
+                    - 'cookbook/frontend_customizing/4_front_end_stack_in_details/4.4_phalanx/4.4.6_hoplite_price.md'
+                    - 'cookbook/frontend_customizing/4_front_end_stack_in_details/4.4_phalanx/4.4.7_hoplite_quickorder.md'
+                    - 'cookbook/frontend_customizing/4_front_end_stack_in_details/4.4_phalanx/4.4.8_hoplite_search.md'
+                    - 'cookbook/frontend_customizing/4_front_end_stack_in_details/4.4_phalanx/4.4.9_hoplite_sidebox.md'
+                    - 'cookbook/frontend_customizing/4_front_end_stack_in_details/4.4_phalanx/4.4.10_hoplite_variants.md'
+                - 'cookbook/frontend_customizing/4_front_end_stack_in_details/4.5_working_with_gulp_and_assetic.md'
+                - 4.6 Coding standards:
+                    - 'cookbook/frontend_customizing/4_front_end_stack_in_details/4.6_coding_standards/css_sass.md'
+                    - 'cookbook/frontend_customizing/4_front_end_stack_in_details/4.6_coding_standards/twig_html.md'
+            - 'cookbook/frontend_customizing/5._standard_workflow_for_a_project.md'
+            - 'cookbook/frontend_customizing/6._messages_system.md'
+            - 'cookbook/frontend_customizing/assetic_step_by_step_with_minify_option.md'
+        - 'cookbook/emails.md'
+        - Fields for eCommerce data:
+            - 'cookbook/fields_for_ecommerce_data/fields_for_ecommerce_data.md'
+            - 'cookbook/fields_for_ecommerce_data/arrayfield.md'
+            - 'cookbook/fields_for_ecommerce_data/filefield.md'
+            - 'cookbook/fields_for_ecommerce_data/imagefield.md'
+            - 'cookbook/fields_for_ecommerce_data/pricefield.md'
+            - 'cookbook/fields_for_ecommerce_data/stockfield.md'
+            - 'cookbook/fields_for_ecommerce_data/textblockfield.md'
+            - 'cookbook/fields_for_ecommerce_data/textlinefield.md'
+        - Assets:
+            - 'cookbook/assets/assetservice.md'
+            - 'cookbook/assets/storageservice.md'
+            - 'cookbook/assets/image_resolutions.md'
+        - 'cookbook/language_switcher.md'
+        - 'cookbook/viewcontroller.md'
+        - Commands:
+            - 'cookbook/commands/commands.md'
+            - 'cookbook/commands/assets_command.md'
+            - 'cookbook/commands/clean_version_history.md'
+        - Helper services:
+            - 'cookbook/helper_services/country_service.md'
+            - 'cookbook/helper_services/ezhelperservice.md'
+            - 'cookbook/helper_services/mailhelperservice.md'
+            - 'cookbook/helper_services/mail_logging.md'
+        - Business API:
+            - 'cookbook/business_api/business_api.md'
+            - Base operation:
+                - 'cookbook/business_api/baseoperation/baseoperation.md'
+                - Operation basket:
+                    - 'cookbook/business_api/baseoperation/operation_basket/operation_basket.md'
+                    - 'cookbook/business_api/baseoperation/operation_basket/addproducts.md'
+                    - 'cookbook/business_api/baseoperation/operation_basket/getbasket.md'
+                - Opertation catalog:
+                    - 'cookbook/business_api/baseoperation/operation_catalog/operation_catalog.md'
+                    - 'cookbook/business_api/baseoperation/operation_catalog/loadproducts.md'
+                - 'cookbook/business_api/businessapi_invocation_service.md'
+        - Additional eZ FieldTypes:
+            - 'cookbook/additional_ez_fieldtypes/additional_ez_fieldtypes.md'
+            - 'cookbook/additional_ez_fieldtypes/sesexternaldata.md'
+            - 'cookbook/additional_ez_fieldtypes/sesprofiledata.md'
+            - 'cookbook/additional_ez_fieldtypes/sesselection.md'
+            - 'cookbook/additional_ez_fieldtypes/specificationstype.md'
+            - 'cookbook/additional_ez_fieldtypes/varianttype.md'
+        - 'cookbook/downloads.md'
+        - Token:
+            - 'cookbook/token/token.md'
+            - Tokencontroller:
+                - 'cookbook/token/tokencontroller/tokencontroller.md'
+                - 'cookbook/token/tokencontroller/token_service_method_processor.md'
+            - 'cookbook/token/tokenservice.md'
+        - 'cookbook/tracking.md'
+        - 'cookbook/access_control.md'
+        - 'cookbook/pop_up_window_with_external_content.md'
+        - 'cookbook/silver.module.md'
+        - 'cookbook/doctrine_mapping_datatypes.md'
+        - Exception handling:
+            - 'cookbook/exception_handling/exception_handling.md'
+            - 'cookbook/exception_handling/404_page.md'
+        - 'cookbook/ajax_phalanx.md'
+        - 'cookbook/valueobject.md'
+    - Glossary:
+        - 'glossary/term_buyerparty.md'
+        - 'glossary/term_cms.md'
+        - 'glossary/term_contact.md'
+        - 'glossary/term_contextid.md'
+        - 'glossary/term_dataprovider.md'
+        - 'glossary/term_doctrine.md'
+        - 'glossary/term_erp.md'
+        - 'glossary/term_erp_message.md'
+        - 'glossary/term_facet.md'
+        - 'glossary/term_gross_price.md'
+        - 'glossary/term_monolog.md'
+        - 'glossary/term_net_price.md'
+        - 'glossary/term_scaled_prices.md'
+        - 'glossary/term_shop_id.md'
+        - 'glossary/term_siteaccess.md'
+        - 'glossary/term_solr.md'
+        - 'glossary/term_symfony_forms.md'
+        - 'glossary/term_template.md'
+        - 'glossary/term_template_debitor.md'
+        - 'glossary/term_ubl.md'
+        - 'glossary/term_ubl_format.md'
+        - 'glossary/term_vatcode.md'
+    - Release notes:
+        - 'release_notes/release_notes_2.2_4.0.md'
+        - 'release_notes/release_notes_2.4_4.1.md'
+        - 'release_notes/release_notes_2.5_4.1.1.md'
+
+theme:
+  name: null
+  custom_dir: 'material'
+  favicon: 'img/favicon.ico'
+  language: 'en'
+  palette:
+      primary: 'blue grey'
+      accent: 'deep orange'
+
+  font: false
+  logo: 'images/eZ-Brandmark.png'
+  feature:
+      tabs: false
+  search_index_only: false
+
+theme_dir: material
+
+extra:
+  version_warning:
+    # latest: ['master']
+    # previous_lts: ['1.7','1.13']
+    # lts: ['2.5']
+    # ft: ['2.2', '2.3','2.4']
+    dev: ['master']
+  append_bootstrap: []
+  related_docs:
+    - title: 'eZ Platform Developer Documentation'
+      url: '/'
+    - title: 'eZ Platform User Documentation'
+      url: '/projects/userguide'
+    - title: 'eZ Personalization Documentation'
+      url: '/projects/ezpersonalization'
+    - title: 'eZ Commerce'
+      url: '/'
+
+extra_css:
+  - fonts/MavenPro.css
+  - css/custom.css
+  - css/docs.switcher.css
+  - '//cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.css'
+
+extra_javascript:
+  - js/jquery.min.js
+  - js/custom.js
+  - js/docs.switcher.js
+  - js/ez-guidelines-switchers.js
+  - js/ez-guidelines-modals.js
+  - '//cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.js'
+markdown_extensions:
+  - admonition
+  - codehilite:
+      guess_lang: false
+      linenums: true
+  - def_list
+  - footnotes
+  - meta
+  - toc:
+      permalink: true
+  - pymdownx.arithmatex
+  - pymdownx.betterem:
+      smart_enable: all
+  - pymdownx.caret
+  - pymdownx.critic
+  - pymdownx.inlinehilite
+  - pymdownx.highlight:
+      guess_lang: false
+      linenums: true
+      css_class: codehilite
+      extend_pygments_lang:
+        - name: php
+          lang: php
+          options:
+            startinline: true
+  - pymdownx.magiclink
+  - pymdownx.mark
+  - pymdownx.smartsymbols
+  - pymdownx.superfences
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.tilde
+  - pymdownx.details
+  - ez_code_example
