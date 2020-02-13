@@ -98,5 +98,10 @@ The basket will offer a variety of features. Some of the features will be descri
 <td><p>After a login eZ Commerce merges the products from the existing basket (filled as a anonymous user) and a basket which is already stored for the given user id of the user.</p>
 <p>If a sku is already present in a basket a new line will be created in the basket of the user.</p></td>
 </tr>
+<tr>
+<td>Basket can be shared if a user logs in in different browsers (default) or bound to session only</td>
+<td><p>In case a basket shall be not shared in case the same user logs in twice a setting can be adapted (default: false)</p>
+<p>ses_basket.default.basketBySessionOnly: true</p></td>
+</tr>
 </tbody>
 </table>

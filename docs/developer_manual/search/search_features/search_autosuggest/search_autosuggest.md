@@ -126,6 +126,8 @@ The order of the module configurations represent the order of display in the sug
 <pre class="" data-syntaxhighlighter-params="brush: java; gutter: false; theme: Confluence" data-theme="Confluence"><code>siso_search.default.autosuggest_module_definitions:
     product_autosuggest:
         search_limit: 5
+        use_prefix_search: false
+        min_score: 1
         images_field:
             ez: main_image_url_s
             econtent: ses_product_ses_datamap_ext_main_image_url_value_s
@@ -154,6 +156,9 @@ The order of the module configurations represent the order of display in the sug
 <pre><code>result_fields: (array) Solr result field names to be shown on results.</code></pre>
 <pre><code>result_fields_separator: (string) text to be used as a separator for result fields.</code></pre>
 <pre><code>text_limit: (int) limits the length of the resulting string.</code></pre></td>
+<pre><code>use_prefix_search: (boolean) if true a ngram fields can be defined in "</code></pre></td>
+<pre><code>min_score: is used in case use_prefix_search = false. Only if Solr score is higher than min_score product is returned</code></pre></td>
+<pre><code>search_fields", otherwise autosuggest uses a prefix for search (searchterm + *)</code></pre></td>
 </tr>
 <tr>
 <td> Category</td>

@@ -423,6 +423,15 @@ siso_search.default.solr_special_characters: escape</code></pre>
 </td>
 <td>If true the search and autosuggest will only return one hit, if the product exists in several locations</td>
 </tr>
+<tr><td>
+<pre><code>#EcontentImageIndexerPlugin configuration
+siso_search.default.use_filtered_images: true
+siso_search.default.image_filter_resolution: thumb_small</code></pre></td>
+<td>The EcontentImageIndexerPlugin can make use of the imageConverter and therefore two additional parameters are available.
+use_filtered_images is used to configure if the imageConverter shall be used or not
+image_filter_resolution is used to specify in which way the images will be modified by the imageConverter
+</td>
+</tr>
 </tbody>
 </table>
 
@@ -452,6 +461,23 @@ siso_search.default.solr_special_characters: escape</code></pre>
 </tr>
 </tbody>
 </table>
+
+Econtent configure cores per siteaccess
+
+parameters:
+    siso_search.default.core: ~
+    
+Use default core (usually siso_econtent = econtent live core)
+parameters:
+    siso_search.de_preview.core: siso_econtent_back
+    
+Use the back core. This might be useful if an import is using the tmp tables in econtent. The data will be indexed in the econtent_back core.
+
+This settings allows to configure to use the back core for a preview siteaccess.
+
+Please note:
+
+there is one exception: the service searching for bestsellers will not use this setting and use the live core by default.
 
 ## Attachments:
 

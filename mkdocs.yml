@@ -53,8 +53,6 @@ pages:
             - 'enhanced_configuration/configuration/configure_erp_connection.md'
         - Installation details:
             - 'enhanced_configuration/installation_details/php_settings.md'
-            - 'enhanced_configuration/installation_details/cluster_setup.md'
-            - 'enhanced_configuration/installation_details/varnish_vcl.md'
             - 'enhanced_configuration/installation_details/installation_and_configuration_faqs.md'
     - User manual:
         - General:
@@ -97,6 +95,11 @@ pages:
                 - 'user_manual/managing_content/contentpluginbundle/folder_events.md'
                 - 'user_manual/managing_content/contentpluginbundle/folder_news.md'
                 - 'user_manual/managing_content/contentpluginbundle/news.md'
+        - PlugIns and AddOns:
+            - 'Chat tool Olark (AddOn)': 'user_manual/plugins_and_addons/chat_tool_olark.md'
+            - 'Vouchers management (PlugIn)': 'user_manual/plugins_and_addons/vouchers_management.md'
+            - 'Rating Reviews (PlugIn)': 'user_manual/plugins_and_addons/rating_reviews.md'
+            - 'Customer center (Plugin from 4.2)': 'user_manual/plugins_and_addons/customer_center.md'
     - Developer manual:
         - 'developer_manual/developer_manual.md'
         - Basket:
@@ -148,6 +151,7 @@ pages:
                 - 'developer_manual/caching_in_the_shop/content_cache_refresh/http_caching.md'
             - 'developer_manual/caching_in_the_shop/caching_faq.md'
             - 'developer_manual/caching_in_the_shop/translations_cache_for_textmodules.md'
+            - 'developer_manual/caching_in_the_shop/basketpreview_cache_and_user_specific_data.md'
         - Catalog:
             - 'developer_manual/catalog/catalog.md'
             - Catalog feature list:
@@ -225,6 +229,7 @@ pages:
                     - 'developer_manual/checkout/checkout_features/order/local_order_process_with_invoice_in_pdf.md'
                     - 'developer_manual/checkout/checkout_features/order/order_splitting_for_multishop.md'
                 - 'developer_manual/checkout/checkout_features/rma_process.md'
+                - 'developer_manual/checkout/checkout_features/simple_checkout.md'
             - Checkout API:
                 - 'developer_manual/checkout/checkout_api/checkoutcontroller.md'
                 - 'developer_manual/checkout/checkout_api/ajaxcheckoutcontroller.md'
@@ -467,9 +472,11 @@ pages:
                 - 'developer_manual/search/search_cookbook/how_to_search_for_products.md'
                 - 'developer_manual/search/search_cookbook/how_to_use_solr_spellcheck.md'
                 - 'developer_manual/search/search_cookbook/solr_managed_resources.md'
+                - 'developer_manual/search/search_cookbook/use_query_filter_in_product_search.md'
             - 'developer_manual/search/search_faq.md'
             - Search configuration:
                 - 'developer_manual/search/search_configuration/search_configuration.md'
+                - 'developer_manual/search/search_configuration/solr_schema_configuration.md'
         - Templating:
             - 'developer_manual/templating/templating.md'
             - Templates for the shop:
@@ -657,6 +664,7 @@ pages:
                 - 'cookbook/business_api/businessapi_invocation_service.md'
         - Additional eZ FieldTypes:
             - 'cookbook/additional_ez_fieldtypes/additional_ez_fieldtypes.md'
+            - 'cookbook/additional_ez_fieldtypes/productselection.md'
             - 'cookbook/additional_ez_fieldtypes/sesexternaldata.md'
             - 'cookbook/additional_ez_fieldtypes/sesprofiledata.md'
             - 'cookbook/additional_ez_fieldtypes/sesselection.md'
@@ -679,6 +687,54 @@ pages:
             - 'cookbook/exception_handling/404_page.md'
         - 'cookbook/ajax_phalanx.md'
         - 'cookbook/valueobject.md'
+    - Plugins:
+        - 'Customer Center (from 4.2)':
+            - 'Customer Center and ERP': 'plugins/customer_center/customer_center_and_erp.md'
+            - 'Customer Center and user management': 'plugins/customer_center/customer_center_and_user_management.md'
+            - 'Customer Center - API':
+                - 'BudgetServiceInterface':
+                    - 'BudgetServiceInterface': 'plugins/customer_center/custom_center_api/budgetserviceinterface.md'
+                    - 'OrderBudgetService': 'plugins/customer_center/custom_center_api/orderbudgetservice.md'
+                - 'ContentServiceInterface':
+                    - 'ContentServiceInterface': 'plugins/customer_center/custom_center_api/contentserviceinterface.md'
+                    - 'CustomerCenterContentService': 'plugins/customer_center/custom_center_api/customercentercontentservice.md'
+                - 'FormProcessorInterface':
+                    - 'FormProcessorInterface': 'plugins/customer_center/custom_center_api/formprocessorinterface.md'
+                    - 'FormProcessorServices': 'plugins/customer_center/custom_center_api/formprocessorservices.md'
+                - 'InitialFormValuesServiceInterface':
+                    - 'InitialFormValuesServiceInterface': 'plugins/customer_center/custom_center_api/initialformvaluesserviceinterface.md'
+                    - 'InitialFormValuesServices': 'plugins/customer_center/custom_center_api/initialformvaluesservices.md'
+            - 'Customer Center budget workflow': 'plugins/customer_center/customer_center_budget_workflow.md'
+            - 'Customer Center - Cookbook': 'plugins/customer_center/customer_center_cookbook.md'
+            - 'Customer Center - FAQ': 'plugins/customer_center/customer_center_faq.md'
+            - 'Customer Center functions':
+                - 'Customer Center functions': 'plugins/customer_center/customer_center_functions/customer_center_functions.md'
+                - 'Customer center roles': 'plugins/customer_center/customer_center_functions/customer_center_roles.md'
+                - 'Customer center - user actions': 'plugins/customer_center/customer_center_functions/customer_center_user_actions.md'
+            - 'Customer Center - installation and configuration': 'plugins/customer_center/customer_center_installation_and_configuration.md'
+            - 'Customer Center - Templates': 'plugins/customer_center/customer_center_templates.md'
+        - 'Rate and review':
+            - 'Rate and review': 'plugins/rate_and_review/rate_and_review.md'
+            - 'Translations for rate and review': 'plugins/rate_and_review/translations_for_rate_and_review.md'
+        - 'Newsletter2Go':
+            - 'Newsletter2Go': 'plugins/newsletter2go/newsletter2go.md'
+            - 'Newsletter2Go - API':
+                - 'Newsletter2Go Configuration': 'plugins/newsletter2go/newsletter2go_api/newsletter2go_configuration.md'
+                - 'Newsletter2Go Service': 'plugins/newsletter2go/newsletter2go_api/newsletter2go_service.md'
+            - 'Newsletter2Go - Cookbook':
+                - 'How to send additional data to Newsletter2Go': 'plugins/newsletter2go/newsletter2go_cookbook/how_to_send_additional_data_to_newsletter2go.md'
+                - 'How to use the Newsletter2Go API to implement custom functions': 'plugins/newsletter2go/newsletter2go_cookbook/how_to_use_the_newsletter2go_api_to_implement_custom_functions.md'
+            - 'Newsletter2Go - FAQ': 'plugins/newsletter2go/newsletter2go_faq.md'
+        - 'SisoRestApiBundle':
+            - 'SisoRestApiBundle': 'plugins/sisorestapibundle/sisorestapibundle.md'
+            - 'API':
+                - 'API': 'plugins/sisorestapibundle/api/api.md'
+                - 'Basket functions': 'plugins/sisorestapibundle/api/basket_functions.md'
+                - 'Checkout functions': 'plugins/sisorestapibundle/api/checkout_functions.md'
+                - 'Common': 'plugins/sisorestapibundle/api/common.md'
+                - 'Customer functions': 'plugins/sisorestapibundle/api/customer_functions.md'
+            - 'Background infos': 'plugins/sisorestapibundle/background_infos.md'
+
     - Glossary:
         - 'glossary/term_buyerparty.md'
         - 'glossary/term_cms.md'
@@ -705,7 +761,11 @@ pages:
     - Release notes:
         - 'release_notes/release_notes_2.2_4.0.md'
         - 'release_notes/release_notes_2.4_4.1.md'
-        - 'release_notes/release_notes_2.5_4.1.1.md'
+        - 'Release notes 2.5':
+            - 'Release notes 2.5': 'release_notes/release_notes_2.5_4.1.1.md'
+            - 'Release notes 2.5.1 (4.1.2)': 'release_notes/release_notes_2.5.1.md'
+            - 'Release notes 2.5.2 (4.1.3)': 'release_notes/release_notes_2.5.2.md'
+        - 'release_notes/update_notes_silver.eshop.md'
 
 theme:
   name: null

@@ -132,3 +132,7 @@ $eshopQuery->setSortCriteria(
 ```
 
 The order of the sorting criteria is important. In the example above the sorting will be in the order they are set into the array.
+
+Modifying existing SortHandlers
+
+Existing SortHandlers can't be overriden by simply extending them. If you need to change the behavior of a SortHandler, you need to use the new implementation explicitly, i.e. instantiate the new class like shown in the example above.

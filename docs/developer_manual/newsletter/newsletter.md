@@ -21,9 +21,6 @@ In standard implementation of %ses-band there is no specific newsletter provider
   - User newsletter details are updated after ordering in the checkout
 
   - The newsletter status is fetched from the newsletter provider after the login and user see the status in his profile. The newsletter status is stored in the CustomerProfileData together with the list of ids of newsletter topics, so it can be rendered in the template if required.
-
-     
-
     ``` 
     {# true if user subscribed at least one newsletter #}
     {{ ses.profile.sesUser.subscribesNewsletter }}

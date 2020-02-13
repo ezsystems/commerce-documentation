@@ -182,28 +182,22 @@ Then you need to prepare template, that will render your form. See also [How to 
 
 ``` 
 {% extends "SilversolutionsEshopBundle::pagelayout.html.twig"|st_resolve_template %}
-
+ 
 {% block content %}
 <form action="{{ path('silversolutions_service', {'formTypeResolver': 'order_catalog'}) }}"
   method="post" {{ form_enctype(form) }}>
-  {{ form_errors(form) }}  
-   
+  {{ form_errors(form) }} 
+    
     <div{% if form.email.vars.errors is not empty %} class="error"{% endif %}>
       {{ form_label(form.email) }}
       {{ form_widget(form.email) }}
-      {% for error in form.email.vars.errors %}
-        <small class="error">{{ error.message }}</small>
-      {% endfor %}
-    
+    </div>
     <div{% if form.orderCatalog.vars.errors is not empty %} class="error"{% endif %}>
       {{ form_label(form.orderCatalog) }}
       {{ form_widget(form.orderCatalog) }}
-      {% for error in form.orderCatalog.vars.errors %}
-        <small class="error">{{ error.message }}</small>
-      {% endfor %}
-    
+    </div>
  {{ form_rest(form) }}
-  * {{ 'required fields'|st_translate }}
+  <span>* {{ 'required fields'|st_translate }}</span>
   <button type="submit" class="button right" name="order_catalog">{{ 'Order Catalog'|st_translate }}</button>
 </form>
 {% endblock %} 
@@ -828,8 +822,6 @@ siso_core.default.recaptcha_options.async:
     group: core
     type: boolean
 ```
-
-  
   
 ## Attachments:
 

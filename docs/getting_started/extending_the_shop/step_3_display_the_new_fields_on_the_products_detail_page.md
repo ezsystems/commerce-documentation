@@ -110,4 +110,4 @@ Following eZ fields are supported and will be stored automatically in the produc
 </tbody>
 </table>
 
-If you want to use another eZ fields (e.g. Date and Time), you would have to override the catalog factory. This topic is handled in the training for <span class="status-macro aui-lozenge aui-lozenge-complete conf-macro output-inline">EZCOMMERCE ADVANCED
+If you want to use another eZ fields (e.g. Date and Time), you would have to override the catalog factory. This topic is handled in the training for EZCOMMERCE ADVANCED

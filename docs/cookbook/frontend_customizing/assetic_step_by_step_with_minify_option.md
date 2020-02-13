@@ -25,9 +25,6 @@ If you really want to make filters work on Windows machines you can use YUI Comp
     ```
 
     If you don't have Node.js installed please visit <http://nodejs.org/> and click this big green install button to download installer for your operating system.  
-
-    
-
     When installing nodejs use this apt-get (Ubuntu)
 
     ``` 

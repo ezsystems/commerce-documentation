@@ -40,8 +40,7 @@ The default fetching functionality had to be extended because in the customer ce
 
 It uses "**locationId**" in the ez backend to determine **private/b2b customers.**
 
-**  
-**
+It provides a checkEzUser method which checks the location and customer number of the given user.
 
 <table>
 <colgroup>
@@ -58,7 +57,11 @@ It uses "**locationId**" in the ez backend to determine **private/b2b customers.
 
 ### AuthenticationProvider
 
-Finally the AuthenticationProvider will authenticate the user (by the UsernamePasswirdToken). It will check the user credentials. Also *customer\_no* is used when checking credentials in checkAuthentication method.
+The very first part in the authentication process is the AuthenticationListener. This listener is able to read the posted values from the login form and create a UserToken.
+
+The default Symfony listener had to be extended to collect more information (customer_number). In the standard Symfony login form only username and password are allowed.
+
+Our extended listener implements the same interface AbstractAuthenticationListener. 
 
 <table>
 <colgroup>

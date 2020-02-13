@@ -26,7 +26,7 @@ Following attributes are possible:
 </tr>
 <tr>
 <td>Parameters</td>
-<td>An optional matrix of key-value parameters (list of hashes) which is directed to the target controller. Keep in mind, that only string key-value pairs are possible.</td>
+<td>Optional parameters (list of hashes) which is directed to the target controller. Keep in mind, that only string key-value pairs are possible. The key value pairs are separated by a ";"</td>
 <td>
 <table>
 <thead>
@@ -37,12 +37,8 @@ Following attributes are possible:
 </thead>
 <tbody>
 <tr>
-<td><code>firstString</code></td>
-<td><code>Hello</code></td>
-</tr>
-<tr>
-<td><code>secondString</code></td>
-<td><code>World</code></td>
+<td><code>formTypeResolver</code></td>
+<td><code>contact</code></td>
 </tr>
 </tbody>
 </table>

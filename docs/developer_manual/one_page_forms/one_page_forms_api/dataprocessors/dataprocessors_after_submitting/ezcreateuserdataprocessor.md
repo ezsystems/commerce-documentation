@@ -11,6 +11,8 @@ The dataprocessor sets the following fields in eZ user:
   - customer\_number
   - contact\_number
   - customer\_profile\_data
+  - ses_hastopay_vat
+  - ses_display_vat
 
 eZ Commerce provides a standard event for this handler which add a prefix to the login name of the user. The prefix can be defined in the config (data\_processor\_ez\_user\_login\_prefix). 
 
@@ -26,3 +28,11 @@ This event is defined in the service.yml:
 ID of this service:
 
 ses\_forms.create\_ez\_user
+Values set for private/business registration:
+
+Private	
+ses_hastopay_vat = true
+ses_display_vat = true
+Business	
+ses_hastopay_vat = true
+ses_display_vat = false

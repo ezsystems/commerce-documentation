@@ -51,6 +51,10 @@ jms_payment_paypal:
     debug: true
 ```
 
+Important:
+
+In product mode you need set debug to false!  
+
 Login and navigate to "All Tools"
 
 ![](attachments/23561073/23563062.png)

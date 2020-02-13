@@ -37,6 +37,8 @@ What happens during a login process:
 
 eZ Commerce provides a flexible login functionality. In the shop a user can login with username or email password. Additionally we can add a field "customer number", which is required for logging into customer center.
 
+The methods "retrieveUser" and "checkAuthentication" of the AuthenticationProvider have been overriden in order to provide the login functionality.
+
 The logic for searching for a user is:
 
   - Determined by the location id,which is configured by the siteaccess (siso\_core.default.user\_group\_location).

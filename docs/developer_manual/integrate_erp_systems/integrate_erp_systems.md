@@ -58,8 +58,6 @@ Since eZ Commerce offers an open interface using standards (REST, Webservices an
 
 Requirements towards an ERP system: The ERP system has to be open (means offers e.g. a REST or Web-Service interface) and offers the functions as listed in "Supported processes with ERP integration" .
 
-  
-
 ## Supported processes with ERP integration
 
 This chapter will describe which data is exchanged between eZ Commerce Advanced and the ERP system. It depends on the project specific configuration which data will be exchanged since in complex systems other systems might provide data as well (such as a PIM system).

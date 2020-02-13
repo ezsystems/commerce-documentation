@@ -15,7 +15,7 @@ Administrator can update any of the exposed parameters. When button "Save" is cl
   - 1.) The configuration is stored in a database as **eZ Document**. There is a special type called "Configuration", which is storing the yml representation.  
     ![](attachments/23560666/23569049.png)  
 
-  - 2.) A [.yml file](Store-silver.eShop-backend-configuration-in-.yml-file_23560984.html) with this configuration is stored in the file system and afterwards in the stash cache.
+  - 2.) The configuration is stored in the stash cache.
 
 ## How client configuration is acknowledged by eZ Commerce
 

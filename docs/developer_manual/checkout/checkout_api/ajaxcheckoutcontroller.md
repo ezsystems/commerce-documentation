@@ -233,8 +233,6 @@ current step
 
 1.  **validateLogin**  
     **It displays login form, possible options for registration and option to order as a guest.  
-     
-
 2.  **validateInvoice**  
     On success it stores inovice address in basket. If a checkbox "invoiceAsDelivery" was set then it stores also delivery address in the basket.  
 
@@ -263,12 +261,8 @@ current step
 
 7.  **getEmptyDelivery **  
     Triggered with delivery addressStatus option. Returns empty delivery template form.  
-     
-
 8.  **getDeliveryFromInvoice**  
     Triggered with delivery addressStatus option. Returns delivery template form based on invoice form previously filled.  
-     
-
 9.  **validateStep**
     Validates the step for which the request was made and return available current step. This prevents from going into steps in which user cannot be.   
     Additionally, if user is logged with customer number, the request to NAV will take place in order to get latest invoice address. The reason for that is to prevent showing incorrect address in the basket for the user.

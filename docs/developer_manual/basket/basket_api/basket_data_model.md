@@ -260,9 +260,6 @@ The following attributes are provided by the basket header.
 </tr>
 </tbody>
 </table>
-
-    
-
 # BasketLine
 
 <table>

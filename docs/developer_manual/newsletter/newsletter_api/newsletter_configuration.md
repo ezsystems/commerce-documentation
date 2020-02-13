@@ -16,3 +16,35 @@ parameters:
     # if enabled also logged in users will see the newsletter box
     siso_newsletter.default.display_newsletter_box_for_logged_in_users: true
 ```
+
+Related routes:
+
+```
+siso_newsletter_subscribe:
+    path:     /newsletter/subscribe
+    defaults:
+        _controller: SisoNewsletterBundle:Newsletter:subscribeNewsletter
+        breadcrumb_path: siso_newsletter_subscribe
+        breadcrumb_names: subscribe newsletter
+
+siso_newsletter_unsubscribe:
+    path:     /newsletter/unsubscribe
+    defaults:
+        _controller: SisoNewsletterBundle:Newsletter:unsubscribeNewsletter
+        breadcrumb_path: siso_newsletter_unsubscribe
+        breadcrumb_names: common.unsubscribe_newsletter
+
+siso_newsletter_update:
+    path:     /newsletter/update
+    defaults:
+        _controller: SisoNewsletterBundle:Newsletter:updateNewsletter
+        breadcrumb_path: silversolutionsCustomerDetail/siso_newsletter_update
+        breadcrumb_names: My profile/common.update_newsletter
+
+siso_newsletter_doi:
+    path:     /newsletter/doi
+    defaults:
+        _controller: SisoNewsletterBundle:Newsletter:doubleOptInNewsletter
+        breadcrumb_path: silversolutionsCustomerDetail/siso_newsletter_subscribe
+        breadcrumb_names: My profile/subscribe newsletter
+```

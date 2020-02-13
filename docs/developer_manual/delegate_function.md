@@ -35,11 +35,11 @@ silver_eshop.default.enable_delegate: false
 ``` 
 # Delegate function
 silversolutions_delegate:
- pattern: /delegate
+ path: /delegate
     defaults: { _controller: SilversolutionsEshopBundle:DelegateCustomer:delegate }
 
 silversolutions_undelegate:
- pattern: /undelegate
+ path: /undelegate
     defaults: { _controller: SilversolutionsEshopBundle:DelegateCustomer:undelegate }
 
 ```
@@ -135,11 +135,11 @@ class DelegateCustomerController extends BaseController
 ``` 
 # Delegate function
 silversolutions_delegate:
-    pattern:  /delegate
+    path:  /delegate
     defaults: { _controller: SilversolutionsEshopBundle:DelegateCustomer:delegate }
 
 silversolutions_undelegate:
-    pattern:  /undelegate
+    path:  /undelegate
     defaults: { _controller: SilversolutionsEshopBundle:DelegateCustomer:undelegate }
 ```
 

@@ -94,6 +94,18 @@ CREATE TABLE `ses_externaldata` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8
 ```
 
+Important note:
+
+It is required to create one attribute in the ses_externaldata per language and product which contains the sku itself:
+Example (sku = 1122222)
+
+```
++----------+----------+-------------+---------------+----------------+-----------------------------------------------------------------+
+| id       | sku      | identifier  | language_code | ses_field_type | content                                                         |
++----------+----------+-------------+---------------+----------------+-----------------------------------------------------------------+
+| 11087155 | 1122222  | ses_sku_erp | ger-DE        | TextLineField  | a:1:{s:17:"TextLineFieldHash";a:1:{s:4:"text";s:7:"1122222";}}  |
+```
+
 # How to store data in `ses_externaldata` table
 
 Data that is stored in the ses\_externaldata table must be either a simple datatype: *int, float, boolean* or a [FieldType](Fields-for-ecommerce-data_23560470.html).
@@ -144,25 +156,32 @@ The member attribute $text of FieldType\\SesExternalData\\Value is actually an a
 **Silversolutions/Bundle/DatatypesBundle/Resources/config/services.xml**
 
 ``` 
-    <parameters>
-       <parameter key="ezpublish.fieldType.sesexternaldata.class">Silversolutions\Bundle\DatatypesBundle\FieldType\SesExternalData\Type</parameter>
-       <parameter key="ezpublish.fieldType.sesexternaldata.converter.class">Silversolutions\Bundle\DatatypesBundle\Converter\SesExternalData</parameter>    
-    </parameters>
-
-    <services>      
-        <!-- sesexternaldata type service -->
-        <service id="ezpublish.fieldType.sesexternaldata" class="%ezpublish.fieldType.sesexternaldata.class%" parent="ezpublish.fieldType">
-            <tag name="ezpublish.fieldType" alias="sesexternaldata" />
-        </service>
-
-        <!-- sesexternaldata converter service -->
-        <service id="ezpublish.fieldType.sesexternaldata.converter" class="%ezpublish.fieldType.sesexternaldata.converter.class%">
-            <argument type="service" id="ezpublish.api.storage_engine.legacy.dbhandler" />
-            <argument type="service" id="ezpublish.config.resolver" />
-            <argument type="service" id="silver_common.logger" />
-            <tag name="ezpublish.storageEngine.legacy.converter" alias="sesexternaldata"  />
-        </service> 
-    </services> 
+<parameters>
+    <parameter key="ezpublish.fieldType.sesexternaldata.class">Silversolutions\Bundle\DatatypesBundle\FieldType\SesExternalData\Type</parameter>
+    <parameter key="ezpublish.fieldType.indexable.sesexternaldata.class">Silversolutions\Bundle\DatatypesBundle\FieldType\SesExternalData\SearchField</parameter>
+    <parameter key="ezpublish.fieldType.sesexternaldata.converter.class">Silversolutions\Bundle\DatatypesBundle\Converter\SesExternalData</parameter>  
+</parameters>
+ 
+<services>     
+    <!-- sesexternaldata type service -->
+    <service id="ezpublish.fieldType.sesexternaldata" class="%ezpublish.fieldType.sesexternaldata.class%" parent="ezpublish.fieldType">
+        <tag name="ezpublish.fieldType" alias="sesexternaldata" />
+    </service>
+    <service id="ezpublish.fieldType.indexable.sesexternaldata" class="%ezpublish.fieldType.indexable.sesexternaldata.class%">
+        <call method="setIndexDefinition">
+            <argument>$ses_external_data_index_definition;siso_datatypes$</argument>
+        </call>
+        <tag name="ezpublish.fieldType.indexable" alias="sesexternaldata" />
+    </service>
+ 
+    <!-- sesexternaldata converter service -->
+    <service id="ezpublish.fieldType.sesexternaldata.converter" class="%ezpublish.fieldType.sesexternaldata.converter.class%">
+        <argument type="service" id="ezpublish.api.storage_engine.legacy.dbhandler" />
+        <argument type="service" id="ezpublish.config.resolver" />
+        <argument type="service" id="silver_common.logger" />
+        <tag name="ezpublish.storageEngine.legacy.converter" alias="sesexternaldata"  />
+    </service>
+</services> 
 ```
 
 # Handling of sesexternaldata in eZ DataProvider
@@ -180,10 +199,6 @@ If the table ses\_externaldata is filled properly with the data, it is possible 
 ![](attachments/23560305/23563981.png)
 
 ![](attachments/23560305/23563978.png)
-
-``` 
- 
-```
 
 #### Handling the fetched data
 

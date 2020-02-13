@@ -29,63 +29,11 @@
 </tbody>
 </table>
 
-### Related routes:
-
-``` 
-siso_newsletter_subscribe:
-    path:     /newsletter/subscribe
-    defaults:
-        _controller: SisoNewsletterBundle:Newsletter:subscribeNewsletter
-        breadcrumb_path: siso_newsletter_subscribe
-        breadcrumb_names: subscribe newsletter
-
-siso_newsletter_unsubscribe:
-    path:     /newsletter/unsubscribe
-    defaults:
-        _controller: SisoNewsletterBundle:Newsletter:unsubscribeNewsletter
-        breadcrumb_path: siso_newsletter_unsubscribe
-        breadcrumb_names: common.unsubscribe_newsletter
-
-siso_newsletter_update:
-    path:     /newsletter/update
-    defaults:
-        _controller: SisoNewsletterBundle:Newsletter:updateNewsletter
-        breadcrumb_path: silversolutionsCustomerDetail/siso_newsletter_update
-        breadcrumb_names: My profile/common.update_newsletter
-
-siso_newsletter_doi:
-    path:     /newsletter/doi
-    defaults:
-        _controller: SisoNewsletterBundle:Newsletter:doubleOptInNewsletter
-        breadcrumb_path: silversolutionsCustomerDetail/siso_newsletter_subscribe
-        breadcrumb_names: My profile/subscribe newsletter
-```
-
 ### Newsletter Box
 
 The newsletter box can be rendered as an esi block and can be rendered in the Page Builder as well. The box is cached per user.
 
-Therefore the block [SesTextAndBanner](/pages/createpage.action?spaceKey=EZC14&title=Landing+page+tool+-+blocks&linkCreation=true&fromPageId=23560212) has been extended, so objects from type silver.module can be added to this block as well.
-
 All paramaters from the block template are forwarded and accesible here, example:
-
-**Silversolutions/Bundle/EshopBundle/Resources/views/block/text\_and\_banner\_50.html.twig**
-
-``` 
-{# image_alias and view will be accessible in the newsletter_box.html.twig #}
-{# therefore is is possible to display different width depending on the view #}
-
-{{ render(
-  controller(
-    'ez_content:viewLocation',
-    {
-      'locationId': item.locationId,
-      'viewType': 'block_item',
-      'params' : {'image_alias' : image_alias, 'view' : 50}
-    })
-  ) 
-}} 
-```
 
 #### View 50
 

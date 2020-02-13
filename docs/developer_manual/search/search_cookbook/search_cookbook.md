@@ -238,7 +238,10 @@ If in the project we would need some custom condition we need to implement some 
 <td>2. Create new handler class</td>
 <td><div class="content-wrapper">
 <p>Any of the query criteria from eZ Platform can be used here instead "Query\Criterion\Visibility"</p>
-<pre class="" data-syntaxhighlighter-params="brush: java; gutter: false; theme: DJango" data-theme="DJango"><code>class CustomConditionHandler implements EzSearchClauseHandlerInterface
+<pre class="" data-syntaxhighlighter-params="brush: java; gutter: false; theme: DJango" data-theme="DJango"><code>use eZ\Publish\API\Repository\Values\Content\Query;
+use eZ\Publish\API\Repository\Values\Content\Query\SortClause\Field;
+
+class CustomConditionHandler implements EzSearchClauseHandlerInterface
 {
     /**
      * @param SearchClauseInterface $searchClause

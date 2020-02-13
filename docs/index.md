@@ -40,7 +40,6 @@ These documents offer a good introduction into how the shop works:
 
 ## Interesting topics for eZ developers
 
-  - The [Template resolver](Template-resolver_23560645.html) offers flexible override features as known in the former eZ Publish 4 version
   - A nice [Configuration](Configuration_23560547.html) tool allows to edit config resolver settings in the backend of the shop
   - Use the new Page Builder for the eShop:  [Landingpages](Landingpages_23560995.html)
   - Where to find the master templates: [3. Templates](3.-Templates_23561000.html)

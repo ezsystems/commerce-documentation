@@ -1,6 +1,6 @@
 #  ERP Message: SelectContact
 
-Fetches contact information, like all types of addresses etc., from the ERP system or CRM system.
+Fetches contact information, like all types of contact related data, from the ERP system or CRM system.
 
 ## Request XML
 

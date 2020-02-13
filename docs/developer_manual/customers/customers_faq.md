@@ -48,10 +48,15 @@ These eZ types are supported:
   - eZ\\Publish\\Core\\FieldType\\Date\\Value
   - eZ\\Publish\\Core\\FieldType\\DateAndTime\\Value
   - Silversolutions\\Bundle\\DatatypesBundle\\FieldType\\SesSelection\\Value
+  - EzSystems\EzPlatformMatrixFieldtype\FieldType\Value 
 
 #### Default User class definition
 
 ![](attachments/23560609/23563749.png)
+
+In php:
+
+`$customerProfileData->getDataMap()->getAttribute('ez_salutation')`
 
 ## Attachments:
 

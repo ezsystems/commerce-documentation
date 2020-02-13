@@ -98,3 +98,7 @@ create index ind_datatext  on sve_object_attributes_tmp (data_text(20));
 ```
 
 In this case we assume that a sku has a max lenght of 20 which should be fine for almost all projects.
+
+Facets are lowercased
+
+The configuration index_facet_fields has to be defined for the specific fields which should not be lowercased. See Indexing econtent data

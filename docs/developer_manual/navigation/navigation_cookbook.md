@@ -11,9 +11,6 @@ You have the possibility to extend the search query before navigation data is fe
   - ``` 
     PostBuildSolrQueryEvent
     ```
-    
-     
-
 ## PostBuildEzContentQueryEvent
 
 This event is thrown just before the eZ content for the navigation is fetched and it allows you to extend the search query. You have to implement an event listener, if you want to listen to it.

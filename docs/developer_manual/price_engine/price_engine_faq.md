@@ -103,9 +103,6 @@ If your price provider needs some additional information, you can provide them i
     
     $priceRequest->setExtendedData($extendedData);
     ```
-
-     
-
   - On the line level in  *extendedData* 
 
     ``` 
@@ -116,9 +113,6 @@ If your price provider needs some additional information, you can provide them i
     
     $priceLine->setExtendedData($extendedData);
     ```
-
-     
-
   - You can also pass additional data in the parties, if they are connected to a customer
 
     ``` 

@@ -209,8 +209,7 @@ These eZ types are supported:
   - eZ\\Publish\\Core\\FieldType\\DateAndTime\\Value
   - Silversolutions\\Bundle\\DatatypesBundle\\FieldType\\SesSelection\\Value
 
-#### Default User class definition  
-<div class="error">
+#### Default User class definition
 
 Error rendering macro 'excerpt-include' : No link could be created for 'Customer Profile Data old'.
 

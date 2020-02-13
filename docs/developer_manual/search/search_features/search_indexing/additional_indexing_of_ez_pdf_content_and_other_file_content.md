@@ -157,7 +157,7 @@ This jar file can be downloaded from here:
 
 <http://www.apache.org/dyn/closer.cgi/tika/tika-app-1.13.jar>
 
-<span class="status-macro aui-lozenge aui-lozenge-error">WARNING
+WARNING
 
 **Apache Tika log file is hardcoded. So make sure the file is writable both by command line user who executes the indexer and the apache user, because the indexer will be triggered after a file modification in the backend.**
 

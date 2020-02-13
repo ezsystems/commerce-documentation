@@ -1,0 +1,77 @@
+# Simple Checkout 
+
+This is an alternative checkout implementation with only one step involved.
+
+## How to configure the simple checkout
+
+Replace the CheckoutController with the SimpleCheckoutController in routing.yml:
+
+**routing.yml**
+
+```
+ path:  /checkout
+ defaults:
+-   _controller: SisoCheckoutBundle:Checkout:index
++   _controller: SisoCheckoutBundle:SimpleCheckout:index
+    breadcrumb_path: silversolutions_basket_show/siso_checkout_homepage
+    breadcrumb_names: Shopping basket/Checkout
+```
+
+Replace checkout.js with simple\_checkout.js:
+
+**pagelayout.html.twig**
+
+``` 
+{% javascripts
+-'bundles/silversolutionseshop/js/phalanx/hoplite/checkout/checkout.js'
++'bundles/silversolutionseshop/js/phalanx/hoplite/checkout/simple_checkout.js'
+%}
+```
+
+DESCRIPTION
+
+**checkout.yml**
+
+```
+ checkoutForms:
+    invoice:
+        modelClass: Siso\Bundle\CheckoutBundle\Form\CheckoutInvoiceAddress
+        #typeService: siso_checkout.form_entity.checkout_invoice_address_type
+        typeClass: Siso\Bundle\CheckoutBundle\Form\Type\CheckoutInvoiceAddressType
+-       template: SilversolutionsEshopBundle:Checkout/simple:checkout_invoice_address.html.twig
++       template: SilversolutionsEshopBundle:Checkout/simple:checkout_invoice_address.html.twig
+        templateSidebar: SilversolutionsEshopBundle:Checkout:sidebar_invoice_address.html.twig
+        invalidMessage: error_message_checkout_invoice_address
+        validMessage: success_message_checkout_invoice_address
+        service: siso_checkout.checkout_form.invoice_address
+    delivery:
+-       modelClass: Siso\Bundle\CheckoutBundle\Form\CheckoutDeliveryAddress
++       modelClass: Siso\Bundle\CheckoutBundle\Form\SimpleCheckoutDeliveryAddress
+        #typeService: siso_checkout.form_entity.checkout_delivery_address_type
+-       typeClass: Siso\Bundle\CheckoutBundle\Form\Type\CheckoutDeliveryAddressType
+-       template: SilversolutionsEshopBundle:Checkout:checkout_delivery_address.html.twig
++       typeClass: Siso\Bundle\CheckoutBundle\Form\Type\SimpleCheckoutDeliveryAddressType
++       template: SilversolutionsEshopBundle:Checkout/simple:checkout_delivery_address.html.twig
+        templateSidebar: SilversolutionsEshopBundle:Checkout:sidebar_delivery_address.html.twig
+        invalidMessage: error_message_checkout_delivery_address
+        validMessage: success_message_checkout_delivery_address
+-       service: siso_checkout.checkout_form.delivery_address
++       service: siso_checkout.simple_checkout_delivery_address_form_service
+    shippingPayment:
+        modelClass: Siso\Bundle\CheckoutBundle\Form\CheckoutShippingPayment
+        #typeService: siso_checkout.form_entity.checkout_shipping_payment_type
+        typeClass: Siso\Bundle\CheckoutBundle\Form\Type\CheckoutShippingPaymentType
+        template: SilversolutionsEshopBundle:Checkout:checkout_shipping_payment.html.twig
+        invalidMessage: error_message_checkout_shipping_payment
+        validMessage: success_message_checkout_shipping_payment
+        service: siso_checkout.checkout_form.shipping_payment
+    summary:
+        modelClass: Siso\Bundle\CheckoutBundle\Form\CheckoutSummary
+        #typeService: siso_checkout.form_entity.checkout_summary_type
+        typeClass: Siso\Bundle\CheckoutBundle\Form\Type\CheckoutSummaryType
+        template: SilversolutionsEshopBundle:Checkout:checkout_summary.html.twig
+        templateSidebar: SilversolutionsEshopBundle:Checkout:sidebar_summary.html.twig
+        invalidMessage: error_message_checkout_summary
+        validMessage: success_message_checkout_summary
+        service: siso_checkout.checkout_form.summary
+```

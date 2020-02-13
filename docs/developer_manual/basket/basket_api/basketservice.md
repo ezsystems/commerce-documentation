@@ -26,8 +26,10 @@ string $state</p></td>
 <tr>
 <td><pre><code>storeBasket</code></pre></td>
 <td><p>Stores basket in the DB. If necessary, the PriceEngine is initiated and Prices for Totals are calculated and stored.</p>
-<p>Also the flag $allProductsAvailable is set here. If required the catalog elements are fetched and stored again</p></td>
-<td>Basket $basket</td>
+<p>Also the flag $allProductsAvailable is set here. If required the catalog elements are fetched and stored again</p>
+<p>Parameter $updateDateLastModified is used to determine whether dateLastModified should be updated in the basket or not</p></td>
+<td><p>Basket $basket</p>
+<p>updateDateLastModified</p></td>
 <td>Basket - stored $basket</td>
 </tr>
 <tr>

@@ -1,9 +1,6 @@
 #  Set up new project design 
 
 1.  Add a new ez\_design.yml to your project bundle.
-
-    
-
     Don't remove the base\_theme when adding a project\_theme to the project design\!
 
     **src/ProjectBundle/Resources/config/ez\_design.yml**
