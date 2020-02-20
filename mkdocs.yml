@@ -193,32 +193,6 @@ pages:
                 - 'developer_manual/catalog/catalog_cookbook/how_to_setup_variants_from_external_source.md'
             - 'developer_manual/catalog/catalog_configuration.md'
             - 'developer_manual/catalog/catalog_faq.md'
-        - eContent:
-            - 'developer_manual/econtent/econtent.md'
-            - eContent features:
-                - 'developer_manual/econtent/econtent_features/econtent_features.md'
-                - 'developer_manual/econtent/econtent_features/econtent_dataprovider_database_model.md'
-                - 'developer_manual/econtent/econtent_features/switching_the_data_provider.md'
-                - 'developer_manual/econtent/econtent_features/econtent_dataprovider_catalog_segmentation.md'
-                - 'developer_manual/econtent/econtent_features/econtent_providing_variants.md'
-                - Indexing eContent data:
-                    - 'developer_manual/econtent/econtent_features/indexing_econtent_data/indexing_econtent_data.md'
-                    - 'developer_manual/econtent/econtent_features/indexing_econtent_data/dedicated_solr_cores_for_econtent.md'
-                    - 'developer_manual/econtent/econtent_features/indexing_econtent_data/how_econtent_indexer_works.md'
-                - 'developer_manual/econtent/econtent_features/econtent_staging_system.md'
-                - 'developer_manual/econtent/econtent_features/econtent_backend_features.md'
-            - 'developer_manual/econtent/econtent_api.md'
-            - 'developer_manual/econtent/econtent_faq.md'
-            - eContent cookbook:
-                - 'developer_manual/econtent/econtent_cookbook/econtent_dataprovider_how_to_extend_econtentcatalogfactory_class.md'
-                - eContent search cookbook:
-                    - 'developer_manual/econtent/econtent_cookbook/econtent_search_cookbook/how_to_implement_a_custom_sorting_handler_for_econtent.md'
-                    - 'developer_manual/econtent/econtent_cookbook/econtent_search_cookbook/solr_minimum_match_specification_for_econtent.md'
-                    - 'developer_manual/econtent/econtent_cookbook/econtent_search_cookbook/how_to_implement_a_custom_indexer_plugin_for_econtent.md'
-                - eContent how to import products:
-                    - 'developer_manual/econtent/econtent_cookbook/econtent_how_to_import_products/how_to_import_products_api.md'
-                    - 'developer_manual/econtent/econtent_cookbook/econtent_how_to_import_products/how_to_import_and_index_data_sql.md'
-            - 'developer_manual/econtent/econtent_configuration.md'
         - Checkout:
             - 'developer_manual/checkout/checkout.md'
             - Checkout features:
@@ -270,56 +244,6 @@ pages:
             - 'developer_manual/customers/customers_templating.md'
             - 'developer_manual/customers/customers_faq.md'
             - 'developer_manual/customers/vat_handling.md'
-        - 'developer_manual/delegate_function.md'
-        - Integrate ERP Systems:
-            - 'developer_manual/integrate_erp_systems/integrate_erp_systems.md'
-            - 'developer_manual/integrate_erp_systems/how_does_the_shop_communicate_with_the_erp.md'
-            - ERP communication:
-                - 'developer_manual/integrate_erp_systems/erp_communication/erp_communication.md'
-                - Guides:
-                    - 'developer_manual/integrate_erp_systems/erp_communication/guides/guide_how_to_get_product_data_from_the_erp.md'
-                    - How to create a new ERP message:
-                        - 'developer_manual/integrate_erp_systems/erp_communication/guides/how_to_create_a_new_erp_message/how_to_create_a_new_erp_message.md'
-                        - 'developer_manual/integrate_erp_systems/erp_communication/guides/how_to_create_a_new_erp_message/create_a_project_specific_message_selectmodified_data.md'
-                        - 'developer_manual/integrate_erp_systems/erp_communication/guides/how_to_create_a_new_erp_message/create_a_standard_message_updatecustomer.md'
-                    - 'developer_manual/integrate_erp_systems/erp_communication/guides/how_to_implement_erp_nav_delivery_address_creation_and_updates.md'
-                    - 'developer_manual/integrate_erp_systems/erp_communication/guides/usage_of_ubl.md'
-                - 'developer_manual/integrate_erp_systems/erp_communication/erp_logging.md'
-                - 'developer_manual/integrate_erp_systems/erp_communication/additionallines.md'
-                - ERP components:
-                    - 'developer_manual/integrate_erp_systems/erp_communication/erp_components/erp_components.md'
-                    - 'developer_manual/integrate_erp_systems/erp_communication/erp_components/erp_component_mapping.md'
-                    - ERP component messages:
-                        - 'developer_manual/integrate_erp_systems/erp_communication/erp_components/erp_component_messages/erp_component_messages.md'
-                        - 'developer_manual/integrate_erp_systems/erp_communication/erp_components/erp_component_messages/erp_message_instantiation.md'
-                        - 'developer_manual/integrate_erp_systems/erp_communication/erp_components/erp_component_messages/erp_message_class_generator.md'
-                        - 'developer_manual/integrate_erp_systems/erp_communication/erp_components/erp_component_messages/erp_message_calculatesalesorder_createsalesorder.md'
-                        - 'developer_manual/integrate_erp_systems/erp_communication/erp_components/erp_component_messages/erp_message_selectcontact.md'
-                        - 'developer_manual/integrate_erp_systems/erp_communication/erp_components/erp_component_messages/erp_message_select_customer.md'
-                        - 'developer_manual/integrate_erp_systems/erp_communication/erp_components/erp_component_messages/erp_message_invoice_detail.md'
-                        - 'developer_manual/integrate_erp_systems/erp_communication/erp_components/erp_component_messages/erp_message_updatecustomer.md'
-                        - 'developer_manual/integrate_erp_systems/erp_communication/erp_components/erp_component_messages/erp_messages.md'
-                    - 'developer_manual/integrate_erp_systems/erp_communication/erp_components/erp_component_service.md'
-                    - 'developer_manual/integrate_erp_systems/erp_communication/erp_components/erp_component_transport.md'
-                - 'developer_manual/integrate_erp_systems/erp_communication/erp_faq.md'
-                - ERP configuration:
-                    - 'developer_manual/integrate_erp_systems/erp_communication/erp_configuration/erp_configuration.md'
-                    - Adapt the mappings for ERP functions:
-                        - 'developer_manual/integrate_erp_systems/erp_communication/erp_configuration/adapt_the_mappings_for_erp_functions/adapt_the_mappings_for_erp_functions.md'
-                        - 'developer_manual/integrate_erp_systems/erp_communication/erp_configuration/adapt_the_mappings_for_erp_functions/example_ubl_for_price_calculation.md'
-                    - 'developer_manual/integrate_erp_systems/erp_communication/erp_configuration/configuration_for__webservice_based_erps.md'
-                    - 'developer_manual/integrate_erp_systems/erp_communication/erp_configuration/curl_configuration.md'
-                    - 'developer_manual/integrate_erp_systems/erp_communication/erp_configuration/web_connector_configuration.md'
-            - Price calculation:
-                - 'developer_manual/integrate_erp_systems/price_calculation/remotepriceprovider.md'
-            - Checkout order:
-                - ERP order synchronisation:
-                    - Failed order process:
-                        - 'developer_manual/integrate_erp_systems/checkout_order/erp_order_synchronisation/failed_order_process/failed_order_process.md'
-                        - 'developer_manual/integrate_erp_systems/checkout_order/erp_order_synchronisation/failed_order_process/lost_orders.md'
-                    - Order submission:
-                        - 'developer_manual/integrate_erp_systems/checkout_order/erp_order_synchronisation/order_submission/order_submission.md'
-                        - 'developer_manual/integrate_erp_systems/checkout_order/erp_order_synchronisation/order_submission/order_format.md'
         - Logging:
             - 'developer_manual/logging/logging.md'
             - 'developer_manual/logging/logging_api.md'
@@ -490,15 +414,9 @@ pages:
             - ezdesign engine:
                 - 'developer_manual/templating/ezdesign_engine/ez_design_engine.md'
                 - 'developer_manual/templating/ezdesign_engine/set_up_new_project_design.md'
-        - 'developer_manual/job_system.md'
         - Translations:
             - 'developer_manual/translations/translations.md'
             - 'developer_manual/translations/onesky.md'
-        - Vouchers from ERP:
-            - 'developer_manual/vouchers_from_erp/vouchers_from_erp.md'
-            - 'developer_manual/vouchers_from_erp/vouchers_api.md'
-            - 'developer_manual/vouchers_from_erp/vouchers_faq.md'
-            - 'developer_manual/vouchers_from_erp/vouchers_templates.md'
         - Wishlist and stored baskets:
             - 'developer_manual/wishlist_and_stored_baskets/wishlist_and_stored_baskets.md'
             - 'developer_manual/wishlist_and_stored_baskets/wishlist_and_stored_basket_wishlist.md'
@@ -734,7 +652,89 @@ pages:
                 - 'Common': 'plugins/sisorestapibundle/api/common.md'
                 - 'Customer functions': 'plugins/sisorestapibundle/api/customer_functions.md'
             - 'Background infos': 'plugins/sisorestapibundle/background_infos.md'
-
+    - Features - advanced version:
+        - Integrate ERP Systems:
+            - 'Integrate ERP systems': 'features_advanced_version/integrate_erp_systems/integrate_erp_systems.md'
+            - 'How does the shop communicate with the ERP': 'features_advanced_version/integrate_erp_systems/how_does_the_shop_communicate_with_the_erp.md'
+            - ERP communication:
+                - 'ERP communication': 'features_advanced_version/integrate_erp_systems/erp_communication/erp_communication.md'
+                - Guides:
+                    - 'features_advanced_version/integrate_erp_systems/erp_communication/guides/guide_how_to_get_product_data_from_the_erp.md'
+                    - How to create a new ERP message:
+                        - 'How to create a new ERP message (example: ItemTransfer)': 'features_advanced_version/integrate_erp_systems/erp_communication/guides/how_to_create_a_new_erp_message/how_to_create_a_new_erp_message.md'
+                        - 'Create a project specific message (SelectModifiedData)': 'features_advanced_version/integrate_erp_systems/erp_communication/guides/how_to_create_a_new_erp_message/create_a_project_specific_message_selectmodified_data.md'
+                        - 'Create a standard message (UpdateCustomer)': 'features_advanced_version/integrate_erp_systems/erp_communication/guides/how_to_create_a_new_erp_message/create_a_standard_message_updatecustomer.md'
+                    - 'How to implement ERP (NAV) delivery address creation and updates': 'features_advanced_version/integrate_erp_systems/erp_communication/guides/how_to_implement_erp_nav_delivery_address_creation_and_updates.md'
+                    - 'Usage of UBL': 'features_advanced_version/integrate_erp_systems/erp_communication/guides/usage_of_ubl.md'
+                - 'ERP Logging': 'features_advanced_version/integrate_erp_systems/erp_communication/erp_logging.md'
+                - 'AdditionalLines': 'features_advanced_version/integrate_erp_systems/erp_communication/additionallines.md'
+                - ERP components:
+                    - 'ERP Components': 'features_advanced_version/integrate_erp_systems/erp_communication/erp_components/erp_components.md'
+                    - 'ERP Component: Mapping': 'features_advanced_version/integrate_erp_systems/erp_communication/erp_components/erp_component_mapping.md'
+                    - ERP component messages:
+                        - 'ERP Component: Messages': 'features_advanced_version/integrate_erp_systems/erp_communication/erp_components/erp_component_messages/erp_component_messages.md'
+                        - 'ERP Message Instantiation': 'features_advanced_version/integrate_erp_systems/erp_communication/erp_components/erp_component_messages/erp_message_instantiation.md'
+                        - 'ERP Message-Class-Generator': 'features_advanced_version/integrate_erp_systems/erp_communication/erp_components/erp_component_messages/erp_message_class_generator.md'
+                        - 'ERP Message: CalculateSalesOrder / CreateSalesOrder': 'features_advanced_version/integrate_erp_systems/erp_communication/erp_components/erp_component_messages/erp_message_calculatesalesorder_createsalesorder.md'
+                        - 'ERP Message: SelectContact': 'features_advanced_version/integrate_erp_systems/erp_communication/erp_components/erp_component_messages/erp_message_selectcontact.md'
+                        - 'ERP Message: SelectCustomer': 'features_advanced_version/integrate_erp_systems/erp_communication/erp_components/erp_component_messages/erp_message_select_customer.md'
+                        - 'ERP Message: InvoiceDetail': 'features_advanced_version/integrate_erp_systems/erp_communication/erp_components/erp_component_messages/erp_message_invoice_detail.md'
+                        - 'ERP Message: UpdateCustomer': 'features_advanced_version/integrate_erp_systems/erp_communication/erp_components/erp_component_messages/erp_message_updatecustomer.md'
+                        - 'ERP Messages: ReadDeliveryAddress, UpdateDeliveryAddress, CreateDeliveryAddress, DeleteDeliveryAddress': 'features_advanced_version/integrate_erp_systems/erp_communication/erp_components/erp_component_messages/erp_messages.md'
+                    - 'ERP Component: Service': 'features_advanced_version/integrate_erp_systems/erp_communication/erp_components/erp_component_service.md'
+                    - 'ERP Component: Transport': 'features_advanced_version/integrate_erp_systems/erp_communication/erp_components/erp_component_transport.md'
+                - 'ERP - FAQ': 'features_advanced_version/integrate_erp_systems/erp_communication/erp_faq.md'
+                - ERP configuration:
+                    - 'ERP Configuration': 'features_advanced_version/integrate_erp_systems/erp_communication/erp_configuration/erp_configuration.md'
+                    - Adapt the mappings for ERP functions:
+                        - 'Adapt the mappings for ERP functions': 'features_advanced_version/integrate_erp_systems/erp_communication/erp_configuration/adapt_the_mappings_for_erp_functions/adapt_the_mappings_for_erp_functions.md'
+                        - 'Example UBL for price calculation': 'features_advanced_version/integrate_erp_systems/erp_communication/erp_configuration/adapt_the_mappings_for_erp_functions/example_ubl_for_price_calculation.md'
+                    - 'Configuration for Webservice based ERPs': 'features_advanced_version/integrate_erp_systems/erp_communication/erp_configuration/configuration_for_webservice_based_erps.md'
+                    - 'Curl Configuration': 'features_advanced_version/integrate_erp_systems/erp_communication/erp_configuration/curl_configuration.md'
+                    - 'Web-Connector Configuration': 'features_advanced_version/integrate_erp_systems/erp_communication/erp_configuration/web_connector_configuration.md'
+            - Price calculation:
+                - 'RemotePriceProvider': 'features_advanced_version/integrate_erp_systems/price_calculation/remotepriceprovider.md'
+            - Checkout order:
+                - ERP order synchronisation:
+                    - Failed order process:
+                        - 'Failed Order Process': 'features_advanced_version/integrate_erp_systems/checkout_order/erp_order_synchronisation/failed_order_process/failed_order_process.md'
+                        - 'Lost orders': 'features_advanced_version/integrate_erp_systems/checkout_order/erp_order_synchronisation/failed_order_process/lost_orders.md'
+                    - Order submission:
+                        - 'Order Submission': 'features_advanced_version/integrate_erp_systems/checkout_order/erp_order_synchronisation/order_submission/order_submission.md'
+                        - 'Order format': 'features_advanced_version/integrate_erp_systems/checkout_order/erp_order_synchronisation/order_submission/order_format.md'
+        - 'Delegate Function': 'features_advanced_version/delegate_function.md'
+        - eContent:
+            - 'eContent': 'features_advanced_version/econtent/econtent.md'
+            - eContent features:
+                - 'eContent - Features': 'features_advanced_version/econtent/econtent_features/econtent_features.md'
+                - 'eContent dataprovider - database model': 'features_advanced_version/econtent/econtent_features/econtent_dataprovider_database_model.md'
+                - 'Switching the data provider': 'features_advanced_version/econtent/econtent_features/switching_the_data_provider.md'
+                - 'eContent dataprovider - catalog segmentation': 'features_advanced_version/econtent/econtent_features/econtent_dataprovider_catalog_segmentation.md'
+                - 'eContent - providing variants': 'features_advanced_version/econtent/econtent_features/econtent_providing_variants.md'
+                - Indexing eContent data:
+                    - 'Indexing eContent data': 'features_advanced_version/econtent/econtent_features/indexing_econtent_data/indexing_econtent_data.md'
+                    - 'Dedicated solr cores for econtent': 'features_advanced_version/econtent/econtent_features/indexing_econtent_data/dedicated_solr_cores_for_econtent.md'
+                    - 'How eContent Indexer Works': 'features_advanced_version/econtent/econtent_features/indexing_econtent_data/how_econtent_indexer_works.md'
+                - 'eContent - Staging system': 'features_advanced_version/econtent/econtent_features/econtent_staging_system.md'
+                - 'eContent - backend features': 'features_advanced_version/econtent/econtent_features/econtent_backend_features.md'
+            - 'eContent - API': 'features_advanced_version/econtent/econtent_api.md'
+            - 'eContent - FAQ': 'features_advanced_version/econtent/econtent_faq.md'
+            - eContent cookbook:
+                - 'eContent dataprovider - How to extend EcontentCatalogFactory class': 'features_advanced_version/econtent/econtent_cookbook/econtent_dataprovider_how_to_extend_econtentcatalogfactory_class.md'
+                - eContent search cookbook:
+                    - 'How to implement a custom sorting handler for eContent': 'features_advanced_version/econtent/econtent_cookbook/econtent_search_cookbook/how_to_implement_a_custom_sorting_handler_for_econtent.md'
+                    - 'Solr Minimum Match specification for eContent': 'features_advanced_version/econtent/econtent_cookbook/econtent_search_cookbook/solr_minimum_match_specification_for_econtent.md'
+                    - 'How to implement a custom indexer plugin for eContent': 'features_advanced_version/econtent/econtent_cookbook/econtent_search_cookbook/how_to_implement_a_custom_indexer_plugin_for_econtent.md'
+                - eContent how to import products:
+                    - 'How to import products (API)': 'features_advanced_version/econtent/econtent_cookbook/econtent_how_to_import_products/how_to_import_products_api.md'
+                    - 'How to import and index data (SQL)': 'features_advanced_version/econtent/econtent_cookbook/econtent_how_to_import_products/how_to_import_and_index_data_sql.md'
+            - 'eContent - Configuration': 'features_advanced_version/econtent/econtent_configuration.md'
+        - Vouchers from ERP:
+            - 'Vouchers from ERP': 'features_advanced_version/vouchers_from_erp/vouchers_from_erp.md'
+            - 'Vouchers - API': 'features_advanced_version/vouchers_from_erp/vouchers_api.md'
+            - 'Vouchers - FAQ': 'features_advanced_version/vouchers_from_erp/vouchers_faq.md'
+            - 'Vouchers - Templates': 'features_advanced_version/vouchers_from_erp/vouchers_templates.md'
+        - 'Job system': 'features_advanced_version/job_system.md'
     - Glossary:
         - 'glossary/term_buyerparty.md'
         - 'glossary/term_cms.md'
