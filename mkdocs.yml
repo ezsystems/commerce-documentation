@@ -759,13 +759,12 @@ pages:
         - 'glossary/term_ubl_format.md'
         - 'glossary/term_vatcode.md'
     - Release notes:
-        - 'release_notes/release_notes_2.2_4.0.md'
-        - 'release_notes/release_notes_2.4_4.1.md'
+        - 'Release notes 2.2': 'release_notes/release_notes_2.2_4.0.md'
+        - 'Release notes 2.4': 'release_notes/release_notes_2.4_4.1.md'
         - 'Release notes 2.5':
             - 'Release notes 2.5': 'release_notes/release_notes_2.5_4.1.1.md'
-            - 'Release notes 2.5.1 (4.1.2)': 'release_notes/release_notes_2.5.1.md'
-            - 'Release notes 2.5.2 (4.1.3)': 'release_notes/release_notes_2.5.2.md'
-        - 'release_notes/update_notes_silver.eshop.md'
+            - 'Release notes 2.5.1': 'release_notes/release_notes_2.5.1.md'
+        - 'Update notes silver.eShop': 'release_notes/update_notes_silver.eshop.md'
 
 theme:
   name: null
