@@ -1,7 +1,7 @@
 site_name: eZ Commerce Documentation
 repo_url: https:/github.com/ezsystems/commerce-documentation
 copyright: "Copyright 1999-2020 eZ Systems AS and others"
-pages:
+nav:
     - 'Documentation': 'index.md'
     - Product description:
         - 'product_description/product_description.md'
@@ -781,7 +781,7 @@ theme:
       tabs: false
   search_index_only: false
 
-theme_dir: material
+# theme_dir: material
 
 extra:
   version_warning:
