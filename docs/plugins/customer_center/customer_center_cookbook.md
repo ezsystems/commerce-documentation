@@ -1,22 +1,22 @@
-#  Customer Center - Cookbook 
+# Customer Center - Cookbook
 
 ## How to extend the customer center forms?
 
-Let´s say you need to add more fields to the customer center forms because you want to know to 'Cost center' of the user. This cost center will be stored in eZ and could be sent to the ERP during the order process. Then you need to add this field as dynamic field to your form configuration.
+Let's say you need to add more fields to the customer center forms because you want to know to 'Cost center' of the user. This cost center will be stored in eZ and could be sent to the ERP during the order process. Then you need to add this field as dynamic field to your form configuration.
 
-This tutorial will just explain how to extend the form with additional data, that will be stored in eZ. Sending of this additional data (e.g. in the order process) is part of a different process, that needs to be implemented separately. See [Sending additional data in the order.](Order-Submission_29819159.html)
+!!! note
+
+    This tutorial will just explain how to extend the form with additional data, that will be stored in eZ. Sending of this additional data (e.g. in the order process) is part of a different process, that needs to be implemented separately. See [Sending additional data in the order.](Order-Submission_29819159.html)
 
 ### Steps:
 
 1.  Extend your User class in eZ with a new field 'cost\_center'. The field type must be one of the supported field types: Text line, Float, Integer, Checkbox.
-
 2.  Add this new field to the form configuration as a dynamic field, first choose the form field type, how the field should be rendered (<http://symfony.com/doc/current/reference/forms/types.html>).
-
 3.  Add validation and other settings. The options are depending on the field type, that you have choosen.
     
     Example: type: *text*, see settings: <http://symfony.com/doc/current/reference/forms/types/text.html>
     
-    ``` 
+    ``` yaml
     siso_customer_center.default.form.request_user:
        ...
         attributes:
@@ -30,7 +30,7 @@ This tutorial will just explain how to extend the form with additional data, tha
 
 4.  The new field will appear in your form and can be edited. The data will be stored in the eZ field. If you have extended the request form, the new field might be sent to ERP also, when new contact is created in ERP.
         
-    Important
+!!! warning
         
     The eZ field identifier and the field identifier in the configuration must match, if you want to store data in eZ\!
 
@@ -46,7 +46,7 @@ Condition for this recipe is, that you have prepared a message 'updateContact' t
 
     **Example**
 
-    ``` 
+    ``` php
     class UpdateContactInErpProcessor implements FormProcessorInterface
     {
         public function execute(Form $form, array $lastResult = array())
@@ -95,9 +95,9 @@ Condition for this recipe is, that you have prepared a message 'updateContact' t
     </service>
     ```
 
-3.  Add yor data processor to the form configuration
+3.  Add your data processor to the form configuration
 
-    ``` 
+    ``` yaml
     siso_customer_center.default.form.edit_user:
         invalidMessage: error_message_customer_center_forms
         validMessage: success_message_customer_center_edit_user
@@ -112,7 +112,7 @@ Condition for this recipe is, that you have prepared a message 'updateContact' t
 
 # How to extend the budget with budget per year?
 
-Let´s say you need to proove the user budget also per year. Then you should extend the Ez User class first.
+Let´s say you need to prove the user budget also per year. Then you should extend the Ez User class first.
 
 Edit your user class and add a new attribute of type 'Float'. The field type must be one of the supported field types: Text line, Float, Integer, Checkbox.
 
@@ -149,9 +149,9 @@ The easiest way is to override this service in your project and consider also th
 
 ##### Implementation example:
 
-**CompanyName\\Bundle\\ProjectBundle\\Service\\OrderBudgetService**
+`CompanyName\Bundle\ProjectBundle\Service\OrderBudgetService`
 
-``` 
+``` php
 public function isBudgetExceeded($amount, $userId)
 {
     $userService = $this->ezRepository->getUserService();

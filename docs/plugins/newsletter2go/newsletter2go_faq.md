@@ -1,14 +1,16 @@
 # Newsletter2Go - FAQ 
 
-How to send additional data to the newsletter provider?
-Check the cookbook recipe:  [How to send additional data to the Newsletter provider?](How-to-send-additional-data-to-Newsletter2Go_29819463.html)
-How to work with several newsletters (address books)?
+## How to send additional data to the newsletter provider?
+
+Check the cookbook recipe:  [How to send additional data to the Newsletter provider?](https://doc.silver-eshop.de/display/EC14/How+to+send+additional+data+to+Newsletter2Go)
+
+## How to work with several newsletters (address books)?
 
 silver.e-shop is working with the default address book only. If you want to offer several newsletter topics in your project, you need to follow these steps:
 
 1.  Provide an user interface, where the user can choose one/several newsletter topics. In Newsletter2Go you need to provide an address book per newsletter topic.
 
-![](attachments/29819459/29829447.png)
+![](../img/newsletter2go_4.png)
 
 2\. Behind every newsletter topic the address book id must be configured
 
@@ -35,10 +37,4 @@ parameters:
 
 5\. User will be created in selected address books
 
-![](attachments/29819459/29829448.png)
-
-## Attachments:
-
-![](images/icons/bullet_blue.gif) [Bildschirmfoto 2016-11-14 um 10.50.51.png](attachments/29819459/29829445.png) (image/png)  
-![](images/icons/bullet_blue.gif) [Bildschirmfoto 2016-11-14 um 11.59.33.png](attachments/29819459/29829447.png) (image/png)  
-![](images/icons/bullet_blue.gif) [Bildschirmfoto 2016-11-14 um 12.08.57.png](attachments/29819459/29829448.png) (image/png)  
+![](../img/newsletter2go_5.png)

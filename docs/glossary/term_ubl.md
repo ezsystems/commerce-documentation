@@ -1,4 +1,4 @@
-#  Term - UBL 
+# Term - UBL
 
 eZ Commerce uses UBL (Universal Business Language) as a standard for the communication between the ERP systems and the shop. UBL is used also for representing data in the shop such as the customer data. 
 

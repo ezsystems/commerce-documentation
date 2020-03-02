@@ -1,8 +1,8 @@
-#  FormProcessorServices 
+# FormProcessorServices
 
-## CheckUserEmailFormProcessor  
+## CheckUserEmailFormProcessor
 
-Form processor that checks if user with given email address already exists in the company structure.  
+Form processor that checks if user with given email address already exists in the company structure.  
 
 ### Configuration  
 
@@ -21,14 +21,14 @@ Form processor that creates a new eZ user content object out of the posted form 
 **Service ID**
 
 ```
-siso_customer_center.processor.add_user_in_ez 
+siso_customer_center.processor.add_user_in_ez 
 ```
 
-#  CreateContactInErpProcessor
+#  CreateContactInErpProcessor
 
 If this processor is active, it will perform the CreateContact request to the ERP. This processor only creates the contact in the ERP system and sets CUSTOMER\_NUMBER and CONTACT\_NUMBER within the $lastResult array. If further processing is necessary, subsequent processors must take care of it.
 
-###  Configuration  
+###  Configuration  
 
 **Service ID**
 
@@ -74,7 +74,7 @@ siso_customer_center.processor.update_user_roles
 
 ## ValidateCustomerAndContactNumberProcessor
 
- Processor which checks given customer and contact number in ERP for validity and adds both to the $lastResponse array. FormDataProcessorException is thrown in case of any failed validation. Thus, any subsequent processor will not be reached.
+ Processor which checks given customer and contact number in ERP for validity and adds both to the $lastResponse array. FormDataProcessorException is thrown in case of any failed validation. Thus, any subsequent processor will not be reached.
 
 ### Configuration  
 

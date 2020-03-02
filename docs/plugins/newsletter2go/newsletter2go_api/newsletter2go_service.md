@@ -1,6 +1,5 @@
-# Newsletter2Go Service 
+# Newsletter2Go Service
 
-# Newsletter2GoService  
 This is the concrete implementation of the NewsletterInterface for the Newsletter2Go provider.  
 Newsletter2Go uses the REST approach to connect to the API.
 
@@ -8,12 +7,13 @@ Newsletter2Go uses the REST approach to connect to the API.
 
 Service ID
 
-    siso_newsletter.newsletter.newsletter2go_service
+`siso_newsletter.newsletter.newsletter2go_service`
 
 ## Configuration
 
 Following attributes have to be configured in order to connect to Newsletter2Go via API  
-``` 
+
+``` yaml
 siso_newsletter.default.newsletter2go_username: '%newsletter2go_username%'
 siso_newsletter.default.newsletter2go_password: '%newsletter2go_password%'
 siso_newsletter.default.newsletter2go_auth_key: '%newsletter2go_auth_key%'
@@ -22,17 +22,15 @@ siso_newsletter.default.newsletter2go_ssl_verification: false
 
 You will find the authentication data in the Newsletter2Go backend:
 
-![](../img/newsletter2go_service_1.png)
+![](../../img/newsletter2go_service_1.png)
 
-![](../img/newsletter2go_service_2.png)
+![](../../img/newsletter2go_service_2.png)
 
 ## How the service connects to the API?
 
-Internally the Newsletter2GoService makes a usage of the* Newsletter2GoApiService, *that can be used, if new methods needs to be implemented in order to communicate with the Newsletter2Go provider via the API.
+Internally the Newsletter2GoService makes a usage of the Newsletter2GoApiService, that can be used, if new methods needs to be implemented in order to communicate with the Newsletter2Go provider via the API.
 
-**Newsletter2GoApiService**
-
-``` 
+``` php
 public function connectApi($path, $method, $data = array());
 public function getApiFormattedDate(\DateTime $dateTime);
 public function getApiGenderCode($genderCode);
@@ -80,7 +78,7 @@ public function setCustomParameters(SubscribeNewsletterEvent $event)
     $params = $event->getParams();
     $customerProfileData = $event->getCustomerProfileData();
  
-    if (!array_key_exists('blocked', $params)) {
+    if (!array_key_exists('blocked', $params)) {
         $params['blocked'] = $customerProfileData->sesUser->contact->isBlocked;
     }
 

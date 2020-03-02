@@ -1,10 +1,8 @@
-#  Newsletter2Go Configuration 
+# Newsletter2Go Configuration
 
-See newsletter2go configuration:
+See newsletter2go configuration (in newsletter.yml):
 
-**newsletter.yml**
-
-``` 
+``` yaml
 parameters:
     #******** configuration for newsletter2go provider ************#
     # authentication

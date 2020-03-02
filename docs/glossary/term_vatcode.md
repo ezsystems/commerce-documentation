@@ -1,4 +1,4 @@
-#  Term - VatCode 
+# Term - VatCode
 
 **VatCode** is a code (e.g. 'download', 'food'...) which defines which kind of VAT (%) applies to a product. The VatCode is stored in a ProductNode. 
 

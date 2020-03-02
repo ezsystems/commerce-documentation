@@ -1,4 +1,4 @@
-# CustomerCenterContentService 
+# CustomerCenterContentService
 
 ## Goal
 

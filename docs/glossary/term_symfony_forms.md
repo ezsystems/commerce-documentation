@@ -1,9 +1,9 @@
-#  Term - Symfony forms 
+# Term - Symfony forms
 
-**[Symfony forms](http://symfony.com/doc/current/forms.html)** that are handled in eZ Commerce consists by default of two parts:
+[Symfony forms](http://symfony.com/doc/current/forms.html) that are handled in eZ Commerce consists by default of two parts:
 
-  - Form entity
-  - Form type
+- Form entity
+- Form type
 
 *Form entity* is just a simple class that holds the data and contains the [validation](https://symfony.com/doc/current/reference/constraints.html) annotations.
 
@@ -13,7 +13,7 @@ The form itself is than build by the appropriate instance like that:
 
 **Example**
 
-``` 
+``` php
 class FormController extends Controller
 {
     public function createFormAction()

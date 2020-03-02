@@ -1,6 +1,6 @@
-#  Term - shop\_id 
+# Term - shop_id
 
-Since eZ Commerce supports also the [multishop](#) feature, there is a configuration, that differentiates between the different shops: **shop\_id**. This shop id can be setup per siteaccess:
+Since eZ Commerce supports also the multishop feature, there is a configuration, that differentiates between the different shops: `shop_id`. This shop id can be setup per siteaccess:
 
 ``` 
 parameters:

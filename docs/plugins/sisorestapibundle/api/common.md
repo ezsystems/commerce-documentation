@@ -1,174 +1,162 @@
-# Common 
+# Common
 
 ## This page documents general REST API calls:
 
-  - getCountrySelection
-  - getCustomerPrice
+- getCountrySelection
+- getCustomerPrice
 
 ## getCountrySelection
 
-<table>
-<tbody>
-<tr class="odd">
-<td>Resourcename</td>
-<td><pre><code>/api/ezp/v2/siso-rest/country-selection (GET)</code></pre></td>
-</tr>
-<tr class="even">
-<td>Summary</td>
-<td><p>returns the list of configured country codes and their translation for current siteaccess</p></td>
-</tr>
-<tr class="odd">
-<td>Service ID</td>
-<td><p>siso_rest_api.country_selection_service</p>
-<p>Inside this service the countries will be fetched from service: siso_tools.country (see <a href="Country-Service_29819029.html">Country Service</a>)</p>
-<p>parameter ses_forms.default.preferred_country is used for defaultCountry</p></td>
-</tr>
-<tr class="even">
-<td>Request</td>
-<td><div class="content-wrapper">
-<p>empty</p>
-</td>
-</tr>
-<tr class="odd">
-<td>Response</td>
-<td><div class="content-wrapper">
-<pre class="" data-syntaxhighlighter-params="brush: js; gutter: false; theme: Confluence" data-theme="Confluence"><code>{
-    &quot;CountrySelectionResponse&quot;: {
-        &quot;_media-type&quot;: &quot;application\/vnd.ez.api.CountrySelectionResponse+json&quot;,
-        &quot;countryOptions&quot;: {
-            &quot;DZ&quot;: &quot;Algerien&quot;,
-            &quot;AU&quot;: &quot;Australien&quot;,
-            &quot;BE&quot;: &quot;Belgien&quot;,
-            &quot;BR&quot;: &quot;Brasilien&quot;,
-            &quot;BG&quot;: &quot;Bulgarien&quot;,
-            &quot;DK&quot;: &quot;D\u00e4nemark&quot;,
-            &quot;DE&quot;: &quot;Deutschland&quot;,
-            &quot;EE&quot;: &quot;Estland&quot;,
-            &quot;FI&quot;: &quot;Finnland&quot;,
-            &quot;FR&quot;: &quot;Frankreich&quot;,
-            &quot;GR&quot;: &quot;Griechenland&quot;,
-            &quot;IN&quot;: &quot;Indien&quot;,
-            &quot;ID&quot;: &quot;Indonesien&quot;,
-            &quot;IE&quot;: &quot;Irland&quot;,
-            &quot;IS&quot;: &quot;Island&quot;,
-            &quot;IT&quot;: &quot;Italien&quot;,
-            &quot;CA&quot;: &quot;Kanada&quot;,
-            &quot;KE&quot;: &quot;Kenia&quot;,
-            &quot;LV&quot;: &quot;Lettland&quot;,
-            &quot;LT&quot;: &quot;Litauen&quot;,
-            &quot;MY&quot;: &quot;Malaysia&quot;,
-            &quot;MT&quot;: &quot;Malta&quot;,
-            &quot;MX&quot;: &quot;Mexiko&quot;,
-            &quot;MZ&quot;: &quot;Mosambik&quot;,
-            &quot;NZ&quot;: &quot;Neuseeland&quot;,
-            &quot;NL&quot;: &quot;Niederlande&quot;,
-            &quot;NG&quot;: &quot;Nigeria&quot;,
-            &quot;NO&quot;: &quot;Norwegen&quot;,
-            &quot;AT&quot;: &quot;\u00d6sterreich&quot;,
-            &quot;PH&quot;: &quot;Philippinen&quot;,
-            &quot;PL&quot;: &quot;Polen&quot;,
-            &quot;PT&quot;: &quot;Portugal&quot;,
-            &quot;RO&quot;: &quot;Rum\u00e4nien&quot;,
-            &quot;RU&quot;: &quot;Russland&quot;,
-            &quot;SE&quot;: &quot;Schweden&quot;,
-            &quot;CH&quot;: &quot;Schweiz&quot;,
-            &quot;SG&quot;: &quot;Singapur&quot;,
-            &quot;SK&quot;: &quot;Slowakei&quot;,
-            &quot;SI&quot;: &quot;Slowenien&quot;,
-            &quot;MO&quot;: &quot;Sonderverwaltungsregion Macau&quot;,
-            &quot;ES&quot;: &quot;Spanien&quot;,
-            &quot;ZA&quot;: &quot;S\u00fcdafrika&quot;,
-            &quot;SZ&quot;: &quot;Swasiland&quot;,
-            &quot;TZ&quot;: &quot;Tansania&quot;,
-            &quot;TH&quot;: &quot;Thailand&quot;,
-            &quot;CZ&quot;: &quot;Tschechische Republik&quot;,
-            &quot;TN&quot;: &quot;Tunesien&quot;,
-            &quot;TR&quot;: &quot;T\u00fcrkei&quot;,
-            &quot;UG&quot;: &quot;Uganda&quot;,
-            &quot;HU&quot;: &quot;Ungarn&quot;,
-            &quot;AE&quot;: &quot;Vereinigte Arabische Emirate&quot;,
-            &quot;US&quot;: &quot;Vereinigte Staaten&quot;,
-            &quot;GB&quot;: &quot;Vereinigtes K\u00f6nigreich&quot;,
-            &quot;CY&quot;: &quot;Zypern&quot;
+### Resourcename
+
+/api/ezp/v2/siso-rest/country-selection (GET)
+
+### Summary
+
+returns the list of configured country codes and their translation for current siteaccess
+
+### Service ID
+
+siso_rest_api.country_selection_service
+
+Inside this service the countries will be fetched from service: siso_tools.country (see <a href="Country-Service_29819029.html">Country Service</a>)
+
+parameter ses_forms.default.preferred_country is used for defaultCountry
+
+### Request
+
+empty
+
+### Response
+
+```
+{
+    "CountrySelectionResponse": {
+        "_media-type": "application\/vnd.ez.api.CountrySelectionResponse+json",
+        "countryOptions": {
+            "DZ": "Algerien",
+            "AU": "Australien",
+            "BE": "Belgien",
+            "BR": "Brasilien",
+            "BG": "Bulgarien",
+            "DK": "D\u00e4nemark",
+            "DE": "Deutschland",
+            "EE": "Estland",
+            "FI": "Finnland",
+            "FR": "Frankreich",
+            "GR": "Griechenland",
+            "IN": "Indien",
+            "ID": "Indonesien",
+            "IE": "Irland",
+            "IS": "Island",
+            "IT": "Italien",
+            "CA": "Kanada",
+            "KE": "Kenia",
+            "LV": "Lettland",
+            "LT": "Litauen",
+            "MY": "Malaysia",
+            "MT": "Malta",
+            "MX": "Mexiko",
+            "MZ": "Mosambik",
+            "NZ": "Neuseeland",
+            "NL": "Niederlande",
+            "NG": "Nigeria",
+            "NO": "Norwegen",
+            "AT": "\u00d6sterreich",
+            "PH": "Philippinen",
+            "PL": "Polen",
+            "PT": "Portugal",
+            "RO": "Rum\u00e4nien",
+            "RU": "Russland",
+            "SE": "Schweden",
+            "CH": "Schweiz",
+            "SG": "Singapur",
+            "SK": "Slowakei",
+            "SI": "Slowenien",
+            "MO": "Sonderverwaltungsregion Macau",
+            "ES": "Spanien",
+            "ZA": "S\u00fcdafrika",
+            "SZ": "Swasiland",
+            "TZ": "Tansania",
+            "TH": "Thailand",
+            "CZ": "Tschechische Republik",
+            "TN": "Tunesien",
+            "TR": "T\u00fcrkei",
+            "UG": "Uganda",
+            "HU": "Ungarn",
+            "AE": "Vereinigte Arabische Emirate",
+            "US": "Vereinigte Staaten",
+            "GB": "Vereinigtes K\u00f6nigreich",
+            "CY": "Zypern"
         },
-        &quot;defaultCountry&quot;: &quot;DE&quot;
+        "defaultCountry": "DE"
     }
-}</code></pre>
-</td>
-</tr>
-</tbody>
-</table>
+}
+```
 
 ## getCustomerprice
 
-<table>
-<tbody>
-<tr class="odd">
-<td>Resourcename</td>
-<td><pre><code>/api/ezp/v2/siso-rest/customerprice (POST)</code></pre></td>
-</tr>
-<tr class="even">
-<td>Summary</td>
-<td><p>returns the customer price</p></td>
-</tr>
-<tr class="odd">
-<td>Service ID</td>
-<td><p>???</p></td>
-</tr>
-<tr class="even">
-<td>Request</td>
-<td><div class="content-wrapper">
-<pre class="" data-syntaxhighlighter-params="brush: java; gutter: false; theme: Confluence" data-theme="Confluence"><code>{
-    &quot;PriceRequest&quot;: {
-        &quot;Meta&quot;: {
-            &quot;Context&quot;: &quot;product_list&quot;,
-            &quot;CatalogElement&quot;: true
+### Resourcename
+
+/api/ezp/v2/siso-rest/customerprice (POST)
+
+### Summary
+
+returns the customer price
+
+### Service ID
+
+### Request
+
+```
+{
+    "PriceRequest": {
+        "Meta": {
+            "Context": "product_list",
+            "CatalogElement": true
         }
-        &quot;Items&quot;: [{
-            &quot;Sku&quot;: &quot;1234&quot;,
-            &quot;Quantity&quot;: 2,
-            &quot;UnitOfMeasure&quot;: &quot;ST&quot;,
-            &quot;DataMap&quot;: {}
+        "Items": [{
+            "Sku": "1234",
+            "Quantity": 2,
+            "UnitOfMeasure": "ST",
+            "DataMap": {}
         }]
     }
-}</code></pre>
-</td>
-</tr>
-<tr class="odd">
-<td>Response</td>
-<td><div class="content-wrapper">
-<pre class="" data-syntaxhighlighter-params="brush: js; gutter: false; theme: Confluence" data-theme="Confluence"><code>{
-    &quot;PriceResponse&quot;: [{
-        &quot;Sku&quot;: &quot;1234&quot;,
-        &quot;RequestedQuantity&quot;: 2,
-        &quot;RequestedUnitOfMeasure&quot;: &quot;ST&quot;,
-        &quot;CustomerPrice&quot;: {
-            &quot;Quantity&quot;: 2,
-            &quot;UnitOfMeasure&quot;: &quot;ST&quot;,
-            &quot;Price&quot;: 1.50,
-            &quot;LinePrice&quot;: 3.00,
-            &quot;Currency&quot;: &quot;EUR&quot;,
-            &quot;PriceFormatted&quot;: &quot;1.50 €&quot;,
-            &quot;LinePriceFormatted&quot;: &quot;3.00 €&quot;
+}
+```
+
+### Response
+
+```
+{
+    "PriceResponse": [{
+        "Sku": "1234",
+        "RequestedQuantity": 2,
+        "RequestedUnitOfMeasure": "ST",
+        "CustomerPrice": {
+            "Quantity": 2,
+            "UnitOfMeasure": "ST",
+            "Price": 1.50,
+            "LinePrice": 3.00,
+            "Currency": "EUR",
+            "PriceFormatted": "1.50 €",
+            "LinePriceFormatted": "3.00 €"
         },
-        &quot;ListPrice&quot;: {
-            &quot;Quantity&quot;: 2,
-            &quot;UnitOfMeasure&quot;: &quot;ST&quot;,
-            &quot;Price&quot;: 1.5,
-            &quot;LinePrice&quot;: 3.00,
-            &quot;Currency&quot;: &quot;EUR&quot;,
-            &quot;PriceFormatted&quot;: &quot;1.50 €&quot;,
-            &quot;LinePriceFormatted&quot;: &quot;3.00 €&quot;
+        "ListPrice": {
+            "Quantity": 2,
+            "UnitOfMeasure": "ST",
+            "Price": 1.5,
+            "LinePrice": 3.00,
+            "Currency": "EUR",
+            "PriceFormatted": "1.50 €",
+            "LinePriceFormatted": "3.00 €"
         },
-        &quot;Stock&quot;: 32,
-        &quot;Message&quot;: &quot;&quot;,
-        &quot;DataMap&quot;: {}
+        "Stock": 32,
+        "Message": "",
+        "DataMap": {}
     }]
-}</code></pre>
-</td>
-</tr>
-</tbody>
-</table>
+}
+```
 
 ConfigResolver Variable, ob Stock nach außen übergeben werden soll
 

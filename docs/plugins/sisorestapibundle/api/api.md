@@ -1,4 +1,4 @@
-# API 
+# API
 
 ## How to use the REST interface
 
@@ -16,7 +16,7 @@ axios.get('/api/ezp/v2/siso-rest/basket')
 }
 ```
 
- If you are using a PATCH request a token is required. A twig function provides to current token. 
+If you are using a PATCH request a token is required. A twig function provides to current token.
 
 ``` 
 var token = "{{ csrf_token('rest') }}";
@@ -35,7 +35,7 @@ axios.patch('/api/ezp/v2/siso-rest/basket/current/shippingmethod', {
 
 ## Error handling / responses
 
-**New Format** 
+**New Format**
 
 The HTTP response code describes:
 
