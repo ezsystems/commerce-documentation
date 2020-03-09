@@ -1,4 +1,4 @@
-#  Component - Page Header 
+# Component - Page Header
 
 Component for the header area.
 
@@ -60,7 +60,7 @@ $page-header-logo-index: 1;
 $page-header-logo-display: inline-block;
 ```
 
-In order to change settings in project find settings/\_storm.scss file in your project and find the Page header section.
+In order to change settings in project find `settings/_storm.scss` file in your project and find the Page header section.
 
 ## Twig
 

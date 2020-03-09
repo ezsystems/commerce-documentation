@@ -1,10 +1,10 @@
-#  Extend - Tooltip 
+# Extend - Tooltip
 
-<http://foundation.zurb.com/sites/docs/v/5.5.3/components/tooltips.html>
+http://foundation.zurb.com/sites/docs/v/5.5.3/components/tooltips.html
 
 ## What/why do we extend?
 
-1.  We want that the tooltip nub looks good on mobile
+1. We want that the tooltip nub looks good on mobile
 
 ## Sass
 

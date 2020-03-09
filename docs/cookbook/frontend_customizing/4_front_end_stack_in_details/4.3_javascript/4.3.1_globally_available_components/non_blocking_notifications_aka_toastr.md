@@ -1,11 +1,11 @@
-#  Non-blocking notifications aka toastr
+# Non-blocking notifications aka toastr
 
 Toastr is a non-blocking notification. Non-blocking means you can still use the page, while something is being done behind the scenes (e.g. add to basket, add to comparison, etc.).
 
 Our non-blocking notifications are build on top of jQuery Toastr plugin:
 
-  - <http://codeseven.github.io/toastr/> - project homepage
-  - <http://codeseven.github.io/toastr/demo.html> - demos playground
+- <http://codeseven.github.io/toastr/> - project homepage
+- <http://codeseven.github.io/toastr/demo.html> - demos playground
 
 ## JavaScript:
 
@@ -39,48 +39,29 @@ If you want to change them we suggest to copy storm.phalanx.utils.js into your p
 
 ### Available methods:
 
-<table>
-<colgroup>
-<col style="width: 33%" />
-<col style="width: 33%" />
-<col style="width: 33%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th>Name</th>
-<th>Description</th>
-<th>Examples</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>storm.toastr(msg, type, options)</td>
-<td><p>Opens a toastr message. It takes three parameters:</p>
-<ul>
-<li>msg - message content. HTML allowed</li>
-<li>type - type of message. Based on this toastr appears in different color schemes. Possible values: success, error, info, warning</li>
-<li>options - it's possible to override default options per message using a obejct notation</li>
-</ul></td>
-<td>
+#### storm.toastr(msg, type, options)
 
-<pre class="" data-syntaxhighlighter-params="brush: java; gutter: false; theme: Confluence" data-theme="Confluence"><code>// standard success message
-var message = &#39;success messages&#39;;
-storm.toastr(message, &#39;success&#39;);
- 
+Opens a toastr message. It takes three parameters:
+
+- msg - message content. HTML allowed
+- type - type of message. Based on this toastr appears in different color schemes. Possible values: success, error, info, warning
+- options - it's possible to override default options per message using a obejct notation
+
+```
+// standard success message
+var message = 'success messages';
+storm.toastr(message, 'success');
+  
 // standard error message
-var message = &#39;error messages&#39;;
-storm.toastr(message, &#39;error&#39;);
- 
+var message = 'error messages';
+storm.toastr(message, 'error');
+  
 // info message with some options
 // toastr will show with a slideUp method and stay visible for 10 seconds
-var options = { timeOut: 10000, showMethod: &#39;slideUp&#39; }
-var message = &#39;info messages&#39;;
-storm.toastr(message, &#39;info&#39;, options);</code></pre>
-
-</td>
-</tr>
-</tbody>
-</table>
+var options = { timeOut: 10000, showMethod: 'slideUp' }
+var message = 'info messages';
+storm.toastr(message, 'info', options);
+```
 
 ## Sass:
 

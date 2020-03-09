@@ -1,15 +1,15 @@
-#  4.6.2 Twig / HTML 
+# 4.6.2 Twig / HTML
 
 **Inspired by:**
 
-  - <http://codeguide.co/>
-  - <https://google.github.io/styleguide/htmlcssguide.xml>
+- http://codeguide.co/
+- https://google.github.io/styleguide/htmlcssguide.xml
 
 Every line of code should appear to be written by a single person, no matter the number of contributors.
 
-# Twig
+## Twig
 
-## Documentation
+### Documentation
 
 Each Twig template could provide a doc block header. 
 
@@ -26,7 +26,7 @@ Each Twig template could provide a doc block header.
 #}
 ```
 
-## Naming variables
+### Naming variables
 
 Use camel case naming convention
 
@@ -39,14 +39,13 @@ Use camel case naming convention
 {%set element_counter %}
 ```
 
-## Folder structure
+### Folder structure
 
 1.  Try to use Symfony standard when possible 
 2.  Use Components for any other type of content  
-      
 3.  .....
 
-## Use absolute to link assets in emails
+### Use absolute to link assets in emails
 
 In order to make sure all the assets like images inside emails are loaded from the correct url use absolute settings.
 
@@ -58,41 +57,38 @@ In order to make sure all the assets like images inside emails are loaded from t
 {{ app.request.uriForPath(asset('bundles/sheracommon/img/email-header.png')) }} 
 ```
 
-# HTML
+## HTML
 
-## Syntax
+### Syntax
 
-  - Use soft tabs with two (2) spaces - they're the only way to guarantee code renders the same in any environment.
+- Use soft tabs with two (2) spaces - they're the only way to guarantee code renders the same in any environment.
+- Nested elements should be indented once (two spaces).
+- Always use double quotes, never single quotes, on attributes.
+- Don't include a trailing slash in self-closing elements—the [HTML5 spec](http://dev.w3.org/html5/spec-author-view/syntax.html#syntax-start-tag) says they're optional.
 
-  - Nested elements should be indented once (two spaces).
+``` 
+// recommended 
+<br>
+<hr>
+ 
+// not recommended
+<br />
+<hr />
+```
 
-  - Always use double quotes, never single quotes, on attributes.
+- Don't forget to close opened tags (\</li\>, \</body\>, etc)
 
-  - Don't include a trailing slash in self-closing elements—the [HTML5 spec](http://dev.w3.org/html5/spec-author-view/syntax.html#syntax-start-tag) says they're optional.
-
-    ``` 
-    // recommended 
-    <br>
-    <hr>
-     
-    // not recommended
-    <br />
-    <hr />
-    ```
-
-  - Don't forget to close opened tags (\</li\>, \</body\>, etc)
-
-## HTML5 doctype
+### HTML5 doctype
 
 ``` 
 <!DOCTYPE html>
 ```
 
-## Language attribute
+### Language attribute
 
 From the HTML5 spec:
 
-> Authors are encouraged to specify a lang attribute on the root html element, giving the document's language. This aids speech synthesis tools to determine what pronunciations to use, translation tools to determine what rules to use, and so forth.
+Authors are encouraged to specify a lang attribute on the root html element, giving the document's language. This aids speech synthesis tools to determine what pronunciations to use, translation tools to determine what rules to use, and so forth.
 
 ``` 
 <html lang="en-us">
@@ -100,7 +96,7 @@ From the HTML5 spec:
 </html>
 ```
 
-## IE compatibility mode
+### IE compatibility mode
 
 <span class="status-macro aui-lozenge aui-lozenge-error">READ MORE ABOUT IT
 
@@ -112,7 +108,7 @@ For more information, [read this awesome Stack Overflow article](http://stackove
 <meta http-equiv="X-UA-Compatible" content="IE=Edge">
 ```
 
-## Character encoding 
+### Character encoding 
 
 ``` 
 <head>
@@ -120,7 +116,7 @@ For more information, [read this awesome Stack Overflow article](http://stackove
 </head>
 ```
 
-## CSS and JavaScript includes
+### CSS and JavaScript includes
 
 Per HTML5 spec, typically there is no need to specify a`type` when including CSS and JavaScript files as `text/css`and `text/javascript` are their respective defaults.
 
@@ -136,14 +132,14 @@ Per HTML5 spec, typically there is no need to specify a`type` when including CSS
 
 Attribute order
 
- HTML attributes should come in this particular order for easier reading of code.
+HTML attributes should come in this particular order for easier reading of code.
 
-  - `class`
-  - `id`, `name`
-  - `data-*`
-  - `src`, `for`, `type`, `href`, `value`
-  - `title`, `alt`
-  - `role`, `aria-*`
+- `class`
+- `id`, `name`
+- `data-*`
+- `src`, `for`, `type`, `href`, `value`
+- `title`, `alt`
+- `role`, `aria-*`
 
 Classes make for great reusable components, so they come first. Ids are more specific and should be used sparingly (e.g., for in-page bookmarks), so they come second.
 
@@ -157,9 +153,9 @@ Classes make for great reusable components, so they come first. Ids are more spe
 <img src="..." alt="...">
 ```
 
-## Boolean attributes
+### Boolean attributes
 
-  - no need to declare a value for a boolean attribute
+- no need to declare a value for a boolean attribute
 
 ``` 
 // recommended
@@ -179,7 +175,7 @@ Classes make for great reusable components, so they come first. Ids are more spe
 </select>
 ```
 
-## Reducing markup
+### Reducing markup
 
 Whenever possible, avoid superfluous parent elements when writing HTML. Many times this requires iteration and refactoring, but produces less HTML. Take the following example:
 
@@ -191,7 +187,7 @@ Whenever possible, avoid superfluous parent elements when writing HTML. Many tim
 <img class="avatar" src="...">
 ```
 
-## Omit the protocol from embedded resources.
+### Omit the protocol from embedded resources
 
 ``` 
 <!-- Recommended -->
@@ -212,7 +208,7 @@ Whenever possible, avoid superfluous parent elements when writing HTML. Many tim
 }
 ```
 
-## Use only lowercase.
+### Use only lowercase
 
 All code has to be lowercase: This applies to HTML element names, attributes, attribute values (unless `text/CDATA`), CSS selectors, properties, and property values (with the exception of strings).
 
@@ -250,7 +246,7 @@ Use buttons instead of input filed with a submit type
 <input type="submit" value="Submit">
 ```
 
-## Use HTML according to its purpose.
+### Use HTML according to its purpose
 
 Use elements (sometimes incorrectly called “tags”) for what they have been created for. For example, use heading elements for headings, `p` elements for paragraphs, `a` elements for anchors, etc.
 
@@ -262,7 +258,7 @@ Use elements (sometimes incorrectly called “tags”) for what they have been c
 <a href="recommendations/">All recommendations</a>
 ```
 
-## Provide alternative contents for multimedia.
+### Provide alternative contents for multimedia
 
 For multimedia, such as images, videos, animated objects via `canvas`, make sure to offer alternative access. For images that means use of meaningful alternative text (`alt`) and for video and audio transcripts and captions, if available.
 
@@ -274,7 +270,7 @@ For multimedia, such as images, videos, animated objects via `canvas`, make sure
 <img src="spreadsheet.png" alt="Spreadsheet screenshot.">
 ```
 
-## Separate structure from presentation from behavior.
+### Separate structure from presentation from behavior
 
 Don't use inline styling.
 
@@ -293,7 +289,7 @@ Don't use inline styling.
 <div style="display: none">Content
 ```
 
-## Do not use entity references.
+### Do not use entity references
 
 There is no need to use entity references like `&mdash;`, `&rdquo;`, or `&#x263a;`, assuming the same encoding (UTF-8) is used for files and editors as well as among teams.
 
@@ -307,7 +303,7 @@ The currency symbol for the Euro is &ldquo;&eur;&rdquo;.
 The currency symbol for the Euro is "€".
 ```
 
-## Use a new line for every block, list, or table element, and indent every such child element.
+### Use a new line for every block, list, or table element, and indent every such child element
 
 ``` 
 // correct
@@ -322,9 +318,9 @@ The currency symbol for the Euro is "€".
 </ul>
 ```
 
-## Use \<button\> instead of \<a class="button"\>
+### Use `<button>` instead of `<a class="button">`
 
-In most cases when you wan't add a button class to an \<a\> element please think twice before doing it. Especially when there is another functionality on the element like: tooltip, dropdown, etc. We discovered that some touch devices has problems with handling \<a\> elements with empty href attribute
+In most cases when you want to add a button class to an `<a>` element please think twice before doing it. Especially when there is another functionality on the element like: tooltip, dropdown, etc. We discovered that some touch devices has problems with handling `<a>` elements with empty href attribute
 
 ``` 
 // correct

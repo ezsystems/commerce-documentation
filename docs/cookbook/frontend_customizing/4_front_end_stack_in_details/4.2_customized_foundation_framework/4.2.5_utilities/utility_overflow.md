@@ -1,4 +1,4 @@
-#  Utility - Overflow 
+# Utility - Overflow
 
 We use this utility to set the overflow property. It was created to make it easy to override some behaviour of components from Foundation.
 
@@ -34,4 +34,4 @@ scss/storm/_utils.overflow.scss
 
 ```
 
-It sets overflow: auto; for large screen devices. For every other screen it will apply overflow settings from the other classes.
+It sets `overflow: auto`; for large screen devices. For every other screen it will apply overflow settings from the other classes.

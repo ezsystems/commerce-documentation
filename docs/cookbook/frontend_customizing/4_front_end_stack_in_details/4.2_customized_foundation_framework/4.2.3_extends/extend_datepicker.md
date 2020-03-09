@@ -1,10 +1,10 @@
-#  Extend - Datepicker 
+# Extend - Datepicker
 
 Date picker is a third party extension based on Foundation.
 
 ## What/why do we extend?
 
-1.  We have extended it to make it more flexible using configuration for colors and backgrounds.
+1. We have extended it to make it more flexible using configuration for colors and backgrounds.
 
 ## Sass
 
@@ -26,4 +26,4 @@ $datepicker-color-primary: $primary-color;
 $datepicker-black-20: rgba(0, 0, 0, .2);
 ```
 
-In order to change settings in project find settings/\_storm.scss file in your project and find the Date Picker section.
+In order to change settings in project find `settings/_storm.scss` file in your project and find the Date Picker section.

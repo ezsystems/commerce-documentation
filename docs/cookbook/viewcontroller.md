@@ -1,10 +1,10 @@
-#  ViewController 
+# ViewController
 
 ## Issue
 
-Ez ViewController is throwing an exception, if content is not translated in language required in current siteaccess. This is happening in the template, such it is called as a subcontroller and if expetion occurs, the page is broken.
+Ez ViewController is throwing an exception, if content is not translated in language required in current siteaccess. This is happening in the template, such it is called as a subcontroller and if exception occurs, the page is broken.
 
-``` 
+``` html+twog
   {{ render(
                 controller(
                 'ez_content:viewLocation',
@@ -22,13 +22,13 @@ Ez ViewController is throwing an exception, if content is not translated in lang
 
 Ez ViewController is defined as a service, that is why eZ Commerce overrides the implementation to handle the exception. In case that exception occurs, no content will be returned, but the page will not be broken.
 
-It is not necessary to change the templates, you can still go with the call of ez\_content:viewLocation.
+It is not necessary to change the templates, you can still go with the call of `ez_content:viewLocation`.
 
 Additionally the exception will be logged.
 
 ## eZ Commerce ViewController
 
-``` 
+``` php
 namespace Silversolutions\Bundle\EshopBundle\Controller;
 
 use eZ\Publish\Core\MVC\Symfony\Controller\Content\ViewController as EzViewController;
@@ -66,9 +66,9 @@ class ViewController extends EzViewController
 
 ### Configuration
 
-**ses\_services.xml**
+**ses_services.xml**
 
-``` 
+``` xml
 <parameters>    
     <!-- override the eZ ViewController -->
     <parameter key="ezpublish.controller.content.view.class">Silversolutions\Bundle\EshopBundle\Controller\ViewController</parameter>

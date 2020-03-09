@@ -1,4 +1,4 @@
-#  Component - Spinner 
+# Component - Spinner
 
 We use spinner component to show that some actions are working in the background with a nice animation. We use Font Awesome icon font for the icon and animation.
 
@@ -33,15 +33,15 @@ $spinner-contained-icon-color: $primary-color;
 $spinner-contained-bg-color: rgba(255, 255, 255, 0.45);
 ```
 
-In order to change settings in project find settings/\_storm.scss file in your project and find the Spinner section.
+In order to change settings in project find `settings/_storm.scss` file in your project and find the Spinner section.
 
 ## HTML
 
 Spinner component offers 3 different possibilities for displaying a spinner:
 
-  - full page which covers the whole page
-  - inner which is displayed inside an element
-  - contained which covers only a section of page
+- full page which covers the whole page
+- inner which is displayed inside an element
+- contained which covers only a section of page
 
 ### Examples
 

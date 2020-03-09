@@ -1,20 +1,20 @@
-#  Doctrine Mapping Datatypes 
+# Doctrine Mapping Datatypes
 
 eZ Commerce uses Doctrine as ORM for most of the cases when accessing the DB data. In some doctrine entities, like [Basket or BasketLine](Basket-data-model_23560234.html) we are using objects or arrays to handle the attributes.
 
 By default, doctrine use the serialize() method when storing these data to the DB.
 
-# Issue
+## Issue
 
 If the data can not be unserialized for some reason (maybe because the object changed in the meantime, or the data is corrupted), doctrine will throw an exception. In that case the whole basket, or basket line can not be returned.
 
-# Solution
+## Solution
 
 For that reason eZ Commerce overrides the Doctrine Mapping Types for Arrays and Objects so the exception can be handled. In that case only the corrupted attribute will be empty, eg. we will have basket line, but the datamap would be empty if can not be unserialized.
 
-## Configuration
+### Configuration
 
-``` 
+``` yaml
 # Doctrine Configuration
 doctrine:
     dbal:
@@ -23,9 +23,9 @@ doctrine:
             array: Silversolutions\Bundle\EshopBundle\Model\Doctrine\ArrayType
 ```
 
-## ArrayType
+### ArrayType
 
-``` 
+``` php
 namespace Silversolutions\Bundle\EshopBundle\Model\Doctrine;
 
 use Doctrine\DBAL\Platforms\AbstractPlatform;
@@ -62,9 +62,9 @@ class ArrayType extends BaseType
 }
 ```
 
-## ObjectType
+### ObjectType
 
-``` 
+``` php
 namespace Silversolutions\Bundle\EshopBundle\Model\Doctrine;
 
 use Doctrine\DBAL\Types\ObjectType as BaseType;

@@ -1,14 +1,14 @@
-#  VariantType 
+# VariantType
 
 The VariantType Fieldtype offers a user interface for editing variants. It stores the information about the variants in a json format.
 
 The FieldType offers a selection of preconfigured varianttypes.
 
-![](attachments/23560699/23571060.png)
+![](../img/additional_ez_fieldtypes_12.png)
 
 A variant type can be a 1level or 2level variant. The variant types offered can be setup in a yml file: 
 
-``` 
+``` yaml
 siso_core.default.variant_types:
     -
         id: size_color
@@ -41,11 +41,11 @@ siso_core.default.variant_types:
 
 Depending on the variant type a edit form is generated:
 
-![](attachments/23560699/23562958.png)
+![](../img/additional_ez_fieldtypes_13.png)
 
 The data is stored in a JSON format:
 
-``` 
+``` json
 [
   {
     "sku": {
@@ -175,9 +175,3 @@ The data is stored in a JSON format:
   }
 ]
 ```
-
-## Attachments:
-
-![](images/icons/bullet_blue.gif) [image2018-7-17\_19-2-42.png](attachments/23560699/23571060.png) (image/png)  
-![](images/icons/bullet_blue.gif) [image2018-7-17\_19-5-9.png](attachments/23560699/23571061.png) (image/png)  
-![](images/icons/bullet_blue.gif) [image2018-11-6\_9-4-11.png](attachments/23560699/23562958.png) (image/png)  

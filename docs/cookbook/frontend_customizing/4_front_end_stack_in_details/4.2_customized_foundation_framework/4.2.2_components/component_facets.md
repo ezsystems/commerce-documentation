@@ -1,12 +1,12 @@
-#  Component - Facets 
+# Component - Facets
 
 Facets components is a mixture of Foundation extends and our own code. It's put together in file to create a context which is easier to maintain. 
 
 It extends these Foundations components:
 
-  - dropdown
-  - button
-  - labels
+- dropdown
+- button
+- labels
 
 ## Sass
 
@@ -94,7 +94,7 @@ $facet-active-group-title-font-weight: normal;
 $facet-active-group-title-bg-color: $white;
 ```
 
-In order to change settings in project find settings/\_storm.scss file in your project and find the Facets section.
+In order to change settings in project find `settings/_storm.scss` file in your project and find the Facets section.
 
 ## Twig
 
@@ -104,8 +104,8 @@ In order to change settings in project find settings/\_storm.scss file in your p
 
 It's a list of items inside a single facet box.
 
-  - c-facets\_\_items-list
-  - c-facets\_\_item  
+- c-facets__items-list
+- c-facets__item  
 
 ``` 
 // vendor/silversolutions/silver.e-shop/src/Silversolutions/Bundle/EshopBundle/Resources/views/Search/search_facets.html.twig
@@ -178,8 +178,8 @@ Whole block including code above.
 
 When there is a lot of items in the facet box we show a search box which filters the list.
 
-  - c-facets\_\_search-field
-  - c-facets\_\_search-icon  
+- c-facets__search-field
+- c-facets__search-icon  
 
 ``` 
 // vendor/silversolutions/silver.e-shop/src/Silversolutions/Bundle/EshopBundle/Resources/views/Search/search_facets.html.twig
@@ -196,9 +196,9 @@ When there is a lot of items in the facet box we show a search box which filters
 
 Active facets are grouped with a small box with a group title.
 
-  - c-facet\_\_active-group
-  - c-facet\_\_active-group–multi
-  - c-facet\_\_active-group-title  
+- c-facet__active-group
+- c-facet__active-group–multi
+- c-facet__active-group-title  
 
 ``` 
 // vendor/silversolutions/silver.e-shop/src/Silversolutions/Bundle/EshopBundle/Resources/views/Search/search_facets.html.twig
@@ -211,15 +211,14 @@ Active facets are grouped with a small box with a group title.
 
 ```
 
-A groups gets c-facet\_\_active-group–multi CSS class when there is more than one selected option.
+A groups gets c-facet__active-group–multi CSS class when there is more than one selected option.
 
------
 
 ### Foundation's extends
 
 #### Dropdown
 
-  - c-facets\_\_dropdown  
+- c-facets__dropdown
 
 ``` 
 // vendor/silversolutions/silver.e-shop/src/Silversolutions/Bundle/EshopBundle/Resources/views/Search/search_facets.html.twig
@@ -233,7 +232,7 @@ A groups gets c-facet\_\_active-group–multi CSS class when there is more than 
 
 #### Button
 
-  - c-facets\_\_button–apply  
+- c-facets__button–apply
 
 ``` 
 // vendor/silversolutions/silver.e-shop/src/Silversolutions/Bundle/EshopBundle/Resources/views/Search/search_facets.html.twig
@@ -245,9 +244,9 @@ A groups gets c-facet\_\_active-group–multi CSS class when there is more than 
 
 #### Label
 
-  - c-facets\_\_active
-  - c-facets\_\_icon-close
-  - c-facets\_\_icon-close–rounded  
+- c-facets__active
+- c-facets__icon-close
+- c-facets__icon-close–rounded
 
 ``` 
 // vendor/silversolutions/silver.e-shop/src/Silversolutions/Bundle/EshopBundle/Resources/views/Search/search_facets.html.twig

@@ -1,4 +1,4 @@
-#  MailHelperService 
+# MailHelperService
 
 The `MailHelperService `is used to create, render and send various kind of e-mails for eZ Commerce.
 
@@ -11,13 +11,17 @@ The `MailHelperService `is used to create, render and send various kind of e-mai
 
 ## Using
 
-Please note that the $subject is translated in the helper service. Translating it in advance is unnecessary or, in rare cases, could even cause conflicts.
+!!! note
 
-The `SwiftMailHelperService` uses the [Mail Logging](Mail-Logging_23560245.html) in order to provide administrators to keep track of all sent e-mails. PLEASE NOTE: There is a special case for the [Customer Center (from 4.2)](/pages/createpage.action?spaceKey=EZC14&title=Customer+Center+%28from+4.2%29&linkCreation=true&fromPageId=23560658). The content of any template parameter, which is named 'password', will be logged with a masked/removed value. This was needed for notification e-mails for new customer center accounts, which contain a generated, temporary password.
+    Please note that the $subject is translated in the helper service. Translating it in advance is unnecessary or, in rare cases, could even cause conflicts.
+
+!!! note
+
+    The `SwiftMailHelperService` uses the [Mail Logging](Mail-Logging_23560245.html) in order to provide administrators to keep track of all sent e-mails. PLEASE NOTE: There is a special case for the [Customer Center (from 4.2)](/pages/createpage.action?spaceKey=EZC14&title=Customer+Center+%28from+4.2%29&linkCreation=true&fromPageId=23560658). The content of any template parameter, which is named 'password', will be logged with a masked/removed value. This was needed for notification e-mails for new customer center accounts, which contain a generated, temporary password.
 
 You are able to send predefined plain-text and/or HTML content by using sendMail(), or use the convinient sendMailWithRenderedTemplate() method.
 
-``` 
+``` php
 $sender = 'fd@silversolutions.de';
 $recipient = 'rel@silversolutions.de';
 $subject = 'Test Mail';

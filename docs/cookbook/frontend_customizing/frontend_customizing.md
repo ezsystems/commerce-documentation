@@ -1,24 +1,24 @@
-#  Frontend customizing 
+# Frontend customizing
 
 ## Introduction
 
 In this section you'll find detailed documentation about handling front-end inside eZ Commerce. It's divided into multiple sections (take a look at the Child pages tree in the column on the right)
 
-## Before you start 
+## Before you start
 
 Please keep in mind that front-end is really connected with a lot of topics. As a front-end developer working with our shop you need to be familiar with these technologies:
 
-  - CSS (Sass)
-  - HTML5
-  - JavaScript (mostly jQuery but also Backbone.js)
-  - Twig
-  - Gulp
+- CSS (Sass)
+- HTML5
+- JavaScript (mostly jQuery but also Backbone.js)
+- Twig
+- Gulp
 
 We strongly encourage you to read those pages first:
 
-  - [1. Introduction](1.-Introduction_23561002.html)
-  - [3. Templates](3.-Templates_23561000.html)
-  - [4.6 Coding Standards](4.6-Coding-Standards_23560723.html)
+- [1. Introduction](1.-Introduction_23561002.html)
+- [3. Templates](3.-Templates_23561000.html)
+- [4.6 Coding Standards](4.6-Coding-Standards_23560723.html)
 
 Having basic knowledge will help you digest the rest much easier.
 

@@ -1,4 +1,4 @@
-#  Component - User Menu 
+# Component - User Menu
 
 Component for a dropdown menu containing different functions related to logged in user.
 

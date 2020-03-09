@@ -1,8 +1,8 @@
-#  Component - Cookie policy (cookie consent) 
+# Component - Cookie policy (cookie consent)
 
-Cookie policy is a component based on cookie consent jQuery plugin: <http://privacypolicies.com/cookie-consent/>. 
+Cookie policy is a component based on cookie consent jQuery plugin: http://privacypolicies.com/cookie-consent/. 
 
-It allows to show a notification message about EU cookie policy law: <http://www.cookielaw.org/the-cookie-law/>.
+It allows to show a notification message about EU cookie policy law: http://www.cookielaw.org/the-cookie-law/.
 
 ## Sass
 

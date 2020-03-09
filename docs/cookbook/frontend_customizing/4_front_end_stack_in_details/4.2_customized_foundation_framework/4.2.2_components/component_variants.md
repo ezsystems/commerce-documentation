@@ -1,10 +1,10 @@
-#  Component - Variants 
+# Component - Variants
 
 We use this component to display variants on product detail and basket (edit) page.
 
 Important JS classes
 
-  - js-variants-wrapper
+- js-variants-wrapper
 
 ## Sass
 

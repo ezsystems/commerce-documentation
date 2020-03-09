@@ -1,4 +1,4 @@
-#  Component - Search 
+# Component - Search
 
 Component used for the search field in the header area
 
@@ -30,7 +30,7 @@ $search-button-hover-color: $primary-color;
 $search-dropdown-background: darken($primary-color, 5%);
 ```
 
-In order to change settings in project find settings/\_storm.scss file in your project and find the Search section.
+In order to change settings in project find `settings/_storm.scss` file in your project and find the Search section.
 
 ## Twig
 

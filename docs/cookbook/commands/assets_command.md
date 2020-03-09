@@ -1,14 +1,14 @@
-#  Assets Command 
+# Assets Command
 
 This command is used to create cache for assets, using current data provider.
 
-# Usage
+## Usage
 
-``` 
+``` bash
 bin/console silversolutions:cache-asset:generate
 ```
 
-## Workflow
+### Workflow
 
-1.  Command collects all products.
-2.  Loop through those products and recreate the asset cache for it
+1. Command collects all products.
+1. Loop through those products and recreate the asset cache for it

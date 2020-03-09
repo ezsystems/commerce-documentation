@@ -1,6 +1,6 @@
-#  Extend - Dropdown 
+# Extend - Dropdown
 
-Extends: <http://foundation.zurb.com/sites/docs/v/5.5.3/components/dropdown.html>
+Extends: http://foundation.zurb.com/sites/docs/v/5.5.3/components/dropdown.html
 
 ## What/why do we extend?
 
@@ -32,7 +32,7 @@ $dropdown-flexible-large-up-small-max-width: rem-calc(300) !important;
 $dropdown-flexible-large-up-medium-max-width: rem-calc(500) !important;
 ```
 
-In order to change settings in project find settings/\_storm.scss file in your project and find the Dropdown section.
+In order to change settings in project find `settings/_storm.scss` file in your project and find the Dropdown section.
 
 ## HTML
 

@@ -1,12 +1,12 @@
-#  Extend - Tabs 
+# Extend - Tabs
 
-Extends: <http://foundation.zurb.com/sites/docs/v/5.5.3/components/tabs.html#tabs-deeplink-3>
+Extends: http://foundation.zurb.com/sites/docs/v/5.5.3/components/tabs.html#tabs-deeplink-3
 
 ## What/why do we extend? 
 
-1.  Change standard look and feel
-2.  On small screen size title gets full width
-3.  Icon that shows opened / closed tab (using Font Awesome)
+1. Change standard look and feel
+1. On small screen size title gets full width
+1. Icon that shows opened / closed tab (using Font Awesome)
 
 ## Sass
 
@@ -28,7 +28,7 @@ $tabs-border-color: $flat-clouds;
 $tabs-border-bottom-color: $white;
 ```
 
-In order to change settings in project find settings/\_storm.scss file in your project and find the Tabs section.
+In order to change settings in project find `settings/_storm.scss` file in your project and find the Tabs section.
 
 ## Twig
 

@@ -1,11 +1,11 @@
-#  Component - Page Footer 
+# Component - Page Footer
 
 Component used for the page footer content. We are using text modules created in eZ Platform to include the specific content.
 
-  - footer\_block\_address
-  - footer\_block\_company
-  - footer\_block\_service
-  - footer\_block\_ordering
+  - footer_block_address
+  - footer_block_company
+  - footer_block_service
+  - footer_block_ordering
 
 ## Sass
 
@@ -30,7 +30,7 @@ $page-footer-column-border-right-style: solid;
 $page-footer-column-border-right-color: $gainsboro;
 ```
 
-In order to change settings in project find settings/\_storm.scss file in your project and find the Page Footer section.
+In order to change settings in project find `settings/_storm.scss` file in your project and find the Page Footer section.
 
 ## Twig
 

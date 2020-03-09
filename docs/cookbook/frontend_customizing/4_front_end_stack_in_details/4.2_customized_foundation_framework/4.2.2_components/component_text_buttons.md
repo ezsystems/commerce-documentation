@@ -1,4 +1,4 @@
-#  Component - Text buttons 
+# Component - Text buttons
 
 Component used for "add to" features on product detail page in the sidebar (price block).
 
@@ -19,7 +19,7 @@ $text-buttons-item-margin-bottom: rem-calc(5);
 $text-buttons-item-padding-bottom: rem-calc(5);
 ```
 
-In order to change settings in project find settings/\_storm.scss file in your project and find the Text Buttons section.
+In order to change settings in project find `settings/_storm.scss` file in your project and find the Text Buttons section.
 
 ## Twig
 

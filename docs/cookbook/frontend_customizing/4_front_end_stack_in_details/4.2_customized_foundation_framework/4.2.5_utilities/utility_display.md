@@ -1,4 +1,4 @@
-#  Utility - Display 
+# Utility - Display
 
 We use this file to create display block/inline/inline-block classes for different breakpoints.
 
@@ -48,7 +48,7 @@ You can combine those classes within one element or just use them separately.
 
 ```
 
-Even though \<div\> is a block level element you can force with this utility class to be displayed as inlined.
+Even though `<div>` is a block level element you can force with this utility class to be displayed as inlined.
 
 ### Display differently based on screen size
 

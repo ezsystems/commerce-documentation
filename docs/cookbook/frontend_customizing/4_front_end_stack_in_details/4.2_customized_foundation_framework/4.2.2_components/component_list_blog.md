@@ -1,4 +1,4 @@
-#  Component - List Blog 
+# Component - List Blog
 
 In addition to our [generic list component ](Component---List_23560980.html)we have prepared Blog specific styling.
 
@@ -22,7 +22,7 @@ $blog-highlight-color: $flat-peter-river;
 
 | Class                 | Description                                   |
 | --------------------- | --------------------------------------------- |
-| .c-list\_\_item--blog | Additional class that is applied to each item |
+| .c-list__item--blog | Additional class that is applied to each item |
 
 ## HTML
 
@@ -45,7 +45,7 @@ $blog-highlight-color: $flat-peter-river;
 
 ## Twig
 
-**src/Siso/ContentBundle/Resources/views/line/blog\_post.html.twig**
+**src/Siso/ContentBundle/Resources/views/line/blog_post.html.twig**
 
 ``` 
 <div class="c-list__item c-list__item--blog">

@@ -1,4 +1,4 @@
-#  Utility - Width 
+# Utility - Width
 
 We use this utility to manipulate width of an element.
 

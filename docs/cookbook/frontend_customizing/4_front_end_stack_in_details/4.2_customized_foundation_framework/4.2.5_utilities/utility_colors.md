@@ -1,4 +1,4 @@
-#  Utility - Colors 
+# Utility - Colors
 
 We use this utility to set colors. Currently it's just one color but it can be easily extend based on requirements.
 

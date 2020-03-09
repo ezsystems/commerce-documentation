@@ -1,4 +1,4 @@
-#  Component - Flyout 
+# Component - Flyout
 
 We use this component for any flyout type content e.g. basket flyout, etc. to limit the height. In our standard it works well with a dropdown component from Foundation, but it can be used to limit the height of any container.
 
@@ -20,7 +20,7 @@ $flyout-line-space-start: 0;
 $flyout-line-space-end: 0;
 ```
 
-In order to change settings in project find settings/\_storm.scss file in your project and find the Flyout section.
+In order to change settings in project find `settings/_storm.scss` file in your project and find the Flyout section.
 
 ## HTML
 
@@ -32,7 +32,7 @@ In order to change settings in project find settings/\_storm.scss file in your p
 
 **Important class:**
 
-  - c-flyout\_\_content
+- c-flyout__content
 
 ## Twig
 

@@ -1,10 +1,10 @@
-#  Extend - Reveal Modal 
+# Extend - Reveal Modal
 
-Extends: <http://foundation.zurb.com/sites/docs/v/5.5.3/components/reveal.html>
+Extends: http://foundation.zurb.com/sites/docs/v/5.5.3/components/reveal.html
 
 ## What/why do we extend?
 
-1.  We had to extend in order to handle some custom situations like Ajax response messages, etc.
+1. We had to extend in order to handle some custom situations like Ajax response messages, etc.
 
 ## Sass:
 
@@ -44,7 +44,7 @@ $reveal-no-full-screen-width: 90%;
 $reveal-no-full-screen-transform: translateX(-50%);
 ```
 
-In order to change settings in project find settings/\_storm.scss file in your project and find the Reveal section.
+In order to change settings in project find `settings/_storm.scss` file in your project and find the Reveal section.
 
 ## JavaScript
 
@@ -68,40 +68,12 @@ storm.reveal.open(id, content, type, size);
 
 As you can see this function takes 4 parameters:
 
-<table>
-<colgroup>
-<col style="width: 50%" />
-<col style="width: 50%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th>Parameter</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>id</td>
-<td>modal window id e.g. <em>ajax-response-modal</em></td>
-</tr>
-<tr>
-<td>content</td>
-<td>html/text content that should be displayed inside a modal window</td>
-</tr>
-<tr>
-<td>type</td>
-<td><p>Type of message, can be empty.</p>
-<p>Possible values: success, error</p>
-<p>If empty the window will have standard white background.</p></td>
-</tr>
-<tr>
-<td>size</td>
-<td><p>Size of the window.</p>
-<p>Possible values: tiny, small, medium, large, xlarge, full</p>
-<p>default: medium</p></td>
-</tr>
-</tbody>
-</table>
+|Parameter|Description|
+|--- |--- |
+|id|modal window id e.g. ajax-response-modal|
+|content|html/text content that should be displayed inside a modal window|
+|type|Type of message, can be empty.</br>Possible values: success, error</br>If empty the window will have standard white background.|
+|size|Size of the window.</br>Possible values: tiny, small, medium, large, xlarge, full</br>default: medium|
 
 #### storm.reveal.destory();
 
@@ -125,7 +97,7 @@ storm.reveal.open('custom-modal', content, '', 'small');
 
 #### Close a modal window
 
-In order to destroy created modal window call destory function like this:
+In order to destroy created modal window call destroy function like this:
 
 ``` 
 storm.reveal.destroy('custom-modal');

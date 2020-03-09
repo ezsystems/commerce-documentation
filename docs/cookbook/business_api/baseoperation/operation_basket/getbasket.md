@@ -1,6 +1,6 @@
-# getBasket 
+# getBasket
 
-basket.get\_basket
+## basket.get_basket
 
 method: getBasket
 
@@ -10,7 +10,7 @@ description: Gets the current basket
 
 ## Example
 
-``` 
+``` php
 use Silversolutions\Bundle\EshopBundle\Entities\BusinessLayer\InputValueObjects\GetBasket as InputGetBasket;
 use Silversolutions\Bundle\EshopBundle\Entities\BusinessLayer\OutputValueObjects\GetBasket as OutputGetBasket;
 
@@ -25,7 +25,7 @@ $message = $this->getBasketMessage($outputGetBasket->basket);
 
 ## Input Parameters
 
-``` 
+``` php
 namespace Silversolutions\Bundle\EshopBundle\Entities\BusinessLayer\InputValueObjects;
 
 use Silversolutions\Bundle\EshopBundle\Content\ValueObject;
@@ -55,7 +55,7 @@ class GetBasket extends ValueObject
 
 ## `Returns Output`
 
-``` 
+``` php
 namespace Silversolutions\Bundle\EshopBundle\Entities\BusinessLayer\OutputValueObjects;
 
 use Silversolutions\Bundle\EshopBundle\Content\ValueObject;

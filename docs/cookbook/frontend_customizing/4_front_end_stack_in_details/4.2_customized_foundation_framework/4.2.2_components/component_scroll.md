@@ -1,4 +1,4 @@
-#  Component - Scroll 
+# Component - Scroll
 
 ## Sass
 
@@ -19,7 +19,7 @@ $scroll-to-top-color: $flat-peter-river;
 $scroll-to-top-size: rem-calc(20);
 ```
 
-In order to change settings in project find settings/\_storm.scss file in your project and find the Autocomplete section.
+In order to change settings in project find `settings/_storm.scss` file in your project and find the Autocomplete section.
 
 ## Twig
 

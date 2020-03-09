@@ -1,10 +1,10 @@
-#  Component - Print 
+# Component - Print
 
 Print specific styles in addition to Foundation built in styling.
 
 ### What to we extend / override:
 
-  - hide href attribute value after each link
+- hide href attribute value after each link
 
 ## Sass:
 

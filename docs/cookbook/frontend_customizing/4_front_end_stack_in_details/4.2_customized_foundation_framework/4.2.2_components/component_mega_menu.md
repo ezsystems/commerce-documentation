@@ -1,4 +1,4 @@
-#  Component - Mega menu 
+# Component - Mega menu
 
 Mega menu component is a combination of custom code and top navigation Foundation component.
 
@@ -74,7 +74,7 @@ $megamenu-4th-level-link-active-hover-bg-color: scale-color($flat-peter-river, $
 $megamenu-4th-level-link-active-hover-font-color: $oil;
 ```
 
-In order to change settings in project find settings/\_storm.scss file in your project and find the Mega menu section.
+In order to change settings in project find `settings/_storm.scss` file in your project and find the Mega menu section.
 
 ### HTML
 

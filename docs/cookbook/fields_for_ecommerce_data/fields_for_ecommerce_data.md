@@ -1,8 +1,8 @@
-#  Fields for ecommerce data 
+# Fields for ecommerce data
 
 eZ Commerce uses own fields to store ecommerce related data, e.g for the catalog or basket.
 
-The shop provides a flexible way to store data using concrete instances of classes implementing the **`FieldInterface`** and inheriting from the **`AbstractField`** class. Fields are used for fixed attributes of a product/catalog and flexible attributes (property "`dataMap`" in [`CatalogElement`](23560458.html)).
+The shop provides a flexible way to store data using concrete instances of classes implementing the `FieldInterface` and inheriting from the `AbstractField` class. Fields are used for fixed attributes of a product/catalog and flexible attributes (property `dataMap` in [`CatalogElement`](23560458.html)).
 
 Each instance of a concrete Field will provide the following methods:
 
@@ -20,7 +20,7 @@ All AbstractField objects can be serialized, if you are using the methods toHash
 
 **Example:**
 
-``` 
+``` php
 //serialize
 if($field instanceof AbstractField) {
     $fieldValue = serialize($field->toHash());
@@ -29,7 +29,7 @@ if($field instanceof AbstractField) {
 
 ## Class diagram
 
-![](attachments/23560470/23563415.png)
+![](../img/fields_for_ecommerce_data_1.png)
 
 ## Implemented concrete Field classes
 
@@ -47,16 +47,16 @@ For each concrete `Field` a templates has to be provided in order to render the 
 
 The templates have to be provided in the folder `FieldTypes`. The name of the template has to start with the identifier of the `Field`, e.g.
 
-  - `ImageField.html.twig`
-  - `TextBlockField.html.twig`
-  - `TextLineField.html.twig`
-  - `PriceField.html.twig`
+- `ImageField.html.twig`
+- `TextBlockField.html.twig`
+- `TextLineField.html.twig`
+- `PriceField.html.twig`
 
 The renderer provides a parameter `$field` providing the object of the given field.
 
-Call from a twig template, via ses\_render\_field:
+Call from a twig template, via `ses_render_field`:
 
-``` 
+``` html+twig
 {{ ses_render_field(catalogElement, 'longDescription')|raw }}
 ```
 
@@ -66,7 +66,7 @@ Call from a twig template, via ses\_render\_field:
 
 A new `TextLineField` can be created using the following data:
 
-``` 
+``` php
 use Silversolutions\Bundle\EshopBundle\Content\Fields\TextLineField;
  
 // Usage: 
@@ -79,7 +79,7 @@ $textLineField = new TextLineField(array('text' => 'This is the name of the prod
 
 A new `TextBlockField` can be created using the following data:
 
-``` 
+``` php
 use Silversolutions\Bundle\EshopBundle\Content\Fields\TextBlockField;
 
 // Usage: 
@@ -90,7 +90,7 @@ $textBlockField = new TextBlockField(
 );
 ```
 
-TextBlockField object can be <span lang="en">reliable serialized, such it implements the magic \_\_sleep() and \_\_wakeup() methods.
+TextBlockField object can be <span lang="en">reliable serialized, such it implements the magic `__sleep()` and `__wakeup()` methods.
 
 ## ImageField
 
@@ -98,7 +98,7 @@ TextBlockField object can be <span lang="en">reliable serialized, such it implem
 
 A new `ImageField` can be created using the following data:
 
-``` 
+``` php
 use Silversolutions\Bundle\EshopBundle\Content\Fields\ImageField;
 
 // Usage:
@@ -119,7 +119,7 @@ $imageField = new ImageField(
 
 A new `ArrayField` can be created using the following data:
 
-``` 
+``` php
 use Silversolutions\Bundle\EshopBundle\Content\Fields\ImageField;
 
 // Usage:
@@ -132,11 +132,11 @@ $arrayField = new ArrayField(array('array' =>  $myArray));
 
 ## PriceField
 
-`PriceField` is the representative implementation of `AbstractField` for a **`Price`**.
+`PriceField` is the representative implementation of `AbstractField` for a `Price`.
 
 A new `PriceField` can be created using the following data:
 
-``` 
+``` php
 use Silversolutions\Bundle\EshopBundle\Content\Fields\PriceField;
 use Siso\Bundle\PriceBundle\Model\Price;
  
@@ -159,40 +159,7 @@ Please refer to [Rendering for prices](https://doc.silver-eshop.de/display/EZC14
 
 It is also possible to render a priceField with a twig function **ses\_render\_price().** The difference see in the table below:
 
-<table>
-<colgroup>
-<col style="width: 33%" />
-<col style="width: 33%" />
-<col style="width: 33%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th>Twig function</th>
-<th>Paramaters</th>
-<th>Usage</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>ses_render_field()</code></td>
-<td><p>$catalogElement</p>
-<p>string $fieldIdentifier</p>
-<p>array $<a href="https://doc.silver-eshop.de/display/EZC14/Rendering+for+prices">params</a></p></td>
-<td><p>more general -</p>
-<p>renders also other FieldInterface $fields from $catalogElement</p>
-<p>like TextBlockField, ImageField, PriceField</p></td>
-</tr>
-<tr>
-<td><strong><code>ses_render_price()</code></strong></td>
-<td><p>$catalogElement</p>
-<p>PriceField $priceField</p>
-<p>array $<a href="https://doc.silver-eshop.de/display/EZC14/Rendering+for+prices">params</a></p></td>
-<td><p>renders only PriceField $price</p>
-<p> </p></td>
-</tr>
-</tbody>
-</table>
-
-## Attachments:
-
-![](images/icons/bullet_blue.gif) [field\_uml\_v.0.1.png](attachments/23560470/23563415.png) (image/png)  
+|Twig function|Paramaters|Usage|
+|--- |--- |--- |
+|ses_render_field()|$catalogElement</br>string $fieldIdentifier</br>array $params|more general -</br>renders also other FieldInterface $fields from $catalogElement</br>like TextBlockField, ImageField, PriceField|
+|ses_render_price()|$catalogElement</br>PriceField $priceField</br>array $params|renders only PriceField $price|

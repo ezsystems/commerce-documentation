@@ -1,4 +1,4 @@
-#  Component - Comparison 
+# Component - Comparison
 
 Comparison component is based on pixel height to adjust the elements to be on the same level. The comparison is only visible on desktop to get the best user experience.
 
@@ -6,7 +6,7 @@ Needs to be refactored using our code standards
 
 ## Third Party Plugin
 
-We are using third party plugin called Sortable (<http://rubaxa.github.io/Sortable/>) to have drag & drop functionality
+We are using third party plugin called Sortable (http://rubaxa.github.io/Sortable/) to have drag & drop functionality
 
 ``` 
 vendor/Sortable
@@ -49,11 +49,11 @@ $comparison-data-table-li-odd-background: $flat-clouds;
 $comparison-data-table-li-odd-color: $primary-color;
 ```
 
-In order to change settings in project find settings/\_storm.scss file in your project and find the Comparison section.
+In order to change settings in project find `settings/_storm.scss` file in your project and find the Comparison section.
 
 ## Twig
 
-**Twig - vendor/silversolutions/silver.e-shop/src/Silversolutions/Bundle/EshopBundle/Resources/views/Comparison/comparison\_list.html.twig**
+**Twig - vendor/silversolutions/silver.e-shop/src/Silversolutions/Bundle/EshopBundle/Resources/views/Comparison/comparison_list.html.twig**
 
 ``` 
  <div class="show-for-large-up">

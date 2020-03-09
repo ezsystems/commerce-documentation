@@ -1,4 +1,4 @@
-#  Clean version history 
+# Clean version history
 
 ## silversolutions:ez:clean-version-history
 
@@ -10,7 +10,7 @@ The objects to be cleaned can be specified with the filter options.
 
 **Examples**
 
-``` 
+``` bash
 # Remove single content objects
 php bin/console silversolutions:ez:clean-version-history --siteaccess ezdemo_site_clean_admin --content-id 496 --content-id 497
 

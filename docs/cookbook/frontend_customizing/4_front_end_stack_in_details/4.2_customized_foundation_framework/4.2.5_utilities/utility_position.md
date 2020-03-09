@@ -1,4 +1,4 @@
-#  Utility - Position 
+# Utility - Position
 
 We use these utility to set the position property on an element.
 

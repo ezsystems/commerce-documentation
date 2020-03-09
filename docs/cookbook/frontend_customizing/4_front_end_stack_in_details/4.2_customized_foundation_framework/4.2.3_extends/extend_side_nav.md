@@ -1,10 +1,10 @@
-#  Extend - Side Nav 
+# Extend - Side Nav
 
-Extends: <http://foundation.zurb.com/sites/docs/v/5.5.3/components/sidenav.html>
+Extends: http://foundation.zurb.com/sites/docs/v/5.5.3/components/sidenav.html
 
 ## What/why do we extend?
 
-1.  We had to extend it in order to make loot better than just a standard list.
+1. We had to extend it in order to make loot better than just a standard list.
 
 ## Sass:
 
@@ -30,7 +30,7 @@ $side-nav-active-element-background: $flat-peter-river;
 $side-nav-active-element-color: $white;
 ```
 
-In order to change settings in project find settings/\_storm.scss file in your project and find the Side Nav section.
+In order to change settings in project find `settings/_storm.scss` file in your project and find the Side Nav section.
 
 ### Available classes
 
@@ -40,7 +40,7 @@ In order to change settings in project find settings/\_storm.scss file in your p
 
 ## Twig:
 
-**vendor/silversolutions/silver.e-shop/src/Silversolutions/Bundle/EshopBundle/Resources/views/Catalog/Navigation/left\_navigation.html.twig**
+**vendor/silversolutions/silver.e-shop/src/Silversolutions/Bundle/EshopBundle/Resources/views/Catalog/Navigation/left_navigation.html.twig**
 
 ``` 
 {% set node = node is defined ? node : ses_navigation({'location_id': 86}) %}
@@ -88,4 +88,4 @@ In order to change settings in project find settings/\_storm.scss file in your p
 {% endif %}
 ```
 
-To create a side nav wrap an ***\<ul\>*** with a ***\<nav\>***. Main ***\<ul\>*** gets ***.side-nav*** class. Every heading should get a ***.heading*** class. For second level and deeper you apply ***.no-bullet.c-side-nav\_\_next-level***.
+To create a side nav wrap an `<ul>` with a `<nav>`. Main `<ul>` gets `.side-nav` class. Every heading should get a `.heading` class. For second level and deeper you apply `.no-bullet.c-side-nav__next-level`.

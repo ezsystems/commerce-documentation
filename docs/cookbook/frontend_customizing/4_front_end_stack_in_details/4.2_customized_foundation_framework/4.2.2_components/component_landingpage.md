@@ -1,4 +1,4 @@
-#  Component - Landingpage 
+# Component - Landingpage
 
 Landingpage component helps us structure and style specific type of page layout.
 

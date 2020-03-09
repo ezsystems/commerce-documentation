@@ -1,4 +1,4 @@
-#  Component - Basket 
+# Component - Basket
 
 ## Sass
 
@@ -20,4 +20,4 @@ $basket-item-background-color: #efefef !default;
 $basket-item-border-color: #ccc !default;
 ```
 
-In order to change settings in project find settings/\_storm.scss file in your project and find the Basket section.
+In order to change settings in project find `settings/_storm.scss` file in your project and find the Basket section.

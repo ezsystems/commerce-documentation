@@ -1,6 +1,6 @@
-# loadProducts 
+# loadProducts
 
-catalog.load\_products
+## catalog.load_products
 
 method: loadProducts
 
@@ -12,36 +12,36 @@ description: Loads products from storage
 
 **Call Catalog Business API**
 
-``` 
-       /** @var InputLoadList $input */
-        $input = new InputLoadList(
-            array(
-                'locationId' => 136,
-                'limit' => 3,
-                'offset' => 3,
-                'language' => 'de_DE',
-                'filterType' => 'productList',
-            )
-        );
+``` php
+/** @var InputLoadList $input */
+$input = new InputLoadList(
+    array(
+        'locationId' => 136,
+        'limit' => 3,
+        'offset' => 3,
+        'language' => 'de_DE',
+        'filterType' => 'productList',
+    )
+);
 
-        /** @var OutputLoadList $output */
-        $output = $this->getBusinessApi()->call('catalog.load_products', $input);
+/** @var OutputLoadList $output */
+$output = $this->getBusinessApi()->call('catalog.load_products', $input);
 
-        $html = $this->renderView(
-            'SilversolutionsEshopBundle:Catalog:listProductNodes.html.twig',
-            array(
-                'catalogList' => $output->catalogList,
-                'params' => $data,
-                'locationId' => $output->locationId,
-            )
-        );
+$html = $this->renderView(
+    'SilversolutionsEshopBundle:Catalog:listProductNodes.html.twig',
+    array(
+        'catalogList' => $output->catalogList,
+        'params' => $data,
+        'locationId' => $output->locationId,
+    )
+);
 ```
 
 ## BusinessAPI loadProducts
 
 Business API calls catalog service to fetch all products and passes the filterType as an argument.
 
-``` 
+``` php
 public function loadProducts(InputLoadList $input)
     {
         list($catalogList, $catalogCount) = $this->catalogService->fetchChildrenList(
@@ -68,12 +68,14 @@ public function loadProducts(InputLoadList $input)
 
 It provides a method for searching catalog elements using the proper data provider. It also gets prices and total count of elements without offset, limit.
 
-**fetchChildrenList** returns an **array** with 2 elements:
+!!! note
 
-\- **$catalogList** - list of catalog elements  
-\- **$catalogCount** - total number of elements (without offset and limit) for pagination purpouse
+    **fetchChildrenList** returns an **array** with 2 elements:
 
-``` 
+    - `$catalogList` - list of catalog elements  
+    - `$catalogCount` - total number of elements (without offset and limit) for pagination purpose
+
+``` php
 public function fetchChildrenList($identifier, $depth, $filter, $languages = null, $offset = 0, $limit = 3)
     {
         /** @var CatalogListResult $catalogList */
@@ -105,7 +107,7 @@ The filter *catalogList* and *productList* are defined in the configuration file
 
 **silver.eshop.yml**
 
-``` 
+``` yaml
 silver_eshop.default.ez5_catalog_data_provider.filter:
         navigation:
            ...
@@ -125,7 +127,7 @@ silver_eshop.default.ez5_catalog_data_provider.filter:
 
 ## Input Parameters
 
-``` 
+``` php
 namespace Silversolutions\Bundle\EshopBundle\Entities\BusinessLayer\InputValueObjects;
 
 use Silversolutions\Bundle\EshopBundle\Content\ValueObject;
@@ -177,7 +179,7 @@ class LoadList extends ValueObject
 
 ## Returns Output
 
-``` 
+``` php
 namespace Silversolutions\Bundle\EshopBundle\Entities\BusinessLayer\OutputValueObjects;
 use Silversolutions\Bundle\EshopBundle\Catalog\CatalogListResult;
 use Silversolutions\Bundle\EshopBundle\Content\ValueObject;

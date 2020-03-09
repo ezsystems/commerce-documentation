@@ -1,4 +1,4 @@
-#  Utility - Whitespace 
+# Utility - Whitespace
 
 We use this utility to manipulate white space property.
 

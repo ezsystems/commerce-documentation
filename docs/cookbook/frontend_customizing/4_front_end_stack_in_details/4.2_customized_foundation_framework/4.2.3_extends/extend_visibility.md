@@ -1,10 +1,10 @@
-#  Extend - Visibility 
+# Extend - Visibility
 
-Extends: <http://foundation.zurb.com/sites/docs/v/5.5.3/components/visibility.html>
+Extends: http://foundation.zurb.com/sites/docs/v/5.5.3/components/visibility.html
 
 ## What/why do we extend?
 
-1.  Since we don't include all print CSS from Foundation we had to take out on of the classes we use in order to hide some content for print
+1. Since we don't include all print CSS from Foundation we had to take out on of the classes we use in order to hide some content for print
 
 ## Sass
 

@@ -2,52 +2,11 @@
 
 Utilities and helper for interacting with files, which are stored on the server.
 
-<table>
-<colgroup>
-<col style="width: 25%" />
-<col style="width: 25%" />
-<col style="width: 25%" />
-<col style="width: 25%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th>StorageService</th>
-<th><br />
-</th>
-<th>Parameters</th>
-<th>Return</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Id</td>
-<td>silver_tools.storage_service</td>
-<td><br />
-</td>
-<td><br />
-</td>
-</tr>
-<tr>
-<td>Meaning</td>
-<td>fetches a list of files by a provided $productId from $storagePath</td>
-<td><br />
-</td>
-<td><br />
-</td>
-</tr>
-<tr>
-<td>Function</td>
-<td>GetFilesByProductId()</td>
-<td><p>string $productId</p>
-<p>string $storagePath</p>
-<p>string $suffix = ''</p>
-<p>int $subFolder = 0</p>
-<p>string $separator = '_'</p></td>
-<td><p>array of strings - path names of the existing files</p>
-<p>or an empty array</p></td>
-</tr>
-</tbody>
-</table>
+|StorageService||Parameters|Return|
+|--- |--- |--- |--- |
+|Id|silver_tools.storage_service|||
+|Meaning|fetches a list of files by a provided $productId from $storagePath|||
+|Function|GetFilesByProductId()|string $productId</br>string $storagePath</br>string $suffix = ''</br>int $subFolder = 0</br>string $separator = '_'|array of strings - path names of the existing files or an empty array|
 
 ## public function getFilesByProductId($productId, $storagePath, $suffix = '', $subFolder = 0, $separator = '\_')
 
@@ -58,7 +17,7 @@ See: <http://symfony.com/doc/current/components/finder.html>
 
 The example code:
 
-``` 
+``` php
 use Silversolutions\Bundle\ToolsBundle\Services\StorageService;
  
 $productId = '1002';
@@ -84,7 +43,7 @@ array (3) => (
 
 ### Documentation
 
-``` 
+``` php
     /**
      * Fetches a list of files by a provided $productId from $storagePath.
      *
@@ -126,5 +85,4 @@ array (3) => (
      * @return array Array of strings of path names of existing files or empty array
      */
     public function getFilesByProductId($productId, $storagePath, $suffix = '', $subFolder = 0, $separator = '_')
-   
 ```

@@ -1,22 +1,22 @@
-#  Component - Image Zoom 
+# Component - Image Zoom
 
 This section describes image zoom functionality which is commonly used on e-commerce websites to show details on images. Storm is using plugin called xZoom to achieve image zoom functionalities.
 
 This plugin is open source 
 
- <https://github.com/payalord/xZoom>
+https://github.com/payalord/xZoom
 
-  - Supports jQuery starting from version 1.2.6.
-  - A lof of options, effects and easy to use and customize
-  - Lightweight \~14kb minified version.
-  - You can load low and high res images separately.
-  - Supports IE6+, Chrome, FireFox, Opera, Safari, Android, iOS
-  - Supports Responsive output.
-  - Have an API to integrate with other useful plugins like [FancyBox](http://www.fancyapps.com/fancybox/), [Magnific PopUp](http://dimsemenov.com/plugins/magnific-popup/) and [HammerJS](http://hammerjs.github.io/).
+- Supports jQuery starting from version 1.2.6.
+- A lof of options, effects and easy to use and customize
+- Lightweight \~14kb minified version.
+- You can load low and high res images separately.
+- Supports IE6+, Chrome, FireFox, Opera, Safari, Android, iOS
+- Supports Responsive output.
+- Have an API to integrate with other useful plugins like [FancyBox](http://www.fancyapps.com/fancybox/), [Magnific PopUp](http://dimsemenov.com/plugins/magnific-popup/) and [HammerJS](http://hammerjs.github.io/).
 
 ## Sass / CSS
 
-Currently there is no sass provided. We just import standard CSS file in our scss/style.scss file in the Pugins section. The file is located here:
+Currently there is no sass provided. We just import standard CSS file in our `scss/style.scss` file in the Plugins section. The file is located here:
 
 **File location**
 
@@ -30,9 +30,9 @@ vendor/xzoom/xzoom.css
 
 ### Step 1:
 
-1.  Copy `xzoom.min.js` or `xzoom.js` file into your javascript folder.
-2.  Copy `xzoom.css` file into your css folder, or copy the content of the `xzoom.css` file into your site style sheet.
-3.  Copy `example/images/xloading.gif` to your images folder.
+1. Copy `xzoom.min.js` or `xzoom.js` file into your javascript folder.
+1. Copy `xzoom.css` file into your css folder, or copy the content of the `xzoom.css` file into your site style sheet.
+1. Copy `example/images/xloading.gif` to your images folder.
 
 ### Step 2:
 

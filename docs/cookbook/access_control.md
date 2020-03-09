@@ -1,4 +1,4 @@
-#  Access control 
+# Access control
 
 # Introduction
 
@@ -8,106 +8,39 @@ eZ Commerce uses the eZ Platform policies to avoid access to some specific pages
 
 One policy consists of a module and a function.
 
-<table>
-<thead>
-<tr class="header">
-<th>Module</th>
-<th>Function</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>eZ Commerce</td>
-<td><br />
-</td>
-<td><br />
-</td>
-</tr>
-<tr>
-<td>siso_policy</td>
-<td>checkout</td>
-<td>Can access the checkout process</td>
-</tr>
-<tr>
-<td>siso_policy</td>
-<td>dashboard_view</td>
-<td>Can access the backend cockpit</td>
-</tr>
-<tr>
-<td>siso_policy</td>
-<td>forms_profile_edit</td>
-<td>Can access the user profile</td>
-</tr>
-<tr>
-<td>siso_policy</td>
-<td>lostorder_list</td>
-<td>Can access the lostorders in the backend</td>
-</tr>
-<tr>
-<td>siso_policy</td>
-<td>lostorder_manage</td>
-<td>???</td>
-</tr>
-<tr>
-<td>siso_policy</td>
-<td>lostorder_process</td>
-<td>???</td>
-</tr>
-<tr>
-<td>siso_policy</td>
-<td>quickorder</td>
-<td>Can access the quickorder</td>
-</tr>
-<tr>
-<td>siso_policy</td>
-<td>read_basket</td>
-<td>Can see the basket</td>
-</tr>
-<tr>
-<td>siso_policy</td>
-<td>write_basket</td>
-<td>Can modify the basket (add, update, delete)</td>
-</tr>
-<tr>
-<td>customercenter</td>
-<td><br />
-</td>
-<td><br />
-</td>
-</tr>
-<tr>
-<td>siso_customercenter</td>
-<td>approve</td>
-<td>Can approve baskets in the customer center</td>
-</tr>
-<tr>
-<td>siso_customercenter</td>
-<td>buy</td>
-<td>Can buy as the customer center user</td>
-</tr>
-<tr>
-<td>siso_customercenter</td>
-<td>view</td>
-<td>Can access the customer center user management</td>
-</tr>
-</tbody>
-</table>
+|Module|Function|Description|
+|--- |--- |--- |
+|eZ Commerce|||
+|siso_policy|checkout|Can access the checkout process|
+|siso_policy|dashboard_view|Can access the backend cockpit|
+|siso_policy|forms_profile_edit|Can access the user profile|
+|siso_policy|lostorder_list|Can access the lostorders in the backend|
+|siso_policy|lostorder_manage||
+|siso_policy|lostorder_process||
+|siso_policy|quickorder|Can access the quickorder|
+|siso_policy|read_basket|Can see the basket|
+|siso_policy|write_basket|Can modify the basket (add, update, delete)|
+|customercenter|||
+|siso_customercenter|approve|Can approve baskets in the customer center|
+|siso_customercenter|buy|Can buy as the customer center user|
+|siso_customercenter|view|Can access the customer center user management|
 
 ## Handling the access control
 
 eZ Commerce has a flexible way, how to handle the access to some specific area.
 
-  - Controllers: If there is a defined route, you can simple add the policy in the routing file.
-  - [eZ Commerce forms](One-page-forms_23560744.html): you can add the policy in the forms configuration  
+- Controllers: If there is a defined route, you can simple add the policy in the routing file.
+- [eZ Commerce forms](One-page-forms_23560744.html): you can add the policy in the forms configuration  
 
-When defining the policies, you must follow the **module/function** syntax\!
+!!! note
+
+    When defining the policies, you must follow the **module/function** syntax.
 
 ### Defining policies in the routing file
 
 If you want to avoid user to access a page that is rendered by a controller and a route definition exists for it, you can simply do it in the routing file.
 
-``` 
+``` yaml
 siso_quick_order:
     pattern:  /quickorder
     defaults:
@@ -123,9 +56,9 @@ There is a central event listener, that will check the configuration from the ro
 
 **Silversolutions/Bundle/EshopBundle/EventListener/VerifyUserPoliciesRequestListener.php**
 
-  - listens to a "kernel.finish\_request" event
+- listens to a "kernel.finish\_request" event
 
-``` 
+``` php
 /**
  * Checks the user policies for given request.
  * Therefore the information for current route from the routing file are evaluated.
@@ -170,12 +103,4 @@ public function verifyUserPolicies(FinishRequestEvent $event)
 ```
 ### What happen by missing policy?
 
-When the user tries to call a url, where he needs a special policy, that he doesn´t have, **VerifyUserPoliciesRequestListener** is throwing an exception. Then the exception listener is rendering an access denied page.
-
-## Attachments:
-
-![](images/icons/bullet_blue.gif) [Bildschirmfoto 2014-07-31 um 12.51.28.png](attachments/23560922/23563797.png) (image/png)  
-![](images/icons/bullet_blue.gif) [Bildschirmfoto 2014-07-31 um 12.50.48.png](attachments/23560922/23563987.png) (image/png)  
-![](images/icons/bullet_blue.gif) [Bildschirmfoto 2014-07-31 um 12.50.48.png](attachments/23560922/23563798.png) (image/png)  
-![](images/icons/bullet_blue.gif) [Bildschirmfoto 2014-07-31 um 12.58.42.png](attachments/23560922/23563988.png) (image/png)  
-![](images/icons/bullet_blue.gif) [Bildschirmfoto 2015-10-22 um 09.59.28.png](attachments/23560922/23563473.png) (image/png)  
+When the user tries to call a url, where he needs a special policy, that he doesn't have, **VerifyUserPoliciesRequestListener** is throwing an exception. Then the exception listener is rendering an access denied page.

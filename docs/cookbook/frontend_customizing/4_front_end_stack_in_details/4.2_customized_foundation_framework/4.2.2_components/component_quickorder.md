@@ -1,4 +1,4 @@
-#  Component - Quickorder 
+# Component - Quickorder
 
 ## Sass
 
@@ -20,4 +20,4 @@ $quickorder-item-background-color: #efefef !default;
 $quickorder-item-border-color: #ccc !default;
 ```
 
-In order to change settings in project find settings/\_storm.scss file in your project and find the Quickorder section.
+In order to change settings in project find `settings/_storm.scss` file in your project and find the Quickorder section.

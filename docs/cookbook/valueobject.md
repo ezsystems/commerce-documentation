@@ -1,4 +1,4 @@
-#  ValueObject 
+# ValueObject
 
 |           |                                              |
 | --------- | -------------------------------------------- |
@@ -8,11 +8,11 @@ The generic super class `ValueObject` is a convenient class which has magic `__g
 
 To validate the given properties easily, the optional property `$checkProperties` could be use by overwrite.
 
-#  Example 1
+# Example 1
 
-The following example creates a **`Person`** class which extends the `ValueObject`.
+The following example creates a `Person` class which extends the `ValueObject`.
 
-``` 
+``` php
 class Person extends ValueObject
 {
     protected $fullName;
@@ -22,9 +22,9 @@ class Person extends ValueObject
 }
 ```
 
-Use the **`Person`** class and create an object. The constructor takes all necessary properties as an array:
+Use the `Person` class and create an object. The constructor takes all necessary properties as an array:
 
-``` 
+``` php
 $person = new Person(
     array(
         'fullName' => 'James Bond',
@@ -43,7 +43,7 @@ echo 'Agent name: ' . $person->fullName . ' (Age: ' . $person->age . ')';
 
 Let's improve the **`Person`** class with a simple validation:
 
-``` 
+``` php
 class Person extends ValueObject
 {
     protected $fullName;
@@ -61,9 +61,9 @@ class Person extends ValueObject
 }
 ```
 
-Now an exception is thrown, if you try to omit one of the "`mandatory`" properties, or if one of the given properties have not the valid variable type.
+Now an exception is thrown, if you try to omit one of the `mandatory` properties, or if one of the given properties have not the valid variable type.
 
-``` 
+``` php
 // results in InvalidArgumentException: 'Mandatory property "female" not given in $properties (class: "Person")':
 $person = new Person(
     array(
@@ -84,7 +84,7 @@ $person = new Person(
 
 Now let's append a "real" and more specific validation by extending the `validateProperties()` method.
 
-``` 
+``` php
 class Person extends ValueObject
 {
     protected $fullName;
@@ -121,13 +121,13 @@ class Person extends ValueObject
 }
 ```
 
-#  Example 2
+# Example 2
 
 Beside the "simple" data types (like int or array) you can also use a custom type.
 
 Lets assume, your class needs have an attribute $request and we have to make sure it is an instance of **\\Symfony\\Component\\HttpFoundation\\Request**. You can do this like this:
 
-``` 
+``` php
 class Example extends ValueObject
 {
     /** @var \Symfony\Component\HttpFoundation\Request $request */
@@ -145,4 +145,4 @@ class Example extends ValueObject
 }
 ```
 
-Please note the values of **type** and **isObject**. Only if **isObject** is true, we check if the attribute is instanceof **type**.
+Please note the values of `type` and `isObject`. Only if `isObject` is true, we check if the attribute is instanceof `type`.

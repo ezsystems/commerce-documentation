@@ -1,21 +1,21 @@
-#  4.6.1 CSS (Sass) 
+# 4.6.1 CSS (Sass)
 
 ## Syntax
 
-  - Use soft tabs with two spaces—they're the only way to guarantee code renders the same in any environment.
-  - When grouping selectors, keep individual selectors to a single line.
-  - Include one space before the opening brace of declaration blocks for legibility.
-  - Place closing braces of declaration blocks on a new line.
-  - Include one space after `:` for each declaration.
-  - Each declaration should appear on its own line for more accurate error reporting.
-  - End all declarations with a semi-colon. The last declaration's is optional, but your code is more error prone without it.
-  - Comma-separated property values should include a space after each comma (e.g., `box-shadow`).
-  - Don't include spaces after commas *within*`rgb()`,`rgba()`, `hsl()`, `hsla()`, or `rect()` values. This helps differentiate multiple color values (comma, no space) from multiple property values (comma with space).
-  - Don't prefix property values or color parameters with a leading zero (e.g., `.5` instead of `0.5` and `-.5px`instead of `-0.5px`).
-  - Lowercase all hex values, e.g., `#fff`. Lowercase letters are much easier to discern when scanning a document as they tend to have more unique shapes.
-  - Use shorthand hex values where available, e.g., `#fff`instead of `#ffffff`.
-  - Quote attribute values in selectors, e.g.,`input[type="text"]`. [They’re only optional in some cases](http://mathiasbynens.be/notes/unquoted-attribute-values#css), and it’s a good practice for consistency.
-  - Avoid specifying units for zero values, e.g., `margin: 0;`instead of `margin: 0px;`.  
+- Use soft tabs with two spaces—they're the only way to guarantee code renders the same in any environment.
+- When grouping selectors, keep individual selectors to a single line.
+- Include one space before the opening brace of declaration blocks for legibility.
+- Place closing braces of declaration blocks on a new line.
+- Include one space after `:` for each declaration.
+- Each declaration should appear on its own line for more accurate error reporting.
+- End all declarations with a semi-colon. The last declaration's is optional, but your code is more error prone without it.
+- Comma-separated property values should include a space after each comma (e.g., `box-shadow`).
+- Don't include spaces after commas *within*`rgb()`,`rgba()`, `hsl()`, `hsla()`, or `rect()` values. This helps differentiate multiple color values (comma, no space) from multiple property values (comma with space).
+- Don't prefix property values or color parameters with a leading zero (e.g., `.5` instead of `0.5` and `-.5px`instead of `-0.5px`).
+- Lowercase all hex values, e.g., `#fff`. Lowercase letters are much easier to discern when scanning a document as they tend to have more unique shapes.
+- Use shorthand hex values where available, e.g., `#fff`instead of `#ffffff`.
+- Quote attribute values in selectors, e.g.,`input[type="text"]`. [They’re only optional in some cases](http://mathiasbynens.be/notes/unquoted-attribute-values#css), and it’s a good practice for consistency.
+- Avoid specifying units for zero values, e.g., `margin: 0;`instead of `margin: 0px;`.  
 
 ``` 
 /* Bad CSS */
@@ -41,10 +41,10 @@ Declaration order
 
 Related property declarations should be grouped together following the order:
 
-1.  Positioning
-2.  Box model
-3.  Typographic
-4.  Visual
+1. Positioning
+2. Box model
+3. Typographic
+4. Visual
 
 Positioning comes first because it can remove an element from the normal flow of the document and override box model related styles. The box model comes next as it dictates a component's dimensions and placement.
 
@@ -86,9 +86,9 @@ Everything else takes place *inside* the component or without impacting the prev
 
 Compared to `<link>`s, `@import` is slower, adds extra page requests, and can cause other unforeseen problems. Avoid them and instead opt for an alternate approach:
 
-  - Use multiple `<link>` elements
-  - Compile your CSS with a preprocessor like Sass or Less into a single file
-  - Concatenate your CSS files with features provided in Rails, Jekyll, and other environments
+- Use multiple `<link>` elements
+- Compile your CSS with a preprocessor like Sass or Less into a single file
+- Concatenate your CSS files with features provided in Rails, Jekyll, and other environments
 
 For more information, [read this article by Steve Souders](http://www.stevesouders.com/blog/2009/04/09/dont-use-import/).
 
@@ -102,9 +102,9 @@ For more information, [read this article by Steve Souders](http://www.stevesoude
 </style>
 ```
 
-Media query placement
+## Media query placement
 
- Place media queries as close to their relevant rule sets whenever possible. Don't bundle them all in a separate stylesheet or at the end of the document. Doing so only makes it easier for folks to miss them in the future. Here's a typical setup.
+Place media queries as close to their relevant rule sets whenever possible. Don't bundle them all in a separate stylesheet or at the end of the document. Doing so only makes it easier for folks to miss them in the future. Here's a typical setup.
 
 ``` 
 .element { ... }
@@ -151,12 +151,12 @@ The key factor here is error detection—e.g., a CSS validator stating you have 
 
 Strive to limit use of shorthand declarations to instances where you must explicitly set all the available values. Common overused shorthand properties include:
 
-  - padding
-  - margin
-  - font
-  - background
-  - border
-  - border-radius
+- padding
+- margin
+- font
+- background
+- border
+- border-radius
 
 Often times we don't need to set all the values a shorthand property represents. For example, HTML headings only set top and bottom margin, so when necessary, only override those two values. Excessive use of shorthand properties often leads to sloppier code with unnecessary overrides and unintended side effects.
 
@@ -219,28 +219,28 @@ Be sure to write in complete sentences for larger comments and succinct phrases 
 
 ## Class names
 
-  - Keep classes lowercase and use dashes
-  - Keep classes as short and succinct as possible
-  - Use `.js-*` classes to denote behavior (as opposed to style), but keep these classes out of your CSS.
+- Keep classes lowercase and use dashes
+- Keep classes as short and succinct as possible
+- Use `.js-*` classes to denote behavior (as opposed to style), but keep these classes out of your CSS.
 
 this point needs more attention
 
-  - namespaces
-  - BEM
-  - etc
+- namespaces
+- BEM
+- etc
 
 ## Selectors
 
-  - Use classes over generic element tag for optimum rendering performance.
-  - Avoid using several attribute selectors (e.g.,`[class^="..."]`) on commonly occuring components. Browser performance is known to be impacted by these.
-  - Keep selectors short and strive to limit the number of elements in each selector to three.
+- Use classes over generic element tag for optimum rendering performance.
+- Avoid using several attribute selectors (e.g.,`[class^="..."]`) on commonly occuring components. Browser performance is known to be impacted by these.
+- Keep selectors short and strive to limit the number of elements in each selector to three.
 
 ## Organization
 
-  - Organize sections of code by component.
-  - Develop a consistent commenting hierarchy.
-  - Use consistent white space to your advantage when separating sections of code for scanning larger documents.
-  - When using multiple CSS files, break them down by component instead of page. Pages can be rearranged and components moved.  
+- Organize sections of code by component.
+- Develop a consistent commenting hierarchy.
+- Use consistent white space to your advantage when separating sections of code for scanning larger documents.
+- When using multiple CSS files, break them down by component instead of page. Pages can be rearranged and components moved.  
 
 ``` 
 /*
@@ -260,7 +260,7 @@ this point needs more attention
 .element-heading { ... }
 ```
 
-## Avoid qualifying class names with type selectors.
+## Avoid qualifying class names with type selectors
 
 ``` 
 /* Not recommended */

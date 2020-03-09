@@ -1,4 +1,4 @@
-#  Emails 
+# Emails
 
 Here you can find a list with emails that will be sent out from shop and processes behind them. Also the general configuration can be found here.
 
@@ -6,7 +6,7 @@ Here you can find a list with emails that will be sent out from shop and process
 
 By default eZ Commerce is using [SwiftMailer](http://symfony.com/doc/master/reference/configuration/swiftmailer.html) in order to send the emails. This minimum configuration is necessary:
 
-``` 
+``` yaml
 swiftmailer:
     transport:  smtp
     encryption: ssl
@@ -22,7 +22,7 @@ These parameters are used to configure the outgoing emails:
 
 **General e-mail configuration - emails.yml**
 
-``` 
+``` yaml
 parameters:
     siso_core.default.ses_swiftmailer:
         #general mail sender
@@ -50,7 +50,7 @@ parameters:
 
 **Customer center**
 
-``` 
+``` yaml
 parameters:
     siso_customer_center.approve_basket.subject: 'Basket to approve'
     siso_customer_center.reject_basket.subject: 'Basket was rejected'
@@ -59,200 +59,159 @@ parameters:
 
 ## Email list and processes
 
-<table>
-<thead>
-<tr class="header">
-<th>Process</th>
-<th>Receiver</th>
-<th>How to reproduce</th>
-<th>Configuration</th>
-<th>Responsible Service</th>
-<th>Template</th>
-<th>Screenshot</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Emails send to the user</td>
-<td><br />
-</td>
-<td><br />
-</td>
-<td><br />
-</td>
-<td><br />
-</td>
-<td><br />
-</td>
-<td><br />
-</td>
-</tr>
-<tr>
-<td><pre><code>Registration - private customer</code></pre></td>
-<td><p>User who registered</p></td>
-<td><div class="content-wrapper">
-<ul>
-<li>Fill the form data and send</li>
-<li>(<em>register/private</em>)</li>
-</ul>
+### Emails sent to the user
 
-<p>Liebe/r Jonas Schock</p>
-<p><br />
-</p>
-<ul>
-<li>salutation possible</li>
-</ul>
-</td>
-<td><p><br />
-</p>
-<br />
+#### Registration - private customer
 
-<p><br />
-</p></td>
-<td><pre><code>SendConfirmationMailDataProcessor</code></pre></td>
-<td><p><code>SilversolutionsEshopBundle:Emails:ConfirmationMail_RegisterPrivate.html.twig</code></p>
-<p><code>SilversolutionsEshopBundle:Emails:ConfirmationMail_RegisterPrivate.txt.twig</code></p>
-<p><br />
-</p></td>
-<td><div class="content-wrapper">
-<p>User:</p>
-<p><img src="attachments/23560607/23563478.png" class="confluence-embedded-image" height="250" /></p>
-</td>
-</tr>
-<tr>
-<td><code>DOI email for subscribe newsletter</code></td>
-<td><p>User who requested the newsletter</p></td>
-<td><div class="content-wrapper">
-<ul>
-<li>Input the email address and send</li>
-</ul>
+Receiver: User who registered
 
-<p>Liebe/r {email}</p>
-<p><br />
-</p>
-<ul>
-<li>salutation and name not possible, since we are using data from the form</li>
-</ul>
-</td>
-<td><br />
-</td>
-<td><br />
-</td>
-<td><p><code>Silversolutions/Bundle/EshopBundle/Resources/views/Emails/ConfirmationMail_SubscribeNewsletter.html.twig</code></p>
-<p><code>Silversolutions/Bundle/EshopBundle/Resources/views/Emails/ConfirmationMail_SubscribeNewsletter.txt.twig</code></p></td>
-<td><br />
-</td>
-</tr>
-<tr>
-<td><pre><code>Forgot password</code></pre></td>
-<td><p>User who executed 'forgot password' function</p></td>
-<td><div class="content-wrapper">
-<ul>
-<li>Fill the form data and send</li>
-<li>(<em>password/reminder</em>)</li>
-</ul>
+How to reproduce:
 
-<p>Liebe/r {email}</p>
-<p><br />
-</p>
-<ul>
-<li>salutation and name not possible, since we only have the email address from the form</li>
-</ul>
-</td>
-<td><p><br />
-</p>
-<br />
+- Fill the form data and send
+- (register/private)
 
-<p><br />
-</p></td>
-<td><pre><code>SendPasswordReminderEmailDataProcessor</code></pre></td>
-<td><p><code>SilversolutionsEshopBundle:Emails:password_reminder.html.twig</code></p>
-<p><code>SilversolutionsEshopBundle:Emails:password_reminder.txt.twig</code></p></td>
-<td><br />
-</td>
-</tr>
-<tr>
-<td>Emails send to the user and to the admins</td>
-<td><br />
-</td>
-<td><br />
-</td>
-<td><br />
-</td>
-<td><br />
-</td>
-<td><br />
-</td>
-<td><br />
-</td>
-</tr>
-<tr>
-<td><pre><code>Contact form</code></pre></td>
-<td><ol>
-<li><pre><code>contactMailReceiver</code></pre></li>
-<li>User who send out the contact form (if checked send to my address)</li>
-</ol>
-<br />
+```
+Dear Jonas Schock
 
-<p><br />
-</p></td>
-<td><div class="content-wrapper">
-<ul>
-<li><p>Fill the form data and send</p></li>
-<li><p><em>(<em>service/contact</em>)</em></p></li>
-</ul>
+salutation possible
+```
 
-<p>Liebe/r {email}</p>
-<p><br />
-</p>
-<ul>
-<li>salutation not possible, since we are using the data from the form</li>
-<li>name and last would be possible</li>
-</ul>
-</td>
-<td><div class="content-wrapper">
-<pre class="" data-syntaxhighlighter-params="brush: java; gutter: false; theme: DJango" data-theme="DJango"><code>parameters:
+Responsible service:
+
+SendConfirmationMailDataProcessor
+
+Template:
+
+```
+SilversolutionsEshopBundle:Emails:ConfirmationMail_RegisterPrivate.html.twig
+SilversolutionsEshopBundle:Emails:ConfirmationMail_RegisterPrivate.txt.twig
+```
+
+Screnshot:
+
+User:
+
+![](img/emails_1.png)
+
+#### DOI email for subscribe newsletter
+
+Receiver: User who requested the newsletter
+
+How to reproduce:
+
+Input the email address and send
+
+```
+Dear {email}
+
+salutation and name not possible, since we are using data from the form
+```
+
+Template:
+
+```
+Silversolutions/Bundle/EshopBundle/Resources/views/Emails/ConfirmationMail_SubscribeNewsletter.html.twig
+Silversolutions/Bundle/EshopBundle/Resources/views/Emails/ConfirmationMail_SubscribeNewsletter.txt.twig
+```
+
+#### Forgot password
+
+Receiver: User who executed 'forgot password' function
+
+How to reproduce:
+
+- Fill the form data and send
+- (password/reminder)
+
+```
+Dear {email}
+
+salutation and name not possible, since we only have the email address from the form
+```
+
+Responsible Service:
+
+SendPasswordReminderEmailDataProcessor
+
+Template:
+
+```
+SilversolutionsEshopBundle:Emails:password_reminder.html.twig
+SilversolutionsEshopBundle:Emails:password_reminder.txt.twig
+```
+
+### Emails sent to the user and to the admins
+
+#### Contact form
+
+Receiver:
+
+1. contactMailReceiver
+2. User who send out the contact form (if checked send to my address)
+
+How to reproduce:
+
+- Fill the form data and send
+- (service/contact)
+
+```
+Dear {email}
+
+salutation not possible, since we are using the data from the form
+name and last would be possible
+```
+
+Configuration:
+
+``` yaml
+parameters:
     siso_core.default.ses_swiftmailer:
-        contactMailReceiver: azh@silversolutions.de</code></pre>
-</td>
-<td><pre><code>SendContactEmailDataProcessor</code></pre></td>
-<td><p><code>SilversolutionsEshopBundle:Emails:contact.html.twig</code></p>
-<p><code>SilversolutionsEshopBundle:Emails:contact.txt.twig</code></p></td>
-<td><div class="content-wrapper">
-<p>User:</p>
-<p><img src="attachments/23560607/23563244.png" class="confluence-embedded-image" height="250" /></p>
-</td>
-</tr>
-<tr>
-<td><pre><code>Checkout - order confirmation</code></pre></td>
-<td><ol>
-<li>User who ordered</li>
-<li>If customer center is active and approver triggered the order, approver and buyer will get the email</li>
-<li>Sales person, if configured<br />
-<br />
-</li>
-</ol>
-<br />
+        contactMailReceiver: azh@silversolutions.de
+```
 
-<p><br />
-</p></td>
-<td><div class="content-wrapper">
-<p>If the order process was succesfull, user will get an confirmation email</p>
-<ul>
-<li>Ensure that there is connection to ERP</li>
-<li>order something</li>
-</ul>
+Responsible Service:
 
-<p>Liebe/r {email}</p>
-<p><br />
-</p>
-<ul>
-<li>salutation and user name not possible, since we are using the data from the form. In the checkout forms we only have<br />
-Name/CompanyName</li>
-</ul>
-</td>
-<td><div class="content-wrapper">
-<pre class="" data-syntaxhighlighter-params="brush: java; gutter: false; theme: DJango" data-theme="DJango"><code>parameters:
+SendContactEmailDataProcessor
+
+Template:
+
+```
+SilversolutionsEshopBundle:Emails:contact.html.twig
+SilversolutionsEshopBundle:Emails:contact.txt.twig
+```
+
+Screenshot:
+
+User:
+
+![](img/emails_2.png)
+
+#### Checkout - order confirmation
+
+Receiver:
+
+1. User who ordered
+2. If customer center is active and approver triggered the order, approver and buyer will get the email
+3. Sales person, if configured
+
+How to reproduce:
+
+If the order process was succesfull, user will get an confirmation email
+
+- Ensure that there is connection to ERP
+- order something
+
+```
+Dear {email}
+
+salutation and user name not possible, since we are using the data from the form. In the checkout forms we only have
+Name/CompanyName
+```
+
+Configuration:
+
+``` yaml
+parameters:
     #possible mode: config or customer, if you want to send 
     #email to the sales person, set to config and add 
     #sales_email_address
@@ -262,40 +221,39 @@ Name/CompanyName</li>
     
     #configure email subject
     siso_checkout.order_confirmation.subject: 
-    &quot;Order confirmation&quot;</code></pre>
-<p><br />
-</p>
-<p><br />
-</p>
-</td>
-<td><pre><code>OrderConfirmationListener</code></pre></td>
-<td><p><code>SilversolutionsEshopBundle:Checkout/Email:order_confirmation.html.twig</code></p>
-<p><code>SilversolutionsEshopBundle:Checkout/Email:order_confirmation.txt.twig</code></p></td>
-<td><br />
-</td>
-</tr>
-<tr>
-<td><pre><code>Lost orders</code></pre></td>
-<td><ol>
-<li>User who ordered</li>
-<li>If customer center is active and approver triggered the order, approver and buyer will get the email</li>
-<li>Sales person, if configured<br />
-<br />
-</li>
-</ol>
-<br />
+    "Order confirmation"
+```
 
-<p><br />
-</p>
-<p><br />
-</p></td>
-<td><p>Same behavior as in the checkout process:</p>
-<ul>
-<li>If the lost order process was succesfull, user will get an confirmation email</li>
-<li>If it was not possible to send an order, admin will get a lost order email</li>
-</ul></td>
-<td><div class="content-wrapper">
-<pre class="" data-syntaxhighlighter-params="brush: java; gutter: false; theme: DJango" data-theme="DJango"><code>parameters:
+Responsible Service:
+
+OrderConfirmationListener
+
+Template:
+
+```
+SilversolutionsEshopBundle:Checkout/Email:order_confirmation.html.twig
+SilversolutionsEshopBundle:Checkout/Email:order_confirmation.txt.twig
+```
+
+#### Lost orders
+
+Receiver:
+
+1. User who ordered
+1. If customer center is active and approver triggered the order, approver and buyer will get the email
+1. Sales person, if configured
+
+How to reproduce:
+
+Same behavior as in the checkout process:
+
+- If the lost order process was successfull, user will get an confirmation email
+- If it was not possible to send an order, admin will get a lost order email
+
+Configuration:
+
+``` yaml
+parameters:
     #possible mode: config or customer, if you want to send 
     #email to the sales person, set to config and add 
     #sales_email_address
@@ -305,281 +263,267 @@ Name/CompanyName</li>
     
     #configure email subject
     siso_checkout.order_confirmation.subject: 
-    &quot;Order confirmation&quot;</code></pre>
-<p><br />
-</p>
-<p><br />
-</p>
-<p><br />
-</p>
-</td>
-<td><br />
-</td>
-<td><br />
-</td>
-<td><br />
-</td>
-</tr>
-<tr>
-<td>Emails send to shop admin</td>
-<td><br />
-</td>
-<td><br />
-</td>
-<td><br />
-</td>
-<td><br />
-</td>
-<td><br />
-</td>
-<td><br />
-</td>
-</tr>
-<tr>
-<td><pre><code>Registration - business customer</code></pre></td>
-<td><p>Admin</p></td>
-<td><ul>
-<li>Fill the form data and send</li>
-<li>(<em>register/business</em>)</li>
-</ul></td>
-<td><p><br />
-</p>
-<br />
+    "Order confirmation"
+```
 
-<p><br />
-</p></td>
-<td><pre><code>SendConfirmationMailDataProcessor</code></pre></td>
-<td><p><code>SilversolutionsEshopBundle:Emails:ConfirmationMail_RegisterBusiness.html.twig</code></p>
-<p><code>SilversolutionsEshopBundle:Emails:ConfirmationMail_RegisterBusiness.txt.twig</code></p></td>
-<td><div class="content-wrapper">
-<p>Administrator:</p>
-<p><img src="attachments/23560607/23563446.png" class="confluence-embedded-image" height="250" /></p>
-<p><br />
-</p>
-</td>
-</tr>
-<tr>
-<td>Cancellation form</td>
-<td><ol>
-<li>Administrator</li>
-</ol></td>
-<td><ul>
-<li><p>Fill the form data and send</p></li>
-<li><p><em>(<em>service/cancellation</em>)</em></p></li>
-</ul></td>
-<td><div class="content-wrapper">
-<pre class="" data-syntaxhighlighter-params="brush: java; gutter: false; theme: DJango" data-theme="DJango"><code>parameters:
+### Emails sent to shop admin
+
+#### Registration - business customer
+
+Receiver: Admin
+
+How to reproduce:
+
+- Fill the form data and send
+- (register/business)
+
+Service Responsible:
+
+SendConfirmationMailDataProcessor
+
+Template:
+
+```
+SilversolutionsEshopBundle:Emails:ConfirmationMail_RegisterBusiness.html.twig
+SilversolutionsEshopBundle:Emails:ConfirmationMail_RegisterBusiness.txt.twig
+```
+
+Screenshots:
+
+Administrator:
+
+![](img/emails_3.png)
+
+#### Cancellation form
+
+Receiver: Administrator
+
+How to reproduce:
+
+- Fill the form data and send
+- (service/cancellation)
+
+Configuration:
+
+``` yaml
+parameters:
     siso_core.default.ses_swiftmailer:
-        cancellationMailReceiver: azh@silversolutions.de</code></pre>
-<p><br />
-</p>
-<p><br />
-</p>
-<p><br />
-</p>
-</td>
-<td><pre><code>SendCancellationEmailDataProcessor</code></pre></td>
-<td><p><code>Silversolutions/Bundle/EshopBundle/Resources/views/Emails/cancellation.html.twig</code></p>
-<p><code>Silversolutions/Bundle/EshopBundle/Resources/views/Emails/cancellation.txt.twig</code></p></td>
-<td><br />
-</td>
-</tr>
-<tr>
-<td><pre><code>Edit profile - buyer address</code></pre></td>
-<td><ol>
-<li>Administrator</li>
-</ol>
-<br />
+        cancellationMailReceiver: azh@silversolutions.de
+```
 
-<p><br />
-</p></td>
-<td><ul>
-<li>Fill the form data and send</li>
-<li>Only for customers with customer number</li>
-<li>(<em>profile/buyer</em>)</li>
-</ul></td>
-<td><div class="content-wrapper">
-<pre class="" data-syntaxhighlighter-params="brush: java; gutter: false; theme: DJango" data-theme="DJango"><code>parameters:    
-    siso_core.default.ses_swiftmailer:      
-        mailReceiver: azh@silversolutions.de</code></pre>
-</td>
-<td><pre><code>SendConfirmationMailDataProcessor</code></pre></td>
-<td><p><code>SilversolutionsEshopBundle:Emails:ConfirmationMail_Buyer.html.twig</code></p>
-<p><code>SilversolutionsEshopBundle:Emails:ConfirmationMail_Buyer.txt.twig</code></p></td>
-<td><br />
-</td>
-</tr>
-<tr>
-<td>Edit profile - invoice address</td>
-<td><ol>
-<li>Administrator</li>
-</ol></td>
-<td><ul>
-<li>Fill the form data and send</li>
-<li>Only for customers with customer number</li>
-<li>(<em>profile/invoice</em>)</li>
-</ul></td>
-<td><div class="content-wrapper">
-<pre class="" data-syntaxhighlighter-params="brush: java; gutter: false; theme: DJango" data-theme="DJango"><code>parameters:    
-    siso_core.default.ses_swiftmailer:      
-        mailReceiver: azh@silversolutions.de</code></pre>
-</td>
-<td><pre><code>SendConfirmationMailDataProcessor</code></pre></td>
-<td><p><code>Silversolutions/Bundle/EshopBundle/Resources/views/Emails/ConfirmationMail_Address.html.twig</code></p>
-<p><code>Silversolutions/Bundle/EshopBundle/Resources/views/Emails/ConfirmationMail_Address.txt.twig</code></p></td>
-<td><br />
-</td>
-</tr>
-<tr>
-<td><pre><code>Checkout - order failed</code></pre></td>
-<td><ol>
-<li>Administrator</li>
-</ol>
-<br />
+Service Responsible:
 
-<p><br />
-</p></td>
-<td><p>If it was not possible to send an order, admin will get a lost order email</p>
-<ul>
-<li>Ensure that there is no connection to ERP</li>
-<li>Order something</li>
-</ul></td>
-<td><div class="content-wrapper">
-<pre class="" data-syntaxhighlighter-params="brush: java; gutter: false; theme: DJango" data-theme="DJango"><code>parameters:
+SendCancellationEmailDataProcessor
+
+Template:
+
+```
+Silversolutions/Bundle/EshopBundle/Resources/views/Emails/cancellation.html.twig
+Silversolutions/Bundle/EshopBundle/Resources/views/Emails/cancellation.txt.twig
+```
+
+#### Edit profile - buyer address
+
+Receiver: Administrator
+
+How to reproduce:
+
+- Fill the form data and send
+- Only for customers with customer number
+- (profile/buyer)
+
+Configuration:
+```
+parameters:    
+    siso_core.default.ses_swiftmailer:      
+        mailReceiver: azh@silversolutions.de
+```
+
+Service reponsible:
+
+SendConfirmationMailDataProcessor
+
+Template:
+
+```SilversolutionsEshopBundle:Emails:ConfirmationMail_Buyer.html.twig
+SilversolutionsEshopBundle:Emails:ConfirmationMail_Buyer.txt.twig
+```
+
+#### Edit profile - invoice address
+
+Receiver: Administrator
+
+How to reproduce:
+
+- Fill the form data and send
+- Only for customers with customer number
+- (profile/invoice)
+
+Configuration:
+
+```
+parameters:    
+    siso_core.default.ses_swiftmailer:      
+        mailReceiver: azh@silversolutions.de
+```
+
+Service Responsible:
+
+SendConfirmationMailDataProcessor
+
+Template:
+
+```
+Silversolutions/Bundle/EshopBundle/Resources/views/Emails/ConfirmationMail_Address.html.twig
+Silversolutions/Bundle/EshopBundle/Resources/views/Emails/ConfirmationMail_Address.txt.twig
+```
+
+#### Checkout - order failed
+Receiver: Administrator
+
+How to reproduce:
+
+If it was not possible to send an order, admin will get a lost order email
+
+- Ensure that there is no connection to ERP
+- Order something
+
+Configuration:
+
+``` yaml
+parameters:
     siso_core.default.ses_swiftmailer:  
         mailReceiver: azh@silversolutions.de
 
     #configure email subject
     siso_eshop.default.order_failed_subject: 
-        &quot;Order ERP submission failed&quot;</code></pre>
-</td>
-<td><pre><code>OrderFailedNotifyListener</code></pre></td>
-<td><p><code>SilversolutionsEshopBundle:Emails:NotificationMail_FailedOrder.html.twig</code></p>
-<p><code>SilversolutionsEshopBundle:Emails:NotificationMail_FailedOrder.txt.twig</code></p></td>
-<td><br />
-</td>
-</tr>
-<tr>
-<td>Fallback</td>
-<td><br />
-</td>
-<td><br />
-</td>
-<td><br />
-</td>
-<td><br />
-</td>
-<td><br />
-</td>
-<td><br />
-</td>
-</tr>
-<tr>
-<td><pre><code>Fallback email</code></pre></td>
-<td><br />
-</td>
-<td><div class="content-wrapper">
+        "Order ERP submission failed"
+```
 
-<p>Sometimes when the email template can not be found, fallback email template is used instead.</p>
-<p>This is the case for all emails, where the SendConfirmationMailDataProcessor is used.</p>
-</td>
-<td><br />
-</td>
-<td><pre><code>SendConfirmationMailDataProcessor</code></pre></td>
-<td><p><code>SilversolutionsEshopBundle:Emails:ConfirmationMail_Fallback.html.twig</code></p>
-<p><code>SilversolutionsEshopBundle:Emails:ConfirmationMail_Fallback.txt.twig</code></p></td>
-<td><br />
-</td>
-</tr>
-<tr>
-<td>Customer center</td>
-<td><br />
-</td>
-<td><br />
-</td>
-<td><br />
-</td>
-<td><br />
-</td>
-<td><br />
-</td>
-<td><br />
-</td>
-</tr>
-<tr>
-<td><pre><code>Approve basket</code></pre></td>
-<td><ul>
-<li>All approvers (or main contacts, if no approvers configured) from the company</li>
-</ul></td>
-<td><ul>
-<li>Try to order with a buyer who exceeded his budget.</li>
-<li>In the checkout summary page click on 'Send to approver' button</li>
-<li>All approvers from the company will get an email</li>
-</ul></td>
-<td><div class="content-wrapper">
-<pre class="" data-syntaxhighlighter-params="brush: java; gutter: false; theme: DJango" data-theme="DJango"><code>parameters:
+Service Reponsible:
+
+OrderFailedNotifyListener
+
+Template:
+
+```
+SilversolutionsEshopBundle:Emails:NotificationMail_FailedOrder.html.twig
+SilversolutionsEshopBundle:Emails:NotificationMail_FailedOrder.txt.twig
+```
+
+### Fallback
+
+#### Fallback email
+
+How to reproduce:
+
+Sometimes when the email template can not be found, fallback email template is used instead.
+This is the case for all emails, where the SendConfirmationMailDataProcessor is used.
+
+Service Reponsible:
+
+SendConfirmationMailDataProcessor
+
+Template:
+
+```
+SilversolutionsEshopBundle:Emails:ConfirmationMail_Fallback.html.twig
+SilversolutionsEshopBundle:Emails:ConfirmationMail_Fallback.txt.twig
+```
+
+### Customer center
+
+#### Approve basket
+
+Receivers:
+
+All approvers (or main contacts, if no approvers configured) from the company
+
+How to reproduce:
+
+- Try to order with a buyer who exceeded his budget.
+- In the checkout summary page click on 'Send to approver' button
+- All approvers from the company will get an email
+
+Configuration:
+
+```
+parameters:
     siso_customer_center.approve_basket.subject: 
-    &#39;Basket to approve&#39;</code></pre>
-</td>
-<td><pre><code>ApprovalController:sendToApproverAction</code></pre></td>
-<td><p><code>SisoCustomerCenterBundle:CustomerCenter/Emails:approve_basket.html.twig</code></p>
-<p><code>SisoCustomerCenterBundle:CustomerCenter/Emails:approve_basket.txt.twig</code></p></td>
-<td><br />
-</td>
-</tr>
-<tr>
-<td><pre><code>Reject basket</code></pre></td>
-<td><ul>
-<li>Buyer whose basket was rejected</li>
-</ul></td>
-<td><ul>
-<li>Login as an approver</li>
-<li>Go the the page with a list of baskets waiting for approvement</li>
-<li>reject one basket</li>
-<li>Buyer whose basket was rejected will get an email</li>
-</ul></td>
-<td><div class="content-wrapper">
-<pre class="" data-syntaxhighlighter-params="brush: java; gutter: false; theme: DJango" data-theme="DJango"><code>parameters:
+    'Basket to approve'
+```
+
+Service Responsible:
+
+ApprovalController:sendToApproverAction
+
+Template:
+
+```
+SisoCustomerCenterBundle:CustomerCenter/Emails:approve_basket.html.twig
+SisoCustomerCenterBundle:CustomerCenter/Emails:approve_basket.txt.twig
+```
+
+#### Reject basket
+
+Receiver:
+
+Buyer whose basket was rejected
+
+How to reproduce:
+
+- Login as an approver
+- Go the the page with a list of baskets waiting for approvement
+reject one basket
+- Buyer whose basket was rejected will get an email
+
+Configuration:
+
+``` yaml
+parameters:
     siso_customer_center.reject_basket.subject: 
-    &#39;Basket was rejected&#39;</code></pre>
-</td>
-<td><pre><code> ApprovalController:confirmRejectAction</code></pre></td>
-<td><p><code>SisoCustomerCenterBundle:CustomerCenter/Emails:reject_basket.html.twig</code></p>
-<p><code>SisoCustomerCenterBundle:CustomerCenter/Emails:reject_basket.txt.twig</code></p>
-<pre><code></code></pre>
-<p><br />
-</p></td>
-<td><br />
-</td>
-</tr>
-<tr>
-<td><pre><code>New account</code></pre></td>
-<td><ul>
-<li>User whose account was created</li>
-</ul></td>
-<td><ul>
-<li>Login as main contact</li>
-<li>Request/add new user</li>
-<li>User whose account was created will get an email</li>
-</ul></td>
-<td><div class="content-wrapper">
-<pre class="" data-syntaxhighlighter-params="brush: java; gutter: false; theme: DJango" data-theme="DJango"><code>parameters:
+    'Basket was rejected'
+```
+
+Service Responsible:
+
+ApprovalController:confirmRejectAction
+
+Template:
+
+```
+SisoCustomerCenterBundle:CustomerCenter/Emails:reject_basket.html.twig
+SisoCustomerCenterBundle:CustomerCenter/Emails:reject_basket.txt.twig
+```
+
+#### New account
+
+Receiver: User whose account was created
+
+How to reproduce:
+
+- Login as main contact
+- Request/add new user
+- User whose account was created will get an email
+
+Configuration:
+
+```
+parameters:
     siso_customer_center.password_mail.subject: 
-    &#39;Your new account&#39;</code></pre>
-</td>
-<td><pre><code>AddUserInEzFormProcessor</code></pre></td>
-<td><p><code>SisoCustomerCenterBundle:CustomerCenter/Emails:new_account_pw.html.twig</code></p>
-<p><code>SisoCustomerCenterBundle:CustomerCenter/Emails:new_account_pw.txt.twig</code></p></td>
-<td><br />
-</td>
-</tr>
-</tbody>
-</table>
+    'Your new account'
+```
 
-If for some reason no email templates can be rendered (both html and twig), then this email will not be sent to the client.
+Service Responsible:
 
-## Attachments:
+AddUserInEzFormProcessor
 
-![](images/icons/bullet_blue.gif) [image2016-1-20 13:25:27.png](attachments/23560607/23563244.png) (image/png)  
-![](images/icons/bullet_blue.gif) [image2016-1-22 12:41:11.png](attachments/23560607/23563478.png) (image/png)  
-![](images/icons/bullet_blue.gif) [image2016-1-25 12:9:29.png](attachments/23560607/23563446.png) (image/png)  
+Template:
+
+```SisoCustomerCenterBundle:CustomerCenter/Emails:new_account_pw.html.twig
+SisoCustomerCenterBundle:CustomerCenter/Emails:new_account_pw.txt.twig
+```
+
+!!! note
+
+    If for some reason no email templates can be rendered (both html and twig), then this email will not be sent to the client.

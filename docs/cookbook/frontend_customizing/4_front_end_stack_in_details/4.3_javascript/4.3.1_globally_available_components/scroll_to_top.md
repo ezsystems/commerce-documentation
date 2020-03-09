@@ -43,9 +43,9 @@ We use data-\* attributes to make it easy to configure
 
 ### Override in a project
 
-1.  Put your code inside a {% block scrollToTop %}{% endblock %}
-2.  Append class to hide it by default e.g. hide
-3.  Appen js-srcoll-to-top class to connect it with JS
+1. Put your code inside a {% block scrollToTop %}{% endblock %}
+2. Append class to hide it by default e.g. hide
+3. Appen js-srcoll-to-top class to connect it with JS
 
 ### Offset change
 

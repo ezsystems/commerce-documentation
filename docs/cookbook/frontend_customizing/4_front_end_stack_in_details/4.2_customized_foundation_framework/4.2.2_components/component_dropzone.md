@@ -1,4 +1,4 @@
-#  Component - Dropzone 
+# Component - Dropzone
 
 We use dropzone plugin in quick order module. It allows to use drag\&drop functionality. Dropzone is using <https://github.com/blueimp/jQuery-File-Upload>. 
 
@@ -33,7 +33,7 @@ $dropzone-plus-icon: $fa-var-upload; // please FontAwesome values, or override t
 $dropzone-plus-icon-font-size: rem-calc(24);
 ```
 
-In order to change settings in project find settings/\_storm.scss file in your project and find the Dropzone section.
+In order to change settings in project find `settings/_storm.scss` file in your project and find the Dropzone section.
 
 ## Vendor with dependencies
 
@@ -54,7 +54,6 @@ vendor/blueimp-file-upload
   {{ 'Drop file here or'|st_translate }}
   {# add class hide to hide the button #}
   <input id="fileupload" type="file" name="files[]" data-url="{{ path('siso_quick_order_upload') }}"/>
-
 ```
 
 We use Font Awesome to display an icon inside the dropzone.

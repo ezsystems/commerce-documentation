@@ -1,4 +1,4 @@
-#  Image resolutions 
+# Image resolutions
 
 eZ Commerce delivers the following image resolutions:
 

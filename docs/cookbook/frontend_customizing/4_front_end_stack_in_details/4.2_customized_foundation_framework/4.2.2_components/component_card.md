@@ -1,4 +1,4 @@
-#  Component - Card 
+# Component - Card
 
 Mostly used for product items but can used as well for another type of content that contains body, title, description.
 
@@ -89,7 +89,7 @@ $card-footer-line-height: rem-calc(36);
 $card-footer-bg-color: lighten($iron, 10%);
 ```
 
-In order to change settings in project find settings/\_storm.scss file in your project and find the Card section.
+In order to change settings in project find `settings/_storm.scss` file in your project and find the Card section.
 
 ## HTML
 
@@ -207,7 +207,7 @@ In order to change settings in project find settings/\_storm.scss file in your p
 </li>
 ```
 
-On listing pages like search or categories products are wrapped with .c-card\_\_list-wrapper. It is important to wrap with this classes in order to get a grid looking list.
+On listing pages like search or categories products are wrapped with `.c-card__list-wrapper`. It is important to wrap with this classes in order to get a grid looking list.
 
 **HTML**
 
@@ -223,7 +223,7 @@ Default view (categories):
   - two column on medium up (except list view)
   - three columns on large up
 
-Search result page by default does not have sidebar so we can use a bit different approach. In order to make it full with we need to apply modifier class c-card\_\_list-wrapper–wide:
+Search result page by default does not have sidebar so we can use a bit different approach. In order to make it full with we need to apply modifier class `c-card__list-wrapper-wide`:
 
 **HTML**
 
@@ -235,5 +235,5 @@ Search result page by default does not have sidebar so we can use a bit differen
 
 Wide view:
 
-  - all like default view
-  - additionally four columns on xlarge-up 
+- all like default view
+- additionally four columns on xlarge-up 

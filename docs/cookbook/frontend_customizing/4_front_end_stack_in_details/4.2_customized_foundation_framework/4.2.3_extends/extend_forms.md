@@ -1,11 +1,11 @@
-#  Extend - Forms 
+# Extend - Forms
 
-Extends: <http://foundation.zurb.com/sites/docs/v/5.5.3/components/forms.html>
+Extends: http://foundation.zurb.com/sites/docs/v/5.5.3/components/forms.html
 
 ## What/why do we extend?
 
-1.  In order to solve long labels problem we have introduced an extension to Foundation forms. It's useful for checkboxes and radio button with long labels.
-2.  In order to remove spacing for \<p\> tags inside \<label\>s.
+1. In order to solve long labels problem we have introduced an extension to Foundation forms. It's useful for checkboxes and radio button with long labels.
+1. In order to remove spacing for \<p\> tags inside \<label\>s.
 
 ## Sass
 
@@ -30,7 +30,7 @@ $form-label-paragraph-inner-padding-right: rem-calc(5);
 $form-label-paragraph-inner-font-size: rem-calc(14);
 ```
 
-In order to change settings in project find settings/\_storm.scss file in your project and find the Forms section.
+In order to change settings in project find `settings/_storm.scss` file in your project and find the Forms section.
 
 ## HTML
 
@@ -63,7 +63,7 @@ In order to change settings in project find settings/\_storm.scss file in your p
 
 ## Twig
 
-**Twig - vendor/silversolutions/silver.e-shop/src/Silversolutions/Bundle/EshopBundle/Resources/views/Forms/register\_private.html.twig**
+**Twig - vendor/silversolutions/silver.e-shop/src/Silversolutions/Bundle/EshopBundle/Resources/views/Forms/register_private.html.twig**
 
 ``` 
 ...

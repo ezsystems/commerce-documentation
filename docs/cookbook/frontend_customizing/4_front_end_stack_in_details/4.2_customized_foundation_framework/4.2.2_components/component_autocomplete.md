@@ -1,4 +1,4 @@
-#  Component - Autocomplete 
+# Component - Autocomplete
 
 It's a Sass file for an Ajax Autocomplete for jQuery plugin (<https://github.com/devbridge/jQuery-Autocomplete>).
 
@@ -41,4 +41,4 @@ $autocomplete-group-title-border-bottom-color: black;
 
 We don't use BEM for this component. We don't want to override any classes that might be hardcoded in the jQuery Plugin
 
-In order to change settings in project find settings/\_storm.scss file in your project and find the Autocomplete section.
+In order to change settings in project find `settings/_storm.scss` file in your project and find the Autocomplete section.

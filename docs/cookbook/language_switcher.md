@@ -1,10 +1,10 @@
-#  Language switcher
+# Language switcher
 
-eZ Commerce comes with a language switcher functionality, if your shop supports multiple [siteaccesses](Term---Siteaccess_23560731.html) because of the <span lang="en">multilingualism. You can easily switch the language in the shop by clicking on the language in the language switcher list.
+eZ Commerce comes with a language switcher functionality, if your shop supports multiple [siteaccesses](Term---Siteaccess_23560731.html) because of the multilingualism. You can easily switch the language in the shop by clicking on the language in the language switcher list.
 
 If user clicks on another language from the list, he will be redirected to the same page with the appropriate language.
 
-![](attachments/23560724/23563246.png)
+![](img/language_switcher_1.png)
 
 ## Technical background
 
@@ -12,7 +12,7 @@ If user clicks on another language from the list, he will be redirected to the s
 
 The siteaccess and languages are configured in ezplatform.yml
 
-``` 
+``` yaml
 ezpublish:
     siteaccess:
         default_siteaccess: ger
@@ -35,11 +35,13 @@ ezpublish:
 
 The language switcher is integrated in the **pagelayout.html.twig**, so it can be displayed on every page.
 
-The parameters for the language switcher controller are set here. Do not change them to ensure the full functionality\!
+!!! note
 
-**Parameters for the controller - do not change\!**
+    The parameters for the language switcher controller are set here. Do not change them to ensure the full functionality\!
 
-``` 
+**Parameters for the controller - do not change!**
+
+``` html+twig
 {#parameters for the language switcher#}
 {% set current_siteaccess = ezpublish.siteaccess.name %}
 {% set id = '' %}
@@ -66,7 +68,7 @@ Per language you need to set the correct siteaccess name.
 
 **List of languages - change\!**
 
-``` 
+``` html+twig
 {% block language_switcher_mobile %}
 
   <button href="#" data-dropdown="dropdown-languages-mobile" aria-controls="dropdown-languages-mobile"
@@ -113,12 +115,8 @@ The LanguageSwitcherController will generate the correct url depending on the gi
 
 **routing.yml**
 
-``` 
+``` yaml
 silversolutions_language_switcher:
     path:     /language_switcher
     defaults: { _controller: SilversolutionsEshopBundle:LanguageSwitcher:redirect } 
 ```
-
-## Attachments:
-
-![](images/icons/bullet_blue.gif) [Bildschirmfoto 2015-11-19 um 10.39.11.png](attachments/23560724/23563246.png) (image/png)  

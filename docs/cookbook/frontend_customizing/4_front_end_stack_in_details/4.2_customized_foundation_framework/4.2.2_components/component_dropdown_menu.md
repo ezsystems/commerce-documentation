@@ -1,4 +1,4 @@
-#  Component - Dropdown menu 
+# Component - Dropdown menu
 
 Dropdown menu component is a combination of custom code and top navigation Foundation component.
 
@@ -17,7 +17,7 @@ $dropdown-primary-color: $primary-color;
 $dropdown-secondary-color: #333 ;
 ```
 
-In order to change settings in project find settings/\_storm.scss file in your project and find the Dropdown menu section.
+In order to change settings in project find `settings/_storm.scss` file in your project and find the Dropdown menu section.
 
 ### HTML
 

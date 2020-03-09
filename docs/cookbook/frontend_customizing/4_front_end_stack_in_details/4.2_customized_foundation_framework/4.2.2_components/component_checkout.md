@@ -1,11 +1,11 @@
-#  Component - Checkout 
+# Component - Checkout
 
 Checkout page specific component. Includes styling for every step, as well as sidebar.
 
 Important JS classes
 
-  - js-checkout-box (used for every checkout step)
-  - js-checkout-invoice-box (example - used for "scroll to" function)
+- js-checkout-box (used for every checkout step)
+- js-checkout-invoice-box (example - used for "scroll to" function)
 
 ## Sass
 
@@ -17,25 +17,25 @@ scss/storm/_components.checkout.scss
 
 We use 3 different states (CSS classes) for going through the checkout progress. Step templates that are listed below.
 
-1.  not-done (grey)
-2.  progress (orange)
-3.  done (green)
+1. not-done (grey)
+1. progress (orange)
+1. done (green)
 
 ## Twig template structure
 
-  - checkout.html.twig (container)
-      - checkout\_login.html.twig (step)
-      - checkout\_invoice\_address.html.twig (step)
-      - checkout\_delivery\_address.html.twig (step)
-      - checkout\_shipping\_payment.html.twig (step)
-      - checkout\_summary.html.twig (step)
-      - sidebar\_invoice\_address.html.twig (sidebar)
-      - sidebar\_delivery\_address.html.twig (sidebar)
-      - sidebar\_summary.html.twig (sidebar)
+- checkout.html.twig (container)
+  - checkout_login.html.twig (step)
+  - checkout_invoice_address.html.twig (step)
+  - checkout_delivery_address.html.twig (step)
+  - checkout_shipping_payment.html.twig (step)
+  - checkout_summary.html.twig (step)
+  - sidebar_invoice_address.html.twig (sidebar)
+  - sidebar_delivery_address.html.twig (sidebar)
+  - sidebar_summary.html.twig (sidebar)
 
 ## Twig step example (invoice address)
 
-**Twig - vendor/silversolutions/silver.e-shop/src/Silversolutions/Bundle/EshopBundle/Resources/views/Checkout/checkout\_invoice\_address.html.twig**
+**Twig - vendor/silversolutions/silver.e-shop/src/Silversolutions/Bundle/EshopBundle/Resources/views/Checkout/checkout_invoice_address.html.twig**
 
 ``` 
 <div class="js-checkout-box js-checkout-invoice-box{% if params.visible is empty %} collapsed{% endif %}" id="box_invoice">
@@ -175,7 +175,7 @@ We use 3 different states (CSS classes) for going through the checkout progress.
 
 ## Twig settings for states
 
-**Twig - vendor/silversolutions/silver.e-shop/src/Silversolutions/Bundle/EshopBundle/Resources/views/Checkout/checkout\_invoice\_address.html.twig**
+**Twig - vendor/silversolutions/silver.e-shop/src/Silversolutions/Bundle/EshopBundle/Resources/views/Checkout/checkout_invoice_address.html.twig**
 
 ``` 
 {% if current_step == 'invoice' %}
@@ -186,7 +186,3 @@ We use 3 different states (CSS classes) for going through the checkout progress.
   {% set params = box_next|merge({'css' : 'not-done'}) %}
 {% endif %}
 ```
-
-## Attachments:
-
-![](images/icons/bullet_blue.gif) [checkout\_invoice\_address.html.twig](attachments/23560860/23563579.twig) (application/x-upload-data)  

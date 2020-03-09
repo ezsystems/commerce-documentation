@@ -1,4 +1,4 @@
-#  Utility - Typography 
+# Utility - Typography
 
 We use this utility to manipulate font properties.
 

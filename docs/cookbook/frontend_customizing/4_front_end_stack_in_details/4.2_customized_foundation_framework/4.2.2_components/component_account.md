@@ -1,4 +1,4 @@
-#  Component - Account 
+# Component - Account
 
 ## Sass
 
@@ -19,4 +19,4 @@ $account-box-headline-margin: rem-calc(-20 -20 20 -20) !default;
 $account-box-icon-margin-top: rem-calc(-7) !default;
 ```
 
-In order to change settings in project find settings/\_storm.scss file in your project and find the Account section.
+In order to change settings in project find `settings/_storm.scss` file in your project and find the Account section.

@@ -1,4 +1,4 @@
-#  Utility - Float 
+# Utility - Float
 
 We use this utility to extend what Foundation offers in terms of floats. 
 
@@ -44,4 +44,4 @@ scss/storm/_utils.float.scss
 
 ```
 
-In that case we use **"right" ** class which ships with Foundation. Using our utility we are removing floats on small devices.
+In that case we use `right` class which ships with Foundation. Using our utility we are removing floats on small devices.

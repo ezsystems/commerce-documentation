@@ -1,6 +1,6 @@
-#  addProducts 
+# addProducts
 
-basket.add\_products
+## basket.add_products
 
 method: addProducts
 
@@ -8,45 +8,43 @@ operation: basket
 
 description: Adds one or more products to the basket
 
-exceptions
+exceptions:
 
-    \InvalidArgumentException 
-
-\- thrown if variant without variantCode is choosen
+`\InvalidArgumentException` - thrown if variant without variantCode is choosen
 
 ## Example
 
-``` 
-                 $outputGetBasket = $this->getBusinessApi()->call('basket.get_basket', $inputGetBasket);
-                //clear all messages for each request
-                $outputGetBasket->basket->clearAllMessages();
-                $itemData = new ItemData(
-                    array(
-                        'quantity'    => 1,
-                        'isVariant'   => false,
-                        'variantCode' =>  '',
-                        'sku'         => '1000',
-                    )
-                );
-                /** @var InputAddItemToBasket $inputAddItemToBasket */
-                $inputAddItemToBasket = new InputAddItemToBasket(
-                   array(
-                       'itemData' => $itemData,
-                       'basket'   => $outputGetBasket->basket,
-                   )
-                );
-                try {
-                    $outputGetBasket = $this->getBusinessApi()->call('basket.add_products', $inputAddItemToBasket);
-                } catch (\InvalidArgumentException $e) {
-                    // ....
-                }
-                $message = $this->getBasketMessage($outputGetBasket->basket);
+``` php
+$outputGetBasket = $this->getBusinessApi()->call('basket.get_basket', $inputGetBasket);
+//clear all messages for each request
+$outputGetBasket->basket->clearAllMessages();
+$itemData = new ItemData(
+    array(
+        'quantity'    => 1,
+        'isVariant'   => false,
+        'variantCode' =>  '',
+        'sku'         => '1000',
+    )
+);
+/** @var InputAddItemToBasket $inputAddItemToBasket */
+$inputAddItemToBasket = new InputAddItemToBasket(
+   array(
+       'itemData' => $itemData,
+       'basket'   => $outputGetBasket->basket,
+   )
+);
+try {
+    $outputGetBasket = $this->getBusinessApi()->call('basket.add_products', $inputAddItemToBasket);
+} catch (\InvalidArgumentException $e) {
+    // ....
+}
+$message = $this->getBasketMessage($outputGetBasket->basket);
     
 ```
 
 ## Input parameters
 
-``` 
+``` php
 namespace Silversolutions\Bundle\EshopBundle\Entities\BusinessLayer\InputValueObjects;
  
 class AddItemToBasket extends ValueObject
@@ -79,7 +77,7 @@ class AddItemToBasket extends ValueObject
 }
 ```
 
-``` 
+``` php
 namespace Silversolutions\Bundle\EshopBundle\Entities\BusinessLayer\InputValueObjects\AddItemToBasket;
 
 use Silversolutions\Bundle\EshopBundle\Content\ValueObject;
@@ -124,7 +122,7 @@ class ItemData extends ValueObject
 
 ## Returns Output
 
-``` 
+``` php
 namespace Silversolutions\Bundle\EshopBundle\Entities\BusinessLayer\OutputValueObjects;
 use Silversolutions\Bundle\EshopBundle\Content\ValueObject;
 /**

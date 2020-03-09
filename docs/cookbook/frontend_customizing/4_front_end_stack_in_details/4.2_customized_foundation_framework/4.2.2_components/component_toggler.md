@@ -1,4 +1,4 @@
-#  Component - Toggler 
+# Component - Toggler
 
 We use toggler component to toggle content visibility. It's a well know pattern on many websites and online shops. 
 
@@ -21,12 +21,12 @@ $toggler-trigger-padding: rem-calc(5);
 $toggler-trigger-bg-color: $white;
 ```
 
-In order to change settings in project find settings/\_storm.scss file in your project and find the Toggler section.
+In order to change settings in project find `settings/_storm.scss` file in your project and find the Toggler section.
 
 ## Available classes
 
-  - c-toggler
-  - c-toggler\_\_trigger
+- c-toggler
+- c-toggler__trigger
 
 ## JavaScript part:
 
@@ -51,7 +51,7 @@ In order to change settings in project find settings/\_storm.scss file in your p
 
 ```
 
-A .c-toggler\_\_trigger needs to paired up with the .js-toggler class in order to trigger some JavaScript magic. 
+A .c-toggler__trigger needs to paired up with the .js-toggler class in order to trigger some JavaScript magic. 
 
 ## Twig
 

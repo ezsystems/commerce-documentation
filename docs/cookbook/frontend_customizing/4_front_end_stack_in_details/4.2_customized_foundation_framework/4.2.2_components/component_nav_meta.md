@@ -1,4 +1,4 @@
-#  Component - Nav Meta 
+# Component - Nav Meta
 
 Component used for the meta navigation. It extends Foundation inline-list component.
 
@@ -49,7 +49,7 @@ $nav-meta-dropdown-header-link-border-left-style: solid;
 $nav-meta-dropdown-header-link-border-left-color: $f-dropdown-border-color;
 ```
 
-In order to change settings in project find settings/\_storm.scss file in your project and find the Nav Meta section.
+In order to change settings in project find `settings/_storm.scss` file in your project and find the Nav Meta section.
 
 ## Twig
 

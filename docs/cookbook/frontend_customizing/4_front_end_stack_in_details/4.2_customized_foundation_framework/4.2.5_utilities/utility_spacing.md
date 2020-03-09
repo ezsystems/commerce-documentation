@@ -1,4 +1,4 @@
-#  Utility - Spacing 
+# Utility - Spacing
 
 We use this class to manipulate margin and padding on elements.
 
@@ -14,7 +14,8 @@ scss/storm/_utils.spacing.scss
 
 #### Every screen size
 
-/\* margin \*/  
+```
+/* margin */  
 .u-no-margin  
 .u-no-margin-top  
 .u-no-margin-right  
@@ -46,7 +47,7 @@ scss/storm/_utils.spacing.scss
 .u-margin-left-3x  
 .u-margin-left-4x
 
-/\* padding \*/
+/* padding */
 
 .u-no-padding  
 .u-no-padding-top  
@@ -78,11 +79,11 @@ scss/storm/_utils.spacing.scss
 .u-padding-left-2x  
 .u-padding-left-3x  
 .u-padding-left-4x
-
-####  
+```
 
 ####  Small screen size
 
+```
 .u-no-margin-on-small  
 .u-no-margin-top-on-small  
 .u-no-margin-right-on-small  
@@ -93,9 +94,11 @@ scss/storm/_utils.spacing.scss
 .u-margin-bottom-1x-on-small  
 .u-margin-left-1x-on-small  
 .u-padding-1x-on-small
+```
 
 ####  Medium screen size
 
+```
 .u-no-margin-on-medium  
 .u-no-margin-top-on-medium  
 .u-no-margin-right-on-medium  
@@ -110,9 +113,11 @@ scss/storm/_utils.spacing.scss
 .u-no-padding-on-medium-down  
 .u-no-margin-on-medium-up  
 .u-no-padding-on-medium-up
+```
 
 ####  Large screen size
 
+```
 .u-no-margin-on-large  
 .u-no-margin-top-on-large  
 .u-no-margin-right-on-large  
@@ -126,13 +131,16 @@ scss/storm/_utils.spacing.scss
 .u-no-margin-on-large-up  
 .u-no-margin-bottom-on-large-up  
 .u-no-padding-on-large-up
+```
 
 #### On every device smaller than large
 
+```
 .u-no-margin-on-large-down  
 .u-no-padding-on-large-down
+```
 
-We provide 4 levels of spacing for margin and padding. Base space is set to half size of the column gutter (15px). Following this rule \*-2x means 30px, \*-3x means 45px and \*-4x means 60px of margin or padding.
+We provide 4 levels of spacing for margin and padding. Base space is set to half size of the column gutter (15px). Following this rule `*-2x` means 30px, `*-3x` means 45px and `*-4x` means 60px of margin or padding.
 
 ## HTML
 

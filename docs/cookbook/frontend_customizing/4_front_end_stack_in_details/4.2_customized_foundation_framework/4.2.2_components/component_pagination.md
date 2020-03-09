@@ -1,6 +1,6 @@
-#  Component - Pagination 
+# Component - Pagination
 
-Pagination from Pager Fanta (<https://github.com/whiteoctober/Pagerfanta>) using Foundation settings. We applied Foundation settings to selectors required by Pager Fanta.
+Pagination from Pager Fanta (https://github.com/whiteoctober/Pagerfanta) using Foundation settings. We applied Foundation settings to selectors required by Pager Fanta.
 
 ## Sass
 

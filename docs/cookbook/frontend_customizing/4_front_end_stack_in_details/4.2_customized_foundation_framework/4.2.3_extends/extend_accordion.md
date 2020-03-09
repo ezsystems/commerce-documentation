@@ -1,12 +1,12 @@
-# Extend - Accordion 
+# Extend - Accordion
 
 Extends: <http://foundation.zurb.com/sites/docs/v/5.5.3/components/accordion.html>
 
 ## What/why do we extend?
 
-1.  We want to have an icon that indicated that tab is opened/closed.
-2.  Custom styling for tables displayed inside tab content.
-3.  Manipulate spacing (size) of a tab.
+1. We want to have an icon that indicated that tab is opened/closed.
+1. Custom styling for tables displayed inside tab content.
+1. Manipulate spacing (size) of a tab.
 
 ## Sass
 
@@ -40,7 +40,7 @@ $accordion-content-bordered-border-width: $accordion-navigation-active-bg-color;
 $accordion-content-inner-table-border-top-width: 0;
 ```
 
-In order to change settings in project find settings/\_storm.scss file in your project and find the Accordion section.
+In order to change settings in project find `settings/_storm.scss` file in your project and find the Accordion section.
 
 ### How to make smaller accordion title?
 
@@ -55,4 +55,4 @@ In order to change settings in project find settings/\_storm.scss file in your p
 </ul>
 ```
 
-**Notice**: *accordion-navigation small *applied to an \<li\> element.
+**Notice**: *accordion-navigation small* applied to an `<li>` element.

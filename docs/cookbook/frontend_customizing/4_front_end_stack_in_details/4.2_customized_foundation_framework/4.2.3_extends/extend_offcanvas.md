@@ -1,16 +1,16 @@
-#  Extend - Offcanvas 
+# Extend - Offcanvas
 
 Extends: <http://foundation.zurb.com/sites/docs/v/5.5.3/components/offcanvas.html>
 
 ## What/why do we extend?
 
-1.  We need more components than standard offcanvas can offer:
-    1.  login form / user area
-    2.  language switcher
-    3.  meta navigation content
-    4.  catalog
-2.  Height set to 100% in order to cover full height column.
-3.  Hamburger menu icon extended.  
+1. We need more components than standard offcanvas can offer:
+    1. login form / user area
+    1. language switcher
+    1. meta navigation content
+    1. catalog
+1. Height set to 100% in order to cover full height column.
+1. Hamburger menu icon extended.  
 
 ## Sass:
 
@@ -42,13 +42,13 @@ $off-canvas-accordion-nav-bg-color: $off-canvas-first-level-bg;
 $off-canvas-accordion-nav-icon-color: $off-canvas-link-color;
 ```
 
-In order to change settings in project find settings/\_storm.scss file in your project and find the Offcanvas section.
+In order to change settings in project find `settings/_storm.scss` file in your project and find the Offcanvas section.
 
 ### Introduced classes
 
-  - c-offcanvas\_\_user-area
-  - c-offcanvas\_\_content
-  - c-offcanvas--secondary
+- c-offcanvas__user-area
+- c-offcanvas__content
+- c-offcanvas--secondary
 
 ## HTML
 

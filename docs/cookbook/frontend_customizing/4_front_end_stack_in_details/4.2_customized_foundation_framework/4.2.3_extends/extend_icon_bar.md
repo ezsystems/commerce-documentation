@@ -1,10 +1,10 @@
-#  Extend - Icon Bar 
+# Extend - Icon Bar
 
-Extends: <http://foundation.zurb.com/sites/docs/v/5.5.3/components/icon-bar.html>
+Extends: http://foundation.zurb.com/sites/docs/v/5.5.3/components/icon-bar.html
 
 ## What/why do we extend?
 
-1.  In order to make it more custom look.
+1. In order to make it more custom look.
 
 We use it in our header area for search, wish list, comparison and basket.
 
@@ -29,11 +29,11 @@ $icon-bar-hover-background: transparent;
 $icon-bar-wrapper-column-width: 5;
 ```
 
-In order to change settings in project find settings/\_storm.scss file in your project and find the Icon Bar section.
+In order to change settings in project find `settings/_storm.scss` file in your project and find the Icon Bar section.
 
 ## HTML
 
-In order to get a flexible icon bar with possibilty to change icon order please use the code snippet below
+In order to get a flexible icon bar with possibility to change icon order please use the code snippet below
 
 ``` 
 <div class="c-icon-bar__wrapper">
@@ -72,10 +72,10 @@ In order to get a flexible icon bar with possibilty to change icon order please 
 
 ```
 
-1.  Wrap the whole thing with *.c-icon-bar\_\_wrapper*
-2.  Each item gets .*item* and .*c-icon-bar\_\_item classes*
-3.  An anchor element gets .*c-icon-bar\_\_arrow class*
-4.  Dropdown content despite all standard classes needs to get .*no-arrow* class in order to hide standard arrow from the default component settings. Class *.flexible* is optional and depends on the content that's inside the dropdown. You could replace with *.tiny, .small, .medium, .large, .xlarge* or *.full* in order to change the width of the dropdown.  
+1. Wrap the whole thing with *.c-icon-bar__wrapper*
+1. Each item gets .*item* and .*c-icon-bar__item classes*
+1. An anchor element gets .*c-icon-bar__arrow class*
+1. Dropdown content despite all standard classes needs to get .*no-arrow* class in order to hide standard arrow from the default component settings. Class `.flexible` is optional and depends on the content that's inside the dropdown. You could replace with `.tiny`, `.small`, `.medium`, `.large`, `.xlarge` or `.full` in order to change the width of the dropdown.  
 
 ## Twig:
 
@@ -137,7 +137,7 @@ In order to get a flexible icon bar with possibilty to change icon order please 
 {% endblock %}
 ```
 
-**vendor/silversolutions/silver.e-shop/src/Silversolutions/Bundle/EshopBundle/Resources/views/Basket/stored\_basket\_preview\_wish\_list.html.twig**
+**vendor/silversolutions/silver.e-shop/src/Silversolutions/Bundle/EshopBundle/Resources/views/Basket/stored_basket_preview_wish_list.html.twig**
 
 ``` 
 {% set wish_list = ses_wish_list() %}
@@ -156,7 +156,7 @@ In order to get a flexible icon bar with possibilty to change icon order please 
 
 ```
 
-**vendor/silversolutions/silver.e-shop/src/Silversolutions/Bundle/EshopBundle/Resources/views/Basket/stored\_basket\_preview\_comparison.html.twig**
+**vendor/silversolutions/silver.e-shop/src/Silversolutions/Bundle/EshopBundle/Resources/views/Basket/stored_basket_preview_comparison.html.twig**
 
 ``` 
 {% set comparison = ses_total_comparison() %}
@@ -184,7 +184,7 @@ In order to get a flexible icon bar with possibilty to change icon order please 
 
 ```
 
-**vendor/silversolutions/silver.e-shop/src/Silversolutions/Bundle/EshopBundle/Resources/views/Basket/basket\_preview.html.twig**
+**vendor/silversolutions/silver.e-shop/src/Silversolutions/Bundle/EshopBundle/Resources/views/Basket/basket_preview.html.twig**
 
 ``` 
 {% set basket = ses_basket() %}

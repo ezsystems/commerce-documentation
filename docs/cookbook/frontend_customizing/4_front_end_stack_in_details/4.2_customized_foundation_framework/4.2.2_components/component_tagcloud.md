@@ -1,4 +1,4 @@
-#  Component - Tagcloud 
+# Component - Tagcloud
 
 We use this component to style links inside a tag cloud.
 
@@ -20,7 +20,7 @@ $tagcloud-separator-margin-right: rem-calc(5);
 $tagcloud-item-display: inline;
 ```
 
-In order to change settings in project find settings/\_storm.scss file in your project and find the Tagcloud section.
+In order to change settings in project find `settings/_storm.scss` file in your project and find the Tagcloud section.
 
 ## Twig
 

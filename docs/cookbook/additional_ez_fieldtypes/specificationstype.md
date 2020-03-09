@@ -1,12 +1,12 @@
-#  SpecificationsType 
+# SpecificationsType
 
 The FieldType is used to store a structured list of attributes for products:
 
-![](attachments/23560733/23562928.png)
+![](../img/additional_ez_fieldtypes_10.png)
 
 The data is stored in json format.
 
-``` 
+``` json
 [
   {
     "name": "marketing",
@@ -41,9 +41,9 @@ The data is stored in json format.
 
 The optional attribute "option" allows to add a select field offering e.g. a selection of units:
 
-![](attachments/23560733/23570823.png)
+![](../img/additional_ez_fieldtypes_11.png)
 
-``` 
+``` yaml
 -
     code: "technic"
     label: "Technical data"
@@ -70,7 +70,7 @@ The optional attribute "option" allows to add a select field offering e.g. a sel
 
 The FieldType is using a configuration which controls which groups will be offered. Default attributes can be provided as well:
 
-``` 
+``` yaml
 siso_core.default.specification_groups:
     -
         code: "marketing"
@@ -91,16 +91,10 @@ siso_core.default.specification_groups:
 
 ## Used template:
 
-SilversolutionsDatatypesBundle::sesselectiontype\_content\_field.html.twig
+`SilversolutionsDatatypesBundle::sesselectiontype_content_field.html.twig`
 
 ## Using SpecificationsType in a content field definition for a content type
 
-Field identifier naming restriction
+!!! note "Field identifier naming restriction"
 
-The SpecificationsType requires that its field identifier is set to "ses\_specifications"
-
-## Attachments:
-
-![](images/icons/bullet_blue.gif) [image2018-7-17\_18-57-58.png](attachments/23560733/23571062.png) (image/png)  
-![](images/icons/bullet_blue.gif) [image2018-11-9\_14-58-23.png](attachments/23560733/23562928.png) (image/png)  
-![](images/icons/bullet_blue.gif) [image2019-3-28\_19-38-45.png](attachments/23560733/23570823.png) (image/png)  
+    The SpecificationsType requires that its field identifier is set to `ses_specifications`

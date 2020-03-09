@@ -1,14 +1,14 @@
-#  Extend - Slick 
+# Extend - Slick
 
 Extends and overrides some standard code from Slick slider
 
-  - <https://github.com/kenwheeler/slick>
-  - <http://kenwheeler.github.io/slick/>
+- <https://github.com/kenwheeler/slick>
+- <http://kenwheeler.github.io/slick/>
 
 ## What/why do we extend?
 
-1.  Use Font Awesome for prev/next arrows
-2.  Style and position arrows a bit differently for homepage slider and sliders inside tabs
+1. Use Font Awesome for prev/next arrows
+2. Style and position arrows a bit differently for homepage slider and sliders inside tabs
 
 ## Sass:
 
@@ -38,7 +38,7 @@ $slick-slider-tabs-icon-next-left: rem-calc(-30);
 
 We use font awesome icons you can get the icon "code" from <http://fontawesome.io/icons/>\!
 
-In order to change settings in project find settings/\_storm.scss file in your project and find the Slick Slider section.
+In order to change settings in project find `settings/_storm.scss` file in your project and find the Slick Slider section.
 
 ### Available custom classes
 

@@ -1,4 +1,4 @@
-#  Component - List Event 
+# Component - List Event
 
 In addition to our [generic list component ](Component---List_23560980.html)we have prepared Event specific styling.
 
@@ -22,7 +22,7 @@ $event-highlight-color: $flat-amethyst;
 
 | Class                  | Description                                   |
 | ---------------------- | --------------------------------------------- |
-| .c-list\_\_item--event | Additional class that is applied to each item |
+| .c-list__item--event | Additional class that is applied to each item |
 
 ## HTML
 

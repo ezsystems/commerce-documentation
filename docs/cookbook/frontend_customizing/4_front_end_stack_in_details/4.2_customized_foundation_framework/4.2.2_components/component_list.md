@@ -1,13 +1,13 @@
-#  Component - List 
+# Component - List
 
 Generic list component that can be used for news, events, blog posts, etc.
 
-In order to extend the list component for specific type of content please create a new file following this naming convention: \_components.list-TYPE.scss e.g: \_components.list-blog.scss.
+In order to extend the list component for specific type of content please create a new file following this naming convention: `_components.list-TYPE.scss` e.g: `_components.list-blog.scss`.
 
 Currently supported specific types:
 
-  - [list blog](Component---List-Blog_23560977.html)
-  - [list event](Component---List-Blog_23560977.html)
+- [list blog](Component---List-Blog_23560977.html)
+- [list event](Component---List-Blog_23560977.html)
 
 ## Sass
 
@@ -44,7 +44,7 @@ $list-location-icon-color: $primary-color;
 $list-date-icon-color: $primary-color;
 ```
 
-In order to change settings in project find settings/\_storm.scss file in your project and find the List section.
+In order to change settings in project find `settings/_storm.scss` file in your project and find the List section.
 
 ### List of available classes
 
@@ -163,7 +163,7 @@ In order to change settings in project find settings/\_storm.scss file in your p
 
 ## Twig
 
-**Twig - src/Siso/ContentBundle/Resources/views/line/blog\_post.html.twig**
+**Twig - src/Siso/ContentBundle/Resources/views/line/blog_post.html.twig**
 
 ``` 
 {#
@@ -236,7 +236,7 @@ In order to change settings in project find settings/\_storm.scss file in your p
 
 ```
 
-**Twig - src/Siso/ContentBundle/Resources/views/full/blog\_post.html.twig**
+**Twig - src/Siso/ContentBundle/Resources/views/full/blog_post.html.twig**
 
 ``` 
 {% extends "SilversolutionsEshopBundle::pagelayout.html.twig"|st_resolve_template %}

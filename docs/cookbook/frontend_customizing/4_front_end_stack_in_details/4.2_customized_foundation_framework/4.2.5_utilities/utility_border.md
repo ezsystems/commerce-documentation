@@ -1,4 +1,4 @@
-#  Utility - Border 
+# Utility - Border
 
 We use this utility to set the border around an element. Currently we have only one class, but it can be easily extended.
 

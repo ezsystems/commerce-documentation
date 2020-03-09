@@ -1,4 +1,4 @@
-#  Toggler 
+# Toggler
 
 We use toggler component to toggle content visibility. It's a well know pattern on many websites and online shops. 
 
@@ -14,7 +14,7 @@ Toggler component is part of our main JavaScript file: app.js
 vendor/silversolutions/silver.e-shop/src/Silversolutions/Bundle/EshopBundle/Resources/public/js/app.js
 ```
 
-We use data-\* attributes to configure toggler:
+We use `data-*` attributes to configure toggler:
 
 | Attribute      | Description                                                  |
 | -------------- | ------------------------------------------------------------ |
