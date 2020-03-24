@@ -1,8 +1,8 @@
-#  Base configuration 
+# Base configuration
 
-A base configuration for eZ Commerce will be provided by eZ Commerce in app/config. These files are loaded from the config.yml file. 
+A base configuration for eZ Commerce will be provided by eZ Commerce in app/config. These files are loaded from the `config.yml` file. 
 
-## System specific settings - ezcommerce\_parameters.yml
+## System specific settings - `ezcommerce_parameters.yml`
 
 This file contains specific settings for your installation. It is generated/updated by the installer. 
 
@@ -32,12 +32,12 @@ parameters:
 
 eZ Commerce comes with a configuration for two countries/siteaccesses for the shop frontend
 
-  - de - german language using EUR as currency 
-  - en - english language using USD as currency
+- de - German language using EUR as currency 
+- en - English language using USD as currency
 
-You can can change the settings in ezplatform.yml if required:
+You can change the settings in `ezplatform.yml `if required:
 
-``` 
+``` yaml
 ezpublish:
     siteaccess:
         list:
@@ -66,26 +66,26 @@ ezpublish:
 
 **Currencies used per country**
 
-``` 
-    siso_core.de.standard_price_factory.fallback_currency: EUR
-    siso_core.en.standard_price_factory.fallback_currency: GBP
+``` yaml
+siso_core.de.standard_price_factory.fallback_currency: EUR
+siso_core.en.standard_price_factory.fallback_currency: GBP
 ```
 
 **Shipping costs**
 
 If you want to setup special rules for shipping costs you can achieve this in the backend:
 
-Navigate to /admin/eshop/price-and-stock
+Navigate to `/admin/eshop/price-and-stock`
 
 and click on "Shipping cost management"
 
-![](attachments/23561042/23571103.png)
+![](img/base_configuration.png)
 
 **Settings for VAT:**
 
 The settings can be done for each delivery country you want to support in your shop. 
 
-``` 
+``` yaml
 siso_core.default.vat:
     DE:
         VATREDUCED: 7
@@ -103,7 +103,7 @@ siso_core.default.vat:
 
 If you want to enable Paypal as a payment provider you need to generate and configure 
 
-``` 
+``` yaml
 jms_payment_core:
     encryption:
         provider: defuse_php_encryption
@@ -113,28 +113,25 @@ jms_payment_core:
 siso_paypal_api.user: 'my-api-user'
 ```
 
-**Important: **The secret has to be created by a command:
+Important: The secret has to be created by a command:
 
 ``` 
 php vendor/defuse/php-encryption/bin/generate-defuse-key
 ```
 
-**  
-**
+Please configure the Paypal parameters in your `parameters.yml`:
 
-**Please configure the Paypal parameters in your parameters,yml**
-
-``` 
-    siso_paypal_api.user: 'my-api-use'
-    siso_paypal_api.password: 'paypal api password'
-    siso_paypal_api.signature: 'paypal-api-signature'
+``` yaml
+siso_paypal_api.user: 'my-api-use'
+siso_paypal_api.password: 'paypal api password'
+siso_paypal_api.signature: 'paypal-api-signature'
 ```
 
 ## Changing the logo for eZ Commerce
 
-If you want to change the logos you need to provide a link to the assets located in the web/\* folder:
+If you want to change the logos you need to provide a link to the assets located in the `web/*` folder:
 
-``` 
+``` yaml
 # Logo for the shop
 siso_core.default.logo_image: /bundles/silversolutionseshop/img/logo-advanced.png
 # Logo used for invoices
@@ -142,7 +139,3 @@ siso_core.default.invoice_logo: /bundles/silversolutionseshop/img/invoice_logo.p
 # Logo used for the email header 
 siso_core.default.email_header: /bundles/silversolutionseshop/img/email-header.png
 ```
-
-## Attachments:
-
-![](images/icons/bullet_blue.gif) [image2018-7-11\_10-53-59.png](attachments/23561042/23571103.png) (image/png)  

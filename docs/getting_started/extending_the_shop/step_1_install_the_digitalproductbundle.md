@@ -1,10 +1,10 @@
-#  Step 1 - Install the DigitalProductBundle 
+# Step 1 - Install the DigitalProductBundle
 
 The repo <https://github.com/silversolutions/digitalproductsbundle.git> contains the required code for the tutorial:
 
 Add the gihub repo to your composer.json
 
-``` 
+``` json
 "repositories": [
 {
  "type": "vcs",
@@ -15,4 +15,4 @@ Add the gihub repo to your composer.json
 
 Install the bundle:
 
- php -d memory\_limit=-1  composer.phar require silversolutions/digitalproducts dev-master
+`php -d memory\_limit=-1  composer.phar require silversolutions/digitalproducts dev-master`

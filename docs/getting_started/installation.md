@@ -1,6 +1,6 @@
-#  Installation 
+# Installation
 
-## Install a fresh eZ Commerce 
+## Install a fresh eZ Commerce
 
 The eZ Commerce installer will install eZ Platform and eZ Commerce in one step. An eZ Platform Enterprise license is required. 
 
@@ -8,7 +8,7 @@ The eZ Commerce installer will install eZ Platform and eZ Commerce in one step. 
 
 Make sure that you have setup proper auth parameters for the ez update server. You will receive the login parameters from the customer portal at ez.no:
 
-``` 
+``` json
 ~/.composer/auth.json
 {
     "http-basic": {
@@ -24,7 +24,7 @@ Make sure that you have setup proper auth parameters for the ez update server. Y
 
 ## Step 1 - Create a DB
 
-``` 
+``` mysql
 // start mysql and run
 CREATE database ezcommerce;
 ```
@@ -33,20 +33,18 @@ CREATE database ezcommerce;
 
 **Option A - Using composer**
 
-``` 
+``` bash
 php composer.phar create-project ezsystems/ezcommerce
 ## fetching a special version
 php composer.phar create-project ezsystems/ezcommerce=v2.5.0
 ```
 
-**  
-The installer will ask for some missing parameters:**
+The installer will ask for some missing parameters:
 
 **Important**:
 
-  - Make sure that the parameter "siso\_imagemagick\_path" is set properly (for linux system it is usually /usr/bin/convert and for MAC /usr/local/bin/convert). 
-  - Please run "./vendor/defuse/php-encryption/bin/generate-defuse-key" after the installer asks for the parameters (e.g. using a separate window) and copy the secret for the payment system (JMS\_PAYMENT\_SECRET)  
-    to your clipboard. 
+- Make sure that the parameter `siso_imagemagick_path` is set properly (for linux system it is usually `/usr/bin/convert` and for MAC `/usr/local/bin/convert`). 
+- Please run `./vendor/defuse/php-encryption/bin/generate-defuse-key` after the installer asks for the parameters (e.g. using a separate window) and copy the secret for the payment system (`JMS_PAYMENT_SECRET`) to your clipboard. 
 
 ``` 
 Some parameters are missing. Please provide them.
@@ -77,11 +75,11 @@ apache_tika_path ('%kernel.project_dir%/bin/tika-app-1.20.jar'):
 
 eZ Commerce requires Solr as search engine. The demo provides a Solr installation which has to be started:
 
-**Get and install and start Solr**
+Get and install and start Solr
 
-**If you are using the standard port 8983 you do not need to pass the port as a parameter**
+If you are using the standard port 8983 you do not need to pass the port as a parameter
 
-``` 
+``` bash
 bash ./install-solr.sh 8983
 ```
 
@@ -89,7 +87,7 @@ bash ./install-solr.sh 8983
 
 The installer will create the database and will provide a clean Installation for eZ Commerce. 
 
-``` 
+``` bash
 php composer.phar ezcommerce-install
 ```
 
@@ -97,17 +95,17 @@ php composer.phar ezcommerce-install
 
 The fastest way to start a PHP server and run the application is to use the build in PHP webserver:
 
-``` 
+``` bash
 php bin/console server:run
 ```
 
 ## Adjust the access rights
 
-Please check the eZ Platform documentation depending on the operating system you are using:  <https://doc.ezplatform.com/en/2.2/getting_started/install_ez_platform/#set-up-permissions>
+Please check the eZ Platform documentation depending on the operating system you are using:  https://doc.ezplatform.com/en/2.2/getting_started/install_ez_platform/#set-up-permissions
 
 For linux based systems:
 
-``` 
+``` bash
 #Linux:
 sudo setfacl -dR -m u:www-data:rwX -m u:$(whoami):rwX var/logs/ var/cache/ var/sessions/ web/*
 sudo setfacl -R -m u:www-data:rwX -m u:$(whoami):rwX var/logs/ var/cache/ var/sessions/ web/*
@@ -117,27 +115,23 @@ sudo setfacl -R -m u:www-data:rwX -m u:$(whoami):rwX var/logs/ var/cache/ var/se
 
 Check which location id is used for the "Productcatalog":
 
-![](attachments/23561045/23570779.png)
+![](img/installation.png)
 
-``` 
- php bin/console silversolutions:switchdataprovider econtent --location-id=118 --new-root-node=2
+``` bash
+php bin/console silversolutions:switchdataprovider econtent --location-id=118 --new-root-node=2
 ```
 
 Install Demo data
 
-``` 
- php bin/console ezplatform:install ezcommerce_econtent_demo
+``` bash
+php bin/console ezplatform:install ezcommerce_econtent_demo
 ```
 
 Install Demo images
 
-``` 
+``` bash
 cd vendor/ezsystems/
 git clone https://github.com/ezsystems/ezcommerce-demo-assets.git
 cd ../..
 cp -R vendor/ezsystems/ezcommerce-demo-assets/assets/ web/var/assets/
 ```
-
-## Attachments:
-
-![](images/icons/bullet_blue.gif) [image2019-5-9\_18-23-48.png](attachments/23561045/23570779.png) (image/png)  

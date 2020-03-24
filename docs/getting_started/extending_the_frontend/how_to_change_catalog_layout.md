@@ -1,4 +1,4 @@
-#  How to: Change catalog layout 
+# How to: Change catalog layout
 
 Please make sure before you start to install the [boilerplate](Extending-the-frontend_23561043.html) first
 
@@ -6,38 +6,25 @@ Please make sure before you start to install the [boilerplate](Extending-the-fro
 
 In this guide we want to change the catalog layout in an easy way.
 
-<table>
-<thead>
-<tr class="header">
-<th>Before</th>
-<th>After</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><div class="content-wrapper">
-<p><img src="attachments/23560224/23570985.png" class="confluence-embedded-image confluence-content-image-border" width="550" /></p>
-</td>
-<td><div class="content-wrapper">
-<p><img src="attachments/23560224/23570986.png" class="confluence-embedded-image confluence-content-image-border" width="550" height="418" /></p>
-</td>
-</tr>
-</tbody>
-</table>
+Before:
+
+![](../img/extending_the_frontend_2.png)
+
+After:
+
+![](../img/extending_the_frontend_3.png)
 
 We want to hide the Side Navigation and make the Product Catalog full width.
 
 Lets start with finding the right Template in the vendor section:
 
-Please copy the template "**vendor/silversolutions/silver.e-shop/src/Silversolutions/Bundle/EshopBundle/Resources/views/Catalog/catalog.html.twig**" to "**app/Resources/Views/Catalog/catalog.html.twig**"
+Please copy the template `vendor/silversolutions/silver.e-shop/src/Silversolutions/Bundle/EshopBundle/Resources/views/Catalog/catalog.html.twig` to `app/Resources/Views/Catalog/catalog.html.twig`
 
 You have to create the folder Catalog before you can copy the template
 
-Delete the content thats inside the block **second\_nav**
+Delete the content thats inside the block `second_nav`
 
-**Before**
-
-``` 
+``` html+twig
 {% block second_nav %}
             <div class="large-3 columns show-for-large-up u-padding-right-3x hide-for-print">
                 {% set product_catalog_id = get_parent_product_catalog(catalogElement) %}
@@ -52,19 +39,12 @@ Delete the content thats inside the block **second\_nav**
 
 Change it to:
 
-**After**
-
-``` 
+``` html+twig
 {% block second_nav %}
            
 {% endblock %}
 ```
 
-  - change large-9 to large-12 ... TODO
+!!! note
 
-If you dont see any changes please remove the cache\!
-
-## Attachments:
-
-![](images/icons/bullet_blue.gif) [Bildschirmfoto 2018-07-26 um 12.32.25.png](attachments/23560224/23570985.png) (image/png)  
-![](images/icons/bullet_blue.gif) [Bildschirmfoto 2018-07-26 um 12.33.32.png](attachments/23560224/23570986.png) (image/png)  
+    If you don't see any changes please remove the cache\!

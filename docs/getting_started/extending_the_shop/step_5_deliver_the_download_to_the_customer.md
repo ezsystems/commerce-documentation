@@ -1,14 +1,14 @@
-#  Step 5 - deliver the download to the customer 
+# Step 5 - Deliver the download to the customer
 
-What we want to achieve:
+!!! note "What we want to achieve"
 
-After the customer has purchased a digital product we would like to send him an eMail with a download link
+    After the customer has purchased a digital product we would like to send him an eMail with a download link
 
 ## Add a new service definition
 
-See: in vendor/silversolutions/digitalproducts/Resources/config/services.xml
+See: in `vendor/silversolutions/digitalproducts/Resources/config/services.xml`
 
-``` 
+``` xml
 <?xml version="1.0" ?>
 <container xmlns="http://symfony.com/schema/dic/services"
            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
@@ -40,28 +40,23 @@ The EventListener "DownloadOrderListener" will be invoked when a customer has co
 
 We are injecting some service in order to access the order and to send en email to the customer.
 
-The service definition will define two tags:
+!!! note
 
-  - ``` 
-    onOrderResponse
-    ```
+    The service definition will define two tags:
 
-  - ``` 
-    onExceptionMessage
-    ```
+    - `onOrderResponse`
+    - `onExceptionMessage`
 
-<div>
-
-This ensures that the listener will be invoked in %ses-productname and in the advanced version as well.  
+    This ensures that the listener will be invoked in eZ Commerce and in the advanced version as well.  
 
 ## Implementation of the DownloadOrderListener
 
 The DownloadListener will
 
-  - request the basket 
-  - checks the order for downloads
+- request the basket 
+- checks the order for downloads
 
-``` 
+``` php
 <?php
 /**
  * Product %ses-productname
