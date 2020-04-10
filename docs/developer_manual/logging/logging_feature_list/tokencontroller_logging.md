@@ -1,10 +1,10 @@
-#  TokenController Logging 
+# TokenController logging
 
 ## General
 
 Logging was added to the [TokenController](TokenController_23560947.html). If a token is processed it will be logged in a file or database. The default configuration is set for database logging:
 
-**ses\_gdpr\_log**
+`ses_gdpr_log`:
 
 ``` 
 mysql> select * from ses_gdpr_log;
@@ -22,11 +22,11 @@ mysql> select * from ses_gdpr_log;
 
 ## Configuration
 
-File and database logging is activated by adding the "pushHandler" method call with the "gdpr\_log\_handler.doctrine" and/or "gdpr\_log\_handler.file" service as an argument:
+File and database logging is activated by adding the `pushHandler` method call with the `gdpr_log_handler.doctrine` and/or `gdpr_log_handler.file` service as an argument:
 
-**src/Silversolutions/Bundle/EshopBundle/Resources/config/ses\_services.xml** Expand source 
+`src/Silversolutions/Bundle/EshopBundle/Resources/config/ses\_services.xml`:
 
-``` 
+``` xml
 <service id="siso_core.gdpr_log_repository.doctrine" class="%siso_core.gdpr_log_repository.doctrine.class%">
     <factory service="Doctrine\Common\Persistence\ObjectManager"  method="getRepository" />
     <argument type="string">SilversolutionsEshopBundle:GdprLog</argument>

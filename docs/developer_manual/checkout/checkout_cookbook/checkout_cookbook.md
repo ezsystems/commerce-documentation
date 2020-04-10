@@ -1,19 +1,19 @@
-#  Checkout - Cookbook 
+# Checkout cookbook
 
-# Implement a simple "express" checkout 
+## Implement a simple "express" checkout
 
 If you need a simple checkout which implements a kind of express checkout it can be done with a won controller.
 
 The following example will
 
-  - Check if a user is logged in (to get address data)
-  - Copy the current basket in order to finish it
-  - Sets the state to ordered
-  - Remove the original basket
+- Check if a user is logged in (to get address data)
+- Copy the current basket in order to finish it
+- Sets the state to ordered
+- Remove the original basket
 
 The Controller will display a confirmation page after finishing the order. The logic will respect that the ERP is not available and in this case a lost order process will be initiated. 
 
-``` 
+``` php
 <?php
 
 /**

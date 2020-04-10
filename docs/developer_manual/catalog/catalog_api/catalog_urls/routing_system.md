@@ -1,25 +1,28 @@
-#  Routing system 
+# Routing system
+
 ## Motivation
 
 Since the eZ Commerce relies on the eZ Platform Content Management System, sometime the underlying routing rules of both systems cause conflicts. Also it is possible that the eZ Platform API stack is needed in eZ Commerce routes. In order to deal with this, an own route- / URL-matching solution was created.
 
-If a product url is not routed correctly (e.g. because of complex matching rules) it is possible to setup a direct routing for products. Please note that the first part of the URL (here "products") could be translated and in this case the following routing rules has to be setup for each translation.
+!!! note
 
-``` 
-product_route:
-    path: /products/{url}
-    defaults:
-        _controller: SilversolutionsEshopBundle:Catalog:show
-        url: /
-    requirements:
-        url: ".+"
-```
+    If a product url is not routed correctly (e.g. because of complex matching rules) it is possible to setup a direct routing for products. Please note that the first part of the URL (here "products") could be translated and in this case the following routing rules has to be setup for each translation.
+
+    ``` 
+    product_route:
+        path: /products/{url}
+        defaults:
+            _controller: SilversolutionsEshopBundle:Catalog:show
+            url: /
+        requirements:
+            url: ".+"
+    ```
 
 ## Default Router
 
-Namespace
+!!! note "Namespace"
 
-Silversolutions\\Bundle\\EshopBundle\\Routing\\StandardRouter
+    `Silversolutions\Bundle\EshopBundle\Routing\StandardRouter`
 
 There is a default routing system, that checks each required URL.
 
@@ -43,9 +46,9 @@ Route matching priority:
 
 The Router is defined with the priority of 280, so you can still add your own chain router, that will be executed before.
 
-**services.xml**
+`services.xml`:
 
-``` 
+``` xml
 <parameter key="ses_routers.standard_router.class">Silversolutions\Bundle\EshopBundle\Routing\StandardRouter</parameter>
 
 <!-- routers -->

@@ -1,464 +1,84 @@
-#  Twig extension 
+# Twig extension
 
-# Functions
+## Functions
 
-<table>
-<thead>
-<tr class="header">
-<th>Name</th>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>SilvercommonExtension</code></td>
-<td><br />
-</td>
-<td><br />
-</td>
-</tr>
-<tr>
-<td><code>ses_render_field</code></td>
-<td><pre><code>CatalogElement $catalogElement</code></pre>
-<pre><code>string $fieldIdentifier = &#39;&#39;</code></pre>
-<pre><code>array $params = array()</code></pre></td>
-<td>Renders an CatalogElement containing an Field</td>
-</tr>
-<tr>
-<td><pre><code>ses_navigation</code></pre></td>
-<td><pre><code>array $params = array()</code></pre></td>
-<td>Returns navigation node tree</td>
-</tr>
-<tr>
-<td><pre><code>ses_product</code></pre></td>
-<td><pre><code>array $params = array()</code></pre></td>
-<td><div class="content-wrapper">
-<p>Returns a product node</p>
-<pre class="" data-syntaxhighlighter-params="brush: java; gutter: false; theme: Confluence" data-theme="Confluence"><code> {% set product = ses_product({&#39;sku&#39;: line.sku, &#39;variantCode&#39;: line.variantCode }) %}</code></pre>
-</td>
-</tr>
-<tr>
-<td><pre><code>ses_variant_product_by_sku</code></pre></td>
-<td><pre><code>string $sku</code></pre></td>
-<td>Fetches a VariantProductNode for given sku</td>
-</tr>
-<tr>
-<td><pre><code>ses_assets_main_image</code></pre></td>
-<td><pre><code>CatalogElement $catalogElement</code></pre>
-<pre><code>string $productId = null</code></pre></td>
-<td>Returns the main image of catalogElement or null</td>
-</tr>
-<tr>
-<td><pre><code>ses_assets_image_list</code></pre></td>
-<td><pre><code>CatalogElement $catalogElement</code></pre>
-<pre><code>$productId = null</code></pre></td>
-<td>Returns the list of images for a catalogElement or an empty array</td>
-</tr>
-<tr>
-<td><pre><code>ses_variants_sort</code></pre></td>
-<td><pre><code>VariantProductNode $node</code></pre>
-<pre><code>$order = array()</code></pre></td>
-<td>Returns all product variants in a given order</td>
-</tr>
-<tr>
-<td><pre><code>ses_render_price</code></pre></td>
-<td><pre><code>CatalogElement $catalogElement</code></pre>
-<pre><code>PriceField $field</code></pre>
-<pre><code>array $params = array()</code></pre></td>
-<td>Renders a <a href="PriceField_23560440.html">PriceField</a></td>
-</tr>
-<tr>
-<td><pre><code>ses_render_stock</code></pre></td>
-<td><pre><code>StockField $field = null,</code></pre>
-<pre><code>array $params = array()</code></pre></td>
-<td><p>Renders a <a href="StockField_23560549.html">StockField</a></p></td>
-</tr>
-<tr>
-<td><pre><code>ses_basket</code></pre></td>
-<td>-</td>
-<td><p>Gets the basket of the current user</p></td>
-</tr>
-<tr>
-<td><pre><code>ses_wish_list</code></pre></td>
-<td>-</td>
-<td>Gets the wishlist of the current user</td>
-</tr>
-<tr>
-<td><pre><code>ses_total_comparison</code></pre></td>
-<td>-</td>
-<td><p>Get total basket lines array for basket flayout</p></td>
-</tr>
-<tr>
-<td><pre><code>ses_check_product_in_comparison</code></pre></td>
-<td><pre><code>$sku
-$variantCode = null</code></pre></td>
-<td><p>Returns true if product with given sku and variant code is already in the product comparison<br />
-</p></td>
-</tr>
-<tr>
-<td><pre><code>ses_check_product_in_wish_list</code></pre></td>
-<td><pre><code>$sku
-$variantCode = null</code></pre></td>
-<td><p>Returns true if product with given sku and variant code is already in the wishList</p></td>
-</tr>
-<tr>
-<td><pre><code>ses_pagination</code></pre></td>
-<td><pre><code>Pagerfanta $pagerfanta</code></pre>
-<pre><code>$viewName = null</code></pre>
-<pre><code>array $options = array()</code></pre></td>
-<td>Renders pagination</td>
-</tr>
-<tr>
-<td><pre><code>get_stored_baskets</code></pre></td>
-<td>-</td>
-<td><p>Returns stored baskets for current user</p></td>
-</tr>
-<tr>
-<td><pre><code>ses_user_menu</code></pre></td>
-<td>-</td>
-<td><p>Returns rendered user menu<br />
-Combines parts of all configured bundles</p></td>
-</tr>
-<tr>
-<td><pre><code>ses_track_basket</code></pre></td>
-<td><pre><code>Basket $basket</code></pre>
-<pre><code>$mode</code></pre>
-<pre><code>array $params = array()</code></pre></td>
-<td><p>Returns a list with rendered template snippets for basket tracking</p></td>
-</tr>
-<tr>
-<td><pre><code>ses_track_product</code></pre></td>
-<td><pre><code>ProductNode $catalogElement</code></pre>
-<pre><code>$mode</code></pre>
-<pre><code>array $params = array()</code></pre></td>
-<td><p>Returns a list with rendered template snippets for product tracking</p></td>
-</tr>
-<tr>
-<td><pre><code>ses_track_base</code></pre></td>
-<td><pre><code>array $params = array()</code></pre></td>
-<td><p>Returns a list with rendered template snippets for general tracking</p></td>
-</tr>
-<tr>
-<td><pre><code>get_search_query</code></pre></td>
-<td>-</td>
-<td><p>Returns search query</p></td>
-</tr>
-<tr>
-<td><pre><code>get_siteaccess_locale</code></pre></td>
-<td><pre><code>$siteAccessName = null</code></pre></td>
-<td><div class="content-wrapper">
-<p>Returns the Symfony locale that matches the given siteaccess. if no siteAccessName is given, current siteaccess is taken.</p>
-<pre class="" data-syntaxhighlighter-params="brush: java; gutter: false; theme: Confluence" data-theme="Confluence"><code>{# will return &#39;de-DE&#39; #}
-{% set locale = get_siteaccess_locale(&#39;ger&#39;) %}</code></pre>
-</td>
-</tr>
-<tr>
-<td><pre><code>get_characteristics_b2b </code></pre></td>
-<td><pre><code>VariantProductNode $catalogElement</code></pre>
-<pre><code>array $order = array()</code></pre></td>
-<td>Returns characteristic sorted for B2B</td>
-</tr>
-<tr>
-<td><pre><code>has_user_role</code></pre></td>
-<td><pre><code>$module</code></pre>
-<pre><code>$function</code></pre></td>
-<td>Checks if user has role</td>
-</tr>
-<tr>
-<td><pre><code>get_parent_product_catalog</code></pre></td>
-<td><pre><code>CatalogElement $catalogElement</code></pre></td>
-<td><p>Fetches the parent product catalog element for the $identifier</p></td>
-</tr>
-<tr>
-<td><pre><code>get_data_location_ids</code></pre></td>
-<td><pre><code>$object</code></pre></td>
-<td><p>Returns a comma separated string of data_locations of the given element.<br />
-All parent locations incl. the element location are returned.</p></td>
-</tr>
-<tr>
-<td><pre><code>set_bold_text</code></pre></td>
-<td><pre><code>$needle</code></pre>
-<pre><code>$haystack</code></pre></td>
-<td><p>Returns html with added &lt;strong&gt; tag(s) to needle occurences in haystack.<br />
-Supports multiple words.</p></td>
-</tr>
-<tr>
-<td><pre><code>has_subcategory</code></pre></td>
-<td><pre><code>$locationId</code></pre>
-<pre><code>$offset</code></pre>
-<pre><code>$limit</code></pre></td>
-<td><p>Checks if the current category has subcategories</p></td>
-</tr>
-<tr>
-<td><pre><code>get_customer_sku</code></pre></td>
-<td><pre><code>$sku</code></pre>
-<pre><code>$customerNumber</code></pre></td>
-<td><p>Returns customer sku for given sku with customer number</p></td>
-</tr>
-<tr>
-<td><pre><code>get_sku</code></pre></td>
-<td><pre><code>$customerSku</code></pre>
-<pre><code>$customerNumber = null</code></pre></td>
-<td><p>Returns sku for given customer sku with customer number</p></td>
-</tr>
-<tr>
-<td><pre><code>get_search_result_template</code></pre></td>
-<td><pre><code>$catalogElement</code></pre></td>
-<td><p>Selects the correct template according to catalog element type</p></td>
-</tr>
-<tr>
-<td><pre><code>ses_fetch_content_by_identifier</code></pre></td>
-<td><pre><code>string $contentType</code></pre>
-<pre><code>string $identifier</code></pre></td>
-<td>Fetches a content object with specific type and a field 'identifier' with a specific value.</td>
-</tr>
-<tr>
-<td><pre><code>ses_config_parameter</code></pre></td>
-<td><pre><code>$code, $domain, $scope = null</code></pre></td>
-<td>Returns a siteaccess parameter from the configuration</td>
-</tr>
-<tr>
-<td><pre><code>st_imageconverter</code></pre></td>
-<td><pre><code>Abstract $imageFieldstring $size</code></pre></td>
-<td>Provides an image in the required resolution</td>
-</tr>
-<tr>
-<td><pre><code>st_siteaccess_lang</code></pre></td>
-<td><pre><code>string $siteAccessName</code></pre></td>
-<td>Returns the prioritiest language for given siteaccess</td>
-</tr>
-<tr>
-<td><pre><code>st_tag</code></pre></td>
-<td><pre><code>$component</code></pre>
-<pre><code>$target</code></pre>
-<pre><code>$action</code></pre>
-<pre><code>$id = null</code></pre>
-<pre><code>$value = null</code></pre></td>
-<td><p>Returns the selector tag for Behat tests or for google tag management</p></td>
-</tr>
-</tbody>
-</table>
+|Name|Parameters|Description|
+|--- |--- |--- |
+|SilvercommonExtension|||
+|ses_render_field|CatalogElement $catalogElement</br>string $fieldIdentifier = ''</br>array $params = array()|Renders an CatalogElement containing an Field|
+|ses_navigation|array $params = array()|Returns navigation node tree|
+|ses_product|array $params = array()|Returns a product node</br> {% set product = ses_product({'sku': line.sku, 'variantCode': line.variantCode }) %}|
+|ses_variant_product_by_sku|string $sku|Fetches a VariantProductNode for given sku|
+|ses_assets_main_image|CatalogElement $catalogElement</br>string $productId = null|Returns the main image of catalogElement or null|
+|ses_assets_image_list|CatalogElement $catalogElement</br>$productId = null|Returns the list of images for a catalogElement or an empty array|
+|ses_variants_sort|VariantProductNode $node</br>$order = array()|Returns all product variants in a given order|
+|ses_render_price|CatalogElement $catalogElement</br>PriceField $field</br>array $params = array()|Renders a PriceField|
+|ses_render_stock|StockField $field = null,</br>array $params = array()|Renders a StockField|
+|ses_basket|-|Gets the basket of the current user|
+|ses_wish_list|-|Gets the wishlist of the current user|
+|ses_total_comparison|-|Get total basket lines array for basket flayout|
+|ses_check_product_in_comparison|$sku</br>$variantCode = null|Returns true if product with given sku and variant code is already in the product comparison|
+|ses_check_product_in_wish_list|$sku</br>$variantCode = null|Returns true if product with given sku and variant code is already in the wishList|
+|ses_pagination|Pagerfanta $pagerfanta</br>$viewName = null</br>array $options = array()|Renders pagination|
+|get_stored_baskets|-|Returns stored baskets for current user|
+|ses_user_menu|-|Returns rendered user menu</br>Combines parts of all configured bundles|
+|ses_track_basket|Basket $basket</br>$mode</br>array $params = array()|Returns a list with rendered template snippets for basket tracking|
+|ses_track_product|ProductNode $catalogElement</br>$mode</br>array $params = array()|Returns a list with rendered template snippets for product tracking|
+|ses_track_base|array $params = array()|Returns a list with rendered template snippets for general tracking|
+|get_search_query|-|Returns search query|
+|get_siteaccess_locale|$siteAccessName = null|Returns the Symfony locale that matches the given siteaccess. if no siteAccessName is given, current siteaccess is taken.</br>{# will return 'de-DE' #}</br>{% set locale = get_siteaccess_locale('ger') %}|
+|get_characteristics_b2b|VariantProductNode $catalogElement</br>array $order = array()|Returns characteristic sorted for B2B|
+|has_user_role|$module</br>$function|Checks if user has role|
+|get_parent_product_catalog|CatalogElement $catalogElement|Fetches the parent product catalog element for the $identifier|
+|get_data_location_ids|$object|Returns a comma separated string of data_locations of the given element.</br>All parent locations incl. the element location are returned.|
+|set_bold_text|$needle</br>$haystack|Returns html with added <strong> tag(s) to needle occurences in haystack.</br>Supports multiple words.|
+|has_subcategory|$locationId</br>$offset</br>$limit|Checks if the current category has subcategories|
+|get_customer_sku|$sku</br>$customerNumber|Returns customer sku for given sku with customer number|
+|get_sku|$customerSku</br>$customerNumber = null|Returns sku for given customer sku with customer number|
+|get_search_result_template|$catalogElement|Selects the correct template according to catalog element type|
+|ses_fetch_content_by_identifier|string $contentType</br>string $identifier|Fetches a content object with specific type and a field 'identifier' with a specific value.|
+|ses_config_parameter|$code, $domain, $scope = null|Returns a siteaccess parameter from the configuration|
+|st_imageconverter|Abstract $imageFieldstring $size|Provides an image in the required resolution|
+|st_siteaccess_lang|string $siteAccessName|Returns the prioritiest language for given siteaccess|
+|st_tag|$component</br>$target</br>$action</br>$id = null</br>$value = null|Returns the selector tag for Behat tests or for google tag management|
 
-# Filters
+## Filters
 
-<table>
-<thead>
-<tr class="header">
-<th>Name</th>
-<th>Paramters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><pre><code>date_format</code></pre></td>
-<td><pre><code>$date</code></pre>
-<pre><code>$inputFormat = &#39;Y-m-d&#39;</code></pre>
-<pre><code>$locale = &#39;en&#39;</code></pre>
-<pre><code>$dateType = &#39;\IntlDateFormatter::GREGORIAN&#39;</code></pre>
-<pre><code>$timeType = &#39;\IntlDateFormatter::NONE&#39;</code></pre>
-<pre><code>$formatPattern = &#39;dd.MM.yyyy&#39;</code></pre></td>
-<td>Formats a DATE value</td>
-</tr>
-<tr>
-<td><pre><code>price_format</code></pre></td>
-<td><pre><code>$priceValue</code></pre>
-<pre><code>$currency</code></pre>
-<pre><code>$locale</code></pre></td>
-<td><div class="content-wrapper">
-<p>Formats a price value</p>
+|Name|Paramters|Description|
+|--- |--- |--- |
+|date_format|$date</br>$inputFormat = 'Y-m-d'</br>$locale = 'en'</br>$dateType = '\IntlDateFormatter::GREGORIAN'</br>$timeType = '\IntlDateFormatter::NONE'</br>$formatPattern = 'dd.MM.yyyy'|Formats a DATE value|
+|price_format|$priceValue</br>$currency</br>$locale|Formats a price value</br>default parameters in silver.eshop.yml</br>silver_eshop.default.price_format_currency: EUR</br>silver_eshop.default.price_format_locale: en|
+|youtube_video_id|$youtubeUrl|Returns a video ID from a Youtube URL|
+|shipping|Basket $basket|Returns the shipping costs from the basket or null|
+|code_label|$code,</br>$context = null|Returns the translated code label. This can be e.g. country code or different code like mrs.</br>if the context is 'country' first Symfony Intl Bundle is used to resolve the country code to country name otherwise just the translation for the code is returned|
+|basket_discounts|Basket $basket|Returns the discounts from the basket|
+|basket_add_costs|Basket $basket|Returns the additional costs from the basket|
+|basket_add_lines|Basket $basket|Returns the additional lines from the basket|
+|code_label|$code</br>$context = null|Returns the translated code label</br>If the context is 'country' first Symfony Intl Bundle is used to resolve the country code to country name|
+|sort_characteristic_codes|array $characteristicCodes</br>$characteristicIndex|By default the list of all variant codes is sorted alphabetically in the ASC order|
+|sort_characteristics|array $characteristics</br>$type</br>array $order = array()|Returns sorted characteristics|
+|ses_format_args|$args|Formats exception arguments|
+|truncate|$text</br>$limit</br>$break = ' '</br>$pad = '...'|Truncates the given text</br>$break parameter can be used to indicate where the truncate should break,e.g. words ($break = ' '), sentences ($break = '.')|
+|st_siteaccess_path|string $urlPath</br>string $siteAccessName = null|formats the given url path into siteaccess path</br>e.g. home -> /de/home|
+|st_siteaccess_url|string $urlPath</br>string $siteAccessName = null|formats the given url path into siteaccess url</br>e.g. home -> http://harmony.silver-eshop.de/de/home|
+|st_translate|$messageOrCode</br>$context = ''</br>$array $parameters = array()</br>$domain = null</br>$siteaccess = null|Returns translation for $messageOrCode|
+|st_resolve_template|$templateName, $theme = null|Returns resolved template name with the TemplateResolverService|
 
-<p>default parameters in silver.eshop.yml</p>
-<p>silver_eshop.default.price_format_currency: EUR</p>
-<p>silver_eshop.default.price_format_locale: en</p>
-</td>
-</tr>
-<tr>
-<td><pre><code>youtube_video_id</code></pre></td>
-<td><pre><code>$youtubeUrl</code></pre></td>
-<td>Returns a video ID from a Youtube URL</td>
-</tr>
-<tr>
-<td><pre><code>shipping</code></pre></td>
-<td><pre><code>Basket $basket</code></pre></td>
-<td>Returns the shipping costs from the basket or null</td>
-</tr>
-<tr>
-<td><pre><code>code_label</code></pre></td>
-<td><pre><code>$code,</code></pre>
-<pre><code>$context = null</code></pre></td>
-<td><p>Returns the translated code label. This can be e.g. country code or different code like mrs.<br />
-if the context is 'country' first Symfony Intl Bundle is used to resolve the country code to country name otherwise just the translation for the code is returned</p></td>
-</tr>
-<tr>
-<td><pre><code>basket_discounts</code></pre></td>
-<td><pre><code>Basket $basket</code></pre></td>
-<td>Returns the discounts from the basket</td>
-</tr>
-<tr>
-<td><pre><code>basket_add_costs</code></pre></td>
-<td><pre><code>Basket $basket</code></pre></td>
-<td>Returns the additional costs from the basket</td>
-</tr>
-<tr>
-<td><pre><code>basket_add_lines</code></pre></td>
-<td><pre><code>Basket $basket</code></pre></td>
-<td>Returns the additional lines from the basket</td>
-</tr>
-<tr>
-<td><pre><code>code_label</code></pre></td>
-<td><pre><code>$code</code></pre>
-<pre><code>$context = null</code></pre></td>
-<td><p>Returns the translated code label<br />
-If the context is 'country' first Symfony Intl Bundle is used to resolve the country code to country name</p></td>
-</tr>
-<tr>
-<td><pre><code>sort_characteristic_codes</code></pre></td>
-<td><pre><code>array $characteristicCodes</code></pre>
-<pre><code>$characteristicIndex</code></pre></td>
-<td><p>By default the list of all variant codes is sorted alphabetically in the ASC order</p></td>
-</tr>
-<tr>
-<td><pre><code>sort_characteristics</code></pre></td>
-<td><pre><code>array $characteristics</code></pre>
-<pre><code>$type</code></pre>
-<pre><code>array $order = array()</code></pre></td>
-<td><p>Returns sorted characteristics</p></td>
-</tr>
-<tr>
-<td><pre><code>ses_format_args</code></pre></td>
-<td><pre><code>$args</code></pre></td>
-<td><p>Formats exception arguments</p></td>
-</tr>
-<tr>
-<td><pre><code>truncate</code></pre></td>
-<td><pre><code>$text</code></pre>
-<pre><code>$limit</code></pre>
-<pre><code>$break = &#39; &#39;</code></pre>
-<pre><code>$pad = &#39;...&#39;</code></pre></td>
-<td><p>Truncates the given text</p>
-<p>$break parameter can be used to indicate where the truncate should break,e.g. words ($break = ' '), sentences ($break = '.')</p></td>
-</tr>
-<tr>
-<td><pre><code>st_siteaccess_path</code></pre></td>
-<td><pre><code>string $urlPath</code></pre>
-<pre><code>string $siteAccessName = null</code></pre></td>
-<td><p>formats the given url path into siteaccess path</p>
-<p>e.g. home -&gt; /de/home</p></td>
-</tr>
-<tr>
-<td><pre><code>st_siteaccess_url</code></pre></td>
-<td><pre><code>string $urlPath</code></pre>
-<pre><code>string $siteAccessName = null</code></pre></td>
-<td><p>formats the given url path into siteaccess url</p>
-e.g. home -&gt; <a href="http://harmony.silver-eshop.de/de/home" class="external-link">http://harmony.silver-eshop.de/de/home</a></td>
-</tr>
-<tr>
-<td><pre><code>st_translate</code></pre></td>
-<td><pre><code>$messageOrCode</code></pre>
-<pre><code>$context = &#39;&#39;</code></pre>
-<pre><code>$array $parameters = array()</code></pre>
-<pre><code>$domain = null</code></pre>
-<pre><code>$siteaccess = null</code></pre></td>
-<td>Returns translation for $messageOrCode</td>
-</tr>
-<tr>
-<td><pre><code>st_resolve_template</code></pre></td>
-<td><pre><code>$templateName, $theme = null</code></pre></td>
-<td><p>Returns resolved template name with the TemplateResolverService</p></td>
-</tr>
-</tbody>
-</table>
 
-# Global variables
+## Global variables
 
-There is a central global variable "`ses`" provided by the `EshopBundle`. In fact, this variable is an instance of **`GlobalVariables`** class which provides methods and is inherited from the Symfony global variable class. Therefore all methods from the global template variable "`app`" is also available in "`ses`".
+There is a central global variable `ses` provided by the `EshopBundle`. In fact, this variable is an instance of `GlobalVariables` class which provides methods and is inherited from the Symfony global variable class. Therefore all methods from the global template variable `app` is also available in `ses`.
 
 |           |                                              |
 | --------- | -------------------------------------------- |
 | Class     | `GlobalVariables`                            |
-| Namespace | ` Silversolutions\Bundle\EshopBundle\Twig  ` |
+| Namespace | `Silversolutions\Bundle\EshopBundle\Twig` |
 
-## Methods for global variable "ses"
+### Methods for global variable "ses"
 
-<table>
-<thead>
-<tr class="header">
-<th>Name</th>
-<th>Description</th>
-<th>Example in template</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><p><code>getProfile()</code></p>
-<p><br />
-</p>
-<p>Aliases:</p>
-<p><code>getProfileData()</code></p>
-<p><code>getCustomerProfileData()</code></p>
-<p><br />
-</p></td>
-<td>Returns the current customer profile</td>
-<td><div class="content-wrapper">
-<pre class="" data-syntaxhighlighter-params="brush: java; gutter: false; theme: Confluence" data-theme="Confluence"><code>Current customer number: {{ ses.profile.sesUser.customerNumber }}</code></pre>
-<p><strong>Logic:</strong></p>
-
-<table>
-<colgroup>
-<col style="width: 25%" />
-<col style="width: 25%" />
-<col style="width: 25%" />
-<col style="width: 25%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th><code>ses</code></th>
-<th><code>profile</code></th>
-<th><code>sesUser</code></th>
-<th><code>customerNumber</code></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Global Twig variable</td>
-<td>public method <code>GlobalVariables::getProfile()</code></td>
-<td><code>SesUser</code> from <code>CustomerProfileData</code> returned by <code>getProfile()</code></td>
-<td><p>Readable variable from</p>
-<p><code>SesUser-&gt;customerNumber</code></p></td>
-</tr>
-</tbody>
-</table>
-
-<p>Also see examples from <a href="Customers---Templating_23560911.html">Customers - Templating</a></p>
-</td>
-</tr>
-<tr>
-<td><code>getDefaultBuyerAddress()</code></td>
-<td><p>Returns the default <code>BuyerParty</code></p></td>
-<td><div class="content-wrapper">
-<pre class="" data-syntaxhighlighter-params="brush: java; gutter: false; theme: Confluence" data-theme="Confluence"><code>{% set buyerAddress = ses.defaultBuyerAddress %}
-Street name of buyer address: {{ buyerAddress.PostalAddress.StreetName }}</code></pre>
-</td>
-</tr>
-<tr>
-<td><code>getDefaultDeliveryParty()</code></td>
-<td>Returns the default <code>DeliveryParty</code></td>
-<td><div class="content-wrapper">
-<pre class="" data-syntaxhighlighter-params="brush: java; gutter: false; theme: Confluence" data-theme="Confluence"><code>{% set deliveryAddress = ses.defaultDeliveryParty %}
-Street name of default delivery address: {{ buyerAddress.PostalAddress.StreetName }}</code></pre>
-</td>
-</tr>
-<tr>
-<td><code>getDeliveryParty($deliveryPartyId = null)</code></td>
-<td><p>Returns <code>DeliveryParty</code> by <code>$deliveryPartyId</code>. If no <code>$deliveryPartyId</code> is given, all parties will be returned</p></td>
-<td><div class="content-wrapper">
-<pre class="" data-syntaxhighlighter-params="brush: java; gutter: false; theme: Confluence" data-theme="Confluence"><code>{% set deliveryAddresses = ses.deliveryParty %}
-{% for address in deliveryAddresses %}
-  Street Number {{ loop.index }}: {{ deliveryAddress.PostalAddress.StreetName }}
-{% endfor %}</code></pre>
-</td>
-</tr>
-</tbody>
-</table>
+|Name|Description|Example in template|
+|--- |--- |--- |
+|getProfile()</br>Aliases:</br>getProfileData()</br>getCustomerProfileData()|Returns the current customer profile|Current customer number: {{ ses.profile.sesUser.customerNumber }}</br>Logic:</br>Global Twig variable</br>public method GlobalVariables::getProfile()</br>SesUser from CustomerProfileData returned by getProfile()</br>Readable variable from</br>SesUser->customerNumber</br>Also see examples from Customers - Templating|
+|getDefaultBuyerAddress()|Returns the default BuyerParty|{% set buyerAddress = ses.defaultBuyerAddress %}</br>Street name of buyer address: {{ buyerAddress.PostalAddress.StreetName }}|
+|getDefaultDeliveryParty()|Returns the default DeliveryParty|{% set deliveryAddress = ses.defaultDeliveryParty %}</br>Street name of default delivery address: {{ buyerAddress.PostalAddress.StreetName }}|
+|getDeliveryParty($deliveryPartyId = null)|Returns DeliveryParty by $deliveryPartyId. If no $deliveryPartyId is given, all parties will be returned|{% set deliveryAddresses = ses.deliveryParty %}</br>{% for address in deliveryAddresses %}</br>Street Number {{ loop.index }}: {{ deliveryAddress.PostalAddress.StreetName }}</br>{% endfor %}|

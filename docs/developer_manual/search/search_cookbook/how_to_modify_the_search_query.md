@@ -1,6 +1,6 @@
-#  How to modify the search query? 
+# How to modify the search query
 
-Sometimes you need to modify the [EshopQuery](Search---API_23560412.html) just before it is send to the search service. This event listener will handle this situation. Maybe you need to modify the search term, or add some sorting criteria.
+Sometimes you need to modify the [EshopQuery](../search_api/search_api.md) just before it is send to the search service. This event listener will handle this situation. Maybe you need to modify the search term, or add some sorting criteria.
 
 ### Example
 
@@ -18,7 +18,7 @@ In the following example we are modifying the sort criteria of a query if the qu
 
 Please note that you can use any [EshopQuery](Search---API_23560412.html) getter methods to check any condition or property and then use any setter method to modify what ever you need.
 
-``` 
+``` php
 use Siso\Bundle\SearchBundle\Api\Common\RelevanceSorting;
 use Siso\Bundle\SearchBundle\Api\Common\SearchTermCondition;
 use Siso\Bundle\SearchBundle\Event\PostBuildEshopQueryEvent;
@@ -59,9 +59,9 @@ class EshopQueryListener
 } 
 ```
 
-**Service definition**
+Service definition:
 
-``` 
+``` php
 <parameter key="myproject.eshop_query_listener.class">MyProject\Bundle\ProjectBundle\EventListener\EshopQueryListener</parameter>
 
 <service id="myproject.eshop_query_listener" class="%myproject.eshop_query_listener.class%">

@@ -1,14 +1,14 @@
-#  Recipe - how to implement new price provider 
+# How to implement new price provider
 
-See [Cookbook](Price-Engine---Cookbook_23560373.html) to find out *How to write a new Price Provider*.
+See [Cookbook](price_engine_cookbook.md) to find out how to write a new Price Provider.
 
-#### What to implement?
+## What to implement?
 
 You will need to implement the method *calculatePrices*. The goal of this method is to provide *PriceResponse* object, the way how you get the data and calculate the prices is up to you. You can inject other services, that will do some job for you, or just use the data provided in the *PriceRequest*.
 
 In our example we just use the provided data and make usage of the [VatService](VatServiceInterface_23560246.html) to get the vatPercent.
 
-``` 
+``` php
 /**
  * {@inheritdoc}
  *

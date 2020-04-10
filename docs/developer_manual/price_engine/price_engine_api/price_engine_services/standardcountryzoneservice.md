@@ -1,4 +1,4 @@
-#  StandardCountryZoneService 
+# StandardCountryZoneService
 
 ## Goal
 
@@ -8,13 +8,13 @@ It is used e.g. for selecting template debitors in the [StandardTemplateDebitorS
 
 ## Configuration
 
-**Service ID**
+Service ID:
 
 ``` 
 siso_core.country_zone.standard
 ```
 
-**Default zones configuration**
+Default zones configuration:
 
 ``` 
 #values for the siso_core.country_zone.standard service
@@ -24,25 +24,7 @@ silver_eshop.zone_country:
 
 ## API: CountryZoneServiceInterface
 
-<table>
-<colgroup>
-<col style="width: 50%" />
-<col style="width: 50%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th>Method</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><pre><code>public function getCountries($zone);</code></pre></td>
-<td><pre><code>This method will return a list of countries for given zone</code></pre></td>
-</tr>
-<tr>
-<td><pre><code>public function getZone($country);</code></pre></td>
-<td><pre><code>This method will return zone for given country</code></pre></td>
-</tr>
-</tbody>
-</table>
+|Method|Description|
+|--- |--- |
+|public function getCountries($zone);|This method will return a list of countries for given zone|
+|public function getZone($country);|This method will return zone for given country|

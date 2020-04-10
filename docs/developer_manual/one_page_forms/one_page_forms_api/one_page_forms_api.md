@@ -1,12 +1,12 @@
-#  One-page forms - API 
+# One-page forms API
 
 ## PreDataProcessor and DataProcessors
 
-The most important services are the ***preDataProcessor*** and ***dataProcessors***. Both of them must implement the *AbstractDataProcessor,* therefore the services must implement the *execute()* method.
+The most important services are the `preDataProcessor` and `dataProcessors`. Both of them must implement the `AbstractDataProcessor`, therefore the services must implement the `execute()`` method.
 
-**AbstractDataProcessor**
+`AbstractDataProcessor`:
 
-``` 
+``` php
 namespace Silversolutions\Bundle\EshopBundle\Services\Forms\DataProcessor;
 
 abstract class AbstractDataProcessor implements DataProcessorInterface
@@ -15,7 +15,7 @@ abstract class AbstractDataProcessor implements DataProcessorInterface
 }
 ```
 
-``` 
+``` php
 namespace Silversolutions\Bundle\EshopBundle\Services\Forms\DataProcessor;
 
 use Symfony\Component\HttpFoundation\Response;
@@ -39,16 +39,16 @@ interface DataProcessorInterface
 
 ### What the services can/should do?
 
-Since every form entity is a custom class, when the form is passed to the *AbstractDataProcessor*, it is encapsulated and passed in a *NormalizedEntity $formEntity*.
+Since every form entity is a custom class, when the form is passed to the `AbstractDataProcessor`, it is encapsulated and passed in a `NormalizedEntity $formEntity`.
 
-  - Every implementation of the *AbstractDataProcessor* can get and set the form data from/in the original form.
-  - Every implementation of the *AbstractDataProcessor* has to return the $lastResult
-  - Every dataProcessor can get/update the results of the previous dataProcessors, that are stored in the $lastResult
-  - Every dataProcessor can set additional error message, that will be displayed for the user, if the process was not successful  
+- Every implementation of the `AbstractDataProcessor` can get and set the form data from/in the original form.
+- Every implementation of the `AbstractDataProcessor` has to return the `$lastResult`
+- Every `dataProcessor` can get/update the results of the previous `dataProcessors`, that are stored in the `$lastResult`
+- Every `dataProcessor` can set additional error message, that will be displayed for the user, if the process was not successful  
 
-**Example: SendEmailDataProcessor** Expand source 
+Example: `SendEmailDataProcessor`:
 
-``` 
+``` php
 class SendEmailDataProcessor extends AbstractDataProcessor
 {
     const LAST_RESULT_IDENTIFIER = 'send_email';
@@ -97,15 +97,15 @@ A custom ZIP validator has been implemented in order to extend the standard Symf
 
 The post code - ZIP - validation rules are different for each country. To define the different code pattern for each post code a new service is defined.
 
-Please notice, that this validator validates the post code based on the submitted country. If you want to use this validator in your project, make sure, that your Form contains an attribute:
+!!! note
 
-    $country
+    Please notice, that this validator validates the post code based on the submitted country. If you want to use this validator in your project, make sure, that your Form contains an attribute `$country`
 
 New Service ZIP Validator
 
-**EshopBundle/Resources/config/ses\_services.xml**
+`EshopBundle/Resources/config/ses_services.xml`:
 
-``` 
+``` xml
 <parameter key="ses_forms.zip_validator.class">Silversolutions\Bundle\EshopBundle\Entities\Forms\Constraints\ZipValidator</parameter>
 
 <!-- ZIP validator service -->
@@ -120,11 +120,11 @@ New Service ZIP Validator
 </service>
 ```
 
-To validate the ZIP code it takes the pattern by country from the configuration, and compare with the value in the form. In the file "ses\_patern\_zip.yml" are define the country codes, the pattern and the code rule\!
+To validate the ZIP code it takes the pattern by country from the configuration, and compare with the value in the form. In the file `ses_patern_zip.yml` are define the country codes, the pattern and the code rule.
 
-So in the "*ses\_forms.zip\_validator*" service it checks that values (See code.)
+So in the `ses_forms.zip_validator` service it checks that values (See code.)
 
-``` 
+``` php
 //Check if the value matches with the "POST_CODE_RULE"
 $codeRule = '/' . $countryPattern['POST_CODE_RULE'] . '/';
 if (preg_match($codeRule, $value)){
@@ -132,12 +132,10 @@ if (preg_match($codeRule, $value)){
 }
 ```
 
-Example of the *ses\_pattern\_zip.yml* YML file:
+Example of the `ses_pattern_zip.yml` YML file:
 
-**EshopBundle/Resources/config/ses\_patern\_zip.yml** Expand source 
-
-``` 
- parameters:
+``` yaml
+parameters:
     siso_pattern_zip.default.country:
             -
              CODE: AD
@@ -157,9 +155,9 @@ Example of the *ses\_pattern\_zip.yml* YML file:
              POST_CODE_RULE: ".*"
 ```
 
-This new file is include in silver.eshop.yml file:
+This new file is include in `silver.eshop.yml` file:
 
-``` 
+``` yaml
 - { resource: "ses_patern_zip.yml"}
 ```
 
@@ -189,12 +187,11 @@ use Silversolutions\Bundle\EshopBundle\Entities\Forms\Constraints as SesAssert;
 protected $email;
 ```
 
-####   
-User searching
+#### User searching
 
 It is possible to manage the searching for a user in a given location. The locationId must be set in a configuration file.
 
-``` 
+``` yaml
 ses_ez_helper.default.parent_location_id_users_members: 12
 ```
 
@@ -202,29 +199,23 @@ ses_ez_helper.default.parent_location_id_users_members: 12
 
 A phone and/or fax validator has been implemented to verify a valid number format. These formats are supported:
 
-  - 0123456789
-
-  - \+490123456789
-
-  - \+49-0123456789
-
-  - 030-1234567
-
-  - 030/1234567
-
-  - \+4930/1234567
-
-  - 0123 456 789 (spaces)
+- 0123456789
+- +490123456789
+- +49-0123456789
+- 030-1234567
+- 030/1234567
+- +4930/1234567
+- 0123 456 789 (spaces)
 
 Rule: All combination of 0-9, +, - and / is possible, if minimum and maximum length (see section Configuration) fits.
 
-**regex**
+Regex:
 
 ``` 
 ('/^[0-9\-\+\/]{%min%,%max%}$/')
 ```
 
-``` 
+``` php
 use Silversolutions\Bundle\EshopBundle\Entities\Forms\Constraints as SesAssert;
  
 /**
@@ -237,7 +228,7 @@ protected $phoneNumber;
 
 You can define the min and max length for the validator:
 
-``` 
+``` yaml
 ses_phone_validator:
     min: 9
     max: 15
@@ -253,7 +244,7 @@ A custom validator has been implemented to check if the VAT number for commercia
 http://ec.europa.eu/taxation_customs/vies/checkVatService.wsdl
 ```
 
-``` 
+``` php
 use Silversolutions\Bundle\EshopBundle\Entities\Forms\Constraints as SesAssert;
  
 /**

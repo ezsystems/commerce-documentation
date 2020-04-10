@@ -1,4 +1,4 @@
-# Orderhistory - ERP messages 
+# ERP messages
 
 The module uses the following ERP messages:
 
@@ -6,117 +6,37 @@ The specifications are stored in  vendor/silversolutions/silver.e-shop/src/Silve
 
 The are defining the input and output structure for each message. 
 
-<table>
-<colgroup>
-<col style="width: 25%" />
-<col style="width: 25%" />
-<col style="width: 25%" />
-<col style="width: 25%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th><div class="tablesorter-header-inner">
-<div class="tablesorter-header-inner">
-<div class="tablesorter-header-inner">
-silver_erp.config.messages
-</th>
-<th><div class="tablesorter-header-inner">
-<div class="tablesorter-header-inner">
-<div class="tablesorter-header-inner">
-Prozesstyp NAV
-</th>
-<th><div class="tablesorter-header-inner">
-<div class="tablesorter-header-inner">
-<div class="tablesorter-header-inner">
-webservice_operation
-</th>
-<th><div class="tablesorter-header-inner">
-<div class="tablesorter-header-inner">
-status
-
-</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>invoice_detail</td>
-<td>READPOSTEDSALESINVOICE</td>
-<td>SV_OPENTRANS_GET_ORDERSTATUS</td>
-<td><p>Resources/specifications/xml/request.invoiceDetail.xml</p>
-<p>Resources/specifications/xml/response.invoiceDetail.xml</p></td>
-</tr>
-<tr>
-<td>invoice_list</td>
-<td>READPOSTEDSALESINVOICELIST</td>
-<td>SV_OPENTRANS_GET_ORDERLIST</td>
-<td><p>Resources/specifications/xml/request.invoiceList.xml</p>
-<p>Resources/specifications/xml/response.invoiceList.xml</p></td>
-</tr>
-<tr>
-<td>delivery_note_detail</td>
-<td>READPOSTEDSALESSHIPMENT</td>
-<td>SV_OPENTRANS_GET_ORDERSTATUS</td>
-<td><p>Resources/specifications/xml/request.deliveryNoteDetail.xml</p>
-<p>Resources/specifications/xml/response.deliveryNoteDetail.xml</p></td>
-</tr>
-<tr>
-<td>delivery_note_list</td>
-<td>READPOSTEDSALESSHIPMENTLIST</td>
-<td>SV_OPENTRANS_GET_ORDERLIST</td>
-<td><p>Resources/specifications/xml/request.deliveryNoteList.xml</p>
-<p>Resources/specifications/xml/response.deliveryNoteList.xml</p></td>
-</tr>
-<tr>
-<td>credit_memo_detail</td>
-<td>READPOSTEDSALESCRMEMO</td>
-<td>SV_OPENTRANS_GET_ORDERSTATUS</td>
-<td><p>Resources/specifications/xml/request.creditMemoDetail.xml</p>
-<p>Resources/specifications/xml/response.creditMemoDetail.xml</p></td>
-</tr>
-<tr>
-<td>credit_memo_list</td>
-<td>READPOSTEDSALESCRMEMOLIST</td>
-<td>SV_OPENTRANS_GET_ORDERLIST</td>
-<td><p>Resources/specifications/xml/request.creditMemoList.xml</p>
-<p>Resources/specifications/xml/response.creditMemoList.xml</p></td>
-</tr>
-<tr>
-<td>order_detail</td>
-<td>READSALESDOCUMENT</td>
-<td>SV_OPENTRANS_GET_ORDERSTATUS</td>
-<td><p>Resources/specifications/xml/request.orderDetail.xml</p>
-<p>Resources/specifications/xml/response.orderDetail.xml</p></td>
-</tr>
-<tr>
-<td>order_list</td>
-<td>READSALESDOCUMENTLIST</td>
-<td>SV_OPENTRANS_GET_ORDERLIST</td>
-<td><p>Resources/specifications/xml/request.orderList.xml</p>
-<p>Resources/specifications/xml/response.orderList.xml</p></td>
-</tr>
-</tbody>
-</table>
+|silver_erp.config.messages|Prozesstyp NAV|webservice_operation|status|
+|--- |--- |--- |--- |
+|invoice_detail|READPOSTEDSALESINVOICE|SV_OPENTRANS_GET_ORDERSTATUS|Resources/specifications/xml/request.invoiceDetail.xml</br>Resources/specifications/xml/response.invoiceDetail.xml|
+|invoice_list|READPOSTEDSALESINVOICELIST|SV_OPENTRANS_GET_ORDERLIST|Resources/specifications/xml/request.invoiceList.xml</br>Resources/specifications/xml/response.invoiceList.xml|
+|delivery_note_detail|READPOSTEDSALESSHIPMENT|SV_OPENTRANS_GET_ORDERSTATUS|Resources/specifications/xml/request.deliveryNoteDetail.xml</br>Resources/specifications/xml/response.deliveryNoteDetail.xml|
+|delivery_note_list|READPOSTEDSALESSHIPMENTLIST|SV_OPENTRANS_GET_ORDERLIST|Resources/specifications/xml/request.deliveryNoteList.xml</br>Resources/specifications/xml/response.deliveryNoteList.xml|
+|credit_memo_detail|READPOSTEDSALESCRMEMO|SV_OPENTRANS_GET_ORDERSTATUS|Resources/specifications/xml/request.creditMemoDetail.xml</br>Resources/specifications/xml/response.creditMemoDetail.xml|
+|credit_memo_list|READPOSTEDSALESCRMEMOLIST|SV_OPENTRANS_GET_ORDERLIST|Resources/specifications/xml/request.creditMemoList.xml</br>Resources/specifications/xml/response.creditMemoList.xml|
+|order_detail|READSALESDOCUMENT|SV_OPENTRANS_GET_ORDERSTATUS|Resources/specifications/xml/request.orderDetail.xml</br>Resources/specifications/xml/response.orderDetail.xml|
+|order_list|READSALESDOCUMENTLIST|SV_OPENTRANS_GET_ORDERLIST|Resources/specifications/xml/request.orderList.xml</br>Resources/specifications/xml/response.orderList.xml|
 
 ## Example for getting an invoice
 
 This example fetches a invoice number from the ERP system
 
-``` 
-        $message = $this->container->get('silver_erp.message_inquiry_service')->inquireMessage(
-            InvoiceDetailFactoryListener::INVOICEDETAIL
-        );
-        /** @var InvoiceDetailRequest $request */
-        $request = $message->getRequestDocument();
-        $request->ID->value = $invoiceNumber;
-        $request->CustomerNumber->value = $customerNumber;
-        /** @var WebConnectorMessageTransport $transport */
-        $transport = $this->container->get('silver_erp.message_transport');
-        $response = $transport->sendMessage($message)->getResponseDocument();
+``` php
+$message = $this->container->get('silver_erp.message_inquiry_service')->inquireMessage(
+    InvoiceDetailFactoryListener::INVOICEDETAIL
+);
+/** @var InvoiceDetailRequest $request */
+$request = $message->getRequestDocument();
+$request->ID->value = $invoiceNumber;
+$request->CustomerNumber->value = $customerNumber;
+/** @var WebConnectorMessageTransport $transport */
+$transport = $this->container->get('silver_erp.message_transport');
+$response = $transport->sendMessage($message)->getResponseDocument();
 ```
 
 The specification for the request (request.invoiceDetail.xml) reflects the fields used in the request:
 
-``` 
+``` xml
 <?xml version="1.0" encoding="UTF-8"?>
 <InvoiceDetailRequest>
     <ID>10000</ID>
@@ -124,9 +44,9 @@ The specification for the request (request.invoiceDetail.xml) reflects the field
 </InvoiceDetailRequest>
 ```
 
-The reponse ist defined in response.invoiceDetail.xml:
+The response list defined in response.invoiceDetail.xml:
 
-``` 
+``` xml
 <?xml version="1.0" encoding="UTF-8"?>
 <Invoice ses_unbounded="PaymentMeans PaymentTerms TaxTotal InvoiceLine" ses_tree="SesExtension">
     <ID></ID>

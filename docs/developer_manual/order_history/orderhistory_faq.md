@@ -1,12 +1,12 @@
-#  Orderhistory - FAQ 
+# Orderhistory FAQ
 
-How to configure columns in a list view?
+## How to configure columns in a list view?
 
 You can configure which columns (per document type) you want to display. The columns in the *list* are sortable.
 
-The column identifier is the block name from the *views/OrderHistory/Components/fields.html.twig* without the suffix '\_field'. [Read more...](Orderhistory---Templates_23560621.html)
+The column identifier is the block name from the *views/OrderHistory/Components/fields.html.twig* without the suffix '\_field'. [Read more...](orderhistory_templates.md)
 
-``` 
+``` yaml
 siso_order_history:
     default_list_fields:
         invoice:
@@ -25,17 +25,21 @@ siso_order_history:
             - Sum
 ```
 
-How to change sorting for the columns in a list view?
+## How to change sorting for the columns in a list view?
 
 You can configure how the columns (per document type) in the list view are sorted. Check the [DataTables plugin configuration](https://www.datatables.net/plug-ins/sorting/) to see all sorting options.
 
-For the date it is enough to use the 'datetime' sorting. Following date-formats are supported:
+!!! note
 
+    For the date it is enough to use the 'datetime' sorting. Following date-formats are supported:
+
+    ```
     #combination of these characters is allowed: Y,m,d
     #accepted delimiters are: "/" , "." and "-"
     #Example: d.m.Y, Y/m/d, d-m-Y...
+    ```
 
-``` 
+``` yml
 siso_order_history:
     default_list_sort:
         invoice:
@@ -48,7 +52,7 @@ siso_order_history:
 
 You can also configure (per document type) by which column the list will be sorted by default:
 
-``` 
+``` yaml
 siso_order_history:
     # default column sorting for list view
     # valid values: [[<column_index>,<sort_order>], ... , [<column_index>,<sort_order>]]
@@ -60,11 +64,11 @@ siso_order_history:
         
 ```
 
-How to change the date format?
+## How to change the date format?
 
- You can configure the ERP date format and also the date format that will be used in the shop:
+You can configure the ERP date format and also the date format that will be used in the shop:
 
-``` 
+``` yaml
 parameters:
     #date format that is used and displayed in shop
     #combination of these characters is allowed: Y,m,d
@@ -76,13 +80,13 @@ parameters:
     siso_order_history.default.erp_date_format: 'Ymd' 
 ```
 
-How to change the configuration by siteaccess?
+## How to change the configuration by siteaccess?
 
-The semantic configuration (orderhistory.yml) is read and prepared in the ConfigurationReaderService. However an event is dispatched here, that allows you to modify the configuration, if you e.g. need to change it by siteaccess.
+The semantic configuration (`orderhistory.yml`) is read and prepared in the `ConfigurationReaderService`. However an event is dispatched here, that allows you to modify the configuration, if you e.g. need to change it by siteaccess.
 
-**How the semantic configuration is used?** Expand source 
+How the semantic configuration is used?:
 
-``` 
+``` yaml
 # vendor/silversolutions/silver.orderhistory/src/Siso/Bundle/OrderHistoryBundle/Services/ConfigurationReaderService.php
 # check the orderhistory.yml
 $list = %siso_order_history.list%;
@@ -129,20 +133,20 @@ protected function getConfigurationData()
 }
 ```
 
-Therefore you need to implement a '*siso\_order\_history.read\_configuration*' listener.
+Therefore you need to implement a `siso_order_history.read_configuration` listener.
 
 Add a configuration by siteaccess:
 
-``` 
+``` yaml
 parameters:
-   siso_order_history.default.document_types:
+    siso_order_history.default.document_types:
        - order
-   siso_order_history.default.default_document_type: order
+    siso_order_history.default.default_document_type: order
 ```
 
 Implement an event listener:
 
-``` 
+``` php
 public function onReadConfiguration(ReadConfigurationEvent $readConfigurationEvent)
 {
     $data = $readConfigurationEvent->getData();
@@ -155,7 +159,9 @@ public function onReadConfiguration(ReadConfigurationEvent $readConfigurationEve
 
    $readConfigurationEvent->setData($data);
 }
+```
 
+``` xml
 <service id="project.read_configuration_listener" class="%project.read_configuration_listener.class%">
     <argument type="service" id="ezpublish.config.resolver"/>
     <tag name="kernel.event_listener"  event="siso_order_history.read_configuration" method="onReadConfiguration" />

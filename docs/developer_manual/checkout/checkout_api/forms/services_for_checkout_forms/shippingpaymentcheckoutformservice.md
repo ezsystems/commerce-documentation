@@ -1,22 +1,22 @@
-#  ShippingPaymentCheckoutFormService 
+# ShippingPaymentCheckoutFormService
 
-ShippingPaymentCheckoutFormService is a service that implements the logic for the CheckoutShippingPayment form.This service is assigned to the CheckoutShippingPayment form in the [configuration](http://confluence.ng.silverproducts.de/display/EX/Configuration+for+Checkout+Forms).
+ShippingPaymentCheckoutFormService is a service that implements the logic for the CheckoutShippingPayment form.This service is assigned to the CheckoutShippingPayment form in the [configuration](../configuration_for_checkout_forms.md).
 
-This service implements the [CheckoutFormServiceInterface](http://confluence.ng.silverproducts.de/display/EX/Interfaces+for+checkout+services).
+This service implements the [CheckoutFormServiceInterface](interfaces_for_checkout_services.md#checkoutformserviceinterface).
 
-Namespace
+!!! note "Namespace"
 
-    Siso\Bundle\CheckoutBundle\Service\ShippingPaymentCheckoutFormService
+    `Siso\Bundle\CheckoutBundle\Service\ShippingPaymentCheckoutFormService`
 
-Service ID
+!!! note "Service ID"
 
-    siso_checkout.checkout_form.shipping_payment 
+    `siso_checkout.checkout_form.shipping_payment`
 
 ## Usage
 
 **Example**
 
-``` 
+``` php
 $formService = $this->container->get('siso_checkout.checkout_form.shipping_payment');
 /** @var BasketService $basketService */
 $basketService = $this->container->get('silver_basket.basket_service');

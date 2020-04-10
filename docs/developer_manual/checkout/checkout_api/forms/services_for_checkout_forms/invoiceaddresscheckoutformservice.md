@@ -1,22 +1,22 @@
-#  InvoiceAddressCheckoutFormService 
+# InvoiceAddressCheckoutFormService
 
-InvoiceAddressCheckoutFormService is a service that implements the logic for the CheckoutInvoiceAddress form.This service is assigned to the CheckoutInvoiceAddress form in the [configuration](http://confluence.ng.silverproducts.de/display/EX/Configuration+for+Checkout+Forms).
+InvoiceAddressCheckoutFormService is a service that implements the logic for the CheckoutInvoiceAddress form.This service is assigned to the CheckoutInvoiceAddress form in the [configuration](../configuration_for_checkout_forms.md).
 
-This service implements both: [CheckoutFormServiceInterface](http://confluence.ng.silverproducts.de/display/EX/Interfaces+for+checkout+services) and the [CheckoutAddressFormServiceInterface](http://confluence.ng.silverproducts.de/display/EX/Interfaces+for+checkout+services)
+This service implements both [CheckoutFormServiceInterface](interfaces_for_checkout_services.md#checkoutformserviceinterface) and the [CheckoutAddressFormServiceInterface](interfaces_for_checkout_services.md#checkoutaddressformserviceinterface)
 
-Namespace
+!!! note "Namespace"
 
-    Siso\Bundle\CheckoutBundle\Service\InvoiceAddressCheckoutFormService
+    `Siso\Bundle\CheckoutBundle\Service\InvoiceAddressCheckoutFormService`
 
-Service ID
+!!! note "Service ID"
 
-    siso_checkout.checkout_form.invoice_address 
+    `siso_checkout.checkout_form.invoice_address`
 
 ## Usage
 
 **Example**
 
-``` 
+``` php
 $formService = $this->container->get('siso_checkout.checkout_form.invoice_address');
 /** @var BasketService $basketService */
 $basketService = $this->container->get('silver_basket.basket_service');

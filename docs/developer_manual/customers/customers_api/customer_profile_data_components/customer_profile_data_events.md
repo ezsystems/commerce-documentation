@@ -1,93 +1,34 @@
-# Customer profile data events 
+# Customer profile data events
 
-<table>
-<colgroup>
-<col style="width: 50%" />
-<col style="width: 50%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th><div class="tablesorter-header-inner">
-<div class="tablesorter-header-inner">
-Classes
+## CustomerProfileDataEventInterface
 
-</th>
-<th><div class="tablesorter-header-inner">
-<div class="tablesorter-header-inner">
-Description
+`\Silversolutions\Bundle\EshopBundle\Event\CustomerProfileData\CustomerProfileDataEventInterface`
 
-</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>\Silversolutions\Bundle\EshopBundle\Event\CustomerProfileData\CustomerProfileDataEventInterface</code></td>
-<td>The general interface for any event which is thrown in customer profile data services is thrown.</td>
-</tr>
-<tr>
-<td><code>\Silversolutions\Bundle\EshopBundle\Event\CustomerProfileData\AbstractCustomerProfileDataEvent</code></td>
-<td>Abstract event for any customer profile data event provides helper methods like <code>setCustomerProfileData()</code> to make a profile available for an event listener.</td>
-</tr>
-<tr>
-<td><code>\Silversolutions\Bundle\EshopBundle\Event\CustomerProfileData\EzErpCustomerProfileDataEvent</code></td>
-<td><p>Concrete event which also provides the eZ user, e.g. for fallback purposes when the ERP did not respond (see <a href="Customer-profile-data-listeners_23560622.html">Customer profile data listeners</a>)</p>
-<p>List of events, dispatched by \Silversolutions\Bundle\EshopBundle\Services\CustomerProfileData\EzErpCustomerProfileDataService:</p>
+The general interface for any event which is thrown in customer profile data services is thrown.
 
-<table>
-<colgroup>
-<col style="width: 50%" />
-<col style="width: 50%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th>Event id</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><pre><code>ses_ez_erp_customer_profile_data_pre_fetch</code></pre></td>
-<td><p>Thrown before any data is fetched from storage(s)</p></td>
-</tr>
-<tr>
-<td><pre><code>ses_ez_erp_customer_profile_data_post_fetch</code></pre></td>
-<td>Thrown after all data is fetched from storage(s)</td>
-</tr>
-<tr>
-<td><pre><code>ses_ez_erp_customer_profile_data_pre_erp_customer_fetch</code></pre></td>
-<td>Thrown before ERP customer data is fetched</td>
-</tr>
-<tr>
-<td><pre><code>ses_ez_erp_customer_profile_data_post_erp_customer_fetch_success</code></pre></td>
-<td>Thrown after ERP customer data is successfully fetched</td>
-</tr>
-<tr>
-<td><pre><code>ses_ez_erp_customer_profile_data_post_erp_customer_fetch_fail</code></pre></td>
-<td>Thrown after ERP customer data fetching failed</td>
-</tr>
-<tr>
-<td><pre><code>ses_ez_erp_customer_profile_data_pre_erp_contact_fetch</code></pre></td>
-<td>Thrown before ERP contact data is fetched</td>
-</tr>
-<tr>
-<td><pre><code>ses_ez_erp_customer_profile_data_post_erp_contact_fetch_success</code></pre></td>
-<td>Thrown after ERP contact data fetching successed</td>
-</tr>
-<tr>
-<td><pre><code>ses_ez_erp_customer_profile_data_post_erp_contact_fetch_fail</code></pre></td>
-<td>Thrown after ERP contact data fetching failed</td>
-</tr>
-<tr>
-<td><pre><code>ses_ez_erp_customer_profile_data_pre_get_customer</code></pre></td>
-<td>Thrown before customer data is returned</td>
-</tr>
-<tr>
-<td><pre><code>ses_ez_erp_customer_profile_data_pre_save_customer</code></pre></td>
-<td>Thrown before customer data is saved</td>
-</tr>
-</tbody>
-</table>
-</td>
-</tr>
-</tbody>
-</table>
+## AbstractCustomerProfileDataEvent
+
+`\Silversolutions\Bundle\EshopBundle\Event\CustomerProfileData\AbstractCustomerProfileDataEvent`
+
+Abstract event for any customer profile data event provides helper methods like `setCustomerProfileData()` to make a profile available for an event listener.
+
+## EzErpCustomerProfileDataEvent
+
+`\Silversolutions\Bundle\EshopBundle\Event\CustomerProfileData\EzErpCustomerProfileDataEvent`
+
+Concrete event which also provides the eZ user, e.g. for fallback purposes when the ERP did not respond (see [Customer profile data listeners](customer_profile_data_listeners.md))
+
+List of events, dispatched by `\Silversolutions\Bundle\EshopBundle\Services\CustomerProfileData\EzErpCustomerProfileDataService`:
+
+|Event id|Description|
+|--- |--- |
+|ses_ez_erp_customer_profile_data_pre_fetch|Thrown before any data is fetched from storage(s)|
+|ses_ez_erp_customer_profile_data_post_fetch|Thrown after all data is fetched from storage(s)|
+|ses_ez_erp_customer_profile_data_pre_erp_customer_fetch|Thrown before ERP customer data is fetched|
+|ses_ez_erp_customer_profile_data_post_erp_customer_fetch_success|Thrown after ERP customer data is successfully fetched|
+|ses_ez_erp_customer_profile_data_post_erp_customer_fetch_fail|Thrown after ERP customer data fetching failed|
+|ses_ez_erp_customer_profile_data_pre_erp_contact_fetch|Thrown before ERP contact data is fetched|
+|ses_ez_erp_customer_profile_data_post_erp_contact_fetch_success|Thrown after ERP contact data fetching successed|
+|ses_ez_erp_customer_profile_data_post_erp_contact_fetch_fail|Thrown after ERP contact data fetching failed|
+|ses_ez_erp_customer_profile_data_pre_get_customer|Thrown before customer data is returned|
+|ses_ez_erp_customer_profile_data_pre_save_customer|Thrown before customer data is saved|

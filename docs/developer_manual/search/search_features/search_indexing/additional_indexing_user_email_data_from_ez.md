@@ -1,12 +1,12 @@
-#  Additional Indexing - User Email Data from Ez 
+# Additional Indexing - User Email Data from eZ
 
 This document describes how email data from Ez user is indexed.
 
-In a similar way to indexing file contents (see [Additional indexing of Ez PDF content and other file content](Additional-indexing-of-Ez-PDF-content-and-other-file-content_23560996.html) ), the class Search Field for user object is created. In this case, ez user don't have an implementation of SearchField, so this class SearchField should implement Indexable interface.
+In a similar way to indexing file contents (see [Additional indexing of Ez PDF content and other file content](additional_indexing_of_ez_pdf_content_and_other_file_content.md)), the class Search Field for user object is created. In this case, ez user don't have an implementation of SearchField, so this class SearchField should implement Indexable interface.
 
 This is the service definition:
 
-``` 
+``` xml
 <!-- service to index email data of Ez User -->
 <service id="ezpublish.fieldType.indexable.user" class="%ezpublish.fieldType.indexable.user.class%">
     <tag name="ezpublish.fieldType.indexable" alias="ezuser" />
@@ -19,11 +19,11 @@ The alias will indicate which eZ element is to be extended. Currently eZ identif
 
 In following directory contains the classes for User field type.
 
-    harmony_dev/vendor/ezsystems/ezpublish-kernel/eZ/Publish/Core/FieldType/User
+`harmony_dev/vendor/ezsystems/ezpublish-kernel/eZ/Publish/Core/FieldType/User`
 
 Ez field identifier can be found on the following method:
 
-``` 
+``` php
 /**
  * Returns the field type identifier for this field type.
  *
@@ -41,7 +41,7 @@ from class Type (which can be found in the directory specified above).
 
 User email is taken from SPI Field, which has an externalData array with several fields. In this case we will just get email field and index it in two Solr fields:
 
-``` 
+``` php
 /**
  * Get index data for field for backend search
  *
@@ -84,32 +84,31 @@ maxLogin
 
 If you want to index additional data related to eZ user you can add new Search\\Field to the return array of method getIndexData.
 
-``` 
-    return array(
-        new Search\Field(
-            'email_value',
-            $field->value->externalData['email'],
-            new Search\FieldType\StringField()
-        ),
-        new Search\Field(
-            'email_value',
-            $field->value->externalData['email'],
-            new Search\FieldType\FullTextField()
-        ),
- 
-        // New data to be indexed:
-        new Search\Field(
-            'login_value',
-            $field->value->externalData['login'],
-            new Search\FieldType\StringField()
-        ),
+``` php
+return array(
+    new Search\Field(
+        'email_value',
+        $field->value->externalData['email'],
+        new Search\FieldType\StringField()
+    ),
+    new Search\Field(
+        'email_value',
+        $field->value->externalData['email'],
+        new Search\FieldType\FullTextField()
+    ),
 
-    );
+    // New data to be indexed:
+    new Search\Field(
+        'login_value',
+        $field->value->externalData['login'],
+        new Search\FieldType\StringField()
+    ),
+);
 ```
 
 If you add a new search field, you will also need to add the field definition to getIndexDefinition() method:
 
-``` 
+``` php
 /**
  * Get index field types for backend search
  *
@@ -130,7 +129,7 @@ In this example we are using Solr String field and Solr Full Text Field.
 
 To know more about Solr field types you can check this Solr documentation.
 
-<https://cwiki.apache.org/confluence/display/solr/Field+Type+Definitions+and+Properties>
+https://cwiki.apache.org/confluence/display/solr/Field+Type+Definitions+and+Properties
 
 String fields and Text fields should be visible as a search result in Solr web administration.
 
@@ -138,6 +137,6 @@ Full Text Fields are only visible in schema browser.
 
 In this example Solr string field name for email will be:
 
-``` syntax language-json
+```
 "user_user_account_email_value_s"
 ```

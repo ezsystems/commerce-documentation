@@ -1,26 +1,26 @@
-#  CMS dataprovider 
+# CMS dataprovider
 
 The Dataprovider for eZ Platform version provides an implementation for fetching catalogues and products from the CMS.
 
-  - products are stored directly in eZ Platform
-  - they can use the features provided by the CMS such as languages, objects states, versioning, ..
-  - The product catalog can be maintained in the CMS
+- products are stored directly in eZ Platform
+- they can use the features provided by the CMS such as languages, objects states, versioning, ..
+- The product catalog can be maintained in the CMS
 
-Requirements
+## Requirements
 
 Two Content classes have to be installed in the CMS:
 
-  - Category
-  - Product
+- Category
+- Product
 
 ### The catalogue content type
 
 The following fields are used to create a catalogElement:
 
-  - name: ses\_name
-  - text: ses\_subtitle
-  - image: ses\_image
-  - identifier: main Node-Id
+- name: ses\_name
+- text: ses\_subtitle
+- image: ses\_image
+- identifier: main Node-Id
 
 ``` 
 +------------------------------------------------+
@@ -43,15 +43,15 @@ I list attributes of class: ses_category         |
 
 The following fields are used to create a product:
 
-  - name: ses\_name
-  - text: ses\_subtitle
-  - image: ses\_image\_main
-  - shortDescription: ses\_short\_description
-  - longDescription: ses\_long\_description
-  - sku: ses\_sku
-  - manufacturerSku: ses\_vendor\_sku
-  - ean: ses\_ean
-  - identifier: main Node-Id  
+- name: ses\_name
+- text: ses\_subtitle
+- image: ses\_image\_main
+- shortDescription: ses\_short\_description
+- longDescription: ses\_long\_description
+- sku: ses\_sku
+- manufacturerSku: ses\_vendor\_sku
+- ean: ses\_ean
+- identifier: main Node-Id  
 
 ``` 
 +---------------------------------------------------+
@@ -85,7 +85,7 @@ To explicit fetch a specific translation of an eZ object, you might use the opti
 
 Example:
 
-``` 
+``` php
 $seoUrl = '/silver.catalog/Products/Vegetables';
 $languages = array('eng-US');
  
@@ -105,59 +105,42 @@ The following default setup filters eZ Platform content of type "ses\_category" 
 
 The second level key defines the scope, or "filterType", for which the specific filter definitions are valid. In this example it is "navigation", which is passed by the navigation service's fetch.
 
-**Example**
+Example:
 
-``` 
+``` yaml
 silver_eshop.default.ez5_catalog_data_provider.filter:
-        navigation:
-            contentTypes: [ "ses_category" ]
-            limit: 20
-            sortClauses:
-                -
-                    clause: "\\eZ\\Publish\\API\\Repository\\Values\\Content\\Query\\SortClause\\Location\\Priority"
-                    order: "\\eZ\\Publish\\API\\Repository\\Values\\Content\\Query::SORT_DESC"
-                -
-                    clause: "\\eZ\\Publish\\API\\Repository\\Values\\Content\\Query\\SortClause\\DatePublished"
-                    order: "\\eZ\\Publish\\API\\Repository\\Values\\Content\\Query::SORT_ASC"
-        catalogList:
-            contentTypes: ["ses_category", "ses_product"]
-            sortClauses:
-                -
-                    clause: "\\eZ\\Publish\\API\\Repository\\Values\\Content\\Query\\SortClause\\Location\\Priority"
-                    order: "\\eZ\\Publish\\API\\Repository\\Values\\Content\\Query::SORT_DESC"
-        productList:
-            contentTypes: ["ses_product"]
-            sortClauses:
-                -
-                    clause: "\\eZ\\Publish\\API\\Repository\\Values\\Content\\Query\\SortClause\\Location\\Priority"
-                    order: "\\eZ\\Publish\\API\\Repository\\Values\\Content\\Query::SORT_DESC"
+    navigation:
+        contentTypes: [ "ses_category" ]
+        limit: 20
+        sortClauses:
+            -
+                clause: "\\eZ\\Publish\\API\\Repository\\Values\\Content\\Query\\SortClause\\Location\\Priority"
+                order: "\\eZ\\Publish\\API\\Repository\\Values\\Content\\Query::SORT_DESC"
+            -
+                clause: "\\eZ\\Publish\\API\\Repository\\Values\\Content\\Query\\SortClause\\DatePublished"
+                order: "\\eZ\\Publish\\API\\Repository\\Values\\Content\\Query::SORT_ASC"
+    catalogList:
+        contentTypes: ["ses_category", "ses_product"]
+        sortClauses:
+            -
+                clause: "\\eZ\\Publish\\API\\Repository\\Values\\Content\\Query\\SortClause\\Location\\Priority"
+                order: "\\eZ\\Publish\\API\\Repository\\Values\\Content\\Query::SORT_DESC"
+    productList:
+        contentTypes: ["ses_product"]
+        sortClauses:
+            -
+                clause: "\\eZ\\Publish\\API\\Repository\\Values\\Content\\Query\\SortClause\\Location\\Priority"
+                order: "\\eZ\\Publish\\API\\Repository\\Values\\Content\\Query::SORT_DESC"
 ```
 
-Important
+!!! note "Important"
 
-In case that a product belongs to multiple locations, the shop ensures that the proper location is returned, so the url of the product is correct.
+    In case that a product belongs to multiple locations, the shop ensures that the proper location is returned, so the url of the product is correct.
 
-By default hidden items (e.g. products) are not fetched.
+    By default hidden items (e.g. products) are not fetched.
 
-<table>
-<thead>
-<tr class="header">
-<th>Parameter</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><pre><code>contentTypes</code></pre></td>
-<td><p>The identifier of the content types defined in the CMS eZ Platform</p></td>
-</tr>
-<tr>
-<td><pre><code>limit</code></pre></td>
-<td>Default limit to be used when no limit is given</td>
-</tr>
-<tr>
-<td><pre><code>sortClauses</code></pre></td>
-<td>The clauses for sorting.</td>
-</tr>
-</tbody>
-</table>
+|Parameter|Description|
+|--- |--- |
+|contentTypes|The identifier of the content types defined in the CMS eZ Platform|
+|limit|Default limit to be used when no limit is given|
+|sortClauses|The clauses for sorting.|

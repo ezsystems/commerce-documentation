@@ -1,4 +1,4 @@
-#  VariantProductNode & OrderableVariantNode 
+# VariantProductNode and OrderableVariantNode
 
 ## VariantProductNode
 
@@ -11,7 +11,7 @@ VariantProductNode can not be ordered and contains all possible variants for a p
 
 ### Rendering PriceRange
 
-``` 
+``` html+twig
 {# render min price #}
 {% set minPrice = catalogElement.priceRange.minPrice %}
 {{ ses_render_price(catalogElement, minPrice,
@@ -26,6 +26,6 @@ VariantProductNode can not be ordered and contains all possible variants for a p
  
 ```
 
-# OrderableVariantNode
+## OrderableVariantNode
 
 To make the VariantProductNode orderable a service is used - [VariantService](Variant-Services_23560238.html), that creates an OrderableVariantNode from VariantProductNode and given variantCode

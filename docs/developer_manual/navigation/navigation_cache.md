@@ -1,4 +1,4 @@
-#  Navigation - Cache 
+# Navigation cache
 
 ## HTTP caching
 
@@ -16,15 +16,15 @@ Since on some environments (e.g. DEV) the HTTP caching is not active, the naviga
 
 In order to check, if the debug mode is active, following parameter is used:
 
-``` 
+``` php
 $isDebugEnabled = (bool) $this->container->getParameter('kernel.debug')
 ```
 
- In other environments (e.g. PROD) the stash cache is not used.
+In other environments (e.g. PROD) the stash cache is not used.
 
 Caching TTL can be configured:
 
-``` 
+``` yaml
 parameters:    
     siso_core.default.nav_debug_env_ttl: 86400
 ```

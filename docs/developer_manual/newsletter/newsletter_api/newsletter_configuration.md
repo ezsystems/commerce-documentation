@@ -1,10 +1,10 @@
-#  Newsletter Configuration 
+# Newsletter configuration
 
 See general newsletter configuration:
 
-**newsletter.yml**
+`newsletter.yml`
 
-``` 
+``` yaml
 parameters:
     #******** general newsletter configuration ************#
     # you can disable the newsletter module here
@@ -19,7 +19,7 @@ parameters:
 
 Related routes:
 
-```
+``` yaml
 siso_newsletter_subscribe:
     path:     /newsletter/subscribe
     defaults:

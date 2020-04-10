@@ -1,4 +1,4 @@
-#  PayPal 
+# PayPal
 
 ## Express Checkout
 
@@ -11,13 +11,13 @@ php composer.phar require jms/payment-paypal-bundle
 php composer.phar update -- jms/payment-paypal-bundle
 ```
 
-Please see [How to get the API credentials](#PayPal-HowtogettheAPIcredentials) to learn were the values for the JMSPaymentPaypalBundle configuration can be found in the PayPal merchant's administration.
+Please see [How to get the API credentials](#how-to-get-the-api-credentials) to learn were the values for the `JMSPaymentPaypalBundle` configuration can be found in the PayPal merchant's administration.
 
-Additionally, the SisoPaypalPaymentBundle must be activated in the Kernel and the routes must be included:
+Additionally, the `SisoPaypalPaymentBundle` must be activated in the Kernel and the routes must be included:
 
-**app/AppKernel.php**
+`app/AppKernel.php`:
 
-``` 
+``` php
 public function registerBundles()
 {
     $bundles = array(
@@ -27,9 +27,9 @@ public function registerBundles()
 }
 ```
 
-**app/config/routing.yml**
+`app/config/routing.yml`:
 
-``` 
+``` yaml
 # ...
 _siso_paypal_payment:
     resource: '@SisoPaypalPaymentBundle/Resources/config/routing.yml'
@@ -39,11 +39,11 @@ _siso_paypal_payment:
 
 The configuration for payPal Express has to be setup for each siteaccess (at least when the backend is used).
 
-![](attachments/23561073/23562127.png)
+![](../../img/payment_11.png)
 
 ## How to get the API credentials
 
-``` 
+``` yaml
 jms_payment_paypal:
     username: myusername
     password: maypassword
@@ -57,24 +57,16 @@ In product mode you need set debug to false!
 
 Login and navigate to "All Tools"
 
-![](attachments/23561073/23563062.png)
+![](../../img/payment_12.png)
 
 Select the tool "API Access"
 
-![](attachments/23561073/23563063.png)
+![](../../img/payment_13.png)
 
 Choose "Classic (NVP-)API integration"
 
-![](attachments/23561073/23563060.png)
+![](../../img/payment_14.png)
 
 This page will list the necessary values.
 
-![](attachments/23561073/23563061.png)
-
-## Attachments:
-
-![](images/icons/bullet_blue.gif) [image2018-4-19\_10-16-41.png](attachments/23561073/23563062.png) (image/png)  
-![](images/icons/bullet_blue.gif) [image2018-4-19\_10-25-2.png](attachments/23561073/23563063.png) (image/png)  
-![](images/icons/bullet_blue.gif) [image2018-4-19\_10-27-12.png](attachments/23561073/23563060.png) (image/png)  
-![](images/icons/bullet_blue.gif) [image2018-4-19\_10-30-18.png](attachments/23561073/23563061.png) (image/png)  
-![](images/icons/bullet_blue.gif) [image2018-11-26\_12-0-39.png](attachments/23561073/23562127.png) (image/png)  
+![](../../img/payment_15.png)

@@ -1,14 +1,12 @@
-#  Price 
+# Price
 
-|           |                                 |
-| --------- | ------------------------------- |
-| Namespace | `Siso\Bundle\PriceBundle\Model` |
+Namespace: `Siso\Bundle\PriceBundle\Model`
 
-The `Price` class defines a generic price object. When attached to a [**`ProductNode`**](23560315.html) object, the Field [**`PriceField`**](PriceField_23560440.html) is used.
+The `Price` class defines a generic price object. When attached to a [`ProductNode`](../../catalog/catalog_api/productnode_and_orderableproductnode.md) object, the Field [`PriceField`](../../cookbook/fields_for_ecommerce_data/pricefield.md) is used.
 
-As this class is extending [**`ValueObject`**](ValueObject_23560594.html), you can set the necessary properties a new **`Price`** object easily using an array in the constructor.
+As this class is extending [`ValueObject`](../../cookbook/valueobject.md), you can set the necessary properties a new `Price` object easily using an array in the constructor.
 
-# Properties
+## Properties
 
 | Name               | Type      | Mandatory | Description                |
 | ------------------ | --------- | :-------: | ------------------------------------------------------------------ |

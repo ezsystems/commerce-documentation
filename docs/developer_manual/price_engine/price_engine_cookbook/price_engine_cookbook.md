@@ -1,12 +1,12 @@
-#  Price Engine - Cookbook 
+# Price engine cookbook
 
 ## How to use the price engine
 
-The entry point to the price engine is the [ChainPriceService](ChainPriceService_23560686.html). If you want to get prices from the price engine, you have to use this service. See this [Recipe](Recipe---how-to-work-with-PriceRequest-and-PriceResponse_23560568.html) to find out, how to work with PriceReuest and PriceResponse.
+The entry point to the price engine is the [ChainPriceService](ChainPriceService_23560686.html). If you want to get prices from the price engine, you have to use this service. See this [Recipe](recipe_how_to_work_with_pricerequest_and_priceresponse.md) to find out, how to work with PriceReuest and PriceResponse.
 
-**Example**
+Example:
 
-``` 
+``` php
 public function getPricesAction()
 {
     //create new PriceRequest instance with appropriate data
@@ -28,11 +28,11 @@ public function getPricesAction()
 
 ## How to get prices for catalog elements?
 
-If you want to use the price engine to get the prices and stock information for your catalog element(s), the most easy way is to use the CatalogService, that already contains helper methods and will create the PriceRequest for you.
+If you want to use the price engine to get the prices and stock information for your catalog element(s), the most easy way is to use the `CatalogService`, that already contains helper methods and will create the PriceRequest for you.
 
-It will also already assign the correct prices and stock back to your catalog element(s), so you dont have to take care about it.
+It will also already assign the correct prices and stock back to your catalog element(s), so you don't have to take care about it.
 
-``` 
+``` php
 public function getPricesForCatalogElement($catalogElement)
 {
     /** @var CatalogService $catalogService */
@@ -60,7 +60,7 @@ Often it is useful to know which price provider was used to calculate a price (e
 
 The basket contains an attribute "priceResponseSourceType" which contains the source type of the price provider:
 
-![](attachments/23560373/23563882.jpg)
+![](../../img/price_engine_2.png)
 
 "remote" means that the ERP system has provided the prices for the current basket. 
 
@@ -70,19 +70,19 @@ see [Price Providers](Price-Providers_23560237.html).
 
 ### Step 1
 
-Implement new Price Provider class. It needs to implement PriceProviderInterface. Extend AbstractPriceProvider if you want to use some common code for calculating totals. See this [Recipe](Recipe---how-to-implement-new-price-provider_23560557.html) to find out, what you exactly need to implement.
+Implement new Price Provider class. It needs to implement `PriceProviderInterface`. Extend `AbstractPriceProvider` if you want to use some common code for calculating totals. See this [Recipe](recipe_how_to_implement_new_price_provider.md) to find out, what you exactly need to implement.
 
-``` 
- class CustomPriceProvider extends AbstractPriceProvider implements PriceProviderInterface
+```
+class CustomPriceProvider extends AbstractPriceProvider implements PriceProviderInterface
 ```
 
 ### Step 2
 
-Add new service definition and tag it with "siso\_price.price\_provider".
+Add new service definition and tag it with `siso_price.price_provider`.
 
-**vendor/silversolutions/silver.e-shop/src/Siso/Bundle/PriceBundle/Resources/config/services.xml**
+`vendor/silversolutions/silver.e-shop/src/Siso/Bundle/PriceBundle/Resources/config/services.xml`:
 
-``` 
+``` xml
 <parameter key="siso_price.price_provider.custom.class">Siso\Bundle\PriceBundle\Service\CustomPriceProvider</parameter>
  
 <service id="siso_price.price_provider.custom" class="%siso_price.price_provider.custom.class%">
@@ -95,22 +95,22 @@ Add new service definition and tag it with "siso\_price.price\_provider".
 
 Inject your service into the chain of price providers
 
-**vendor/silversolutions/silver.e-shop/src/Silversolutions/Bundle/EshopBundle/Resources/config/silver.eshop.yml**
+`vendor/silversolutions/silver.e-shop/src/Silversolutions/Bundle/EshopBundle/Resources/config/silver.eshop.yml`:
 
-``` 
+``` yaml
 siso_price.default.price_service_chain.basket:
     - siso_price.price_provider.custom
     - siso_price.price_provider.remote
     - siso_price.price_provider.local
 ```
 
-# How to configure chain of Price Providers
+## How to configure chain of Price Providers
 
 In order to use different providers depending on the context (e.g. basket page, product detail page) we need to set up configuration:
 
-**vendor/silversolutions/silver.e-shop/src/Silversolutions/Bundle/EshopBundle/Resources/config/silver.eshop.yml**
+`vendor/silversolutions/silver.e-shop/src/Silversolutions/Bundle/EshopBundle/Resources/config/silver.eshop.yml`:
 
-``` 
+``` yaml
 siso_price.default.price_service_chain.product_list:
     - siso_price.price_provider.local
 
@@ -142,9 +142,9 @@ siso_price.default.price_service_chain.comparison:
     - siso_price.price_provider.local
 ```
 
-In the example above if the context, in which we want to calculate prices, is product detail page, then the price engine will call **remote price provider** to get proper prices first.
+In the example above if the context, in which we want to calculate prices, is product detail page, then the price engine will call remote price provider to get proper prices first.
 
-If remote price provider fails to deliver then **local price provider** will calculate those prices.
+If remote price provider fails to deliver then local price provider will calculate those prices.
 
 Other scenarios could be to added, like a cache price provider, which could first check if prices are available in a cache.
 
@@ -152,7 +152,7 @@ Other scenarios could be to added, like a cache price provider, which could firs
 
 Do not forget to configure the service id of the remote price provider. This configuration will be used to set error message in the basket, if the remote price provider was not able to calculate the prices.
 
-``` 
+``` yaml
 parameters:
     #configure the service id of the remote price provider
     siso_price.default.price_service_chain_remote: siso_price.price_provider.remote
@@ -160,24 +160,24 @@ parameters:
 
 ## How to pass additional information to priceRequest from catalogElement
 
-In order to enhance the priceRequest with additional information, which in projects could be required to correctly calculate the price, we use an event listener concept.
+In order to enhance the `priceRequest` with additional information, which in projects could be required to correctly calculate the price, we use an event listener concept.
 
-The listener **PriceLineRequestListener** that works with **PriceLineRequestEvent** will add additional information from catalog element, for each attribute specified in configuration:
+The listener `PriceLineRequestListener` that works with `PriceLineRequestEvent` will add additional information from catalog element, for each attribute specified in configuration:
 
-``` 
+``` yaml
 #list of catalog element attributes, that should be additionally stored in the extended data of the request price line
 siso_price.default.price_request_extended_data: [ 'path', 'otherAttribute']
 ```
 
-The listener, for every PriceLine object inside PriceRequest, searches both in catalogElement attributes and dataMap for those attributes. If they are available, it will add them into ExtendedData of every PriceLine object.
+The listener, for every `PriceLine` object inside `PriceRequest`, searches both in `catalogElement` attributes and `dataMap` for those attributes. If they are available, it will add them into `ExtendedData` of every `PriceLine` object.
 
-There is also a possibility to add information to PriceRequest itself, not only for every PriceLine object. For this you should implement event listener for **PriceRequestEvent**.
+There is also a possibility to add information to `PriceRequest` itself, not only for every `PriceLine` object. For this you should implement event listener for `PriceRequestEvent`.
 
-For reference how to write listener see implementation for **PriceLineRequestListener**.
+For reference how to write listener see implementation for `PriceLineRequestListener`.
 
 ## Price calculation events
 
-``` 
+``` php
 /**
  * Defines constants for price events.
  */
@@ -213,17 +213,17 @@ final class PriceEvents
 }
 ```
 
-**Example listener service definition**
+Example listener service definition"
 
-``` 
-        <service id="custom.price_line_request_listener" class="%custom.price_line_request_listener.class%">
-            <tag name="kernel.event_listener" event="siso_price.price_line_request" method="onPriceLineRequest" />
-        </service>
+``` xml
+<service id="custom.price_line_request_listener" class="%custom.price_line_request_listener.class%">
+    <tag name="kernel.event_listener" event="siso_price.price_line_request" method="onPriceLineRequest" />
+</service>
 ```
 
-**Example listener implementation**
+Example listener implementation:
 
-``` 
+``` php
 namespace Example\EventListener;
 
 use Silversolutions\Bundle\EshopBundle\Catalog\CatalogElement;
@@ -251,7 +251,4 @@ class PriceLineRequestListener
     }
 }
 ```
-
-## Attachments:
-
-![](images/icons/bullet_blue.gif) [BasketService\_php\_-\_harmony3\_-\_\_\_\_www\_harmony\_.jpg](attachments/23560373/23563882.jpg) (image/jpeg)  
+ 

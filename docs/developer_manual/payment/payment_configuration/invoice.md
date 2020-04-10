@@ -1,4 +1,4 @@
-#  Invoice 
+# Invoice
 
 This payment provider is a simple Plugin which just offers the option "invoice".
 

@@ -1,8 +1,10 @@
-#  Product comparison - Features 
+# Product comparison features
 
 ### Who is able to use comparison feature
 
-The comparison feature is available for every user. There can be many comparison lists for all users including unregistered (anonymous) browser sessions. Some service is advisable, which frequently cleans *old* anonymous comparison lists for heavy-loaded sites.
+!!! caution
+
+    The comparison feature is available for every user. There can be many comparison lists for all users including unregistered (anonymous) browser sessions. Some service is advisable, which frequently cleans *old* anonymous comparison lists for heavy-loaded sites.
 
 ### How to add product to comparison list
 
@@ -14,27 +16,27 @@ There are 2 places for adding a product to the comparison list.
 
 Add to comparison list link is placed in product detail page in the right column. See below:
 
-![](attachments/23560678/23563513.png)
+![](../img/product_comparison_1.png)
 
 #### Product Listing page
 
 Add to comparison list link is placed in the middle of product information. See below:
 
-![](attachments/23560678/23563517.png) 
+![](../img/product_comparison_2.png)
 
 If the product is already in the comparison list it is grey and tooltip informs about no ability to add to comparison list.
 
-![](attachments/23560678/23563241.png)
+![](../img/product_comparison_3.png)
 
 ### Messages that are shown when adding to comparison
 
 After a successful adding to the comparison list, a notification message is displayed.
 
-![](attachments/23560678/23563519.png)
+![](../img/product_comparison_4.png)
 
 Every item can be stored only once. A notice is displayed if a user tries to add an item twice:
 
-![](attachments/23560678/23563515.png)
+![](../img/product_comparison_5.png)
 
 When adding products, **no prices** and **no quantity** is stored in the comparison list.
 
@@ -50,17 +52,17 @@ When a user hovers over the button, the sub-menu is displayed with all types of 
 
 When adding or removing products to or from comparison lists, the page-header information is updated.
 
-![](attachments/23560678/23563239.png)
+![](../img/product_comparison_6.png)
 
 #### Profile
 
 The profile page provides a simple link in the right side-navigation.
 
-![](attachments/23560678/23563243.png)
+![](../img/product_comparison_7.png)
 
 ### Comparison list overview page
 
-![](attachments/23560678/23563242.png)
+![](../img/product_comparison_8.png)
 
 #### How products are grouped into categories
 
@@ -72,17 +74,16 @@ Attributes (or product specifications) are grouped for display and can be opened
 
 The comparison feature provides the ability to show/hide attribute-groups and attributes if they are identical. 
 
-1.  Product groups of attributes can be collapsed by default when all contained attributes are identical  
-    There is a configuration parameter, which determines if eZ Commerce should hide groups, which have solely identical attributes for compared products  
-    
-2.  Product attributes can be hidden when the are identical  
-    There is a configuration parameter, which determines if eZ Commerce should hide attributes, which have an identical value 
+1. Product groups of attributes can be collapsed by default when all contained attributes are identical  
+There is a configuration parameter, which determines if eZ Commerce should hide groups, which have solely identical attributes for compared products  
+1. Product attributes can be hidden when the are identical  
+There is a configuration parameter, which determines if eZ Commerce should hide attributes, which have an identical value 
 
 #### Sorting of the basket
 
 Customers can move or rearrange products in the comparison list using drag & drop functionality (the arrow-cross above the product image in the list is clickable)
 
-After drag and drop, the position in the list will be stored in the current [comparison-basket](Product-comparison---API_23560693.html#Productcomparison-API-Baskettype). In the next call customer will see sorted list by his preference.
+After drag and drop, the position in the list will be stored in the current [comparison-basket](product_comparison_api.md). In the next call customer will see sorted list by his preference.
 
 #### Slider for more products in the list
 
@@ -94,12 +95,12 @@ The slider shows Information about the currently viewed list section and the tot
 
 There are 2 ways of removing items from the comparison list:
 
-  - First one is to delete the whole list by clicking on the 'Delete' link in the top left box. It will delete the currently displayed list.
-  - The second option is deleting one product from the list by clicking on the trash-can icon in the top right corner of the product box. 
+- First one is to delete the whole list by clicking on the 'Delete' link in the top left box. It will delete the currently displayed list.
+- The second option is deleting one product from the list by clicking on the trash-can icon in the top right corner of the product box. 
 
 #### Public comparison lists
 
-There are public lists which have their own URL (like http://\<site-host\>/comparison/best-notebooks), which are created and maintained by a shop-administrator. They cannot be removed nor changed by customers.
+There are public lists which have their own URL (like `http://<site-host>/comparison/best-notebooks`), which are created and maintained by a shop-administrator. They cannot be removed nor changed by customers.
 
 Public comparison lists are useful for example for promotion campaigns.
 
@@ -110,15 +111,3 @@ If the product is not in the shop's catalog any longer, it will be removed from 
 #### Print functionality
 
 Comparison lists can be printed by clicking the respective link in the left sidebar. The link will print the current page immediately without showing a print-optimized view.  
-
-## Attachments:
-
-![](images/icons/bullet_blue.gif) [add\_product\_to\_comparison.png](attachments/23560678/23563513.png) (image/png)  
-![](images/icons/bullet_blue.gif) [add\_to\_comparison\_success.png](attachments/23560678/23563519.png) (image/png)  
-![](images/icons/bullet_blue.gif) [add\_to\_comparison\_notice.png](attachments/23560678/23563515.png) (image/png)  
-![](images/icons/bullet_blue.gif) [add\_product\_list1.png](attachments/23560678/23563517.png) (image/png)  
-![](images/icons/bullet_blue.gif) [add\_product\_list2.png](attachments/23560678/23563241.png) (image/png)  
-![](images/icons/bullet_blue.gif) [link\_comparison\_header.png](attachments/23560678/23563239.png) (image/png)  
-![](images/icons/bullet_blue.gif) [link\_comparison.png](attachments/23560678/23563243.png) (image/png)  
-![](images/icons/bullet_blue.gif) [FireShot Capture 67 - Produktvergleich - http\_\_\_harmony.local\_comparison\_\#5381.png](attachments/23560678/23563260.png) (image/png)  
-![](images/icons/bullet_blue.gif) [FireShot Capture 67 - Produktvergleich - http\_\_\_harmony.local\_comparison\_\#5381.png](attachments/23560678/23563242.png) (image/png)  

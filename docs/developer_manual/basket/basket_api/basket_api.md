@@ -1,10 +1,10 @@
-#  Basket - API 
+# Basket API
 
 ## How to work with the API
 
 ### Get current basket
 
-``` 
+``` php
 /** @var BasketService $basketService */
 $basketService = $this->getBasketService();
 /** @var Basket $basket */
@@ -15,7 +15,7 @@ $basket = $basketService->getBasket($request);
 
 **Request all orders**
 
-``` 
+``` php
 /** @var Basket[] $baskets_payed_all */
 $baskets_payed_all = $this->get('silver_basket.basket_repository')->findByState(BasketService::STATE_PAYED);
 $baskets_payed = array();
@@ -34,7 +34,7 @@ foreach ($baskets_payed_all as $basket) {
 
 **Add a product to the basket**
 
-``` 
+``` php
 /** @var BasketService $basketService */
 $basketService = $this->getBasketService();
 
@@ -70,7 +70,7 @@ $basketService->storeBasket($basket);
 
 ### Get stored baskets for a given user
 
-``` 
+``` php
 /** @var BasketRepository $basketRepository */
 $basketRepository = $this->getBasketRepository();
 $storedBasketsList = $basketRepository->getAllStoredBasketsByUserId($customerProfileData->sesUser->sesUserObjectId);

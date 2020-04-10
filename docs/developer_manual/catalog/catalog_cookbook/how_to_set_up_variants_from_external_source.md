@@ -1,4 +1,4 @@
-#  How to setup variants from external source 
+# How to set up variants from external source
 
 ## Goal
 
@@ -10,24 +10,17 @@ The main goal is to map your variant structure to the [VariantProdutNode](235603
 
 ## How to start
 
-Main work that every CatalogFactory has to do, is to fill the [VariantProductNode](23560374.html) attribute [$variantCharacteristics](SimpleVariantCharacteristics_23560236.html). The basic concept is to take information from provided dataMap (e.g. dataMap is coming from DataProvider: source can be eZ, or external) and create an attribute $variantCharacteristic for the VariantProductNode.
+!!! tip
 
-Example for **Ez5CatalogFactory **(left column is provided dataMap from DataProvider, in right column the information was already mapped into $**variantCharacteristics** attribute in catalog element). 
+    Main work that every CatalogFactory has to do, is to fill the [VariantProductNode](23560374.html) attribute [$variantCharacteristics](SimpleVariantCharacteristics_23560236.html). The basic concept is to take information from provided dataMap (e.g. dataMap is coming from DataProvider: source can be eZ, or external) and create an attribute $variantCharacteristic for the VariantProductNode.
 
-<table>
-<tbody>
-<tr>
-<td><div class="content-wrapper">
-<p><img src="attachments/23560313/23563766.png" class="confluence-embedded-image" /></p>
+Example for Ez5CatalogFactory: dataMap from DataProvider
 
-<p>This example refers to the former eZMatrix Fieldtype. This Fieldtype does not exist anymore</p>
-</td>
-<td><div class="content-wrapper">
-<p><img src="attachments/23560313/23563765.png" class="confluence-embedded-image" /></p>
-</td>
-</tr>
-</tbody>
-</table>
+![](../../img/catalog_cookbook_2.png)
+
+Example for Ez5CatalogFactory: the information was already mapped into `$variantCharacteristics` attribute in catalog element: 
+
+![](../../img/catalog_cookbook_3.png)
 
 ## Steps to map variant information
 
@@ -35,18 +28,19 @@ Example for **Ez5CatalogFactory **(left column is provided dataMap from DataProv
 
 The first thing you need to do in order to create variants is to create your own DataProvider and Factory for catalog elements. 
 
-Tutorial -\> [Writing new catalog data providers](#)
+!!! tip
 
-It would be a good practice to define a configuration for templates. Depending on which type of catalog element the provider/factory will create, different template should be used. Here is the default configuration:
+    It would be a good practice to define a configuration for templates. Depending on which type of catalog element the provider/factory will create, different template should be used. Here is the default configuration:
 
     parameters:
 
-        silver_eshop.default.catalog_template.CatalogNode: Catalog:catalog.html.twig
+    ```
+    silver_eshop.default.catalog_template.CatalogNode: Catalog:catalog.html.twig
+    silver_eshop.default.catalog_template.OrderableProductNode: Catalog:product.html.twig
+    silver_eshop.default.catalog_template.VariantProductNode: Catalog:product_variants.html.twig
+    ```
 
-        silver_eshop.default.catalog_template.OrderableProductNode: Catalog:product.html.twig
-        silver_eshop.default.catalog_template.VariantProductNode: Catalog:product_variants.html.twig
-
-You can find more information about this here: [Catalog - UI](Catalog---UI_23560463.html)
+    You can find more information about this here: [Catalog - UI](Catalog---UI_23560463.html)
 
 If you are writing your own provider and factory from scratch, you have to implement all necessary methods. In this recipe we will concentrate only on variant connected methods.
 
@@ -56,23 +50,27 @@ If you are writing your own provider and factory from scratch, you have to imple
 
 The starting point would be the **createCatalogElement()** method. This is the place where the factory decides, which function it will internally use to create the catalog element.
 
-It would be a good practice to define a configuration which method should be used depending on e.g. the class identifier (eZ content type). This is the default configuration for eZ Commerce:
+!!! tip
+
+    It would be a good practice to define a configuration which method should be used depending on e.g. the class identifier (eZ content type). This is the default configuration for eZ Commerce:
 
     parameters:
 
-        silver_eshop.default.catalog_factory.ses_category: createCatalogNode
-        silver_eshop.default.catalog_factory.ses_product: createOrderableProductNode
+    ```
+    silver_eshop.default.catalog_factory.ses_category: createCatalogNode
+    silver_eshop.default.catalog_factory.ses_product: createOrderableProductNode
+    ```
 
-You can see an implementation of how these parameters can be used in the Example.
+    You can see an implementation of how these parameters can be used in the Example.
 
-Because in our case (standard implementation), the variants are stored as content objects of the same content type like 'normal' products (ses\_product), the **createCatalogElement()** must do additional differentiation when to call the method *createOrderableProductNode()* and when *createVariantProductNode()* (see below).  
+Because in our case (standard implementation), the variants are stored as content objects of the same content type like 'normal' products (ses_product), the **createCatalogElement()** must do additional differentiation when to call the method *createOrderableProductNode()* and when *createVariantProductNode()* (see below).  
 In the default implementation the factory will call the method *createVariantProductNode()*  always when the [EzMatrix with variants](23560612.html) is filled.
 
 In your case, you may adapt this behavior. Maybe you will get some special flag from ERP, that will tell you, if product is a variant.
 
-**Example** Expand source 
+??? note "Example"
 
-``` 
+    ``` 
     public function createCatalogElement(array $nodeInfo = array())
     {
         //get the class identifier
@@ -104,7 +102,7 @@ In your case, you may adapt this behavior. Maybe you will get some special flag 
 
          return $this->$factoryMethod($nodeInfo);
     } 
-```
+    ```
 
 #### Implement the necessary method createVariantProductNode()
 
@@ -116,7 +114,7 @@ Then you need to implement the method createVariantProductNode() from the abstra
 abstract public function createVariantProductNode($rawData = null);
 ```
 
-Example from **Ez5CatalogFactory** (we use information stored in ez matrix (ses\_variants) which is located in dataMap (provided by the DataProvider).
+Example from **Ez5CatalogFactory** (we use information stored in ez matrix (`ses_variants`) which is located in dataMap (provided by the DataProvider).
 
 ``` 
 public function createVariantProductNode($rawData = null)
@@ -142,9 +140,9 @@ public function createVariantProductNode($rawData = null)
 }
 ```
 
-    $this->extractVariants()
+!!! tip
 
-will extract the variant information from the dataMap and returns an array with a single element, that is an [SimpleVariantCharacteristics object](SimpleVariantCharacteristics_23560236.html) as shown in the [example above](#Howtosetupvariantsfromexternalsource-varChar).
+    `$this->extractVariants()` will extract the variant information from the dataMap and returns an array with a single element, that is an [SimpleVariantCharacteristics object](SimpleVariantCharacteristics_23560236.html) as shown in the [example above](#Howtosetupvariantsfromexternalsource-varChar).
 
 ### 3\. Fill VariantProductNode attribute $variantCharacteristics
 
@@ -152,46 +150,24 @@ In your factory you need to map your dataMap information into VariantProductNode
 
 All information about variants is stored in this attribute (including prices and pictures). It contains 3 different information:
 
-<table>
-<colgroup>
-<col style="width: 50%" />
-<col style="width: 50%" />
-</colgroup>
-<tbody>
-<tr>
-<td>characteristics</td>
-<td>This contains all information about characteristics (choosable options) like images or labels for displaying options in templates</td>
-</tr>
-<tr>
-<td>variantCodes</td>
-<td><div class="content-wrapper">
-<p>This is a set of all possible combinations of variant characteristics (i.e. variants). It contains a list of the respective variant codes, which store a particular combination of the characteristics. The record structure is the following:</p>
-<ul>
-<li>variantCode =&gt;<br />
+- characteristics - This contains all information about characteristics (choosable options) like images or labels for displaying options in templates
+- variantCodes -This is a set of all possible combinations of variant characteristics (i.e. variants). It contains a list of the respective variant codes, which store a particular combination of the characteristics. The record structure is the following:
 
-<ul>
-<li>characteristicIdentifier =&gt; characteristicCode</li>
-<li>...</li>
-</ul></li>
-<li>...</li>
-</ul>
+    - variantCode =>
+        - characteristicIdentifier => characteristicCode
+        - ...
+    - ...
 
-<p>In this example, the characteristicIdentifier is the index number of the variant level, which is provided by the structure of the eZ Matrix.</p>
-</td>
-</tr>
-<tr>
-<td>variantAttributes</td>
-<td><p>contains all additional information for each variant (country, price, labels etc)</p>
-<p>Attributes that will be displayed in b2b need to follow special rules:<br />
-* - characteristicCode#<br />
-* - characteristicLabel#</p></td>
-</tr>
-</tbody>
-</table>
+In this example, the characteristicIdentifier is the index number of the variant level, which is provided by the structure of the eZ Matrix.
+
+- variantAttributes - contains all additional information for each variant (country, price, labels etc). Attributes that will be displayed in b2b need to follow special rules:
+    - characteristicCode#
+    - characteristicLabel#
+
 
 ##### Example for 1 level variant (only Color)
 
-``` 
+``` php
 $variantAttributes = array(
     'variantCharacteristics' => new SimpleVariantCharacteristics(
         array(
@@ -246,7 +222,7 @@ $variantAttributes = array(
 
 ##### Example for 3 level variant (Color, Unit, Witdh)
 
-``` 
+``` php
 $variantAttributes = array(
     'variantCharacteristics' => new SimpleVariantCharacteristics(
         array(
@@ -334,12 +310,4 @@ $variantAttributes = array(
 
 When your factory setup the variants, you should see the characteristics on the product detail page. This examples builds 3 level variants and display variants for B2C shop (depending on the [configuration](Product-Variants_23560366.html)). 
 
-![](attachments/23560313/23563349.png)
-
-## Attachments:
-
-![](images/icons/bullet_blue.gif) [Screenshot from 2015-04-16 10:37:51.png](attachments/23560313/23563318.png) (image/png)  
-![](images/icons/bullet_blue.gif) [Screenshot from 2015-04-16 10:52:16.png](attachments/23560313/23563317.png) (image/png)  
-![](images/icons/bullet_blue.gif) [variants.png](attachments/23560313/23563349.png) (image/png)  
-![](images/icons/bullet_blue.gif) [variant-matrix-rows.png](attachments/23560313/23563766.png) (image/png)  
-![](images/icons/bullet_blue.gif) [variant-characteristics.png](attachments/23560313/23563765.png) (image/png)  
+![](../../img/catalog_cookbook_4.png)

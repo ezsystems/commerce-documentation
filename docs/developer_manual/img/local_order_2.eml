@@ -1,0 +1,1149 @@
+Return-Path: <f.dege@gmx.de>
+X-Kerio-Anti-Spam:  Build: [Engines: 2.15.8.1100, Stamp: 3], Multi: [Enabled, t: (0.000015,0.042534)], BW: [Enabled, t: (0.000009,0.000001)], RTDA: [Enabled, t: (0.166806), Hit: No, Details: v2.4.6; Id: 15.5f4n88.1be2dddjg.20g4i], total: 0(700)
+X-Spam-Status: No, hits=2.0 required=2.7
+	tests=KERIO_ANTI_SPAM: -0.000, HTML_MESSAGE: 0.001, TRACKER_ID: 2.026,
+	TOTAL_SCORE: 2.027,autolearn=disabled
+X-Spam-Level: **
+Received: from mx2.omc-mail.de ([212.77.224.163])
+	by Kerio_VM (Kerio Connect 9.2.1) with ESMTPS
+	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256 bits))
+	for ror@intranet.silversolutions.de;
+	Thu, 20 Apr 2017 11:40:32 +0200
+Received: by mx2.omc-mail.de (Postfix, from userid 50007)
+	id 8E37F469; Thu, 20 Apr 2017 11:39:40 +0200 (CEST)
+X-Spam-Checker-Version: SpamAssassin 3.4.1 (2015-04-28) on mail2.omc.net
+X-Spam-Level: 
+X-Spam-ASN: AS8560 212.227.0.0/16
+X-Spam-Status: No, score=-3.6 required=6.0 tests=BAYES_00,FREEMAIL_FROM,
+	HTML_MESSAGE,MIME_QP_LONG_LINE,RCVD_IN_DNSWL_LOW,RCVD_IN_MSPIKE_H2,
+	RCVD_IN_SORBS_SPAM,TRACKER_ID,T_FREEMAIL_DOC_PDF shortcircuit=no autolearn=no
+	autolearn_force=no version=3.4.1
+Received: from mout.gmx.net (mout.gmx.net [212.227.15.18])
+	(using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
+	(No client certificate requested)
+	by mx2.omc-mail.de (Postfix) with ESMTPS id 4759A32D
+	for <ror@silversolutions.de>; Thu, 20 Apr 2017 11:39:38 +0200 (CEST)
+Received: from [192.168.254.199] ([79.247.158.188]) by mail.gmx.com (mrgmx001
+ [212.227.17.190]) with ESMTPSA (Nemesis) id 0LjaEi-1cPbsn1YjY-00bcBr for
+ <ror@silversolutions.de>; Thu, 20 Apr 2017 11:39:37 +0200
+From: GMX <f.dege@gmx.de>
+Content-Type: multipart/alternative;
+	boundary=Apple-Mail-9C43BCFA-CF7F-4B03-9752-CDECC3303898
+Content-Transfer-Encoding: 7bit
+Mime-Version: 1.0 (1.0)
+Date: Thu, 20 Apr 2017 11:39:36 +0200
+Subject: Fwd: common.shop_owner_mail_subject
+Message-Id: <CB74D0C9-A71A-4A7E-BA55-8BFDC1328B41@gmx.de>
+References: <164c9ed036afd021fbd4ee93f0aabb84@harmony-prod.silver-eshop.de>
+To: Raquel Ortega Rodriguez <ror@silversolutions.de>
+X-Mailer: iPad Mail (14A403)
+X-Provags-ID: V03:K0:d4pLzkUUUDdyo7DBMKPZGMf7m30QrWN465ReeTPooKf9N4+ERk+
+ SX7ZgYFmX3IDBDlG495H7etdAAeI+POyEWQrv//jdK9tA2cc+Ny0fmkfyaQMlVSVslzLzV2
+ AkTeyH1g7B2KPQAf2+nPQIoXWamCAxm/6Xadtr6O4t7ID2gOLXmavHRmVaeeFZRKO1d47Ob
+ CbD2yXbZx8i75yHBxX/gw==
+X-UI-Out-Filterresults: notjunk:1;V01:K0:b+2x1/TiPkk=:8caCLdT6oxBm1mtSt+rSEl
+ 61McL8qRAUyEmUrrV3fq4EVS6ZZzpCnr14K+Ii5Pg2z57+ECMcbUBVPgI6LTRgHWxAcNnnfDq
+ 7Q+vcdqPp3h9hO3WHLgP3UBmsfdz7aBMckL7NDKEcQ5Z3JWl6Ibk49B70jne55WybG04Jjl9f
+ SDyjAOMulSqlZxZqdEnWpfoZBJ/2nB/0p6oTo52n5g2MO1jZH9E6A91wMtsa0vuz2fVdR0+LZ
+ LK8iOjgJMkAAO26u4XZvFrj2kFz9O2n8qr858iQxZHSKCWjFmgPLAnlK0IARoh3Ipc7wjDf4M
+ A9sCy5h1xQfv2clrti7sAW8BFBLQFk0vNlJr4hGXbeLFgAEDQYG0NSupWb7fkjwYiurBTcDQt
+ MVDslMvgfbjLSu1f8DU3Auyzec6CVFCA81TTxvebpp03g1zlGS7YJx8B1ki1monnyJZFJbjFo
+ 6jPUKjadQp/SkZDmXxfZZjDkwLxRDpZFkj6TCDGfMCqoaGgu/cjX+CdWyQv7U5F7aCrCDvrQ0
+ eiMlZ9lFzqPolIa1GRvQzcwsjeHdlZLJMlxH1Xu30k2od0EoXOOHM9L2K8oFwywkCZ47gCKtu
+ rkPVRFHalkJcj6yT6LKBMdFl0y5BYwxweL+LK2k0J4KyEwBfurpF07jsd9GGVhSn6A6Lhnsbz
+ 4EaWW/6Ya+kOZfKGkKC73Krfk99JaBoBYffpSQ9/Qvd/4V1JY4oVyTdoTO+2J9aSt4tuxges1
+ oMIGONwfEDqwAtAOBrJnvzE20rE7wpjTKaxaDNQ34sIZUjpd088SNlvQO7g=
+X-Original-To: ror@silversolutions.de
+
+
+--Apple-Mail-9C43BCFA-CF7F-4B03-9752-CDECC3303898
+Content-Type: text/plain;
+	charset=utf-8
+Content-Transfer-Encoding: quoted-printable
+
+
+
+Mit freundlichen Gr=C3=BC=C3=9Fen / Best regards
+
+Frank Dege
+-- -- --=20
+
+* Shopsysteme B2B und B2C mit Integration in Ihr ERP * Multishopsysteme * Mo=
+bile Commerce *
+www.silversolutions.de=20
+
+Anfang der weitergeleiteten E=E2=80=91Mail:
+
+> Von: noreply@silversolutions.de
+> Datum: 20. April 2017 um 11:32:57 MESZ
+> An: f.dege@gmx.de
+> Betreff: common.shop_owner_mail_subject
+>=20
+>=20
+>     =20
+> Ein Kunde hat folgende Produkte in Ihrem Shop bestellt.=20
+>=20
+> Ihr Kommentar
+> TEST order Splitting
+> Ihre Rechnungsnummer:=20
+> RE10047
+> Ihre Bestellnummer ist
+> 6016
+> Rechnungsadresse
+> Frank Dege
+> Herr
+> F=C3=A4rberstr 26=20
+> 12555 Berlin
+> Deutschland
+> +493065481990
+> fd@silversolutions.de
+> Lieferadresse
+> Frank Dege
+> Herr
+> F=C3=A4rberstr 26=20
+> 12555 Berlin
+> Deutschland
+> +493065481990
+> Versandart und Zahlungsart
+> Zahlungsart: Rechnung
+> Produkt	Menge	Einzelpreis Inkl. MwSt.	Gesamtpreis
+> City Colour=20
+> Nr.: 150106=20
+> Dieses Produkt wird vom zentralen Shop Anbieter versendet
+>=20
+> 2	5.194,35 =E2=82=AC	10.388,70 =E2=82=AC
+> Mirrorballset 30 cm=20
+> Nr.: 30235=20
+> 1	98,18 =E2=82=AC	98,18 =E2=82=AC
+> Zahlungsart	Rechnung
+> Zwischensumme Inkl. MwSt.	10.486,88 =E2=82=AC
+> Summe Inkl. MwSt.	10.486,88 =E2=82=AC
+> davon MwSt. (19%)	1.674,38 =E2=82=AC
+> Summe	10.486,88 =E2=82=AC
+> Mit freundlichen Gr=C3=BC=C3=9Fen
+> =20
+> -- -- -- -- -- -- -- -- -- -- -- -- -- --
+> =20
+> Marketing meets Technology
+> silver.solutions GmbH
+> F=C3=A4rberstr. 26
+> 12555 Berlin
+> Fon +49 (0)30.65.48.19.90
+> * Shopsysteme B2B und B2C mit Integration in Ihr ERP * Multishopsysteme * M=
+obile Commerce *
+> =20
+> Gesch=C3=A4ftsf=C3=BChrer: Frank Dege, Ania Hentz
+> Gerichtsstand Amtsgericht Charlottenburg   HRB 75549
+>=20
+> Widerrufsrecht
+>=20
+> Sie haben das Recht, binnen vierzehn Tagen ohne Angabe von Gr=C3=BCnden di=
+esen Vertrag zu widerrufen.
+> Die Widerrufsfrist betr=C3=A4gt vierzehn Tage ab dem Tag an dem Sie oder e=
+in von Ihnen benannter Dritter, der nicht der Bef=C3=B6rderer ist, die letzt=
+e Teilsendung oder das letzte St=C3=BCck in Besitz genommen haben bzw. hat.
+> Um Ihr Widerrufsrecht auszu=C3=BCben, m=C3=BCssen Sie uns (silver.solution=
+s GmbH, F=C3=A4rberstra=C3=9Fe 26 12555 Berlin Deutschland, contact@silverso=
+lutions.de, +49 030 65481990) mittels einer eindeutigen Erkl=C3=A4rung (z. B=
+. ein mit der Post versandter Brief, Telefax oder E-Mail) =C3=BCber Ihren En=
+tschluss, diesen Vertrag zu widerrufen, informieren. Sie k=C3=B6nnen daf=C3=BC=
+r das beigef=C3=BCgte Muster-Widerrufsformular verwenden, das jedoch nicht v=
+orgeschrieben ist.
+> =20
+> Zur Wahrung der Widerrufsfrist reicht es aus, dass Sie die Mitteilung =C3=BC=
+ber die Aus=C3=BCbung des Widerrufsrechts vor Ablauf der Widerrufsfrist abse=
+nden.
+>=20
+> Folgen des Widerrufs
+>=20
+> Wenn Sie diesen Vertrag widerrufen, haben wir Ihnen alle Zahlungen, die wi=
+r von Ihnen erhalten haben, einschlie=C3=9Flich der Lieferkosten (mit Ausnah=
+me der zus=C3=A4tzlichen Kosten, die sich daraus ergeben, dass Sie eine ande=
+re Art der Lieferung als die von uns angebotene, g=C3=BCnstigste Standardlie=
+ferung gew=C3=A4hlt haben), unverz=C3=BCglich und sp=C3=A4testens binnen vie=
+rzehn Tagen ab dem Tag zur=C3=BCckzuzahlen, an dem die Mitteilung =C3=BCber I=
+hren Widerruf dieses Vertrags bei uns eingegangen ist. F=C3=BCr diese R=C3=BC=
+ckzahlung verwenden wir dasselbe Zahlungsmittel, das Sie bei der urspr=C3=BC=
+nglichen Transaktion eingesetzt haben, es sei denn, mit Ihnen wurde ausdr=C3=
+=BCcklich etwas anderes vereinbart; in keinem Fall werden Ihnen wegen dieser=
+ R=C3=BCckzahlung Entgelte berechnet. Wir k=C3=B6nnen die R=C3=BCckzahlung v=
+erweigern, bis wir die Waren wieder zur=C3=BCckerhalten haben oder bis Sie d=
+en Nachweis erbracht haben, dass Sie die Waren zur=C3=BCckgesandt haben, je n=
+achdem, welches der fr=C3=BChere Zeitpunkt ist.
+> Sie haben die Waren unverz=C3=BCglich und in jedem Fall sp=C3=A4testens bi=
+nnen vierzehn Tagen ab dem Tag, an dem Sie uns =C3=BCber den Widerruf dieses=
+ Vertrags unterrichten, an uns oder an zur=C3=BCckzusenden oder zu =C3=BCber=
+geben. Die Frist ist gewahrt, wenn Sie die Waren vor Ablauf der Frist von vi=
+erzehn Tagen absenden.
+> Sie tragen die unmittelbaren Kosten der R=C3=BCcksendung der Waren. Sie m=C3=
+=BCssen f=C3=BCr einen etwaigen Wertverlust der Waren nur aufkommen, wenn di=
+eser Wertverlust auf einen zur Pr=C3=BCfung der Beschaffenheit, Eigenschafte=
+n und Funktionsweise der Waren nicht notwendigen Umgang mit ihnen zur=C3=BCc=
+kzuf=C3=BChren ist.
+>=20
+> =20
+>=20
+> Muster-Widerrufsformular
+>=20
+> (Wenn Sie den Vertrag widerrufen wollen, dann f=C3=BCllen Sie bitte dieses=
+ Formular aus und senden Sie es zur=C3=BCck.)
+>=20
+> =E2=80=93 An
+>=20
+> silver.solutions GmbH
+>=20
+> F=C3=A4rberstra=C3=9Fe 26=20
+> 12555 Berlin=20
+> Deutschland
+>=20
+> contact@silversolutions.de
+>=20
+>  +49 030 65481990
+>=20
+> =E2=80=93 Hiermit widerrufe(n) ich/wir (*) den von mir/uns (*) abgeschloss=
+enen Vertrag =C3=BCber den Kauf der folgenden Waren (*)/die Erbringung der f=
+olgenden Dienstleistung (*)
+>=20
+> =E2=80=93 Bestellt am (*) / erhalten am (*)
+>=20
+> =E2=80=93 Name des/der Verbraucher(s)
+>=20
+> =E2=80=93 Anschrift des/der Verbraucher(s)
+>=20
+> =E2=80=93 Unterschrift des/der Verbraucher(s) (nur bei Mitteilung auf Papi=
+er)
+>=20
+> =E2=80=93 Datum
+>=20
+> (*) Unzutreffendes streichen.
+>=20
+
+--Apple-Mail-9C43BCFA-CF7F-4B03-9752-CDECC3303898
+Content-Type: multipart/mixed;
+	boundary=Apple-Mail-73A3F410-9B8E-4A20-82F3-AE18B76A0079
+Content-Transfer-Encoding: 7bit
+
+
+--Apple-Mail-73A3F410-9B8E-4A20-82F3-AE18B76A0079
+Content-Type: text/html;
+	charset=utf-8
+Content-Transfer-Encoding: quoted-printable
+
+<html><head><meta http-equiv=3D"content-type" content=3D"text/html; charset=3D=
+utf-8"></head><body dir=3D"auto"><div><br><br><div>Mit freundlichen Gr=C3=BC=
+=C3=9Fen / Best regards</div><div><br></div><div>Frank Dege</div><div>-- -- -=
+-&nbsp;</div><div><br></div><div>* Shopsysteme B2B und B2C mit Integration i=
+n Ihr ERP * Multishopsysteme * Mobile Commerce *</div><div><a href=3D"http:/=
+/www.silversolutions.de">www.silversolutions.de</a>&nbsp;</div></div><div><b=
+r>Anfang der weitergeleiteten E=E2=80=91Mail:<br><br></div><blockquote type=3D=
+"cite"><div><b>Von:</b> <a href=3D"mailto:noreply@silversolutions.de">norepl=
+y@silversolutions.de</a><br><b>Datum:</b> 20. April 2017 um 11:32:57 MESZ<br=
+><b>An:</b> <a href=3D"mailto:f.dege@gmx.de">f.dege@gmx.de</a><br><b>Betreff=
+:</b> <b>common.shop_owner_mail_subject</b><br><br></div></blockquote><div><=
+span></span></div><blockquote type=3D"cite"><div>
+
+
+ =20
+    <meta http-equiv=3D"content-type" content=3D"text/html; UTF-8">
+    <title>HTML Mail Template</title>
+   =20
+ =20
+ =20
+
+
+
+
+
+   =20
+
+           =20
+
+<table width=3D"768px" cellspacing=3D"0" cellpadding=3D"10">
+    <tbody>
+    <tr>
+        <td style=3D"padding: 0px 20px 0px 20px;">
+            <table width=3D"100%">
+                <tbody><tr>
+                    <td>
+                        <div style=3D"text-align: left">
+                                  <div>
+      <img src=3D"http://harmony-prod.silver-eshop.de/bundles/silversolution=
+seshop/img/email-header.png" alt=3D"Bitte aktivieren Sie das Laden von Bilde=
+rn um dieses Bild zu sehen!">
+    </div>
+
+
+                                                            <p>Ein Kunde hat=
+ folgende Produkte in Ihrem Shop bestellt.&nbsp;</p>
+
+                                                    </div>
+                    </td>
+                </tr>
+                <tr>
+                                            <td width=3D"50%" valign=3D"top"=
+>
+                            <strong>Ihr Kommentar</strong><br>
+                            TEST order Splitting
+                        </td>
+                                    </tr>
+                                                <tr>
+                    <td width=3D"50%" valign=3D"top">
+                        <strong>Ihre Rechnungsnummer:</strong> <br>
+                        RE10047
+                    </td>
+                </tr>
+                                <tr>
+                                            <td width=3D"50%" valign=3D"top"=
+>
+                            <strong>Ihre Bestellnummer ist</strong><br>
+                            6016
+                        </td>
+                                    </tr>
+            </tbody></table>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <table width=3D"100%" cellspacing=3D"10" cellpadding=3D"5">
+                <tbody><tr>
+                    <td style=3D"border: 1px solid #999999;" width=3D"33%" v=
+align=3D"top">
+                        <div style=3D"border-bottom: 1px solid #999999; font=
+-weight: bold;">Rechnungsadresse</div>
+                        <p>
+                                                                            =
+                                                                            =
+                                                                       =20
+                                        Frank Dege<br>
+                                        Herr<br>
+                        F=C3=A4rberstr 26
+           =20
+            <br>
+            12555
+            Berlin<br>
+                            Deutschland<br>
+                                        +493065481990<br>
+                                       <a href=3D"mailto:fd@silversolutions.=
+de">fd@silversolutions.de</a><br>
+                       =20
+                        </p>
+                    </td>
+                    <td style=3D"border: 1px solid #999999;" width=3D"33%" v=
+align=3D"top">
+                        <div style=3D"border-bottom: 1px solid #999999; font=
+-weight: bold;">Lieferadresse</div>
+                        <p>
+                                                                            =
+                                                                            =
+                               =20
+                                        Frank Dege<br>
+                                        Herr<br>
+                        F=C3=A4rberstr 26
+           =20
+            <br>
+            12555
+            Berlin<br>
+                            Deutschland<br>
+                                        +493065481990<br>
+                                   =20
+                        </p>
+                    </td>
+                    <td style=3D"border:1px solid #999999;" width=3D"34%" va=
+lign=3D"top">
+                        <div style=3D"border-bottom: 1px solid #999999; font=
+-weight: bold;">Versandart und Zahlungsart</div>
+                        <p>
+                            Zahlungsart: <strong>Rechnung</strong><br>
+                                                                            =
+    </p>
+                    </td>
+                </tr>
+            </tbody></table>
+        </td>
+    </tr>
+    <tr>
+        <td style=3D"padding: 0px 20px 0px 20px;">
+                            <table width=3D"100%" cellspacing=3D"0" cellpadd=
+ing=3D"5" style=3D"border: 1px solid #999999;" align=3D"center">
+                    <tbody><tr>
+                        <th style=3D"border-right: 1px solid #999999; border=
+-bottom: 1px solid #999999; font-weight: bold; text-align: left">Produkt</th=
+>
+                        <th style=3D"border-right: 1px solid #999999; border=
+-bottom: 1px solid #999999; font-weight: bold; text-align: center">Menge</th=
+>
+                                                    <th style=3D"border-righ=
+t: 1px solid #999999; border-bottom: 1px solid #999999; font-weight: bold; t=
+ext-align: center">Einzelpreis Inkl. MwSt.</th>
+                            <th style=3D"border-bottom: 1px solid #999999; f=
+ont-weight: bold; text-align: right">Gesamtpreis</th>
+                                            </tr>
+                                                                            =
+                                                                        <tr>=
+
+                                <td width=3D"50%;" style=3D"border-bottom: 1=
+px solid #999999; border-right: 1px solid #999999; text-align: left;">
+                                    City Colour
+                                    <br>
+                                    Nr.: 150106
+                                   =20
+                                                                            =
+                                    <br>
+                                                                            =
+                                                                            =
+                                                  <p><b>Dieses Produkt wird v=
+om zentralen Shop Anbieter versendet</b></p>
+                                                                            =
+                                                                          </=
+td>
+                                <td style=3D"border-bottom: 1px solid #99999=
+9; border-right: 1px solid #999999; text-align: center;">
+                                    2
+                                </td>
+                                                                    <td styl=
+e=3D"border-bottom: 1px solid #999999; border-right: 1px solid #999999; text=
+-align: center;">
+                                                                            =
+        5.194,35&nbsp;=E2=82=AC
+                                                                            <=
+/td>
+                                    <td style=3D"border-bottom: 1px solid #9=
+99999; text-align: right;">
+                                                                            =
+        10.388,70&nbsp;=E2=82=AC
+                                                                            <=
+/td>
+                                                            </tr>
+                                                                            =
+                                                                            =
+                    <tr>
+                                <td width=3D"50%;" style=3D"border-bottom: 1=
+px solid #999999; border-right: 1px solid #999999; text-align: left;">
+                                    Mirrorballset 30 cm
+                                    <br>
+                                    Nr.: 30235
+                                   =20
+                                                                            =
+                                    <br>
+                                                                            =
+                                                                            =
+                           </td>
+                                <td style=3D"border-bottom: 1px solid #99999=
+9; border-right: 1px solid #999999; text-align: center;">
+                                    1
+                                </td>
+                                                                    <td styl=
+e=3D"border-bottom: 1px solid #999999; border-right: 1px solid #999999; text=
+-align: center;">
+                                                                            =
+        98,18&nbsp;=E2=82=AC
+                                                                            <=
+/td>
+                                    <td style=3D"border-bottom: 1px solid #9=
+99999; text-align: right;">
+                                                                            =
+        98,18&nbsp;=E2=82=AC
+                                                                            <=
+/td>
+                                                            </tr>
+                                                                <tr>
+                        <td colspan=3D"4" height=3D"1"></td>
+                    </tr>
+
+                                            <tr>
+                            <td colspan=3D"3" style=3D"line-height: normal; t=
+ext-align: right; font-weight: bold;">Zahlungsart</td>
+                            <td style=3D"line-height: normal; font-weight: b=
+old; text-align: right">Rechnung</td>
+                        </tr>
+                                                <tr>
+                            <td colspan=3D"3" style=3D"line-height: normal; t=
+ext-align: right; font-weight: bold;">Zwischensumme Inkl. MwSt.</td>
+                            <td style=3D"line-height: normal; font-weight: b=
+old; text-align: right">
+                                                                    10.486,8=
+8&nbsp;=E2=82=AC
+                                                            </td>
+                        </tr>
+                                                                            =
+                                                                            =
+                                                                            =
+            <tr>
+                            <td colspan=3D"3" style=3D"line-height: normal; t=
+ext-align: right; font-weight: bold;">Summe Inkl. MwSt.</td>
+                            <td style=3D"line-height: normal; font-weight: b=
+old; text-align: right">
+                                                                    10.486,8=
+8&nbsp;=E2=82=AC
+                                                            </td>
+                        </tr>
+                                                                            =
+        <tr>
+                                    <td colspan=3D"3" style=3D"line-height: n=
+ormal; text-align: right; font-weight: bold;">davon MwSt. (19%)</td>
+                                    <td style=3D"line-height: normal; font-w=
+eight: bold; text-align: right">
+                                        1.674,38&nbsp;=E2=82=AC
+                                    </td>
+                                </tr>
+                                                                            <=
+tr>
+                            <td colspan=3D"3" style=3D"line-height: normal; t=
+ext-align: right; font-weight: bold; font-size: 22px;">Summe</td>
+                            <td style=3D"line-height: normal; font-weight: b=
+old; text-align: right; font-size: 22px;">
+                                10.486,88&nbsp;=E2=82=AC
+                            </td>
+                        </tr>
+                                    </tbody></table>
+                    </td>
+    </tr>
+    <tr>
+        <td style=3D"padding: 20px 20px 0px 20px;">
+                <p></p><p>Mit freundlichen Gr=C3=BC=C3=9Fen<br>&nbsp;<br>-- -=
+- -- -- -- -- -- -- -- -- -- -- -- --<br>&nbsp;<br>Marketing meets Technolog=
+y<br>silver.solutions GmbH<br>F=C3=A4rberstr. 26<br>12555 Berlin<br>Fon +49 (=
+0)30.65.48.19.90<br>* Shopsysteme B2B und B2C mit Integration in Ihr ERP * M=
+ultishopsysteme * Mobile Commerce *<br>&nbsp;<br>Gesch=C3=A4ftsf=C3=BChrer: =
+Frank Dege, Ania Hentz<br>Gerichtsstand Amtsgericht Charlottenburg&nbsp;&nbs=
+p; HRB 75549</p>
+<p></p>
+       =20
+
+                                                                    <div sty=
+le=3D"font-size: 10px; border-top: 1px solid #cccccc; margin-top: 10px; padd=
+ing-top: 10px;">
+                  <div class=3D"ezxmltext-field"><a name=3D"eztoc_1_1_1" id=3D=
+"eztoc_1_1_1"></a><h3>Widerrufsrecht</h3><p>Sie haben das Recht, binnen vier=
+zehn Tagen ohne Angabe von Gr=C3=BCnden diesen Vertrag zu widerrufen.<br>Die=
+ Widerrufsfrist betr=C3=A4gt vierzehn Tage ab dem Tag an dem Sie oder ein vo=
+n Ihnen benannter Dritter, der nicht der Bef=C3=B6rderer ist, die letzte Tei=
+lsendung oder das letzte St=C3=BCck in Besitz genommen haben bzw. hat.<br>Um=
+ Ihr Widerrufsrecht auszu=C3=BCben, m=C3=BCssen Sie uns (silver.solutions Gm=
+bH, F=C3=A4rberstra=C3=9Fe 26 12555 Berlin Deutschland, <a href=3D"mailto:co=
+ntact@silversolutions.de">contact@silversolutions.de</a>, +49 030 65481990) m=
+ittels einer eindeutigen Erkl=C3=A4rung (z. B. ein mit der Post versandter B=
+rief, Telefax oder E-Mail) =C3=BCber Ihren Entschluss, diesen Vertrag zu wid=
+errufen, informieren. Sie k=C3=B6nnen daf=C3=BCr das beigef=C3=BCgte Muster-=
+Widerrufsformular verwenden, das jedoch nicht vorgeschrieben ist.<br>&nbsp;<=
+br>Zur Wahrung der Widerrufsfrist reicht es aus, dass Sie die Mitteilung =C3=
+=BCber die Aus=C3=BCbung des Widerrufsrechts vor Ablauf der Widerrufsfrist a=
+bsenden.</p><a name=3D"eztoc_2_1_1" id=3D"eztoc_2_1_1"></a><h3>Folgen des Wi=
+derrufs</h3><p>Wenn Sie diesen Vertrag widerrufen, haben wir Ihnen alle Zahl=
+ungen, die wir von Ihnen erhalten haben, einschlie=C3=9Flich der Lieferkoste=
+n (mit Ausnahme der zus=C3=A4tzlichen Kosten, die sich daraus ergeben, dass S=
+ie eine andere Art der Lieferung als die von uns angebotene, g=C3=BCnstigste=
+ Standardlieferung gew=C3=A4hlt haben), unverz=C3=BCglich und sp=C3=A4testen=
+s binnen vierzehn Tagen ab dem Tag zur=C3=BCckzuzahlen, an dem die Mitteilun=
+g =C3=BCber Ihren Widerruf dieses Vertrags bei uns eingegangen ist. F=C3=BCr=
+ diese R=C3=BCckzahlung verwenden wir dasselbe Zahlungsmittel, das Sie bei d=
+er urspr=C3=BCnglichen Transaktion eingesetzt haben, es sei denn, mit Ihnen w=
+urde ausdr=C3=BCcklich etwas anderes vereinbart; in keinem Fall werden Ihnen=
+ wegen dieser R=C3=BCckzahlung Entgelte berechnet. Wir k=C3=B6nnen die R=C3=BC=
+ckzahlung verweigern, bis wir die Waren wieder zur=C3=BCckerhalten haben ode=
+r bis Sie den Nachweis erbracht haben, dass Sie die Waren zur=C3=BCckgesandt=
+ haben, je nachdem, welches der fr=C3=BChere Zeitpunkt ist.<br>Sie haben die=
+ Waren unverz=C3=BCglich und in jedem Fall sp=C3=A4testens binnen vierzehn T=
+agen ab dem Tag, an dem Sie uns =C3=BCber den Widerruf dieses Vertrags unter=
+richten, an uns oder an zur=C3=BCckzusenden oder zu =C3=BCbergeben. Die Fris=
+t ist gewahrt, wenn Sie die Waren vor Ablauf der Frist von vierzehn Tagen ab=
+senden.<br>Sie tragen die unmittelbaren Kosten der R=C3=BCcksendung der Ware=
+n. Sie m=C3=BCssen f=C3=BCr einen etwaigen Wertverlust der Waren nur aufkomm=
+en, wenn dieser Wertverlust auf einen zur Pr=C3=BCfung der Beschaffenheit, E=
+igenschaften und Funktionsweise der Waren nicht notwendigen Umgang mit ihnen=
+ zur=C3=BCckzuf=C3=BChren ist.</p><table class=3D"" border=3D"1" cellpadding=
+=3D"2" cellspacing=3D"0" width=3D"" style=3D"width:;" summary=3D""><tbody><t=
+r><td valign=3D"top" style=3D"vertical-align: top;" width=3D"614">
+<p>&nbsp;</p>
+<p align=3D"center"><strong>Muster-Widerrufsformular</strong></p>
+<p>(Wenn Sie den Vertrag widerrufen wollen, dann f=C3=BCllen Sie bitte diese=
+s Formular aus und senden Sie es zur=C3=BCck.)</p>
+<p>=E2=80=93 An</p>
+<p>silver.solutions GmbH</p>
+<p>F=C3=A4rberstra=C3=9Fe 26&nbsp;<br>12555 Berlin&nbsp;<br>Deutschland</p>
+<p><a href=3D"mailto:contact@silversolutions.de">contact@silversolutions.de<=
+/a></p>
+<p>&nbsp;+49 030 65481990</p>
+<p>=E2=80=93 Hiermit widerrufe(n) ich/wir (*) den von mir/uns (*) abgeschlos=
+senen Vertrag =C3=BCber den Kauf der folgenden Waren (*)/die Erbringung der f=
+olgenden Dienstleistung (*)</p>
+<p>=E2=80=93 Bestellt am (*) / erhalten am (*)</p>
+<p>=E2=80=93 Name des/der Verbraucher(s)</p>
+<p>=E2=80=93 Anschrift des/der Verbraucher(s)</p>
+<p>=E2=80=93 Unterschrift des/der Verbraucher(s) (nur bei Mitteilung auf Pap=
+ier)</p>
+<p>=E2=80=93 Datum</p>
+<p>(*) Unzutreffendes streichen.</p>
+</td></tr></tbody></table>
+</div>
+
+                </div>
+                         =20
+        </td>
+    </tr>
+    </tbody>
+</table>
+
+
+ =20
+
+
+
+</div></blockquote><blockquote type=3D"cite"><div></div></blockquote></body>=
+</html>=
+
+--Apple-Mail-73A3F410-9B8E-4A20-82F3-AE18B76A0079
+Content-Type: application/pdf;
+	name=invoice_RE10047.pdf;
+	x-apple-part-url=2CA3790B-B40A-4BC6-85A9-62BE9AF32D1C
+Content-Disposition: attachment;
+	filename=invoice_RE10047.pdf
+Content-Transfer-Encoding: base64
+
+JVBERi0xLjQKMSAwIG9iago8PAovVGl0bGUgKP7/KQovQ3JlYXRvciAo/v8AdwBrAGgAdABtAGwA
+dABvAHAAZABmACAAMAAuADEAMgAuADQpCi9Qcm9kdWNlciAo/v8AUQB0ACAANAAuADgALgA3KQov
+Q3JlYXRpb25EYXRlIChEOjIwMTcwNDIwMTEzMjU2KzAyJzAwJykKPj4KZW5kb2JqCjMgMCBvYmoK
+PDwKL1R5cGUgL0V4dEdTdGF0ZQovU0EgdHJ1ZQovU00gMC4wMgovY2EgMS4wCi9DQSAxLjAKL0FJ
+UyBmYWxzZQovU01hc2sgL05vbmU+PgplbmRvYmoKNCAwIG9iagpbL1BhdHRlcm4gL0RldmljZVJH
+Ql0KZW5kb2JqCjYgMCBvYmoKPDwKL1R5cGUgL1hPYmplY3QKL1N1YnR5cGUgL0ltYWdlCi9XaWR0
+aCA0MTMKL0hlaWdodCAzNQovQml0c1BlckNvbXBvbmVudCA4Ci9Db2xvclNwYWNlIC9EZXZpY2VS
+R0IKL0xlbmd0aCA3IDAgUgovRmlsdGVyIC9GbGF0ZURlY29kZQo+PgpzdHJlYW0KeJztXb2OFEcQ
+fgbewG/gN3DuwJlDAuf3AJYIiYjIjITkyILAERaHwEIgHTIQnIM7WydxBHuSkaW15A2MZSSLZPzh
+glLRP9XV3TOzO3f1qYW43eme6u7pb+qve4fB4XA43uHNmzfr9frl6SnK82fPUOj/+PDt27fbls7h
+cDisAGWdrVZPDg72795VCi549erViPz21z//3nt+du3WYWf5dfXnWCI5HI6lAxwFZezHBw8kfQV/
+BgXfokr/rW/cOf7ky28vff7NKOWLr3/47Y+/+6VyOByLxmazefzoEfMVTE4oY7BDi2obCiq+fv26
++dZ71x+PRWhcQJLTqW0YHO47RmmiuzgcFly+ep8fe1gr2xZnh4C1yev058NDsBl9fnx0VOS0zgUO
+w3N0TqPy6VffwbAddZzeQ/Yaw6VfDB0Yw0jOSS4nJydTCOZowJWbT6HeywKimOjJmQKBnbJtcXYF
+zGmwKNfrNX+O/9s5rZnZQD4T0RoKbNtRh+o9qmgNanByrKYQzNGA5JPz0y+/zybA7YcviEvbqjut
+xWBOg7EpDUnoGLpXbRRmw8MzHadNN8vSWj9brfSLofomR3IKwRwN+Gzv++3SGp7SnptydRRonqOL
+tziAx9g5FsQ0X56eNnAaqXxswxYBbWpSWkOZYNjecf7mfxg9iny91NymEMzRBvAJFaa4BdHaIOQf
+V7CFgsIBIKJgeTaravsfwg1GAa7dOlwirfXAaW2X0c8wS7npeQWbn7EZhU+aOa3KFHVac+wUnNaW
+DnIQQWGLv7IkdegFjVtkmJnWQLbSLRbYzsUEPFSPk/pkkMUCI63RFCiOu5OTk31DwAKdiruMxmEO
+6xUpYIS65FKAAo87yu7jq1FSFqXpF5e964+NQckbd47jdvDJvedndmGqGIZup4Slrtx8einv4L39
+8EUxV1NxDqNfQXX8aewshhQDG9/98tX7xbQo6hT6Tn9ioGSGCclcbARy5iYdUtknPQBHOWO1Co9x
+J6dRsfid5qQ14gG9YL0r+yZkuhqX2qVtoTV2wSnmfLEddASkp3RWl5w7q6cvHh8dWXqdgyW9p5iC
+iCUg3eY93GinNY52KczDAiTvrsucfC8Xq1tiZBhMPf0AfKtU58vQDlFcsigDiPaLvYaEDRn1lJCW
+1KlkDltPsaRmzUZrWONGsRXzOWmb2x2JhCpaUy7TL0B/LSq3QkpMa+BG3dFaVPwUKHqaLEqWKRjD
+0ghrFzoaaE1hHn2NW+JlCk0lyaFIa+Aiy3Yehdn4Gr0dZcCN+4kaUovJMEk+1c0x0KAkzdsAOVrD
+7GBgKbiD2a/KbcN4olkeOrqRJIo4UItPWLExhnF5lLZCa5KldfFIQqk5o3HJeDlSSqqmnKqNBtm2
+7TFFlXUEvuLHQ7GtJDlg6qVeF1g6uhJCmJPWGm6aAw9UkdbkgEDXYo0Iox1sYMwpS/GKw/KksZVT
+1jYsuCnvOaryHgxiUST9Qsnnua0UJYlpLecfsDgiqDop/NwyVedUlv2Pt1FIYIHbU1MmpTUpbXKO
+pN6YbEHqWvG3eACKpBQ/BsGVPAI9dqh8kSUXNWhKt0CZE7BgY1sPn/A70fL2P/e0putCGOqizLFO
+JYcd/7cPizLpDRYoKwNJ99eItFZ0rwW0Jr0o6FeQioMRC5yTcWFK5EeFqweec3Szx3qalNYGMQvJ
+9rkvOUrh6rk+svwWWoMRGtvm7Kzo0daC7cD83reDJzrHWvyMjUtrVet3B2kt52wsCiNJKfnGKQ5L
+4BUk00wX2wKmteS3uVhhQynyRkBrPErSsgDXyWCT4pHAGqFrpCOaK0q7iQs+advKOjWtSTs0eDtI
+52dOvRyR1pRzDKA0onrP4VRJbz9mPNABFGyL1gbD+t1lWmsWxq7O5S5IukPxRsPS7tmKq9PaWJxW
+S2vMXUmHmzxrCOwXDwsuoDEJnKLBHZM5HpTdUbU8p6a1Ia+SMeFYHP5PDg6CXfZU7EboKFkcOvD8
+J+N6eE8VjRGntWFptEagnbDxG016/KrAtJZcyP1Jaw20xtOhRPwDtxvHBejlTh9KX4oyfev1Ora1
+q5LQZqA1qZXxTEktThleuydhF2iNgPdR8ogqnY6c1oZl0hohTnuj0mCW8tJIrosRfWtFDzxPB/Ez
+/i3GBUDmOU0V1WMtTrk7bKv45KVdiIQyYp2KBdbva5/EnA0+P60RMIkykF18yHeB1joX+DmjNdYr
+7N2hAGgw6bWR0OHD4ko+0noOZ1UpiiFpzZiAdCnjWI6Trou0RgCPyUxd40lo89AaRzyhSQ4fZ0rr
+mjCTElrY5KHEdLZFawRKFeAJVZKgdpbWpC+lmdaKgeDgXrtAa80sHUx6w0lNZGkmo/9j5a1Z1jtP
+B/pSe/AarofmRr9foPChcUCY2Yw0NQ+tyTMH8A5iIYt70/pJqa2FQPu15C4qSIZ+AvAiyq2CIu8l
+L+6hNfwZPMxttMYJt8VjAxtoLdkmtIt+FbRT+eReN5wqRgsESyZ2rzWcHpksxYPIhhl3GaBT6Kzi
+PWMddadoTd4IVCYpTq8l6cUyETHaaC1+DBStEouIln9u2XLUG2+9XCNy/06wSQrtS6f0uOm48mI+
+5Yz2WsYPoZHWJDNXZdzZaU3ybTDsELIqHbeN1jiil5t0ntAGWuOEz/ihte8z0ovFSTUbrdlPL1dI
+AGSixFPop7jiWrQ3M7f/CJ/r29Xj6bAcI4D5tRwtFZwdKjEDrdlnX7FHsPwtedrJZF0C1pFiKSg/
+91PMojTSmrKzUiFk/YiAXAag8Yx95ThKO60lBbBPOudrVYGe26TC1u9eK54sUdvHTlrD4rIs8+Ro
+BCOmlKTmljv027j2h4iTjdqXkdmKkdAqZa+qa5YIERXdv5RM+DFy2pA59FuWnLIkc/JjVpHbEIpb
+9ZVxyPkVizvlm08O0fmk2CkWLKmPGTel4prONI/YSd5vhxoT+Oc8wQPLXOel3KYqRvEMkGS4IXfo
+t5FLgxb0M0YCoMvFdJ2cVc7Gr31DGRD3VK+es9rk2rTYg7l2ZPJPDsVAlSJAfBqGvCOpc4oFzcAS
+Tup+ytkjxZ3yisYFsZOsiL4U448kJ67MXcCC5XgpcA4kJ73nZ+NYK4utp569BvafVZr/GEl5/raE
+UWAs0lxUUV+/Sjiy6r4NKf0gt9yt9dZQsYrTqAr4kIs9D5CPrZal6tZxO/algSuTAhhl4I1+8fX4
+pCpzvkp4ed+gWFQdCFZbhYXUO2Xc1DnWpAfgLc/xud/NxxNVqRPT/Zoevzr7R8nhcCwL7IGJtzM3
+bDeI6VGHDChPUZp/pMzhcCwa0rcM+5F1LXk8zhScRjCeEdpWRjkZwOFwLBHydAtS24jc7L/Vopzz
+oEMJJ3UW/ylYh+OCIzj6HuR2fHQEfrPsLpQ6XgMsZ5vXFj2m73A4Lg42m03VVvfOwxgZ0NnsyY16
+scT0HQ7HRQPMSShgekY9LqiN/hcRRJwbSk+6i8PhuAjgLK+z1YrPgti2UNX4D0h0VzoKZW5kc3Ry
+ZWFtCmVuZG9iago3IDAgb2JqCjI2MjQKZW5kb2JqCjEyIDAgb2JqClswIC9YWVogMzcuNTAwMDAw
+MCAgCjYyMS41MDAwMDAgIDBdCmVuZG9iagoxMyAwIG9iagpbMCAvWFlaIDM3LjUwMDAwMDAgIAo1
+ODcuNzUwMDAwICAwXQplbmRvYmoKNSAwIG9iago8PAovVHlwZSAvUGFnZQovUGFyZW50IDIgMCBS
+Ci9Db250ZW50cyAxNCAwIFIKL1Jlc291cmNlcyAxNiAwIFIKL0Fubm90cyAxNyAwIFIKL01lZGlh
+Qm94IFswIDAgNTk1IDg0Ml0KPj4KZW5kb2JqCjE2IDAgb2JqCjw8Ci9Db2xvclNwYWNlIDw8Ci9Q
+Q1NwIDQgMCBSCi9DU3AgL0RldmljZVJHQgovQ1NwZyAvRGV2aWNlR3JheQo+PgovRXh0R1N0YXRl
+IDw8Ci9HU2EgMyAwIFIKPj4KL1BhdHRlcm4gPDwKPj4KL0ZvbnQgPDwKL0Y4IDggMCBSCi9GOSA5
+IDAgUgovRjEwIDEwIDAgUgovRjExIDExIDAgUgo+PgovWE9iamVjdCA8PAovSW02IDYgMCBSCj4+
+Cj4+CmVuZG9iagoxNyAwIG9iagpbIF0KZW5kb2JqCjE0IDAgb2JqCjw8Ci9MZW5ndGggMTUgMCBS
+Ci9GaWx0ZXIgL0ZsYXRlRGVjb2RlCj4+CnN0cmVhbQp4nO1d3W/cuBF/379CzwdY4ZAUP4CigO3Y
+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
+ZAsdU+CEnpjXigHxaFDu44b06Fhk0XrsBkIa2ZHGPCZxei/ZLVwGXvr7i0KaJpe1S3KdGs7VbdrT
+pPg+yh16S1AN0jS5jtI1JHJtcRs4YF9RbWgOcvdaFoLQAPFgtmxwt228dmY1ziQ69c+EPcpXAk3c
+jRlDNnSvzzkx7xB80d7+p2yCKSzuHYyp81hwWhvtsT7tNerk0VjZ5oYUYaV78ZbOyhvWs6lb/kXf
+vSDTg0M+Gp41ToZgH+2VdAxzAY62pY/2prQPS2J+SWf5GHJTR/ctUrXl7RwYD+zov2VuW/RnZT2Y
+C8knSvZI7KId96mVg5Er7s2ZJbneXkPUwmuIauuBj6MpJxBlKJmCzPxk8qQC12kGYEe46aBMqqKp
++duLkPZ7EVLbkjFke/b2uqPHX3fUNi9dTpbfXmrUSLIMa0RILaKJWHMZJBw8G6691xJ7xbRN7NkT
+JLxJm70iS9dh+SyGYF++pXx2JZrAXj4/cwb1oLVCYYwHc2FLtNfEcVpoTawSi6Bh5/i/MlqsR6i8
+nWnLO4vwu4Tw24y2vAHp0XcW7TVas4KmzShouZkD9vN411qmCiL+8O2iQrMbmy96zzeMFo+Afei+
+zvk//Vsc/pmuzAVHnATnQ/fh8D859UilCmVuZHN0cmVhbQplbmRvYmoKMTUgMCBvYmoKMzI0MQpl
+bmRvYmoKMTkgMCBvYmoKPDwKL19fV0tBTkNIT1JfMiAxMiAwIFIKL19fV0tBTkNIT1JfNCAxMyAw
+IFIKPj4KZW5kb2JqCjIyIDAgb2JqCjw8L1RpdGxlICj+/wBSAGUAYwBoAG4AdQBuAGcAcwBuAHUA
+bQBtAGUAcgA6ACAAUgBFADEAMAAwADQANykKICAvUGFyZW50IDIxIDAgUgogIC9EZXN0IC9fX1dL
+QU5DSE9SXzQKICAvQ291bnQgMAo+PgplbmRvYmoKMjEgMCBvYmoKPDwvVGl0bGUgKP7/AFIAZQBj
+AGgAbgB1AG4AZykKICAvUGFyZW50IDIwIDAgUgogIC9EZXN0IC9fX1dLQU5DSE9SXzIKICAvQ291
+bnQgMAogIC9GaXJzdCAyMiAwIFIKICAvTGFzdCAyMiAwIFIKPj4KZW5kb2JqCjIwIDAgb2JqCjw8
+L1R5cGUgL091dGxpbmVzIC9GaXJzdCAyMSAwIFIKL0xhc3QgMjEgMCBSPj4KZW5kb2JqCjIzIDAg
+b2JqCjw8Ci9UeXBlIC9DYXRhbG9nCi9QYWdlcyAyIDAgUgovT3V0bGluZXMgMjAgMCBSCi9QYWdl
+TW9kZSAvVXNlT3V0bGluZXMKL0Rlc3RzIDE5IDAgUgo+PgplbmRvYmoKMTggMCBvYmoKPDwKL1R5
+cGUgL1BhZ2UKL1BhcmVudCAyIDAgUgovQ29udGVudHMgMjQgMCBSCi9SZXNvdXJjZXMgMjYgMCBS
+Ci9Bbm5vdHMgMjcgMCBSCi9NZWRpYUJveCBbMCAwIDU5NSA4NDJdCj4+CmVuZG9iagoyNiAwIG9i
+ago8PAovQ29sb3JTcGFjZSA8PAovUENTcCA0IDAgUgovQ1NwIC9EZXZpY2VSR0IKL0NTcGcgL0Rl
+dmljZUdyYXkKPj4KL0V4dEdTdGF0ZSA8PAovR1NhIDMgMCBSCj4+Ci9QYXR0ZXJuIDw8Cj4+Ci9G
+b250IDw8Ci9GMTAgMTAgMCBSCj4+Ci9YT2JqZWN0IDw8Cj4+Cj4+CmVuZG9iagoyNyAwIG9iagpb
+IF0KZW5kb2JqCjI0IDAgb2JqCjw8Ci9MZW5ndGggMjUgMCBSCi9GaWx0ZXIgL0ZsYXRlRGVjb2Rl
+Cj4+CnN0cmVhbQp4nKWUUUvDMBDH3/Mp7llYepc0TQIiuLoJPgilBR+GD7I5Zbhh3YNf37RJbdoh
+atdCk8sv/8v9Q9LktnyClyMkefkO69DmJUOuFfoHmncWDwjDQx8MydCH9Z7VULOCFe5bsy6j1x/X
+B5b4tZgfKfN71/sEAXcu2sHq0TWbIG8m7JkmzZvUpFz4FoeEacYzS9a4cRyHzeRX9nABB1cHcoMo
+hBSSfC2DeBZJnYHJRfd+qX1j6T9rcHYkGjA2g1TBxzPbNpsy2QknGZ4f+wOff5gf74Lod6GevOi8
+YsmSnPEMqi14dzPfVO4YoHWRFBqqDVw6y/MrqHYs5ShJKH9CPcFlSwg79E1E3hLLlZV6oBE3XkNc
+jTW2JZJrmxkdE7wOFZDKhhWQ7LIJL+qJCRXIcJF6IgJJA+rXUS0xXJuRU/JEn/rBRcjmFeeSfAKZ
+ku03zaJqb8FZ/5ZTGJ3eAgr2BQsaEZoKZW5kc3RyZWFtCmVuZG9iagoyNSAwIG9iagozNTQKZW5k
+b2JqCjI4IDAgb2JqCjw8IC9UeXBlIC9Gb250RGVzY3JpcHRvcgovRm9udE5hbWUgL1FDQkFBQStP
+cGVuU2FucwovRmxhZ3MgNCAKL0ZvbnRCQm94IFstNTQ5LjgwNDY4NyAtMjcwLjk5NjA5MyAxMjA0
+LjEwMTU2IDEwNDcuODUxNTYgXQovSXRhbGljQW5nbGUgMCAKL0FzY2VudCAxMDY4Ljg0NzY1IAov
+RGVzY2VudCAtMjkyLjk2ODc1MCAKL0NhcEhlaWdodCAxMDY4Ljg0NzY1IAovU3RlbVYgNDkuODA0
+Njg3NSAKL0ZvbnRGaWxlMiAyOSAwIFIKPj4KZW5kb2JqCjI5IDAgb2JqCjw8Ci9MZW5ndGgxIDYz
+ODAgCi9MZW5ndGggMzIgMCBSCi9GaWx0ZXIgL0ZsYXRlRGVjb2RlCj4+CnN0cmVhbQp4nJVYeVxT
+17be6+RkQK0SIURBJCGSiAgCIQQQBBnDFJAwyRBABhFxYBIstYoy1KqVQS20+hwqaGO1dKK2tYpW
+VKrWqtUO91rbOt1W+uzgbb1KDm+dk2C97f3jvuS3k7332dP61lrfWvsQIISIyBrCIyTJMMt3t///
+XMWejVjyF5avLFn3SXYK1ocIsW8sLS4oKv46diYhkuXY51+KHROyBUZs78f2tNIl1XW39006iu1z
+2P6sfFlhwTpVSz8hDruwXb6koG45mU3SCJGOw7ZsacGSYreAsHnYxjXhKOHRH0Er4RPCf4mvxh4X
+yz/vIimBn0UUNVYg4PFpiqK/IdS9MCLLxlWmYyE+cw0RBDtGzAIXxp40ijZRmTICO9lntI7fx+6G
+ElLkOK72CNs8IiRELZaL3eRi+XFekFlJPW1u5vc9jCumhwiQQTyDC44by45ix6nFCvwdNPEok2mY
+4feZ26mlD+OoXnMyrlo5cpeeQOeQSUROiB2l9Vf7Sh0kErmD1EHrq5UIhAKFQKW0k/uplCpsVMG6
+hmvn6urM42ljtun1Q/MTk5f8unHjIWpOdExDc2Iy5QQ227e3rL+26ERhMcRtUdqKYesWWLkjNQUg
+LQOBIb0ohwp3nMidT6r25/YUKhWuQoFE3NtibxOSnlaqmy2N9GvOzaN15xbPDhr38oTy8t3md4hF
+Pt4DlM+GQ0Ei58ogb5a5njKa9/D7Os0/dJpbETySOzLE+4R/mUwlnmQO0bPyuWk1rCSuQpW/VVSx
+QqVgpXRVKbX2Uge1g9ZfoxFij8TOT+uvRRwk9kKBCkHQyP/UYQRK8r424On1r/nNK8gvOJlnrJeL
+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
+5Q4ZpFeRKl4k6aXlWK8iRvoO6eVdJGXUZeJCd5AiLDVYjmBp4s8ig5SA9GLZQ39PevlXcM5dspd3
+gVSxbev8KhxbisUDSxkWI5YSto/qI85CT7KSptALrpAqSk462ef8cWQVLSKUQITrYx/8RkLpwyRU
+GEgGhRW4bhtJoQuJhyCQSKnZuKca+4pwPSNJEXRw/yEoF3vv8iBFpJF0gRiSoAtOwgMqksqlNlOf
+Un/nAc+dN49XzzPxrtBOdDq9lG6jr/M9+EX80/whQZmgSfCh4CvBj8IpwmhhqXCr8KDwnshelC4q
+F/3DRmYz00Zv02Xz/hj5mHAOUQ1JZd9AE/IXfAn3prwEfR9o5GRSSYi1DnjjqrTWKTIeT2qp87De
+bq3TxJXsstb5eLs/Ya0LkDO+stbPkKXkBxJJFpGFWKqxPE2KUXIZlgJsF2CtkCwjy8lK3I8dVYq9
+MvIqFl/ijfcib+JprfngvVmG0WAZfheSclxHRiKwXomz2d8Cbv1luKMXScK+YqzJMHYU4H8Vxp5i
+nFWD8wpwbC22FqDk7Ojq/zBa9qfx6diqxH7L+jI8ixd3ttGZo/NS8fyLuPmja8twrwKuZyE3sth6
+UgsKC1BuGbZKOWmiH88xkArcexGOrcQn5ZzcT85m5fUi5P8AuKV4DAplbmRzdHJlYW0KZW5kb2Jq
+CjMyIDAgb2JqCjQ3NzgKZW5kb2JqCjMwIDAgb2JqCjw8IC9UeXBlIC9Gb250Ci9TdWJ0eXBlIC9D
+SURGb250VHlwZTIKL0Jhc2VGb250IC9PcGVuU2FucwovQ0lEU3lzdGVtSW5mbyA8PCAvUmVnaXN0
+cnkgKEFkb2JlKSAvT3JkZXJpbmcgKElkZW50aXR5KSAvU3VwcGxlbWVudCAwID4+Ci9Gb250RGVz
+Y3JpcHRvciAyOCAwIFIKL0NJRFRvR0lETWFwIC9JZGVudGl0eQovVyBbMCBbNTkyIDI1OCA3MzIg
+NTU3IDQwNSA1MTIgNTUyIDYwOCA0NzMgMzUwIDU2NyA1NjcgNTY3IDU2NyA2NDMgMjUxIDI1MSA2
+MDkgNzIzIDYxMCA0NzIgNjA5IDU1MiA2MDggNTY3IDU2NyA1NjcgNTY3IDU2NyA1NjcgMzM2IDg5
+MCA0OTcgNTk5IDI2NCA1NjcgNjI2IDUwMCA3NDggMjY0IDI0MyA1ODUgODk2IDkyMyA1NjYgNTQ0
+IDc3MiAyNzcgNTIxIDU0NCAyOTQgODE1IDI5NCBdCl0KPj4KZW5kb2JqCjMxIDAgb2JqCjw8IC9M
+ZW5ndGggNzI4ID4+CnN0cmVhbQovQ0lESW5pdCAvUHJvY1NldCBmaW5kcmVzb3VyY2UgYmVnaW4K
+MTIgZGljdCBiZWdpbgpiZWdpbmNtYXAKL0NJRFN5c3RlbUluZm8gPDwgL1JlZ2lzdHJ5IChBZG9i
+ZSkgL09yZGVyaW5nIChVQ1MpIC9TdXBwbGVtZW50IDAgPj4gZGVmCi9DTWFwTmFtZSAvQWRvYmUt
+SWRlbnRpdHktVUNTIGRlZgovQ01hcFR5cGUgMiBkZWYKMSBiZWdpbmNvZGVzcGFjZXJhbmdlCjww
+MDAwPiA8RkZGRj4KZW5kY29kZXNwYWNlcmFuZ2UKMiBiZWdpbmJmcmFuZ2UKPDAwMDA+IDwwMDAw
+PiA8MDAwMD4KPDAwMDE+IDwwMDM0PiBbPDAwMjA+IDwwMDQ4PiA8MDA2NT4gPDAwNzI+IDwwMDQ2
+PiA8MDBFND4gPDAwNjI+IDwwMDczPiA8MDA3ND4gPDAwMzI+IDwwMDM2PiA8MDAzMT4gPDAwMzU+
+IDwwMDQyPiA8MDA2Qz4gPDAwNjk+IDwwMDZFPiA8MDA0ND4gPDAwNzU+IDwwMDYzPiA8MDA2OD4g
+PDAwNjE+IDwwMDY0PiA8MDAyQj4gPDAwMzQ+IDwwMDM5PiA8MDAzMz4gPDAwMzA+IDwwMDM4PiA8
+MDA2Nj4gPDAwNDA+IDwwMDc2PiA8MDA2Rj4gPDAwMkU+IDwwMDM3PiA8MDA0Mz4gPDAwNzk+IDww
+MDRFPiA8MDAzQT4gPDAwMkM+IDwyMEFDPiA8MDA0RD4gPDAwNkQ+IDwwMDVBPiA8MDA2Nz4gPDAw
+Nzc+IDwwMDQ5PiA8MDA2Qj4gPDAwNTM+IDwwMDI4PiA8MDAyNT4gPDAwMjk+IF0KZW5kYmZyYW5n
+ZQplbmRjbWFwCkNNYXBOYW1lIGN1cnJlbnRkaWN0IC9DTWFwIGRlZmluZXJlc291cmNlIHBvcApl
+bmQKZW5kCgplbmRzdHJlYW0KZW5kb2JqCjggMCBvYmoKPDwgL1R5cGUgL0ZvbnQKL1N1YnR5cGUg
+L1R5cGUwCi9CYXNlRm9udCAvT3BlblNhbnMKL0VuY29kaW5nIC9JZGVudGl0eS1ICi9EZXNjZW5k
+YW50Rm9udHMgWzMwIDAgUl0KL1RvVW5pY29kZSAzMSAwIFI+PgplbmRvYmoKMzMgMCBvYmoKPDwg
+L1R5cGUgL0ZvbnREZXNjcmlwdG9yCi9Gb250TmFtZSAvUUhCQUFBK09wZW5TYW5zLUxpZ2h0Ci9G
+bGFncyA0IAovRm9udEJCb3ggWy01MjAuOTk2MDkzIC0yNjkuMDQyOTY4IDExNDAuMTM2NzEgMTA0
+Ny44NTE1NiBdCi9JdGFsaWNBbmdsZSAwIAovQXNjZW50IDEwNjguODQ3NjUgCi9EZXNjZW50IC0y
+OTIuOTY4NzUwIAovQ2FwSGVpZ2h0IDEwNjguODQ3NjUgCi9TdGVtViA0OS44MDQ2ODc1IAovRm9u
+dEZpbGUyIDM0IDAgUgo+PgplbmRvYmoKMzQgMCBvYmoKPDwKL0xlbmd0aDEgNTQ4MCAKL0xlbmd0
+aCAzNyAwIFIKL0ZpbHRlciAvRmxhdGVEZWNvZGUKPj4Kc3RyZWFtCniclVgJVFRXmr7/2wpbBcqi
+KHAJVZRQKotCUZQLBgVKLDZZi0UoqAIKlB0huASXuEVRATEkYxsTMRL1GDVqiDGJLVk6GiV090lO
+Jj1OjvZ0OifRLJOMmQ5Sj/nvq4c6ncw5PVXn1rv3vnv/+6/f/98iQAjxIpsJS8iKnLnRLw79tgRn
+9mArq6pd53rzheU27N8lRBlcXemoqLxonUvIFF+ci63GCZ9Y/lMcL8fxzOq6lrWDCzRNOK7F8cXa
+hnLHarfrPCGqmTi21znWNhIjQXqqbTjW1jvqKkMylhzC8UuEwDuE5XognPCE8Ad5I84EeZ7sH4kL
+7noxzERWYHmOYbhbhPluCdGuRCqzsJGopTmJlOKYWwgS/cg2r71MgZbAC/QdF88P0HcoIUMGcazA
+MUsUhBiVOmWITqkbZJe5tcx69w5+YCSlnPueABnGU7/HdROkVWqd1IZZndvCHHDX8gN29wG7uxmJ
+EcfYHfYA/y55jESQ+SQBZQk1x5rNphhDqD5YYYg1Rmv81Uq9QS8oBL1gCDX7afyN/uZYk0mBMxpp
+tb9G0AebdQ+6TtixbXQ4Pn5Pb1/IuTPnCwusgV45efmtfYWFNY/HN59yVVz+wuGEdFD66JYALFkK
+sPFhX3e4sIAXlh/MXJFryy2xv+eOOLUqLBxysvZVmRdAZfmrNV4T4x7fxGVG+qkA8mw2+YkKJ6gp
+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
+bnRpdHkpIC9TdXBwbGVtZW50IDAgPj4KL0ZvbnREZXNjcmlwdG9yIDMzIDAgUgovQ0lEVG9HSURN
+YXAgL0lkZW50aXR5Ci9XIFswIFs1OTUgNDk4IDUyNiAzODYgNTkwIDU0NCA0NjIgMzMyIDUyNiA1
+NzggMjU4IDU2NiA1NjYgNTY2IDU2NiA2MjIgMjI0IDIyNCA1ODUgNzAwIDU4NSA0NzEgNTg1IDU5
+MCA1ODEgODgwIDQ1NSAyMzYgNTY2IDU2NiA1NjYgNTY2IDU2NiA1MDkgMjk3IDU4NSA3MTcgNTQx
+IDUyMCA3MTMgNTc2IDIzNiA1NzIgMjUwIDU5NSA3MTUgXQpdCj4+CmVuZG9iagozNiAwIG9iago8
+PCAvTGVuZ3RoIDY3OSA+PgpzdHJlYW0KL0NJREluaXQgL1Byb2NTZXQgZmluZHJlc291cmNlIGJl
+Z2luCjEyIGRpY3QgYmVnaW4KYmVnaW5jbWFwCi9DSURTeXN0ZW1JbmZvIDw8IC9SZWdpc3RyeSAo
+QWRvYmUpIC9PcmRlcmluZyAoVUNTKSAvU3VwcGxlbWVudCAwID4+IGRlZgovQ01hcE5hbWUgL0Fk
+b2JlLUlkZW50aXR5LVVDUyBkZWYKL0NNYXBUeXBlIDIgZGVmCjEgYmVnaW5jb2Rlc3BhY2VyYW5n
+ZQo8MDAwMD4gPEZGRkY+CmVuZGNvZGVzcGFjZXJhbmdlCjIgYmVnaW5iZnJhbmdlCjwwMDAwPiA8
+MDAwMD4gPDAwMDA+CjwwMDAxPiA8MDAyRD4gWzwwMDQ2PiA8MDBFND4gPDAwNzI+IDwwMDYyPiA8
+MDA2NT4gPDAwNzM+IDwwMDc0PiA8MDA2MT4gPDAwREY+IDwwMDIwPiA8MDAzMj4gPDAwMzY+IDww
+MDMxPiA8MDAzNT4gPDAwNDI+IDwwMDZDPiA8MDA2OT4gPDAwNkU+IDwwMDQ0PiA8MDA3NT4gPDAw
+NjM+IDwwMDY4PiA8MDA2ND4gPDAwNkY+IDwwMDQwPiA8MDA3Nj4gPDAwMkU+IDwwMDJCPiA8MDAz
+ND4gPDAwMzk+IDwwMDMzPiA8MDAzNz4gPDAwNEM+IDwwMDY2PiA8MDBGQz4gPDAwNzc+IDwwMDUz
+PiA8MDA2Nz4gPDAwNTU+IDwwMDRCPiA8MDAzQT4gPDAwNUE+IDwwMDQ5PiA8MDA0MT4gPDAwNEU+
+IF0KZW5kYmZyYW5nZQplbmRjbWFwCkNNYXBOYW1lIGN1cnJlbnRkaWN0IC9DTWFwIGRlZmluZXJl
+c291cmNlIHBvcAplbmQKZW5kCgplbmRzdHJlYW0KZW5kb2JqCjEwIDAgb2JqCjw8IC9UeXBlIC9G
+b250Ci9TdWJ0eXBlIC9UeXBlMAovQmFzZUZvbnQgL09wZW5TYW5zLUxpZ2h0Ci9FbmNvZGluZyAv
+SWRlbnRpdHktSAovRGVzY2VuZGFudEZvbnRzIFszNSAwIFJdCi9Ub1VuaWNvZGUgMzYgMCBSPj4K
+ZW5kb2JqCjM4IDAgb2JqCjw8IC9UeXBlIC9Gb250RGVzY3JpcHRvcgovRm9udE5hbWUgL1FNQkFB
+QStPcGVuU2Fucy1Cb2xkCi9GbGFncyA0IAovRm9udEJCb3ggWy02MTkuMTQwNjI1IC0yOTIuOTY4
+NzUwIDEzMTguODQ3NjUgMTA2OC44NDc2NSBdCi9JdGFsaWNBbmdsZSAwIAovQXNjZW50IDEwNjgu
+ODQ3NjUgCi9EZXNjZW50IC0yOTIuOTY4NzUwIAovQ2FwSGVpZ2h0IDEwNjguODQ3NjUgCi9TdGVt
+ViA0OS44MDQ2ODc1IAovRm9udEZpbGUyIDM5IDAgUgo+PgplbmRvYmoKMzkgMCBvYmoKPDwKL0xl
+bmd0aDEgNTMxMiAKL0xlbmd0aCA0MiAwIFIKL0ZpbHRlciAvRmxhdGVEZWNvZGUKPj4Kc3RyZWFt
+CnicdVgJXFTXuT/fnbsgWWScDYPKjCMzDDAMw2wigyyisijKKgKyg6iogCDigkRANIpLNMalvyfF
+vWkSTa0hfSbR55KoMWlqrM2rr6/1lzRpJNqkSZ5R5/K+c+9A/LXvzfVwzzn3LN/yP//vOxIghASQ
+DqIgZE6uLbZ/6c/DsGcrlvKF9W21gZ3GvVgfJCRoQ11NRXVtXvpEQpQN2Oeuw47RHwu3sH0c25Pq
+ljavumFSp2L7A2wP1C+vqihdX6QjZEwXtkuXVqxqILEkF9ufYVu/rGJpzSR7kpcQFUsInCUKbhxz
+lnCEcPs5B/aEym/Fx6QWHgcwzFMBvIJjGYb9M2HuJxF9Ma4SjoXYk3OnET3RD/n4UFFNugJ6mUI9
+gYP0G1vKnaG7oYYMOY/tQGwriECIQ2lQhhmUhvOKdF8o0+br4c48zKhj/0qADOCuIo4bJY3SGKQy
+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
+6ydnU22j/xciOyv/CmVuZHN0cmVhbQplbmRvYmoKNDIgMCBvYmoKNDAwMQplbmRvYmoKNDAgMCBv
+YmoKPDwgL1R5cGUgL0ZvbnQKL1N1YnR5cGUgL0NJREZvbnRUeXBlMgovQmFzZUZvbnQgL09wZW5T
+YW5zLUJvbGQKL0NJRFN5c3RlbUluZm8gPDwgL1JlZ2lzdHJ5IChBZG9iZSkgL09yZGVyaW5nIChJ
+ZGVudGl0eSkgL1N1cHBsZW1lbnQgMCA+PgovRm9udERlc2NyaXB0b3IgMzggMCBSCi9DSURUb0dJ
+RE1hcCAvSWRlbnRpdHkKL1cgWzAgWzU5NSA1NDQgNDUwIDU5OSA2NTIgNjE1IDI1OCA3MzQgNTg2
+IDU3MyA0OTMgMzAzIDMwMyA1NjQgMjgzIDYxNCA2NTIgNDMxIDk3NCAyODMgNjIzIDYxOCA5NTcg
+NTU2IDQ4NCA2MjggMzI4IDg0OSA1NDYgNzE1IDY1NSA1MTAgNjUyIDU2NiA1NjYgNTY2IDU3NiA1
+NjYgMjg4IDU2NiA1NjYgNTY2IDYyOCA3NTkgNjY3IDY3NCBdCl0KPj4KZW5kb2JqCjQxIDAgb2Jq
+Cjw8IC9MZW5ndGggNjc5ID4+CnN0cmVhbQovQ0lESW5pdCAvUHJvY1NldCBmaW5kcmVzb3VyY2Ug
+YmVnaW4KMTIgZGljdCBiZWdpbgpiZWdpbmNtYXAKL0NJRFN5c3RlbUluZm8gPDwgL1JlZ2lzdHJ5
+IChBZG9iZSkgL09yZGVyaW5nIChVQ1MpIC9TdXBwbGVtZW50IDAgPj4gZGVmCi9DTWFwTmFtZSAv
+QWRvYmUtSWRlbnRpdHktVUNTIGRlZgovQ01hcFR5cGUgMiBkZWYKMSBiZWdpbmNvZGVzcGFjZXJh
+bmdlCjwwMDAwPiA8RkZGRj4KZW5kY29kZXNwYWNlcmFuZ2UKMiBiZWdpbmJmcmFuZ2UKPDAwMDA+
+IDwwMDAwPiA8MDAwMD4KPDAwMDE+IDwwMDJEPiBbPDAwNDY+IDwwMDcyPiA8MDA2MT4gPDAwNkU+
+IDwwMDZCPiA8MDAyMD4gPDAwNDQ+IDwwMDY1PiA8MDA2Nz4gPDAwNzM+IDwwMDY5PiA8MDA2Qz4g
+PDAwNzY+IDwwMDJFPiA8MDA2Rj4gPDAwNzU+IDwwMDc0PiA8MDA2RD4gPDAwM0E+IDwwMDUwPiA8
+MDA2ND4gPDAwNEQ+IDwwMDQ1PiA8MDA3QT4gPDAwNzA+IDwwMDQ5PiA8MDA3Nz4gPDAwNTM+IDww
+MDQ3PiA8MDA1Mj4gPDAwNjM+IDwwMDY4PiA8MDAzMT4gPDAwMzA+IDwwMDM0PiA8MDAzOD4gPDAw
+MzY+IDwwMDJDPiA8MjBBQz4gPDAwMzc+IDwwMDMzPiA8MDA2Mj4gPDAwNDg+IDwwMDQyPiA8MDA0
+MT4gXQplbmRiZnJhbmdlCmVuZGNtYXAKQ01hcE5hbWUgY3VycmVudGRpY3QgL0NNYXAgZGVmaW5l
+cmVzb3VyY2UgcG9wCmVuZAplbmQKCmVuZHN0cmVhbQplbmRvYmoKOSAwIG9iago8PCAvVHlwZSAv
+Rm9udAovU3VidHlwZSAvVHlwZTAKL0Jhc2VGb250IC9PcGVuU2Fucy1Cb2xkCi9FbmNvZGluZyAv
+SWRlbnRpdHktSAovRGVzY2VuZGFudEZvbnRzIFs0MCAwIFJdCi9Ub1VuaWNvZGUgNDEgMCBSPj4K
+ZW5kb2JqCjQzIDAgb2JqCjw8IC9UeXBlIC9Gb250RGVzY3JpcHRvcgovRm9udE5hbWUgL1FSQkFB
+QStSb2JvdG9SZWd1bGFyCi9GbGFncyA0IAovRm9udEJCb3ggWy03MzYuODE2NDA2IC0yNzAuOTk2
+MDkzIDExNDguNDM3NTAgMTA1Ni4xNTIzNCBdCi9JdGFsaWNBbmdsZSAwIAovQXNjZW50IDkyNy43
+MzQzNzUgCi9EZXNjZW50IC0yNDQuMTQwNjI1IAovQ2FwSGVpZ2h0IDkyNy43MzQzNzUgCi9TdGVt
+ViA0OC44MjgxMjUwIAovRm9udEZpbGUyIDQ0IDAgUgo+PgplbmRvYmoKNDQgMCBvYmoKPDwKL0xl
+bmd0aDEgMzE4OCAKL0xlbmd0aCA0NyAwIFIKL0ZpbHRlciAvRmxhdGVEZWNvZGUKPj4Kc3RyZWFt
+CniclVZ9UBTnGX+ed/fuBEE9+cqkCnte4RDxODiOE1ADnojIhxaUGJXI5e7gTjgW7g7BRFKrLaKg
+tcZotGrUaabqVEOntQrpTIwTE0ubTDWTmSQTW2vrmASTaf1op8oefXZv8YO0f3R33n1/z/O+z/ez
+7y4gAEyATcABLK3Jyjly4pfHiNNHo76xeUPDzDfOXCd8C0A7xetxuj29ZcsIjxAvz0uM2Ju6JABd
+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
+0+Ii7B9bNLtEwg6qYEBxKERPp5KLiLNyfuTayvkBhzfgC4Z8zhaBHPEEQkGRmBUk4aJ9LUrl3STZ
+TtitSMqheZXOKaYec9K+CPWkTCZx/nsloMLn8rQEPW6hvcXtCQghr0cobnW6aFJXMoXHygJKI4bI
+VAEdA1nQodxmMvzIuJkMBCgXWZSNx50IEqeCGtwBJVAFNfScPeaENxRqLcjK6ujoMDsV42Yx0JjV
+HHEgmFVR5iipqimZLTvwH+c0x7EKZW5kc3RyZWFtCmVuZG9iago0NyAwIG9iagoyMTg1CmVuZG9i
+ago0NSAwIG9iago8PCAvVHlwZSAvRm9udAovU3VidHlwZSAvQ0lERm9udFR5cGUyCi9CYXNlRm9u
+dCAvUm9ib3RvUmVndWxhcgovQ0lEU3lzdGVtSW5mbyA8PCAvUmVnaXN0cnkgKEFkb2JlKSAvT3Jk
+ZXJpbmcgKElkZW50aXR5KSAvU3VwcGxlbWVudCAwID4+Ci9Gb250RGVzY3JpcHRvciA0MyAwIFIK
+L0NJRFRvR0lETWFwIC9JZGVudGl0eQovVyBbMCBbNDQwIDYxMSA1MjYgNTE5IDU0NiA1NDcgNTQ3
+IDU1NyA1MTIgODY5IDMzNiAyNDAgMjQ2IDU2NCA1NTcgNTU3IDU1NyA1NTcgXQpdCj4+CmVuZG9i
+ago0NiAwIG9iago8PCAvTGVuZ3RoIDQ4MyA+PgpzdHJlYW0KL0NJREluaXQgL1Byb2NTZXQgZmlu
+ZHJlc291cmNlIGJlZ2luCjEyIGRpY3QgYmVnaW4KYmVnaW5jbWFwCi9DSURTeXN0ZW1JbmZvIDw8
+IC9SZWdpc3RyeSAoQWRvYmUpIC9PcmRlcmluZyAoVUNTKSAvU3VwcGxlbWVudCAwID4+IGRlZgov
+Q01hcE5hbWUgL0Fkb2JlLUlkZW50aXR5LVVDUyBkZWYKL0NNYXBUeXBlIDIgZGVmCjEgYmVnaW5j
+b2Rlc3BhY2VyYW5nZQo8MDAwMD4gPEZGRkY+CmVuZGNvZGVzcGFjZXJhbmdlCjIgYmVnaW5iZnJh
+bmdlCjwwMDAwPiA8MDAwMD4gPDAwMDA+CjwwMDAxPiA8MDAxMT4gWzwwMDUyPiA8MDA2NT4gPDAw
+NjM+IDwwMDY4PiA8MDA2RT4gPDAwNzU+IDwwMDY3PiA8MDA3Mz4gPDAwNkQ+IDwwMDcyPiA8MDAz
+QT4gPDAwMjA+IDwwMDQ1PiA8MDAzMT4gPDAwMzA+IDwwMDM0PiA8MDAzNz4gXQplbmRiZnJhbmdl
+CmVuZGNtYXAKQ01hcE5hbWUgY3VycmVudGRpY3QgL0NNYXAgZGVmaW5lcmVzb3VyY2UgcG9wCmVu
+ZAplbmQKCmVuZHN0cmVhbQplbmRvYmoKMTEgMCBvYmoKPDwgL1R5cGUgL0ZvbnQKL1N1YnR5cGUg
+L1R5cGUwCi9CYXNlRm9udCAvUm9ib3RvUmVndWxhcgovRW5jb2RpbmcgL0lkZW50aXR5LUgKL0Rl
+c2NlbmRhbnRGb250cyBbNDUgMCBSXQovVG9Vbmljb2RlIDQ2IDAgUj4+CmVuZG9iagoyIDAgb2Jq
+Cjw8Ci9UeXBlIC9QYWdlcwovS2lkcyAKWwo1IDAgUgoxOCAwIFIKXQovQ291bnQgMgovUHJvY1Nl
+dCBbL1BERiAvVGV4dCAvSW1hZ2VCIC9JbWFnZUNdCj4+CmVuZG9iagp4cmVmCjAgNDgKMDAwMDAw
+MDAwMCA2NTUzNSBmIAowMDAwMDAwMDA5IDAwMDAwIG4gCjAwMDAwMjk0NjIgMDAwMDAgbiAKMDAw
+MDAwMDE2MyAwMDAwMCBuIAowMDAwMDAwMjU4IDAwMDAwIG4gCjAwMDAwMDMyMTMgMDAwMDAgbiAK
+MDAwMDAwMDI5NSAwMDAwMCBuIAowMDAwMDAzMDg5IDAwMDAwIG4gCjAwMDAwMTQ1MDMgMDAwMDAg
+biAKMDAwMDAyNTgwMyAwMDAwMCBuIAowMDAwMDIwMTU4IDAwMDAwIG4gCjAwMDAwMjkzMjIgMDAw
+MDAgbiAKMDAwMDAwMzEwOSAwMDAwMCBuIAowMDAwMDAzMTYxIDAwMDAwIG4gCjAwMDAwMDM1NjUg
+MDAwMDAgbiAKMDAwMDAwNjg4MiAwMDAwMCBuIAowMDAwMDAzMzM0IDAwMDAwIG4gCjAwMDAwMDM1
+NDUgMDAwMDAgbiAKMDAwMDAwNzM5NSAwMDAwMCBuIAowMDAwMDA2OTAzIDAwMDAwIG4gCjAwMDAw
+MDcyMjggMDAwMDAgbiAKMDAwMDAwNzA5OCAwMDAwMCBuIAowMDAwMDA2OTY3IDAwMDAwIG4gCjAw
+MDAwMDcyOTEgMDAwMDAgbiAKMDAwMDAwNzcwNSAwMDAwMCBuIAowMDAwMDA4MTM1IDAwMDAwIG4g
+CjAwMDAwMDc1MTcgMDAwMDAgbiAKMDAwMDAwNzY4NSAwMDAwMCBuIAowMDAwMDA4MTU1IDAwMDAw
+IG4gCjAwMDAwMDg0MTMgMDAwMDAgbiAKMDAwMDAxMzMwMyAwMDAwMCBuIAowMDAwMDEzNzIzIDAw
+MDAwIG4gCjAwMDAwMTMyODIgMDAwMDAgbiAKMDAwMDAxNDYzNyAwMDAwMCBuIAowMDAwMDE0OTAx
+IDAwMDAwIG4gCjAwMDAwMTkwMjkgMDAwMDAgbiAKMDAwMDAxOTQyNyAwMDAwMCBuIAowMDAwMDE5
+MDA4IDAwMDAwIG4gCjAwMDAwMjAyOTkgMDAwMDAgbiAKMDAwMDAyMDU2MiAwMDAwMCBuIAowMDAw
+MDI0Njc1IDAwMDAwIG4gCjAwMDAwMjUwNzIgMDAwMDAgbiAKMDAwMDAyNDY1NCAwMDAwMCBuIAow
+MDAwMDI1OTQyIDAwMDAwIG4gCjAwMDAwMjYyMDUgMDAwMDAgbiAKMDAwMDAyODUwMiAwMDAwMCBu
+IAowMDAwMDI4Nzg3IDAwMDAwIG4gCjAwMDAwMjg0ODEgMDAwMDAgbiAKdHJhaWxlcgo8PAovU2l6
+ZSA0OAovSW5mbyAxIDAgUgovUm9vdCAyMyAwIFIKPj4Kc3RhcnR4cmVmCjI5NTY3CiUlRU9GCg==
+
+--Apple-Mail-73A3F410-9B8E-4A20-82F3-AE18B76A0079
+Content-Type: text/html;
+	charset=us-ascii
+Content-Transfer-Encoding: 7bit
+
+<html><head><meta http-equiv="content-type" content="text/html; charset=us-ascii"></head><body dir="auto"><blockquote type="cite"><div></div></blockquote></body></html>
+--Apple-Mail-73A3F410-9B8E-4A20-82F3-AE18B76A0079--
+
+--Apple-Mail-9C43BCFA-CF7F-4B03-9752-CDECC3303898--

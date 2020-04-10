@@ -1,14 +1,14 @@
-# Simple Checkout 
+# Simple checkout
 
 This is an alternative checkout implementation with only one step involved.
 
-## How to configure the simple checkout
+## How to configure simple checkout
 
 Replace the CheckoutController with the SimpleCheckoutController in routing.yml:
 
 **routing.yml**
 
-```
+``` yaml
  path:  /checkout
  defaults:
 -   _controller: SisoCheckoutBundle:Checkout:index
@@ -17,23 +17,19 @@ Replace the CheckoutController with the SimpleCheckoutController in routing.yml:
     breadcrumb_names: Shopping basket/Checkout
 ```
 
-Replace checkout.js with simple\_checkout.js:
+Replace `checkout.js` with `simple_checkout.js` in `pagelayout.html.twig`:
 
-**pagelayout.html.twig**
-
-``` 
+``` html+twig
 {% javascripts
 -'bundles/silversolutionseshop/js/phalanx/hoplite/checkout/checkout.js'
 +'bundles/silversolutionseshop/js/phalanx/hoplite/checkout/simple_checkout.js'
 %}
 ```
 
-DESCRIPTION
+`checkout.yml`:
 
-**checkout.yml**
-
-```
- checkoutForms:
+``` yaml
+checkoutForms:
     invoice:
         modelClass: Siso\Bundle\CheckoutBundle\Form\CheckoutInvoiceAddress
         #typeService: siso_checkout.form_entity.checkout_invoice_address_type

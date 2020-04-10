@@ -1,4 +1,4 @@
-#  Additional data in the basket line 
+# Additional data in the basket line
 
 ## Line remark
 
@@ -8,25 +8,25 @@ By default you can enable additional text in the basket line:
 
 **basket.yml**
 
-``` 
+``` yaml
 #enable/disable additional text line in basket per basket line
 ses_basket.default.additional_text_for_basket_line: false
 ```
 
 In the basket line it looks like:
 
-![](attachments/23560228/23571105.png)
+![](../../img/basket_additional_data_1.png)
 
 To set a different value for the parameter there are 2 possibilities.
 
-  - Override the app/config/parameters.yml file.
-  - Within "configuration settings" in eCommerce tab in the backend.
+- Override the app/config/parameters.yml file.
+- Within "configuration settings" in eCommerce tab in the backend.
 
-![](attachments/23560228/23571104.png)
+![](../../img/basket_additional_data_2.png)
 
 The input length of this field is controlled by a setting. This is important since the ERP might not accept text longer than a given limit. 
 
-``` 
+``` yaml
 ses_basket.default.additional_text_for_basket_line_input_limit: 30
 ```
 
@@ -40,10 +40,4 @@ To add some additional information to the basket line **only the template** will
 <input type="hidden" name="ses_basket[{{ loop.index }}][test]" value="some text"/>
 
 <input type="text" name="ses_basket[{{ loop.index }}][NewText]" value ="Lorem Ipsum... "/>
- 
 ```
-
-## Attachments:
-
-![](images/icons/bullet_blue.gif) [SettingsBackEnd.png](attachments/23560228/23571104.png) (image/png)  
-![](images/icons/bullet_blue.gif) [AdditionalData.png](attachments/23560228/23571105.png) (image/png)  

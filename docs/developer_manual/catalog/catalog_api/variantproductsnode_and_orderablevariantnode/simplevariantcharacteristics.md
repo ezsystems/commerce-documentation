@@ -1,8 +1,8 @@
-#  SimpleVariantCharacteristics 
+# SimpleVariantCharacteristics
 
 SimpleVariantCharacteristics implements **VariantCharacteristicsInterface** and contains all necessary data using three associated arrays. Structure of the arrays see below:
 
-``` 
+``` php
 private $characteristics;
 
 //structure looks like
@@ -79,4 +79,4 @@ $variantAttributes = array(
 );
 ```
 
-To access the all variant codes from the template, [Variant Services](Variant-Services_23560238.html) has been implemented.
+To access the all variant codes from the template, [Variant Services](variant_services.md) has been implemented.

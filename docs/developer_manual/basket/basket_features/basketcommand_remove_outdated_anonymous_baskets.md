@@ -1,17 +1,17 @@
-#  BasketCommand - remove outdated anonymous baskets 
+# BasketCommand - remove outdated anonymous baskets
 
 Deletes all anonymous baskets from the DB that are older than validHours.
 
-``` 
+``` php
 // Usage: silversolutions:baskets:clear [validHours]
 php bin/console silversolutions:baskets:clear
 ```
 
 #### Configuration 
 
-**Silversolutions\\Bundle\\EshopBundle\\Resources\\config\\basket.yml**
+`Silversolutions\Bundle\EshopBundle\Resources\config\basket.yml`
 
-``` 
+``` yaml
 parameters: 
     ses_basket.default.validHours: 120
 ```

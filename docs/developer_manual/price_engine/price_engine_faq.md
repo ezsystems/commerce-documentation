@@ -1,16 +1,16 @@
-#  Price Engine - FAQ 
+# Price engine FAQ
 
-Does the price engine support volume based prices?
+## Does the price engine support volume based prices?
 
 It depends on the Priceprovider.
 
 The Priceprovider ERP will provide volume based prices as defined in the ERP.
 
-How do i get delivery costs or additional costs?
+## How do i get delivery costs or additional costs?
 
-The price provider returns such a informations as *additional lines* with a special *type*.
+The price provider returns such information as additional lines with a special type.
 
-``` 
+``` php
 $additionalLines = array();
 $additionalLines[] = $this->createShippingPriceLine();
 $priceResponse?setAdditionalLines($additionalLines);
@@ -62,13 +62,13 @@ $priceResponse?setAdditionalLines($additionalLines);
     }
 ```
 
-![](attachments/23560383/23563288.png)
+![](../img/price_engine_1.png)
 
-How can i access stock information?
+## How can i access stock information?
 
 You can get stock information from the PriceLine in the PriceResponse
 
-``` 
+``` php
 $priceResponse = $priceService->getPrices($priceRequest, $contextId);
 
 foreach ($priceResponse->getLines() as $priceLine) {
@@ -81,59 +81,62 @@ foreach ($priceResponse->getLines() as $priceLine) {
 }
 ```
 
-How the currency is handled?
+## How is currency handled?
 
 It depends on the Priceprovider.
 
-  - LocalPriceProvider is using the customer currency that is set in the PriceRequest.
-  - RemotePriceProvider is using the currency returned from the ERP and if not set, it is also using the customer currency.
+- LocalPriceProvider is using the customer currency that is set in the PriceRequest.
+- RemotePriceProvider is using the currency returned from the ERP and if not set, it is also using the customer currency.
 
-How can i pass additional information to the price provider?
+## How can i pass additional information to the price provider?
 
 If your price provider needs some additional information, you can provide them in several ways:
 
-  - On the top level in *extendedData*
+- On the top level in `extendedData`
 
-    ``` 
-    $priceRequest = new PriceRequest();
-    $extendedData = array(
-        'customerId' => 126,
-        'email' => 'test@testaccount.com'
-    );
-    
-    $priceRequest->setExtendedData($extendedData);
-    ```
-  - On the line level in  *extendedData* 
+``` php
+$priceRequest = new PriceRequest();
+$extendedData = array(
+    'customerId' => 126,
+    'email' => 'test@testaccount.com'
+);
 
-    ``` 
-    $priceLine = new PriceLine();
-    $extendedData = array(
-       'remark'  => $customerRemark
-    );
-    
-    $priceLine->setExtendedData($extendedData);
-    ```
-  - You can also pass additional data in the parties, if they are connected to a customer
+$priceRequest->setExtendedData($extendedData);
+```
 
-    ``` 
-    $priceRequest = new PriceRequest();
-    $buyerParty = $customerProfileDataService->getDefaultBuyerParty();
-    $buyerParty->SesExtension->value['customerGroup'] = 'WIKI';
-    
-    $priceRequest->setBuyerParty($buyerParty);
-    ```
+- On the line level in `extendedData`
 
-How can i find out which provider did calculate my prices?
+``` php
+$priceLine = new PriceLine();
+$extendedData = array(
+   'remark'  => $customerRemark
+);
+
+$priceLine->setExtendedData($extendedData);
+```
+
+- You can also pass additional data in the parties, if they are connected to a customer
+
+``` php
+$priceRequest = new PriceRequest();
+$buyerParty = $customerProfileDataService->getDefaultBuyerParty();
+$buyerParty->SesExtension->value['customerGroup'] = 'WIKI';
+
+$priceRequest->setBuyerParty($buyerParty);
+```
+
+## How can I find out which provider calculated my prices?
 
 If the price provider calculated the prices, it will set a source type in the PriceResponse. This source type can be evaluated.
 
 Possible source types:
 
-    PriceConstants::PRICE_RESPONSE_SOURCE_TYPE_REMOTE = 'remote'
+```
+PriceConstants::PRICE_RESPONSE_SOURCE_TYPE_REMOTE = 'remote'
+PriceConstants::PRICE_RESPONSE_SOURCE_TYPE_LOCAL = 'local'
+```
 
-    PriceConstants::PRICE_RESPONSE_SOURCE_TYPE_LOCAL = 'local'
-
-``` 
+``` php
 //if the prices were not calculated by a remote source, set an error message in the basket
 if ($priceResponse->getSourceType() !== PriceConstants::PRICE_RESPONSE_SOURCE_TYPE_REMOTE) {
     $basket->setErrorMessage(
@@ -142,17 +145,17 @@ if ($priceResponse->getSourceType() !== PriceConstants::PRICE_RESPONSE_SOURCE_TY
 }
 ```
 
-What happens in case the ERP is not available?
+## What happens in case the ERP is not available?
 
 For the basket the LocalPriceProvider will calculate prices as a fallback. The customer will see an error message that the realtime prices are not available at the moment - if the remote price provider was configured in the chain on the first place. See: [When an error message is shown?](#PriceEngine-FAQ-error_message)
 
-When an error message is shown?
+## When is an error message shown?
 
 When the chain for your context id was configured in a way, that the first provider is remote and the remote price calculation fails, en error message might be displayed. The shop will check the chain for your context id. So it is possible that in the basket there is an error message displayed if the remote price calculation failed, but not in the wishlit.
 
-You have to configure the service id of the remote price provider\!
+You have to configure the service id of the remote price provider.
 
-``` 
+``` yaml
 #configure the service id of the remote price provider
 siso_price.default.price_service_chain_remote: siso_price.price_provider.remote
 
@@ -167,15 +170,10 @@ siso_price.default.price_service_chain.wish_list:
  - siso_price.price_provider.local
 ```
 
-Why can user see/not see prices on product detail page with/without the necessary role?
+## Why can user see/not see prices on product detail page with/without the necessary role?
 
-Caching has to be configured to use user-hash in order to display the correct product detail page to anonymous or registered users. If this is not done, the first call will be cached for all users\!
+Caching has to be configured to use user-hash in order to display the correct product detail page to anonymous or registered users. If this is not done, the first call will be cached for all users.
 
-Why can user not see prices in sliders, catalog list, product detail or comparison?
+## Why can user not see prices in sliders, catalog list, product detail or comparison?
 
-They don't have the necessary role to see prices, it has to be configured for users in the backend. (siso\_policy/see\_product\_price)
-
-## Attachments:
-
-![](images/icons/bullet_blue.gif) [Bildschirmfoto 2015-06-11 um 10.57.16.png](attachments/23560383/23563489.png) (image/png)  
-![](images/icons/bullet_blue.gif) [add.png](attachments/23560383/23563288.png) (image/png)  
+They don't have the necessary role to see prices, it has to be configured for users in the backend. (`siso_policy/see_product_price`)

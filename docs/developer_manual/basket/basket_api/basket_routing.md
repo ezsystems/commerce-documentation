@@ -1,13 +1,13 @@
-#  Basket Routing 
+# Basket routing
 
 The basket provides the following routes:
 
 | Route          | Controller     | Controller name                  | Description                                                                  |
 | -------------- | -------------- | -------------------------------- | ---------------------------------------------------------------------------- |
-| /basket/show   | showAction()   | silversolutions\_basket\_show    | shows Basket with all BasketLines                                            |
-| /basket/add    | addAction()    | silversolutions\_add\_to\_basket | adds a product (product list) to the basket with given SKU                   |
-| /basket/update | updateAction() | silversolutions\_basket\_update  | changes attributes (e.g. quantity) of BasketLine in the Basket for given SKU |
-| /basket/delete | deleteAction() | silversolutions\_basket\_delete  | removes a BasketLine from the Basket by the given BasketLine ID              |
+| /basket/show   | showAction()   | silversolutions_basket_show    | shows Basket with all BasketLines                                            |
+| /basket/add    | addAction()    | silversolutions_add_to_basket | adds a product (product list) to the basket with given SKU                   |
+| /basket/update | updateAction() | silversolutions_basket_update  | changes attributes (e.g. quantity) of BasketLine in the Basket for given SKU |
+| /basket/delete | deleteAction() | silversolutions_basket_delete  | removes a BasketLine from the Basket by the given BasketLine ID              |
 
 ## Used messages
 
@@ -21,6 +21,7 @@ The basket provides the following routes:
 ## Route /basket/show
 
 Shows Basket with all BasketLines. The controller loads the template SilversolutionsEshopBundle:Basket:show.html.twig.  
+
 | Parameter | Type   | Description                                   |
 | --------- | ------ | ------------------------------------------------------------------------------------- |
 | basket    | Basket | optional. This parameter cannot be provided as a POST parameter. It´s used internally |
@@ -48,17 +49,17 @@ Adds one or more products to the basket. After adding the product the basket wil
 
 | Parameter                            | Type   | Description |
 | ------------------------------------ | ------ | --------------------------------------------------- |
-| ses\_basket\[0\]\[quantity\]         | float  | Quantity to be set                                  |
-| ses\_basket\[0\]\[sku\] | string | Sku of the BasketLine                               |
+| ses_basket[0][quantity]         | float  | Quantity to be set                                  |
+| ses_basket[0][sku] | string | Sku of the BasketLine                               |
 
 ## Route /basket/update
 
-Updates the current basket. After updating the basket the basket will be displayed. If the given quantity is 0, deleteAction() is called and the product is removed.
+Updates the current basket. After updating the basket the basket will be displayed. If the given quantity is 0, `deleteAction()` is called and the product is removed.
 
 | Parameter                            | Type   | Description |
 | ------------------------------------ | ------ | --------------------------------------------------- |
-| ses\_basket\[0\]\[quantity\]         | float  | Quantity to be set                                  |
-| ses\_basket\[0\]\[sku\] | string | Sku of the BasketLine                               |
+| ses_basket[0][quantity]         | float  | Quantity to be set                                  |
+| ses_basket[0][sku] | string | Sku of the BasketLine                               |
 
 ## Route /basket/delete
 
@@ -67,7 +68,3 @@ Removes one line from the basket. After deleting the line the basket will be dis
 | Parameter | Type | Description |
 | --------- | ---- | --------------------------------------------------- |
 | id        | int  | ID of BasketLine that should be deleted             |
-
-## Attachments:
-
-![](images/icons/bullet_blue.gif) [Bildschirmfoto 2015-08-06 um 08.37.35.png](attachments/23560294/23563292.png) (image/png)  

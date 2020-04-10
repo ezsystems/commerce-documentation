@@ -1,25 +1,25 @@
-#  Product comparison - API 
+# Product comparison API
 
-### Basket type
+## Basket type
 
-Comparison is a [Basket](http://confluence.ng.silverproducts.de/display/EX/Entities) with a special type '*comparison*'. 
+Comparison is a Basket with a special type `comparison`. 
 
 When adding items no Events are thrown, therefore from the performance perspective it is quicker than adding items into basket. However, there is no data validation in the background, so it is allowed to mix different products. So the data validation, like checking the minimum order amount or checking the mixing of downloads with normal products, is done when adding those items into cart.
 
-``` 
+``` php
 // \Silversolutions\Bundle\EshopBundle\Services\BasketService
 const TYPE_COMPARISON = 'comparison';
 ```
 
-#### Additional Attributes
+## Additional attributes
 
-In order to handle the necessary additional data for the comparison list, new attributes are added to the basket instances of type '*comparison*'. These attributes are **not declared** in the class [Basket](http://confluence.ng.silverproducts.de/display/EX/Entities) , but must be **added dynamically** by the ComparisonServiceInterface implementation.
+In order to handle the necessary additional data for the comparison list, new attributes are added to the basket instances of type `comparison`. These attributes are **not declared** in the class Basket, but must be **added dynamically** by the ComparisonServiceInterface implementation.
 
 ##### $comparisonAttributes
 
 This is an associative array, which defines the comparable attributes for the current object's comparison category. The sub-structure looks as following:
 
-``` 
+``` php
 array(
     'Group Name' => array( // attribute group (e.g. 'Technical information')
         'list' => array( // static array key
@@ -53,7 +53,7 @@ array(
 
 Comparison feature has an interface, which determines methods necessary to implement different comparison services. 
 
-``` 
+``` php
 interface ComparisonServiceInterface {
 
     // Determines the correct comparison category for the given catalog element.

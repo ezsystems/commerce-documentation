@@ -1,16 +1,20 @@
-#  Customers - Cookbook 
+# Customers cookbook
 
 ## How to manage / administrate delivery addresses
 
-All code examples in this document are written in the context of a ContainerAwareCommand implementation. Please note the code comments, as they give further implementation details.
+!!! tip
 
-Web-Connector \>= 3.0 for NAV with Web-Services is assumed to be the target system in these examples. For other ERP Systems and former versions of the Web-Connector / NAV, the process and data are likely to differ slightly. The external field 'Key', and the logic bound to it, is specific for this setup.
+    All code examples in this document are written in the context of a ContainerAwareCommand implementation. Please note the code comments, as they give further implementation details.
+
+!!! note
+
+    Web-Connector \>= 3.0 for NAV with Web-Services is assumed to be the target system in these examples. For other ERP Systems and former versions of the Web-Connector / NAV, the process and data are likely to differ slightly. The external field 'Key', and the logic bound to it, is specific for this setup.
 
 ## Create a new delivery address in NAV
 
 Delivery address management / -administration follows the standard process for all ERP messages. The following example depicts a simple implementation with hard coded address values. Please note the hint for the Code field. The Key field is explained later in the update message.
 
-``` 
+``` php
 // Get the necessary services
 $messageInq = $this->getContainer()->get('silver_erp.message_inquiry_service');
 $messageTrans = $this->getContainer()->get('silver_erp.message_transport');
@@ -53,7 +57,7 @@ $key = $response->DeliveryParty->SesExtension->value['Key'];
 
 In NAV, the address code is needed additionally to the party identification in order to fetch a delivery address.
 
-``` 
+``` php
 // Get the necessary services
 $messageInq = $this->getContainer()->get('silver_erp.message_inquiry_service');
 $messageTrans = $this->getContainer()->get('silver_erp.message_transport');
@@ -75,7 +79,7 @@ $response = $messageTrans->sendMessage($msg)->getResponseDocument();
 
 In order to update an address, the complete data must be sent (changed and unchanged fields), together with the Key value of the last read data. The Key is a consistency check for the update. If the data in NAV changed since it was fetched the last time, the Keys of the update request and in NAV would mismatch and the request fails. In that case, the data must be fetched again and the current changes must be merged into the new data from NAV. This might need user interaction (i.e. several HTTP requests) and goes beyond the scope of this tutorial. After that, the merged data must be sent again in an update request with the new Key.
 
-``` 
+``` php
 // Get the necessary services
 $messageInq = $this->getContainer()->get('silver_erp.message_inquiry_service');
 $messageTrans = $this->getContainer()->get('silver_erp.message_transport');
@@ -115,7 +119,7 @@ $lastKey = isset($response->DeliveryParty->SesExtension->value['Key'])
 
 For the deletion of addresses, only the Key is needed for the request. But again, the value must match in NAV, else the request is rejected and the data must be re-fetched in order to get the new Key (and new data for a potential review of the changes).
 
-``` 
+``` php
 // Get the necessary services
 $messageInq = $this->getContainer()->get('silver_erp.message_inquiry_service');
 $messageTrans = $this->getContainer()->get('silver_erp.message_transport');

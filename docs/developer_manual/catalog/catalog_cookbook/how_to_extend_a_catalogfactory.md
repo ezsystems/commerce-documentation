@@ -1,22 +1,22 @@
-#  How to extend a CatalogFactory 
+# How to extend a CatalogFactory
 
-## Why to extend a CatalogFactory?
+## Why extend a CatalogFactory?
 
 If you need to prepare special fields for products or categories, or you need to do a mapping, then the easiest way is to extend the CatalogFactory.
 
 The factory maps the data from the provider to the standard CatalogElements or ProductNodes. It is called every time a product is provided by the data provider. For each provider a factory is defined. Some data providers could be Ez Content or econtent. The data provider is defined the following parameter 
 
 ``` 
- silver_eshop.default.catalog_data_provider
+silver_eshop.default.catalog_data_provider
 ```
 
 For more information about data providers you could check this link: [Catalog data provider](http://confluence.extranet.silversolutions.de:8090/display/EX/Catalog+data+providers)
 
 The following example will provide one more mapping for a complex field type Keyword.
 
-The ContentType ses\_product has been extended. A new field Tags (ezkeyword) has been added. In the backend you can now add tags to your products:
+The ContentType `ses_product` has been extended. A new field Tags (ezkeyword) has been added. In the backend you can now add tags to your products:
 
-![](attachments/23561020/23570810.png)
+![](../../img/catalog_cookbook_1.png)
 
 ## How to override the CatalogFactory?
 
@@ -24,7 +24,7 @@ The ContentType ses\_product has been extended. A new field Tags (ezkeyword) has
 
 Create the new class that will extend the Catalog Factory.
 
-``` 
+``` php
 namespace AppBundle\Services;
  
 /**
@@ -46,7 +46,7 @@ Define the new class as a service in your service definition file:
 
 Or in YML format:
 
-``` 
+``` yaml
 parameters:
     silver_catalog.ez5_catalog_factory.class: AppBundle\Services\ProjecteZCatalogFactory
 ```
@@ -59,7 +59,7 @@ The easiest way is to inject the new services using Symfony setter injection. So
 
 The extended service will do the mapping for the Keyword FieldType.  To simplify the example the Keyword field always uses the name "tags". An extended implementation could use the identifier of the eZ object directly. 
 
-``` 
+``` php
 <?php
 
 namespace AppBundle\Services;
@@ -123,9 +123,9 @@ class ProjecteZCatalogFactory extends Ez5CatalogFactory
 
 ## Extend the template and show display the keywords
 
-You can extend the default template "SilversolutionsEshopBundle:Catalog:parts/productData.html.twig" in your Bundle. The follwoing example make use of the theme option of the Template Resolver and requires some config settings :
+You can extend the default template `SilversolutionsEshopBundle:Catalog:parts/productData.html.twig` in your Bundle. The following example makes use of the theme option of the Template Resolver and requires some config settings :
 
-``` 
+``` yaml
 siso_tools.default.template_resolver.enabled: true
 siso_tools.site_group.template_resolver.bundles: [AppBundle]
 siso_tools.site_group.template_resolver.designs: [site_group]
@@ -133,9 +133,9 @@ siso_tools.site_group.template_resolver.designs: [site_group]
 
 The new field "tags" will be available in the dataMap of the CatalogElement. 
 
-src/AppBundle/Resources/views/designs/site\_group/Catalog/parts/productData.html.twig
+src/AppBundle/Resources/views/designs/site_group/Catalog/parts/productData.html.twig
 
-``` 
+``` html+twig
 {% if catalogElement.dataMap.tags is defined %}
     <p class="u-no-margin">
         <strong>{{ 'Tags'|st_translate }}</strong>
@@ -145,7 +145,3 @@ src/AppBundle/Resources/views/designs/site\_group/Catalog/parts/productData.html
     </p>
 {% endif %}
 ```
-
-## Attachments:
-
-![](images/icons/bullet_blue.gif) [image2019-3-6\_9-5-4.png](attachments/23561020/23570810.png) (image/png)  

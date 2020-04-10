@@ -1,8 +1,8 @@
-#  Search Statistics 
+# Search statistics
 
 eZ Commerce provides a functionality to display the searches that are performed by the users. Every search query is logged into the database table: 
 
-    ses_log_search
+`ses_log_search`
 
 ``` 
 mysql> select * from ses_log_search order by log_timestamp DESC limit 20;
@@ -37,95 +37,84 @@ This search statistics can be displayed in eCommerce cockpit
 
 This logic is generated in the following service:
 
-    QuerySearchLogService
+`QuerySearchLogService`
 
 There are 3 tables displayed
 
-<table>
-<thead>
-<tr class="header">
-<th><br />
-</th>
-<th><br />
-</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><div class="content-wrapper">
-<h3 id="SearchStatistics-Topsearchterms">Top search terms</h3>
-<p>Description:</p>
-<pre><code>Get the most searched terms order by times searched.</code></pre>
-<p>Query:</p>
-<pre class="" data-syntaxhighlighter-params="brush: java; gutter: false; theme: Confluence" data-theme="Confluence"><code>$queryBuilder = $this-&gt;searchOrmLogRepository-&gt;createQueryBuilder(&#39;ses_log_search&#39;)
-    -&gt;select(
+## Top search Terms
+
+Get the most searched terms order by times searched.
+
+Query:
+
+``` php
+$queryBuilder = $this->searchOrmLogRepository->createQueryBuilder('ses_log_search')
+    ->select(
         array(
-            &#39;ses_log_search.logMessage&#39;,
-            &#39;count(ses_log_search.logMessage) as amount&#39;,
-            &#39;avg(ses_log_search.results) as hits&#39;
+            'ses_log_search.logMessage',
+            'count(ses_log_search.logMessage) as amount',
+            'avg(ses_log_search.results) as hits'
         ))
-    -&gt;where(&#39;ses_log_search.logLevel = 200&#39;)
-    -&gt;andWhere(&#39;ses_log_search.shopId = :shopId &#39;)
-    -&gt;groupBy(&#39;ses_log_search.logMessage&#39;)
-    -&gt;orderBy(&#39;amount&#39;, &#39;DESC&#39;)
-    -&gt;setMaxResults($limit)
-    -&gt;setParameter(&#39;shopId&#39;, $shopId);</code></pre>
-</td>
-<td><div class="content-wrapper">
-<img src="attachments/23560968/23563493.png" class="confluence-embedded-image" height="400" />
-</td>
-</tr>
-<tr>
-<td><div class="content-wrapper">
-<h3 id="SearchStatistics-Lastsearchterms">Last search terms</h3>
-<p>Description:</p>
-<pre><code>Get the last searches order by date and time.</code></pre>
-<p>Query:</p>
-<pre class="" data-syntaxhighlighter-params="brush: java; gutter: false; theme: Confluence" data-theme="Confluence"><code>$queryBuilder = $this-&gt;searchOrmLogRepository-&gt;createQueryBuilder(&#39;ses_log_search&#39;)
-    -&gt;select(
+    ->where('ses_log_search.logLevel = 200')
+    ->andWhere('ses_log_search.shopId = :shopId ')
+    ->groupBy('ses_log_search.logMessage')
+    ->orderBy('amount', 'DESC')
+    ->setMaxResults($limit)
+    ->setParameter('shopId', $shopId);
+```
+
+![](../../img/search_10.png)
+
+### Last search terms
+
+Get the last searches order by date and time.
+
+Query:
+
+``` php
+
+$queryBuilder = $this->searchOrmLogRepository->createQueryBuilder('ses_log_search')
+    ->select(
         array(
-            &#39;ses_log_search.logTimestamp&#39;,
-            &#39;ses_log_search.logMessage&#39;,
-            &#39;ses_log_search.results&#39;
+            'ses_log_search.logTimestamp',
+            'ses_log_search.logMessage',
+            'ses_log_search.results'
         ))
-    -&gt;where(&#39;ses_log_search.logLevel = 200&#39;)
-    -&gt;andWhere(&#39;ses_log_search.shopId = :shopId &#39;)
-    -&gt;orderBy(&#39;ses_log_search.logTimestamp&#39;, &#39;DESC&#39;)
-    -&gt;setMaxResults($limit)
-    -&gt;setParameter(&#39;shopId&#39;, $shopId);
-</code></pre>
-</td>
-<td><div class="content-wrapper">
-<img src="attachments/23560968/23563491.png" class="confluence-embedded-image" height="400" />
-</td>
-</tr>
-<tr>
-<td><div class="content-wrapper">
-Most searched terms with less results
-<pre><code>Get the most searched terms with less hits.</code></pre>
-<pre><code>This means something that the user is interested in, but with no results.</code></pre>
-<p>Query:</p>
-<pre class="" data-syntaxhighlighter-params="brush: java; gutter: false; theme: Confluence" data-theme="Confluence"><code>$queryBuilder = $this-&gt;searchOrmLogRepository-&gt;createQueryBuilder(&#39;ses_log_search&#39;)
-    -&gt;select(
+    ->where('ses_log_search.logLevel = 200')
+    ->andWhere('ses_log_search.shopId = :shopId ')
+    ->orderBy('ses_log_search.logTimestamp', 'DESC')
+    ->setMaxResults($limit)
+    ->setParameter('shopId', $shopId);
+```
+
+![](../../img/search_11.png)
+
+### Most searched terms with less results
+
+Get the most searched terms with less hits.
+
+This means something that the user is interested in, but with no results.
+
+Query:
+
+``` php
+$queryBuilder = $this->searchOrmLogRepository->createQueryBuilder('ses_log_search')
+    ->select(
         array(
-            &#39;ses_log_search.logMessage&#39;,
-            &#39;count(ses_log_search.logMessage) as amount&#39;,
-            &#39;sum(ses_log_search.results) as hits&#39;
+            'ses_log_search.logMessage',
+            'count(ses_log_search.logMessage) as amount',
+            'sum(ses_log_search.results) as hits'
         ))
-    -&gt;where(&#39;ses_log_search.logLevel = 200&#39;)
-    -&gt;andWhere(&#39;ses_log_search.shopId = :shopId &#39;)
-    -&gt;groupBy(&#39;ses_log_search.logMessage&#39;)
-    -&gt;orderBy(&#39;hits&#39;, &#39;ASC&#39;)
-    -&gt;addOrderBy(&#39;amount&#39;, &#39;DESC&#39;)
-    -&gt;setMaxResults($limit)
-    -&gt;setParameter(&#39;shopId&#39;, $shopId);</code></pre>
-</td>
-<td><div class="content-wrapper">
-<img src="attachments/23560968/23563503.png" class="confluence-embedded-image" height="400" />
-</td>
-</tr>
-</tbody>
-</table>
+    ->where('ses_log_search.logLevel = 200')
+    ->andWhere('ses_log_search.shopId = :shopId ')
+    ->groupBy('ses_log_search.logMessage')
+    ->orderBy('hits', 'ASC')
+    ->addOrderBy('amount', 'DESC')
+    ->setMaxResults($limit)
+    ->setParameter('shopId', $shopId);
+```
+
+![](../../img/search_12.png)
 
 ### Additional notes
 
@@ -133,11 +122,5 @@ Search queries from main search box are logged
 
 Search queries from second search box are logged only if:
 
-  - No facets are selected
-  - Search term is different than previous search term.
-
-## Attachments:
-
-![](images/icons/bullet_blue.gif) [Screen Shot 2017-02-23 at 16.34.48.png](attachments/23560968/23563493.png) (image/png)  
-![](images/icons/bullet_blue.gif) [Screen Shot 2017-02-23 at 16.35.02.png](attachments/23560968/23563491.png) (image/png)  
-![](images/icons/bullet_blue.gif) [Screen Shot 2017-02-23 at 16.35.13.png](attachments/23560968/23563503.png) (image/png)  
+- No facets are selected
+- Search term is different than previous search term. 

@@ -1,13 +1,12 @@
+# Breadcrumbs FAQ
 
-#  Breadcrumbs - FAQ 
-
-Why do the breadcrumbs for my controller only display the root element?
+## Why do the breadcrumbs for my controller only display the root element?
 
 Please check the routing.yml.
 
 The RoutesBreadcrumbsGenerator need at least the parameter "**breadcrumb\_path**". This parameter usually contains the key of the current routing definition.
 
-``` 
+``` yaml
 custom_blog_index:
     pattern:  /blog/index
     defaults:
@@ -16,13 +15,13 @@ custom_blog_index:
         breadcrumb_names: Blog List
 ```
 
-Some or all elements of the breadcrumbs display strange words like some\_route\_name|breadcrumb?
+## Some or all elements of the breadcrumbs display strange words like `some_route_name|breadcrumb`?
 
 Please check the routing.yml.
 
-Either no breadcrumb\_names is defined, like:
+Either no `breadcrumb_names` is defined, like:
 
-``` 
+``` yaml
 custom_blog_index:
     pattern:  /blog/index
     defaults:
@@ -30,9 +29,9 @@ custom_blog_index:
         breadcrumb_path: custom_blog_index
 ```
 
-Or the number of elements in breadcrumb\_names and breadcrumb\_path differ, like:
+Or the number of elements in `breadcrumb_names` and `breadcrumb_path` differ, like:
 
-``` 
+``` yaml
 custom_blog_index:
     pattern:  /blog/index
     defaults:
@@ -43,7 +42,7 @@ custom_blog_index:
 
 In these cases, the fallback implementation tries to translate the respective breadcrumb\_path elements with context "breadcrumb", which most likely are not translated. The best solution is to have proper path and names configuration and existing translations for the breadcrumb\_names' elements:
 
-``` 
+``` yaml
 custom_blog_index:
     pattern:  /blog/index
     defaults:
@@ -52,25 +51,21 @@ custom_blog_index:
         breadcrumb_names: Blog List/New blog post
 ```
 
-TODO This example represents the status quo, but does not respect the  [translations standards](#).
-
-Why are no breadcrumbs displayed at all?
-
-TODO Better description
+## Why are no breadcrumbs displayed at all?
 
 Possibilities:
 
-  - The 'breadcrumb' block of the pagelayout.html.twig template was overridden by the currently displayed, extending template with emtpy content.
-  - The matched generator encountered an error and didn't render the breadcrumbs
-  - Very unlikely but not impossible: No generator matched at all. But in the standard setup, the lowest prio RoutesBreadcrumbsGenerator checks the active Router service to match the active Request service. That's SHOULD be always the case.
+- The 'breadcrumb' block of the pagelayout.html.twig template was overridden by the currently displayed, extending template with emtpy content.
+- The matched generator encountered an error and didn't render the breadcrumbs
+- Very unlikely but not impossible: No generator matched at all. But in the standard setup, the lowest prio RoutesBreadcrumbsGenerator checks the active Router service to match the active Request service. That's SHOULD be always the case.
 
-How can breadcrumbs be limited to their ez content in sub shops?
+## How can breadcrumbs be limited to their ez content in sub shops?
 
-The parameter 'content.tree\_root.location\_id 'is used to limit the sub shops to their ez content ( contains Node ID of the desired catalog).
+The parameter `content.tree_root.location_id` is used to limit the sub shops to their ez content (contains Node ID of the desired catalog).
 
-If 'content.tree\_root.location\_id'is set, a criterion is used in the CatalogHelper.php to fetch the correct product catalog instead of the default one.
+If `content.tree_root.location_id` is set, a criterion is used in the CatalogHelper.php to fetch the correct product catalog instead of the default one.
 
-``` 
+``` php
 if ($this->configResolver->hasParameter('content.tree_root.location_id')) {
                 $ezLocationRootId = $this->configResolver->getParameter('content.tree_root.location_id');
                 $ezLocationRoot = $this->locationService->loadLocation($ezLocationRootId);
@@ -80,7 +75,7 @@ if ($this->configResolver->hasParameter('content.tree_root.location_id')) {
             }
 ```
 
-What is the purpose of the additional data stored in translationParameters?
+## What is the purpose of the additional data stored in translationParameters?
 
 This data can be used to define, for example if a breadcrumb of an eZNode should be clickable or hidden.
 
@@ -112,8 +107,4 @@ Example for not clickable breadcrumbs with bold text, if crumb.translationParame
 {% endif %}
 ```
 
-![](attachments/23560760/23563701.png)  
-
-## Attachments:
-
-![](images/icons/bullet_blue.gif) [image2017-6-30\_15-14-55.png](attachments/23560760/23563701.png) (image/png)  
+![](../img/breadcrumbs_faq.png)  

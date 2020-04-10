@@ -1,18 +1,18 @@
-#  Search - API 
+# Search API
 
-# The Search Interface
+## The Search Interface
 
-## General class/interface architecture
+### General class/interface architecture
 
-![](attachments/23560412/23563229.png)
+![](../../img/search_6.png)
 
-## EshopSearchInterface
+### EshopSearchInterface
 
 This interface represents the entry point for every search.
 
-**\\Siso\\Bundle\\SearchBundle\\Api\\EshopSearchInterface**
+`\Siso\Bundle\SearchBundle\Api\EshopSearchInterface`
 
-``` 
+``` php
 namespace Siso\Bundle\SearchBundle\Api;
 
 /**
@@ -79,13 +79,13 @@ interface EshopSearchInterface
 }
 ```
 
-## EshopQuery
+### EshopQuery
 
 This is the value object class for all search query parameters.
 
-**\\Siso\\Bundle\\SearchBundle\\Api\\EshopQuery**
+`\Siso\Bundle\SearchBundle\Api\EshopQuery`
 
-``` 
+``` php
 namespace Siso\Bundle\SearchBundle\Api;
 
 /**
@@ -182,15 +182,15 @@ class EshopQuery
 }
 ```
 
-## SearchContext
+### SearchContext
 
-The current Controller implementation for the e-shop search uses a service call to instantiate the SearchContext: \\Siso\\Bundle\\SearchBundle\\Service\\SearchContextService. It has the service ID: siso\_search.search\_context\_service.default. In order to change the default implementation, this service must be overridden.
+The current Controller implementation for the e-shop search uses a service call to instantiate the SearchContext: `\Siso\Bundle\SearchBundle\Service\SearchContextService`. It has the service ID: `siso_search.search_context_service.default`. In order to change the default implementation, this service must be overridden.
 
 The search context defines context information for the query, which are not search clauses. For example data, related to the site access (which was addressed by the HTTP request). This information can be used by the respective search service implementation.
 
-**\\Siso\\Bundle\\SearchBundle\\Api\\SearchContext**
+`\Siso\Bundle\SearchBundle\Api\SearchContext`:
 
-``` 
+``` php
 namespace Siso\Bundle\SearchBundle\Api;
 
 /** 
@@ -205,11 +205,11 @@ class SearchContext extends ValueObject
 }
 ```
 
-## SearchContextServiceInterface
+### SearchContextServiceInterface
 
 Implementations of this interface are used by the standard search controller in order to get the instance of the SearchContext.
 
-**\\Siso\\Bundle\\SearchBundle\\Api\\SearchContextServiceInterface**
+`\Siso\Bundle\SearchBundle\Api\SearchContextServiceInterface`:
 
 ``` 
 namespace Siso\Bundle\SearchBundle\Api;
@@ -227,11 +227,11 @@ interface SearchContextServiceInterface
 }
 ```
 
-## SearchClauseInterface
+### SearchClauseInterface
 
 This marker interface has no methods. It's used for instanceof checks and type hinting for all sub-interfaces or -classes.
 
-``` 
+``` php
 namespace Siso\Bundle\SearchBundle\Api;
 
 /**
@@ -243,13 +243,13 @@ interface SearchClauseInterface
 }
 ```
 
-## ConditionInterface
+### ConditionInterface
 
 This is also just a marker interface.
 
-**\\Siso\\Bundle\\SearchBundle\\Api\\ConditionInterface**
+`\Siso\Bundle\SearchBundle\Api\ConditionInterface`:
 
-``` 
+``` php
 namespace Siso\Bundle\SearchBundle\Api;
 
 /**
@@ -261,11 +261,11 @@ interface ConditionInterface extends SearchClauseInterface
 }
 ```
 
-## SortCriterionInterface
+### SortCriterionInterface
 
 Basic interface for all sort criteria.
 
-``` 
+``` php
 namespace Siso\Bundle\SearchBundle\Api;
 
 /**
@@ -288,13 +288,13 @@ interface SortCriterionInterface extends SearchClauseInterface
 }
 ```
 
-## FacetInterface
+### FacetInterface
 
 This is a simple setter getter interface for facets.
 
-**\\Siso\\Bundle\\SearchBundle\\Api\\FacetInterface**
+`\Siso\Bundle\SearchBundle\Api\FacetInterface`
 
-``` 
+``` php
 namespace Siso\Bundle\SearchBundle\Api;
 
 /**
@@ -373,13 +373,13 @@ interface FacetInterface extends SearchClauseInterface
 }
 ```
 
-## FacetOptionInterface
+### FacetOptionInterface
 
 This is a simple setter and getter interface for facet options.
 
-**\\Siso\\Bundle\\SearchBundle\\Api\\FacetOptionInterface**
+`\Siso\Bundle\SearchBundle\Api\FacetOptionInterface`:
 
-``` 
+``` php
 namespace Siso\Bundle\SearchBundle\Api;
 
 /**
@@ -441,13 +441,13 @@ interface FacetOptionInterface
 }
 ```
 
-## FacetServiceInterface
+### FacetServiceInterface
 
-The handling of facets can be a complex process and easily messes up controller and template code very quickly. The purpose of this interface is to collect complex correlations of the request and response processes of facets in one class. It is RECOMMENDED to use only this interface for facet handling and create new implementations of it, if the current standard (\\Siso\\Bundle\\SearchBundle\\Service\\SimpleProductFieldFacetService) is not sufficient.
+The handling of facets can be a complex process and easily messes up controller and template code very quickly. The purpose of this interface is to collect complex correlations of the request and response processes of facets in one class. It is RECOMMENDED to use only this interface for facet handling and create new implementations of it, if the current standard (`\Siso\Bundle\SearchBundle\Service\SimpleProductFieldFacetService`) is not sufficient.
 
-**\\Siso\\Bundle\\SearchBundle\\Api\\FacetServiceInterface**
+`\Siso\Bundle\SearchBundle\Api\FacetServiceInterface`
 
-``` 
+``` php
 namespace Siso\Bundle\SearchBundle\Api;
 
 /**
@@ -495,13 +495,13 @@ interface FacetServiceInterface
 }
 ```
 
-## SearchClauseHandlerInterface
+### SearchClauseHandlerInterface
 
 Basic search clause handler interface.
 
-**\\Siso\\Bundle\\SearchBundle\\Api\\SearchClauseHandlerInterface**
+`\Siso\Bundle\SearchBundle\Api\SearchClauseHandlerInterface`
 
-``` 
+``` php
 namespace Siso\Bundle\SearchBundle\Api;
 
 /**
@@ -525,13 +525,13 @@ interface SearchClauseHandlerInterface
 }
 ```
 
-## EzSearchClauseHandlerInterface
+### EzSearchClauseHandlerInterface
 
 For specific implementations which use the eZ Platform Search API for queries.
 
-**\\Siso\\Bundle\\SearchBundle\\Api\\EzSearchClauseHandlerInterface**
+`\Siso\Bundle\SearchBundle\Api\EzSearchClauseHandlerInterface`
 
-``` 
+``` php
 use eZ\Publish\API\Repository\Values\Content\Query;
 
 /**
@@ -550,13 +550,13 @@ interface EzSearchClauseHandlerInterface extends SearchClauseHandlerInterface
 }
 ```
 
-## SortServiceInterface
+### SortServiceInterface
 
 Interface that defines methods for setting the correct sort criteria for the search query.
 
-It is RECOMMENDED to use only this interface for sorting and create new implementations of it, if the current standard (\\Siso\\Bundle\\SearchBundle\\Service\\DefaultSortService) is not sufficient.
+It is RECOMMENDED to use only this interface for sorting and create new implementations of it, if the current standard (`\Siso\Bundle\SearchBundle\Service\DefaultSortService`) is not sufficient.
 
-``` 
+``` php
 namespace Siso\Bundle\SearchBundle\Api;
 
 /**
@@ -605,8 +605,3 @@ interface SortServiceInterface
     public function setCatalogSorting(EshopQuery $eshopQuery, array $params);
 } 
 ```
-
-## Attachments:
-
-![](images/icons/bullet_blue.gif) [Search-API-general-architecture.svg](attachments/23560412/23563228.svg) (image/svg+xml)  
-![](images/icons/bullet_blue.gif) [Search-API-general-architecture.png](attachments/23560412/23563229.png) (image/png)  

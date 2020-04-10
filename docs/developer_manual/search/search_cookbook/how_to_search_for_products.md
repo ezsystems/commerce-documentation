@@ -1,8 +1,8 @@
-#  How to search for products 
+# How to search for products
 
 This examples is using the product search API in order to search products using a searchterm:
 
-``` 
+``` php
  /**
      * Returns all products
      * @param $offset

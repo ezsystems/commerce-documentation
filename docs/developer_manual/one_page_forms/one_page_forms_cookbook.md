@@ -1,8 +1,8 @@
-#  One-page forms - Cookbook 
+# One-page forms cookbook
 
 ## How to implement a new one-page form?
 
-The best way to make yourself known with the concept is to implement a new one-page form. Let´s say, you want to implement a form, that enables the user to order the product catalog in a printed form.
+The best way to make yourself known with the concept is to implement a new one-page form. Let's say, you want to implement a form, that enables the user to order the product catalog in a printed form.
 
 User will input his email address and confirm, that he wants to order the catalog. Afterwards an email should be send to the shop administrator.
 
@@ -10,20 +10,20 @@ User will input his email address and confirm, that he wants to order the catalo
 
 The basic form components have to be build in the first step:
 
-  - Form entity
-  - Form type
-  - Form template
+- Form entity
+- Form type
+- Form template
 
 #### Form entity
 
 Form entity is just a simple class that holds the data. No business logic is defined here. This is the place where you have to define:
 
-  - form attributes
-  - [validation](One-page-forms---API_23560842.html)
+- form attributes
+- [validation](one_page_forms_api.md)
 
-Every form entity has to extend the *AbstractFormEntity.*
+Every form entity has to extend the `AbstractFormEntity`.
 
-``` 
+``` php
 namespace Company\Bundle\ProjectBundle\Form;
 
 use Silversolutions\Bundle\EshopBundle\Entities\Forms\AbstractFormEntity;
@@ -87,7 +87,7 @@ Form type defines which form attributes will be rendered and how, you can define
 
 It is recommended to define this type as a service, so you can inject any logic that you need.
 
-``` 
+``` php
 namespace Company\Bundle\ProjectBundle\Form\Type;
 
 use eZ\Publish\Core\MVC\ConfigResolverInterface;
@@ -164,11 +164,12 @@ class OrderCatalogType extends AbstractType
     {
         return 'company_order_catalog_type';
     }
+}
 ```
 
-**Service definition** Expand source 
+Service definition:
 
-``` 
+``` xml
 <service id="company.order_catalog_type" class="Company\Bundle\ProjectBundle\Form\Type\OrderCatalogType">
     <argument type="service" id="silver_trans.translator" />    
 </service>
@@ -178,9 +179,9 @@ class OrderCatalogType extends AbstractType
 
 Then you need to prepare template, that will render your form. See also [How to render Symfony forms](https://symfony.com/doc/current/form/form_customization.html).
 
-**src/Company/Bundle/ProjectBundle/Resources/views/Forms/order\_catalog.html.twig** Expand source 
+`src/Company/Bundle/ProjectBundle/Resources/views/Forms/order_catalog.html.twig`:
 
-``` 
+``` html+twig
 {% extends "SilversolutionsEshopBundle::pagelayout.html.twig"|st_resolve_template %}
  
 {% block content %}
@@ -209,7 +210,7 @@ Then you need to prepare template, that will render your form. See also [How to 
 
 If you need, you can implement a service, that will pre-fill your form with default data. Therefore the *preDataProcessor* will be used. However, this step is optional.
 
-``` 
+``` php
 namespace Company\Bundle\ProjectBundle\Service\DataProcessor;
 
 use Silversolutions\Bundle\EshopBundle\Services\Forms\DataProcessor\AbstractDataProcessor;
@@ -253,9 +254,9 @@ class PreFillOrderCatalogDataProcessor extends AbstractDataProcessor
 } 
 ```
 
-**Service definition** Expand source 
+Service definition:
 
-``` 
+``` xml
 <service id="company.pre_data_processor.pre_fill_order_catalog"
          class="Company\Bundle\ProjectBundle\Service\DataProcessor\PreFillOrderCatalogDataProcessor">    
     <argument type="service" id="ses.customer_profile_data.ez_erp" />
@@ -264,9 +265,9 @@ class PreFillOrderCatalogDataProcessor extends AbstractDataProcessor
 
 #### Implement the processes behind
 
-Implement one or more *dataProcessors*, that will be executed, after the form was submitted.
+Implement one or more `dataProcessors`, that will be executed, after the form was submitted.
 
-``` 
+``` php
 namespace Company\Bundle\ProjectBundle\Service\DataProcessor;
 
 use Silversolutions\Bundle\EshopBundle\Entities\Forms\Normalize\Entity as NormalizedEntity;
@@ -350,9 +351,9 @@ class OrderCatalogSendEmailDataProcessor extends AbstractDataProcessor
 } 
 ```
 
-**Service definition** Expand source 
+Service definition:
 
-``` 
+``` xml
 <service id="company.data_processor.order_catalog_send_email"
          class="Company\Bundle\ProjectBundle\Service\DataProcessor\OrderCatalogSendEmailDataProcessor">
     <argument type="service" id="siso_tools.mailer_helper" />
@@ -367,7 +368,7 @@ class OrderCatalogSendEmailDataProcessor extends AbstractDataProcessor
 
 Create form configuration in order to build the fully functional one-page form.
 
-``` 
+``` yaml
 parameters:
     ses_forms.configs.order_catalog:
         modelClass: Company\Bundle\ProjectBundle\Form\OrderCatalog
@@ -382,59 +383,43 @@ parameters:
 
 #### Form URL
 
-You can use any of the predefined [*FormsController::formsAction* routes](One-page-forms---Templates_23560838.html) in order to call your form, or even define a new one. In our example (see Form template) we have used following route:
+You can use any of the predefined [`FormsController::formsAction` routes](one_page_forms_templates.md) in order to call your form, or even define a new one. In our example we have used following route:
 
-``` 
+``` html+twig
 <form action="{{ path('silversolutions_service', {'formTypeResolver': 'order_catalog'}) }}"
   method="post" {{ form_enctype(form) }}>
 ```
 
-Call your form by the url and enjoy\!
+Call your form by the url: `/service/order_catalog`
 
-``` 
-/service/order_catalog
-```
+## reCAPTCHA
 
-# reCAPTCHA
+### How to activate existing reCAPTCHA implementation in forms?
 
-## How to activate existing reCPATCHA implementation in forms?
+#### Generate the reCAPTCHA API-Key pair
 
-### Generate the reCAPTCHA API-Key pair
+Go to: http://www.google.com/recaptcha/admin
 
-Go to: <http://www.google.com/recaptcha/admin>
+Login with developer.silversolutions@gmail.com. Password is in our wiki.
 
-Login with <developer.silversolutions@gmail.com>. Password is in our wiki.
+Register a new domain to get a pair of keys.
 
-![](plugins/servlet/confluence/placeholder/unknown-attachment "image2017-2-27 8:56:30.png")
+#### Configure the reCAPTCHA
 
-![](plugins/servlet/confluence/placeholder/unknown-attachment "image2017-2-27 8:53:36.png")
+Add the generated keys to your `parameters.yml`:
 
-![](plugins/servlet/confluence/placeholder/unknown-attachment "image2017-2-27 8:48:27.png")
-
-Register a new domain to get a pair of keys:
-
-![](plugins/servlet/confluence/placeholder/unknown-attachment "image2017-1-18 11:25:9.png")
-
-![](plugins/servlet/confluence/placeholder/unknown-attachment "image2017-1-18 11:24:3.png")
-
-### Configure the reCAPTCHA
-
-Add the generated keys to your parameters.yml:
-
-**parameters.yml**
-
-``` 
+``` yaml
 ewz_recaptcha_public_key: 6L************************************ev
 ewz_recaptcha_private_key: 6L************************************hF
 ```
  
-## How to add reCAPTCHA to a form?
+### How to add reCAPTCHA to a form?
 
 Extend your desired form entity and type like in this examples:
 
-**vendor/silversolutions/silver.e-shop/src/Silversolutions/Bundle/EshopBundle/Entities/Forms/RegisterBusiness.php** Expand source 
+`vendor/silversolutions/silver.e-shop/src/Silversolutions/Bundle/EshopBundle/Entities/Forms/RegisterBusiness.php`:
 
-``` 
+``` php
 <?php
 /**
  * Product silver.e-shop
@@ -747,9 +732,9 @@ class RegisterBusinessType extends AbstractType
 }
 ```
 
-**vendor/silversolutions/silver.e-shop/src/Silversolutions/Bundle/EshopBundle/Entities/Forms/Types/RegisterBusinessType.php** Expand source 
+`vendor/silversolutions/silver.e-shop/src/Silversolutions/Bundle/EshopBundle/Entities/Forms/Types/RegisterBusinessType.php`:
 
-``` 
+``` php
 use EWZ\Bundle\RecaptchaBundle\Validator\Constraints as Recaptcha;
 
 class RegisterBusiness extends AbstractRegistration
@@ -760,11 +745,11 @@ class RegisterBusiness extends AbstractRegistration
     public $recaptcha;
 ```
 
-When you have extended the form entity and type you must add a parameter to forms.yml and extend configuration\_core.yml ( silver\_form\_type\_business ):
+When you have extended the form entity and type you must add a parameter to forms.yml and extend `configuration_core.yml` (`silver_form_type_business`):
 
-**vendor/silversolutions/silver.e-shop/src/Silversolutions/Bundle/EshopBundle/Resources/config/forms.yml** Expand source 
+`vendor/silversolutions/silver.e-shop/src/Silversolutions/Bundle/EshopBundle/Resources/config/forms.yml`
 
-``` 
+``` yaml
 parameters:
     #recaptcha configuration
     ewz_recaptcha_public_key: public_key
@@ -789,9 +774,9 @@ parameters:
     #recaptcha configuration end
 ```
 
-**vendor/silversolutions/silver.e-shop/src/Silversolutions/Bundle/EshopBundle/Resources/config/backend/configuration\_core.yml** Expand source 
+`vendor/silversolutions/silver.e-shop/src/Silversolutions/Bundle/EshopBundle/Resources/config/backend/configuration_core.yml`
 
-``` 
+``` yaml
 siso_core.default.recaptcha:
     group: core
     type: array
@@ -821,9 +806,4 @@ siso_core.default.recaptcha_options.defer:
 siso_core.default.recaptcha_options.async:
     group: core
     type: boolean
-```
-  
-## Attachments:
-
-![](images/icons/bullet_blue.gif) [image2017-2-27 13:17:6.png](attachments/23560845/23563338.png) (image/png)  
-![](images/icons/bullet_blue.gif) [image2017-2-27 15:12:0.png](attachments/23560845/23563339.png) (image/png)  
+```  

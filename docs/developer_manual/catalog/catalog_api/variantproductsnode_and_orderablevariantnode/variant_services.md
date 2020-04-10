@@ -1,48 +1,25 @@
-#  Variant Services 
+# Variant Services
 
 ## VariantService
 
 The goal of this service is to return [OrderableVariantNode](23560374.html) based on [VariantProductNode](23560374.html) and variantCode. This service also returns all available variant codes for the [VariantProductNode](23560374.html).
 
-``` 
+``` php
 /** @var VariantService $variantService */
 $variantService = $this->get('silver_catalog.variant_service');
 ```
 
 #### Service methods
 
-<table>
-<thead>
-<tr class="header">
-<th>Method</th>
-<th>Usage</th>
-<th>Parameters</th>
-<th>Return</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><pre><code>createOrderableProductFromVariant</code></pre></td>
-<td><pre><code>Returns OrderableVariantNode from VariantProductNode,</code></pre>
-<pre><code>so it can be added into basket.</code></pre></td>
-<td><pre><code>VariantProductNode $node</code></pre>
-<pre><code>string $variantCode</code></pre></td>
-<td><pre><code>OrderableVariantNode</code></pre></td>
-</tr>
-<tr>
-<td><pre><code>getVariantInformation</code></pre></td>
-<td><pre><code>Returns available variant codes for each given characteristic.</code></pre>
-<pre><code>If variant is orderable it returns also it&#39;s code.</code></pre></td>
-<td><pre><code>VariantProductNode $variantProduct</code></pre>
-<pre><code>array $variants = array()</code></pre></td>
-<td><pre><code>array()</code></pre></td>
-</tr>
-</tbody>
-</table>
+|Method|Usage|Parameters|Return|
+|--- |--- |--- |--- |
+|createOrderableProductFromVariant|Returns OrderableVariantNode from VariantProductNode,</br>so it can be added into basket.|VariantProductNode $node</br>string $variantCode|OrderableVariantNode|
+|getVariantInformation|Returns available variant codes for each given characteristic.</br>If variant is orderable it returns also it's code.|VariantProductNode $variantProduct</br>array $variants = array()|array()|
+
 
 ##### Usage
 
-``` 
+``` php
 //   e.g. $variants = array(
 //            'Color' => 'grn', 
 //            'Unit' => 'box'
@@ -59,59 +36,18 @@ $catalogElement = $variantService->createOrderableProductFromVariant($catalogEle
 
 The VariantSortService should return the product variants in an ordered form, so they can be easily shown in the template.
 
-``` 
+``` php
 /** @var $sortService \Silversolutions\Bundle\EshopBundle\Services\VariantSortService */
 $sortService = $this->container->get('silver_catalog.variants_sort_service');
 ```
 
 ##### Service methods
 
-<table>
-<colgroup>
-<col style="width: 20%" />
-<col style="width: 20%" />
-<col style="width: 20%" />
-<col style="width: 20%" />
-<col style="width: 20%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th>Method</th>
-<th>Usage</th>
-<th>Parameters</th>
-<th>Return</th>
-<th>Twig method</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>sortCharacteristicCodes</td>
-<td><p>sorts the characteristic codes</p></td>
-<td><p>array $characteristicCodes</p>
-<p>$characteristicIndex</p></td>
-<td>array()</td>
-<td>sort_characteristic_codes()</td>
-</tr>
-<tr>
-<td>sortCharacteristics</td>
-<td>sorts characteristics</td>
-<td><p>array $characteristics<br />
-$type<br />
-$order</p></td>
-<td>array()</td>
-<td>sort_characteristics()</td>
-</tr>
-<tr>
-<td>getCharacteristicsForB2B</td>
-<td>get information for B2B variant table</td>
-<td><p>VariantProductNode $catalogElement</p>
-<p>array $order</p></td>
-<td>array()</td>
-<td><br />
-</td>
-</tr>
-</tbody>
-</table>
+|Method|Usage|Parameters|Return|Twig method|
+|--- |--- |--- |--- |--- |
+|sortCharacteristicCodes|sorts the characteristic codes|array $characteristicCodes</br>$characteristicIndex|array()|sort_characteristic_codes()|
+|sortCharacteristics|sorts characteristics|array $characteristics</br>$type</br>$order|array()|sort_characteristics()|
+|getCharacteristicsForB2B|get information for B2B variant table|VariantProductNode $catalogElement</br>array $order|array()||
 
 ##### Usage
 
@@ -131,7 +67,7 @@ eZ Commerce provides the ability to configure sorting of variant characteristics
 
 If you want to change an order for specific catalog element type (e.g. vegetable), so e.g. Color is displayed as a first option you can use configuration for it.
 
-``` 
+``` yaml
 #sorting order for variant characteristics
 #e.g. vegetable is the catalog element type
 silver_eshop.default.catalog_type:
@@ -139,16 +75,17 @@ silver_eshop.default.catalog_type:
         characteristics_order: ["1","2","3"],
 ```
 
-The type of Catalog Element is set by the [CatalogFactory](#) , so if you are using different types for your products, you have to extend the configuration.
+!!! note
 
+    The type of Catalog Element is set by the [CatalogFactory](#) , so if you are using different types for your products, you have to extend the configuration.
+
+    ```
     silver_eshop.default.catalog_type:
         notebook:
             characteristics_order: ["1", "2"]
         monitor:
-
-``` 
         characteristics_order: ["2", "3"]
-```
+        ```
 
 #### Sorting within one characteristic
 
@@ -158,10 +95,10 @@ By default all characteristics are already sorted with ASC order.
 
 ##### Example
 
-  - Colors will not be sorted (default order from eZ Matrix will be used)
-  - Width will be sorted in DESC order.
+- Colors will not be sorted (default order from eZ Matrix will be used)
+- Width will be sorted in DESC order.
 
-``` 
+``` yaml
 # by default the list of all variant codes is sorted alphabetically in the ASC order
 # allowed values for order: ASC, DESC
 # allowed values for sort: true, false

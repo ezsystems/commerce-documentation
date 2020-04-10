@@ -1,10 +1,10 @@
-# Basketpreview cache and user specific data 
+# Basketpreview cache and user-specific data
 
 silver.eShop uses a lot of dynamic data which has to be displayed in the shop:
 
-  - The basket preview showing the number of products and a list of products
-  - The name of the customer
-  - The number of items in the wishlist
+- The basket preview showing the number of products and a list of products
+- The name of the customer
+- The number of items in the wishlist
 
 In order to improve the caching and speed up page loading a special route is used to provide the dynamic data using a REST call. It would be possible to use ESI blocks to cache the user specific data inside a page but this concept has some restrictions since it is not very reliable (there is no cache by user/session but a cache by cookie hash which might cause issues when 3rd party software are changing the data stored in a cookie).
 
@@ -12,7 +12,7 @@ This concept allows to cache pages in a more effizient way and to place dynamic 
 
 ## The REST route
 
-The route "silversolutions\_session\_data" is used to send a call to the server to get the updated data for the dynamic attributes.
+The route `silversolutions_session_data` is used to send a call to the server to get the updated data for the dynamic attributes.
 
 By default the following attributes are returned:
 
@@ -21,10 +21,10 @@ By default the following attributes are returned:
 The response is cached via the http cache. It is purged whenever an basket is updated or a customer logs in.
 After page load a JS will fetch the current data from the server and updates
 
-  - the part showing who is logged in 
-  - the basket preview
+- the part showing who is logged in 
+- the basket preview
       
-![](../img/basketpreview_1.png)
+![](../img/basketpreview_2.png)
 
 ### JS Event
 
@@ -51,14 +51,15 @@ The modules section can be used for project specific data using a tagged service
 <tag name="siso_core.session_data" alias="mydata"/>
 ```
 
-The alias "mydata" is used as a key in the modules section. 
+The alias "mydata" is used as a key in the modules section.
+
 ### Working with html fragments
 
-Each service implementing the SessionDataInterface can return HTML fragments. The keys used should use the id of an container inside your site. silver.eShop will replace this container automatically using the prepared HTML.
+Each service implementing the SessionDataInterface can return HTML fragments. The keys used should use the id of an container inside your site. silver.eShop will replace this container automatically using the prepared HTML.
 
 Example how to provide the data in a service:
 
-```
+``` php
 /**
  * Get header login session data
  *
@@ -77,14 +78,15 @@ public function getSessionData()
 }
 ```
 
-**The corresponding div in the website needs to use the key (headerLoginDesktop) e.g. as a id:**
+The corresponding div in the website needs to use the key (headerLoginDesktop) e.g. as an id:
 
 ```
 <ul class="inline-list c-nav-meta" id="headerLoginDesktop">
 ...
 </ul>
 ```
-##  How to update existing projects
+
+## How to update existing projects
 
 Allow to access cookie via JS:
 
@@ -104,7 +106,7 @@ Add vue.js in pagelayout.html.twig within header:
 
 Add the routeconfig to the pagelayout.html.twig at the beginning of javascripts block:
 
-``` 
+``` html+twig
 {% block javascripts %}
 
 <script type="text/json" id="ses-url-config">
@@ -115,9 +117,9 @@ Add the routeconfig to the pagelayout.html.twig at the beginning of javascripts 
 </script>
 ```
 
-Add 3 javascript files to pagelayout.html.twig:
+Add 3 javascript files to pagelayout.html.twig:
 
-``` 
+``` html+twig
 // If you plan to support the old IE as well:
 <script src="https://cdn.jsdelivr.net/npm/es6-promise@4/dist/es6-promise.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/es6-promise@4/dist/es6-promise.auto.js"></script> 
@@ -129,30 +131,25 @@ Add 3 javascript files to pagelayout.html.twig:
 ....
 ```
 
-The twig block "basket\_preview" in pagelayout.html.twig has to be changed using a static HTML markup which will be replaced by JS after loading the session data:
+The twig block `basket_preview` in pagelayout.html.twig has to be changed using a static HTML markup which will be replaced by JS after loading the session data:
 
-``` 
+``` html+twig
 {% block basket_preview %}
        {# This block is rendered via JS #}
        <div class="item c-icon-bar__item--fluid c-icon-bar__item--primary js-basket-flyout inactive">
-                              <a class="c-icon-bar__items-wrap"
-                                 href=""
-                                 data-dropdown="dropdown-basket">
-                                <div class="c-icon-bar__border">
-                                  <div class="c-icon-bar__labels show-for-large-up">
-                                    <h5 class="c-icon-bar__heading">{{ 'Shopping basket'|st_translate }}</h5>
-                                    <span class="c-icon-bar__label" data-price-wrap="user">
-                                  <div class="c-icon-bar__icons u-inline-block right">
-                                    <i class="fa fa-shopping-cart c-icon-bar__icon-main">
-                                      <span class="label alert round c-icon-bar__counter">
-                                    </i>
-                                    <i class="fa fa-caret-down right c-icon-bar__icon-secondary"></i>
-                                  
-                              </a>
+          <a class="c-icon-bar__items-wrap"
+             href=""
+             data-dropdown="dropdown-basket">
+            <div class="c-icon-bar__border">
+              <div class="c-icon-bar__labels show-for-large-up">
+                <h5 class="c-icon-bar__heading">{{ 'Shopping basket'|st_translate }}</h5>
+                <span class="c-icon-bar__label" data-price-wrap="user">
+              <div class="c-icon-bar__icons u-inline-block right">
+                <i class="fa fa-shopping-cart c-icon-bar__icon-main">
+                  <span class="label alert round c-icon-bar__counter">
+                </i>
+                <i class="fa fa-caret-down right c-icon-bar__icon-secondary"></i>
+              
+          </a>
 {% endblock %}
 ```
-
-## Attachments:
-
-![](images/icons/bullet_blue.gif) [image2019-8-20\_11-52-48.png](attachments/29818889/29821570.png) (image/png)  
-![](images/icons/bullet_blue.gif) [image2019-8-28\_11-26-47.png](attachments/29818889/29821493.png) (image/png)  

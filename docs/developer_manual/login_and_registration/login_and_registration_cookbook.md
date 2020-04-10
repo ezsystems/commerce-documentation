@@ -1,4 +1,4 @@
-# Login and registration - Cookbook 
+# Login and registration cookbook
 
 ## Login process adaptation in 3 steps
 
@@ -12,22 +12,19 @@ eZ Commerce is able to check credentials not only specified by username and pass
 
 The very first part in the authentication process is the AuthenticationListener. This listener is able to read the posted values from the login form and create a UserToken.
 
-The default Symfony listener had to be extended to collect more information (customer\_number). In the standard Symfony login form only username and password are allowed.
+The default Symfony listener had to be extended to collect more information (`customer_number`). In the standard Symfony login form only username and password are allowed.
 
-Our extended listener implements the same interface **AbstractAuthenticationListener.** 
+Our extended listener implements the same interface AbstractAuthenticationListener.
 
-<table>
-<tbody>
-<tr>
-<td><p>services.xml </p></td>
-<td><pre><code>&lt;parameter key=&quot;security.authentication.listener.form.class&quot;&gt;Silversolutions\Bundle\EshopBundle\Service\Security\CustomFormAuthenticationListener&lt;/parameter&gt;</code></pre></td>
-</tr>
-</tbody>
-</table>
+`services.xml`:
+
+``` xml
+<parameter key="security.authentication.listener.form.class">Silversolutions\Bundle\EshopBundle\Service\Security\CustomFormAuthenticationListener</parameter>
+```
 
 We have to create different UsernamePasswordToken (using TokenInterface) here. We have to add new attribute to the token "customer\_no" . This UsernamePasswordToken will be passed to next service in the authentication process.
 
-``` 
+``` php
 $token = new UsernamePasswordToken($username, $password, $this->providerKey);
 $token->setAttribute('customer_no', $customerNo);
 ```
@@ -42,45 +39,29 @@ It uses "**locationId**" in the ez backend to determine **private/b2b customers.
 
 It provides a checkEzUser method which checks the location and customer number of the given user.
 
-<table>
-<colgroup>
-<col style="width: 50%" />
-<col style="width: 50%" />
-</colgroup>
-<tbody>
-<tr>
-<td><p>services.xml </p></td>
-<td><pre><code>&lt;parameter key=&quot;ezpublish.security.user_provider.class&quot;&gt;Silversolutions\Bundle\EshopBundle\Service\Security\UserProvider&lt;/parameter&gt;</code></pre></td>
-</tr>
-</tbody>
-</table>
+``` xml
+<parameter key="ezpublish.security.user_provider.class">Silversolutions\Bundle\EshopBundle\Service\Security\UserProvider</parameter>
+```
 
 ### AuthenticationProvider
 
 The very first part in the authentication process is the AuthenticationListener. This listener is able to read the posted values from the login form and create a UserToken.
 
-The default Symfony listener had to be extended to collect more information (customer_number). In the standard Symfony login form only username and password are allowed.
+The default Symfony listener had to be extended to collect more information (`customer_number`). In the standard Symfony login form only username and password are allowed.
 
 Our extended listener implements the same interface AbstractAuthenticationListener. 
 
-<table>
-<colgroup>
-<col style="width: 50%" />
-<col style="width: 50%" />
-</colgroup>
-<tbody>
-<tr>
-<td><p>services.xml </p></td>
-<td><pre><code>&lt;parameter key=&quot;security.authentication.provider.dao.class&quot;&gt;Silversolutions\Bundle\EshopBundle\Service\Security\AuthenticationProvider&lt;/parameter&gt;</code></pre></td>
-</tr>
-</tbody>
-</table>
+`services.xml`:
+
+``` xml
+<parameter key="security.authentication.provider.dao.class">Silversolutions\Bundle\EshopBundle\Service\Security\AuthenticationProvider</parameter>
+```
 
 ## Security Controller
 
 The goal of the Security Controller - login action - is to display the login mask and authentication errors, if there are some.
 
-``` 
+``` php
  /**
      * renders the login form
      *
@@ -107,13 +88,13 @@ The goal of the Security Controller - login action - is to display the login mas
 
 ## Login Form
 
-Login form was adjusted to use additional parameter ''\_customer\_no".
+Login form was adjusted to use additional parameter `_customer_no`.
 
 #### Template Example
 
-**views/Security/login.html.twig**
+`views/Security/login.html.twig`:
 
-``` 
+```html+twig
 <form class="" action="{{ path( 'login_check' ) }}" method="post" role="form">
      {% block login_fields %}
            <fieldset>
@@ -135,15 +116,17 @@ Login form was adjusted to use additional parameter ''\_customer\_no".
   </form>
 ```
 
-The login forms in the template must post to the {{ path( 'login\_check' ) }}
+!!! note
 
-Please pay attention that this URL is NOT the url of the security controller. The posted data is handled automatically by Symfony and pasted to the Security context, where the authentication is done.
+    The login forms in the template must post to the `{{ path( 'login_check' ) }}`
 
-# How to login User from a controller?
+    Please pay attention that this URL is NOT the url of the security controller. The posted data is handled automatically by Symfony and pasted to the Security context, where the authentication is done.
+
+## How to log in User from a controller?
 
 Sometimes it is necessary that the User is logged in directly, without typing of username/password combination for some reasons, for example you are using login via SSO and want to login the user in your application.
 
-``` 
+``` php
 public function loginEzUserAction()
 {
         $roles = array('ROLE_USER');

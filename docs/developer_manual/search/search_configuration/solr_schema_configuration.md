@@ -1,4 +1,4 @@
-# Search - Solr schema configuration
+# Search Solr schema configuration
 
 silver.eShop is using an adapted schema definition which is installed using the shell script install-solr.sh.
 
@@ -6,9 +6,9 @@ silver.eShop is using an adapted schema definition which is installed using the 
 
 The following changes are required for the shop. The changes will be applied using the shell script install-solr.sh. 
 
-custom-fields-types.xml:
+`custom-fields-types.xml`:
 
-```
+``` xml
 <!--
     This generates a field for prefix queries, using edge n-grams.
 -->
@@ -16,9 +16,9 @@ custom-fields-types.xml:
 <copyField source="meta_content__text_t" dest="ext_prefix_ngram" />
 ```
 
-language-fieldtypes.xml:
+`language-fieldtypes.xml`:
 
-```
+``` xml
 <!-- This field can be used to query prefixes up to 15 characters.
          Any term longer than that would be treated as a prefix with only
          the 15 first characters for comparison -->

@@ -1,18 +1,18 @@
 # CreateCustomerProfileDataDataProcessor
 
-The goal of this DataProcessor is to create new [CustomerProfileData](Customer-profile-data-model_23560898.html) object and fill it with data from registration process.
+The goal of this DataProcessor is to create new [CustomerProfileData](../../../../customers/customers_api/customer_profile_data_components/customer_profile_data_model.md) object and fill it with data from registration process.
 
 ID of this service:
 
-ses.customer\_profile\_data.data\_processor.create\_customer\_profile\_data
+`ses.customer_profile_data.data_processor.create_customer_profile_data`
 
 ### Customer type
 
 The customer type can be set in the configuration:
 
-**forms.yml**
+`forms.yml`:
 
-``` 
+``` yaml
 parameters:
     ses_forms_values:
         ...

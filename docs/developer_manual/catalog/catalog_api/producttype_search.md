@@ -1,4 +1,4 @@
-#  ProductType Search 
+# ProductType search
 
 ## Introduction and configuration
 
@@ -10,11 +10,11 @@ There are two additional configuration that will enable or disable the use of th
 
 use\_display\_in\_search\_flag: true
 
-    use_display_in_product_list_flag: true
+`use_display_in_product_list_flag: true`
 
 Additionally a product type will index all the data from its products. However this can be disabled using the following configuration:
 
-    cp_to_product_type: false (Disabling this will lower indexer times but product data will not be indexed along product type)
+`cp_to_product_type: false` (Disabling this will lower indexer times but product data will not be indexed along product type)
 
 ## Template
 
@@ -24,13 +24,13 @@ src/Silversolutions/Bundle/EshopBundle/Resources/views/Catalog/listProductTypeNo
 
 In search result a new twig function was implemented to select the correct template.
 
-``` 
+``` php
 {# Search result of products, product types and categories #}
 {% set catalogElement = content %}
 {{ get_search_result_template(catalogElement) }}
 ```
 
-``` 
+``` php
 /**
  * Selects the correct template according to catalog element type
  *

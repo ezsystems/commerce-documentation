@@ -1,4 +1,4 @@
-#  Access dataprovider via PHP 
+# Access dataprovider via PHP
 
 ## Catalog Data Provider Service
 
@@ -30,13 +30,13 @@ To choose proper catalog provider we use tags and compiler pass. Documentation i
 
 ### Compiler Pass
 
-New compiler pass (**CatalogDataProviderOperationsPass.php**) collects all services, which are tagged with **"catalog\_data\_provider\_operation"**. Example below:
+New compiler pass (CatalogDataProviderOperationsPass.php) collects all services, which are tagged with "catalog_data_provider_operation". Example below:
 
-\<tag name="catalog\_data\_provider\_operation" alias="ez5" /\>
+`<tag name="catalog_data_provider_operation" alias="ez5" />`
 
 [ ](http://symfony.com/doc/current/components/dependency_injection/tags.html)
 
-Compiler Pass calls "**setDataProviderService"** from CatalogDataProviderService.php and sets all available providers.
+Compiler Pass calls "setDataProviderService" from CatalogDataProviderService.php and sets all available providers.
 
 When actual call to catalog data provider service is made then depending on siteaccess the proper provider is chosen.
 

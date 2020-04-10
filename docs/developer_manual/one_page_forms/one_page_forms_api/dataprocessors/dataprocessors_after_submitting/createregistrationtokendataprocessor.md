@@ -2,14 +2,15 @@
 
 The goal of this DataProcessor is to create a new Token with the Help of the [TokenService](TokenService_23560945.html).
 
-    ID of this service:
-    ses_forms.create_registration_token_data_processor
+ID of this service:
+
+`ses_forms.create_registration_token_data_processor`
 
 The parameters for the method createToken() are taken from the configuration:
 
-**forms.yml**
+`forms.yml`:
 
-``` 
+``` yaml
 ses_registration:
         #time in seconds how long the token is valid
         registration_token_valid_until: 7200

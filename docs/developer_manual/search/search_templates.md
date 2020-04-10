@@ -1,10 +1,8 @@
-#  Search - Templates 
+# Search templates
 
 Configuration for facets
 
-**twig.yml**
-
-``` 
+``` yaml
 globals:
     # defines limit for maximum number of boxes that are displayed. If in this case more than 10 facets boxes are found there will be a "More" button"
     boxes_visibility_limit: 10 
@@ -18,84 +16,22 @@ globals:
 
 Templates list:
 
-<table>
-<colgroup>
-<col style="width: 50%" />
-<col style="width: 50%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th>Path</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><pre><code>Default path:  </code></pre></td>
-<td> </td>
-</tr>
-<tr>
-<td><pre><code>Search/search_results.html.twig</code></pre></td>
-<td> </td>
-</tr>
-<tr>
-<td><pre><code>Search/search_facets.html.twig</code></pre></td>
-<td> </td>
-</tr>
-<tr>
-<td><pre><code>Search/search_query.html.twig</code></pre></td>
-<td> </td>
-</tr>
-<tr>
-<td><pre><code>Search/search_groups.html.twig</code></pre></td>
-<td> </td>
-</tr>
-<tr>
-<td><pre><code>Search/search.html.twig</code></pre></td>
-<td> </td>
-</tr>
-<tr>
-<td><pre><code>Search/search_filters.html.twig</code></pre></td>
-<td> </td>
-</tr>
-<tr>
-<td> </td>
-<td> </td>
-</tr>
-<tr>
-<td><pre><code>Search/result/search_content_list/folder.html.twig</code></pre></td>
-<td> </td>
-</tr>
-<tr>
-<td><pre><code>Search/result/search_content_list/video.html.twig</code></pre></td>
-<td> </td>
-</tr>
-<tr>
-<td><pre><code>Search/result/search_content_list/event.html.twig</code></pre></td>
-<td> </td>
-</tr>
-<tr>
-<td><pre><code>Search/result/search_content_list/search_content_footer.html.twig</code></pre></td>
-<td> </td>
-</tr>
-<tr>
-<td><pre><code>Search/result/search_content_list/landing_page.html.twig</code></pre></td>
-<td> </td>
-</tr>
-<tr>
-<td><pre><code>Search/result/search_content_list/article.html.twig</code></pre></td>
-<td> </td>
-</tr>
-<tr>
-<td><pre><code>Search/result/search_content_list/file.html.twig</code></pre></td>
-<td> </td>
-</tr>
-<tr>
-<td><pre><code>Search/result/search_content_list/blog_post.html.twig</code></pre></td>
-<td> </td>
-</tr>
-</tbody>
-</table>
+```
+Search/search_results.html.twig
+Search/search_facets.html.twig
+Search/search_query.html.twig
+Search/search_groups.html.twig
+Search/search.html.twig
+Search/search_filters.html.twig
+Search/result/search_content_list/folder.html.twig
+Search/result/search_content_list/video.html.twig
+Search/result/search_content_list/event.html.twig
+Search/result/search_content_list/search_content_footer.html.twig
+Search/result/search_content_list/landing_page.html.twig
+Search/result/search_content_list/article.html.twig
+Search/result/search_content_list/file.html.twig
+Search/result/search_content_list/blog_post.html.twig
+```
 
 ## Line templates for content and products
 
@@ -107,49 +43,49 @@ For each product the template "Catalog/listProductNode.html.twig" is used for di
 
 ### Content items
 
-For each content type a template has to be provided. It shall be stored in the folders "Search/result/search\_content\_list" 
+For each content type a template has to be provided. It shall be stored in the folders "Search/result/search_content_list" 
 
-![](attachments/23560663/23563270.png)
+![](../img/search_5.png)
 
-In addition a the template has to be defined in the configuration for the eZ templating system:
+In addition the template has to be defined in the configuration for the eZ templating system:
 
-``` 
-           search_content_list:
-                siso_search_folder_item:
-                    template: SilversolutionsEshopBundle:Search/result/search_content_list:folder.html.twig
-                    match:
-                        Identifier\ContentType: [folder]
-                siso_search_article_item:
-                    template: SilversolutionsEshopBundle:Search/result/search_content_list:article.html.twig
-                    match:
-                        Identifier\ContentType: [article]
-                siso_search_landing_page_item:
-                    template: SilversolutionsEshopBundle:Search/result/search_content_list:landing_page.html.twig
-                    match:
-                        Identifier\ContentType: [landing_page]
-                siso_search_blog_post_item:
-                     template: SilversolutionsEshopBundle:Search/result/search_content_list:blog_post.html.twig
-                     match:
-                         Identifier\ContentType: [blog_post]
-                siso_search_event_item:
-                     template: SilversolutionsEshopBundle:Search/result/search_content_list:event.html.twig
-                     match:
-                         Identifier\ContentType: [event]
-                siso_search_file_item:
-                     template: SilversolutionsEshopBundle:Search/result/search_content_list:file.html.twig
-                     match:
-                         Identifier\ContentType: [file]
-                siso_search_video_item:
-                     template: SilversolutionsEshopBundle:Search/result/search_content_list:video.html.twig
-                     match:
-                         Identifier\ContentType: [video]
+``` yaml
+search_content_list:
+    siso_search_folder_item:
+        template: SilversolutionsEshopBundle:Search/result/search_content_list:folder.html.twig
+        match:
+            Identifier\ContentType: [folder]
+    siso_search_article_item:
+        template: SilversolutionsEshopBundle:Search/result/search_content_list:article.html.twig
+        match:
+            Identifier\ContentType: [article]
+    siso_search_landing_page_item:
+        template: SilversolutionsEshopBundle:Search/result/search_content_list:landing_page.html.twig
+        match:
+            Identifier\ContentType: [landing_page]
+    siso_search_blog_post_item:
+         template: SilversolutionsEshopBundle:Search/result/search_content_list:blog_post.html.twig
+         match:
+             Identifier\ContentType: [blog_post]
+    siso_search_event_item:
+         template: SilversolutionsEshopBundle:Search/result/search_content_list:event.html.twig
+         match:
+             Identifier\ContentType: [event]
+    siso_search_file_item:
+         template: SilversolutionsEshopBundle:Search/result/search_content_list:file.html.twig
+         match:
+             Identifier\ContentType: [file]
+    siso_search_video_item:
+         template: SilversolutionsEshopBundle:Search/result/search_content_list:video.html.twig
+         match:
+             Identifier\ContentType: [video]
 ```
 
 The template itself has access to the content object.
 
-Example for the blog post template (Search/result/search\_content\_list/blog\_post.html.twig):
+Example for the blog post template (`Search/result/search_content_list/blog_post.html.twig)``:
 
-``` 
+``` html+twig
 {% block content %}
   {% if showImage and not ez_is_field_empty( content, 'image' ) %}
     <figure class="left c-card__image--inline u-no-float-on-small">
@@ -182,9 +118,9 @@ Example for the blog post template (Search/result/search\_content\_list/blog\_po
 
 In order to hide or remove the link make sure to pass false value to the uri parameter. We use this technique to hide download button for a video content type but it can be used for every type of content. In order to make it work you need to make some changes to a specific content type template like we do in the video template.
 
-**vendor/silversolutions/silver.e-shop/src/Silversolutions/Bundle/EshopBundle/Resources/views/Search/result/search\_content\_list/video.html.twig**
+`vendor/silversolutions/silver.e-shop/src/Silversolutions/Bundle/EshopBundle/Resources/views/Search/result/search_content_list/video.html.twig`:
 
-``` 
+``` html+twig
 {% block content %}
 
   {% set fileInfo = ez_field_value(content,'file') %}
@@ -223,8 +159,4 @@ In order to hide or remove the link make sure to pass false value to the uri par
 {% endblock %}
 ```
 
-When including search\_content\_footer.html.twig make sure to pass false to the uri parameter
-
-## Attachments:
-
-![](images/icons/bullet_blue.gif) [image2016-2-4 12:0:45.png](attachments/23560663/23563270.png) (image/png)  
+When including `search_content_footer.html.twig` make sure to pass false to the uri parameter

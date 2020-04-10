@@ -1,6 +1,6 @@
-#  Breadcrumbs - Cookbook 
+# Breadcrumbs cookbook
 
-# How to configure breadcrumbs for your custom route?
+## How to configure breadcrumbs for your custom route?
 
 Let's assume that you created a new custom action in your controller.
 
@@ -8,7 +8,7 @@ Example:
 
 BlogController::indexAction in your custom AppBundle (with the code below)
 
-``` 
+``` php
 class BlogController extends BaseController
 {
     public function indexAction(Request $request)
@@ -20,7 +20,7 @@ class BlogController extends BaseController
 
 Afterwards you created a route for this action in routing.yml
 
-``` 
+``` yaml
 custom_blog_index:
     pattern:  /blog/index
     defaults:
@@ -29,34 +29,19 @@ custom_blog_index:
 
 In order to set custom breadcrumbs for this route we need to add some configuration to this route.
 
-``` 
- custom_blog_index:
-     pattern:  /blog/index
-     defaults:
+``` yaml
+custom_blog_index:
+    pattern:  /blog/index
+    defaults:
         _controller: AppBundle:Blog:index
 +        breadcrumb_path: custom_blog_index
 +        breadcrumb_names: Blog List
 ```
 
-<table>
-<thead>
-<tr class="header">
-<th>Option</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>breadcrumb_path</td>
-<td>It needs to be a valid route name, which exists in at least one of the routing yml files</td>
-</tr>
-<tr>
-<td>breadcrumb_names</td>
-<td><p>It is a key for the translation. This name that will be shown in breadcrumbs. If the translation is not set there will be a fallback to route translation.</p>
-<p>In the example above if the "Blog List'' key has no translation then the fallback key would be "custom_blog_index|breadcrumb"</p></td>
-</tr>
-</tbody>
-</table>
+|Option|Description|
+|--- |--- |
+|breadcrumb_path|It needs to be a valid route name, which exists in at least one of the routing yml files|
+|breadcrumb_names|It is a key for the translation. This name that will be shown in breadcrumbs. If the translation is not set there will be a fallback to route translation.</br>In the example above if the "Blog List'' key has no translation then the fallback key would be "custom_blog_index\|breadcrumb"|
 
 #### More advanced usage of routes
 
@@ -64,26 +49,30 @@ If you want breadcrumbs to have more items than just one, then you can specify m
 
 In the example below when breadcrumbs will be generated there will be 2 elements (Profile and Blog list)
 
-``` 
- custom_blog_index:
-     pattern:  /blog/index
-     defaults:
-         _controller: AppBundle:Blog:index
+``` yaml
+custom_blog_index:
+    pattern:  /blog/index
+    defaults:
+        _controller: AppBundle:Blog:index
 +        breadcrumb_path: silversolutionsCustomerDetail/custom_blog_index
 +        breadcrumb_names: Profile/Blog List
 ```
 
-The is a limitation, when using this routes generator. You can provide only the paths that the corresponding action in the controller have no parameters required \! There is no way of passing any parameters to the action.
+!!! caution
 
-# How to write your own breadcrumbs generator?
+    There is a limitation, when using this routes generator. You can provide only the paths that the corresponding action in the controller have no parameters required. There is no way of passing any parameters to the action.
+
+## How to write your own breadcrumbs generator?
 
 #### Step 1
 
 First we need to write a generator class. It needs to implement the "BreadcrumbsGeneratorInterface" that have only 2 methods.
 
-There is an abstract class, which provides access to the WhiteOctober breadcrumbs library. It is used in this example. For the case that the BreadcrumbsGeneratorInterface implementation, for some reason, can't or just isn't extending the AbstractWhiteOctoberBreadcrumbsGenerator, the method renderBreadcrumbs() must completely take care of rendering the HTML code for the breadcrumbs.
+!!! note
 
-``` 
+    There is an abstract class, which provides access to the WhiteOctober breadcrumbs library. It is used in this example. For the case that the BreadcrumbsGeneratorInterface implementation, for some reason, can't or just isn't extending the AbstractWhiteOctoberBreadcrumbsGenerator, the method renderBreadcrumbs() must completely take care of rendering the HTML code for the breadcrumbs.
+
+``` php
 <?php
 /**
  * Product silver.e-shop
@@ -174,63 +163,66 @@ Add service definition and tag it properly as a breadcrumbs generator with a res
 </service>
 ```
 
-# Additional data in translationParameters
+## Additional data in translationParameters
 
 translationParameters contains additional data which can be used to change the behavior of the breadcrumbs depending on the stored data. **Every** BreadcrumbsGenerator has to add an array with type, identifier and content\_type\_id. Always create all the keys and leave the elements empty if not needed. Examples from some BreadcrumbsGenerators:
 
-<table>
-<thead>
-<tr class="header">
-<th>Silversolutions/Bundle/EshopBundle/Service/Breadcrumbs/EzContentBreadcrumbsGenerator.php</th>
-<th>Example</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><pre><code>array(
- &#39;type&#39; =&gt; self::EZ_CONTENT_BREADCRUMB_TYPE,
- &#39;identifier&#39; =&gt; $content-&gt;id,
- &#39;content_type_id&#39; =&gt; $location-&gt;contentInfo-&gt;contentTypeId
-)</code></pre></td>
-<td><div class="content-wrapper">
-<pre class="" data-syntaxhighlighter-params="brush: java; gutter: false; theme: DJango" data-theme="DJango"><code>&#39;TYPE&#39; =&gt; STRING &#39;EZ_CONTENT&#39; (LENGTH=10)
-&#39;IDENTIFIER&#39; =&gt; INT 57
-&#39;CONTENT_TYPE_ID&#39; =&gt; INT 23</code></pre>
-</td>
-</tr>
-<tr>
-<td>Silversolutions/Bundle/EshopBundle/Service/Breadcrumbs/CatalogBreadcrumbsGenerator.php</td>
-<td><br />
-</td>
-</tr>
-<tr>
-<td><pre><code>array(
- &#39;type&#39; =&gt; self::CATALOG_BREADCRUMB_TYPE,
- &#39;identifier&#39; =&gt; $catalogIdentifier,
- &#39;content_type_id&#39; =&gt; &#39;&#39;
-)</code></pre></td>
-<td><div class="content-wrapper">
-<pre class="" data-syntaxhighlighter-params="brush: java; gutter: false; theme: DJango" data-theme="DJango"><code>&#39;TYPE&#39; =&gt; STRING &#39;CATALOG&#39; (LENGTH=7)
-&#39;IDENTIFIER&#39; =&gt; STRING &#39;9686&#39; (LENGTH=4)
-&#39;CONTENT_TYPE_ID&#39; =&gt; STRING &#39;&#39; (LENGTH=0)</code></pre>
-</td>
-</tr>
-<tr>
-<td><p>Silversolutions/Bundle/EshopBundle/Service/Breadcrumbs/RoutesBreadcrumbsGenerator.php</p></td>
-<td><br />
-</td>
-</tr>
-<tr>
-<td><pre><code>array(
- &#39;type&#39; =&gt; self::ROUTE_BREADCRUMB_TYPE,
- &#39;identifier&#39; =&gt; &#39;&#39;,
- &#39;content_type_id&#39; =&gt; &#39;&#39;
-)</code></pre></td>
-<td><div class="content-wrapper">
-<pre class="" data-syntaxhighlighter-params="brush: java; gutter: false; theme: DJango" data-theme="DJango"><code>&#39;TYPE&#39; =&gt; STRING &#39;ROUTE&#39; (LENGTH=5)
-&#39;IDENTIFIER&#39; =&gt; STRING &#39;&#39; (LENGTH=0)
-&#39;CONTENT_TYPE_ID&#39; =&gt; STRING &#39;&#39; (LENGTH=0)</code></pre>
-</td>
-</tr>
-</tbody>
-</table>
+### EzContentBreadcrumbsGenerator
+
+`Silversolutions/Bundle/EshopBundle/Service/Breadcrumbs/EzContentBreadcrumbsGenerator.php`
+
+``` php
+array(
+ 'type' => self::EZ_CONTENT_BREADCRUMB_TYPE,
+ 'identifier' => $content->id,
+ 'content_type_id' => $location->contentInfo->contentTypeId
+)
+```
+
+Example:
+
+``` php
+'TYPE' => STRING 'EZ_CONTENT' (LENGTH=10)
+'IDENTIFIER' => INT 57
+'CONTENT_TYPE_ID' => INT 23
+```
+
+### CatalogBreadcrumbsGenerator
+
+`Silversolutions/Bundle/EshopBundle/Service/Breadcrumbs/CatalogBreadcrumbsGenerator.php`
+
+``` php
+array(
+ 'type' => self::CATALOG_BREADCRUMB_TYPE,
+ 'identifier' => $catalogIdentifier,
+ 'content_type_id' => ''
+)
+```
+
+Example:
+
+``` php
+'TYPE' => STRING 'CATALOG' (LENGTH=7)
+'IDENTIFIER' => STRING '9686' (LENGTH=4)
+'CONTENT_TYPE_ID' => STRING '' (LENGTH=0)
+```
+
+### RoutesBreadcrumbsGenerator
+
+`Silversolutions/Bundle/EshopBundle/Service/Breadcrumbs/RoutesBreadcrumbsGenerator.php`
+
+``` php
+array(
+ 'type' => self::ROUTE_BREADCRUMB_TYPE,
+ 'identifier' => '',
+ 'content_type_id' => ''
+)
+```
+
+Example:
+
+``` php
+'TYPE' => STRING 'ROUTE' (LENGTH=5)
+'IDENTIFIER' => STRING '' (LENGTH=0)
+'CONTENT_TYPE_ID' => STRING '' (LENGTH=0)
+```

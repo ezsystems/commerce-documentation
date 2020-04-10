@@ -1,21 +1,17 @@
-#  Navigation - Cookbook 
+# Navigation cookbook
 
 ## How to influence the search query?
 
 You have the possibility to extend the search query before navigation data is fetched. Before the search query is submitted, there are events that allows you to extend the query:
 
-  - ``` 
-    PostBuildEzContentQueryEvent
-    ```
+- `PostBuildEzContentQueryEven`
+- `PostBuildSolrQueryEvent`
 
-  - ``` 
-    PostBuildSolrQueryEvent
-    ```
 ## PostBuildEzContentQueryEvent
 
 This event is thrown just before the eZ content for the navigation is fetched and it allows you to extend the search query. You have to implement an event listener, if you want to listen to it.
 
-``` 
+``` php
 <?php
 
 namespace Siso\Bundle\SearchBundle\EventListener;
@@ -39,7 +35,7 @@ class PostBuildEzContentQueryListener
 }
 ```
 
-``` 
+``` xml
 <service id="siso_search.post_build_ez_content_query_listener" class="Siso\Bundle\SearchBundle\EventListener\PostBuildEzContentQueryListener">
     <tag name="kernel.event_listener" event="siso_search.post_build_ez_content_query" method="postBuildEzContentQuery" />
 </service>
@@ -51,7 +47,7 @@ This event is thrown just before the catalog content for the navigation is fetch
 
 If you are implementing a new dataprovider, you **have to** implement a listener to handle at least the languages.
 
-``` 
+``` php
 <?php
 
 namespace Siso\Bundle\SearchBundle\EventListener;
@@ -119,7 +115,7 @@ class EzPostBuildSolrQueryListener implements PostBuildSolrQueryListenerInterfac
 }
 ```
 
-``` 
+``` xml
 <service id="siso_search.ez_post_build_solr_query_listener" class="Siso\Bundle\SearchBundle\EventListener\EzPostBuildSolrQueryListener">
     <argument type="service" id="ezpublish.api.service.permissions_criterion_handler" />
     <argument type="service" id="ezpublish.search.solr.query.content.criterion_visitor.aggregate" />
@@ -129,9 +125,9 @@ class EzPostBuildSolrQueryListener implements PostBuildSolrQueryListenerInterfac
 
 Notice that this service is not tagged as a listener yet\! This will be done via composer pass, since there is no need that all listeners are active at the same time (since depends on the dataprovider).
 
-**Siso/Bundle/SearchBundle/DependencyInjection/Compiler/SolariumClientInjectionPass.php**
+`Siso/Bundle/SearchBundle/DependencyInjection/Compiler/SolariumClientInjectionPass.php`:
 
-``` 
+``` php
 public function process(ContainerBuilder $container)
 {
     $catalogDataProviderTarget = $container->getParameter('silver_eshop.default.catalog_data_provider');

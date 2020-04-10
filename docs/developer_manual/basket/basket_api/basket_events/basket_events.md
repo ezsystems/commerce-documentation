@@ -1,4 +1,4 @@
-# Basket Events 
+# Basket Events
 
 ## General
 
@@ -6,21 +6,20 @@ The basket provides a list of events. These events can be used to change the log
 
 Examples for use cases:
 
-  - check the total amount of a basket if the user is just allowed to order within a given budget
-  - Check if a user is allowed to add this product to the basket
-  - To perform a detailed check if the stock is still available
-  - to check if the minimum quantity has to be checked: You will find an example in the document [Product quantity validation](Product-quantity-validation_23560667.html)
-  - ...
+- check the total amount of a basket if the user is just allowed to order within a given budget
+- Check if a user is allowed to add this product to the basket
+- To perform a detailed check if the stock is still available
+- to check if the minimum quantity has to be checked: You will find an example in the document [Product quantity validation](Product-quantity-validation_23560667.html)
 
 Some [standard Eventlisteners](Basket---Eventlistener-in-the-standard_23561084.html) in eZ Commerce  will take care that e.g. a basket preview cache is updated correctly. 
 
 ## BasketLine Events
 
-The following events are thrown when interacting with the [BasketService](BasketService_23560232.html) on a basket line-object: There are some possible results, that can be returned. (STATUS\_INIT is default).
+The following events are thrown when interacting with the [BasketService](BasketService_23560232.html) on a basket line-object: There are some possible results, that can be returned. (STATUS_INIT is default).
 
 The executed action (add-to, update...) is assumed to be allowed, unless some event listeners set the status to failed.
 
-``` 
+``` php
 //nothing changed, action is allowed
 const STATUS_OK = 'ok';
 //something changed (quantity), action is allowed
@@ -38,12 +37,12 @@ $preEvent->getStatus();
 
 | Event name                          | Thrown in                                                                                                      | Event ID                               |
 | ----------------------------------- | -------------------------------------------------------------------------------------------------------------- | -------------------------------------- |
-| PreAddBasketLineEvent               | BasketService.addBasketLineToBasket(Basket $basket, $sku, $quantity)                                           | silver\_eshop.pre\_add\_basketline     |
-| PostAddBasketLineEvent | BasketService.addBasketLineToBasket(Basket $basket, $sku, $quantity)                              | silver\_eshop.post\_add\_basketline    |
-| PreUpdateBasketLineEvent            | BasketService.updateBasketLineInBasket(Basket $basket, BasketLine $basketLine, $increase = false) | silver\_eshop.pre\_update\_basketline  |
-| PostUpdateBasketLineEvent           | BasketService.updateBasketLineInBasket(Basket $basket, BasketLine $basketLine, $increase = false) | silver\_eshop.post\_update\_basketline |
-| PreRemoveBasketLineEvent            | BasketService.removeBasketLineFromBasket(Basket $basket, BasketLine $basketLine)                  | silver\_eshop.pre\_remove\_basketline  |
-| PostRemoveBasketLineEvent           | BasketService.removeBasketLineFromBasket(Basket $basket, BasketLine $basketLine)                  | silver\_eshop.post\_remove\_basketline |
+| PreAddBasketLineEvent               | BasketService.addBasketLineToBasket(Basket $basket, $sku, $quantity)                                           | silver_eshop.pre_add_basketline     |
+| PostAddBasketLineEvent | BasketService.addBasketLineToBasket(Basket $basket, $sku, $quantity)                              | silver_eshop.post_add_basketline    |
+| PreUpdateBasketLineEvent            | BasketService.updateBasketLineInBasket(Basket $basket, BasketLine $basketLine, $increase = false) | silver_eshop.pre_update_basketline  |
+| PostUpdateBasketLineEvent           | BasketService.updateBasketLineInBasket(Basket $basket, BasketLine $basketLine, $increase = false) | silver_eshop.post_update_basketline |
+| PreRemoveBasketLineEvent            | BasketService.removeBasketLineFromBasket(Basket $basket, BasketLine $basketLine)                  | silver_eshop.pre_remove_basketline  |
+| PostRemoveBasketLineEvent           | BasketService.removeBasketLineFromBasket(Basket $basket, BasketLine $basketLine)                  | silver_eshop.post_remove_basketline |
 
 ### Connecting to the events
 
@@ -60,7 +59,7 @@ To take advantage from the existing events to f.e. modify some Basket or BasketL
 
 You also have to implement appropriate methods in your EventService:
 
-``` 
+``` php
 public function onPreBasketAdd(PreAddBasketLineEvent $preBasketAddEvent)
 { 
     $basket = $preBasketAddEvent->getBasket();
@@ -94,9 +93,9 @@ public function onPreBasketRemove(PreRemoveBasketLineEvent $preBasketRemoveEvent
 }
 ```
 
-# Basket Events
+## Basket Events
 
-The following events are thrown when interacting with the [BasketService](BasketService_23560232.html) on a basket-object: There are some possible results, that can be returned. (STATUS\_INIT is default).
+The following events are thrown when interacting with the [BasketService](BasketService_23560232.html) on a basket-object: There are some possible results, that can be returned. (STATUS_INIT is default).
 
 ``` 
 //default
@@ -118,32 +117,11 @@ $event->setEventResults(array('key' => &value));
 $event->addToEventResults('key', $value);
 ```
 
-<table>
-<thead>
-<tr class="header">
-<th>Event name</th>
-<th>Thrown in</th>
-<th>Event ID</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><pre><code>PostPriceCalculationBasketEvent</code></pre></td>
-<td>BasketService:storeBasket()</td>
-<td><pre><code>silver_eshop.post_price_calculation_basket</code></pre></td>
-</tr>
-<tr>
-<td><pre><code>PreBasketShowEvent</code></pre></td>
-<td>BasketController:showBasket()</td>
-<td><pre><code>silver_eshop.pre_basket_show</code></pre></td>
-</tr>
-<tr>
-<td><pre><code>PreRemoveBasketEvent</code></pre></td>
-<td>BasketService:removeBasket()</td>
-<td><pre><code>silver_eshop.pre_remove_basket</code></pre></td>
-</tr>
-</tbody>
-</table>
+|Event name|Thrown in|Event ID|
+|--- |--- |--- |
+|PostPriceCalculationBasketEvent|BasketService:storeBasket()|silver_eshop.post_price_calculation_basket|
+|PreBasketShowEvent|BasketController:showBasket()|silver_eshop.pre_basket_show|
+|PreRemoveBasketEvent|BasketService:removeBasket()|silver_eshop.pre_remove_basket|
 
 ## Event PreBasketShowEvent
 
@@ -151,7 +129,7 @@ The Budget workflow in customer center makes usage of this event.
 
 **BasketController**
 
-``` 
+``` php
 public function showAction(Request $request)
 {
    ...
@@ -185,7 +163,7 @@ public function showAction(Request $request)
 
 Example:
 
-``` 
+``` php
 public function onPreBasketShow(PreBasketShowEvent $event)
 {
     $basket = $event->getBasket();
@@ -219,8 +197,5 @@ class="%siso_customer_center.check_budget_event_listener.class%">
 
 #### Result
 
-![](attachments/23560250/23563044.png)
-
-## Attachments:
-
-![](images/icons/bullet_blue.gif) [Bildschirmfoto 2015-08-06 um 08.37.35.png](attachments/23560250/23563044.png) (image/png)  
+![](../../../img/basket_events.png)
+ 

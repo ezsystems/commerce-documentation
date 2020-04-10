@@ -1,4 +1,4 @@
-#  Customer skus 
+# Customer SKUs
 
 Advanced version only
 
@@ -8,37 +8,21 @@ In some projects (B2B) customers know products by their own article number. That
 
 In the shop we often know these customer article numbers, because we import them from ERP, but we have to consider them in shop in several places:
 
-<table>
-<thead>
-<tr class="header">
-<th>Considered</th>
-<th>Not Considered (yet)</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><ul>
-<li>Search</li>
-<li>Quickorder</li>
-</ul></td>
-<td><ul>
-<li>Autosuggest</li>
-</ul></td>
-</tr>
-</tbody>
-</table>
+|Considered|Not Considered (yet)|
+|--- |--- |
+|Search</br>Quickorder|Autosuggest|
 
-Important
+!!! note "Important"
 
-It is possible to activate/deactivate the service if necessary by setting the parameter to the desired value:
+    It is possible to activate/deactivate the service if necessary by setting the parameter to the desired value:
 
-**silver.eshop.yml**
+    `silver.eshop.yml`:
 
-``` 
-#here you can enable/disable the CustomerSkuService
-#values: true or false
-siso_core.default.customer_sku_service_active: true
-```
+    ``` yaml
+    #here you can enable/disable the CustomerSkuService
+    #values: true or false
+    siso_core.default.customer_sku_service_active: true
+    ```
 
 ### Search changes
 
@@ -50,10 +34,10 @@ This event listener checks the search term and if it is a customer sku, it excha
 
 Also in the quickorder the customer sku is supported for all functionalities:
 
-  - update quickorder
-  - add to basket
-  - upload csv
-  - input csv content
+- update quickorder
+- add to basket
+- upload csv
+- input csv content
 
 Before the sku is processed, it is checked for customer sku and exchanged if this is the case.
 
@@ -61,7 +45,7 @@ Before the sku is processed, it is checked for customer sku and exchanged if thi
 
 The customer SKUs are stored in a special table together with the corresponding customer numbers (see `silver.e-shop/src/Silversolutions/Bundle/EshopBundle/Entity/CustomerSku.php`):
 
-**ses\_customer\_sku**
+`ses_customer_sku`:
 
 ``` 
 +-----------------+--------------+------+-----+---------+----------------+
@@ -98,11 +82,11 @@ id: siso_core.customer_sku_service
 namespace: Silversolutions\Bundle\EshopBundle\Service\CustomerSkuService;
 ```
 
-The CustomerSkuService is used to fetch the sku or customer\_sku. For that purpose two methods are available:
+The CustomerSkuService is used to fetch the sku or customer_sku. For that purpose two methods are available:
 
-**Methods**
+Methods:
 
-``` 
+``` php
 public function getSku($customerSku, $customerNumber = null)
 public function getCustomerSku($sku, $customerNumber)
 public function getOneByCustomerSku($customerSku, $customerNumber = null)
@@ -113,14 +97,14 @@ public function getOneBySku($sku, $customerNumber)
 
 Two twig functions have been added, they can be used to output SKUs in a template
 
-**SilvercommonExtension.php**
+`SilvercommonExtension.php`:
 
 ``` 
 new \Twig_SimpleFunction('get_customer_sku',                array($this, 'getCustomerSku')),
 new \Twig_SimpleFunction('get_sku',                         array($this, 'getSku')),
 ```
 
-**Usage in templates**
+Usage in templates:
 
 ``` 
 {{ get_sku('customer_sku', 'customer_number') }}

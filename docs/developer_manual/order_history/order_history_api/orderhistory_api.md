@@ -1,19 +1,19 @@
-#  Orderhistory - API 
+# Orderhistory API
 
 ### Order search form
 
 The order search form is using the DatePicker plugin for better user experience.  
 If you need to pass some additional parameters for this plugin, or adapt the form attributes, you need to override the form type and form validation service.
 
-![](attachments/23560628/23563464.png)
+![](../../img/orderhistory_6.jpg)
 
 #### Form type - OrderType
 
-    vendor/silversolutions/silver.orderhistory/src/Siso/Bundle/OrderHistoryBundle/Form/Type/OrderType.php
+`vendor/silversolutions/silver.orderhistory/src/Siso/Bundle/OrderHistoryBundle/Form/Type/OrderType.php`
 
-**Service definition**
+Service definition:
 
-``` 
+``` xml
 <parameter key="siso_order_history.order_type.class">Siso\Bundle\OrderHistoryBundle\Form\Type\OrderType</parameter>
 
 <service id="siso_order_history.order_type" class="%siso_order_history.order_type.class%" scope="prototype">
@@ -22,7 +22,7 @@ If you need to pass some additional parameters for this plugin, or adapt the for
 </service> 
 ```
 
-``` 
+``` php
 //Example: pass some data-attributes for the datepicker plugin
 
 $builder->add('orders_from', 'text', array(
@@ -42,11 +42,11 @@ $builder->add('orders_from', 'text', array(
 
 #### Form validation - FormValidationService
 
-    vendor/silversolutions/silver.orderhistory/src/Siso/Bundle/OrderHistoryBundle/Services/FormValidationService.php
+`vendor/silversolutions/silver.orderhistory/src/Siso/Bundle/OrderHistoryBundle/Services/FormValidationService.php`
 
 **Service definition**
 
-``` 
+``` xml
 <parameter key="siso_order_history.form_validation.class">Siso\Bundle\OrderHistoryBundle\Services\FormValidationService</parameter>
 
 <service id="siso_order_history.form_validation" class="%siso_order_history.form_validation.class%">
@@ -55,11 +55,7 @@ $builder->add('orders_from', 'text', array(
 </service>
 ```
 
-``` 
+``` php
 // adjust validation
 public function isValid($params) { }
 ```
-
-## Attachments:
-
-![](images/icons/bullet_blue.gif) [Bildschirmfoto 2015-10-12 um 15.36.07.png](attachments/23560628/23563464.png) (image/png)  

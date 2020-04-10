@@ -1,4 +1,4 @@
-# Use query filter in product search 
+# Use query filter in product search
 
 ## Introduction
 
@@ -6,7 +6,7 @@ Filter by a search engine field in PHP.
 
 ## Example Filter by type and brand
 
-```
+``` php
 use Siso\Bundle\SearchBundle\Api\SearchContext;
 use Siso\Bundle\SearchBundle\Api\EshopQuery;
 use Siso\Bundle\SearchBundle\Controller\SearchController;

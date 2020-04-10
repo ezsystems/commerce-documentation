@@ -1,175 +1,52 @@
-#  Catalog - UI 
+#  Catalog UI 
 
 ## Used fields in the frontend
 
-## Product list
+### Product list
 
-![](attachments/23560463/23562930.png)
+![](../../img/catalog_ui_1.png)
 
-<table>
-<thead>
-<tr class="header">
-<th>No</th>
-<th>Attribute ProductNode</th>
-<th>Note</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>1</td>
-<td>catalogElement.name</td>
-<td><br />
-</td>
-</tr>
-<tr>
-<td>2</td>
-<td>catalogElement.sku</td>
-<td><br />
-</td>
-</tr>
-<tr>
-<td>3</td>
-<td>catalogElement.text</td>
-<td><br />
-</td>
-</tr>
-<tr>
-<td>4</td>
-<td>Price from priceengine</td>
-<td><br />
-</td>
-</tr>
-<tr>
-<td>5</td>
-<td>catalogElement.mainImage</td>
-<td><br />
-</td>
-</tr>
-</tbody>
-</table>
+|No|Attribute ProductNode|
+|--- |--- |
+|1|catalogElement.name|
+|2|catalogElement.sku|
+|3|catalogElement.text|
+|4|Price from priceengine|
+|5|catalogElement.mainImage|
 
-## Product detailpage
+### Product detailpage
 
-![](attachments/23560463/23562929.png)
+![](../../img/catalog_ui_2.png)
 
-<table>
-<thead>
-<tr class="header">
-<th>No</th>
-<th>Attribute ProductNode</th>
-<th>Note</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>1</td>
-<td>catalogElement.mainImage</td>
-<td>The main image or the imageList might come from the filesystem directly</td>
-</tr>
-<tr>
-<td>2</td>
-<td>catalogElement.imageList</td>
-<td><br />
-</td>
-</tr>
-<tr>
-<td>3</td>
-<td>catalogElement.sku</td>
-<td><br />
-</td>
-</tr>
-<tr>
-<td>4</td>
-<td>catalogElement.unit</td>
-<td><br />
-</td>
-</tr>
-<tr>
-<td>4a</td>
-<td><pre><code>catalogElement.packagingUnit</code></pre></td>
-<td>If not present label is hidden</td>
-</tr>
-<tr>
-<td>4b</td>
-<td>Country of Origin</td>
-<td>If not present label is hidden</td>
-</tr>
-<tr>
-<td>5</td>
-<td>catalogElement.text</td>
-<td><br />
-</td>
-</tr>
-<tr>
-<td>6</td>
-<td>catalogElement.shortDescription</td>
-<td><br />
-</td>
-</tr>
-<tr>
-<td>7</td>
-<td>variants</td>
-<td><br />
-</td>
-</tr>
-<tr>
-<td>8</td>
-<td>catalogElement.longDescription</td>
-<td>If not present tab is hidden</td>
-</tr>
-<tr>
-<td>9</td>
-<td><p>catalogElement.manufacturer</p>
-<p>catalogElement.manufacturerSku</p>
-<p>catalogElement.specification</p>
-<p>catalogElement.dataMap.color</p></td>
-<td>This tab contains several attributes from the product. If a attribute is not present it will be not displayed (inc. the label)</td>
-</tr>
-<tr>
-<td>10</td>
-<td>catalogElement.dataMap.video</td>
-<td><br />
-</td>
-</tr>
-</tbody>
-</table>
+|No|Attribute ProductNode|Note|
+|--- |--- |--- |
+|1|catalogElement.mainImage|The main image or the imageList might come from the filesystem directly|
+|2|catalogElement.imageList||
+|3|catalogElement.sku||
+|4|catalogElement.unit||
+|4a|catalogElement.packagingUnit|If not present label is hidden|
+|4b|Country of Origin|If not present label is hidden|
+|5|catalogElement.text||
+|6|catalogElement.shortDescription||
+|7|variants||
+|8|catalogElement.longDescription|If not present tab is hidden|
+|9|catalogElement.manufacturer</br>catalogElement.manufacturerSku</br>catalogElement.specification</br>catalogElement.dataMap.color|This tab contains several attributes from the product. If a attribute is not present it will be not displayed (inc. the label)|
+|10|catalogElement.dataMap.video||
 
-# Template list
+## Template list
 
 The templates for the catalog have to be located in the views/Catalog folder. Depending on the "viewtype" different templates have to be provided (configuration see [Templates for catalog](Templates-for-catalog_23560475.html)):
 
-<table>
-<thead>
-<tr class="header">
-<th><p>Path</p></th>
-<th><p>Description</p></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>product.html.twig</code></td>
-<td><br />
-</td>
-</tr>
-<tr>
-<td><code>catalog.html.twig</code></td>
-<td><br />
-</td>
-</tr>
-<tr>
-<td><code>productType.html.twig</code></td>
-<td><br />
-</td>
-</tr>
-</tbody>
-</table>
+- `product.html.twig`
+- `catalog.html.twig`
+- `productType.html.twig`
 
 The templates have access to the catalog node provided by the controller.
 
 URLs will be provided by special methods:
 
-  - SEO URL `{{ catalogElement.seoUrl }}`
-  - Permantent URL `{{ catalogElement.permanentUrl }}`
+- SEO URL `{{ catalogElement.seoUrl }}`
+- Permantent URL `{{ catalogElement.permanentUrl }}`
 
 Since these URLs contain the prefix defined in the routing table as well the `path()` function of Twig cannot be used\!
 
@@ -187,17 +64,15 @@ The renderer uses predefined templates for each [Field](Fields-for-ecommerce-dat
 
 The configuration for choosing templates is stored in a `yml` file `silver.eshop.yml`:
 
-``` 
+``` yaml
 parameters:
-  
   silver_eshop.default.catalog_factory.sis_category: createCatalogNode
   silver_eshop.default.catalog_factory.sis_product: createOrderableProductNode
-
   silver_eshop.default.catalog_template.CatalogNode: Catalog:catalog.html.twig
   silver_eshop.default.catalog_template.OrderableProductNode: Catalog:product.html.twig
 ```
 
-# Show all attributes of a CatalogElement
+## Show all attributes of a CatalogElement
 
 To show all available attributes the method `getAttributeNames()` is given.
 
@@ -223,7 +98,7 @@ To show all available attributes the method `getAttributeNames()` is given.
 }
 ```
 
-## Number of loaded products
+### Number of loaded products
 
 You can define the number of products that are loaded in one time.
 
@@ -235,13 +110,3 @@ silver_eshop.default.catalog_product_list_limit: 6
 #will be loaded dynamic via ajax later on
 silver_eshop.default.catalog_product_list_limit_ajax: 3 
 ```
-
-  - [Templates for catalog](Templates-for-catalog_23560475.html)
-  - [Product category - UI](Product-category---UI_23560292.html)
-  - [Products - UI](Products---UI_23560290.html)
-  - [Product Variants - UI](Product-Variants---UI_23560478.html)
-
-## Attachments:
-
-![](images/icons/bullet_blue.gif) [image2018-11-9\_14-27-23.png](attachments/23560463/23562930.png) (image/png)  
-![](images/icons/bullet_blue.gif) [image2018-11-9\_14-34-0.png](attachments/23560463/23562929.png) (image/png)  

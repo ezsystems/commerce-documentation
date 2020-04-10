@@ -1,4 +1,4 @@
-#  Bestseller 
+# Bestseller
 
 ## Introduction
 
@@ -12,10 +12,9 @@ Bestsellers can be displayed on landing pages, category pages and bestseller pag
 
 Set the following parameter to true, to enable bestsellers in the shop
 
-**silver.eshop.yml**
+`silver.eshop.yml`:
 
-``` 
-# Bestseller configuration
+``` yaml
 siso_core.default.enable_bestsellers: true
 ```
 
@@ -30,4 +29,4 @@ The following configurations are available
 | Number of bestsellers displayed on bestseller page | Integer, how many bestsellers should be displayed on the bestsellers page          |
 | Number of bestsellers displayed on catalog pages   | Integer, how many bestsellers should be displayed on category pages og the catalog |
 | Number of bestsellers displayed in a slider        | Integer, how many bestsellers should be available in a slider on landing page      |
-| Treshold                                                                                      | How often has a product to be sold to count as a bestseller                        |
+| Threshold                                                                                      | How often has a product to be sold to count as a bestseller                        |
