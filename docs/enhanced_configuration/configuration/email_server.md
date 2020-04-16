@@ -1,4 +1,4 @@
-#  email server 
+# Email server
 
 The GDPR requests to handle emails in a secure way.
 
@@ -6,7 +6,7 @@ We recommend to configure a secure STMP transport:
 
 parameters.yml:
 
-``` 
+``` yaml
 mailer_host: <your mail server>
 mailer_port: 465
 mailer_encryption: ssl
@@ -19,7 +19,7 @@ mailer_stream_options:
 
 Required configuration for swiftmailer:
 
-``` 
+``` yaml
 swiftmailer:
 ...
     port: '%mailer_port%'

@@ -1,10 +1,10 @@
-#  Configuration 
+# Configuration
 
 eZ Commerce is a highly configurable software which allows us to implement different configurations and load different Bundles for different installations
 
 ## Http server configuration
 
-Please check the documentation for eZ Platform for more details: <https://doc.ezplatform.com/en/latest/getting_started/install_ez_platform/#prepare-installation-for-production>
+Please check the documentation for eZ Platform for more details: https://doc.ezplatform.com/en/latest/getting_started/install_ez_platform/#prepare-installation-for-production
 
 eZ Commerce requires one more rule in order to display images. The following examples shows the settings for apache2: 
 
@@ -18,9 +18,9 @@ Basically, you can override any config file with special CLIENT-config files.
 
 ## parameters.yml
 
-The parameters.yml contains important settings for your Installation:
+The `parameters.yml` contains important settings for your Installation:
 
-``` 
+``` yaml
 # This file is auto-generated during the composer install
 parameters:
     env(SYMFONY_SECRET): ThisEzPlatformTokenIsNotSoSecret_PleaseChangeIt
@@ -45,9 +45,9 @@ parameters:
 
 ## config.yml
 
-eZ Commerce include 2 special config files "ecommerce.yml" and "ecommerce\_parameters.yml". 
+eZ Commerce include 2 special config files `ecommerce.yml` and `ecommerce_parameters.yml`.
 
-``` 
+``` yaml
 imports:
     - { resource: default_parameters.yml }
     - { resource: parameters.yml }
@@ -64,7 +64,7 @@ imports:
 
 The following routs are required for eZ Commerce
 
-``` 
+``` yaml
 silversolutions_eshop:
     resource: "@SilversolutionsEshopBundle/Resources/config/ses_routing.yml"
     prefix: /
@@ -108,16 +108,16 @@ siso_orderhistory:
 
 ## Bundles
 
-The method registerBundles() in our Kernel load different Bundles based on the environment.
+The method `registerBundles()` in our Kernel load different Bundles based on the environment.
 
 In addition, you are able to load client-specific Bundles here:
 
-``` 
-  //custom bundles for clients
-  switch ($this->getClient()) {
-     case "demo":
-         $bundles[] = new Silversolutions\Bundle\DemoBundle\SilversolutionsDemoBundle();
-     }
+``` php
+//custom bundles for clients
+switch ($this->getClient()) {
+    case "demo":
+        $bundles[] = new Silversolutions\Bundle\DemoBundle\SilversolutionsDemoBundle();
+    }
 ```
 
 The value that is considered here comes is passed from the vhost-config into the script. See above for details.

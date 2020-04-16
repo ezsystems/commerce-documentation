@@ -1,4 +1,4 @@
-#  Session handling 
+# Session handling
 
 The default session handling should be changed, because after clearing the cache all users will be logged out.  
 Session now are handled with PDO. There is a possibility to switch also to memcache. 
@@ -7,7 +7,7 @@ Session now are handled with PDO. There is a possibility to switch also to memca
 
 You need to create a session table in the DB if DB storage is used
 
-``` 
+``` sql
 CREATE TABLE session
 (
     session_id varchar (255) PRIMARY KEY NOT NULL,
@@ -22,9 +22,9 @@ You need to change the configuration:
 
 ### Setup name for siteaccesses
 
-It is very important to set a session name. Otherwise eZ platform will generate a unique name per siteaccess which causes issues if you switch e.g. the language/siteacess and users cannot share a basket and login across siteaccesses\! 
+It is very important to set a session name. Otherwise eZ platform will generate a unique name per siteaccess which causes issues if you switch e.g. the language/siteacess and users cannot share a basket and login across siteaccesses.
 
-``` 
+``` yaml
 site_group:
     session:
         name: eZCommerce
@@ -33,9 +33,9 @@ site_group:
 
 ### General settings
 
-**config.yml**
+`config.yml`:
 
-``` 
+``` yaml
 framework:
     ...
     session:

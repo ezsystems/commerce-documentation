@@ -1,20 +1,18 @@
-#  How to store sessions in Memcache using stash and separate them from other stash caches 
+# How to store sessions in Memcache using stash and separate them from other stash caches
 
 ## Requirements
 
-  - Store sessions in Memcached, preferably using stash
-  - Don't mix session stash cache with other stash caches (SPI, translation , navigation)
-  - Configure failover session cache server
+- Store sessions in Memcached, preferably using stash
+- Don't mix session stash cache with other stash caches (SPI, translation , navigation)
+- Configure failover session cache server
 
 ## Implementation
 
 ### Step 1. Configure Memcache servers
 
-Add new stash service to stash configuration,
+Add new stash service to stash configuration, `ezpublish_env.yml`:
 
-**ezpublish\_[env](/pages/createpage.action?spaceKey=EZC14&title=env&linkCreation=true&fromPageId=23560473).yml**
-
-``` 
+``` yaml
 session:
     drivers: [ Memcache ]
     inMemory: true
@@ -32,28 +30,30 @@ session:
                 port: 11212
 ```
 
-Don't forget parameter registerSessionHandler: true
+!!! caution
+
+    Don't forget parameter `registerSessionHandler: true`.
 
 ### Step 2. Configure session handler
 
-**config\_[env](/pages/createpage.action?spaceKey=EZC14&title=env&linkCreation=true&fromPageId=23560473).yml**
+`config_env.yml`:
 
-``` 
- session:
+``` yaml
+session:
     handler_id: stash.adapter.session.session_cache
 ```
 
 ## Test cases
 
-### Test 1. Sessions are stored in Maemcached
+### Test 1. Sessions are stored in Memcached
 
-1.  Configure just one memcached server
-2.  Connect with telnet, check that session name are stored as keys
-3.  Expected: site is working
+1. Configure just one memcached server
+1. Connect with telnet, check that session name are stored as keys
+1. Expected: site is working
 
 ### Test 2. Failover server works
 
-1.  Configure 2 memcached servers on different ports
-2.  Stop first server
-3.  Connect with telnet to second server, check that session name are stored as keys
-4.  Expected: site is working
+1. Configure 2 memcached servers on different ports
+1. Stop first server
+1. Connect with telnet to second server, check that session name are stored as keys
+1. Expected: site is working

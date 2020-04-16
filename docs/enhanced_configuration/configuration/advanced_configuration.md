@@ -1,8 +1,8 @@
-#  Advanced configuration 
+# Advanced configuration
 
-## Cache configuration:
+## Cache configuration
 
-``` 
+``` yaml
 stash:
     caches:
         default:
@@ -18,37 +18,37 @@ stash:
 
 eZ Commerce is using user groups in order to place new users. Please configure the location id of the user group here:
 
-``` 
-    siso_core.default.user_group_location: 106
-    siso_core.default.user_group_location.business: 106
-    siso_core.default.user_group_location.private: 106
+``` yaml
+siso_core.default.user_group_location: 106
+siso_core.default.user_group_location.business: 106
+siso_core.default.user_group_location.private: 106
 ```
 
 ## Supported country list
 
 This configuration controls, which countries will be offered in eZ Commerce (e.g. in registration forms or in the checkout)
 
-``` 
+``` yaml
 siso_tools.default.countries: ['DE','US','NO']
 ```
 
 ## Navigation menu
 
-``` 
-    siso_core.default.breadcrumb_content_label_fields: ['name', 'title']
-    siso_core.default.navigation.content:
-        types: ["st_module", "folder", "article", "landing_page", "ses_productcatalog", "folder_news", "folder_events", "blog", "folder_contacts"]
-        sections: [1, 2, 9]
-        enable_priority_zero: false
-        #additional field keys for translating navigation node label
-        label_fields: ['name', 'title']
-        additional_fields: ['intro', 'media', 'alternative_title', 'alternative_intro', 'alternative_image']
+``` yaml
+siso_core.default.breadcrumb_content_label_fields: ['name', 'title']
+siso_core.default.navigation.content:
+    types: ["st_module", "folder", "article", "landing_page", "ses_productcatalog", "folder_news", "folder_events", "blog", "folder_contacts"]
+    sections: [1, 2, 9]
+    enable_priority_zero: false
+    #additional field keys for translating navigation node label
+    label_fields: ['name', 'title']
+    additional_fields: ['intro', 'media', 'alternative_title', 'alternative_intro', 'alternative_image']
 ```
 
 ## Search
 
-``` 
-    siso_search.default.groups.search:
+``` yaml
+siso_search.default.groups.search:
     product:
         types:
             - ses_product
@@ -157,5 +157,4 @@ siso_search.default.autosuggest_module_definitions:
         text_limit: 60
         search_service_id: siso_search.autosuggest_service.download
         redirect_generator_id: siso_search.autosuggest_redirect_generator.download
- 
 ```

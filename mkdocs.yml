@@ -41,18 +41,18 @@ nav:
             - 'How to: Change logo': 'getting_started/extending_the_frontend/how_to_change_logo.md'
     - Enhanced configuration:
         - Configuration:
-            - 'enhanced_configuration/configuration/configuration.md'
-            - 'enhanced_configuration/configuration/session_handling.md'
-            - 'enhanced_configuration/configuration/how_to_store_sessions_in_memcache_using_stash_and_separate_them_from_other_stash_caches.md'
-            - 'enhanced_configuration/configuration/setup_a_new_language.md'
-            - 'enhanced_configuration/configuration/required_crontab_tasks.md'
-            - 'enhanced_configuration/configuration/rotation_for_logfiles.md'
-            - 'enhanced_configuration/configuration/advanced_configuration.md'
-            - 'enhanced_configuration/configuration/email_server.md'
-            - 'enhanced_configuration/configuration/configure_erp_connection.md'
+            - 'Configuration': 'enhanced_configuration/configuration/configuration.md'
+            - 'Session handling': 'enhanced_configuration/configuration/session_handling.md'
+            - 'How to store sessions in Memcache using stash': 'enhanced_configuration/configuration/how_to_store_sessions_in_memcache_using_stash_and_separate_them_from_other_stash_caches.md'
+            - 'Set up a new language': 'enhanced_configuration/configuration/setup_a_new_language.md'
+            - 'Required crontab tasks': 'enhanced_configuration/configuration/required_crontab_tasks.md'
+            - 'Rotation for logfiles': 'enhanced_configuration/configuration/rotation_for_logfiles.md'
+            - 'Advanced configuration': 'enhanced_configuration/configuration/advanced_configuration.md'
+            - 'Email server': 'enhanced_configuration/configuration/email_server.md'
+            - 'Configure ERP connection': 'enhanced_configuration/configuration/configure_erp_connection.md'
         - Installation details:
-            - 'enhanced_configuration/installation_details/php_settings.md'
-            - 'enhanced_configuration/installation_details/installation_and_configuration_faqs.md'
+            - 'PHP settings': 'enhanced_configuration/installation_details/php_settings.md'
+            - 'Installation and configuration FAQ': 'enhanced_configuration/installation_details/installation_and_configuration_faqs.md'
     - User manual:
         - General:
             - 'user_manual/general/general.md'

@@ -1,8 +1,8 @@
-#  Required crontab tasks 
+# Required crontab tasks
 
 ## Recurring tasks in crontab
 
-### Remove translation and navigation caches  
+### Remove translation and navigation caches
 
 The shop collects changes regarding translations (textmodules) and  navigation. If there are changes (e.g. performed in the backend) the cache will be refreshed.   
 
@@ -13,7 +13,7 @@ The shop collects changes regarding translations (textmodules) and  navigation. 
 
 ### Send lost orders to the ERP (Advanced version only)
 
-Lost orders can be resend using a commandline tool. We recommend to start this tool e.g. every 5 minutes.
+Lost orders can be resend using a command-line tool. We recommend to start this tool e.g. every 5 minutes.
 
 ``` 
 # resends lost orders every 5 minutes
@@ -22,15 +22,17 @@ Lost orders can be resend using a commandline tool. We recommend to start this t
 
 ### Use job-queue-system
 
-Please check the documentation for JMSJobQueueBundle <http://jmsyst.com/bundles/JMSJobQueueBundle/master/installation> 
+Please check the documentation for [JMSJobQueueBundle](http://jmsyst.com/bundles/JMSJobQueueBundle/master/installation)
 
-In case the suggested supervisord configuration cannot be used a cronjob can be setup: <https://github.com/schmittjoh/JMSJobQueueBundle/issues/205>
+In case the suggested supervisord configuration cannot be used a cronjob can be setup: https://github.com/schmittjoh/JMSJobQueueBundle/issues/205
 
 ### Calculate statistical data for active sessions
 
 The dashboard uses statistical data about sessions recorded in a db table. This command line will refresh the data every 5 minutes. 
 
-**Important note:** This feature is available only if sessions are handled in the database.
+!!! note
+
+    This feature is available only if sessions are handled in the database.
 
 ``` 
 */5 * * * * cd /var/www/my_project &&  /usr/bin/php bin/console silversolutions:sessions write_stat --env=prod
