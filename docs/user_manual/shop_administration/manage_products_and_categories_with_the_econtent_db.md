@@ -10,7 +10,7 @@ eContent is a storage provider for silver.eShop 4 which can store product data i
 
 The advantages of the eContent data base are:
 
-  - Fast imports (e.g. from ERP or PIM systems)
-  - Supports more than one million products
-  - eContent offers a staging feature which allows imports during production and switching catalogs
-  - Enhanced catalog segmentation features
+- Fast imports (e.g. from ERP or PIM systems)
+- Supports more than one million products
+- eContent offers a staging feature which allows imports during production and switching catalogs
+- Enhanced catalog segmentation features

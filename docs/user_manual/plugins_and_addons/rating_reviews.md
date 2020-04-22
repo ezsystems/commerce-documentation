@@ -1,5 +1,5 @@
 # Rating Reviews (PlugIn) 
 
-This section enables to manage the rating\&review functionality. Editor can list the reviews from the shop, hide/unhide them.
+This section enables to manage the rating and review functionality. Editor can list the reviews from the shop, hide/unhide them.
 
-![](../img/rating_and_review_1.png)
+![](img/rating_review.png)
