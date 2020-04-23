@@ -6,7 +6,7 @@ The BusinessApi is the layer between the application entry points (like controll
 
 ![](../img/business_api_1.png)
 
-To access the **BusinessApi**, you have to make usage of the [BusinessApi Invocation Service](BusinessApi-Invocation-Service_23560513.html). 
+To access the **BusinessApi**, you have to make usage of the [BusinessApi Invocation Service](businessapi_invocation_service.md). 
 
 #### Application Flow
 
@@ -16,7 +16,7 @@ To access the **BusinessApi**, you have to make usage of the [BusinessApi Invoca
 
 ## Input/Output Data
 
-All data passed to the BusinessApi calls (input)  must be an instance of a class, that extends [ValueObject](ValueObject_23560594.html). This input data class should define all fields and/or structs, which are needed to process the called business logic. But business logic must not be implemented in these classes.
+All data passed to the BusinessApi calls (input)  must be an instance of a class, that extends [ValueObject](../valueobject.md). This input data class should define all fields and/or structs, which are needed to process the called business logic. But business logic must not be implemented in these classes.
 
 Also all data, which is returned by the BusinessApi calls (output), must be an instance of the ValueObject class.
 

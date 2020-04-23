@@ -1,4 +1,4 @@
-#  Legal Documents 
+# Legal documents
 
 In an Online Shop you need a number of legal documents and forms. These can be managed in the folder "Service".
 

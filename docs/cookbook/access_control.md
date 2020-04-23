@@ -1,6 +1,6 @@
 # Access control
 
-# Introduction
+## Introduction
 
 eZ Commerce uses the eZ Platform policies to avoid access to some specific pages. The policies can be assigned in the backend to a specific user role. eZ Platform allows you to create your own role system.
 
@@ -30,7 +30,7 @@ One policy consists of a module and a function.
 eZ Commerce has a flexible way, how to handle the access to some specific area.
 
 - Controllers: If there is a defined route, you can simple add the policy in the routing file.
-- [eZ Commerce forms](One-page-forms_23560744.html): you can add the policy in the forms configuration  
+- [eZ Commerce forms](../developer_manual/one_page_forms/one_page_forms.md): you can add the policy in the forms configuration  
 
 !!! note
 
@@ -52,7 +52,7 @@ For a simple check if user has a definied policy, this configuration is pretty e
 
 ### How this works in the backround?
 
-There is a central event listener, that will check the configuration from the routing file and user policies on every request. If user does not have a defined policy, an AccessDenied Exception is thrown and forwarded to the [ExceptionListener](Exception-Handling_23560498.html).
+There is a central event listener, that will check the configuration from the routing file and user policies on every request. If user does not have a defined policy, an AccessDenied Exception is thrown and forwarded to the [ExceptionListener](exception_handling/exception_handling.md).
 
 **Silversolutions/Bundle/EshopBundle/EventListener/VerifyUserPoliciesRequestListener.php**
 

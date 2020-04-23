@@ -1,4 +1,4 @@
-#  Content & Commerce 
+# Content and commerce
 
 One of the main USPs of the solution is that Content\&Commerce are managed in one system. This allows to mix content and products on different places.
 

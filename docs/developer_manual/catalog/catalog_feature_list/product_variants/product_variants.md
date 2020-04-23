@@ -2,7 +2,7 @@
 
 ## General Information
 
-[Variants](23560374.html) are used if a product is available in different options. eZ Commerce offers a flexible variant model allowing 1..3 levels of variant characteristics such as color or size. 
+[Variants](../../catalog_api/variantproductsnode_and_orderablevariantnode/variantproductnode_and_orderablevariantnode.md) are used if a product is available in different options. eZ Commerce offers a flexible variant model allowing 1..3 levels of variant characteristics such as color or size. 
 
 ## Features
 
@@ -19,7 +19,7 @@ silver_eshop.default.variant_type: B2C
 
 ##### Icons
 
-[Factory](How-to-setup-variants-from-external-source_23560313.html), that will creates variants, can also provide images for some characteristics. In our example the factory provided some images for the characteristoc 'Color'. If the images are provide, they are taken, otherwise just text is displayed in a box, see Unit and Width.
+[Factory](../../catalog_cookbook/how_to_set_up_variants_from_external_source.md), that will creates variants, can also provide images for some characteristics. In our example the factory provided some images for the characteristoc 'Color'. If the images are provide, they are taken, otherwise just text is displayed in a box, see Unit and Width.
 
 How the images should be stored in the variant characteristics:
 
@@ -56,7 +56,7 @@ How the images should be stored in the variant characteristics:
 
 !!! tip
 
-    if you just want to edit the images, or add new ones, see [How to adapt the frontend](#ProductVariants-front).
+    if you just want to edit the images, or add new ones, see [How to adapt the frontend](#how-to-adapt-the-frontend).
 
 ## Edit Variant in the basket
 
@@ -69,7 +69,7 @@ When clicking on the "pen" icon (image above) the popup will show with option to
 ![](../../../img/product_variants_3.png)
 ![](../../../img/product_variants_4.png)
 
-## How to adapt the frontend 
+## How to adapt the frontend
 
 #### Templates used in product detail
 
@@ -103,7 +103,7 @@ Then we need to place them under "**bundles/silversolutionseshop/img/variants/**
 
 ## How to define sorting for variants
 
-eZ Commerce provides the ability to configure sorting of variant characteristics, please see the [VariantSortService](Variant-Services_23560238.html).
+eZ Commerce provides the ability to configure sorting of variant characteristics, please see the [VariantSortService](../../catalog_api/variantproductsnode_and_orderablevariantnode/variant_services.md).
 
 ## How the prices are calculated
 

@@ -2,7 +2,7 @@
 
 ## General
 
-Logging was added to the [TokenController](TokenController_23560947.html). If a token is processed it will be logged in a file or database. The default configuration is set for database logging:
+Logging was added to the [TokenController](../../../cookbook/token/tokencontroller/tokencontroller.md). If a token is processed it will be logged in a file or database. The default configuration is set for database logging:
 
 `ses_gdpr_log`:
 

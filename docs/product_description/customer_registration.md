@@ -1,4 +1,4 @@
-#  Customer registration 
+# Customer registration
 
 ## Registration in shop (no 3rd party software involved)
 

@@ -1,4 +1,4 @@
-#  Folder (Events) 
+# Folder (Events)
 
 Special folder to show events.
 

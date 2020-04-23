@@ -1,6 +1,6 @@
 # SesProfileData
 
-This datatype is used to store the [CustomerProfileData](Customer-profile-data-model_23560898.html) in the User class in eZ Platform.
+This datatype is used to store the [CustomerProfileData](../../developer_manual/customers/customers_api/customer_profile_data_components/customer_profile_data_model.md) in the User class in eZ Platform.
 
 !!! note
 

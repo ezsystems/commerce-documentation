@@ -1,6 +1,6 @@
 # Product category (CatalogElement)
 
-The CatalogElement class defines the generic product and category model which is used within eZ Commerce. It inherits from the general class [ValueObject](ValueObject_23560594.html) which offers a convenient way of setting properties of instances via the constructor and makes these properties public readable (like $valueObject-\>name).
+The CatalogElement class defines the generic product and category model which is used within eZ Commerce. It inherits from the general class [ValueObject](../../../cookbook/valueobject.md) which offers a convenient way of setting properties of instances via the constructor and makes these properties public readable (like $valueObject-\>name).
 
 Inheriting from CatalogElement there are some sub classes worth mentioning:
 
@@ -95,6 +95,5 @@ Concrete implementations of the `CatalogElement` class requires you to extend `v
 
 ## Sub classes
 
-- [CatalogElementContainer & CatalogNode](/pages/createpage.action?spaceKey=EZC14&title=CatalogElementContainer+%26+CatalogNode&linkCreation=true&fromPageId=23560458)
-- [ProductNode & OrderableProductNode](23560315.html)
-- [ProductType](ProductType_23560981.html)
+- [ProductNode and OrderableProductNode](productnode_and_orderableproductnode.md)
+- [ProductType](producttype.md)

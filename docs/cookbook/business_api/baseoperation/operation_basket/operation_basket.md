@@ -6,8 +6,8 @@ This class implements business logic for basket
 
 | method                                   | parameters                           | returns                                | purpose                    | operation identifier |
 | ---------------------------------------- | ------------------------------------ | -------------------------------------- | -------------------------- | -------------------- |
-| [addProducts](addProducts_23560358.html) | InputAddItemToBasket $operationInput | OutputAddItemToBasket $operationOutput | add products to the basket | basket.add\_products |
-| [getBasket](getBasket_23560356.html)     | InputGetBasket $input                | OutputGetBasket $output                | returns current basket     | basket.get\_basket   |
+| [addProducts](addproducts.md) | InputAddItemToBasket $operationInput | OutputAddItemToBasket $operationOutput | add products to the basket | basket.add\_products |
+| [getBasket](getbasket.md)     | InputGetBasket $input                | OutputGetBasket $output                | returns current basket     | basket.get\_basket   |
 
 !!! note
 

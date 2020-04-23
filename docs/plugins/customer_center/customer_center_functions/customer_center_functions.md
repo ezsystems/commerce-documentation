@@ -49,7 +49,7 @@ The list displayed  on the entry page shows
 
 - the shop users already registered for the shop. You will see the User name, the status and the roles assigned
 - a list of ERP contacts, which are not yet set up as a user in the shop
-The customer-center offers a list of features. The input forms of these features are described in the following sections. The cancel button of each feature's form will link back to customer-center's overview. For a more detailed description about the form configuration concept, please have a look the sub-section [Customer center - user actions](Customer-center---user-actions_29819124.html).
+The customer-center offers a list of features. The input forms of these features are described in the following sections. The cancel button of each feature's form will link back to customer-center's overview. For a more detailed description about the form configuration concept, please have a look the sub-section [Customer center - user actions](customer_center_user_actions.md).
 
 ## Edit a user
 
@@ -104,4 +104,4 @@ Please ensure that:
 - at least one role is selected.
 - the email is not yet used for another shop user.
 
-After sending the form, the user will get an email similar to the email of: [Add an existing user to the shop](#CustomerCenterfunctions-Addanexistingusertotheshop)
+After sending the form, the user will get an email similar to the email of: [Add an existing user to the shop](#add-an-existing-user-to-the-shop)

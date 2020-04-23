@@ -60,7 +60,7 @@ The following templates are prepared for displaying basket related data:
 
 ## Available Entity Attributes
 
-see [Basket data model](Basket-data-model_23560234.html)
+see [Basket data model](../basket_api/basket_data_model.md)
 
 ### CatalogElement
 
@@ -68,7 +68,7 @@ If you need to get the CatalogElement, you can fetch it by `{{ line.sku }}`. The
 
 This ensures that the basket get a fast access to the product data and that during a checkout/payment process the product data will be available even when the product is removed from the catalog meanwhile. 
 
-See [Get a ProductNode by SKU](Catalog---UI_23560463.html)
+See [Get a ProductNode by SKU](../../catalog/catalog_ui/catalog_ui.md)
 
 If a basket line does not provide product data (e.g. the caching life time of a product has been exceeded) the product can be fetched using a twig function.  
 

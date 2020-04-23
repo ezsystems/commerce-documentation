@@ -4,7 +4,7 @@ It is possible that images or other files (like pdf, exe, zip...) are not stored
 
 There is a special AssetService, that checks the given strategy and gets all assets for a single CatalogElement.
 
-AssetServices uses the [StorageService](StorageService_23560715.html) to get the assets from the storage.
+AssetServices uses the [StorageService](storageservice.md) to get the assets from the storage.
 
 ### Strategy
 
@@ -164,7 +164,7 @@ The assets configuration is stored in **silver.eshop.yml**
 
 ### Webserver configuration
 
-Please be aware the webserver configuration need a new rewrite rule (see [Configuration](Configuration_23560547.html)).
+Please be aware the webserver configuration need a new rewrite rule (see [Configuration](../../enhanced_configuration/configuration/configuration.md)).
 
 ## Cache
 

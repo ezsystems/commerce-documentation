@@ -96,11 +96,11 @@ parameters:
 
 !!! tip
 
-    The shipping and payment methods configuration can be also overriden by implementing an [Pre Form Checkout Event](Checkout-Events_23560944.html) that will store the values in the dataMap.
+    The shipping and payment methods configuration can be also overriden by implementing an [Pre Form Checkout Event](../checkout_events.md) that will store the values in the dataMap.
 
 !!! note "Important"
 
-    Please keep in mind that the **value** of the preferred choice and the **index** of the choice must match\!
+    Please keep in mind that the **value** of the preferred choice and the **index** of the choice must match.
 
     Example:
 

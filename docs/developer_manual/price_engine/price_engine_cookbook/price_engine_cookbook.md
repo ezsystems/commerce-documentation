@@ -2,7 +2,7 @@
 
 ## How to use the price engine
 
-The entry point to the price engine is the [ChainPriceService](ChainPriceService_23560686.html). If you want to get prices from the price engine, you have to use this service. See this [Recipe](recipe_how_to_work_with_pricerequest_and_priceresponse.md) to find out, how to work with PriceReuest and PriceResponse.
+The entry point to the price engine is the [ChainPriceService](../price_engine_api/price_engine_services/chainpriceservice/chainpriceservice.md). If you want to get prices from the price engine, you have to use this service. See this [Recipe](recipe_how_to_work_with_pricerequest_and_priceresponse.md) to find out, how to work with PriceReuest and PriceResponse.
 
 Example:
 
@@ -66,7 +66,7 @@ The basket contains an attribute "priceResponseSourceType" which contains the so
 
 ## How to write a new Price Provider
 
-see [Price Providers](Price-Providers_23560237.html).
+see [Price Providers](../price_engine_api/price_engine_services/chainpriceservice/price_providers/price_providers.md).
 
 ### Step 1
 

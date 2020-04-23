@@ -37,4 +37,4 @@ When a customercenter for a given customer number shall be created the customerc
 
 When a customer logs in, the shop searches for a user with given email inside the "Demo-Shop" or "Editors" user tree.
 
-For details see [Login and registration](Login-and-registration_29819127.html)
+For details see [Login and registration](../../developer_manual/login_and_registration/login_and_registration.md)

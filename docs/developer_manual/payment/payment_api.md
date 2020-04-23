@@ -2,7 +2,7 @@
 
 ## Silversolutions Payment Bundle
 
-Additional payment providers can be implemented as described below. See [Building new payment plugins](Building-new-payment-plugins_23560269.html) as well.
+Additional payment providers can be implemented as described below. See [Building new payment plugins](payment_cookbook/building_new_payment_plugins.md) as well.
 
 The `SilversolutionsPaymentBundle` defines and implements an interface to the `JMSPaymentCoreBundle`. The main interface is represented by the `PaymentServiceInterface`, which is the public access point to payment processing.
 

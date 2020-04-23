@@ -1,6 +1,6 @@
 # ProductType
 
-The `ProductType` extends [**CatalogElement**](23560458.html) and implements `ProductNodeContainerInterface`.
+The `ProductType` extends [CatalogElement](product_category_catalogelement.md) and implements `ProductNodeContainerInterface`.
 
 This class defines the methods needed to instantiate a product type.
 
@@ -14,7 +14,7 @@ This class defines the methods needed to instantiate a product type.
 |specifications|AbstractField[]|A list of specifications of a product|
 |imageList|ImageField[] (FieldInterface[])|A list of images|
 |displayInSearch|bool|True if the productType should be displayed in the search result|
-|displayInProductList|bool|True if the productType should be displayed in the product list restul|
+|displayInProductList|bool|True if the productType should be displayed in the product list result|
 
 ### Methods
 

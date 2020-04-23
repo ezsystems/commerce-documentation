@@ -2,9 +2,9 @@
 
 Namespace: `Siso\Bundle\PriceBundle\Model`
 
-The `Price` class defines a generic price object. When attached to a [`ProductNode`](../../catalog/catalog_api/productnode_and_orderableproductnode.md) object, the Field [`PriceField`](../../cookbook/fields_for_ecommerce_data/pricefield.md) is used.
+The `Price` class defines a generic price object. When attached to a [`ProductNode`](../../../catalog/catalog_api/productnode_and_orderableproductnode.md) object, the Field [`PriceField`](../../../../cookbook/fields_for_ecommerce_data/pricefield.md) is used.
 
-As this class is extending [`ValueObject`](../../cookbook/valueobject.md), you can set the necessary properties a new `Price` object easily using an array in the constructor.
+As this class is extending [`ValueObject`](../../../../cookbook/valueobject.md), you can set the necessary properties a new `Price` object easily using an array in the constructor.
 
 ## Properties
 

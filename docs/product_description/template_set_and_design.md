@@ -1,4 +1,4 @@
-#  Template set and design 
+# Template set and design
 
 eZ Commerce and ses%brand-advanced come with a set of templates and a standard design.
 

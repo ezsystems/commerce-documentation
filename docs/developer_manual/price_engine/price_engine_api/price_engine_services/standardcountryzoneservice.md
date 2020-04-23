@@ -4,7 +4,7 @@
 
 The advantage of this service is to use it as a helper to resolve settings based on a region or zone.  It uses simple configuration to determine the zone by given country.
 
-It is used e.g. for selecting template debitors in the [StandardTemplateDebitorService](StandardTemplateDebitorService_23560368.html).
+It is used e.g. for selecting template debitors in the [StandardTemplateDebitorService](standardtemplatedebitorservice.md).
 
 ## Configuration
 

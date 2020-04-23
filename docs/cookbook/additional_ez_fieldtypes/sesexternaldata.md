@@ -41,7 +41,7 @@ Example (sku = 1122222)
 
 ## How to store data in `ses_externaldata` table
 
-Data that is stored in the ses\_externaldata table must be either a simple datatype: *int, float, boolean* or a [FieldType](Fields-for-ecommerce-data_23560470.html).
+Data that is stored in the ses\_externaldata table must be either a simple datatype: *int, float, boolean* or a [FieldType](../fields_for_ecommerce_data/fields_for_ecommerce_data.md).
 
 ### Data format
 
@@ -138,6 +138,6 @@ If the table ses\_externaldata is filled properly with the data, it is possible 
 
 #### Handling the fetched data
 
-The data from sesexternaldata is converted in the shop and an array of [FieldTypes](Fields-for-ecommerce-data_23560470.html) or simple types is returned
+The data from sesexternaldata is converted in the shop and an array of [FieldTypes](../fields_for_ecommerce_data/fields_for_ecommerce_data.md) or simple types is returned
 
 ![](../img/additional_ez_fieldtypes_6.png)  

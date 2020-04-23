@@ -59,7 +59,7 @@ Each operation, e.g. Basket, is a simple symfony2 service. While defining the se
 
     The attribute **alias** defines the above mentioned first part in the operation identifier.
 
-    Please derive your new service from the [common parent class BaseOperation](BaseOperation_23560335.html) in order to get access to commonly needed dependencies (e.g. logging and translations).
+    Please derive your new service from the [common parent class BaseOperation](baseoperation/baseoperation.md) in order to get access to commonly needed dependencies (e.g. logging and translations).
 
 #### Overriding an existing BusinessApi class
 

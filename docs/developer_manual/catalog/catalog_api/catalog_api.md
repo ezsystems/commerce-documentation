@@ -107,4 +107,4 @@ A filter has a name. The name will be used as a key to get the filter parameters
 
 A filter name is e.g. "navigation". 
 
-Standard filters see [Catalog - Configuration](Catalog---Configuration_23560211.html)
+Standard filters see [Catalog configuration](../catalog_configuration.md)

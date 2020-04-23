@@ -1,4 +1,4 @@
-#  Folder (Contacts) 
+# Folder (Contacts)
 
 Special folder to show contacts.
 

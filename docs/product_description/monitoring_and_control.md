@@ -1,4 +1,4 @@
-#  Monitoring and control
+# Monitoring and control
 
 Control Center, advanced version only.
 

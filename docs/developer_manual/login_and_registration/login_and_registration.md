@@ -79,8 +79,8 @@ The forms and the processes behind the forms can be customized. The shop uses th
 
 **Access control**
 
-You will find Details about how security system work in the document [Access control](Access-control_23560922.html)
+You will find Details about how security system work in the document [Access control](../../cookbook/access_control.md)
 
 **Token**
 
-Details about using the Token system offered by Symfony is document in [TokenController](TokenController_23560947.html)
+Details about using the Token system offered by Symfony is document in [TokenController](../../cookbook/token/tokencontroller/tokencontroller.md)

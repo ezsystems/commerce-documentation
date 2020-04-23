@@ -19,7 +19,7 @@ The basic form components have to be build in the first step:
 Form entity is just a simple class that holds the data. No business logic is defined here. This is the place where you have to define:
 
 - form attributes
-- [validation](one_page_forms_api.md)
+- [validation](one_page_forms_api/one_page_forms_api.md)
 
 Every form entity has to extend the `AbstractFormEntity`.
 

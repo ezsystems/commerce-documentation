@@ -8,7 +8,7 @@ It offers a very flexible way to combine the logic of an ERP system and a local 
 
 !!! tip
 
-    The base entry point for price engine is [ChainPriceService](ChainPriceService_23560686.html), which is used to fetch prices.
+    The base entry point for price engine is [ChainPriceService](price_engine_api/price_engine_services/chainpriceservice/chainpriceservice.md), which is used to fetch prices.
 
 It determines a chain of Price Providers, which will be responsible for calculating the prices. 
 
@@ -18,7 +18,7 @@ It is up to configuration, which set of Price Providers will be used. This is im
 - on a **product detail** page the customer expects to get his individual price from the ERP
 - in the **basket** the price shall always be provided by the ERP
 
-The ChainPriceService is using *[ContextId](Term---ContextId_23560381.html)* (e.g. basket, product\_list). For each context a prioritized  list of Price Providers can be defined. This concept also allows to define a fallback if e.g. the ERP is not available. The response for a price request contains a source so that the shop can display e.g. a warning if the price and stock is not provided by the ERP but by a fallback price provider. 
+The ChainPriceService is using *[ContextId](../../glossary/term_contextid.md)* (e.g. basket, product\_list). For each context a prioritized  list of Price Providers can be defined. This concept also allows to define a fallback if e.g. the ERP is not available. The response for a price request contains a source so that the shop can display e.g. a warning if the price and stock is not provided by the ERP but by a fallback price provider. 
 
 In addition to prices, the ChainPriceService is able to retrieve stock information since the ERP systems usually provide this information in the price request. 
 
@@ -99,6 +99,4 @@ $catalogElement = $variantService->createOrderableProductFromVariant($catalogEle
 
 Please keep in mind that the Price Service is really connected with a lot of different modules in our shop. Be sure to check these out:
 
-- [Catalog Element](http://confluence.ng.silverproducts.de/display/EX/CatalogElement)
-- [ERP](http://confluence.ng.silverproducts.de/display/EX/ERP)
-- [CustomerProfileData](Customers_23560704.html)
+- [CustomerProfileData](../customers/customers.md)

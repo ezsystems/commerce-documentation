@@ -6,7 +6,7 @@ Let's say you need to add more fields to the customer center forms because you w
 
 !!! note
 
-    This tutorial will just explain how to extend the form with additional data, that will be stored in eZ. Sending of this additional data (e.g. in the order process) is part of a different process, that needs to be implemented separately. See [Sending additional data in the order.](Order-Submission_29819159.html)
+    This tutorial will just explain how to extend the form with additional data, that will be stored in eZ. Sending of this additional data (e.g. in the order process) is part of a different process, that needs to be implemented separately. See [Sending additional data in the order.](../../features_advanced_version/integrate_erp_systems/checkout_order/erp_order_synchronisation/order_submission/order_submission.md)
 
 ### Steps:
 
@@ -38,11 +38,11 @@ Let's say you need to add more fields to the customer center forms because you w
 
 If you need a special process to be started after one of the form was submitted, you need to write a new data processor. Let´s say you need to update the contact data in ERP, after you have edited the user in the shop.
 
-Condition for this recipe is, that you have prepared a message 'updateContact' to update the contact data in ERP. If you don´t know how to create a message, that will be sent to ERP, see our [tutorials](29819388.html).  
+Condition for this recipe is, that you have prepared a message 'updateContact' to update the contact data in ERP. If you don´t know how to create a message, that will be sent to ERP, see our [tutorials](../../features_advanced_version/integrate_erp_systems/erp_communication/guides/how_to_create_a_new_erp_message/create_a_project_specific_message_selectmodified_data.md).  
 
 ### Steps:
 
-1.  Create a new form processor, that implements the [FormProcessorInterface](FormProcessorInterface_29819007.html).
+1.  Create a new form processor, that implements the [FormProcessorInterface](customer_center_api/formprocessorinterface.md).
 
     **Example**
 
@@ -128,7 +128,7 @@ Then you can assign the user budget per year to some users.
 
 ## What needs to be extended in the shop?
 
-By default only the budget per order and budget per year are checked by the shop. The [OrderBudgetService](OrderBudgetService_29819593.html) is used to check the budget service.
+By default only the budget per order and budget per year are checked by the shop. The [OrderBudgetService](customer_center_api/orderbudgetservice.md) is used to check the budget service.
 
 The easiest way is to override this service in your project and consider also the budget per year in the interface methods.
 

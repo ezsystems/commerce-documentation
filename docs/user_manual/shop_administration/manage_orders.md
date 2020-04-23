@@ -1,6 +1,6 @@
-#  Manage orders 
+# Manage orders
 
-## Order management 
+## Order management
 
 eZ Commerce provides a list of all orders in the backend: eZ Commerce -\> Order Management
 

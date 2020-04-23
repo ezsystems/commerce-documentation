@@ -2,7 +2,7 @@
 
 ## Goal
 
-This is the concrete implementation of the [ContentServiceInterface](ContentServiceInterface_29819174.html).
+This is the concrete implementation of the [ContentServiceInterface](contentserviceinterface.md).
 
 ### Configuration
 

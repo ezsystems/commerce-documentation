@@ -1,4 +1,4 @@
-#  Folder (Blog) 
+# Folder (Blog)
 
 Special folder to show blog posts.
 
@@ -38,4 +38,3 @@ Blog posts will be shown only if the "Date" is today or newer.
 ### Create
 
 You can create a folder everywhere in the content structure.
-

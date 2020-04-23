@@ -4,9 +4,9 @@
 
 This service can be used when customer doesn't have customer or contact number yet, but such a number is necessary when communicating data to ERP. An example is price calculation, when prices shall be calculated using ERP.
 
-The ERP system is using a concept called [*Template Debitors*](Term---Template-Debitor_23560379.html).
+The ERP system is using a concept called [*Template Debitors*](../../../../glossary/term_template_debitor.md).
 
-This service makes usage of [StandardCountryZoneService](StandardCountryZoneService_23560363.html) to get the correct zone for the country. The country is determined from the given *[BuyerParty](Term---BuyerParty_23560433.html).*
+This service makes usage of [StandardCountryZoneService](standardcountryzoneservice.md) to get the correct zone for the country. The country is determined from the given *[BuyerParty](../../../../glossary/term_buyerparty.md).*
 
 Also customer groups from BuyerParty are considered when determining the template debitor information.
 

@@ -1,4 +1,4 @@
-#  Login and logout 
+# Login and logout
 
 Go to the URL of the backend, then enter your user name and password.
 

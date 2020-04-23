@@ -2,7 +2,7 @@
 
 ## Can I change the min length for the phone validator?
 
-Yes, you can configure the min and max length for the [phone validator](One-page-forms---API_23560842.html).
+Yes, you can configure the min and max length for the [phone validator](one_page_forms_api/one_page_forms_api.md).
 
 ``` yaml
 ses_phone_validator:

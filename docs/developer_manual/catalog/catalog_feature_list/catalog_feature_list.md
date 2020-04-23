@@ -1,6 +1,6 @@
 # Catalog feature list
 
-The catalog offers a variety of features. Some of the features are described on separate pages. The dataprovider econtent offers additional features. For more details please check [econtent - Features](econtent---Features_23561034.html)
+The catalog offers a variety of features. Some of the features are described on separate pages. The dataprovider econtent offers additional features. For more details please check [econtent - Features](../../../features_advanced_version/econtent/econtent_features/econtent_features.md)
 
 ## Flexible catalog structure
 

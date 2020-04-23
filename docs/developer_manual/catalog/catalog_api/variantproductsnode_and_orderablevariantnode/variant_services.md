@@ -2,7 +2,7 @@
 
 ## VariantService
 
-The goal of this service is to return [OrderableVariantNode](23560374.html) based on [VariantProductNode](23560374.html) and variantCode. This service also returns all available variant codes for the [VariantProductNode](23560374.html).
+The goal of this service is to return [OrderableVariantNode](../productnode_and_orderableproductnode.md) based on [VariantProductNode](../productnode_and_orderableproductnode.md) and variantCode. This service also returns all available variant codes for the [VariantProductNode](../productnode_and_orderableproductnode.md).
 
 ``` php
 /** @var VariantService $variantService */
@@ -77,7 +77,7 @@ silver_eshop.default.catalog_type:
 
 !!! note
 
-    The type of Catalog Element is set by the [CatalogFactory](#) , so if you are using different types for your products, you have to extend the configuration.
+    The type of Catalog Element is set by the CatalogFactory, so if you are using different types for your products, you have to extend the configuration.
 
     ```
     silver_eshop.default.catalog_type:

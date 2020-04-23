@@ -26,8 +26,8 @@ If you want to add/edit these fields via customer center forms, you have to add 
 
 ## How can i extend the process after the forms were submitted?
 
-If you need to introduce a special process, after the form was submitted, you will have to write a new data processor. Please see our [cookbook](Customer-Center---Cookbook_29819361.html) to find to appropriate recipe.
+If you need to introduce a special process, after the form was submitted, you will have to write a new data processor. Please see our [cookbook](customer_center_cookbook.md) to find to appropriate recipe.
 
 ## How can I add the customer center actions into user menu?
 
-Please check [Component - User Menu](Component---User-Menu_29819570.html) or [How to user menu is build?](Customers---FAQ_29819605.html)
+Please check [Component - User Menu](../../cookbook/frontend_customizing/4_front_end_stack_in_details/4.2_customized_foundation_framework/4.2.2_components/component_user_menu.md) or [How to user menu is build?](../../developer_manual/customers/customers_faq.md)

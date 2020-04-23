@@ -1,4 +1,4 @@
-#  Manage products and categories with the eZ dataprovider 
+# Manage products and categories with the eZ dataprovider
 
 ## Manage categories
 

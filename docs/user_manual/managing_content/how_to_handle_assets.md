@@ -1,4 +1,4 @@
-#  How to handle assets 
+# How to handle assets
 
 The integrated CMS eZ Platform offers a media database which is able to store all kind of media assets such as
 

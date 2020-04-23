@@ -2,7 +2,7 @@
 
 ## Which Solr version is used?
 
-eZ Commerce is using the Solr recommended by eZ systems. You can follow the instruction from eZ or check chapter [Installation](Installation_23561045.html)
+eZ Commerce is using the Solr recommended by eZ systems. You can follow the instruction from eZ or check chapter [Installation](../../getting_started/installation.md)
 
 If you are using econtent as a storage engine 2 additional cores in Solr are required.
 
@@ -67,7 +67,7 @@ siso_search.default.sort.preferred:
     files: score
 ```
 
-If there is a need for new sorting option then go to : [Search Cookbook](search_cookbook_search_cookbook.md#how-to-implement-new-sorting-option-for-search)
+If there is a need for new sorting option then go to : [Search Cookbook](search_cookbook/search_cookbook.md#how-to-implement-new-sorting-option-for-search)
 
 ## How can I change facets display?
 

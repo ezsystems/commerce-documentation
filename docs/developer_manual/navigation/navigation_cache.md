@@ -8,7 +8,7 @@ After an element is modified in backend, it is added to the queue to be deleted 
 
 Please check this documentation to check how this cache flow works:
 
-[Content Cache Refresh](Content-Cache-Refresh_23560351.html)
+[Content Cache Refresh](../caching_in_the_shop/content_cache_refresh/content_cache_refresh.md)
 
 ## Caching in debug mode
 

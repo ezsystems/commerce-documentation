@@ -1,4 +1,4 @@
-#  Ordering process 
+# Ordering process
 
 ## Ordering
 

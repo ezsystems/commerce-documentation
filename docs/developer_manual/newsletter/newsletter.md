@@ -4,7 +4,7 @@
 
 eZ Commerce offers a newsletter interface. This allows user to un/subscribe from/to newsletters and see the newsletter status or update newsletter details information in his profile.
 
-In standard implementation of %ses-band there is no specific newsletter provider connection. The standard offers only processes, templates, routes, configurations and interface which can be used for newsletter integration. So only a newsletter provider service with specific API implementation of this provider has to be implemented. One plugin for eZ Commerce is Newsletter2Go.
+In standard implementation of eZ Commerce there is no specific newsletter provider connection. The standard offers only processes, templates, routes, configurations and interface which can be used for newsletter integration. So only a newsletter provider service with specific API implementation of this provider has to be implemented. One plugin for eZ Commerce is Newsletter2Go.
 
 ### Newsletter features in eZ Commerce
 
@@ -65,7 +65,7 @@ When user subscribes to newsletter via shop (newsletter box, registration, profi
 
 If the user is not known to the newsletter provider, DOI process is started.
 
-User data is stored in the shop in a [token](Token_23560932.html), and the user receives an email, where he has to confirm his email address.
+User data is stored in the shop in a [token](../../cookbook/token/token.md), and the user receives an email, where he has to confirm his email address.
 
 After user clicked on the link in the confirmation email, the token is invalidated and user is subscribed to the newsletter. If he is logged in, he can immediately update the status in his profile.
 
@@ -73,5 +73,4 @@ After user clicked on the link in the confirmation email, the token is invalidat
 
 Please keep in mind that newsletter is really connected with a lot of different modules with the webshop. Be sure to check these out:
 
-- [CustomerProfileData](Customers_23560704.html)
-- [Landing page tool](/pages/createpage.action?spaceKey=EZC14&title=Landing+page+tool&linkCreation=true&fromPageId=23560215)
+- [CustomerProfileData](../customers/customersmd)

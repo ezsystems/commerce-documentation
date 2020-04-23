@@ -93,13 +93,13 @@ The service is using all attributes of the catalog element, that are set in the 
 
 !!! tip
 
-    Also make sure, that the attributes, that you have specified are either simple datatypes (int, float, boolean, string, array) or instances of [FieldInterface](Fields-for-ecommerce-data_23560470.html).
+    Also make sure, that the attributes, that you have specified are either simple datatypes (int, float, boolean, string, array) or instances of [FieldInterface](../../../cookbook/fields_for_ecommerce_data/fields_for_ecommerce_data.md).
 
     All other objects will be ignored, because it is not possible to assure that the serializing process will work properly.
 
 ## CatalogElementSerializationListener
 
-To store the CatalogElement in the basket line the doctrine listener is used. This listener makes an usage of the [serialize service](Storing-parts-of-the-product-in-the-basket-line_23560572.html).
+To store the CatalogElement in the basket line the doctrine listener is used. This listener makes an usage of the serialize service.
 
 !!! note
     

@@ -16,7 +16,7 @@ If you are using the SearchController, there is already an event that is dispatc
 
 In the following example we are modifying the sort criteria of a query if the query is empty and if we detect that current sort criteria is Relevance Sorting (Which is the default one).
 
-Please note that you can use any [EshopQuery](Search---API_23560412.html) getter methods to check any condition or property and then use any setter method to modify what ever you need.
+Please note that you can use any [EshopQuery](../search_api/search_api.md) getter methods to check any condition or property and then use any setter method to modify what ever you need.
 
 ``` php
 use Siso\Bundle\SearchBundle\Api\Common\RelevanceSorting;

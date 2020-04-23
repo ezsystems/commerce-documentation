@@ -1,4 +1,4 @@
-#  Manage products, prices and stock 
+# Manage products, prices and stock
 
 This section is only relevant if eZ is used as product data storage. If an ERP is integrated - Advanced version only  - this data will be coming fro the ERP and eventually a PIM.
 

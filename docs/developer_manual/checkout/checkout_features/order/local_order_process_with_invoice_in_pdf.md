@@ -474,4 +474,4 @@ if (!empty($shopOwnerMailReceiver)) {
 
 !!! note
 
-    See [OrderHistory - Local Orders when ERP not available](OrderHistory---Local-Orders-when-ERP-not-available_23560888.html)
+    See [OrderHistory - Local Orders when ERP not available](../../../order_history/order_history_features/orderhistory_local_orders_when_erp_not_available.md)

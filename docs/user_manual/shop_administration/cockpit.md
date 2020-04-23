@@ -1,4 +1,4 @@
-#  Cockpit 
+# Cockpit
 
 The aim of the Cockpit is to show the most important information for the shop owner referring to the installation.
 
@@ -83,4 +83,3 @@ The cockpit is accessible for users having the right to see it. This can be cont
 ![](img/roles_dashboard_view2.png)
 
 For more information please also read the [Roles and rights section](roles_and_rights.md). 
-

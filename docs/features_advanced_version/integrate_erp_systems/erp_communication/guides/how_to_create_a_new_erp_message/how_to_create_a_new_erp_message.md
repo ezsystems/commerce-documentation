@@ -17,7 +17,7 @@ This document describes how to setup and use a new ERP message using the eZ Comm
 
 The example is using the Web-Connector and the standard message SV\_ITEM\_TRANSFER and will fetch data about a given SKU in realtime. The name of the product and the inventory will be displayed on a webpage.
 
-![](../../../..img/create_erp_message.png)
+![](../../../../img/create_erp_message_1.jpg)
 
 Here you can find more existing ERP messages (sub-articles in the navigation): [ERP Component: Messages](../../../erp_communication/erp_components/erp_component_messages/erp_component_messages.md)
 

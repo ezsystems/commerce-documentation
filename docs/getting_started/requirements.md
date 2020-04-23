@@ -55,7 +55,7 @@ Management by a hosting company
 
     Please don´t store session as a file on the file system. This might cause locking problems.
 
-    Details see [Session handling](Session-handling_23560253.html)
+    Details see [Session handling](../enhanced_configuration/configuration/session_handling.md)
 
 Please check if your webserver configuration (or varnish) blocks cookies which are not used in the application. 
 

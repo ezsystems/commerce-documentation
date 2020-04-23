@@ -1,4 +1,4 @@
-#  Manage products and categories with the eContent DB 
+# Manage products and categories with the eContent DB
 
 silver.eShop supports different sources for the catalog data.
 

@@ -1,4 +1,4 @@
-#  Payment and shipping options 
+# Payment and shipping options
 
 ## Configuration of payment and shipment options
 

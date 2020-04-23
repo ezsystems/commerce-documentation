@@ -10,7 +10,7 @@ eZ Commerce provides a standard template for displaying customer data:
 
 ## Getting customer profile data
 
-As mentioned in [Twig extension](http://confluence.ng.silverproducts.de/display/EX/Twig+extension) there is a sub-object `profile` within the global "`ses`" template variable. As `ses.profile` in template returns the currently logged in profile, you are able to use all read-only members from the [`CustomerProfileData`](Customer-profile-data-model_23560898.html) implementation. A few examples:
+As mentioned in [Twig extension](../templating/twig_extension/twig_extension.md)) there is a sub-object `profile` within the global "`ses`" template variable. As `ses.profile` in template returns the currently logged in profile, you are able to use all read-only members from the [`CustomerProfileData`](customers_api/customer_profile_data_components/customer_profile_data_model.md) implementation. A few examples:
 
 ``` html+twig
 Current customer number: {{ ses.profile.sesUser.customerNumber }}
@@ -32,7 +32,7 @@ E-Mail address:          {{ ses.profile.sesUser.email }}
 {% endif %}
 ```
 
-As you see in the examples above, you can use **any** data from `CustomerProfileData` instance, see [example in the model](Customer-profile-data-model_23560898.html).
+As you see in the examples above, you can use **any** data from `CustomerProfileData` instance, see [example in the model](customers_api/customer_profile_data_components/customer_profile_data_model.md).
 
 ## Getting data from a buyer party
 

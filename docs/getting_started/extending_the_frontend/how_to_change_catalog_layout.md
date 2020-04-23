@@ -1,6 +1,6 @@
 # How to: Change catalog layout
 
-Please make sure before you start to install the [boilerplate](Extending-the-frontend_23561043.html) first
+Please make sure before you start to install the [boilerplate](extending_the_frontend.md) first
 
 ## Introduction
 

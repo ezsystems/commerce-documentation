@@ -23,9 +23,7 @@ ses_basket.default.additional_text_for_basket_line: false
 
 Please keep in mind that Quickorder is really connected with a lot of different modules in our shop. Be sure to check these out:
 
-- [Catalog Element](http://confluence.ng.silverproducts.de/)
-- [ERP](http://confluence.ng.silverproducts.de/)
-- [Basket](Basket_23560477.html)
+- [Basket](../basket/basket.md)
 
 ## Basic Features
 

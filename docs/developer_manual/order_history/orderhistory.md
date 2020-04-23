@@ -6,7 +6,7 @@ Orderhistory is an additional eZ Commerce module that is based on the standard e
 
 On the detail page he can see the buyer, delivery address, ordered items and some more details about the order, like status, delivery and payment selection.
 
-He can also use the [addToBasket](/pages/createpage.action?spaceKey=EZC14&title=Basket++xxx&linkCreation=true&fromPageId=23560603) functionality here and speed up the order process if he e.g. often orders the same items.
+He can also use the addToBasket functionality here and speed up the order process if he e.g. often orders the same items.
 
 Orderhistory supports different document types:
 
@@ -23,13 +23,13 @@ Orderhistory supports different document types:
 
 ## Installation
 
-see [Install Order history](Install-Order-history_23560562.html)
+see [Install Order history](order_history_api/install_order_history.md)
 
 ## Configuration
 
 Orderhistory is using semantic configuration, so it only exposes parameters that are allowed to be configurable.
 
-However it is possible to override this configuration by siteaccess. Therefore an event is thrown, before the configuration is used and you can implement a listener, that will be able to change this configuration. eZ Commerce makes usage of this event for displaying of the [local orders](OrderHistory---Local-Orders-when-ERP-not-available_23560888.html). Check our [FAQ](Orderhistory---FAQ_23560629.html) to find out, how to implement a new configuration listener.
+However it is possible to override this configuration by siteaccess. Therefore an event is thrown, before the configuration is used and you can implement a listener, that will be able to change this configuration. eZ Commerce makes usage of this event for displaying of the [local orders](order_history_features/orderhistory_local_orders_when_erp_not_available.md). Check our [FAQ](orderhistory_faq.md) to find out, how to implement a new configuration listener.
 
 ``` yaml
 siso_order_history:

@@ -1,4 +1,4 @@
-#  Folder (News) 
+# Folder (News)
 
 Special folder to show news.
 

@@ -4,7 +4,7 @@ The URLs for products and catalog will be generate by a central URL service syst
 
 ## Usage
 
-When a URL is requested in a twig template, as described in [Catalog - UI](Catalog---UI_23560463.html), the [URL service](Catalog-urls_23560474.html) will be called in the background.
+When a URL is requested in a twig template, as described in [Catalog UI](../../catalog_ui/catalog_ui.md), the [URL service](../catalog_urls/catalog_urls.md) will be called in the background.
 
 URLs will be provided by special methods enclosed in catalogElement:
 

@@ -6,9 +6,9 @@
 
 !!! note "Phalanx"
 
-    For a detailed usage of Phalanx, please see: <http://www.extranet.silversolutions.de:8090/display/EX/4.4+Phalanx>
+    For a detailed usage of Phalanx, please see: <frontend_customizing/4_front_end_stack_in_details/4.4_phalanx/4.4.1_how_to_create_hoplite/4.4.1_how_to_create_a_hoplite.md>
 
-    For the detailed information about how to create a hoplite, see: <http://www.extranet.silversolutions.de:8090/display/EX/4.4.1+How+to+create+a+hoplite>
+    For the detailed information about how to create a hoplite, see: [How to create a hoplite](frontend_customizing/4_front_end_stack_in_details/4.4_phalanx/4.4_phalanx.md).
 
 - Ajax requests use POST or GET method (configured in hoplites):
   - GET should be used for most requests except of sensitive data. GET requests can be cached.
@@ -104,7 +104,7 @@ class AjaxBasketController extends BaseController
 
 ### HTTP caching of ajax requests
 
-A response of GET requests could be cached. To cache it you should [use HttpCachingServiceStrategy](HTTP-caching_23560409.html) in your Ajax\<Type\>Controller.
+A response of GET requests could be cached. To cache it you should [use HttpCachingServiceStrategy](../developer_manual/caching_in_the_shop/content_cache_refresh/http_caching.md) in your Ajax\<Type\>Controller.
 
 !!! caution
 

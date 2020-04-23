@@ -1,4 +1,4 @@
-#  Content translation 
+# Content translation
 
 It is easy to add new translations to existing content, the following example shows how you can translate an object.
 

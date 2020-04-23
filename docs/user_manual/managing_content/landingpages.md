@@ -1,4 +1,4 @@
-#  Landingpages 
+# Landing Pages
 
 eZ Commerce has at least one landingpage which is the homepage. This document describes how to setup and modify landingapges. 
 

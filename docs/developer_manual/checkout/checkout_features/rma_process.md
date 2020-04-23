@@ -20,9 +20,9 @@ paramaters:
 
 ## Online cancellation form
 
-There is an online cancellation form. After the user submitted the form, an email is send to the admin. Therefore the [SendCancellationEmailDataProcessor](SendCancellationEmailDataProcessor_23560538.html) is used.
+There is an online cancellation form. After the user submitted the form, an email is send to the admin. Therefore the [SendCancellationEmailDataProcessor](../../one_page_forms/one_page_forms_api/dataprocessors/dataprocessors_after_submitting/sendcancellationemaildataprocessor.md) is used.
 
-Please see the concept for the [one-page forms](One-page-forms_23560744.html) as well.
+Please see the concept for the [one-page forms](../../one_page_forms/one_page_forms.md) as well.
 
 ``` html+twig
 {{ path('silversolutions_service', {'formTypeResolver': 'cancellation'}) }}
@@ -43,11 +43,11 @@ parameters:
 
 ## Online RMA form
 
-Furthermore there is also an online RMA form. After user submitted this form, an email is send to admin. There the [SendRmaEmailDataProcessor](SendRmaEmailDataProcessor_23560866.html) is used.
+Furthermore there is also an online RMA form. After user submitted this form, an email is send to admin. There the [SendRmaEmailDataProcessor](../../one_page_forms/one_page_forms_api/dataprocessors/dataprocessors_after_submitting/sendrmaemaildataprocessor.md) is used.
 
 The email receiver has to generate a delivery note with a return number and sends it to the customer. The customer then can return his goods together with return number.
 
-Please see the concept for the [one-page forms](One-page-forms_23560744.html) as well.
+Please see the concept for the [one-page forms](../../one_page_forms/one_page_forms.md) as well.
 
 ``` html+twig
 {{ path('silversolutions_service', {'formTypeResolver': 'rma'}) }}

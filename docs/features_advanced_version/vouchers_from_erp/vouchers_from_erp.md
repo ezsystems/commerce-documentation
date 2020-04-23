@@ -14,9 +14,9 @@ eZ Commerce supports vouchers that are managed in ERP. The user knows the vouche
 Please keep in mind that Vouchers is really connected with a lot of different modules in your shop. Be sure to check these out:
 
 - [ERP](../integrate_erp_systems/erp_communication/erp_communication.md)
-- [Basket](../../../developer_manual/basket/basket.md)
-- [PriceEngine](../../../developer_manual/price_engine/price_engine.md)
-- [Checkout](../../../developer_manual/checkout/checkout.md)
+- [Basket](../../developer_manual/basket/basket.md)
+- [PriceEngine](../../developer_manual/price_engine/price_engine.md)
+- [Checkout](../../developer_manual/checkout/checkout.md)
 
 ## Templating
 

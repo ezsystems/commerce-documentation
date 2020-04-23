@@ -41,7 +41,7 @@ The messages were already translated in the Basket service using the translation
 
 This controller offers an event that is thrown, before the basket is rendered. So it is possible to fetch some additional data before, for example. The event listeners can return a list of subtemplates, that will be displayed on the basket page, either on top or bottom - depending on given parameters.
 
-See [Basket Events](Basket-Events_23560250.html)
+See [Basket Events](basket_events/basket_events.md)
 
 ## Route /basket/add
 

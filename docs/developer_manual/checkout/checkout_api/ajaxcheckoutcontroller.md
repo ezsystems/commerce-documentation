@@ -205,4 +205,4 @@ parameters:
     siso_eshop.ajax_controller.checkout: "YourBundle:NewAjaxCheckout"
 ```
 
-For more information please have a look at [Ajax (Phalanx)](23560533.html).
+For more information please have a look at [Ajax (Phalanx)](../../../cookbook/ajax_phalanx.md).

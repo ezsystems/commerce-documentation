@@ -52,6 +52,5 @@ parameters:
 
 Please keep in mind that Breadcrumbs is really connected with a lot of different modules in our shop. Be sure to check these out:
 
-- [Catalog Element](23560458.html)
-- [Dataprovider](http://confluence.extranet.silversolutions.de:8090/display/EX/Products+from+different+sources+-+Catalog+data+providers)
-- [Navigation](Navigation_23560821.html)
+- [Catalog Element](../catalog/catalog_api/product_category_catalogelement.md)
+- [Navigation](../navigation/navigation.md)

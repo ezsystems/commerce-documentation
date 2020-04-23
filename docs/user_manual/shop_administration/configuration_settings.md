@@ -1,4 +1,4 @@
-#  Configuration settings 
+# Configuration settings
 
 Here you can find a list of configurable settings for your shop.
 

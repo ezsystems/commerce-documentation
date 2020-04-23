@@ -26,7 +26,7 @@ Since the eZ Commerce relies on the eZ Platform Content Management System, somet
 
 There is a default routing system, that checks each required URL.
 
-If the URL belongs to the [catalog element](23560458.html), or [silver module](silver.module_23560489.html), the router become active and redirect the user to the appropriate controller.
+If the URL belongs to the [catalog element](../product_category_catalogelement.md), or [silver module](../../../../cookbook/silver.module.md), the router become active and redirect the user to the appropriate controller.
 
 Class description:
 
@@ -71,6 +71,6 @@ The Router is defined with the priority of 280, so you can still add your own ch
 
 ## Usage of the navigation service
 
-In order to determine if the URL belongs to the catalog or [silver module](silver.module_23560489.html), the [navigation service](/pages/createpage.action?spaceKey=EZC14&title=Navigation+%28deprecated%29&linkCreation=true&fromPageId=23560569) or the [catalog data provider](Access-dataprovider-via-PHP_23560560.html) is used.
+In order to determine if the URL belongs to the catalog or [silver module](../../../../cookbook/silver.module.md), the navigation service or the [catalog data provider](../access_dataprovider_via_php) is used.
 
-Additionally the router uses the navigation service in order to set the [URL Mapping](Access-dataprovider-via-PHP_23560560.html) in order to set the proper URL.
+Additionally the router uses the navigation service in order to set the [URL Mapping](../access_dataprovider_via_php) in order to set the proper URL.

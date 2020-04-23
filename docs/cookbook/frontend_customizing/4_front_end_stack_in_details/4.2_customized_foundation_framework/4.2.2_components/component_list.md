@@ -6,8 +6,8 @@ In order to extend the list component for specific type of content please create
 
 Currently supported specific types:
 
-- [list blog](Component---List-Blog_23560977.html)
-- [list event](Component---List-Blog_23560977.html)
+- [list blog](component_list_blog.md)
+- [list event](component_list_blog.md)
 
 ## Sass
 

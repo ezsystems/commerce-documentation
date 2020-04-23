@@ -1,6 +1,6 @@
 # Doctrine Mapping Datatypes
 
-eZ Commerce uses Doctrine as ORM for most of the cases when accessing the DB data. In some doctrine entities, like [Basket or BasketLine](Basket-data-model_23560234.html) we are using objects or arrays to handle the attributes.
+eZ Commerce uses Doctrine as ORM for most of the cases when accessing the DB data. In some doctrine entities, like [Basket or BasketLine](../developer_manual/basket/basket_api/basket_data_model.md) we are using objects or arrays to handle the attributes.
 
 By default, doctrine use the serialize() method when storing these data to the DB.
 

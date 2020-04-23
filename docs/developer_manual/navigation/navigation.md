@@ -123,5 +123,4 @@ Following fields are defined in the `ses_productcatalog` type:
 
 Please keep in mind that Navigation is really connected with a lot of different modules in our shop. Be sure to check these out:
 
-- [Catalog Element](http://confluence.ng.silverproducts.de/)
-- [Dataprovider](Catalog-data-providers---Products-from-different-sources_23560468.html)
+- [Dataprovider](../catalog/catalog_feature_list/catalog_data_providers_products_from_different_sources.md)

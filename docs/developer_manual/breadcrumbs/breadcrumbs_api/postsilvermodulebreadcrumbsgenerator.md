@@ -7,7 +7,7 @@ This breadcrumbs generator is for requests after a silver.module, which process 
 This generator is responsible for this special case of requests. It listens to two kernel events in order to add some request attributes and save the last used silver.module ID temporarily in the session.  
 Hint
 
-silver.modules themselves are standard eZ content and their breadcrumbs are handled solely by the parent of this class which is [EzContentBreadcrumbsGenerator](EzContentBreadcrumbsGenerator_23560916.html).
+silver.modules themselves are standard eZ content and their breadcrumbs are handled solely by the parent of this class which is [EzContentBreadcrumbsGenerator](ezcontentbreadcrumbsgenerator.md).
 
 ## FQN
 

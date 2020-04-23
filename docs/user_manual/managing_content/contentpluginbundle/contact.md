@@ -1,4 +1,4 @@
-#  Contact 
+# Contact
 
 Contacts have currently no detail view.
 

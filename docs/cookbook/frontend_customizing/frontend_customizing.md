@@ -16,9 +16,9 @@ Please keep in mind that front-end is really connected with a lot of topics. As 
 
 We strongly encourage you to read those pages first:
 
-- [1. Introduction](1.-Introduction_23561002.html)
-- [3. Templates](3.-Templates_23561000.html)
-- [4.6 Coding Standards](4.6-Coding-Standards_23560723.html)
+- [1. Introduction](1._introduction.md)
+- [3. Templates](3._templates.md)
+- [4.6 Coding Standards](4_front_end_stack_in_details/4.6_coding_standards/css_sass.md)
 
 Having basic knowledge will help you digest the rest much easier.
 

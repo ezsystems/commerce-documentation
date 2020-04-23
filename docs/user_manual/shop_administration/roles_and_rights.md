@@ -1,4 +1,4 @@
-#  Roles and rights 
+# Roles and rights
 
 eZ Commerce comes with a roles & rights management system. It means that you can restrict access or functionality per user or user group. This management system can be used by the shop owner or editor using the Backend.
 
@@ -56,4 +56,3 @@ To add a policy click on the plus and choose a type. eZ Commerce modules are: Si
 |Siso policy / Lostorder process|user can process lost order (transfer it or remove it) in eZ backend|
 |Siso policy / Lostorder list|user can access his list of lost orders in eZ backend|
 |Siso policy / Delegate|user can use the delegate functionality|
-

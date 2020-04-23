@@ -27,8 +27,8 @@ The wishlist and stored basket function is based on the basket system of eZ Comm
 
 Please keep in mind that Wishlist/Stored Baskets is really connected with different modules in our shop. Be sure to check these out:
 
-- [Basket](http://confluence.ng.silverproducts.de/display/EX/Basket)
-- [BasketService](BasketService_23560232.html)
+- [Basket](../basket/basket.md)
+- [BasketService](../basket/basket_api/basketservice.md)
 
 The stored basket feature can be deactivated in a config file:
 

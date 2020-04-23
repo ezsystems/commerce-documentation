@@ -1,4 +1,4 @@
-#  Dashboard 
+# Dashboard
 
 ## eZ Platform and eZ Commerce
 

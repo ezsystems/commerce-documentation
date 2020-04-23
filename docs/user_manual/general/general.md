@@ -1,4 +1,4 @@
-#  General 
+# General
 
 eZ Commerce is based on eZ Platform and shares the same backend.
 The shop backend is part of the eZ Backend.

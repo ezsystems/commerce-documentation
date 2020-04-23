@@ -8,4 +8,4 @@ Usually theses settings are connected to a template debitor.
 - VAT settings
 - delivery costs
 
-For details see [StandardTemplateDebitorService](StandardTemplateDebitorService_23560368.html)
+For details see [StandardTemplateDebitorService](../developer_manual/price_engine/price_engine_api/price_engine_services/standardtemplatedebitorservice.md)

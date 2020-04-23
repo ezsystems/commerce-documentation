@@ -2,7 +2,7 @@
 
 All communication (request- and response messages), that is performed by the [ERP transport](erp_components/erp_component_transport.md), will be recorded by the `siso_erp.logger`. This is a specially configured service of the class `Monolog/Logger`. This document describes the DI-container configuration of this service and the associated classes. Further more, it will explain the concept of measuring points and how the different levels of ERP communication are connected to the ERP log.
 
-If you want to know more about how logging is implemented in the eZ Commerce, please read [the logging documentation](../../../../developer_manual/logging/logging.md).
+If you want to know more about how logging is implemented in the eZ Commerce, please read [the logging documentation](../../../developer_manual/logging/logging.md).
 
 ## Write log example in advance
 
@@ -23,7 +23,7 @@ $erpLogger->debug(
 
 ## ErpLog entity and repository
 
-ERP-messages are logged in a database for more sophisticated administrative handling. Database logging is handled by [the doctrine logger](../../../../developer_manual/logging/logging_api.md).
+ERP-messages are logged in a database for more sophisticated administrative handling. Database logging is handled by [the doctrine logger](../../../developer_manual/logging/logging_api.md).
 
 ### Class `Silversolutions\Bundle\EshopBundle\Entity\ErpLog`
 

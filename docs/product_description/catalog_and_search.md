@@ -1,4 +1,4 @@
-#  Catalog and Search 
+# Catalog and search
 
 ## The catalog
 

@@ -4,13 +4,13 @@
 
 Yes it is. There is an [official workaround for the JMSPaymentCoreBundle.](http://jmspaymentcorebundle.readthedocs.io/en/latest/guides/overriding_entity_mapping.html)
 
-Also check [Payment FAQ](Payment---FAQ_23560268.html) for more details.
+Also check [Payment FAQ](../payment/payment_faq.md) for more details.
 
 ## Is it possible to show the invoice form even if a customer has a customer number?
 
 Yes it is.
 
-Please check the documention here: [AjaxCheckoutController](AjaxCheckoutController_23560323.html)
+Please check the documention here: [AjaxCheckoutController](checkout_api/ajaxcheckoutcontroller.md)
 
 ## How can i use the "store delivery address" information in the order?
 

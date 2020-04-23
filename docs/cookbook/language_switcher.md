@@ -1,6 +1,6 @@
 # Language switcher
 
-eZ Commerce comes with a language switcher functionality, if your shop supports multiple [siteaccesses](Term---Siteaccess_23560731.html) because of the multilingualism. You can easily switch the language in the shop by clicking on the language in the language switcher list.
+eZ Commerce comes with a language switcher functionality, if your shop supports multiple siteaccesses because of the multilingualism. You can easily switch the language in the shop by clicking on the language in the language switcher list.
 
 If user clicks on another language from the list, he will be redirected to the same page with the appropriate language.
 

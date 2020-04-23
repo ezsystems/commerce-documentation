@@ -17,7 +17,7 @@ Defines which template should be used in case the CatalogController has to rende
 
 ## Configuration for variants
 
-See document [VariantType](VariantType_23560699.html)
+See document [VariantType](../../cookbook/additional_ez_fieldtypes/varianttype.md)
 
 ## Configure the dataprovider 
 
@@ -57,7 +57,7 @@ The navigation settings are used to build the navigation tree.
 
 For more details see: Navigation
 
-In addition the parameters for search have to be defined depending on the dataprovider (see econtent\_search.yml or [econtent - Configuration](econtent---Configuration_23561029.html)).
+In addition the parameters for search have to be defined depending on the dataprovider (see econtent\_search.yml or [econtent configuration](../../features_advanced_version/econtent/econtent_configuration.md)).
 
 ## Configuration for the CatalogFactory
 
@@ -75,7 +75,7 @@ silver_eshop.default.catalog_factory.ses_product_type: createProductTypeNode
 
 Configuration for variants
 
-Please see [VariantType](VariantType_23560699.html)
+Please see [VariantType](../../cookbook/additional_ez_fieldtypes/varianttype.md)
 
 ## Filter for creating product lists and more
 

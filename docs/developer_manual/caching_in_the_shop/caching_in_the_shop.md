@@ -31,7 +31,7 @@ This ensures that only small parts of a page has to be generated in realtime.
 |SilversolutionsEshopBundle:Navigation:showMenu|Main menu|Tag: siso_menu|
 
 
-\*caching strategy means:  defined in the yml file, details see: [HTTP caching](HTTP-caching_23560409.html)
+\*caching strategy means:  defined in the yml file, details see: [HTTP caching](content_cache_refresh/http_caching.md)
 
 ## Usage of cache tags
 

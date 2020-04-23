@@ -1,4 +1,4 @@
-#  eCommerce Administration 
+# eCommerce administration
 
 eZ Commerce comes with a convenient configuration and management tools for the shop owner.
 

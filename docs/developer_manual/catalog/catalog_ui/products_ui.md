@@ -56,7 +56,7 @@ Object `$catalogElement` has property `price` (which has a `PriceField` with val
 
 Here are some Attributes, that already can be used in the template. These attributes are stored in $dataMap and can be used with {{ ses\_render\_field() }}.
 
-In addition a product node provides the attributes of a CatalogElement (see [Product category (CatalogElement)](23560458.html)).
+In addition a product node provides the attributes of a CatalogElement (see [Product category](../catalog_api/product_category_catalogelement.md).
 
 |identifier|type|description|usage|
 |--- |--- |--- |--- |

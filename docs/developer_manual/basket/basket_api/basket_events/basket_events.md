@@ -9,13 +9,13 @@ Examples for use cases:
 - check the total amount of a basket if the user is just allowed to order within a given budget
 - Check if a user is allowed to add this product to the basket
 - To perform a detailed check if the stock is still available
-- to check if the minimum quantity has to be checked: You will find an example in the document [Product quantity validation](Product-quantity-validation_23560667.html)
+- to check if the minimum quantity has to be checked: You will find an example in the document [Product quantity validation](../../basket_features/product_quantity_validation.md)
 
-Some [standard Eventlisteners](Basket---Eventlistener-in-the-standard_23561084.html) in eZ Commerce  will take care that e.g. a basket preview cache is updated correctly. 
+Some [standard Eventlisteners](basket_eventlistener_in_the_standard.md) in eZ Commerce  will take care that e.g. a basket preview cache is updated correctly. 
 
 ## BasketLine Events
 
-The following events are thrown when interacting with the [BasketService](BasketService_23560232.html) on a basket line-object: There are some possible results, that can be returned. (STATUS_INIT is default).
+The following events are thrown when interacting with the [BasketService](../basketservice.md) on a basket line-object: There are some possible results, that can be returned. (STATUS_INIT is default).
 
 The executed action (add-to, update...) is assumed to be allowed, unless some event listeners set the status to failed.
 
@@ -95,7 +95,7 @@ public function onPreBasketRemove(PreRemoveBasketLineEvent $preBasketRemoveEvent
 
 ## Basket Events
 
-The following events are thrown when interacting with the [BasketService](BasketService_23560232.html) on a basket-object: There are some possible results, that can be returned. (STATUS_INIT is default).
+The following events are thrown when interacting with the [BasketService](../basketservice.md) on a basket-object: There are some possible results, that can be returned. (STATUS_INIT is default).
 
 ``` 
 //default

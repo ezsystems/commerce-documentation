@@ -51,4 +51,4 @@ When you start a project there might be a need to make small adaptions since new
 - Extend the Contenttype in the CMS in order to add new fields
 - Extend the existing catalog factory in order to use the new fields 
 
-You will find more info about how to override the catalog factory here: [How to extend a CatalogFactory](How-to-extend-a-CatalogFactory_23561020.html)
+You will find more info about how to override the catalog factory here: [How to extend a CatalogFactory](catalog_cookbook/how_to_extend_a_catalogfactory.md)

@@ -6,7 +6,7 @@ See [Cookbook](price_engine_cookbook.md) to find out how to write a new Price Pr
 
 You will need to implement the method *calculatePrices*. The goal of this method is to provide *PriceResponse* object, the way how you get the data and calculate the prices is up to you. You can inject other services, that will do some job for you, or just use the data provided in the *PriceRequest*.
 
-In our example we just use the provided data and make usage of the [VatService](VatServiceInterface_23560246.html) to get the vatPercent.
+In our example we just use the provided data and make usage of the [VatService](../price_engine_api/price_engine_services/vatserviceinterface/vatserviceinterface.md) to get the vatPercent.
 
 ``` php
 /**

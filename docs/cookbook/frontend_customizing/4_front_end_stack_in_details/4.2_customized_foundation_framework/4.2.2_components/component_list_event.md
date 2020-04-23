@@ -1,6 +1,6 @@
 # Component - List Event
 
-In addition to our [generic list component ](Component---List_23560980.html)we have prepared Event specific styling.
+In addition to our [generic list component](component_list.md) we have prepared Event specific styling.
 
 ## Sass
 

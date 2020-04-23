@@ -79,7 +79,7 @@ E-Mail address:          {{ ses.profile.sesUser.email }}
 
 !!! caution
 
-    Please do **not** use the [customerservice](Customer-profile-data-services_23560906.html) in any place, that can not access the session. An example will be a CLI tool, or processes that are happing in backgroud - like sending out the order if customer payed via payment service provider.
+    Please do **not** use the [customerservice](customers_api/customer_profile_data_components/customer_profile_data_services.md) in any place, that can not access the session. An example will be a CLI tool, or processes that are happing in background - like sending out the order if customer payed via payment service provider.
 
 eZ Commerce is using the standard UBL to model customer data. The most important type is the Party which describes a Address. 
 

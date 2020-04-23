@@ -1,4 +1,4 @@
-#  Product Description 
+#  Product description
 
 ## Introduction
 
@@ -23,4 +23,3 @@ In addition some new content types are provided in eZ Commerce:
 eZ Commerce is integrated into eZ Platform and is relying and supporting on eZ Platform functions such as user management, search, content, eZ studio/page builder .
 
 ![](img/Backend.png)
-

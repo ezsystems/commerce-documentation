@@ -4,9 +4,9 @@
 
 This depends on the dataprovider used. eZ Commerce offers a standard way if the source eZ Platform is used: 
 
-If the ProductNode contains information in the matrix (**ses\_variants**), the Ez5CatalogFactory creates [VariantProductNode](23560374.html) instead of OrderableProductNode.
+If the ProductNode contains information in the matrix (**ses\_variants**), the Ez5CatalogFactory creates [VariantProductNode](../../catalog_api/variantproductsnode_and_orderablevariantnode/variantproductnode_and_orderablevariantnode.md) instead of OrderableProductNode.
 
-Because the [VariantProductNode](23560374.html) is not orderable, a Service- [VariantService](Variant-Services_23560238.html) is used to create an OrderableVariantNode when **add to basket** is called.
+Because the [VariantProductNode](../../catalog_api/variantproductsnode_and_orderablevariantnode/variantproductnode_and_orderablevariantnode.md) is not orderable, a Service- [VariantService](../../catalog_api/variantproductsnode_and_orderablevariantnode/variant_services.md) is used to create an OrderableVariantNode when **add to basket** is called.
 
 ## How to setup variants in eZ Platform
 
@@ -14,7 +14,7 @@ In order to provide variants the product class `ses_product` has to be extended 
 
 By default eZ Commerce offers a set of variant types. The variant type defines which attributes such as size or/and color are used to identify a variant.
 
-The variant types can be defined using a yml configuration. Technical details are described here:  [VariantType](VariantType_23560699.html)
+The variant types can be defined using a yml configuration. Technical details are described here: [VariantType](../../../../cookbook/additional_ez_fieldtypes/varianttype.md)
 
 ### Example form for variants using 2 levels (size and color) in the backend of the CMS
 

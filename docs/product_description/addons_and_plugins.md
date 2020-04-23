@@ -1,4 +1,4 @@
-#  AddOns and Plugins 
+# Add-ons and plugins
 
 ## Plugins
 

@@ -1,4 +1,4 @@
-#  Blog post 
+# Blog post
 
 ![](img/blog_post.png)
 

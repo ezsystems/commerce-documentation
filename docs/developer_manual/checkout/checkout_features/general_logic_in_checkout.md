@@ -1,6 +1,6 @@
 # General logic in checkout
 
-For the general logic the [CheckoutController](CheckoutController_23560322.html) and the [AjaxCheckoutController](AjaxCheckoutController_23560323.html) are responsible.
+For the general logic the [CheckoutController](../checkout_api/checkoutcontroller.md) and the [AjaxCheckoutController](../checkout_api/ajaxcheckoutcontroller.md) are responsible.
 
 ## One Page Checkout - steps
 

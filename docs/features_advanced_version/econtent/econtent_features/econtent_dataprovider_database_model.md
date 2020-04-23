@@ -1,7 +1,5 @@
 # Econtent dataprovider - database model
 
-![econtent_structure.gif](http://confluence.extranet.silversolutions.de:8090/download/attachments/10617018/econtent_structure.gif?version=1&modificationDate=1396614956000&api=v2)
-
 econtent is using 4 main database tables and 2 optional ones:
 
 |table|Staging|purpose|
@@ -14,7 +12,7 @@ econtent is using 4 main database tables and 2 optional ones:
 |sve_object_catalog|yes|optional: used for segmentation|
 
 
-For staging purposes the DB tables are using a prefix `_tmp`  (e.g. `sve_object_tmp`). The staging tables can be used to import a complete product catalogue without affecting the production catalogue. Details see [econtent - Staging system](econtent---Staging-system_23561079.html). 
+For staging purposes the DB tables are using a prefix `_tmp`  (e.g. `sve_object_tmp`). The staging tables can be used to import a complete product catalogue without affecting the production catalogue. Details see [econtent - Staging system](econtent_staging_system.md). 
 
 !!! note
 

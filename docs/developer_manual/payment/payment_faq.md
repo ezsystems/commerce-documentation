@@ -2,7 +2,7 @@
 
 ## How do I implement a new payment provider plugin?
 
-Please refer to [Building new payment plugins](payment_cokbook/building_new_payment_plugins.md).
+Please refer to [Building new payment plugins](payment_cookbook/building_new_payment_plugins.md).
 
 ## How can I activate the payment options in checkout process?
 
@@ -29,7 +29,7 @@ In order to change the shipping-payment form, the form type service itself has t
 
 The methods `CheckoutShippingPaymentType::buildForm()` and `CheckoutShippingPaymentType::setDefaultOptions()` are called to assemble the HTML form.
 
-Please check the [Configuration for the Checkout Forms](Configuration-for-Checkout-Forms_23560355.html).
+Please check the [Configuration for the Checkout Forms](../checkout/checkout_api/forms/configuration_for_checkout_forms.md).
 
 Please refer to [symfony's form documention](http://symfony.com/doc/current/book/forms.html) for more details.
 

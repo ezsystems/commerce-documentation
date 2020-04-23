@@ -23,7 +23,7 @@ $priceField = new PriceField(array('price' => $price));
 
 #### Rendering
 
-Please refer to [Rendering for prices](Rendering-for-prices_23560289.html) to see the possibilities of outputting a PriceField using the `ses_render_field()` function.
+Please refer to [Rendering for prices](../../developer_manual/price_engine/price_engine_templates/rendering_for_prices.md) to see the possibilities of outputting a PriceField using the `ses_render_field()` function.
 
 It is also possible to render a priceField with a twig function **ses\_render\_price().** The difference see in the table below:
 

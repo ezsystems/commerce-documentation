@@ -2,17 +2,17 @@
 
 ## Goal
 
-The default DataProvider and CatalogFactory for eZ Platform ([CMS dataprovider](CMS-dataprovider_23560465.html)) already support variants up to 2 levels which can be setup  [using a special variant FieldType](23560612.html) in the backend. 
+The default DataProvider and CatalogFactory for eZ Platform ([CMS dataprovider](../catalog_api/cms_dataprovider.md)) already support variants up to 2 levels which can be setup  [using a special variant FieldType](../catalog_feature_list/product_variants/how_to_manage_variants_backend.md) in the backend. 
 
 The purpose of this document is to provide a 'recipe', how to setup variants if you are not using the default eZ content types of  eZ Commerce and don't want to setup variants manually in the eZ Platform backend. 
 
-The main goal is to map your variant structure to the [VariantProdutNode](23560374.html) structure.
+The main goal is to map your variant structure to the [VariantProductNode](../catalog_api/variantproductsnode_and_orderablevariantnode/variantproductnode_and_orderablevariantnode.md) structure.
 
 ## How to start
 
 !!! tip
 
-    Main work that every CatalogFactory has to do, is to fill the [VariantProductNode](23560374.html) attribute [$variantCharacteristics](SimpleVariantCharacteristics_23560236.html). The basic concept is to take information from provided dataMap (e.g. dataMap is coming from DataProvider: source can be eZ, or external) and create an attribute $variantCharacteristic for the VariantProductNode.
+    Main work that every CatalogFactory has to do, is to fill the [VariantProductNode](../catalog_api/variantproductsnode_and_orderablevariantnode/variantproductnode_and_orderablevariantnode.md) attribute [$variantCharacteristics](../catalog_api/variantproductsnode_and_orderablevariantnode/simplevariantcharacteristics.md). The basic concept is to take information from provided dataMap (e.g. dataMap is coming from DataProvider: source can be eZ, or external) and create an attribute $variantCharacteristic for the VariantProductNode.
 
 Example for Ez5CatalogFactory: dataMap from DataProvider
 
@@ -40,7 +40,7 @@ The first thing you need to do in order to create variants is to create your own
     silver_eshop.default.catalog_template.VariantProductNode: Catalog:product_variants.html.twig
     ```
 
-    You can find more information about this here: [Catalog - UI](Catalog---UI_23560463.html)
+    You can find more information about this here: [Catalog UI](../catalog_ui/catalog_ui.md)
 
 If you are writing your own provider and factory from scratch, you have to implement all necessary methods. In this recipe we will concentrate only on variant connected methods.
 
@@ -64,7 +64,7 @@ The starting point would be the **createCatalogElement()** method. This is the p
     You can see an implementation of how these parameters can be used in the Example.
 
 Because in our case (standard implementation), the variants are stored as content objects of the same content type like 'normal' products (ses_product), the **createCatalogElement()** must do additional differentiation when to call the method *createOrderableProductNode()* and when *createVariantProductNode()* (see below).  
-In the default implementation the factory will call the method *createVariantProductNode()*  always when the [EzMatrix with variants](23560612.html) is filled.
+In the default implementation the factory will call the method *createVariantProductNode()*  always when the [EzMatrix with variants](../catalog_feature_list/product_variants/how_to_manage_variants_backend.md) is filled.
 
 In your case, you may adapt this behavior. Maybe you will get some special flag from ERP, that will tell you, if product is a variant.
 
@@ -142,11 +142,11 @@ public function createVariantProductNode($rawData = null)
 
 !!! tip
 
-    `$this->extractVariants()` will extract the variant information from the dataMap and returns an array with a single element, that is an [SimpleVariantCharacteristics object](SimpleVariantCharacteristics_23560236.html) as shown in the [example above](#Howtosetupvariantsfromexternalsource-varChar).
+    `$this->extractVariants()` will extract the variant information from the dataMap and returns an array with a single element, that is an [SimpleVariantCharacteristics object](../catalog_api/variantproductsnode_and_orderablevariantnode/simplevariantcharacteristics.md) as shown in the [example above](#how-to-start).
 
 ### 3\. Fill VariantProductNode attribute $variantCharacteristics
 
-In your factory you need to map your dataMap information into VariantProductNode attribute [$variantCharacteristics](SimpleVariantCharacteristics_23560236.html). The structure is described below.
+In your factory you need to map your dataMap information into VariantProductNode attribute [$variantCharacteristics](../catalog_api/variantproductsnode_and_orderablevariantnode/simplevariantcharacteristics.md). The structure is described below.
 
 All information about variants is stored in this attribute (including prices and pictures). It contains 3 different information:
 
@@ -308,6 +308,6 @@ $variantAttributes = array(
 
 ## Result
 
-When your factory setup the variants, you should see the characteristics on the product detail page. This examples builds 3 level variants and display variants for B2C shop (depending on the [configuration](Product-Variants_23560366.html)). 
+When your factory setup the variants, you should see the characteristics on the product detail page. This examples builds 3 level variants and display variants for B2C shop (depending on the [configuration](../catalog_feature_list/product_variants/product_variants.md)). 
 
 ![](../../img/catalog_cookbook_4.png)

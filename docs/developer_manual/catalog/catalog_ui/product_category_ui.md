@@ -17,7 +17,7 @@ Offered options:
 
 ## Data provided for categories
 
-Please see  [`CatalogElement`](23560458.html) and `CatalogNode` for a detailed documentation.
+Please see [`CatalogElement`](../catalog_api/product_category_catalogelement.md) and `CatalogNode` for a detailed documentation.
 
 ### Product category (CatalogElement)
 

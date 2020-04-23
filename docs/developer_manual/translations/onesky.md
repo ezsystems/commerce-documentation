@@ -20,11 +20,11 @@ Benefits of OneSky:
 - approval process
 - and much more...
 
-OneSkyApp offers the possibility to upload the translation files from the shop and edit the translations there. When the translations process is done and translations are approved, they can be downloaded to the shop and then used. Please see [the recommended translation process](#).
+OneSkyApp offers the possibility to upload the translation files from the shop and edit the translations there. When the translations process is done and translations are approved, they can be downloaded to the shop and then used.
 
 !!! note
 
-    Pay attention, that [the translation process](Translations_23560284.html) did not change. There is no real connection between the Symfony translation process and OneSkyApp. Symfony doesn´t care, where you are editing the translations and how they come to the shop. The only important thing is, that there are translation files inside of the project.
+    Pay attention, that [the translation process](translations.md) did not change. There is no real connection between the Symfony translation process and OneSkyApp. Symfony doesn´t care, where you are editing the translations and how they come to the shop. The only important thing is, that there are translation files inside of the project.
 
     ```
     Resources:

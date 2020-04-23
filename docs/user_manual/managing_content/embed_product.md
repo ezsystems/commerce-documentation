@@ -1,4 +1,4 @@
-#  Embed product 
+# Embed product
 
 If you want to embed a product in a richtext field you can use the + Button and choose "Embed object".
 
@@ -41,4 +41,3 @@ eZ Commerce offers 2 designs:
 ### Sku 1 .. Sku 5
 
 The skus of the products which shall be displayed
-

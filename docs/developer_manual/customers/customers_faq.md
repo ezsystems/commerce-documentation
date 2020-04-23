@@ -31,7 +31,7 @@ You can add your own bundle to this configuration and extend the user menu as lo
 
 ## Where eZ data is stored?
 
-By default the additional data of your eZ User class is stored in the dataMap of [CustomerProfileData](Customer-profile-data-services_23560906.html) with a prefix `ez_`.
+By default the additional data of your eZ User class is stored in the dataMap of [CustomerProfileData](customers_api/customer_profile_data_components/customer_profile_data_services.md) with a prefix `ez_`.
 
 These eZ types are supported:
 

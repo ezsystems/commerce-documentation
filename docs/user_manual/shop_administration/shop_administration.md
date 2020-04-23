@@ -1,4 +1,4 @@
-#  Shop administration 
+# Shop administration
 
 eZ Commerce provides the following eCommerce functions in the top menu of the backend.
 

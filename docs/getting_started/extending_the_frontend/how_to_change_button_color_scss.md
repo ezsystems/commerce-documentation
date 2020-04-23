@@ -1,6 +1,6 @@
 # How to: Change button color (scss)
 
-Before you start with this example you have to make sure to finish the [preparation](Frontend-Workflow-with-SASS_23560834.html) topic.
+Before you start with this example you have to make sure to finish the [preparation](frontend_workflow_with_sass.md) topic.
 
 ## Introduction
 
@@ -22,7 +22,7 @@ As we are using basic Foundation components e.g. the button classes. We will now
 1.  Look for the variable with the name `$button-bg-color`, right now it has another variable assigned called "$flat-peter-river" that comes from the `_colors.flat.scss` file
 2.  Let's change the button background color to green.
 3.  Change the line to `$button-bg-color: \#2ed573;`
-4.  As we are using SCSS we have to now start the CSS building process with gulp and assetic we have learned in the [preparation](Frontend-Workflow-with-SASS_23560834.html) topic
+4.  As we are using SCSS we have to now start the CSS building process with gulp and assetic we have learned in the [preparation](frontend_workflow_with_sass.md) topic
 5.  After you have run gulp and assetic you can now see that the whole shop is using the new button background color for the basic buttons.
 
 !!! note

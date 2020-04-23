@@ -1,4 +1,4 @@
-#  Contact forms and legal aspects 
+# Contact forms and legal aspects
 
 ## GDPR compliance
 

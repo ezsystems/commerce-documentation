@@ -1,4 +1,4 @@
-#  Manage prices and stock 
+# Manage prices and stock
 
 ![](img/manage_prices_menu.png)
 

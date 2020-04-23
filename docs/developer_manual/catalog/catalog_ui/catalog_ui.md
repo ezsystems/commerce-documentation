@@ -35,7 +35,7 @@
 
 ## Template list
 
-The templates for the catalog have to be located in the views/Catalog folder. Depending on the "viewtype" different templates have to be provided (configuration see [Templates for catalog](Templates-for-catalog_23560475.html)):
+The templates for the catalog have to be located in the views/Catalog folder. Depending on the "viewtype" different templates have to be provided (configuration see [Templates for catalog](templates_for_catalog.md)):
 
 - `product.html.twig`
 - `catalog.html.twig`
@@ -58,7 +58,7 @@ Since these URLs contain the prefix defined in the routing table as well the `pa
 {{ ses_render_field(catalogElement, 'longDescription') }}
 ```
 
-The renderer uses predefined templates for each [Field](Fields-for-ecommerce-data_23560470.html). The templates are located in the folder "FieldTypes".
+The renderer uses predefined templates for each [Field](../../../cookbook/fields_for_ecommerce_data/fields_for_ecommerce_data.md). The templates are located in the folder "FieldTypes".
 
 ## Configuration for templates
 

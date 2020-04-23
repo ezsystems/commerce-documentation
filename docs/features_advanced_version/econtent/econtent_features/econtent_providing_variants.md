@@ -2,7 +2,7 @@
 
 The class attribute "ses_variants" can be used to store variant data for a product. 
 
-The variants have to be stored in a JSON format. You will find more infos about variants here: [Product Variants](../../../../developer_documentation/catalog/catalog_feature_list/product_variants/product_variants.md)
+The variants have to be stored in a JSON format. You will find more infos about variants here: [Product Variants](../../../developer_manual/catalog/catalog_feature_list/product_variants/product_variants.md)
 
 !!! note
 

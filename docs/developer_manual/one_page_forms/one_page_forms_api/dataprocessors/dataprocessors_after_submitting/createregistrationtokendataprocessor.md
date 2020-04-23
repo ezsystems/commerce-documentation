@@ -1,6 +1,6 @@
 # CreateRegistrationTokenDataProcessor
 
-The goal of this DataProcessor is to create a new Token with the Help of the [TokenService](TokenService_23560945.html).
+The goal of this DataProcessor is to create a new Token with the Help of the [TokenService](../../../../../cookbook/token/tokenservice.md).
 
 ID of this service:
 

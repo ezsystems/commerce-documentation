@@ -30,7 +30,7 @@ Possible values:
 - `config`
     - The sales contact's email address will be read from the config (the second parameter below)
 - `customer`
-    - The sales contact's email address will be read from salesContactEmail from sesUser from the [customer's profile data](Customer-profile-data-model_23560898.html).
+    - The sales contact's email address will be read from salesContactEmail from sesUser from the [customer's profile data](../../../customers/customers_api/customer_profile_data_components/customer_profile_data_model.md).
     - If no address could be found in the contact data, the configuration parameter below is used as the default.
 
 #### `siso_checkout.default.order_confirmation.sales_email_address`

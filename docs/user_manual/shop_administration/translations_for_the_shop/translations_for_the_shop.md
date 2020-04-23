@@ -1,4 +1,4 @@
-#  Translations for the shop 
+# Translations for the shop
 
 There are 3 different types of translations:
 

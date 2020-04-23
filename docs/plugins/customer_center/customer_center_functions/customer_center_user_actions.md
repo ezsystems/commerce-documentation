@@ -107,21 +107,21 @@ Except for submit, all field's values will be stored in the eZ user object and c
 
 All custom fields must be defined in the *dynamic* section of the form's *attributes*. These fields have to be added to the user's content type in the eZ administration and the field identifier must be exactly the same as the key in the configuration.
 
-For a detailed description, please see [How to extend the customer center forms](Customer-Center---Cookbook_29819361.html)
+For a detailed description, please see [How to extend the customer center forms](../customer_center_cookbook.md)
 
 ## Feedback messages
 
-Every form defines a message for a successful submission and for an occurred error during the form data processing. The configuration keys are *validMessage* and *invalidMessage*, respectively. It's best practice to define identifiers for [text modules](Translations_29819112.html#Translations-Textmodules) and edit the feedback content in the eZ administration. The content of the *invalidMessage* should contain correction suggestions.
+Every form defines a message for a successful submission and for an occurred error during the form data processing. The configuration keys are *validMessage* and *invalidMessage*, respectively. It's best practice to define identifiers for [text modules](../../../developer_manual/translations/translations.md) and edit the feedback content in the eZ administration. The content of the *invalidMessage* should contain correction suggestions.
 
 ## Initial values
 
-A form can define a service in the *initialFormValuesService* key, that pre-fills the form fields with specific values. For example, these values could be read from some external data source or eZ content. The configuration value must a valid service ID and the service's class must implement the [InitialFormValuesServiceInterface](InitialFormValuesServiceInterface_29819005.html).
+A form can define a service in the *initialFormValuesService* key, that pre-fills the form fields with specific values. For example, these values could be read from some external data source or eZ content. The configuration value must a valid service ID and the service's class must implement the [InitialFormValuesServiceInterface](../customer_center_api/initialformvaluesserviceinterface.md).
 
 ## Form processors
 
 The form processors are services that perform some special actions after the form has been submitted. They are executed sequentially according the order of definition in the configuration.
 
-You can specify the form processors for a form in the configuration by the their respective service IDs. The service classes of all form processors must implement the [FormProcessorInterface](FormProcessorInterface_29819007.html).
+You can specify the form processors for a form in the configuration by the their respective service IDs. The service classes of all form processors must implement the [FormProcessorInterface](../customer_center_api/formprocessorinterface.md).
 
 ``` yaml
 formProcessors:

@@ -1,6 +1,6 @@
 # Component - List Blog
 
-In addition to our [generic list component ](Component---List_23560980.html)we have prepared Blog specific styling.
+In addition to our [generic list component](component_list.md) we have prepared Blog specific styling.
 
 ## Sass
 

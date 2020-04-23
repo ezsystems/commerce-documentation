@@ -8,7 +8,7 @@ The RemotePriceProvider is able to contact an ERP system in order to get prices 
 
 1. If the customer- and contact numbers are set directly in the price request, they are used
 1. If not, and the customer- and contact numbers are set in the BuyerParty, they are used
-1. If neither customer nor contact number are set (as above) and the usage of the template debitor is allowed in the configuration, the customer- and/or contact number are determined from the [StandardTemplateDebitorService](../../../../developer_manual/price_engine/price_engine_api/price_engine_services/standardtemplatedebitorservice.md) and used  
+1. If neither customer nor contact number are set (as above) and the usage of the template debitor is allowed in the configuration, the customer- and/or contact number are determined from the [StandardTemplateDebitorService](../../../developer_manual/price_engine/price_engine_api/price_engine_services/standardtemplatedebitorservice.md) and used  
 
 Configuration: usage of the template debitor:
 
@@ -443,7 +443,7 @@ This might have several reasons:
 
 #### VAT Percent
 
-If the ERP System does not provide the information about VAT percent, the VAT percent can be determined in the shop. In that case the shop uses the [VatService](../../../../developer_manual/price_engine/price_engine_api/price_engine_services/vatserviceinterface/localvatservice.md) to get the vatPercent by the vatCode.
+If the ERP System does not provide the information about VAT percent, the VAT percent can be determined in the shop. In that case the shop uses the [VatService](../../../developer_manual/price_engine/price_engine_api/price_engine_services/vatserviceinterface/localvatservice.md) to get the vatPercent by the vatCode.
 
 ### SesExtension Fields
 

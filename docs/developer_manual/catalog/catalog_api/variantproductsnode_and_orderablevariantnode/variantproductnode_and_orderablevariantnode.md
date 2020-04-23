@@ -2,12 +2,12 @@
 
 ## VariantProductNode
 
-VariantProductNode can not be ordered and contains all possible variants for a product. It inherits from [ProductNode](23560315.html). It contains additional properties. These properties are automatically validated withing the constructor using the `validateProperties()` method.
+VariantProductNode can not be ordered and contains all possible variants for a product. It inherits from [ProductNode](../productnode_and_orderableproductnode.md). It contains additional properties. These properties are automatically validated within the constructor using the `validateProperties()` method.
 
 | Identifier             | Type                                                                          | Description                          |
 | ---------------------- | ----------------------------------------------------------------------------- | ------------------------------------ |
 | priceRange             | PriceField\[2\]                                                               | contains the min and max PriceField  |
-| variantCharacteristics | [VariantCharacteristicsInterface](SimpleVariantCharacteristics_23560236.html) | contains all variant characteristics |
+| variantCharacteristics | [VariantCharacteristicsInterface](simplevariantcharacteristics.md) | contains all variant characteristics |
 
 ### Rendering PriceRange
 
@@ -28,4 +28,4 @@ VariantProductNode can not be ordered and contains all possible variants for a p
 
 ## OrderableVariantNode
 
-To make the VariantProductNode orderable a service is used - [VariantService](Variant-Services_23560238.html), that creates an OrderableVariantNode from VariantProductNode and given variantCode
+To make the VariantProductNode orderable a service is used - [VariantService](variant_services.md), that creates an OrderableVariantNode from VariantProductNode and given variantCode

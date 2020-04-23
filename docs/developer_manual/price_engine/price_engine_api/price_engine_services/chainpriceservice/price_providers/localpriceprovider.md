@@ -15,7 +15,7 @@ The Local price provider supports the following price models:
 
 ## How does the price logic work
 
-Scaled prices must be stored in the catalog element in a correct format, see [ScaledPriceServiceInterface](ScaledPriceServiceInterface_23560718.html). This is the task of the CatalogFactory.
+Scaled prices must be stored in the catalog element in a correct format, see [ScaledPriceServiceInterface](../../scaledpriceserviceinterface/scaledpriceserviceinterface.md). This is the task of the CatalogFactory.
 
 The scaled prices may be setup in the eZ backend as described in the screenshot:
 
@@ -45,7 +45,7 @@ Result: The last matching rule will win (in this case the rule without the start
 
 ## Which data is considered by price calculation?
 
-- scaled prices (if set), see [ScaledPriceServiceInterface](../scaledpriceserviceinterface/scaledpriceserviceinterface.md)
+- scaled prices (if set), see [ScaledPriceServiceInterface](../../scaledpriceserviceinterface/scaledpriceserviceinterface.md)
 - base price
 
 If scaled prices are set, they are used to calculate the customer price.
@@ -56,7 +56,7 @@ The local price provider is making a best price search. The customer price is al
 
 ## How vat and currency are handled?
 
-- LocalPriceProvider uses the [VatServiceInterface](../vatserviceinterface/vatserviceinterface.md) to get the vatPercent by the given vatCode.
+- LocalPriceProvider uses the [VatServiceInterface](../../vatserviceinterface/vatserviceinterface.md) to get the vatPercent by the given vatCode.
 - As currency always the customer currency is used (set in the price request)
 
 Currently the local price engine does not support using exchange rates to convert a price from one currency to another one.

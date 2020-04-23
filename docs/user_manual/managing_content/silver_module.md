@@ -1,4 +1,4 @@
-#  Silver module 
+# Silver module
 
 ## Introduction
 

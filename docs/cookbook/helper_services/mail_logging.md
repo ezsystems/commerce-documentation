@@ -2,11 +2,11 @@
 
 Every mail, that is sent by the MailHelperService, will be recorded by the *siso\_tools.mailer.logger*. This is a specially configured service of the class `Monolog/Logger`. This document describes the DI container configuration of this service and the associated classes.
 
-If you want to know more about how logging is implemented in the eZ Commerce, please read [the logging documentation](Logging_23560702.html).
+If you want to know more about how logging is implemented in the eZ Commerce, please read [the logging documentation](../../developer_manual/logging/logging.md).
 
 ## MailLog entity and repository
 
-Mails are logged in a database for more sophisticated administrative handling. Database logging is handled by [the doctrine logger](Logging---API_23560233.html#Logging-API-BaseclassesofDoctrine-basedlogging) .
+Mails are logged in a database for more sophisticated administrative handling. Database logging is handled by [the doctrine logger](../../developer_manual/logging/logging_api.md#base-classes-of-doctrine-based-logging).
 
 ### Class Siso\\Bundle\\ToolsBundle\\Entity\\MailLog
 

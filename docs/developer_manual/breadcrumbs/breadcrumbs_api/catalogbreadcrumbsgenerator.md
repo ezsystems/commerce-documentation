@@ -12,4 +12,4 @@ Checks if the 'url' attribute is set in the request by the StandardRouter. If so
 
 ## Notes to the rendering process
 
-Uses the [CatalogDataProvider](Term---Dataprovider_23560828.html) in order to fetch all catalog parent elements up to the catalog root element for the last later half of the breadcrumbs. And as the catalog root is part of the eZ content tree, it fetches the parent locations of this element as the first half of the breadcrumbs and prepends them.
+Uses the [CatalogDataProvider](../../../glossary/term_dataprovider.md) in order to fetch all catalog parent elements up to the catalog root element for the last later half of the breadcrumbs. And as the catalog root is part of the eZ content tree, it fetches the parent locations of this element as the first half of the breadcrumbs and prepends them.

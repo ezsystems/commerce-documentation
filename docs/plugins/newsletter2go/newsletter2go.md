@@ -22,7 +22,7 @@ Newsletter2Go offers several address books. The reason is, that user can be stor
 
 Usage of several address books is optional and by default there is the default address book.
 
-silver.e-shop in standard works with default address book only. See [FAQ](Newsletter2Go---FAQ_29819459.html), if you want to support several address books in your project.
+silver.e-shop in standard works with default address book only. See [FAQ](newsletter2go_faq.md), if you want to support several address books in your project.
 
 In Newsletter2Go backend the address book can be choosen in the header menu. Every address book has a different dashboard with different mailings, receivers and reports.
 
@@ -36,12 +36,11 @@ Attributes, that do not exist in the newsletter provider has to be created first
 
 ![](../img/newsletter2go_3.png)
 
-## Before you start 
+## Before you start
 
 Please keep in mind that this plugin is really connected with a lot of different modules in our shop. Be sure to check these out:
 
-- [CustomerProfileData](Customers_29819216.html)
-- [Landing page tool](/pages/createpage.action?spaceKey=EC14&title=Landing+page+tool&linkCreation=true&fromPageId=29819223)
+- [CustomerProfileData](../../developer_manual/customers/customers.md)
 
 ## Installation and Configuration
 
@@ -53,5 +52,5 @@ Read the manual for installation and configuration of the Newsletter2GoPlugin.
 
 Check our recipies to learn more about the silver.eShop newsletter implementation:
 
-- [How to send additional data to Newsletter2Go](https://doc.silver-eshop.de/display/EC14/How+to+send+additional+data+to+Newsletter2Go)
-- [How to use the Newsletter2Go API to implement custom functions](https://doc.silver-eshop.de/display/EC14/How+to+use+the+Newsletter2Go+API+to+implement+custom+functions)
+- [How to send additional data to Newsletter2Go](newsletter2go_cookbook/how_to_send_additional_data_to_newsletter2go.md)
+- [How to use the Newsletter2Go API to implement custom functions](newsletter2go_cookbook/how_to_use_the_newsletter2go_api_to_implement_custom_functions.md)

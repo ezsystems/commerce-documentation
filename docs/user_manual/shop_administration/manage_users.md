@@ -1,4 +1,4 @@
-#  Manage users 
+# Manage users
 
 Users are stored in the "Users" tab of the shop backend.
 

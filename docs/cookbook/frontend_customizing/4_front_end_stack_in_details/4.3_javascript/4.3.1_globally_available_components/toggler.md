@@ -4,7 +4,7 @@ We use toggler component to toggle content visibility. It's a well know pattern 
 
 ## Sass
 
-In order to find out more about Sass part of this component please visit: [Component - Toggler](Component---Toggler_23560819.html)
+In order to find out more about Sass part of this component please visit: [Component - Toggler](../../4.2_customized_foundation_framework/4.2.2_components/component_toggler.md)
 
 ## JavaScript
 

@@ -1,4 +1,4 @@
-#  Working with text modules (longer text elements) 
+# Working with text modules (longer text elements)
 
 ## Introduction
 

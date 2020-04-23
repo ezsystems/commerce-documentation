@@ -9,7 +9,7 @@ The basket consists of two elements:
 
 !!! note
 
-    Please check also [Doctrine Datatypes\!](Doctrine-Mapping-Datatypes_23560781.html)
+    Please check also [Doctrine Datatypes](../../../cookbook/doctrine_mapping_datatypes.md).
 
 The following attributes are provided by the basket header.
 

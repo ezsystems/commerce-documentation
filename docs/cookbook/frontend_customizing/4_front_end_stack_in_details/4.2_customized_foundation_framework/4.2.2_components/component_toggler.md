@@ -30,7 +30,7 @@ In order to change settings in project find `settings/_storm.scss` file in your 
 
 ## JavaScript part:
 
-[Toggler](Toggler_23560874.html)
+[Toggler](../../4.3_javascript/4.3.1_globally_available_components/toggler.md)
 
 ## HTML
 

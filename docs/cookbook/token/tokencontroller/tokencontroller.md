@@ -31,4 +31,4 @@ The service `silver_eshop.token_service_method_processor` implements the custom 
 
 To learn more about the TokenServiceMethodProcessor, see here:
 
--  [Token Service Method Processor](Token-Service-Method-Processor_23560590.html)
+-  [Token Service Method Processor](token_service_method_processor.md)

@@ -17,13 +17,13 @@ Please see [Checkout Summary Form](checkout_summary_form.md).
 
 ## Terms and conditions
 
-In the form [Checkout Summary Form](Checkout-Summary-Form_23560350.html) there is a field `termsAndConditions` which is rendered as a checkbox.
+In the form [Checkout Summary Form](checkout_summary_form.md) there is a field `termsAndConditions` which is rendered as a checkbox.
 
 The text for terms and conditions are stored as translatable text modules in the eZ backend (see `/Hidden-folder/Terms-Conditions-terms_conditions` in admin backend). This textmodule is defined as a label in the form type and will be fetched via TransService.
 
 The front end user must accept the terms and conditions to complete the order.
 
-Terms and conditions content is loaded via Ajax. It is possible to implement this functionality in the whole shop. Please take a look at this documentation page for a deeper understanding: [Pop-up window with external content](Pop-up-window-with-external-content_23560535.html)
+Terms and conditions content is loaded via Ajax. It is possible to implement this functionality in the whole shop. Please take a look at this documentation page for a deeper understanding: [Pop-up window with external content](../../../../../cookbook/pop_up_window_with_external_content.md)
 
 ## Screenshot
 
