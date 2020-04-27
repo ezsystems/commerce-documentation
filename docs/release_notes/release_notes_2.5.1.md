@@ -25,7 +25,7 @@ List of new features and improvements.
 |#16881|New FieldType product relation|This Fieldtype offers a relation feature for products. It can be used with product stored in eZ or in eContent.|
 |#16289|Improved caching for basket preview|Improved caching implementation for dynamic and user specific data and used first for basket preview|
 |#17575|Quantity via +/- button|It is possible to add button for +/- to increase/decrease the quantity.|
-|#18351|Product search|Added a new [filter condition](../developer_manual/search/search_cookbook/use_query_filter_in_product_search.md) in order to use Solr query filters|
+|#18351|Product search|Added a new [filter condition](../guide/search/search_cookbook/use_query_filter_in_product_search.md) in order to use Solr query filters|
 |#16289|Ajax call for customer and basket data|An ajax call can get data from customer and basket|
 |#17740|Lost order|New lost order features:</br>Link to lost orders in backend was added to lost order mail</br>Two new REST calls were added for lost order in the backend:</br>Transfer lost order to erp</br>Remove lost order|
 |#18307|configuration for search - used econtent core|This feature enables to use a dedicated econtent core for a siteaccess (e.g. for a preview siteaccess using the back core of econtent)|

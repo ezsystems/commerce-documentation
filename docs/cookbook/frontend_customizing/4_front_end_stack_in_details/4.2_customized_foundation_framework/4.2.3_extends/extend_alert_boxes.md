@@ -7,7 +7,7 @@ Extends: <http://foundation.zurb.com/sites/docs/v/5.5.3/components/alert_boxes.h
 1. Some content that is displayed inside alert boxes comes from online editor (WYSIWYG). In that case every paragraph of text is wrapped with a \<p\> tag which creates margin bottom for every paragraph. With our extend this margin is removed.
 1. Make them look different than the standard Foundation alerts.
 
-Alert boxes are part of our messages ecosystem. We use alert boxes to display inline/in-content messages in multiple places like forms, confirmations, errors, etc. In order to generate messages in our shop we use one central template to make easy to maintain. We strongly recommend reading this part of our documentation to get more in depth knowledge about alert boxes usage in eZ Commerce: [Reusable message template](../../../../../developer_manual/templating/templates_for_the_shop/reusable_message_template.md)
+Alert boxes are part of our messages ecosystem. We use alert boxes to display inline/in-content messages in multiple places like forms, confirmations, errors, etc. In order to generate messages in our shop we use one central template to make easy to maintain. We strongly recommend reading this part of our documentation to get more in depth knowledge about alert boxes usage in eZ Commerce: [Reusable message template](../../../../../guide/templating/templates_for_the_shop/reusable_message_template.md)
 
 ## Sass
 
