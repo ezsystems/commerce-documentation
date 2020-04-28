@@ -11,14 +11,12 @@ We decided to use a special comment block at the top of every template. Inside t
 Here's the example block. 
 
 ```
-{#
 /**
 * @file Generates general layout for the system
 * @param product
 * @usedby CMS
 * @module content
 */
-#}
 ```
 
 Adding comment blocks in templates is work in progress. Currently most of the templates miss this feature.

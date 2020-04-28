@@ -14,7 +14,6 @@ Every line of code should appear to be written by a single person, no matter the
 Each Twig template could provide a doc block header. 
 
 ``` 
-{#
 /**
 * @file Renders embed template for file content.
 *
@@ -23,7 +22,6 @@ Each Twig template could provide a doc block header.
 *
 * @module content
 */
-#}
 ```
 
 ### Naming variables

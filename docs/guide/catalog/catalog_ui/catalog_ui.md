@@ -78,7 +78,7 @@ To show all available attributes the method `getAttributeNames()` is given.
 
 ``` 
 {{ catalogElement.attributeNames|json_encode }}
-{# returns a JSON (because of Twig filter "json_encode":
+# returns a JSON (because of Twig filter "json_encode"):
 {
     "propertyName": {
         "name": "propertyName",
