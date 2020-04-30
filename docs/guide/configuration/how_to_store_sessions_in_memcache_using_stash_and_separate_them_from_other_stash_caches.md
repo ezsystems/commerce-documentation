@@ -48,12 +48,12 @@ session:
 ### Test 1. Sessions are stored in Memcached
 
 1. Configure just one memcached server
-1. Connect with telnet, check that session name are stored as keys
+1. Connect with telnet, check that session names are stored as keys
 1. Expected: site is working
 
 ### Test 2. Failover server works
 
 1. Configure 2 memcached servers on different ports
 1. Stop first server
-1. Connect with telnet to second server, check that session name are stored as keys
+1. Connect with telnet to second server, check that session names are stored as keys
 1. Expected: site is working

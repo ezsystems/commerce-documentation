@@ -8,19 +8,13 @@ For systems using prod as environment:
 
 ## logrotate
 
-The `logrotate` utility is a standard tool in Linux systems. It is run by `cron.daily` once a day at 6:25 am (on Ubuntu systems). When `logrotate` runs, it read all the configuration scripts in `/etc/logrotate.d/`
+The `logrotate` utility is a standard tool in Linux systems. It is run by `cron.daily` once a day at 6:25 am (on Ubuntu systems). When `logrotate` runs, it reads all the configuration scripts in `/etc/logrotate.d/`
 
 This directory contains already several scripts for e.g. apache2, samba, apt, etc.
 
 ## Configuration for rotating logs
 
-Create a new configuration file for `logrotate` in the following path:
-
-``` bash
-sudo vi /etc/logrotate.d/silver-eshop
-```
-
-the content should be this:
+Create a new configuration file for `logrotate` in `/etc/logrotate.d/silver-eshop`:
 
 ``` yaml
 /var/www/projects/<your-project>/var/logs/prod.log /var/www/projects/<your-project>/var/logs/silver.eshop.log /var/www/projects/<your-project>/var/logs/prod-siso.eshop.erp.log {

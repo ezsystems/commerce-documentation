@@ -2,33 +2,33 @@
 
 eZ Commerce requires:
 
-- An eZ Platform Version 2.x installation (requirements see <https://doc.ezplatform.com/en/2.2/getting_started/requirements_and_system_configuration/>). Please check the release notes to get the exact eZ Platform requirements  
+- An eZ Platform Version 2.5.x installation (see [Requirements](https://doc.ezplatform.com/en/2.5/getting_started/requirements_and_system_configuration/)).
 
 !!! note
 
     Recommended PHP Version: 7.2
 
-    Please note that the following PHP extensions are required
+    The following PHP extensions are required:
 
     - curl extension and SOAP extension
     - intl extension
     - xsl extension
 
-- An eZ Commerce Enterprise contract is required
-- Advanced version only: An ERP system supported by eZ Commerce and the Web-Connector 
+- An eZ Commerce Enterprise contract
+- To use ERP connection: an ERP system supported by eZ Commerce and the Web-Connector 
 
-## Requirements user (frontend)
+## Client
 
 |Requirement|Details|
 |--- |--- |
 |JavaScript|required for frontend use|
-|Browsers|Depends on the design used for the project.</br>The standard eZ Commercesupports:</br>Internet Explorer 9,10,11 (IE8 should work as well)</br>All the other modern browsers like Chrome, Firefox, Safari, Opera|
+|Browsers|Depends on the design used for the project.</br>The standard eZ Commerce supports:</br>Internet Explorer 9,10,11 (IE8 should work as well)</br>All the other modern browsers like Chrome, Firefox, Safari, Opera|
 
-## Requirements server
+## Server
 
-Hardware
+### Hardware
 
-eZ Commerce requires a dedicated server. Due to security reason a shared hosting is not recommended.
+eZ Commerce requires a dedicated server. Due to security reasons shared hosting is not recommended.
 
 |Function|Small system|Medium system|
 |---|---|---|
@@ -39,11 +39,11 @@ eZ Commerce requires a dedicated server. Due to security reason a shared hosting
 |Firewall|Port 80, ssh and 443|Port 80, ssh and 443|
 |Access|ssh|ssh|
 
-Management by a hosting company
+### Management by a hosting company
 
 - Monitoring server
 - Monitoring services
-- security patches
+- Security patches
 - Backups
 - Support if new modules are required
 - Support in case of issues
@@ -53,13 +53,13 @@ Management by a hosting company
 
 !!! note
 
-    Please don´t store session as a file on the file system. This might cause locking problems.
+    Don't store session as a file on the file system. This might cause locking problems.
 
     Details see [Session handling](../guide/configuration/session_handling.md)
 
-Please check if your webserver configuration (or varnish) blocks cookies which are not used in the application. 
+Check if your webserver configuration (or Varnish) blocks cookies which are not used in the application. 
 
-The reason is that additional cookies might influence the caching behaviour in the backend. Some parts of the site are cached per session (e.g. the basket preview).  It uses an ESI block which uses a cache by Cookie.
+The reason is that additional cookies might influence the caching behavior in the backend. Some parts of the site are cached per session (e.g. the basket preview). It uses an ESI block which uses a cache by Cookie.
 
 The implementation of eZ Platform / the FOS bundle is building a hash using all cookies.  
 
@@ -69,7 +69,7 @@ For Apache you could use mod\_headers with an additional line for your vhost (th
 RequestHeader edit Cookie "^(.*?)YOUR_COOKIE_NAME=.*?(?:$|;)(.*)$" $1$2
 ```
 
-For nginx in you vhost configuration:
+For nginx in your vhost configuration:
 
 ``` 
 set $http_cookie_updated $http_cookie;
@@ -89,7 +89,7 @@ proxy_set_header Cookie $http_cookie_updated;
 
 ### Software
 
-In addition the the requirements for eZ Platform  the following software needs to be installed:
+In addition to the requirements for eZ Platform the following software needs to be installed:
 
 #### Node.js / NPM
 
@@ -121,4 +121,4 @@ Please make sure that the following option is set (e.g. /etc/mysql/my.cnf):
 sql_mode = NO_ENGINE_SUBSTITUTION,STRICT_TRANS_TABLES
 ```
 
-If you encounter issues in the backend with missing chart data in the cockpit please check this setting and restart mysqld\!
+If you encounter issues in the backend with missing chart data in the cockpit please check this setting and restart mysqld.

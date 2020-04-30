@@ -2,20 +2,18 @@
 
 ## The catalog
 
-The catalog is build using categories and products which are setup as eZ Content objects in the backend. The categories and products can be translated. 
+The catalog is built using categories and products. The categories and products can be translated. 
 
-**eContent for eZ Commerce Advanced**
+Categories and products can be set up as Content items, or in eContent. eContent is a storage provider for eZ Commerce which can store product data in a very efficient way. It enables storing data (mostly for products and product groups) in database tables with a simple structure.
 
-In the Advanced version all categories and products are setup in eContent. eContent is a storage provider for eZ Commerce which can store product data in a very efficient way. It allows  to store data (mostly for products and product groups) in database tables with a simple structure.
+- Fast imports (e.g. from ERP or PIM systems)
+- Supports more than one million products
+- Search-ready
+- Fast access
+- Avoids storing products in the CMS content model
+- eContent offers a staging feature and enhanced catalog segmentation features and allows imports during production and switching catalogs.
 
-  - Fast imports (e.g. from ERP or PIM systems)
-  - Supports more than one million products
-  - search ready
-  - Fast access
-  - avoids to store products in the CMS content model
-  - eContent offers a staging feature and enhanced catalog segmentation features and allows imports during production and switching catalogs. 
-
-Additionally a PIM system can be used to manage all product data. 
+Additionally a PIM system can be used to manage all product data.
 
 eZ Commerce is prepared to sell physical products. It can be enhanced by partners to sell other products such as digital products.
 
@@ -23,9 +21,9 @@ eZ Commerce is prepared to sell physical products. It can be enhanced by partner
 
 ![product catalog](img/product_catalog_2.png)
 
-The 'category' represents a product group. silver.eShop allows to show a product category page using different layouts. The layout can be configured in the backend.
+A category represents a product group. eZ Commerce enables showing a product category page using different layouts. The layout can be configured in the backend.
 
-3 different layouts are provided in the standard (display sub- categories, product list or both) on the entry page of a category) It can also be configured if best sellers of the group should be displayed. This is done in the configuration settings in the backend of the shop.
+Three different layouts are provided by default (displaying sub-categories, product list or both on the entry page of a category). You can also configure if bestsellers of the group should be displayed. This is done in the configuration settings in the Back Office of the shop.
 
 #### Display product directly
 
@@ -49,7 +47,7 @@ The catalog shows filters depending on the displayed products and their attribut
 
 ### Product type
 
-The product type (not to be confused with variants) represents a collection of very similar products, that differ only for some characteristics. It is used to show a list of products in a tabular way, every product can be added to basket directly from this overview page. 
+A product type (not to be confused with variants) represents a collection of very similar products that differ only for some characteristics. It is used to show a list of products in a tabular way, every product can be added to basket directly from this overview page. 
 
 ![Product type](img/image2018-4-4_18-26-27.png)
 
@@ -62,7 +60,7 @@ The product type (not to be confused with variants) represents a collection of v
 A product can have:
 
 - one or more images (in the standard config up to 3),
-- a SKU
+- an SKU
 - text fields (name, description, intro)
 - specifications offering different groups of data as marketing data, technical data, others depending on the data that have been created in the backend
 
@@ -70,8 +68,8 @@ From the product detail the user can directly add a product to basket, wishlist,
 
 ### Variant product
 	
-silver.eShop supports variants with 1 or 2 levels.
-The user can choose a first attibute, the shop will then narrow down the options for the second level.
+eZ Commerce supports variants with 1 or 2 levels.
+The user can choose a first attribute, the shop will then narrow down the options for the second level.
 
 ![Product detail](img/product_detail.png)
 
@@ -82,15 +80,15 @@ The user can change the variant selection in the basket.
 ### Product comparison
 
 A customer can compare products in a comparison list. The comparison list automatically groups products per product category (so e.g. mixer cannot be compared to microwave).
-The customer can change the order of the sorting per drag&drop and he can decide to display only differences of the products.
+The customer can change the order of the sorting by dragging and can decide to display only differences of the products.
 
 ![Product comparison](img/comparison_list.png)
 
-### Whishlist
+### Wishlist
 
-After login customers can add products to a personal whishlist. Products that are not in the active catalog any more are automatically marked as "not available".
+After login customers can add products to a personal wishlist. Products that are not in the active catalog any more are automatically marked as "not available".
 
-![Whishlist](img/wishlist.png)
+![Wishlist](img/wishlist.png)
 
 ### Stored baskets
 
@@ -110,7 +108,7 @@ The integrated search engine offers one global search for products and content i
 - content such as blog entries, news, articles
 - assets such as downloads
 
-It respects the rights and roles of the customer.
+It respects the permissions and roles of the customer.
 
 ![Search](img/search_1.png)
 
@@ -118,16 +116,16 @@ It respects the rights and roles of the customer.
 
 ### Filters and facets
 
-Almost all product fields can be used as a facet if they are indexed. This can be controlled by a configuration file which allows to setup different facets for the product catalog and search.
+Almost all product fields can be used as a facet if they are indexed. This can be controlled by a configuration file which enables setting up different facets for the product catalog and search.
 
-Facets can be grouped. For more complex facets new fields can be implemented using the IndexPlugin features of Solr platform search.
+Facets can be grouped. For more complex facets new fields can be implemented using the IndexPlugin features of Solr search.
 
-Note: There are restrictions for variants, it is not possible to mix the variant attributes as facet if the same attribute is set for main products.
+Note: There are restrictions for variants, it is not possible to mix the variant attributes as facets if the same attribute is set for main products.
 
 ![Filters and facets](img/Filter_Facetts.png)
 
 ### Autosuggest
 
-The autosuggest feature offers suggestion as you type and allows to add an orderable product to the basket directly from the search box. It suggests products, categories, downloads and content. The autosuggest matches products where the name starts with the searchterm.
+The autosuggest feature offers suggestion as you type and enables adding an orderable product to the basket directly from the search box. It suggests products, categories, downloads and content. The autosuggest matches products where the name starts with the search term.
 
 ![Autosuggest](img/autosuggest.png)

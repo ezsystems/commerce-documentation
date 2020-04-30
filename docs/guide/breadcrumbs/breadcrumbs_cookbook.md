@@ -1,72 +1,50 @@
 # Breadcrumbs cookbook
 
-## How to configure breadcrumbs for your custom route?
+## Configuring breadcrumbs for custom routes
 
-Let's assume that you created a new custom action in your controller.
+To configure breadcrumbs for your custom route you need to add some configuration to this route.
 
-Example: 
-
-BlogController::indexAction in your custom AppBundle (with the code below)
-
-``` php
-class BlogController extends BaseController
-{
-    public function indexAction(Request $request)
-    {
-        //some action
-    }
-}
-```
-
-Afterwards you created a route for this action in routing.yml
-
-``` yaml
+``` yaml hl_lines="5 6"
 custom_blog_index:
     pattern:  /blog/index
     defaults:
         _controller: AppBundle:Blog:index
+        breadcrumb_path: custom_blog_index
+        breadcrumb_names: Blog List
 ```
 
-In order to set custom breadcrumbs for this route we need to add some configuration to this route.
-
-``` yaml
-custom_blog_index:
-    pattern:  /blog/index
-    defaults:
-        _controller: AppBundle:Blog:index
-+        breadcrumb_path: custom_blog_index
-+        breadcrumb_names: Blog List
-```
+This configures a custom route for the `BlogController::indexAction` action in your controller in `routing.yml`.
 
 |Option|Description|
 |--- |--- |
-|breadcrumb_path|It needs to be a valid route name, which exists in at least one of the routing yml files|
-|breadcrumb_names|It is a key for the translation. This name that will be shown in breadcrumbs. If the translation is not set there will be a fallback to route translation.</br>In the example above if the "Blog List'' key has no translation then the fallback key would be "custom_blog_index\|breadcrumb"|
+|breadcrumb_path|Needs to be a valid route name which exists in at least one of the routing YAML files|
+|breadcrumb_names|Key for the translation. This name that will be shown in breadcrumbs. If the translation is not set, there will be a fallback to route translation.</br>In the example above if the `Blog List` key has no translation, then the fallback key would be `custom_blog_index\|breadcrumb`|
 
 #### More advanced usage of routes
 
-If you want breadcrumbs to have more items than just one, then you can specify more paths and names with "/" delimiter.
+If you want breadcrumbs to have more items than just one, you can specify more paths and names with the `/` delimiter.
 
-In the example below when breadcrumbs will be generated there will be 2 elements (Profile and Blog list)
+In the example below when breadcrumbs are generated there will be two elements (Profile and Blog list)
 
-``` yaml
+``` yaml hl_lines="5 6"
 custom_blog_index:
     pattern:  /blog/index
     defaults:
         _controller: AppBundle:Blog:index
-+        breadcrumb_path: silversolutionsCustomerDetail/custom_blog_index
-+        breadcrumb_names: Profile/Blog List
+        breadcrumb_path: silversolutionsCustomerDetail/custom_blog_index
+        breadcrumb_names: Profile/Blog List
 ```
 
 !!! caution
 
-    There is a limitation, when using this routes generator. You can provide only the paths that the corresponding action in the controller have no parameters required. There is no way of passing any parameters to the action.
+    There is a limitation when using this route generator. You can provide paths only if the corresponding action in the controller has no required parameters. There is no way of passing any parameters to the action.
 
-## How to write your own breadcrumbs generator?
+## Writing a breadcrumb generator
 
-#### Step 1
+### Write a generator class
 
-First we need to write a generator class. It needs to implement the "BreadcrumbsGeneratorInterface" that have only 2 methods.
+First, write a generator class.
+It needs to implement `BreadcrumbsGeneratorInterface` that only has two methods.
 
 !!! note
 
@@ -74,20 +52,6 @@ First we need to write a generator class. It needs to implement the "Breadcrumbs
 
 ``` php
 <?php
-/**
- * Product silver.e-shop
- *
- * A powerful e-commerce solution for B2B online shops / portals and complex
- * online applications that have access to ERP data, usually in real time.
- * http://www.silversolutions.de/eng/Products/silver.e-shop
- *
- * This file contains the class CatalogBreadcrumbsGenerator
- *
- * @copyright Copyright (C) 2013 silver.solutions GmbH. All rights reserved.
- * @license see vendor/silversolutions/silver.e-shop/license_txt_ger.pdf
- * @version $Version$
- * @package silver.e-shop
- */
 
 namespace Path\To\Your\Generator\Breadcrumbs;
 
@@ -145,9 +109,10 @@ class CustomBreadcrumbsGenerator extends AbstractWhiteOctoberBreadcrumbsGenerato
 }
 ```
 
-#### Step 2
+### Add service definition
 
-Add service definition and tag it properly as a breadcrumbs generator with a respective priority. The highest priority which matches with canRender() will render the breadcrumbs for the current request.
+Add service definition and tag it properly as a breadcrumbs generator with a respective priority.
+The highest priority which matches `canRender()` will render the breadcrumbs for the current request.
 
 ``` 
 <parameter key="siso_core.breadcrumbs_generator.custom.class">Path\To\Your\Generator\CustomBreadcrumbsGenerator</parameter>
@@ -163,9 +128,11 @@ Add service definition and tag it properly as a breadcrumbs generator with a res
 </service>
 ```
 
-## Additional data in translationParameters
+## Additional data in `translationParameters`
 
-translationParameters contains additional data which can be used to change the behavior of the breadcrumbs depending on the stored data. **Every** BreadcrumbsGenerator has to add an array with type, identifier and content\_type\_id. Always create all the keys and leave the elements empty if not needed. Examples from some BreadcrumbsGenerators:
+`translationParameters` contains additional data which can be used to change the behavior of the breadcrumbs depending on the stored data.
+Every `BreadcrumbsGenerator` has to add an array with `type`, `identifier` and `content_type_id`.
+Always create all the keys and leave the elements empty if not needed. Examples from some `BreadcrumbsGenerators`:
 
 ### EzContentBreadcrumbsGenerator
 

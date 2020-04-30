@@ -4,10 +4,10 @@ The basket provides the following routes:
 
 | Route          | Controller     | Controller name                  | Description                                                                  |
 | -------------- | -------------- | -------------------------------- | ---------------------------------------------------------------------------- |
-| /basket/show   | showAction()   | silversolutions_basket_show    | shows Basket with all BasketLines                                            |
+| /basket/show   | showAction()   | silversolutions_basket_show    | shows basket with all basket lines                                            |
 | /basket/add    | addAction()    | silversolutions_add_to_basket | adds a product (product list) to the basket with given SKU                   |
-| /basket/update | updateAction() | silversolutions_basket_update  | changes attributes (e.g. quantity) of BasketLine in the Basket for given SKU |
-| /basket/delete | deleteAction() | silversolutions_basket_delete  | removes a BasketLine from the Basket by the given BasketLine ID              |
+| /basket/update | updateAction() | silversolutions_basket_update  | changes attributes (e.g. quantity) of a basket line in the basket for given SKU |
+| /basket/delete | deleteAction() | silversolutions_basket_delete  | removes a basket line from the basket by the given basket line ID              |
 
 ## Used messages
 
@@ -20,13 +20,13 @@ The basket provides the following routes:
 
 ## Route /basket/show
 
-Shows Basket with all BasketLines. The controller loads the template SilversolutionsEshopBundle:Basket:show.html.twig.  
+Shows a basket with all basket lines. The controller loads the template `SilversolutionsEshopBundle:Basket:show.html.twig`.  
 
 | Parameter | Type   | Description                                   |
 | --------- | ------ | ------------------------------------------------------------------------------------- |
-| basket    | Basket | optional. This parameter cannot be provided as a POST parameter. It´s used internally |
+| basket    | Basket | optional. This parameter cannot be provided as a POST parameter. It's used internally |
 
-Parameters provided in the basket template show.html.twig:
+Parameters provided in the basket template `show.html.twig`:
 
 | Parameter | Type | Description |
 | --------- | -------------------------------------------- | --------------------------------------------------- |
@@ -35,7 +35,7 @@ Parameters provided in the basket template show.html.twig:
 | success   | array                                        | A list of success messages.                         |
 | notice    | array                                        | A list of notice messages                           |
 
-The messages were already translated in the Basket service using the translation service.
+The messages were already translated in the basket service using the translation service.
 
 ### Events in show basket
 
@@ -50,7 +50,7 @@ Adds one or more products to the basket. After adding the product the basket wil
 | Parameter                            | Type   | Description |
 | ------------------------------------ | ------ | --------------------------------------------------- |
 | ses_basket[0][quantity]         | float  | Quantity to be set                                  |
-| ses_basket[0][sku] | string | Sku of the BasketLine                               |
+| ses_basket[0][sku] | string | SKU of the basket line                               |
 
 ## Route /basket/update
 

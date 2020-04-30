@@ -7,8 +7,8 @@ Welcome to Newsletter2Go plugin documentation.
 |Name|SisoNewsletter2GoPluginBundle|
 |Motivation|Provide a working implementation for the eShop's newsletter API.|
 |Target group|Shop owners|
-|Short description|silver.eShop provides an API to enable customers to register their e-mail addresses to a newsletter. This bundle integrates the newsletter service https://www.newsletter2go.de into this API.|
-|compatible to silver.eShop version|4.0|
+|Short description|eZ Commerce provides an API to enable customers to register their e-mail addresses to a newsletter. This bundle integrates the newsletter service https://www.newsletter2go.de into this API.|
+|compatible to eZ Commerce version|4.0|
 |Demo available|demo.silver-eshop.de|
 |Change history|11 Apr 2018|
 |Contact persons||
@@ -50,7 +50,7 @@ Read the manual for installation and configuration of the Newsletter2GoPlugin.
 
 ## Cookbook
 
-Check our recipies to learn more about the silver.eShop newsletter implementation:
+Check our recipies to learn more about the eZ Commerce newsletter implementation:
 
 - [How to send additional data to Newsletter2Go](newsletter2go_cookbook/how_to_send_additional_data_to_newsletter2go.md)
 - [How to use the Newsletter2Go API to implement custom functions](newsletter2go_cookbook/how_to_use_the_newsletter2go_api_to_implement_custom_functions.md)

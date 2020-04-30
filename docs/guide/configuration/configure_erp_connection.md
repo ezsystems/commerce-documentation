@@ -13,7 +13,7 @@ Configure the ERP connection in the backend:
 
 ![](../img/configure_erp.png)
 
-Please check the configuration if ERp is enabled:
+Please check the configuration if ERP is enabled:
 
 ``` yaml
 siso_local_order_management.default.send_order_to_erp: true

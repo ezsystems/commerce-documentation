@@ -1,12 +1,8 @@
 # Monitoring and control
 
-Control Center, advanced version only.
-
 ## ERP request log
 
-Only if an ERP system is connected!
-
-All communication (request- and response messages), that is sent beetween shop and ERP system will be recorded and can bee seen here.
+All communication (request- and response messages), that is sent between shop and ERP system will be recorded and can bee seen here.
 
 ![](img/ERPRequest_Log.png)
 
@@ -14,7 +10,7 @@ All communication (request- and response messages), that is sent beetween shop a
 
 Only if an ERP system is connected!
 
-The ERP performance viewer shows the efficiency of the connection between the shop and the ERP system in a monitoring.It allows to see the number of the different requests per date and time.
+The ERP performance viewer shows the efficiency of the connection between the shop and the ERP system in a monitoring. It allows to see the number of the different requests per date and time.
 
 The monitoring tool regularly checks the connection to the ERP via a test request.
 
@@ -22,23 +18,23 @@ If the connection has failed, the administrator receives an e-mail. If the conne
 
 ![](img/ERP_performance.png)
 
-## eMail archive
+## email archive
 
-In the tab eMail archive the shop owner/admin finds all e-mails which were automatically sent from the shop, with date of despatch, recipient, subject and status. He can see the mails and resend them if necessary.
+In the tab email archive the shop owner/admin finds all e-mails which were automatically sent from the shop, with date of despatch, recipient, subject and status. He can see the mails and resend them if necessary.
 
-The eMail archive reduces the response time for the support and allows to resend an eMail to the customer.
+The email archive reduces the response time for the support and enables resending an email to the customer.
 
 ![](img/image2018-11-21_9-31-12.png)
 
 ## eContent
 
-If eContent is used as product data storage the shop owner can see all econtent types (product_group und product) with the associated attributes and where they are mapped.
+If eContent is used as product data storage the shop owner can see all eContent types (product_group und product) with the associated attributes and where they are mapped.
 
 In the "eContent tasks" he can see how many products and product groups there are in the shop. Furthermore the shop operator can create a new index, import a backup into the database and create a backup from the database.
 
 ![](img/eContent.png)
 
-In the tab "eContent types" he can see the econtent types with their associated attributes (product_group and product) and the mapping information.
+In the tab "eContent types" he can see the eContent types with their associated attributes (product_group and product) and the mapping information.
 
 ![](img/eContent_types.png)
 

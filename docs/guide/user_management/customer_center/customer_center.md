@@ -2,7 +2,7 @@
 
 ## Introduction
 
-The customer-center is a plugin for silver.eShop advanced.
+The customer-center is a plugin for eZ Commerce.
 
 The customer-center is an add-on and not part of the standard shop. 
 
@@ -20,7 +20,7 @@ The customer-center is connected to the ERP system and synchronizes customer dat
 
 When  customer-center is activated in a shop all employees will be stored hierachically in a company folder. The shop administrator and the main contact of each company will have a good overview of the company and its related employees in a shop account. 
 
-The customer-center will enhance the silver.eShop advanced processes such as:
+The customer-center will enhance the eZ Commerce processes such as:
 
 - Registration
 - Login

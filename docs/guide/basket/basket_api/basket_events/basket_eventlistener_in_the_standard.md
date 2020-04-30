@@ -1,6 +1,6 @@
 # Basket - Eventlistener in the standard
 
-eZ Commerce offers two standard eventlisteners.
+eZ Commerce offers two standard event listeners.
 
 ## StandardBasketListener
 
@@ -8,7 +8,7 @@ The basket comes with a standard event listener which provides a logic for stand
 
 The standard listener provides the following checks:
 
-- check if the quantity is valid for a catalogElement
+- check if the quantity is valid for a `catalogElement`
 - check for a minimum quantity 
 - check for a maximum quantity
 - check the packaging unit
@@ -16,15 +16,15 @@ The standard listener provides the following checks:
 
 #### Allowed quantity
 
-The allowed quantity is stored in catalogElement as a regex - *$allowedQuantity* - and is evaluated by a *preg\_match()* function.
+The allowed quantity is stored in `catalogElement` as a regex - `$allowedQuantity` - and is evaluated by a `preg_match()` function.
 
 !!! note
 
-    If the [catalog factory](../../../catalog/catalog_api/cms_dataprovider.md) did not set the $allowedQuantity attribute in the catalog element, only int quantity is valid\!
+    If the [catalog factory](../../../catalog/catalog_api/cms_dataprovider.md) did not set the $allowedQuantity attribute in the catalog element, only int quantity is valid.
 
 #### Min and Max quantity
 
-The MIN and MAX values are stored in EshopBundle/Resources/config/basket.yml as a *default*, if not set in catalogElement as *$minOrderQuantity* and *$maxOrderQuantity*.
+The MIN and MAX values are stored in `EshopBundle/Resources/config/basket.yml` as a *default*, if not set in `catalogElement` as `$minOrderQuantity` and `$maxOrderQuantity`.
 
 ``` yaml
 parameters:
@@ -34,7 +34,7 @@ parameters:
 
 #### Packaging unit
 
-The packaging unit is stored in catalogElement as *packagingUnit*. If the requested quantity does not correspondent the packaging unit, the quantity is increased to the next possible quantity that will corresponding the packaging unit.
+The packaging unit is stored in `catalogElement` as `packagingUnit`. If the requested quantity does not correspondent the packaging unit, the quantity is increased to the next possible quantity that will corresponding the packaging unit.
 
 ## DiscontinuedProductsListener
 
@@ -44,13 +44,13 @@ This listener handles discontinued products. It is active when it's enabled in c
 
     parameters:
 
-    ``` 
-     #here you can enable/disable the DiscontinuedProductsListener
-     #values: true or false
-     siso_basket.default.discontinued_products_listener_active: true
+    ``` yaml
+    #here you can enable/disable the DiscontinuedProductsListener
+    #values: true or false
+    siso_basket.default.discontinued_products_listener_active: true
     ```
 
-#### When the catalog element is recognised as discontinued?
+### When is a catalog element recognized as discontinued?
 
 This listener is only active for products that are marked as 'discontinued'
 
@@ -60,7 +60,7 @@ $catalogElement.dataMap.discontinued = new TextLineField(array('text' => 1));
 
 ### Logic
 
-There are 3 possibilities when listener checks stock information:
+There are three possibilities when listener checks stock information:
 
 - stock is not available - error message is displayed that there is no information about the availability for product, but it is discontinued.
 - stock is 0 - item is removed from the basket and error message is displayed that the item is discontinued and not available anymore.

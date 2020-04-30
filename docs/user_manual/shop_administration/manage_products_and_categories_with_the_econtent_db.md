@@ -1,6 +1,6 @@
 # Manage products and categories with the eContent DB
 
-silver.eShop supports different sources for the catalog data.
+eZ Commerce supports different sources for the catalog data.
 
 Product data can be managed in the backend of the shop using content types.
 

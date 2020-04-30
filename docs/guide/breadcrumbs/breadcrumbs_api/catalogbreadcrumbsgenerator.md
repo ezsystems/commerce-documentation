@@ -1,15 +1,12 @@
 # CatalogBreadcrumbsGenerator
 
-Renders the breadcrumbs of all catalog elements regardless of the data source of the catalog.
+`Silversolutions\\Bundle\\EshopBundle\\Service\\Breadcrumbs\\CatalogBreadcrumbsGenerator`
+renders the breadcrumbs of all catalog elements regardless of the data source of the catalog.
 
-## FQN
+## When it is used
 
-Silversolutions\\Bundle\\EshopBundle\\Service\\Breadcrumbs\\CatalogBreadcrumbsGenerator
+Checks if the `url` attribute is set in the request by the `StandardRouter`. If so, the catalog element matching the request and breadcrumb can be rendered.
 
-## Criterion for responsibility
+## Rendering process
 
-Checks if the 'url' attribute is set in the request by the StandardRouter. If so, then catalog element matched the request and breadcrumb can be rendered.
-
-## Notes to the rendering process
-
-Uses the CatalogDataProvider in order to fetch all catalog parent elements up to the catalog root element for the last later half of the breadcrumbs. And as the catalog root is part of the eZ content tree, it fetches the parent locations of this element as the first half of the breadcrumbs and prepends them.
+Uses the `CatalogDataProvider` to fetch all catalog parent elements up to the catalog root element for the last half of the breadcrumbs. And as the catalog root is part of the content tree, it fetches the parent Locations of this element as the first half of the breadcrumbs and prepends them.

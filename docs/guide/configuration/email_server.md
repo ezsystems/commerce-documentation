@@ -1,16 +1,14 @@
 # Email server
 
-The GDPR requests to handle emails in a secure way.
+The GDPR requires handling emails in a secure way.
 
-We recommend to configure a secure STMP transport:
-
-parameters.yml:
+We recommend configuring a secure STMP transport (here in `parameters.yml`):
 
 ``` yaml
 mailer_host: <your mail server>
 mailer_port: 465
 mailer_encryption: ssl
-#the following stream_options configuration is required only if the mail server uses a self signed certificate
+# the following stream_options configuration is required only if the mail server uses a self signed certificate
 mailer_stream_options:
     ssl:
         verify_peer: false

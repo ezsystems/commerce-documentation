@@ -6,7 +6,7 @@
 
 ![](../img/bestseller_5.png)
 
-- `EshopBundle/Resources/views/Bestsellers/bestsellers_box.html.twig` renders a slider for a st_module (100% or 50%)
+- `EshopBundle/Resources/views/Bestsellers/bestsellers_box.html.twig` renders a slider for an `st_module` (100% or 50%)
 
 ![](../img/bestseller_5.png)
 
@@ -14,7 +14,7 @@
 
 ![](../img/bestseller_5.png)
 
-- `EshopBundle/Resources/views/Bestsellers/bestsellers_box_esi.html.twig` creates "Edge Side Includes" Tag and calls Controller for landing page bestsellers
+- `EshopBundle/Resources/views/Bestsellers/bestsellers_box_esi.html.twig` creates an Edge Side Includes tag and calls the controller for landing page bestsellers
 
 !!! note "Category pages/Caching"
 
@@ -30,9 +30,9 @@
     } )) }}
     ```
 
-## Content and Translations
+## Content and translations
 
- - Textmodule: `bestsellers_intro_text`
+- Textmodule: `bestsellers_intro_text`
 
 ## Related routes
 

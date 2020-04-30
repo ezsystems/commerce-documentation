@@ -2,7 +2,7 @@
 
 ## What is the budget workflow?
 
-Customer Center comes with standard handling for budget workflow. If the user of customercenter has a defined budget, that can not be exceeded (e.g. budget per order, budget per month), silver.eShop advanced will check the budget during the checkout process.
+Customer Center comes with standard handling for budget workflow. If the user of customercenter has a defined budget, that can not be exceeded (e.g. budget per order, budget per month), eZ Commerce will check the budget during the checkout process.
 
 If the budget is exceeded, user can not order and will be processed through the approval process. In that case the approvers of the company will be informed by email and they have to approve the user basket or reject it.
 

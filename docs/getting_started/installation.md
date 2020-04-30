@@ -6,7 +6,7 @@ The eZ Commerce installer will install eZ Platform and eZ Commerce in one step. 
 
 **Prerequisite**:
 
-Make sure that you have setup proper auth parameters for the ez update server. You will receive the login parameters from the customer portal at ez.no:
+Make sure that you have setup proper auth parameters for the updates.ez.no update server. You will receive the login parameters from the customer portal at ez.no:
 
 ``` json
 ~/.composer/auth.json
@@ -16,9 +16,7 @@ Make sure that you have setup proper auth parameters for the ez update server. Y
             "username": "xxxxxxxxxxx",
             "password": "xxxxxx"
         },
-        
     },
-    
 }
 ```
 
@@ -29,7 +27,7 @@ Make sure that you have setup proper auth parameters for the ez update server. Y
 CREATE database ezcommerce;
 ```
 
-## Step 2 -  create the project
+## Step 2 - Create the project
 
 **Option A - Using composer**
 

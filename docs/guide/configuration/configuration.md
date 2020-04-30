@@ -1,7 +1,5 @@
 # Configuration
 
-eZ Commerce is a highly configurable software which allows us to implement different configurations and load different Bundles for different installations
-
 ## Http server configuration
 
 Please check the documentation for eZ Platform for more details: https://doc.ezplatform.com/en/latest/getting_started/install_ez_platform/#prepare-installation-for-production
@@ -12,105 +10,27 @@ eZ Commerce requires one more rule in order to display images. The following exa
 RewriteRule ^/var/assets/.* - [L]
 ```
 
-## Symfony configuration 
+# PHP settings
 
-Basically, you can override any config file with special CLIENT-config files. 
+## Session settings
 
-## parameters.yml
+A parameter in `php.ini` (e.g. `/etc/php5/apache2/php.ini`) might have to be set up since it reduces the lifetime of a session:
 
-The `parameters.yml` contains important settings for your Installation:
-
-``` yaml
-# This file is auto-generated during the composer install
-parameters:
-    env(SYMFONY_SECRET): ThisEzPlatformTokenIsNotSoSecret_PleaseChangeIt
-    env(JMS_PAYMENT_SECRET): def00000706ea7318427e72fcea2c8ceb86773a4310e35119c48e3029196acfead1ba8cc898f48d1ef9cb3f7ebe191ab46eaf67ec94a2b6bd17c079ac7277de0175b9e3e
-    env(DATABASE_DRIVER): pdo_mysql
-    env(DATABASE_HOST): localhost
-    env(DATABASE_PORT): null
-    env(DATABASE_NAME): ezcommerce
-    env(DATABASE_USER): root
-    env(DATABASE_PASSWORD): mypassword
-    env(DATABASE_SERVER_VERSION): 5.7.9
-    siso_search.solr.host: localhost
-    siso_search.solr.port: 8983
-    siso_search.solr.core: collection1
-    siso_search.solr.path: /solr
-    env(SOLR_DSN): 'http://%siso_search.solr.host%:%siso_search.solr.port%%siso_search.solr.path%'
-    env(SOLR_CORE): '%siso_search.solr.core%'
-    siso_imagemagick_path: /usr/bin/convert
-    siso_core.siteaccess_group: ezdemo_site_clean_group
-    apache_tika_path: bin/tika-app-1.13.jar
+``` 
+session.gc_maxlifetime = 86400
 ```
 
-## config.yml
+It can be set in a `.htaccess` as well:
 
-eZ Commerce include 2 special config files `ecommerce.yml` and `ecommerce_parameters.yml`.
-
-``` yaml
-imports:
-    - { resource: default_parameters.yml }
-    - { resource: parameters.yml }
-    - { resource: security.yml }
-    - { resource: env/generic.php }
-    - { resource: env/platformsh.php }
-    - { resource: services.yml }
-
-    - { resource: ecommerce.yml }
-    - { resource: ecommerce_parameters.yml }
-```
-
-## routing.yml
-
-The following routs are required for eZ Commerce
-
-``` yaml
-silversolutions_eshop:
-    resource: "@SilversolutionsEshopBundle/Resources/config/ses_routing.yml"
-    prefix: /
-silversolutions_datatypes:
-    resource: '@SilversolutionsDatatypesBundle/Resources/config/routing.yml'
-    prefix: /
-silversolutions_tools:
-    resource: '@SilversolutionsToolsBundle/Resources/config/routing.yml'
-    prefix: /
-silversolutions_translation:
-    resource: '@SilversolutionsTranslationBundle/Resources/config/routing.yml'
-    prefix: /
-
-siso_checkout:
-    resource: '@SisoCheckoutBundle/Resources/config/routing.yml'
-    prefix: /
-siso_comparison:
-    resource: '@SisoComparisonBundle/Resources/config/routing.yml'
-    prefix: /
-siso_quick_order:
-    resource: '@SisoQuickOrderBundle/Resources/config/routing.yml'
-    prefix: /
-siso_search:
-    resource: '@SisoSearchBundle/Resources/config/routing.yml'
-    prefix: /
-siso_tools:
-    resource: '@SisoToolsBundle/Resources/config/routing.yml'
-    prefix: /
- 
-siso_shop_price_engine:
-    resource: "@ShopPriceEnginePluginBundle/Resources/config/routing.yml"
-    prefix: /
-siso_payment:
-    resource: '@SisoPaymentBundle/Resources/config/routing.yml'
-siso_paypal_payment:
-    resource: '@SisoPaypalPaymentBundle/Resources/config/routing.yml'
-siso_orderhistory:
-    resource: '@SisoOrderHistoryBundle/Resources/config/routing.yml'
-    prefix: /
+``` 
+php_value session.gc_maxlifetime 86400
 ```
 
 ## Bundles
 
-The method `registerBundles()` in our Kernel load different Bundles based on the environment.
+The method `registerBundles()` in our kernel loads different bundles based on the environment.
 
-In addition, you are able to load client-specific Bundles here:
+In addition, you are able to load client-specific bundles here:
 
 ``` php
 //custom bundles for clients
@@ -120,4 +40,112 @@ switch ($this->getClient()) {
     }
 ```
 
-The value that is considered here comes is passed from the vhost-config into the script. See above for details.
+The value that is considered here comes is passed from the vhost configuration into the script.
+
+## System-specific settings
+
+The `ezcommerce_parameters.yml` file contains specific settings for your installation. It is generated/updated by the installer. 
+
+### Settings for emails
+
+``` yaml
+parameters:
+    siso_core.default.ses_swiftmailer:
+        mailSender: shop@silversolutions.de
+        mailReceiver: shop@silversolutions.de
+        lostOrderEmailReceiver: shop@silversolutions.de
+        contactMailReceiver: shop@silversolutions.de
+        cancellationMailReceiver: shop@silversolutions.de
+        shopOwnerMailReceiver: shop@silversolutions.de
+    ses_eshop.forms.business.default_contact_recipient: shop@silversolutions.de
+    ses_eshop.order.sales_contact: shop@silversolutions.de
+    ses_eshop.lostorder_email: shop@silversolutions.de
+    siso_paypal_payment.receiver_email: shop@silver.de
+    silver_tools.default.translationFolderId: 61 # root (1) / Components (59) / Textmodules (61)
+    siso_core.default.user_group_location: 106
+    siso_core.default.user_group_location.business: 385
+    siso_core.default.user_group_location.private: 388
+    siso_core.default.product_catalog_content_type_id: 45
+
+    ezcommerce.installer.migration_files_path: '%kernel.project_dir%/migrations/demo'
+
+    one_sky_api_key: my-one-sky-key
+    one_sky_secret: my-onesky-password
+```
+
+## General settings
+
+### General shop settings prices
+
+#### Currencies used per country
+
+``` yaml
+siso_core.de.standard_price_factory.fallback_currency: EUR
+siso_core.en.standard_price_factory.fallback_currency: GBP
+```
+
+#### Shipping costs
+
+If you want to set up special rules for shipping costs you can achieve this in the Back Office.
+Navigate to eCommerce -> Price and stock management and click **Shipping cost management**.
+
+![](../img/base_configuration.png)
+
+#### Settings for VAT
+
+The settings can be done for each delivery country you want to support in your shop. 
+
+``` yaml
+siso_core.default.vat:
+    DE:
+        VATREDUCED: 7
+        VATNORMAL: 19
+    US: 
+        VATREDUCED: 4
+        VATNORMAL: 4   
+    default:
+        VATREDUCED: 7
+        VATNORMAL: 19
+        
+```
+
+### Payment 
+
+If you want to enable Paypal as a payment provider you need to configure:
+
+``` yaml
+jms_payment_core:
+    encryption:
+        provider: defuse_php_encryption
+        secret: 'de---xxxxxxxxxxx'
+        enabled: true
+
+siso_paypal_api.user: 'my-api-user'
+```
+
+Important: The secret has to be created by a command:
+
+``` 
+php vendor/defuse/php-encryption/bin/generate-defuse-key
+```
+
+Configure the Paypal parameters in your `parameters.yml`:
+
+``` yaml
+siso_paypal_api.user: 'my-api-use'
+siso_paypal_api.password: 'paypal api password'
+siso_paypal_api.signature: 'paypal-api-signature'
+```
+
+## Changing the logo for eZ Commerce
+
+If you want to change the logos you need to provide a link to the assets located in the `web/*` folder:
+
+``` yaml
+# Logo for the shop
+siso_core.default.logo_image: /bundles/silversolutionseshop/img/logo-advanced.png
+# Logo used for invoices
+siso_core.default.invoice_logo: /bundles/silversolutionseshop/img/invoice_logo.png
+# Logo used for the email header 
+siso_core.default.email_header: /bundles/silversolutionseshop/img/email-header.png
+```
