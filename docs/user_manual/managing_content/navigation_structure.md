@@ -21,4 +21,4 @@ The main menu in the frontend will display elements if the Priority is higher th
 
 Elements having a low Priority (e.g. 1) are displayed first.
 
-Please check chapter [Navigation](../../developer_manual/navigation/navigation.md) for details.
+Please check chapter [Navigation](../../guide/navigation/navigation.md) for details.

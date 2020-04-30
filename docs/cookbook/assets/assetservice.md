@@ -164,7 +164,7 @@ The assets configuration is stored in **silver.eshop.yml**
 
 ### Webserver configuration
 
-Please be aware the webserver configuration need a new rewrite rule (see [Configuration](../../enhanced_configuration/configuration/configuration.md)).
+Please be aware the webserver configuration need a new rewrite rule (see [Configuration](../../guide/configuration/configuration.md)).
 
 ## Cache
 

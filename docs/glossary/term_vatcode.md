@@ -4,4 +4,4 @@
 
 The Code usually is provided by the ERP-system or PIM. eZ Commerce provides a configuration which maps the Code to the corresponding VAT in percent.
 
-See [VatServiceInterface](../developer_manual/price_engine/price_engine_api/price_engine_services/vatserviceinterface/vatserviceinterface.md)
+See [VatServiceInterface](../guide/price_engine/price_engine_api/price_engine_services/vatserviceinterface/vatserviceinterface.md)

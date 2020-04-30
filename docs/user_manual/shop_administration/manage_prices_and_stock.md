@@ -18,7 +18,7 @@ In addition prices can vary per customer group. There are 3 customer goups set u
 
 Currencies in eZ Commerce:
 
-The currency is configured per country in the [configuration settings](../../product_description/ecommerce_administration.md).
+The currency is configured per country in the [configuration settings](../../guide/product_description/ecommerce_administration.md).
 
 - if a product has a price for a product and a currency this price will be displayed in the shop
 - if no price for a currency is set in a shop eZ Commerce offers 2 options, these can be set in the configuration per shop.

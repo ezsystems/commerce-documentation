@@ -28,6 +28,6 @@ You can see the result when you reload the page.
 
 ## Caching
 
-The textmodules are cached. It is possible to [refresh the textmodules](../../../developer_manual/caching_in_the_shop/content_cache_refresh/content_cache_refresh.md) when they are edited in the backend. Workflows and cronjob have to be configured for that.
+The textmodules are cached. It is possible to [refresh the textmodules](../../../guide/caching_in_the_shop/content_cache_refresh/content_cache_refresh.md) when they are edited in the backend. Workflows and cronjob have to be configured for that.
 
 However, if the full page is cached in HTTP cache, the new translation for the textmodule will appear after the HTTP cache expired, or was removed (worst case next day, since usually cache is removed during the night).
