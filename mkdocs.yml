@@ -288,9 +288,9 @@ nav:
                 - 'eContent - backend features': 'guide/econtent/econtent_features/econtent_backend_features.md'
             - 'eContent - API': 'guide/econtent/econtent_api.md'
             - 'eContent - FAQ': 'guide/econtent/econtent_faq.md'
-            - eContent cookbook:
+            - eContent tutorials:
                 - 'eContent dataprovider - How to extend EcontentCatalogFactory class': 'guide/econtent/econtent_cookbook/econtent_dataprovider_how_to_extend_econtentcatalogfactory_class.md'
-                - eContent search cookbook:
+                - eContent search:
                     - 'How to implement a custom sorting handler for eContent': 'guide/econtent/econtent_cookbook/econtent_search_cookbook/how_to_implement_a_custom_sorting_handler_for_econtent.md'
                     - 'Solr Minimum Match specification for eContent': 'guide/econtent/econtent_cookbook/econtent_search_cookbook/solr_minimum_match_specification_for_econtent.md'
                     - 'How to implement a custom indexer plugin for eContent': 'guide/econtent/econtent_cookbook/econtent_search_cookbook/how_to_implement_a_custom_indexer_plugin_for_econtent.md'
