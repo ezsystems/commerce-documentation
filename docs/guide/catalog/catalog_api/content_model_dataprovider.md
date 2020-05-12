@@ -1,26 +1,26 @@
-# CMS dataprovider
+# Content model data provider
 
-The Dataprovider for eZ Platform version provides an implementation for fetching catalogues and products from the CMS.
+The content model data provider provides an implementation for fetching catalogues and products from the database.
 
-- products are stored directly in eZ Platform
-- they can use the features provided by the CMS such as languages, objects states, versioning, ..
-- The product catalog can be maintained in the CMS
+Products are stored directly in the content structure.
+They can use the features provided by the content model such as languages, Objects states, versioning, etc.
+The product catalog can be maintained in the Back Office.
 
 ## Requirements
 
-Two Content classes have to be installed in the CMS:
+Two content classes have to be installed in the system:
 
 - Category
 - Product
 
-### The catalogue content type
+### Catalog Content Type
 
-The following fields are used to create a catalogElement:
+The following Fields are used to create a `CatalogElement`:
 
-- name: ses\_name
-- text: ses\_subtitle
-- image: ses\_image
-- identifier: main Node-Id
+- name: `ses_name`
+- text: `ses_subtitle`
+- image: `ses_image`
+- identifier: <main Node ID>
 
 ``` 
 +------------------------------------------------+
@@ -39,19 +39,19 @@ I list attributes of class: ses_category         |
 +-----------------------+-----+------------------+
 ```
 
-### The product content type
+### Product Content Type
 
-The following fields are used to create a product:
+The following Fields are used to create a product:
 
-- name: ses\_name
-- text: ses\_subtitle
-- image: ses\_image\_main
-- shortDescription: ses\_short\_description
-- longDescription: ses\_long\_description
-- sku: ses\_sku
-- manufacturerSku: ses\_vendor\_sku
-- ean: ses\_ean
-- identifier: main Node-Id  
+- name: `ses_name`
+- text: `ses_subtitle`
+- image: `ses_image_main`
+- shortDescription: `ses_short_description`
+- longDescription: `ses_long_description`
+- sku: `ses_sku`
+- manufacturerSku: `ses_vendor_sku`
+- ean: `ses_ean`
+- identifier: <main Node ID>
 
 ``` 
 +---------------------------------------------------+
@@ -81,9 +81,7 @@ I list attributes of class: ses_product             |
 
 ## Fetching by language
 
-To explicit fetch a specific translation of an eZ object, you might use the optional `$languages` parameter of the methods.
-
-Example:
+To explicitly fetch a specific translation of a Content item, use the optional `$languages` parameter, for example:
 
 ``` php
 $seoUrl = '/silver.catalog/Products/Vegetables';
@@ -95,17 +93,19 @@ $catalogService = $this->get('silver_catalog.data_provider_service');
 $catalogData = $catalogService->getDataProvider()->lookupByUrl($seoUrl, $languages);
 ```
 
-During **lookupByUrl** if the catalog element, which we are searching for, has location set to **invisible**, the application will throw **HiddenCatalogElementException**. It is not possible to see hidden elements
+During `lookupByUrl()`, if the catalog element you are searching for has Location set to `invisible`,
+the application throws a `HiddenCatalogElementException`. It is not possible to see hidden elements
 
 ## Configuration
 
-The data provider uses a configuration in order to limit the fetched CatalogElements.
+The data provider uses configuration to limit the fetched catalog elements.
 
-The following default setup filters eZ Platform content of type "ses\_category" for the navigation service (which uses this data provider to fetch the category objects). The sort order will be controlled by the Priority field and the publish date.
+The following default setup filters content of type `ses_category` for the navigation service
+(which uses this data provider to fetch the category objects).
+The sort order is controlled by the Priority field and the publish date.
 
-The second level key defines the scope, or "filterType", for which the specific filter definitions are valid. In this example it is "navigation", which is passed by the navigation service's fetch.
-
-Example:
+The second level key defines the scope, or `filterType`, for which the specific filter definitions are valid.
+In this example it is `navigation`, which is passed by the navigation service's fetch.
 
 ``` yaml
 silver_eshop.default.ez5_catalog_data_provider.filter:
@@ -135,12 +135,13 @@ silver_eshop.default.ez5_catalog_data_provider.filter:
 
 !!! note "Important"
 
-    In case that a product belongs to multiple locations, the shop ensures that the proper location is returned, so the url of the product is correct.
+    If a product has multiple Locations, the shop ensures that the proper Location is returned,
+    so the URL of the product is correct.
 
     By default hidden items (e.g. products) are not fetched.
 
 |Parameter|Description|
 |--- |--- |
-|contentTypes|The identifier of the content types defined in the CMS eZ Platform|
+|contentTypes|Identifierd of the Content Types defined in the system|
 |limit|Default limit to be used when no limit is given|
-|sortClauses|The clauses for sorting.|
+|sortClauses|Clauses for sorting|

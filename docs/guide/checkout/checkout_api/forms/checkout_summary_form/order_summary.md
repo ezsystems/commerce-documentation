@@ -1,12 +1,10 @@
 # Order summary
 
-This chapter describes the general order summary.
-
-Summary is the last step in the checkout process. Front end user, in order to end the process, needs to accept terms and conditions.
+Summary is the last step in the checkout process. In order to finish the process, the customer needs to accept terms and conditions.
 
 ## Forms
 
-Please see [Checkout Summary Form](checkout_summary_form.md).
+See [Checkout Summary Form](checkout_summary_form.md) for more information.
 
 ## Templates
 
@@ -17,14 +15,15 @@ Please see [Checkout Summary Form](checkout_summary_form.md).
 
 ## Terms and conditions
 
-In the form [Checkout Summary Form](checkout_summary_form.md) there is a field `termsAndConditions` which is rendered as a checkbox.
+In [checkout summary form](checkout_summary_form.md) there is a field `termsAndConditions` which is rendered as a checkbox.
 
-The text for terms and conditions are stored as translatable text modules in the eZ backend (see `/Hidden-folder/Terms-Conditions-terms_conditions` in admin backend). This textmodule is defined as a label in the form type and will be fetched via TransService.
+The texts for terms and conditions are stored as translatable text modules in the content model
+(see `/Hidden-folder/Terms-Conditions-terms_conditions` in the Back Office).
+This text module is a label in the form type and is fetched via `TransService`.
 
-The front end user must accept the terms and conditions to complete the order.
+The customer must accept the terms and conditions to complete the order.
 
-Terms and conditions content is loaded via Ajax. It is possible to implement this functionality in the whole shop. Please take a look at this documentation page for a deeper understanding: [Pop-up window with external content](../../../../../cookbook/pop_up_window_with_external_content.md)
-
-## Screenshot
+Terms and conditions content is loaded via Ajax. You can implement this functionality in the whole shop.
+See [Pop-up window with external content](../../../../../cookbook/pop_up_window_with_external_content.md) for more information.
 
 ![](../../../../img/order_summary.png)

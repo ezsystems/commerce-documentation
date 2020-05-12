@@ -1,28 +1,24 @@
-# How to extend a CatalogFactory
+# Extending a CatalogFactory
 
-## Why extend a CatalogFactory?
+If you need to prepare special fields for products or categories, or you need to do a mapping,
+then the easiest way is to extend the CatalogFactory.
 
-If you need to prepare special fields for products or categories, or you need to do a mapping, then the easiest way is to extend the CatalogFactory.
+The factory maps the data from the provider to the standard `CatalogElements` or `ProductNodes`. It is called every time a product is provided by the data provider. For each provider a factory is defined. Some data providers could be Content items or eContent. The data provider is defined the `silver_eshop.default.catalog_data_provider` parameter.
 
-The factory maps the data from the provider to the standard CatalogElements or ProductNodes. It is called every time a product is provided by the data provider. For each provider a factory is defined. Some data providers could be Ez Content or econtent. The data provider is defined the following parameter 
+For more information about data providers see [Catalog data provider](../catalog_features/catalog_data_providers.md).
 
-``` 
-silver_eshop.default.catalog_data_provider
-```
+The following example provides one more mapping for a complex Field Type Keyword.
 
-For more information about data providers you could check this link: [Catalog data provider](http://confluence.extranet.silversolutions.de:8090/display/EX/Catalog+data+providers)
-
-The following example will provide one more mapping for a complex field type Keyword.
-
-The ContentType `ses_product` has been extended. A new field Tags (ezkeyword) has been added. In the backend you can now add tags to your products:
+It extends the Content Type `ses_product` by adding a new Field Tags (ezkeyword).
+In the backend you can now add tags to your products:
 
 ![](../../img/catalog_cookbook_1.png)
 
-## How to override the CatalogFactory?
+## Override the CatalogFactory
 
 ### Step 1
 
-Create the new class that will extend the Catalog Factory.
+Create a new class that extends the Catalog Factory:
 
 ``` php
 namespace AppBundle\Services;
@@ -51,13 +47,12 @@ parameters:
     silver_catalog.ez5_catalog_factory.class: AppBundle\Services\ProjecteZCatalogFactory
 ```
 
-Note. If you need to inject additional services you should do the following:
-
-The easiest way is to inject the new services using Symfony setter injection. So, you will have to define the extended service just like the parent service and add the setter injection.
+If you need to inject additional services, the easiest way is to inject the new services using Symfony setter injection.
+In this case you have to define the extended service just like the parent service and add the setter injection.
 
 ## Extend the service class
 
-The extended service will do the mapping for the Keyword FieldType.  To simplify the example the Keyword field always uses the name "tags". An extended implementation could use the identifier of the eZ object directly. 
+The extended service does the mapping for the Keyword Field Type. To simplify, the example the Keyword Field always uses the name `tags`. An extended implementation could use the identifier of the Content item directly. 
 
 ``` php
 <?php
@@ -99,7 +94,6 @@ class ProjecteZCatalogFactory extends Ez5CatalogFactory
         }
         return $catalogElement;
     }
-
     /**
      * Extracts Keyword
      *
@@ -121,9 +115,10 @@ class ProjecteZCatalogFactory extends Ez5CatalogFactory
 }
 ```
 
-## Extend the template and show display the keywords
+## Extend the template and display the keywords
 
-You can extend the default template `SilversolutionsEshopBundle:Catalog:parts/productData.html.twig` in your Bundle. The following example makes use of the theme option of the Template Resolver and requires some config settings :
+You can extend the default template `SilversolutionsEshopBundle:Catalog:parts/productData.html.twig`.
+The following example makes use of the theme option of the Template Resolver and requires some config settings:
 
 ``` yaml
 siso_tools.default.template_resolver.enabled: true
@@ -131,9 +126,7 @@ siso_tools.site_group.template_resolver.bundles: [AppBundle]
 siso_tools.site_group.template_resolver.designs: [site_group]
 ```
 
-The new field "tags" will be available in the dataMap of the CatalogElement. 
-
-src/AppBundle/Resources/views/designs/site_group/Catalog/parts/productData.html.twig
+The new field `tags` will be available in the `dataMap` of the `CatalogElement`. 
 
 ``` html+twig
 {% if catalogElement.dataMap.tags is defined %}

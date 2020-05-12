@@ -1,10 +1,10 @@
-# Access dataprovider via PHP
+# Access data provider via PHP
 
 ## Catalog Data Provider Service
 
 Example usage in Controller or services
 
-``` 
+``` php
 /** @var $catalogService \Silversolutions\Bundle\EshopBundle\Services\Catalog\CatalogDataProviderService */
 $catalogService = $this->get('silver_catalog.data_provider_service');
 
@@ -18,29 +18,25 @@ $catalogElement = $catalogService->getDataProvider()->fetchElementBySku(
 );
 ```
 
-## Definition
-
-Injecting different Data Providers to the Catalog Service using external configuration.
-
-We have to be able to choose the provider depending on siteaccess, url etc.
+This service injects different data providers to the Catalog Service using external configuration.
+You can choose the provider depending on SiteAccess, URL, etc.
 
 ## Implementation
 
-To choose proper catalog provider we use tags and compiler pass. Documentation in : <http://symfony.com/doc/current/components/dependency_injection/tags.html>
+To choose the proper catalog provider, use [tags and compiler pass.](http://symfony.com/doc/current/components/dependency_injection/tags.html)
 
-### Compiler Pass
+### Compiler pass
 
-New compiler pass (CatalogDataProviderOperationsPass.php) collects all services, which are tagged with "catalog_data_provider_operation". Example below:
+New compiler pass (`CatalogDataProviderOperationsPass`) collects all services which are tagged with `catalog_data_provider_operation`.
+For example:
 
 `<tag name="catalog_data_provider_operation" alias="ez5" />`
 
-[ ](http://symfony.com/doc/current/components/dependency_injection/tags.html)
+The compiler pass calls `setDataProviderService` from `CatalogDataProviderService` and sets all available providers.
 
-Compiler Pass calls "setDataProviderService" from CatalogDataProviderService.php and sets all available providers.
+When the actual call to catalog data provider service is made, the proper provider is chosen depending on the SiteAccess.
 
-When actual call to catalog data provider service is made then depending on siteaccess the proper provider is chosen.
-
-``` 
+``` php
 /**
 * Array, which holds the catalog data providers services as dependencies.
 *
@@ -52,7 +48,7 @@ protected $dataProviders;
  
 public function getDataProvider()
 {
-    // return the data provider by siteaccess
+    // return the data provider by SiteAccess
     return $this->dataProviders[$this->configResolver->getParameter('catalog_data_provider', 'silver_eshop')];
 }
 ```

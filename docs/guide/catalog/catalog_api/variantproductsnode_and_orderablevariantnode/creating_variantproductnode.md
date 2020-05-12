@@ -1,6 +1,7 @@
-# How to create VariantProductNode
+# Creating VariantProductNode
 
-Usually you need to create a VariantProductNode in your factory. The most easy way to explain how to do it, is a simple code example:
+Usually you need to create a `VariantProductNode` in your factory,
+see the following example:
 
 ``` php
 public function createVariantProductNode($rawData = null)

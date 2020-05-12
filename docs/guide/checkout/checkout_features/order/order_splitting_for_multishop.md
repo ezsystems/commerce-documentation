@@ -1,25 +1,21 @@
 # Order splitting for multishop
 
-If there are products from the MAIN shop in the basket, The order is sent to the main shop ERP, and the basket data is modified.
+If there are products from the main shop in the basket, the order is sent to the main shop ERP, and the basket data is modified.
 
-By default this possibility is disabled for the shop, but it is possible to modified this in the configuration: 
-
-`LocalOrderManagementBundle/Resources/config/local_order_management.yml`:
+By default this possibility is disabled for the shop, but you can enable it in `LocalOrderManagementBundle/Resources/config/local_order_management.yml`:
 
 ``` yaml
 #Enable or disable the possibility to split the order for multishops
 siso_local_order_management.default.order_splitting_for_multishop: false
 ```
 
-For the implementation of this feature event listeners are used.
+This option uses event listeners.
 
-## Listeners: `onExceptionMessage`
+## `onExceptionMessage`
 
-In order to split the orders, the exception "onExceptionMessage" is catch, that will interrupt the default process (sending to ERP).
+In order to split the orders, the `onExceptionMessage` exception is thrown that interrupts the default process (sending to ERP).
 
-New listener is created:
-
-`Siso/Bundle/LocalOrderManagementBundle/Resources/config/services.xml`
+A new listener is created in `Siso/Bundle/LocalOrderManagementBundle/Resources/config/services.xml`
 
 ``` xml
 <parameter key="siso_local_order_management.order_splitting.class">Siso\Bundle\LocalOrderManagementBundle\EventListener\OrderSplittingListener</parameter>
@@ -35,17 +31,13 @@ New listener is created:
 </service>
 ```
 
-Logic inside the new listener:
+The listener checks if the order contains any products from the main shop.
+It then creates a new order with only the products from the main shop and data of the shop owner.
+Finally, it submits the new order to the ERP.
 
-- Checks if the order contains some products of the MAIN shop.
-- Creates a new order only with the products from the "MAIN" shop and data of the shop owner
-- Submits the new order to ERP
-
-Some of the products contains a `main_erp` attribute set in the `$remoteDataMap`. To get that information there is a new method inside the `"OrderSplittingListener`
-
-We use a constant called USE_MAIN_ERP_FLAG to define the name for the attribute `main_erp`.
-
-`checkProductsInMainShop`:
+Some of the products contain a `main_erp` attribute set in `$remoteDataMap`.
+You can get this information with the `checkProductsInMainShop()` method from `OrderSplittingListener`.
+The `USE_MAIN_ERP_FLAG` constant defines the name for the `main_erp` attribute.
 
 ``` php
 /**
@@ -71,15 +63,13 @@ protected function checkProductsInMainShop(Basket $basket)
 }
 ```
 
-In order to mark the products from the MAIN shop, a flag can be added in the template.
+You can add a flag in the template to mark the products from the main shop.
 
-``` xml
+``` html+twig
 <input type="hidden" name="ses_basket[0][main_erp]" value="1"/>
 ```
 
-In order to create the new order with products from the main shop there are some conditions, see code below; 
-
-`onExceptionMessage`:
+The following example shows how to create a new order with products from the main shop with conditions:
 
 ``` php
 public function onExceptionMessage(MessageExceptionEvent $messageExceptionEvent)
@@ -107,15 +97,15 @@ public function onExceptionMessage(MessageExceptionEvent $messageExceptionEvent)
 }
 ```
 
-There is an special attribute that is also set in the DataMap, so it will be possible in the templates to difference if there is a order from the main shop. 
+The `MULTISHOP_ORDER` sttribute which is set in the `dataMap` indicates if the order comes from the main shop. 
 
 ``` php
 $copiedBasket->addToDataMap(true, self::MULTISHOP_ORDER);
 ```
 
-And there is an special method to create the new  basket and the new response:
+The `createMainShopBasket()` method creates the new basket and the new response:
 
-The basket items are only the ones marked with the main_erp flag.
+The basket items are the ones marked with the `main_erp` flag.
 
 ``` php
 /**
@@ -134,7 +124,7 @@ protected function createMainShopBasket(Basket $basket)
 }
 ```
 
-After create the response it sends the confirmation email but without show the price calculation.
+After creating the response the listener sends a confirmation email but without showing the price calculation:
 
 ``` html+twig
 {% if not multishop_order == true %}
@@ -143,28 +133,15 @@ After create the response it sends the confirmation email but without show the p
 {% endif %}
 ```
 
-## Internal Process and implementation
-
-Set the configuration settings (Split orders)
-
-``` 
-siso_local_order_management.default.send_order_to_erp: false
-
-siso_local_order_management.default.order_splitting_for_multishop: true
-```
-
-### Buyer and invoice party
+## Buyer and invoice party
 
 The buyer party for the split order is generated using the buyer party of shop owner taken from a ERP request.
 
-In Multishop there is a configuration for the customer number of the shop owner.
-
-`shop_owner_customer_number`
+In Multishop there is a configuration for the customer number of the shop owner: `shop_owner_customer_number`
 
 This value is the customer number set in ERP.
 
 If there is no ERP connection or there is a temporary problem,
-
 the invoice and buyer address are empty and only filled with the customer number.
 
 ``` php
@@ -191,29 +168,29 @@ protected function createMainShopBasket(Basket $basket)
 }
 ```
 
-### Emails
+## Emails
 
-These emails are send with the standard process in vendor/silversolutions/silver.e-shop/src/Siso/Bundle/CheckoutBundle/EventListener/OrderConfirmationListener.php in the methods onOrderResponse and sendMailToRecipient.
+These emails are sent with the standard process in `vendor/silversolutions/silver.e-shop/src/Siso/Bundle/CheckoutBundle/EventListener/OrderConfirmationListener.php` in the methods `onOrderResponse()` and `sendMailToRecipient()`.
 
-Both emails are based on the standard order confirmation email templates: 
+Both emails are based on the standard order confirmation email templates 
+`SilversolutionsEshopBundle:Checkout/Email:order_confirmation.txt.twig` and `SilversolutionsEshopBundle:Checkout/Email:order_confirmation.html.twig`.
 
-`SilversolutionsEshopBundle:Checkout/Email:order_confirmation.txt.twig` and `SilversolutionsEshopBundle:Checkout/Email:order_confirmation.html.twig`
+### Owner of the shop
 
-#### Owner of the shop
+Owner of the shop receives an email with the order which was sent to ERP.
 
-Email with the order which was send to ERP
-These differences to the standard email are realized by checking the variable 'multishop_order', which is stored in the dataMap of the copied basket:
+It differs from the standard email because of the variable `multishop_order` which is stored in the `dataMap` of the copied basket:
 
-- a special intro text is set in the email "email_multishop_order_intro_text" (uses  TextModules from the BackEnd
-- the delivery and shipping information are hidden
+- a special introduction text is set in the email `email_multishop_order_intro_text` (using text modules)
+- the delivery and shipping information is hidden
 - the basket is displayed without prices
-- The image on the top (banner) is different and there is a new block in the template for the image
+- the image on the top (banner) is different and there is a new block in the template for the image:
 
 `{{ block('multishop_email_image') }}`
 
-and it is possible to override it in:
+You can override this block in the following way:
 
-```
+``` html+twig
 {% block multishop_email_image %}
     {% set siteaccess = basket is defined and basket.dataMap.siteaccess is defined ? basket.dataMap.siteaccess : null %}
     <div>
@@ -223,7 +200,7 @@ and it is possible to override it in:
 {% endblock %}
 ```
 
-`vendor/silversolutions/silver.e-shop/src/Siso/Bundle/LocalOrderManagementBundle/EventListener/OrderSplittingListener.php`:
+In `vendor/silversolutions/silver.e-shop/src/Siso/Bundle/LocalOrderManagementBundle/EventListener/OrderSplittingListener.php`:
 
 ``` php
 $shopOwnerMailReceiver = isset($emailAddresses['shopOwnerMailReceiver'])
@@ -231,7 +208,7 @@ $shopOwnerMailReceiver = isset($emailAddresses['shopOwnerMailReceiver'])
 $copiedBasket->setConfirmationEmail($shopOwnerMailReceiver);
 ```
 
-#### Sales Contact person
+### Sales contact person
 
 This email is only sent when the email for the sales contact is configured.
 
@@ -248,7 +225,7 @@ siso_checkout.default.order_confirmation.sales_email_mode: customer
 siso_checkout.default.order_confirmation.sales_email_address:
 ```
 
-It is a copy of the email to the owner of the shop with an additional variable is_sales_contact (set to true).
+This email is a copy of the email sent to the owner of the shop with the additional variable `is_sales_contact` set to `true`.
 The subject of this email can also differ:
 
 ``` php
@@ -259,7 +236,7 @@ if (!empty($isSalesContact)){
 }
 ```
 
-``` 
+``` html+twig
  {% if line.catalogElement.sku == '150103' or line.catalogElement.sku == '150106' or line.catalogElement.sku == 'FVA10' %}
          <input type="hidden" name="ses_basket[{{ loop.index }}][MAIN]" value="1"/>
  {% endif %}

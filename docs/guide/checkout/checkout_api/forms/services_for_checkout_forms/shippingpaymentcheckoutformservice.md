@@ -1,16 +1,11 @@
 # ShippingPaymentCheckoutFormService
 
-ShippingPaymentCheckoutFormService is a service that implements the logic for the CheckoutShippingPayment form.This service is assigned to the CheckoutShippingPayment form in the [configuration](../configuration_for_checkout_forms.md).
+`ShippingPaymentCheckoutFormService` (`Siso\Bundle\CheckoutBundle\Service\ShippingPaymentCheckoutFormService`) implements the logic for the `CheckoutShippingPayment` form.
+This service is assigned to the `CheckoutShippingPayment` form in the [configuration](../configuration_for_checkout_forms.md).
 
-This service implements the [CheckoutFormServiceInterface](interfaces_for_checkout_services.md#checkoutformserviceinterface).
+This service implements [`CheckoutFormServiceInterface`](interfaces_for_checkout_services.md#checkoutformserviceinterface).
 
-!!! note "Namespace"
-
-    `Siso\Bundle\CheckoutBundle\Service\ShippingPaymentCheckoutFormService`
-
-!!! note "Service ID"
-
-    `siso_checkout.checkout_form.shipping_payment`
+The service ID is `siso_checkout.checkout_form.shipping_payment`.
 
 ## Usage
 

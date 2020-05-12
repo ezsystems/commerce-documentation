@@ -1,6 +1,6 @@
-# How to export products
+# Exporting products
 
-Get the products from the catalog provider (maximum 100 products and a depth of 10):
+To export products first get them from the catalog provider (maximum 100 products and a depth of 10):
 
 ``` php
 $catalogService = $this->getContainer()->get('silver_catalog.data_provider_service');
@@ -15,7 +15,7 @@ $productList = $repository->sudo(
 );
 ```
 
-Export the products:
+Then perform the export:
 
 ``` php
 $html5converter = $this->getContainer()->get('ezpublish.fieldtype.ezxmltext.converter.html5');

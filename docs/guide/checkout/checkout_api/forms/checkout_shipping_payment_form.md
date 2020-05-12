@@ -1,16 +1,13 @@
-# Checkout Shipping Payment Form
+# Shipping payment form
 
 ## Model Class
 
-This class extends the `AbstractFormEntity` and implements the `CheckoutAddressInterface`.
+`CheckoutShippingPayment` (`Siso\Bundle\CheckoutBundle\Form\CheckoutShippingPayment`)
+extends `AbstractFormEntity` and implements `CheckoutAddressInterface`.
 
-!!! note "Namespace"
+## Fields
 
-    `Siso\Bundle\CheckoutBundle\Form\CheckoutShippingPayment`
-
-## Input Fields
-
-|Name|Description|Assertations|
+|Name|Description|Assertions|
 |--- |--- |--- |
 |shippingMethod|method of the shipping|String</br>Not blank|
 |paymentMethod|method of the payment|String</br>Not blank|
@@ -22,19 +19,16 @@ The parameters are set in the [Configuration for Checkout Forms](configuration_f
 
 ## Form Type
 
-!!! note "Namespace"
+`Siso\Bundle\CheckoutBundle\Form\Type\CheckoutShippingPaymentType`
+(service ID: `siso_checkout.form_entity.checkout_shipping_payment_type`)
+implements the setup for this form.
 
-    `Siso\Bundle\CheckoutBundle\Form\Type\CheckoutShippingPaymentType`
-
-implements the setup for this form. In this class further definitions are implemented. 
-
-This class is defined as a service in order to take advantage from TransService.
-
-The service definition ID for this form is: `siso_checkout.form_entity.checkout_shipping_payment_type`
+This class is defined as a service to take advantage from `TransService`.
 
 !!! note
 
-    Please pay attention, that the scope of this service is set to 'prototype'. Against to default service behavior - a new instance of ` Siso\Bundle\CheckoutBundle\Form\Type\CheckoutShippingPaymentType` is created every time this service is called.
+    The scope of this service is set to `prototype`.
+    A new instance of `CheckoutShippingPaymentType` is created every time this service is called.
 
 ## Templates
 
@@ -42,6 +36,6 @@ The service definition ID for this form is: `siso_checkout.form_entity.checkout_
 | ------------- | --------- |
 | Main template | `vendor/silversolutions/silver.e-shop/src/Silversolutions/Bundle/EshopBundle/Resources/views/Checkout/checkout_shipping_payment.html.twig` |
 
-### Select values configuration
+### Select value configuration
 
-More configuration values are set in the [Configuration for Checkout Forms](configuration_for_checkout_forms.md).
+You can set other configuration values in [Configuration for checkout forms](configuration_for_checkout_forms.md).

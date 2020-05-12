@@ -2,13 +2,13 @@
 
 eZ Commerce uses a lot of dynamic data which has to be displayed in the shop:
 
-- The basket preview showing the number of products and a list of products
-- The name of the customer
-- The number of items in the wishlist
+- basket preview showing the number of products and a list of products
+- the name of the customer
+- the number of items in the wishlist
 
-In order to improve the caching and speed up page loading a special route is used to provide the dynamic data using a REST call. It would be possible to use ESI blocks to cache the user specific data inside a page but this concept has some restrictions since it is not very reliable (there is no cache by user/session but a cache by cookie hash which might cause issues when 3rd party software are changing the data stored in a cookie).
+To improve the caching and speed up page loading, a special route is used to provide the dynamic data using a REST call.
 
-This concept allows to cache pages in a more effizient way and to place dynamic attributes using JavaScript. 
+This concept enables caching pages in a more efficient way and placing dynamic attributes using JavaScript.
 
 ## The REST route
 
@@ -18,23 +18,23 @@ By default the following attributes are returned:
 
 ![](../img/basketpreview_1.png)
 
-The response is cached via the http cache. It is purged whenever an basket is updated or a customer logs in.
-After page load a JS will fetch the current data from the server and updates
+The response is cached via HTTP cache. It is purged whenever a basket is updated or a customer logs in.
+After page load JavaScript fetches the current data from the server and update:
 
-- the part showing who is logged in 
+- the logged-in user
 - the basket preview
-      
+
 ![](../img/basketpreview_2.png)
 
 ### JS Event
 
-An event will be trigged after the data has been received via REST:
+An event is trigged after the data has been received via REST:
 
 ```
 new CustomEvent("ses:dynamic-data", { "detail": response.data });
 ```
 
-You can subscribe to the event inside a vue app using this.$on:
+You can subscribe to the event inside a vue app using `this.$on`:
 
 ```
 document.addEventListener("ses:dynamic-data", function(e) {
@@ -45,19 +45,20 @@ document.addEventListener("ses:dynamic-data", function(e) {
 
 ## Extending the REST call
 
-The modules section can be used for project specific data using a tagged service which has to implement a service using a special service tag:
+The modules section can be used for project-specific data using a tagged service which has to implement a service using a special service tag:
 
 ```
 <tag name="siso_core.session_data" alias="mydata"/>
 ```
 
-The alias "mydata" is used as a key in the modules section.
+The alias `mydata` is used as a key in the modules section.
 
-### Working with html fragments
+### Working with HTML fragments
 
-Each service implementing the SessionDataInterface can return HTML fragments. The keys should use the ID of a container inside your site. eZ Commerce automatically replaces this container with the indicated HTML.
+Each service implementing `SessionDataInterface` can return HTML fragments.
+The keys should use the ID of a container inside your site. eZ Commerce automatically replaces this container with the indicated HTML.
 
-Example how to provide the data in a service:
+Example for providing the data in a service:
 
 ``` php
 /**
@@ -78,7 +79,7 @@ public function getSessionData()
 }
 ```
 
-The corresponding div in the website needs to use the key (headerLoginDesktop) e.g. as an id:
+The corresponding div in the website needs to use the key `headerLoginDesktop`, e.g. as an ID:
 
 ```
 <ul class="inline-list c-nav-meta" id="headerLoginDesktop">
@@ -86,9 +87,9 @@ The corresponding div in the website needs to use the key (headerLoginDesktop) e
 </ul>
 ```
 
-## How to update existing projects
+## Updating existing projects
 
-Allow to access cookie via JS:
+1\. Allow accessing cookies via JS:
 
 ``` 
 ezpublish:
@@ -98,13 +99,13 @@ ezpublish:
                 cookie_httponly: false
 ```
 
-Add vue.js in pagelayout.html.twig within header:
+2\. Add `vue.js` in `pagelayout.html.twig` within the header:
 
 ``` 
 <script src="{{ asset("bundles/silversolutionseshop/js/vue/vue.js") }}"></script>
 ```
 
-Add the routeconfig to the pagelayout.html.twig at the beginning of javascripts block:
+3\. Add the `routeconfig` to the `pagelayout.html.twig` at the beginning of the `javascripts` block:
 
 ``` html+twig
 {% block javascripts %}
@@ -117,7 +118,7 @@ Add the routeconfig to the pagelayout.html.twig at the beginning of javascripts 
 </script>
 ```
 
-Add 3 javascript files to pagelayout.html.twig:
+4\. Add three JavaScript files to `pagelayout.html.twig`:
 
 ``` html+twig
 // If you plan to support the old IE as well:
@@ -131,7 +132,7 @@ Add 3 javascript files to pagelayout.html.twig:
 ....
 ```
 
-The twig block `basket_preview` in pagelayout.html.twig has to be changed using a static HTML markup which will be replaced by JS after loading the session data:
+5.\ Change the Twig block `basket_preview` in `pagelayout.html.twig` using a static HTML markup which is replaced by JS after loading the session data:
 
 ``` html+twig
 {% block basket_preview %}

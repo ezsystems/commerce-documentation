@@ -1,10 +1,9 @@
 # Checkout
 
-## Introduction
+eZ Commerce provides one-page checkout with a varying number of steps.
 
-eZ Commerce provides a one page checkout. The number of steps varies.
-
-If a user is not logged in he will see 2 more steps: one with a login form and a second one for the invoice address. Customers having a customer number will already foreared to the step 3. 
+If a user is not logged in, they see two more steps: one with a login form and a second one for the invoice address.
+Customers who already have a customer number is forwarded to step 3. 
 
 ### Step 1 - Login form
 
@@ -12,13 +11,13 @@ If a user is not logged in he will see 2 more steps: one with a login form and a
 
 ### Step 2 - Invoice form
 
-A customer not having a customer number or a anoymous user will have to add the invoice address first:
+A customer without a customer number or an anonymous user has to add their invoice address first:
 
 ![](../img/checkout_2.png)
 
 ### Step 3 - Delivery address
 
-A user without delivery address wir see an empty delivery form. He can also chose the invoice address.
+A customer without a delivery address sees an empty delivery form. They can also chose the invoice address.
 
 ![](../img/checkout_3.png)
 
@@ -34,19 +33,22 @@ A customer with addresses can choose an address from a list:
 
 ![](../img/checkout_6.png)
 
-## Before you start 
+## Checkout logic
 
-Please keep in mind that Checkout is really connected with a lot of different modules in our shop. You will find more about the chekcout in these documents:
+[CheckoutController](checkout_api/checkoutcontroller.md) and [AjaxCheckoutController](checkout_api/ajaxcheckoutcontroller.md)
+are responsible for the checkout logic.
 
-- [General logic in checkout](checkout_features/general_logic_in_checkout.md)
-- Used forms in the checkout:  [Forms](checkout_api/forms/configuration_for_checkout_forms.md)
-- How are orders send to the ERP: [Order Submission](../integrate_erp_systems/checkout_order/erp_order_synchronisation/order_submission/order_submission.md)
+One-page checkout enables the customer to go through the process back and forth. All the steps are validated when a AJAX call is sent.
+
+All the logic is moved into controllers which are responsible also for rendering.
+
+![](../img/checkout_general_logic.jpg)
 
 ## How to do things after an order has been placed
 
-you can define an EventListener which is triggered when an order has been placed.
+You can define an event listener which is triggered when an order has been placed.
 
-``` 
+``` xml
 <service id="ezcommerce_demo.confirmation_listener" class="%ezcommerce_demo.confirmation_listener.class%">
     <argument type="service" id="silver_basket.basket_repository" />
     <argument type="service" id="silver_trans.translator" />
@@ -63,7 +65,7 @@ you can define an EventListener which is triggered when an order has been placed
 </service>
 ```
 
-There are 2 tags involved: one for eZ Commerce which does not have an ERP system connected and one for the Advanced version with ERP
+There are two tags involved: one to be used when no ERP system connected and one for an installation connected with ERP.
 
 ``` php
 /**

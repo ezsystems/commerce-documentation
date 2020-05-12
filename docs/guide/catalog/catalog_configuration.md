@@ -2,28 +2,29 @@
 
 ## Configure templates to be used
 
-```
+The following configuration defines which template should be used when the CatalogController has to render:
+
+- `CatalogNode` (category)
+- `OrderableProductNode` (a product)
+- `VariantProductNode` (a variant)
+- `ProductType` (special kind of variant)
+
+``` yaml
 silver_eshop.default.catalog_template.CatalogNode: Catalog:catalog.html.twig
 silver_eshop.default.catalog_template.OrderableProductNode: Catalog:product.html.twig
 silver_eshop.default.catalog_template.VariantProductNode: Catalog:product_variants.html.twig
 silver_eshop.default.catalog_template.ProductType: Catalog:productType.html.twig
 ```
 
-Defines which template should be used in case the CatalogController has to render a:
-- CatalogNode (category)
-- OrderableProductNode (a product)
-- VariantProductNode (a variant)
-- ProductType (special kind of "variant")
+## Configuring variants
 
-## Configuration for variants
+See [VariantType](../../api/additional_ez_fieldtypes/varianttype.md).
 
-See document [VariantType](../../api/additional_ez_fieldtypes/varianttype.md)
+## Configuring the data provider 
 
-## Configure the dataprovider 
+The following example shows a configuration for the data provider which uses the content model to store products. 
 
-The following example shows the configuration used for the dataprovider which uses the contentmodel of eZ Platform to store products. 
-
-### see config_data_provider_ez.yml
+### `config_data_provider_ez.yml`
 
 ``` yaml
 services:
@@ -35,14 +36,14 @@ parameters:
     silver_eshop.default.catalog_data_provider: ez5
 ```
 
-- Defines which searchservice has to be used
-- Defines the identifier for the dataprovider (here ez5)
+- Defines the search service to use
+- Defines the identifier for the data provider (here `ez5`)
 
-### see /ez_navigation.yml
+### `/ez_navigation.yml`
 
 ``` yaml
 siso_core.default.navigation.catalog:
-    # the class id has to be specified here
+    # the class ID has to be specified here
     types: ['ses_category']
     sections: [1, 2]
     enable_priority_zero: true
@@ -55,13 +56,13 @@ siso_core.default.navigation.enable_add_product_catalog_node_depth: true
 
 The navigation settings are used to build the navigation tree.
 
-For more details see: Navigation
+For more details see [Navigation](../navigation/navigation.md).
 
-In addition the parameters for search have to be defined depending on the dataprovider (see econtent\_search.yml or [econtent configuration](../econtent/econtent_configuration.md)).
+In addition, the parameters for search have to be defined depending on the data provider (see `econtent_search.yml` or [eContent configuration](../econtent/econtent_configuration.md)).
 
-## Configuration for the CatalogFactory
+## Configuring the CatalogFactory
 
-The following example shows the configuration used for the CatalogFactory to determine which method will create the CatalogElements depending of the ContentType
+The following example shows the configuration used for the `CatalogFactory` to determine which method creates the `catalogElements` depending on the Content Type
 
 ``` yaml
 silver_eshop.default.catalog_factory.ses_category: createCatalogNode
@@ -70,16 +71,17 @@ silver_eshop.default.catalog_factory.ses_product: createOrderableProductNode
 silver_eshop.default.catalog_factory.ses_product_type: createProductTypeNode
 ```
 
-- ses_category .. ses_product_type are the identifiers used in the corresponding ContentTypes
-- createCatalogNode defines e.g. that in case a ContentType "ses_category" is provided the method "createCatalogNode" will be used to create the CatalogElement
+- `ses_category` up to `ses_product_type` are the identifiers used in the corresponding ContentTypes
+- `createCatalogNode` defines for example that if a Content Type `ses_category` is provided, the method `createCatalogNode()` is used to create the catalog element.
 
-Configuration for variants
+## Configuring variants
 
-Please see [VariantType](../../api/additional_ez_fieldtypes/varianttype.md)
+See [VariantType](../../api/additional_ez_fieldtypes/varianttype.md).
 
-## Filter for creating product lists and more
+## Filter for creating product lists
 
-The following configuration  is use to filter eZ ContentObjects. The dataprovider will use these filters to determine which ContentTypes in eZ Platform are used e.g. for 
+The following configuration is used to filter Content items.
+The data provider uses these filters to determine which Content Types are used for example for:
 
 - navigation (usually the `ses_category`)
 - product list (display all products belonging to a category)
@@ -134,27 +136,20 @@ silver_eshop.default.ez5_catalog_data_provider.filter:
 ## Misc
 
 ``` yaml
+# number of elements do be displayed when pagination is used
 silver_eshop.default.catalog_product_list_limit: 6
+# number of elements on category overview pages
 silver_eshop.default.catalog_category_limit: 100
+# number of elements for ajax calls
 silver_eshop.default.catalog_product_list_limit_ajax: 3
-```
 
-- number of elements do be displayed and paging is used
-- number of elements on category overview pages
-- number of elements for ajax calls
-
-``` yaml
+# max. number of products stored in the last viewed cache
 silver_eshop.default.last_viewed_products_in_session_limit: 10
+# number of chars used for product descriptions on overview page
 silver_eshop.default.catalog_description_limit: 50
-```
 
-- Max. number of products stored in the last viewed cache
-- Number of chars used for product descriptions on overview page
-
-``` yaml
+# Enable +/- (plus/minus) button for quantity instead of single input field.
 siso_core.default.quantity_change_button: false
 ```
-
-Enable +/- (plus/minus) button for quantity instead of singe input field.
 
 ![](../img/catalog_configuration.jpg)

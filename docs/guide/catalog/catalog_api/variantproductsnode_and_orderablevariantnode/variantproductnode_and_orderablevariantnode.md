@@ -2,12 +2,12 @@
 
 ## VariantProductNode
 
-VariantProductNode can not be ordered and contains all possible variants for a product. It inherits from [ProductNode](../productnode_and_orderableproductnode.md). It contains additional properties. These properties are automatically validated within the constructor using the `validateProperties()` method.
+`VariantProductNode` cannot be ordered and contains all possible variants for a product. It inherits from [ProductNode](../productnode_and_orderableproductnode.md). It contains additional properties. These properties are automatically validated within the constructor using the `validateProperties()` method.
 
-| Identifier             | Type                                                                          | Description                          |
-| ---------------------- | ----------------------------------------------------------------------------- | ------------------------------------ |
-| priceRange             | PriceField\[2\]                                                               | contains the min and max PriceField  |
-| variantCharacteristics | [VariantCharacteristicsInterface](simplevariantcharacteristics.md) | contains all variant characteristics |
+| Identifier             | Type          | Description                          |
+| ---------------------- | ------------ | ------------------------------------ |
+| `priceRange`             | `PriceField[2]`        | Contains the min and max `PriceField`  |
+| `variantCharacteristics` | [VariantCharacteristicsInterface](simplevariantcharacteristics.md) | Contains all variant characteristics |
 
 ### Rendering PriceRange
 
@@ -23,9 +23,9 @@ VariantProductNode can not be ordered and contains all possible variants for a p
 {{ ses_render_price(catalogElement, maxPrice,
       {'outputPrice': {'cssClass': 'price price_med'}})
 }}
- 
 ```
 
 ## OrderableVariantNode
 
-To make the VariantProductNode orderable a service is used - [VariantService](variant_services.md), that creates an OrderableVariantNode from VariantProductNode and given variantCode
+To make the `VariantProductNode` orderable the [VariantService](variant_services.md) is used.
+It creates an `OrderableVariantNode` from `VariantProductNode` and given `variantCode`.

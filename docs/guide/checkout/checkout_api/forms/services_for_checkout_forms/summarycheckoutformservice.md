@@ -1,16 +1,11 @@
 # SummaryCheckoutFormService
 
-SummaryCheckoutFormService is a service that implements the logic for the CheckoutSummary form.This service is assigned to the CheckoutSummary form in the [configuration](../configuration_for_checkout_forms.md).
+`SummaryCheckoutFormService` (`Siso\Bundle\CheckoutBundle\Service\SummaryCheckoutFormService`) implements the logic for the CheckoutSummary form.
+This service is assigned to the `CheckoutSummary` form in the [configuration](../configuration_for_checkout_forms.md).
 
-This service implements the [CheckoutFormServiceInterface](interfaces_for_checkout_services.md#checkoutformserviceinterface) and  [CheckoutSummaryFormServiceInterface](interfaces_for_checkout_services.md#checkoutsummaryformserviceinterface).
+This service implements [`CheckoutFormServiceInterface`](interfaces_for_checkout_services.md#checkoutformserviceinterface) and  [`CheckoutSummaryFormServiceInterface`](interfaces_for_checkout_services.md#checkoutsummaryformserviceinterface).
 
-!!! note "Namespace"
-
-    `Siso\Bundle\CheckoutBundle\Service\SummaryCheckoutFormService`
-
-!!! note "Service ID"
-
-    `siso_checkout.checkout_form.summary`
+The service ID is `siso_checkout.checkout_form.summary`.
 
 ## Usage
 
@@ -30,19 +25,17 @@ if ($form->isValid()) {
 }
 ```
 
-## Comments Limit
+## Comment limit
 
-In the summary there is a comment field where the user can described some information.
+In the summary there is a comment field that the user can fill in.
 
-By default the comment box does not have a limit, but it is possible to configure a limit it in:
-
-`CheckoutBundle/Resources/config/checkout.yml`:
+By default, the comment box does not have a limit, but it is possible to configure a limit it in `CheckoutBundle/Resources/config/checkout.yml`:
 
 ``` yaml
 siso_checkout.default.checkout_form_summary_max_length: 30
 ```
 
-The mapping of the request order should be modified to un-limit the number of characters:
+The mapping of the request order should be modified to unlimit the number of characters:
 
 `EshopBundle/Resources/mapping/wc3-nav/xsl/include/request.order.xsl`:
 

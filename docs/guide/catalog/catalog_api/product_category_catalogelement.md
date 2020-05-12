@@ -1,21 +1,21 @@
 # Product category (CatalogElement)
 
-The CatalogElement class defines the generic product and category model which is used within eZ Commerce. It inherits from the general class [ValueObject](../../../api/valueobject.md) which offers a convenient way of setting properties of instances via the constructor and makes these properties public readable (like $valueObject-\>name).
+The `CatalogElement` class defines the generic product and category model which is used in eZ Commerce. It inherits from the general class [ValueObject](../../../api/valueobject.md) which offers a convenient way of setting properties of instances via the constructor and makes these properties public readable.
 
-Inheriting from CatalogElement there are some sub classes worth mentioning:
+The following subclasses inherit from `CatalogElement`:
 
-- CatalogElementContainer
-    - CatalogNode
-- ProductNode
-    - OrderableProductNode
-    - ProductNodeContainer
-        - GroupedProductNode
-        - ComplexProductNode
-- ProductType
+- `CatalogElementContainer`
+    - `CatalogNode`
+- `ProductNode`
+    - `OrderableProductNode`
+    - `ProductNodeContainer`
+        - `GroupedProductNode`
+        - `ComplexProductNode`
+- `ProductType`
 
-**Predefined properties for `CatalogElement`**
+## Predefined properties for `CatalogElement`
 
-Each `CatalogElement` has predefined properties. These methods are validated automated on constructor by the `validateProperties()` method.
+Each `CatalogElement` has predefined properties. These methods are validated automatically on constructor by the `validateProperties()` method.
 
 ||||
 |--- |--- |--- |
@@ -23,38 +23,41 @@ Each `CatalogElement` has predefined properties. These methods are validated aut
 |name|string|The name of the catalog|
 |text|string|A short introduction text for the catalog|
 |image|ImageField (FieldInterface)|An image for the catalog|
-|path|array|The path of the catalog (array of identifier)|
-|url|string|The internal URL of the catalog. This url should not be used for generating a link. Please use seoUrl instead|
-|seoUrl|string|The human readable URL of the category|
+|path|array|The path of the catalog (array of identifiers)|
+|url|string|The internal URL of the catalog. This URL should not be used for generating links. Use `seoUrl` instead|
+|seoUrl|string|The human-readable URL of the category|
 |permanentUrl|string|The internal permanent URL|
-|parentElementIdentifier|string|The unqique identifier of the parent catalog|
-|identifier|string|The unqique identifier|
-|dataMap|FieldInterface[]|A list of Field objects|
-|cacheIdentifier|int|string|cache identifier of element to use as key in cache storage|
+|parentElementIdentifier|string|The unique identifier of the parent catalog|
+|identifier|string|The unique identifier|
+|dataMap|FieldInterface[]|A list of Fields|
+|cacheIdentifier|int\|string|Cache identifier of the element to use as key in cache storage|
+
+There are four public methods to set properties: 
+
+- `setImage()`
+- `setName()`
+- `setText()`
+- `setCacheIdentifier()`
 
 
-There are 4 public methods to set properties: 
+### Validators for `CatalogElement`
 
-- setImage, 
-- setName, 
-- setText, 
-- setCacheIdentifier
-
-**Validators for `CatalogElement`**
-
-List of possible validators to used when attributes are set in CatalogElement
+The following validators can be used when attributes are set in `CatalogElement`:
 
 |Name|Parameters|Description|
 |--- |--- |--- |
-|validateStringAttribute|$value,</br>$attribute|checks if the value is a valid string|
-|validateBooleanAttribute|$value,</br>$attribute|checks if the value is a valid boolean|
-|validateFloatAttribute|$value,</br>$attribute|checks if the value is a valid float|
-|validateIntegerAttribute|$value,</br>$attribute|checks if the value is a valid integer|
-|validateFieldAttribute|$value,</br>$attribute,</br>$fieldType|checks if the value is of given Field Type|
-|validateArrayAttribute|$value,</br>$attribute|checks if the value is an array|
-|validateArrayOfAttribute|$value,</br>$attribute,</br>$class|checks if the value is an array of concrete class (interface)|
+|`validateStringAttribute`|`$value`,</br>`$attribute`|Checks if the value is a valid string|
+|`validateBooleanAttribute`|`$value`,</br>`$attribute`|Checks if the value is a valid boolean|
+|`validateFloatAttribute`|`$value`,</br>`$attribute`|Checks if the value is a valid float|
+|`validateIntegerAttribute`|`$value`,</br>`$attribute`|Checks if the value is a valid integer|
+|`validateFieldAttribute`|`$value`,</br>`$attribute`,</br>`$fieldType`|Checks if the value is of given Field Type|
+|`validateArrayAttribute`|`$value`,</br>`$attribute`|Checks if the value is an array|
+|`validateArrayOfAttribute`|`$value`,</br>`$attribute`,</br>`$class`|Checks if the value is an array of concrete class (interface)|
 
-Concrete implementations of the `CatalogElement` class requires you to extend `validateProperties()`. This method is used to validate all given properties in the constructor of the class. As you do not want to overwrite the given implementation but extend it, you want to use `parent::validateProperties($properties)` in your implementation.
+Concrete implementations of the `CatalogElement` class require you to extend `validateProperties()`.
+This method validates all given properties in the constructor of the class.
+As you do not want to overwrite the given implementation but extend it,
+use `parent::validateProperties($properties)` in your implementation.
 
 ??? note "Example: Extending validateProperties()"
 
@@ -93,7 +96,7 @@ Concrete implementations of the `CatalogElement` class requires you to extend `v
 
 ![](../../img/catalog_2.png)
 
-## Sub classes
+## Subclasses
 
 - [ProductNode and OrderableProductNode](productnode_and_orderableproductnode.md)
 - [ProductType](producttype.md)
