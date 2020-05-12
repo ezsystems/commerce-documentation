@@ -6,7 +6,7 @@ The eZ Commerce installer will install eZ Platform and eZ Commerce in one step. 
 
 **Prerequisite**:
 
-Make sure that you have setup proper auth parameters for the updates.ez.no update server. You will receive the login parameters from the customer portal at ez.no:
+Make sure to configure proper authentication parameters for the updates.ez.no update server. You will receive the login parameters from the customer portal at <https://www.ibexa.co/>:
 
 ``` json
 ~/.composer/auth.json

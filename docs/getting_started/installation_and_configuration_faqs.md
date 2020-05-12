@@ -1,6 +1,6 @@
 # Installation and configuration FAQ
 
-## What configuration is required in order to communicate with ERP?
+## What configuration is required to communicate with ERP?
 
 In order to communicate with ERP you have to make sure, that:
 
@@ -27,8 +27,8 @@ sudo chmod -R g+w web/var/ecommerce/storage/
 
 `[Defuse\Crypto\Exception\BadFormatException] Encoding::hexToBin() input is not a hex string`
 
-You need to generate a secret using `./vendor/defuse/php-encryption/bin/generate-defuse-key`  
-You can configure it in `parameters.yml`:
+Generate a secret using `./vendor/defuse/php-encryption/bin/generate-defuse-key` and
+configure it in `parameters.yml`:
 
 ``` 
 env(JMS_PAYMENT_SECRET): 'def000004cb9c9f5edb77182df64b3d572162a47ec971a9a8beb00459b49fd9a1f9df6991ffc817c8585f59b8c5a032b796ab520eae126c77d8a304b36af0c9acdbfa9b9'

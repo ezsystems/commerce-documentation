@@ -2,7 +2,7 @@
 
 eZ Commerce requires:
 
-- An eZ Platform Version 2.5.x installation (see [Requirements](https://doc.ezplatform.com/en/2.5/getting_started/requirements_and_system_configuration/)).
+- An eZ Platform v2.5.x installation (see [Requirements](https://doc.ezplatform.com/en/2.5/getting_started/requirements_and_system_configuration/)).
 
 !!! note
 
@@ -15,14 +15,14 @@ eZ Commerce requires:
     - xsl extension
 
 - An eZ Commerce Enterprise contract
-- To use ERP connection: an ERP system supported by eZ Commerce and the Web-Connector 
+- To use ERP connection: an ERP system supported by eZ Commerce and the Web Connector 
 
 ## Client
 
 |Requirement|Details|
 |--- |--- |
 |JavaScript|required for frontend use|
-|Browsers|Depends on the design used for the project.</br>The standard eZ Commerce supports:</br>Internet Explorer 9,10,11 (IE8 should work as well)</br>All the other modern browsers like Chrome, Firefox, Safari, Opera|
+|Browsers|Depends on the design used for the project.</br>Internet Explorer 9, 10, 11</br>Chrome, Firefox, Safari, Opera|
 
 ## Server
 
@@ -57,9 +57,9 @@ eZ Commerce requires a dedicated server. Due to security reasons shared hosting 
 
     Details see [Session handling](../guide/configuration/session_handling.md)
 
-Check if your webserver configuration (or Varnish) blocks cookies which are not used in the application. 
+Check if your web server configuration (or Varnish) blocks unused cookies. 
 
-The reason is that additional cookies might influence the caching behavior in the backend. Some parts of the site are cached per session (e.g. the basket preview). It uses an ESI block which uses a cache by Cookie.
+The reason is that additional cookies might influence the caching behavior in the backend. Some parts of the site are cached per session (e.g. the basket preview). The site uses an ESI block which uses a Cache by Cookie.
 
 The implementation of eZ Platform / the FOS bundle is building a hash using all cookies.  
 
@@ -69,7 +69,7 @@ For Apache you could use mod\_headers with an additional line for your vhost (th
 RequestHeader edit Cookie "^(.*?)YOUR_COOKIE_NAME=.*?(?:$|;)(.*)$" $1$2
 ```
 
-For nginx in your vhost configuration:
+For NGINX, in your vhost configuration:
 
 ``` 
 set $http_cookie_updated $http_cookie;
