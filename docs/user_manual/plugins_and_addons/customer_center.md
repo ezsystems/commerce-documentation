@@ -1,6 +1,6 @@
 # Customer center (Plugin from 4.2) 
 
-The extra module 'Customer Center" maps customer specific business processes and makes them available in the online shop
+The extra module "Customer Center" maps customer specific business processes and makes them available in the online shop
 
   - User administration
   - Budget and roles\&rights management
