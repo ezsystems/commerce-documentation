@@ -4,11 +4,11 @@ eZ Commerce offers a feature to determine and display bestsellers.
 
 Bestsellers are determined based on all confirmed orders. The information how often a product was purchased is stored in Solr by a Solr plugin. The shop owner can specify from which point a product counts as a bestseller.
 
-Bestsellers can be displayed on Landing Pages, category pages and bestseller page. 
+Bestsellers can be displayed on Landing Pages, category pages and a bestseller page. 
 
 ## Enable bestsellers in shop
 
-To enable bestsellers in the shop set the following parameter to true:
+To enable bestsellers in the shop, set the following parameter to true:
 
 ``` yaml
 siso_core.default.enable_bestsellers: true
@@ -16,7 +16,7 @@ siso_core.default.enable_bestsellers: true
 
 ## Configure bestsellers in Back Office
 
-Inthe Back Office, go to eZ Commerce->Configuration Settings->Miscellaneous
+In the Back Office, go to eZ Commerce->Configuration Settings->Miscellaneous
 
 The following settings are available:
 

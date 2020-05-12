@@ -2,9 +2,9 @@
 
 ## What configuration is required to communicate with ERP?
 
-In order to communicate with ERP you have to make sure, that:
+To communicate with ERP, make sure that:
 
-- You have configured the correct webconnector URL: `webconnector_url: ''`
+- You have the correct web connector URL configured: `webconnector_url: ''`
 - You have created the symlinks for the mapping
 
 ``` bash

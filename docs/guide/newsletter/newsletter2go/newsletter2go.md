@@ -7,7 +7,7 @@ Welcome to Newsletter2Go plugin documentation.
 |Name|SisoNewsletter2GoPluginBundle|
 |Motivation|Provide a working implementation for the eShop's newsletter API.|
 |Target group|Shop owners|
-|Short description|eZ Commerce provides an API to enable customers to register their e-mail addresses to a newsletter. This bundle integrates the newsletter service https://www.newsletter2go.de into this API.|
+|Short description|eZ Commerce provides an API to enable customers to register their email addresses to a newsletter. This bundle integrates the newsletter service https://www.newsletter2go.de into the API.|
 |compatible to eZ Commerce version|4.0|
 |Demo available|demo.silver-eshop.de|
 |Change history|11 Apr 2018|

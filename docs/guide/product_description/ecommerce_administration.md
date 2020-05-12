@@ -42,7 +42,7 @@ If the shop is used without ERP integration invoices can be managed as well.
 
 ## Configuration
 
-The configuration settings in the backend enable configuring the main behavior for the shop. In addition currency, payment and shipping options can be set per country (SiteAccess). The configuration is stored using the version control features of the CMS. More advanced settings (e.g. VAT for different countries) can be set up in configuration files.
+You can configure the main behavior of the shop in the configuration settings in the backend. In addition, you can set currency, payment and shipping options per country (SiteAccess). The configuration is stored using the version control features of the CMS. More advanced settings (e.g. VAT for different countries) can be set up in configuration files.
 
 ![](img/Configuration_settings.png)
 

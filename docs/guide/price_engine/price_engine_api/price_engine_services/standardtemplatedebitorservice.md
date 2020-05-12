@@ -6,7 +6,7 @@ This service can be used when customer doesn't have customer or contact number y
 
 The ERP system is using a concept called Template Debitors.
 
-This service makes usage of [StandardCountryZoneService](standardcountryzoneservice.md) to get the correct zone for the country. The country is determined from the given [BuyerParty.
+This service makes usage of [StandardCountryZoneService](standardcountryzoneservice.md) to get the correct zone for the country. The country is determined from the given BuyerParty.
 
 Also customer groups from BuyerParty are considered when determining the template debitor information.
 

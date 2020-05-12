@@ -18,6 +18,6 @@ In addition some new Content Types are provided in eZ Commerce:
 
 ## Integration into eZ Platform
 
-eZ Commerce is integrated into eZ Platform and is relying and supporting on eZ Platform functions such as user management, search, content, Page Builder.
+eZ Commerce is integrated into eZ Platform and is relying on and supporting eZ Platform functions such as user management, search, content, Page Builder.
 
 ![](img/Backend.png)

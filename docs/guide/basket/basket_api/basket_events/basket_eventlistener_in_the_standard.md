@@ -16,15 +16,15 @@ The standard listener provides the following checks:
 
 #### Allowed quantity
 
-The allowed quantity is stored in `catalogElement` as a regex - `$allowedQuantity` - and is evaluated by a `preg_match()` function.
+The allowed quantity is stored in `catalogElement` as a regex - `$allowedQuantity` - and is evaluated by `preg_match()`.
 
 !!! note
 
     If the [catalog factory](../../../catalog/catalog_api/cms_dataprovider.md) did not set the $allowedQuantity attribute in the catalog element, only int quantity is valid.
 
-#### Min and Max quantity
+#### Min and max quantity
 
-The MIN and MAX values are stored in `EshopBundle/Resources/config/basket.yml` as a *default*, if not set in `catalogElement` as `$minOrderQuantity` and `$maxOrderQuantity`.
+The min and max values are stored in `EshopBundle/Resources/config/basket.yml` as a *default*, if not set in `catalogElement` as `$minOrderQuantity` and `$maxOrderQuantity`.
 
 ``` yaml
 parameters:
@@ -34,7 +34,7 @@ parameters:
 
 #### Packaging unit
 
-The packaging unit is stored in `catalogElement` as `packagingUnit`. If the requested quantity does not correspondent the packaging unit, the quantity is increased to the next possible quantity that will corresponding the packaging unit.
+The packaging unit is stored in `catalogElement` as `packagingUnit`. If the requested quantity does not correspond to the packaging unit, the quantity is increased to the next possible quantity that will correspond to the packaging unit.
 
 ## DiscontinuedProductsListener
 
@@ -60,7 +60,7 @@ $catalogElement.dataMap.discontinued = new TextLineField(array('text' => 1));
 
 ### Logic
 
-There are three possibilities when listener checks stock information:
+There are three possibilities when a listener checks stock information:
 
 - stock is not available - error message is displayed that there is no information about the availability for product, but it is discontinued.
 - stock is 0 - item is removed from the basket and error message is displayed that the item is discontinued and not available anymore.

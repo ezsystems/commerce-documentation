@@ -2,9 +2,9 @@
 
 ## Why do the breadcrumbs for my controller only display the root element?
 
-Please check the routing.yml.
+Please check `routing.yml`.
 
-The `RoutesBreadcrumbsGenerator` need at least the parameter `breadcrumb_path`. This parameter usually contains the key of the current routing definition.
+The `RoutesBreadcrumbsGenerator` need the `breadcrumb_path` parameter. This parameter usually contains the key of the current routing definition.
 
 ``` yaml
 custom_blog_index:
@@ -55,14 +55,14 @@ custom_blog_index:
 
 Possibilities:
 
-- The `breadcrumb` block of the `pagelayout.html.twig` template was overridden by the currently displayed, extending template with empty content.
+- The `breadcrumb` block of the `pagelayout.html.twig` template was overridden by the currently displayed one, extending template with empty content.
 - The matched generator encountered an error and didn't render the breadcrumbs
 - Very unlikely but not impossible: No generator matched at all.
 In the standard setup, the lowest priority `RoutesBreadcrumbsGenerator` checks the active Router service to match the active Request service. That should always be the case.
 
 ## How can breadcrumbs be limited to subtrees in sub-shops?
 
-The parameter `content.tree_root.location_id` is used to limit the sub-shops to their subtrees (contains Location ID of the desired catalog).
+The `content.tree_root.location_id` parameter is used to limit the sub-shops to their subtrees (contains Location ID of the desired catalog).
 
 If `content.tree_root.location_id` is set, a Criterion is used in the `CatalogHelper.php` to fetch the correct product catalog instead of the default one.
 
@@ -78,9 +78,9 @@ if ($this->configResolver->hasParameter('content.tree_root.location_id')) {
 
 ## What is the purpose of the additional data stored in `translationParameters`?
 
-This data can be used for example to define if a breadcrumb of a Location should be clickable or hidden.
+This data can be used, for example, to define if a breadcrumb of a Location should be clickable or hidden.
 
-The following example makes breadcrumbs bold and not clickable (if `crumb.translationParameters.type == 'catalog'`):
+The following example changes the breadcrumbs to non-clickable bold text (if `crumb.translationParameters.type == 'catalog'`):
 
 `vendor/silversolutions/silver.e-shop/src/Silversolutions/Bundle/EshopBundle/Resources/views/Breadcrumbs/breadcrumb_list.html.twig`:
 

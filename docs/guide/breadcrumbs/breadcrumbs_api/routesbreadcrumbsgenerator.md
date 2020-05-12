@@ -5,12 +5,12 @@ generates the breadcrumbs for the Symfony routes.
 
 ## When it is used
 
-If the `eZ\Publish\Core\MVC\Symfony\Routing\ChainRouter` matches the request, this generator is responsible.
-Since this is the case for nearly every request, this generator must be registered with one of the lowest priorities.
+If `eZ\Publish\Core\MVC\Symfony\Routing\ChainRouter` matches the request, `RoutesBreadcrumbsGenerator` is responsible.
+Since this is the case for nearly every request, the generator must be registered with one of the lowest priorities.
 
 ## Rendering process
 
-This gnerator renders breadcrumbs if the route for the currently matched controller action
+`RoutesBreadcrumbsGenerator` renders breadcrumbs if the route for the currently matched controller action
 contains additional information for its breadcrumbs (in `routing.yml`), for example:
 
 ``` yaml

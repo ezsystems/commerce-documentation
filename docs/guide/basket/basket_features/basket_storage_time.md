@@ -1,8 +1,8 @@
 # Basket storage time
 
-The time basket is stored depends on whether a basket belongs to an anonymous user or a user logged in.
+The time for which a basket is stored depends on whether the basket belongs to an anonymous user or a logged-in user.
 
-A basket for a logged-in customer is stored for ever.
+A basket for a logged-in customer is stored forever.
 
 A basket for an anonymous user is stored for 120 hours by default.
 You can configure a different value:
@@ -12,7 +12,7 @@ parameters:
     ses_basket.default.validHours: 120
 ```
 
-You can use the `silversolutions:baskets:clear` command to clean up anonymous baskets which have been expired:
+You can use the `silversolutions:baskets:clear` command to delete anonymous expired baskets:
 
 ``` bash
 php bin/console silversolutions:baskets:clear <validHours>

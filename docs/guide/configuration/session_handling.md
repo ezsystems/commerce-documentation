@@ -5,7 +5,7 @@ Session now are handled with PDO. There is a possibility to switch also to memca
 
 ## Session table
 
-You need to create a session table in the DB if DB storage is used:
+You need to create a session table in the database if database storage is used:
 
 ``` sql
 CREATE TABLE session
@@ -22,7 +22,7 @@ You need to change the configuration:
 
 ### Setup name for SiteAccesses
 
-It is very important to set a session name. Otherwise eZ platform will generate a unique name per SiteAccess which causes issues if you switch e.g. the language/SiteAccess and users cannot share a basket and login across SiteAccesses.
+It is very important to set a session name. Otherwise eZ Platform will generate a unique name per SiteAccess which causes issues if you switch e.g. the language/SiteAccess and users cannot share a basket and login across SiteAccesses.
 
 ``` yaml
 site_group:

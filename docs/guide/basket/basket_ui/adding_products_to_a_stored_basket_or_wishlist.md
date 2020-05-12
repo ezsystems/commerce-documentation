@@ -2,7 +2,7 @@
 
 ## How to add a product to a wishlist
 
-This example shows how to offer a link which adds a product to the wishlist:
+The following example shows how to offer a link which adds a product to the wishlist:
 
 ``` html+twig
 <a href="#" class="u-block u-text-small js-add-to-wishlist" data-text-swap="Already on your wishlist" data-sku="40960">
@@ -12,7 +12,7 @@ This example shows how to offer a link which adds a product to the wishlist:
 
 ## How to add a product to a stored basket
 
-This example opens a modal window providing the option to add a product to an existing stored basket or a new one:
+The following example opens a modal window providing the option to add a product to an existing stored basket or a new one:
 
 ``` html+twig
 <a href="#" class="u-block u-text-small js-add-to-stored-basket">

@@ -10,7 +10,7 @@ A customer can enter several products and add them to the basket.
 
 ![](img/image2018-4-4_18-53-18.png)
 
-An upload function allows to upload a csv file containing a list of SKUs and quantities. Even more convenient is the drag and drop function.
+An upload function allows to upload a CSV file containing a list of SKUs and quantities. Even more convenient is the drag and drop function.
 
 Variant products can be added as well.
 
@@ -62,7 +62,7 @@ In a stored basket the products can be edited, deleted or added to the active sh
 
 The checkout is set up on one page and offers 5 steps.
 
-Step 1: A user can register as a new customer, existing customer or buy as a guest.
+Step 1: A user can register an account, log in to an existing account or buy as a guest.
 
 Customers with an existing login can login and proceed to the checkout process
 
@@ -76,7 +76,7 @@ Step 2: Invoice address needs to be filled out by new customers or guests orderi
 
 ![](img/invoice_adress.png)
 
-Step 3: For delivery address the user can either choose the invoice address, one of the addresses from his address book or enter a new delivery address. Only the offered delivery addresses will be fetched from the ERP.
+Step 3: For delivery address the user can either choose the invoice address, one of the addresses from his address book or enter a new delivery address. Only the chosen delivery addresses will be fetched from the ERP.
 
 ![](img/image2019-1-20_17-28-30.png)
 
@@ -99,4 +99,4 @@ Step 5: The last step summarizes the order. Checkboxes for accepting T&C, cancel
 ### Order
 
 The order is stored in the shop. If an ERP system is connected, the order is forwarded to ERP and also stored in the shop.
-A confirmation email is sent to the customer and the email address which is set in the configuration.
+A confirmation email is sent to the customer to the email address which is set in the configuration.

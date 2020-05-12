@@ -2,7 +2,7 @@
 
 ## ERP request log
 
-All communication (request- and response messages), that is sent between shop and ERP system will be recorded and can bee seen here.
+All communication (request- and response messages), that is sent between shop and ERP system is recorded and can be reviewed.
 
 ![](img/ERPRequest_Log.png)
 
@@ -18,9 +18,9 @@ If the connection has failed, the administrator receives an e-mail. If the conne
 
 ![](img/ERP_performance.png)
 
-## email archive
+## Email archive
 
-In the tab email archive the shop owner/admin finds all e-mails which were automatically sent from the shop, with date of despatch, recipient, subject and status. He can see the mails and resend them if necessary.
+In the tab email archive the shop owner/admin can find all emails which were automatically sent from the shop, with date of dispatch, recipient, subject and status. They can check the emails and resend them if necessary.
 
 The email archive reduces the response time for the support and enables resending an email to the customer.
 
@@ -28,13 +28,13 @@ The email archive reduces the response time for the support and enables resendin
 
 ## eContent
 
-If eContent is used as product data storage the shop owner can see all eContent types (product_group und product) with the associated attributes and where they are mapped.
+If eContent is used as product data storage the shop owner can see all eContent types (`product_group` and `product`) with the associated attributes and where they are mapped.
 
-In the "eContent tasks" he can see how many products and product groups there are in the shop. Furthermore the shop operator can create a new index, import a backup into the database and create a backup from the database.
+In the "eContent tasks" they can see how many products and product groups there are in the shop. Furthermore the shop operator can create a new index, import a backup into the database and create a backup from the database.
 
 ![](img/eContent.png)
 
-In the tab "eContent types" he can see the eContent types with their associated attributes (product_group and product) and the mapping information.
+In the tab "eContent types" they can see the eContent types with their associated attributes (`product_group` and `product`) and the mapping information.
 
 ![](img/eContent_types.png)
 

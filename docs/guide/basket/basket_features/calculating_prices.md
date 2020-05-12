@@ -1,6 +1,6 @@
 # Calculating prices
 
-The basket recalculates the prices after each change of the basket. The price engine will be requested when the basket is stored. This avoids the price engine being triggered several times (e.g. if more than one product has been updated or added). The prices provided by the price engine (and ERP) will be stored in the basket for each line.
+The basket recalculates the prices after each change of the basket. The request to the price engine is sent when the basket is stored. This avoids the price engine being triggered several times (e.g. if more than one product has been updated or added). The prices provided by the price engine (and ERP) will be stored in the basket for each line.
 
 By default the attributes from the `ProductNode` entity will be used. The price engine will set the following fields:
 
@@ -8,7 +8,7 @@ By default the attributes from the `ProductNode` entity will be used. The price 
 |--- |--- |
 |LinePriceAmount|The customer price for the given quantity|
 |IsIncVat|Whether `LinePriceAmount` includes VAT or not|
-|Price|Price for one piece. This price may be calculated if the ERP doesn't provide a price for one piece. This is the normal case since due to complex price rules an ERP might not be able to give a price for a single product.|
+|Price|Price for one piece. This price may be calculated if the ERP doesn't provide a price for one piece. This is standard approach due to complex price rules.|
 |Vat|VAT in %|
 |Currency|The currency provided by the ERP/price engine|
 
@@ -20,7 +20,7 @@ The price engine will set stock information as well since the ERP often provides
 ### Price recalculation
 
 The price engine will also be triggered when the basket is fetched from the database and the last price calculation is older than a given time.
-In addition the prices will be calculated each time the basket is changed.
+In addition, the prices will be calculated each time the basket is changed.
 
 The time is set in the configuration in minutes:
 

@@ -16,13 +16,13 @@ Products and categories can be assigned to the product catalog.
 
 ## Flexible categories
 
-A category contains a standard set of fields. A category is a Content Type and can be extended with additional Fields.
+A category contains a standard set of Fields. A category is a Content Type and can be extended with additional Fields.
 
 ![](img/image2018-4-4_19-14-10.png)
 
 ## Product - product texts
 
-eZ Commerce offers a set of product Fields. Since a product is built using the flexible Content Type system it can be extended with new Fields easily.
+eZ Commerce offers a set of product Fields. Since a product is built using the flexible Content Type system it can be easily extended with new Fields.
 
 ![](img/image2018-4-4_19-17-33.png)
 
@@ -42,7 +42,7 @@ Product attributes are indexed in the search engine as well and can be used for 
 
 eZ Commerce offers one or two level variants. A variant can be added directly on the product view.
 
-There are 3 preconfigured variant types: Color, Size, Color & Size
+There are three preconfigured variant types: Color, Size, Color and Size
 
 The list of variant types can be extended in the configuration.  
 
@@ -87,11 +87,11 @@ There are two places where stock and prices can be managed:
 
 ## Product prices
 
-The price management enables setting up prices manually. A price can be setup per SKU and SKU/variant. Each price can contain an offer price and a base price. If an offer price is set it will be displayed in the shop as
+The price management enables setting up prices manually. A price can be setup per SKU and SKU/variant. Each price can contain an offer price and a base price. If an offer price is set it will be displayed in the shop as:
 
 ~~Old price: 10.00 €~~ New price: 9.80 €
 
-In addition prices can vary per customer group. There are 3 customer groups set up per default. 
+In addition, prices can vary per customer group. There are three customer groups set up per default. 
 
 ![](img/Price_management.png)
 
@@ -100,7 +100,7 @@ Currencies in eZ Commerce:
 The currency is configured per country in the [configuration settings](ecommerce_administration.md).
 
 - if a product has a price for a product and a currency this price will be displayed in the shop
-- if no price for a currency is set in a shop eZ Commerce offers 2 options, these can be set in the configuration per shop.
+- if no price for a currency is set in a shop, eZ Commerce offers two options, these can be set in the configuration per shop.
     - Calculate the price for the requested currency using the base price defined in the product (using the base currency setup for the installation) and an exchange rate defined in the configuration
     - Display an error in the frontend that no price is available
     

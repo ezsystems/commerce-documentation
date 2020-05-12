@@ -3,7 +3,7 @@
 The `CatalogElementSerializeService` service is used for the serializing and unserializing of catalog element.
 It implements the `SerializeServiceInterface`.
 
-This feature ensures that the basket always contains information about the product which should be ordered. If the customer is sending an order, the shop can ensure sure that all important product data for the order is present even if the product was meanwhile removed from the product catalog. 
+This feature ensures that the basket always contains information about the products that are being ordered. When the customer sends an order, the shop can verify if all relevant product data for the order is present, even if the product was meanwhile removed from the product catalog.
 
 The parameter `refreshCatalogElementAfter` defines how long the catalog element will be used from the basket line until it is refreshed from the catalog.
 
@@ -36,18 +36,18 @@ siso_basket.default.stored_catalog_element_attributes:
 
     By default, all base attributes are set in the configuration and the dataMap attributes are empty.
 
-    You can override this configuration, but make sure you have specified at least all required base attributes,
+    You can override this configuration, but make sure all required base attributes are specified,
     otherwise it is not possible to create a new `CatalogElement` from the serialized version.
 
 !!! tip
 
-    Also make sure that the attributes you have specified are either simple datatypes (int, float, boolean, string, array) or instances of [FieldInterface](../../../api/fields_for_ecommerce_data/fields_for_ecommerce_data.md).
+    Also make sure that the attributes you specify are either simple datatypes (int, float, boolean, string, array) or instances of [FieldInterface](../../../api/fields_for_ecommerce_data/fields_for_ecommerce_data.md).
 
     All other objects will be ignored, because it is not possible to assure that the serializing process will work properly.
 
 ## CatalogElementSerializationListener
 
-To store the `CatalogElement` in the basket line the Doctrine listener is used. This listener uses the serialize service.
+The `CatalogElement` is stored in the basket line using the Doctrine listener. This listener uses the serialize service.
 
 !!! note
     
@@ -59,7 +59,7 @@ To store the `CatalogElement` in the basket line the Doctrine listener is used. 
 
     `siso_basket.catalog_element_serialization_listener`
 
-This listener listens to different events to make sure that the catalog element is ALWAYS of type `CatalogElement` in the shop but `longtext` (serialized string) in the database.
+This listener listens to different events to make sure that the catalog element is ALWAYS of type `CatalogElement` in the shop, and of `longtext` (serialized string) type in the database.
 
 ``` php
    /**

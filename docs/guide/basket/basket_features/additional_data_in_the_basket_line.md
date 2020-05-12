@@ -15,7 +15,7 @@ In the basket line it looks like:
 
 ![](../../img/basket_additional_data_1.png)
 
-To set a different value for the parameter there are two possibilities.
+You can set a different value for the parameter using one of these two methods: 
 
 - Override the `app/config/parameters.yml` file.
 - Within "configuration settings" in eCommerce tab in the backend.
@@ -30,7 +30,7 @@ ses_basket.default.additional_text_for_basket_line_input_limit: 30
 
 ## Additional data
 
-To add some additional information to the basket line **only the template** will be modified. No other changes are necessary.
+To add some additional information to the basket line, modify the template only. No other changes are necessary.
 
 ``` 
 <input type="hidden" name="ses_basket[{{ loop.index }}][test]" value="some text"/>

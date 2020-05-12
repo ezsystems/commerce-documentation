@@ -1,17 +1,17 @@
 # Adding products to the basket
 
-To successfully add products to the basket you need to provide some mandatory parameters.
+To successfully add products to the basket you need to provide the required parameters.
 
-## Mandatory parameters
+## Required parameters
 
 |Fixed parameters|Required|Value|Description|
 |--- |--- |--- |--- |
 |ses_basket[0][quantity]|YES||The quantity to be ordered. If empty the eZ Commerce will use 1 instead, as long as the parameter ses_basket[0][ses_ignore_quantity] is not set.|
 |ses_basket[0][ses_ignore_quantity]||1|If set, eZ Commerce will not use 1 instead of empty quantity.|
-|ses_basket[0][sku]|YES||The SKU to be ordered. There has to be a valid `CatalogElement` for the given SKU.|
+|ses_basket[0][sku]|YES||The SKU to be ordered. A valid `CatalogElement` must exist for the given SKU.|
 |ses_basket[0][isVariant]|YES FOR VARIANTS|isVariant|Should be set if product is a variant.|
 |ses_basket[0][ses_variant_code]|YES FOR VARIANTS||Variant code of the ordered variant.|
-|ses_basket[0][updateNotPermitted]||1|Can be optionally passed, if you want to avoid, that the line with given SKU will be updated.</br>If set, a new basket line will be created every time when user adds the product with the same SKU to the basket.|
+|ses_basket[0][updateNotPermitted]||1|Can be passed optionally, if you want to avoid updating the line with the given SKU.</br>If set, a new basket line is created every time the user adds a product with the same SKU to the basket.|
 
 ## Additional parameters
 
@@ -23,8 +23,8 @@ The values are forwarded to the `priceRequest`/ERP as well.
 
 ### Template
 
-Please note that the form tag which is used for the basket box only has to be moved to the product.twig.html template.
-In addition `<div class="js_add_to_basket_parent">` has to be added in order to tell JavaScript to collect this data as well.
+The form tag which is used for the basket box has to be moved to the `product.twig.html` template.
+`<div class="js_add_to_basket_parent">` must also be added in order to tell JavaScript to collect this data as well.
 
 ``` html+twig
 <form method="post" action="{{ path('silversolutions_add_to_basket') }}">
@@ -47,12 +47,12 @@ In addition `<div class="js_add_to_basket_parent">` has to be added in order to 
 
 !!! caution
 
-    - It is not possible to use arrays in this case (e.g. `ses_basket[0][list][0]`)
-    - The key (here `remark`) must be a string and follow the rules for tag names since the key is converted to a tag later on when a price request is performed
+    - It is not possible to use arrays in this case (e.g. `ses_basket[0][list][0]`).
+    - The key (here `remark`) must be a string and follow the rules for tag names, because the key is converted to a tag during a price request.
 
 ### How to add one product to the basket?
 
-Simple example using a standard POST form:
+Add to basket POST form:
 
 ``` html+twig
 <form method="post" action="{{ path('silversolutions_add_to_basket') }}">
@@ -76,13 +76,13 @@ ses_basket[1]
 
 !!! note
 
-    If you want to add more products to the basket (e.g. from wishlist), you need one form around all lines that will add all lines to the basket at once, but you might also need to add only one single product from the list.
+    If you want to add more products to the basket (e.g. from the wishlist), you need one form around all lines that will add all lines to the basket at once, but you might also need to add only one single product from the list.
 
-    To add single product to the basket, you need to define parent elements with the class `.js-product-line`.
+    To add a single product to the basket, you need to define parent elements with the class `.js-product-line`.
 
 ### Example for using Ajax
 
-You need to define one parent element with the class .js-add-to-basket-parent
+You need to define one parent element with the class `.js-add-to-basket-parent`.
 
 !!! note "Important"
 
@@ -91,8 +91,6 @@ You need to define one parent element with the class .js-add-to-basket-parent
     `.js-add-to-basket` - use if you want to add one product to the basket.
 
     `.js-add-all-to-basket` - use if you want to add more products to the basket at once
-
-Example using Ajax:
 
 ``` php
 {% extends "SilversolutionsEshopBundle::pagelayout.html.twig"|st_resolve_template %}

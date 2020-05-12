@@ -2,7 +2,7 @@
 
 ## Configuring breadcrumbs for custom routes
 
-To configure breadcrumbs for your custom route you need to add some configuration to this route.
+To configure breadcrumbs for your custom route you need to add configuration to this route.
 
 ``` yaml hl_lines="5 6"
 custom_blog_index:
@@ -13,7 +13,7 @@ custom_blog_index:
         breadcrumb_names: Blog List
 ```
 
-This configures a custom route for the `BlogController::indexAction` action in your controller in `routing.yml`.
+The example above shows how to configure a custom route for the `BlogController::indexAction` action in your controller in `routing.yml`.
 
 |Option|Description|
 |--- |--- |
@@ -24,7 +24,7 @@ This configures a custom route for the `BlogController::indexAction` action in y
 
 If you want breadcrumbs to have more items than just one, you can specify more paths and names with the `/` delimiter.
 
-In the example below when breadcrumbs are generated there will be two elements (Profile and Blog list)
+In the example below when breadcrumbs are generated there will be two elements (Profile and Blog list):
 
 ``` yaml hl_lines="5 6"
 custom_blog_index:
@@ -37,14 +37,14 @@ custom_blog_index:
 
 !!! caution
 
-    There is a limitation when using this route generator. You can provide paths only if the corresponding action in the controller has no required parameters. There is no way of passing any parameters to the action.
+    When using this route generator you can provide paths only if the corresponding action in the controller has no required parameters. There is no way of passing any parameters to the action.
 
-## Writing a breadcrumb generator
+## Creating a breadcrumb generator
 
-### Write a generator class
+### Create a generator class
 
 First, write a generator class.
-It needs to implement `BreadcrumbsGeneratorInterface` that only has two methods.
+It needs to implement `BreadcrumbsGeneratorInterface` that has two methods.
 
 !!! note
 
@@ -132,7 +132,7 @@ The highest priority which matches `canRender()` will render the breadcrumbs for
 
 `translationParameters` contains additional data which can be used to change the behavior of the breadcrumbs depending on the stored data.
 Every `BreadcrumbsGenerator` has to add an array with `type`, `identifier` and `content_type_id`.
-Always create all the keys and leave the elements empty if not needed. Examples from some `BreadcrumbsGenerators`:
+Always create all the keys and leave the elements empty if not needed. Examples from `BreadcrumbsGenerators`:
 
 ### EzContentBreadcrumbsGenerator
 

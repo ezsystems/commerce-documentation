@@ -27,7 +27,7 @@ siso_core.default.user_group_location.private: 106
 
 ## Supported country list
 
-This configuration controls which countries will be offered in eZ Commerce (e.g. in registration forms or in the checkout)
+This configuration controls which countries will be offered in eZ Commerce (e.g. in registration forms or in the checkout).
 
 ``` yaml
 siso_tools.default.countries: ['DE','US','NO']

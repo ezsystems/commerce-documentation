@@ -1,11 +1,11 @@
 # Breadcrumbs
 
 eZ Commerce supports generation of breadcrumbs throughout the shop.
-In every part of the shop there is at least one generator responsible for creating breadcrumbs. 
+In every part of the shop there is at least one generator that is responsible for creating breadcrumbs. 
 
 ![](../img/breadcrumbs_1.png)
 
-Breadcrumbs are generated using a general template called from `pagelayout.html.twig`.
+Breadcrumbs are generated using a general template that is called from `pagelayout.html.twig`.
 There is no need to define the HTML code in full templates:
 
 ``` html+twig
@@ -18,7 +18,7 @@ There is no need to define the HTML code in full templates:
 {% endblock %} 
 ```
 
-It uses [schema.org markup](http://schema.org/BreadcrumbList) for generating the HTML tags. 
+Breadcrumbs use [schema.org markup](http://schema.org/BreadcrumbList) for generating the HTML tags. 
 
 The breadcrumb system uses the [WhiteOctober breadcrumbs bundle](https://github.com/whiteoctober/BreadcrumbsBundle).
 
@@ -37,7 +37,7 @@ eZ Commerce breadcrumbs support:
 
 ## Configuration
 
-You can configure the Fields that should be used as labels for breadcrumb nodes.
+You can configure the Fields that will be used as labels for breadcrumb nodes.
 The first match wins.
 
 ``` yaml

@@ -2,14 +2,14 @@
 
 ## GDPR compliance
 
-eZ Commerce offers tools to set up a shop that is compliant with GDPR (General Data Protection Regulation)
+eZ Commerce offers tools to set up a shop that is compliant with GDPR (General Data Protection Regulation):
 
 - Prepared articles with dummy text for T&C, data privacy and cancellation policy
 - Important legal documents (e.g. T&C or data privacy) can be linked using permanent URLs
 - Checkboxes in checkout and registration to confirm the T&C, cancellation policy and data privacy
 - Processes: double opt in for registration
 - Cancellation policy text included in order confirmation email 
-- Cookie consent feature with a link to data privacy to inform the user about the cookies used
+- Cookie consent feature with a link to data privacy to inform the user about used cookies
 - Textmodules enable adding legal text e.g. to the contact form
 
 ## Contact form

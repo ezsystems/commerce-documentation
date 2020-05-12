@@ -14,7 +14,7 @@ RewriteRule ^/var/assets/.* - [L]
 
 ## Session settings
 
-A parameter in `php.ini` (e.g. `/etc/php5/apache2/php.ini`) might have to be set up since it reduces the lifetime of a session:
+A parameter in `php.ini` (e.g. `/etc/php5/apache2/php.ini`) should be set up since it reduces the lifetime of a session:
 
 ``` 
 session.gc_maxlifetime = 86400
@@ -28,7 +28,7 @@ php_value session.gc_maxlifetime 86400
 
 ## Bundles
 
-The method `registerBundles()` in our kernel loads different bundles based on the environment.
+The `registerBundles()` method in Kernel loads different bundles based on the environment.
 
 In addition, you are able to load client-specific bundles here:
 
@@ -40,7 +40,7 @@ switch ($this->getClient()) {
     }
 ```
 
-The value that is considered here comes is passed from the vhost configuration into the script.
+The value that is considered here is passed from the vhost configuration into the script.
 
 ## System-specific settings
 
@@ -86,7 +86,7 @@ siso_core.en.standard_price_factory.fallback_currency: GBP
 
 #### Shipping costs
 
-If you want to set up special rules for shipping costs you can achieve this in the Back Office.
+You can set up special rules for shipping costs in the Back Office.
 Navigate to eCommerce -> Price and stock management and click **Shipping cost management**.
 
 ![](../img/base_configuration.png)
@@ -111,7 +111,7 @@ siso_core.default.vat:
 
 ### Payment 
 
-If you want to enable Paypal as a payment provider you need to configure:
+If you want to enable PayPal as a payment provider you need to configure:
 
 ``` yaml
 jms_payment_core:

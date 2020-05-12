@@ -4,7 +4,7 @@
 
 The basket offers a flexible way to store information on header or product level.
 
-A dataMap can be used to store all kinds of information. It can be addressed by the PHP API or filled directly using a form:
+A `dataMap` can be used to store all kinds of information. It can be addressed by the PHP API or filled directly using a form:
 
 ``` 
 <input type="hidden" name="ses_basket[0][remark]" value="" />

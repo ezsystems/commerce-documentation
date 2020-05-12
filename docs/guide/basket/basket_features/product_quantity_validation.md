@@ -4,18 +4,17 @@ The quantity of added products is validated in different places.
 
 ## In the BasketController
 
-There is a help function `validateQuantity()` that checks if the given quantity (string - because it comes from a form) corresponds to the rules. (e.g. for 'float' quantity also comma is allowed). If it does, the quantity is modified to a valid float value.
+A helper function `validateQuantity()` checks if the given quantity (string) corresponds to the rules set e.g. for float value. If the quantity matches, it is converted into a valid float value.
 
-If it doesn't, the quantity is just returned, but not changed - it will be validated in `StandardBasketListener`.
+If the quantity doesn't validate, the quantity is just returned, but not changed - it is validated in `StandardBasketListener`.
 
-- `addAction()` - after the quantity is validated, the `addAction` checks, if it is 0. Than it is changed to 1.
-- `updateAction()` - after the quantity is validated, the `addAction` checks, if it is 0. Than the `deleteAction()` is called and the product will be removed from basket.
+- `addAction()` - After the quantity is validated, the `addAction` checks if it is 0. If so it is changed to 1.
+- `updateAction()` - After the quantity is validated, the `updateAction` checks if it is 0. If so the `deleteAction()` is called and removes the product  from the basket.
 
 ## `StandardBasketListener`
 
-- Checks if the given quantity is valid (e.g. negative numbers or strings are not allowed). If it is not valid, the action is not allowed (`STATUS_FAILED`).
-- Checks if the given quantity is more than MAX. If so, it is set to MAX.
-- Checks if the given quantity is less than MIN. If so, it is set to MIN.  
+- Checks whether the given quantity is valid (e.g. negative numbers or strings are not allowed). If it is not valid, the action is not allowed (`STATUS_FAILED`).
+- Checks whether the given quantity is more than max or less than min. If so, it is set to either max or min.
 
 In standard config in `vendor/silversolutions/silver.e-shop/src/Silversolutions/Bundle/EshopBundle/Resources/config/basket.yml`:
 

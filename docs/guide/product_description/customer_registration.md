@@ -27,7 +27,7 @@ The shop owner will receive an email with the details of the registration. The s
 
 ### Secure authentication for existing customers
 
-Existing customers - meaning customers that are set up in the connected ERP - can activate a shop account themselves by entering their customer number and one invoice number. The data is sent to the ERP. If the data in ERP and the entered data match, the customer will get access to the shop immediately and a User Content item is set up automatically with the customer no. from the ERP.
+Existing customers - meaning customers that are set up in the connected ERP - can activate a shop account themselves by entering their customer number and one invoice number. The data is sent to the ERP. If the data in ERP and the entered data match, the customer will get access to the shop immediately and a User Content item is set up automatically with the customer number from the ERP.
 
 ## Login
 
@@ -35,7 +35,7 @@ The standard login for eZ Commerce uses an eZ Platform function - the login requ
 
 ![](img/LogIn.png)
 
-A user can request a new password in case they have forgotten the existing one. Note: eZ Commerce does not use the eZ Platform "forgot password" feature.
+A user can request a new password in case they have forgotten the existing one. eZ Commerce does not use the eZ Platform "forgot password" feature.
 
 ## My account
 

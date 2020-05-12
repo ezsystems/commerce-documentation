@@ -9,7 +9,7 @@ eZ Commerce provides a flexible basket system. A basket is identified by:
 
 Doctrine is used to store the basket in the database.  
 
-The basket can have one of the following types:
+The basket can be of one of the following types:
 
 - `basket`
 - `quickOrder`
@@ -17,7 +17,7 @@ The basket can have one of the following types:
 - `wishList`
 - `comparison`
 
-A standard basket (type `basket`) may use different states during the checkout process. After the order has been sent, the basket will get the special state `ordered`.
+A standard basket (type `basket`) can be in different states during the checkout process. After the order is sent, the basket is assigned the state `ordered`.
 
 ## Basket structure
 
@@ -25,7 +25,7 @@ The basket enables storing project-specific information in several places:
 
 - Basket header
 - Basket lines
-- Basket Parties
+- Basket parties
 
 ### Basket header
 
@@ -35,7 +35,7 @@ These can be simple fields or complex data as well.
 
 ### Basket lines
 
-Basket lines contains info such as:
+Basket lines contain information such as:
 
 - SKU
 - variant code
@@ -53,7 +53,7 @@ Basket parties include:
 
 ## Baskets in multishop
 
-For each shop a `shop_id` can be configured. The `shop_id` will be stored in the basket.
+You can configure a `shop_id` for each shop. The `shop_id` is stored in the basket.
 
 ## Additional costs
 
@@ -81,18 +81,18 @@ Configuration controls which Fields from the product are stored.
 ## Price calculation
 
 A price engine calculates the prices and provides up-to-date information about stock.
-The basket contains a flag which controls if a recalculation has to be done (timeout).
+The basket contains a flag that controls if a recalculation has to be done (timeout).
 
 ## Merging of baskets
 
-After a login eZ Commerce merges the products from the existing basket (filled as an anonymous user) and a basket which is already stored for the given user id of the user.
+After the user logs in, eZ Commerce merges the products from the existing basket (filled as an anonymous user) and a basket which is already stored for the given user ID.
 
-If an SKU is already present in a basket, a new line is created in the basket of the user.
+If an SKU is already present in a basket, a new line is created in the user's basket.
 
 ## Shared baskets
 
-A basket can be shared if a user logs in in different browsers (default) or bound to session only.
+A basket can be shared if a user logs in from a different browser (default), or it can be bound to the session.
 
-In case a basket shall be not shared in case the same user logs in twice a setting can be adapted (default: `false`)
+If you do not want the basket to be shared between different sessions, change the following setting to `true`:
 
 `ses_basket.default.basketBySessionOnly: true`

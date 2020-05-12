@@ -14,11 +14,10 @@ The threshold can be configured in the eZ Commerce configuration (Back Office):
 
 ## How are bestsellers determined?
 
-Existing basket lines from confirmed baskets are counted for each bought product.
-This is done by the `BasketLineSumDeterminationService`.
+`BasketLineSumDeterminationService` counts existing basket lines from confirmed baskets for each product that was bought.
 
 ## Where is the bestseller data stored?
 
-The `EzBestsellerIndexerPlugin` adds a Solr field with the sum of lines of a product. 
+`EzBestsellerIndexerPlugin` adds a Solr field with the sum of lines of a product. 
 
 `ses_product_ses_sum_of_basket_lines_i`

@@ -2,19 +2,19 @@
 
 ## Templates list
 
-- `EshopBundle/Resources/views/Bestsellers/bestsellers.html.twig` renders a bestseller page
+- `EshopBundle/Resources/views/Bestsellers/bestsellers.html.twig` renders a bestseller page.
 
 ![](../img/bestseller_5.png)
 
-- `EshopBundle/Resources/views/Bestsellers/bestsellers_box.html.twig` renders a slider for an `st_module` (100% or 50%)
+- `EshopBundle/Resources/views/Bestsellers/bestsellers_box.html.twig` renders a slider for `st_module` (100% or 50%).
 
 ![](../img/bestseller_5.png)
 
-- `EshopBundle/Resources/views/Bestsellers/bestsellers_catalog.html.twig` renders a slider for the catalog page
+- `EshopBundle/Resources/views/Bestsellers/bestsellers_catalog.html.twig` renders a slider for the catalog page.
 
 ![](../img/bestseller_5.png)
 
-- `EshopBundle/Resources/views/Bestsellers/bestsellers_box_esi.html.twig` creates an Edge Side Includes tag and calls the controller for landing page bestsellers
+- `EshopBundle/Resources/views/Bestsellers/bestsellers_box_esi.html.twig` creates an Edge Side Includes tag and calls the controller for Landing Page bestsellers.
 
 !!! note "Category pages/Caching"
 

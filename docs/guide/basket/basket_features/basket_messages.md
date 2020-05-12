@@ -1,24 +1,24 @@
 # Basket messages
 
-Basket messages are stored in the Basket object, but they will not be stored in the database.
+Basket messages are stored in the Basket object, but they are not stored in the database.
 It is possible to store several success, error or notice messages for products.
 
 ### Methods
 
 |method|meaning|parameters|
 |--- |--- |--- |
-|setSuccessMessage()|set one success message to the basket|$success|
-|getSuccessMessages()|get all success messages from the basket. If it is not set, an empty string will be returned.||
-|setErrorMessage()|set one error message to the basket|$error|
-|getErrorMessages()|get all error messages from the basket. If it is not set, an empty string will be returned.||
-|setNoticeMessage()|set one notice message to the basket|$notice|
-|getNoticeMessages()|get all notice messages from the basket. If it is not set, an empty string will be returned.||
-|clearAllMessages()|delete all messages from the basket||
-|removeSuccessMessageForSku()|delete all success messages for the given SKU from the success messages|$sku|
+|setSuccessMessage()|Sets one success message to the basket|$success|
+|getSuccessMessages()|Gets all success messages from the basket. If it is not set, an empty string is returned.||
+|setErrorMessage()|Sets one error message to the basket|$error|
+|getErrorMessages()|Gets all error messages from the basket. If it is not set, an empty string is returned.||
+|setNoticeMessage()|Sets one notice message to the basket|$notice|
+|getNoticeMessages()|Gets all notice messages from the basket. If it is not set, an empty string is returned.||
+|clearAllMessages()|Deletes all messages from the basket||
+|removeSuccessMessageForSku()|Deletes all success messages for the given SKU from the success messages|$sku|
 
 ## Messages templating
 
-The messages parsed to the template through the `BasketController`, e.g. basket show:
+The messages are passed to the template through the `BasketController`, e.g. when displaying the basket:
 
 ``` ph
 return $this->render(

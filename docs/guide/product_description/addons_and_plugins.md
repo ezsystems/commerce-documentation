@@ -37,7 +37,7 @@ Via the user management feature, customers are able to grant their own employees
 
 The customer center can be connected to the ERP system and synchronizes customer data and contact data when required. In that case the ERP also controls which customer can use the customer center. 
 
-If a customer has a customer center all employees will be stored beneath the company folder. The shop administrator will have a good overview of the company and its related employees with a shop account. 
+If a customer has a customer center all employees are stored beneath the company folder. The shop administrator has a good overview of the company and its related employees with a shop account. 
 
 The customer center will enhance the eZ Commerce processes such as:
 
@@ -80,7 +80,7 @@ Customers can submit ratings and product reviews. Shop operators can build up tr
 
 ### Voucher
 
-Discount or value vouchers can easily be created in the shop back end. A voucher contains discount conditions like minimum basket value or discountable products. Create individual vouchers that are valid a given number of times for a certain time period or personalized vouchers that are only valid once.
+Discount or value vouchers can easily be created in the shop backend. A voucher contains discount conditions like minimum basket value or discountable products. Create individual vouchers that are valid for a given number of uses, or for a set time period, or personalized vouchers that are only valid for one-time use.
 
 - Easy creation of vouchers in the back end
 - Different types of vouchers available

@@ -1,21 +1,13 @@
 # Requirements
 
-eZ Commerce requires:
+eZ Commerce requires the following for installation:
 
 - An eZ Platform v2.5.x installation (see [Requirements](https://doc.ezplatform.com/en/2.5/getting_started/requirements_and_system_configuration/)).
-
-!!! note
-
-    Recommended PHP Version: 7.2
-
-    The following PHP extensions are required:
-
-    - curl extension and SOAP extension
-    - intl extension
-    - xsl extension
-
 - An eZ Commerce Enterprise contract
 - To use ERP connection: an ERP system supported by eZ Commerce and the Web Connector 
+
+Recommended PHP version is 7.2 with the following extensions:
+`curl`, `SOAP`, `intl`, `xsl`.
 
 ## Client
 
@@ -28,7 +20,7 @@ eZ Commerce requires:
 
 ### Hardware
 
-eZ Commerce requires a dedicated server. Due to security reasons shared hosting is not recommended.
+eZ Commerce requires a dedicated server. Due to security reasons, shared hosting is not recommended.
 
 |Function|Small system|Medium system|
 |---|---|---|
@@ -51,11 +43,11 @@ eZ Commerce requires a dedicated server. Due to security reasons shared hosting 
 
 ### Configuration notes
 
-!!! note
+!!! caution
 
     Don't store session as a file on the file system. This might cause locking problems.
 
-    Details see [Session handling](../guide/configuration/session_handling.md)
+    For details see [Session handling](../guide/configuration/session_handling.md)
 
 Check if your web server configuration (or Varnish) blocks unused cookies. 
 
@@ -89,7 +81,7 @@ proxy_set_header Cookie $http_cookie_updated;
 
 ### Software
 
-In addition to the requirements for eZ Platform the following software needs to be installed:
+In addition to the requirements for eZ Platform, the following software needs to be installed:
 
 #### Node.js / NPM
 
@@ -121,4 +113,4 @@ Please make sure that the following option is set (e.g. /etc/mysql/my.cnf):
 sql_mode = NO_ENGINE_SUBSTITUTION,STRICT_TRANS_TABLES
 ```
 
-If you encounter issues in the backend with missing chart data in the cockpit please check this setting and restart mysqld.
+If you encounter issues in the backend with missing chart data in the cockpit, check this setting and restart mysqld.
