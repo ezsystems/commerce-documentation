@@ -1,15 +1,12 @@
 # EzContentBreadcrumbsGenerator
 
-This generator renders the breadcrumbs for standard eZ Platform content.  
+`Silversolutions\\Bundle\\EshopBundle\\Service\\Breadcrumbs\\EzContentBreadcrumbsGenerator`
+renders the breadcrumbs for standard eZ Platform content.  
 
-## FQN
+## When it is used
 
-Silversolutions\\Bundle\\EshopBundle\\Service\\Breadcrumbs\\EzContentBreadcrumbsGenerator
+The generator triggers if the session attribute `location` is set. This is set by an eZ routine is the router matches a Content item.
 
-## Criterion for responsibility
+## Rendering process
 
-The generator triggers if the session attribute 'location' is set. This is set by some eZ routine in the case the router matched eZ content.
-
-## Notes to the rendering process
-
-Renders all elements of the path of the currently displayed content location as breadcrumbs, up to the eZ content root.
+Renders all elements of the path of the currently displayed Location as breadcrumbs, up to the content root.

@@ -2,9 +2,9 @@
 
 ## Why do the breadcrumbs for my controller only display the root element?
 
-Please check the routing.yml.
+Please check `routing.yml`.
 
-The RoutesBreadcrumbsGenerator need at least the parameter "**breadcrumb\_path**". This parameter usually contains the key of the current routing definition.
+The `RoutesBreadcrumbsGenerator` need the `breadcrumb_path` parameter. This parameter usually contains the key of the current routing definition.
 
 ``` yaml
 custom_blog_index:
@@ -17,9 +17,9 @@ custom_blog_index:
 
 ## Some or all elements of the breadcrumbs display strange words like `some_route_name|breadcrumb`?
 
-Please check the routing.yml.
+This can be caused by two issues in `routing.yml`.
 
-Either no `breadcrumb_names` is defined, like:
+1\. No `breadcrumb_names` is defined:
 
 ``` yaml
 custom_blog_index:
@@ -29,7 +29,7 @@ custom_blog_index:
         breadcrumb_path: custom_blog_index
 ```
 
-Or the number of elements in `breadcrumb_names` and `breadcrumb_path` differ, like:
+2\. The number of elements in `breadcrumb_names` and `breadcrumb_path` differ:
 
 ``` yaml
 custom_blog_index:
@@ -40,7 +40,7 @@ custom_blog_index:
         breadcrumb_names: Blog List
 ```
 
-In these cases, the fallback implementation tries to translate the respective breadcrumb\_path elements with context "breadcrumb", which most likely are not translated. The best solution is to have proper path and names configuration and existing translations for the breadcrumb\_names' elements:
+In these cases, the fallback implementation tries to translate the respective `breadcrumb_path` elements with context `breadcrumb`, which most likely is not translated. The best solution is to have proper path and names configuration and existing translations for the elements of `breadcrumb_names`:
 
 ``` yaml
 custom_blog_index:
@@ -55,15 +55,16 @@ custom_blog_index:
 
 Possibilities:
 
-- The 'breadcrumb' block of the pagelayout.html.twig template was overridden by the currently displayed, extending template with emtpy content.
+- The `breadcrumb` block of the `pagelayout.html.twig` template was overridden by the currently displayed one, extending template with empty content.
 - The matched generator encountered an error and didn't render the breadcrumbs
-- Very unlikely but not impossible: No generator matched at all. But in the standard setup, the lowest prio RoutesBreadcrumbsGenerator checks the active Router service to match the active Request service. That's SHOULD be always the case.
+- Very unlikely but not impossible: No generator matched at all.
+In the standard setup, the lowest priority `RoutesBreadcrumbsGenerator` checks the active Router service to match the active Request service. That should always be the case.
 
-## How can breadcrumbs be limited to their ez content in sub shops?
+## How can breadcrumbs be limited to subtrees in sub-shops?
 
-The parameter `content.tree_root.location_id` is used to limit the sub shops to their ez content (contains Node ID of the desired catalog).
+The `content.tree_root.location_id` parameter is used to limit the sub-shops to their subtrees (contains Location ID of the desired catalog).
 
-If `content.tree_root.location_id` is set, a criterion is used in the CatalogHelper.php to fetch the correct product catalog instead of the default one.
+If `content.tree_root.location_id` is set, a Criterion is used in the `CatalogHelper.php` to fetch the correct product catalog instead of the default one.
 
 ``` php
 if ($this->configResolver->hasParameter('content.tree_root.location_id')) {
@@ -75,15 +76,15 @@ if ($this->configResolver->hasParameter('content.tree_root.location_id')) {
             }
 ```
 
-## What is the purpose of the additional data stored in translationParameters?
+## What is the purpose of the additional data stored in `translationParameters`?
 
-This data can be used to define, for example if a breadcrumb of an eZNode should be clickable or hidden.
+This data can be used, for example, to define if a breadcrumb of a Location should be clickable or hidden.
 
-Example for not clickable breadcrumbs with bold text, if crumb.translationParameters.type == 'catalog':
+The following example changes the breadcrumbs to non-clickable bold text (if `crumb.translationParameters.type == 'catalog'`):
 
-**vendor/silversolutions/silver.e-shop/src/Silversolutions/Bundle/EshopBundle/Resources/views/Breadcrumbs/breadcrumb\_list.html.twig**
+`vendor/silversolutions/silver.e-shop/src/Silversolutions/Bundle/EshopBundle/Resources/views/Breadcrumbs/breadcrumb_list.html.twig`:
 
-``` 
+``` html+twig
 {% if not loop.last %}
   <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
     {% if crumb.translationParameters.type == 'catalog' %}

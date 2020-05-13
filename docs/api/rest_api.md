@@ -1,6 +1,6 @@
 # REST API (Version 4.2)
 
-silver.eShop extends the Rest API of eZ Platform with:
+eZ Commerce extends the REST API of eZ Platform with the following features:
 
 ## Basket API
 

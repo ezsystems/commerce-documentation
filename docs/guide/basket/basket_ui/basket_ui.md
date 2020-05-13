@@ -5,19 +5,19 @@
 |Path|Description|
 |--- |--- |
 |SilversolutionsEshopBundle:Basket:show.html.twig|Main template|
-|SilversolutionsEshopBundle:Basket:messages.html.twig|renders error messages if a basket change was not successful|
-|SilversolutionsEshopBundle:Fieldtypes:StockField.html.twig|renders a stock field|
+|SilversolutionsEshopBundle:Basket:messages.html.twig|Renders an error messages if a basket change was not successful|
+|SilversolutionsEshopBundle:Fieldtypes:StockField.html.twig|Renders a stock Field|
 |SilversolutionsEshopBundle:parts:stock_legend.html.twig||
 |SilversolutionsEshopBundle:Basket:basket_preview.html.twig|Renders a basket preview used e.g. for main navigation|
-|SilversolutionsEshopBundle:Basket:stored_basket_preview_wish_list.html.twig|is used for the "My Shop" section and displays a menu item including the number of products in my wishlist|
-|SilversolutionsEshopBundle:Basket:stored_basket_preview_comparison.html.twig|is used for the "My Shop" section  and displays a menu item for the comparison feature|
-
+|SilversolutionsEshopBundle:Basket:stored_basket_preview_wish_list.html.twig|Used for the "My Shop" section and displays a menu item including the number of products in the wishlist|
+|SilversolutionsEshopBundle:Basket:stored_basket_preview_comparison.html.twig|Used for the "My Shop" section and displays a menu item for the comparison feature|
 
 ## Display the content of a basket
 
-The basket can be displayed using a standard controller of eZ Commerce (/basket/show).  The controller provides a variable basket containing the content of the current basket.
+The basket can be displayed using a standard controller of eZ Commerce (`/basket/show`).
+The controller provides a variable basket containing the content of the current basket.
 
-You can access all Basket Attributes from a template:
+You can access all basket attributes from a template:
 
 ``` htm+twig
 {# the count of basket lines #}
@@ -40,7 +40,7 @@ You can access all Basket Attributes from a template:
     {{ total.totalGross }}
 {% endfor %}
 
-{# Access to information that are stored in remoteDataMap #}
+{# Access to information that is stored in remoteDataMap #}
 
 {% if line.remoteDataMap.onStock %}
     <strong class="availability tooltip green smaller" data-powertip="{{ 'This product is available for purchase'|st_translate }}">
@@ -53,22 +53,17 @@ You can access all Basket Attributes from a template:
 {% endif %}  
 ```
 
-The following templates are prepared for displaying basket related data:
-
-- The Basket preview will be rendered using the template `Basket/basket_preview.html.twig`.
-- The basket (basket/show) is implemented in the template `Basket/show.html.twig`.
-
 ## Available Entity Attributes
 
-see [Basket data model](../basket_api/basket_data_model.md)
+See [Basket data model](../basket_api/basket_data_model.md).
 
 ### CatalogElement
 
-If you need to get the CatalogElement, you can fetch it by `{{ line.sku }}`. The current implementation stores a copy of given product fields inside a basket line. 
+If you need to get the `CatalogElement`, you can fetch it by `{{ line.sku }}`. The current implementation stores a copy of given product fields inside a basket line. 
 
 This ensures that the basket get a fast access to the product data and that during a checkout/payment process the product data will be available even when the product is removed from the catalog meanwhile. 
 
-See [Get a ProductNode by SKU](../../catalog/catalog_ui/catalog_ui.md)
+See [Get a ProductNode by SKU](../../catalog/catalog_ui/catalog_ui.md).
 
 If a basket line does not provide product data (e.g. the caching life time of a product has been exceeded) the product can be fetched using a twig function.  
 
@@ -82,7 +77,7 @@ If a basket line does not provide product data (e.g. the caching life time of a 
 
 ### Basket Preview
 
-The basket preview is rendered using the sub-controller in `EshopBundle/Resources/views/pagelayout.html.twig`
+The basket preview is rendered using a sub-controller in `EshopBundle/Resources/views/pagelayout.html.twig`
 
 ``` html+twig
 {% block basket_preview %}
@@ -90,7 +85,7 @@ The basket preview is rendered using the sub-controller in `EshopBundle/Resource
 {% endblock %} 
 ```
 
-The responsible sub-controller (previewAction()) fetches the basket from the DB and render it in the template: `basket_preview.html`:
+The responsible sub-controller (`previewAction()`) fetches the basket from the database and renders it in `basket_preview.html`:
 
 ``` html+twig
 {% if basket.lines.count > 0 %} 

@@ -1,4 +1,4 @@
-# First steps in the frontend and backend
+# First steps
 
 ## The frontend
 

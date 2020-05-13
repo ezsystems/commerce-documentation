@@ -1,15 +1,13 @@
 # Basket Events
 
-## General
-
 The basket provides a list of events. These events can be used to change the logic for the main basket functions. 
 
-Examples for use cases:
+They can be used for example to:
 
 - check the total amount of a basket if the user is just allowed to order within a given budget
-- Check if a user is allowed to add this product to the basket
-- To perform a detailed check if the stock is still available
-- to check if the minimum quantity has to be checked: You will find an example in the document [Product quantity validation](../../basket_features/product_quantity_validation.md)
+- check if a user is allowed to add this product to the basket
+- perform a detailed check if the stock is still available
+- check if the minimum quantity has to be checked. For an example, see [Product quantity validation](../../basket_features/product_quantity_validation.md)
 
 Some [standard Eventlisteners](basket_eventlistener_in_the_standard.md) in eZ Commerce  will take care that e.g. a basket preview cache is updated correctly. 
 
@@ -24,7 +22,7 @@ The executed action (add-to, update...) is assumed to be allowed, unless some ev
 const STATUS_OK = 'ok';
 //something changed (quantity), action is allowed
 const STATUS_CHANGED = 'changed';
-//something failed (quantity not valide), action is forbidden
+//something failed (quantity not valid), action is forbidden
 const STATUS_FAILED = 'failed';
 //default
 const STATUS_INIT = 'ok';
@@ -46,7 +44,7 @@ $preEvent->getStatus();
 
 ### Connecting to the events
 
-To take advantage from the existing events to f.e. modify some Basket or BasketLine data, your EventService must listen to these Events (Events IDs see above):
+To take advantage from the existing events, for example to modify some Basket or BasketLine data, your `EventService` must listen to these Events (Events IDs see above):
 
 ``` 
 <service id="silver_basket.standard_basket_listener" class="%silver_basket.standard_basket_listener.class%">
@@ -57,7 +55,7 @@ To take advantage from the existing events to f.e. modify some Basket or BasketL
 </service>
 ```
 
-You also have to implement appropriate methods in your EventService:
+You also have to implement appropriate methods in your `EventService`:
 
 ``` php
 public function onPreBasketAdd(PreAddBasketLineEvent $preBasketAddEvent)
@@ -183,7 +181,7 @@ public function onPreBasketShow(PreBasketShowEvent $event)
 }
 ```
 
-``` 
+``` xml
 <service id="siso_customer_center.check_budget_event_listener" 
 class="%siso_customer_center.check_budget_event_listener.class%">
     <argument type="service" id="siso_customer_center.budget_service.order" />

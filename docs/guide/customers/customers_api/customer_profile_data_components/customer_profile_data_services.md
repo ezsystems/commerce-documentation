@@ -22,7 +22,7 @@ Concrete customer profile data service implementation using ERP as source for cu
 
 `\Silversolutions\Bundle\EshopBundle\Services\CustomerProfileData\DeprecatedCustomerMappingService`
 
-Concrete customer profile data service which implements the deprecated `AbstracCustomerService` to use with silver.eShop components, which depend on the deprecated model.
+Concrete customer profile data service which implements the deprecated `AbstracCustomerService` to use with eZ Commerce components, which depend on the deprecated model.
 
 ## Using customer profile data services in source code
 

@@ -1,10 +1,10 @@
 # Installation and configuration FAQ
 
-## Advanced version only Which configuration is required in order to communicate with ERP?
+## What configuration is required to communicate with ERP?
 
-In order to communicate with ERP you have to make sure, that:
+To communicate with ERP, make sure that:
 
-- You configured the correct webconnector url `webconnector_url: ''`
+- You have the correct web connector URL configured: `webconnector_url: ''`
 - You have created the symlinks for the mapping
 
 ``` bash
@@ -13,20 +13,22 @@ ln -s ../../vendor/silversolutions/silver.e-shop/src/Silversolutions/Bundle/Esho
 ln -s ../../src/<Company>/Bundle/ProjectBundle/Resources/xsl
 ```
 
-- Make sure that you have the correct version of vendor/moyarada (see below)
+- Make sure that you have the correct version of `vendor/moyarada`.
 
-## The images in shop are not converted. What should i check?
+## Images in shop are not converted. What should I check?
 
-Make sure that you have setup correct rights for the image folder:
+Make sure that you have set up correct rights for the image folder:
 
 ``` bash
 sudo chmod -R g+w web/var/ecommerce/storage/
 ```
 
-## After the installation i am getting the error: \[Defuse\\Crypto\\Exception\\BadFormatException\] Encoding::hexToBin() input is not a hex string
+## I am getting an error after installation
 
-You need to generate a secret using ./vendor/defuse/php-encryption/bin/generate-defuse-key  
-You can configure it in parameters.yml:
+`[Defuse\Crypto\Exception\BadFormatException] Encoding::hexToBin() input is not a hex string`
+
+Generate a secret using `./vendor/defuse/php-encryption/bin/generate-defuse-key` and
+configure it in `parameters.yml`:
 
 ``` 
 env(JMS_PAYMENT_SECRET): 'def000004cb9c9f5edb77182df64b3d572162a47ec971a9a8beb00459b49fd9a1f9df6991ffc817c8585f59b8c5a032b796ab520eae126c77d8a304b36af0c9acdbfa9b9'

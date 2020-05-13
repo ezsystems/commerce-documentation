@@ -1,10 +1,10 @@
 # Search Solr schema configuration
 
-silver.eShop is using an adapted schema definition which is installed using the shell script install-solr.sh.
+eZ Commerce is using an adapted schema definition which is installed using the shell script `install-solr.sh`.
 
-## Changes for silver.eShop
+## Changes for eZ Commerce
 
-The following changes are required for the shop. The changes will be applied using the shell script install-solr.sh. 
+The following changes are required for the shop. The changes will be applied using the shell script `install-solr.sh`. 
 
 `custom-fields-types.xml`:
 

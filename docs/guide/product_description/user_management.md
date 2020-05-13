@@ -2,11 +2,11 @@
 
 ## Users
 
-silver.eShop users are stored as eZ Users. This enables the shop owner to use the full power of the rights and role system of the CMS.
+eZ Commerce users are stored as User Content items. This enables the shop owner to use the full power of the permission system.
 
 ![](img/Users.png)
 
-In addition a shop owner gets infos about the last orders and the sales statistics of the customer. If a user has a current basket it is displayed as well.
+In addition, a shop owner gets information about the last orders and the sales statistics of the customer. If a user has a current basket it is displayed as well.
 
 ![](img/image2018-4-4_19-40-59.png)
 
@@ -16,13 +16,13 @@ In the backend user groups can be created.
 
 ![](img/User_groups.png)
 
-Afterwards specific roles can be assigned to the user group (In silver.eShop new users are created in a given user group. The location Id of the user group is configured in a yml file).
+Afterwards specific Roles can be assigned to the User Group. In eZ Commerce new users are created in a given User Group. The location ID of the User Group is configured in a yml file.
 
 ![](img/Assign_to_user.png)
 
 ## Available policies
 
-For silver.eShop special policies are defined that can be assigned to specific roles.
+For eZ Commerce special Policies are defined that can be assigned to specific Roles.
 
 ![](img/image2018-4-4_19-43-33.png)
 

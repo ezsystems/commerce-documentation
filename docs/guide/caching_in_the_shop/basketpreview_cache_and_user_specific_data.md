@@ -1,6 +1,6 @@
 # Basketpreview cache and user-specific data
 
-silver.eShop uses a lot of dynamic data which has to be displayed in the shop:
+eZ Commerce uses a lot of dynamic data which has to be displayed in the shop:
 
 - The basket preview showing the number of products and a list of products
 - The name of the customer
@@ -55,7 +55,7 @@ The alias "mydata" is used as a key in the modules section.
 
 ### Working with html fragments
 
-Each service implementing the SessionDataInterface can return HTML fragments. The keys used should use the id of an container inside your site. silver.eShop will replace this container automatically using the prepared HTML.
+Each service implementing the SessionDataInterface can return HTML fragments. The keys should use the ID of a container inside your site. eZ Commerce automatically replaces this container with the indicated HTML.
 
 Example how to provide the data in a service:
 

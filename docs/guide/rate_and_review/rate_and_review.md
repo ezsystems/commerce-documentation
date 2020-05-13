@@ -2,7 +2,7 @@
 
 ## Description
 
-Rate and review is a component to assign a rate of stars (1 to 5) and a review or comment to silver.eShop products.
+Rate and review is a component that assigns a rate of stars (1 to 5), a review or a comment to eZ Commerce products.
 
 ### Frontend
 
@@ -26,7 +26,7 @@ From the frontend perspective the following things are set:
 
 ### Backend
 
-In silver.eShop backend there is a simple module to manage user rate and reviews.
+In eZ Commerce backend there is a simple module that manages user rates and reviews.
 
 ![](../img/rate_and_review_5.png)
 

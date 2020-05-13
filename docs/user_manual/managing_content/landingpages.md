@@ -26,7 +26,7 @@ In the next section we describe how to use the customized landing page blocks.
 
 ## Content List
 
-silver.eShop offers a block to show one or more documents from a given location.
+eZ Commerce offers a block to show one or more documents from a given location.
 
 This feature can be used e.g. to display a list of blog posts or events.
 

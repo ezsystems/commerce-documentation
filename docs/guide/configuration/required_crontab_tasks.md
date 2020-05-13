@@ -4,16 +4,17 @@
 
 ### Remove translation and navigation caches
 
-The shop collects changes regarding translations (textmodules) and  navigation. If there are changes (e.g. performed in the backend) the cache will be refreshed.   
+The shop collects changes regarding translations (textmodules) and navigation.
+If there are changes (e.g. performed in the backend) the cache will be refreshed.   
 
 ``` 
 # Checks for changes and refresh cache
 */5 * * * * cd '/var/www/my_project' && /usr/bin/php bin/console silversolutions:cache:refresh --env=prod
 ```
 
-### Send lost orders to the ERP (Advanced version only)
+### Send lost orders to the ERP
 
-Lost orders can be resend using a command-line tool. We recommend to start this tool e.g. every 5 minutes.
+Lost orders can be resent using a command-line tool. We recommend running this tool e.g. every 5 minutes.
 
 ``` 
 # resends lost orders every 5 minutes
@@ -24,7 +25,7 @@ Lost orders can be resend using a command-line tool. We recommend to start this 
 
 Please check the documentation for [JMSJobQueueBundle](http://jmsyst.com/bundles/JMSJobQueueBundle/master/installation)
 
-In case the suggested supervisord configuration cannot be used a cronjob can be setup: https://github.com/schmittjoh/JMSJobQueueBundle/issues/205
+In case the suggested `supervisord` configuration cannot be used, a cronjob can be set up: https://github.com/schmittjoh/JMSJobQueueBundle/issues/205
 
 ### Calculate statistical data for active sessions
 

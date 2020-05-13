@@ -1,40 +1,36 @@
 # PostSilverModuleBreadcrumbsGenerator
 
-This breadcrumbs generator is for requests after a silver.module, which process the controller of the previous silver.module.
+`Silversolutions\Bundle\EshopBundle\Service\Breadcrumbs\PostSilverModuleBreadcrumbsGenerator`
+handles requests after a `silver.module`, which process the controller of the previous `silver.module`.
 
-**Example**: A silver.module eZ content object specifies the controller SisoCustomerCenterBundle:Form:form in order to display a form. After this form is submitted, it will not request the URL of the silver.module, but the URL of the controller, defined by its route. But nonetheless, the breadcrumbs of the former silver.module shall be displayed. 
+**Example**: A silver.module Content item points to the controller `SisoCustomerCenterBundle:Form:form` to display a form. After this form is submitted, it will not request the URL of the silver.module, but the URL of the controller, defined by its route. The breadcrumbs of the former silver.module are still displayed. 
 
-This generator is responsible for this special case of requests. It listens to two kernel events in order to add some request attributes and save the last used silver.module ID temporarily in the session.  
-Hint
+This generator handles such requests. It listens to two kernel events to add some request attributes and temporarily save ID of the last used silver.module in the session.
 
-silver.modules themselves are standard eZ content and their breadcrumbs are handled solely by the parent of this class which is [EzContentBreadcrumbsGenerator](ezcontentbreadcrumbsgenerator.md).
+!!! tip
 
-## FQN
+    silver.modules themselves are standard Content items and their breadcrumbs are handled solely by the parent of the [`EzContentBreadcrumbsGenerator`](ezcontentbreadcrumbsgenerator.md) class.
 
-Silversolutions\Bundle\EshopBundle\Service\Breadcrumbs\PostSilverModuleBreadcrumbsGenerator
-
-## Criterion for responsibility
+## When it is used
 
 The generator triggers if the session attribute 'silverModuleLocation' is set. This is set by an event listener callback, which is described below.
 
-## Notes to the rendering process
+## Rendering process
 
-In order to memorize a formerly displayed silver.module element, its ID is stored in the session and restored if the next page matches the controller, which is defined in the respective silver.module. This is achieved via two kernel event listeners:
+In order to memorize a formerly displayed silver.module element, its ID is stored in the session and restored if the next page matches the controller, which is defined in the respective silver.module. This is achieved via two kernel event listeners.
 
-### Event: kernel.controller
+### kernel.controller event
 
-Method: Silversolutions\Bundle\EshopBundle\Service\Breadcrumbs\PostSilverModuleBreadcrumbsGenerator::onKernelRequest()
+`Silversolutions\Bundle\EshopBundle\Service\Breadcrumbs\PostSilverModuleBreadcrumbsGenerator::onKernelRequest()`
+is the listener method that prepares the request for a post `silver.module` controller.
 
-Listener method for the preparation of the request for a post silver.module controller.
+It checks the session for a formerly stored silver.module ID and whether the Content item defines the controller that matched in the current request. If the controller doesn't match, the current request is just a call of an unrelated page and can be ignored. If it does match, the request attributes `silverModule` and `silverModuleLocation` are added for the rendering of the breadcrumbs.
 
-It checks the session for a formerly stored silver.module ID and whether the content object defines the controller, that matched in the current request. If the controllers doesn't match, the current request is just a call of an unrelated page and can be ignored. In the case it does match, the request attributes silverModule and silverModuleLocation are added for the rendering of the breadcrumbs.
+### kernel.response event
 
-### Event: kernel.response
+`Silversolutions\Bundle\EshopBundle\Service\Breadcrumbs\PostSilverModuleBreadcrumbsGenerator::onKernelResponse()`
+is the listener method that temporarily stores the `silver.module` ID in the session.
 
-Method: Silversolutions\Bundle\EshopBundle\Service\Breadcrumbs\PostSilverModuleBreadcrumbsGenerator::onKernelResponse()
+If the request attribute silverModule is set and defines a Content item, it is assumed that you are in a silver.module context. In this case the silver.module ID must be stored in the session for later requests.
 
-Listener method the temporary storage of the silver.module ID in the session.
-
-If the request attribute silverModule is set and defines an eZ content object, it is assumed that we are in a silver.module context. In this case the silver.module ID must be stored in the session for later requests.
-
-If the attribute is not defined, the session value must be removed in order to not match this generator accidentally, when the controller of the silver.module matches outside of it's context.
+If the attribute is not defined, the session value must be removed in order to not match this generator accidentally, when the controller of the silver.module matches outside of its context.

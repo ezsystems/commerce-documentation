@@ -2,7 +2,7 @@
 
 ## Introduction
 
-Customer Center is a separate solution, it is shipped separately from silver.eShop advanced.
+Customer Center is a separate solution, it is shipped separately from eZ Commerce.
 
 Customer Center is implemented as a dedicated repository with CustomerCenterBundle.
 
