@@ -104,7 +104,7 @@ class AjaxBasketController extends BaseController
 
 ### HTTP caching of ajax requests
 
-A response of GET requests could be cached. To cache it you should [use HttpCachingServiceStrategy](../guide/caching_in_the_shop/content_cache_refresh/http_caching.md) in your Ajax\<Type\>Controller.
+A response of GET requests could be cached. To cache it you should [use HttpCachingServiceStrategy](../guide/cache/content_cache_refresh/http_caching.md) in your `Ajax\<Type\>Controller`.
 
 !!! caution
 

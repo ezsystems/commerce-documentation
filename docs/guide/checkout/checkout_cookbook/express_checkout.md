@@ -1,35 +1,20 @@
-# Checkout cookbook
+# Express checkout
 
-## Implement a simple "express" checkout
+You can implement an express checkout functionality with a custom controller.
 
-If you need a simple checkout which implements a kind of express checkout it can be done with a won controller.
+The following example:
 
-The following example will
+- Checks if a user is logged in (to get address data)
+- Copies the current basket in order to finish it
+- Sets the state to `ordered`
+- Removes the original basket
 
-- Check if a user is logged in (to get address data)
-- Copy the current basket in order to finish it
-- Sets the state to ordered
-- Remove the original basket
-
-The Controller will display a confirmation page after finishing the order. The logic will respect that the ERP is not available and in this case a lost order process will be initiated. 
+The controller displays a confirmation page after finishing the order.
+The logic respects the fact that the ERP is not available and in this case a lost order process is initiated. 
 
 ``` php
 <?php
 
-/**
- * Product silver.e-shop
- *
- * A powerful e-commerce solution for B2B online shops / portals and complex
- * online applications that have access to ERP data, usually in real time.
- * http://www.silversolutions.de/eng/Products/silver.e-shop
- *
- * This file contains the class expressCheckout
- *
- * @copyright Copyright (C) 2013 silver.solutions GmbH. All rights reserved.
- * @license see vendor/silversolutions/silver.e-shop/license_txt_ger.pdf
- * @version $Version$
- * @package silver.e-shop
- */
 class expressCheckout
 {
     /**

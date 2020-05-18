@@ -1,8 +1,8 @@
 # Catalog API
 
-## How to access product data
+## Accessing product data
 
-When a product is loaded by the url a CatalogElement object is provided to the template. 
+When the URL loads a product, a `CatalogElement` object is passed to the template.
 
 ``` html+twig
 <!-- name of the product -->
@@ -33,7 +33,7 @@ When a product is loaded by the url a CatalogElement object is provided to the t
  </figure>
 ```
 
-In a Controller or Server you can access product data easily:
+In a controller or server you can easily access product data:
 
 ``` php
 use Silversolutions\Bundle\EshopBundle\Services\Catalog;
@@ -54,7 +54,7 @@ if ($product instanceof OrderableProductNode) {
 }
 ```
 
-Fetch a catalogElement by locationId
+Fetch a `catalogElement` by Location ID:
 
 ``` php
 /** @var $catalogService \Silversolutions\Bundle\EshopBundle\Services\Catalog\CatalogDataProviderService */
@@ -78,18 +78,20 @@ try {
 }
 ```
 
-### List of catalogElements
+### List of CatalogElements
 
-This method allows to list CatalogElements or ProductNodes for a given locationid. Products assigned to a locationid will be returned.
+The `fetchChildrenList()` method enables listing `CatalogElement` or `ProductNode` objects for a given Location ID.
+Products with this Location ID are returned.
 
-Fetch products directly assigned to a CatalogElement starting form the first element (offset=0, limit=100). The shop shall use the current language of the siteaccess used. 
+Fetch products directly assigned to a `CatalogElement` starting from the first element (offset=0, limit=100).
+The shop uses the language of the current SiteAccess.
 
-``` 
+``` php
 $catalogList = $catalogService->getDataProvider()
         ->fetchChildrenList($locationId, 1, array(), null, 0, 100);
 ```
 
-Fetch a list of products using a filter named "productList".
+Fetch a list of products using a `productList` filter.
 
 ``` 
 $catalogList = $catalogService->getDataProvider()
@@ -98,13 +100,11 @@ $catalogList = $catalogService->getDataProvider()
 
 ## Filtering
 
-Foreach dataprovider filters can be defined. A filter defines 
+You can define filters for each data provider. A filter defines:
 
-- which elements shall be fetched (e.g. just products such as `ses_product`, just product groups)
+- which elements are fetched (e.g. just products such as `ses_product`, or just product groups)
 - sorting
 
-A filter has a name. The name will be used as a key to get the filter parameters from the config file. 
+A filter's name (e.g. `navigation`) is used as a key to get the filter parameters from the configuration file.
 
-A filter name is e.g. "navigation". 
-
-Standard filters see [Catalog configuration](../catalog_configuration.md)
+For a list of standard filters, see [Catalog configuration](../catalog_configuration.md).

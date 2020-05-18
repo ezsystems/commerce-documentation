@@ -123,4 +123,4 @@ Following fields are defined in the `ses_productcatalog` type:
 
 Please keep in mind that Navigation is really connected with a lot of different modules in our shop. Be sure to check these out:
 
-- [Dataprovider](../catalog/catalog_feature_list/catalog_data_providers_products_from_different_sources.md)
+- [Dataprovider](../catalog/catalog_features/catalog_data_providers.md)

@@ -1,6 +1,6 @@
 # SimpleVariantCharacteristics
 
-SimpleVariantCharacteristics implements **VariantCharacteristicsInterface** and contains all necessary data using three associated arrays. Structure of the arrays see below:
+`SimpleVariantCharacteristics` implements `VariantCharacteristicsInterface` and contains all necessary data using three associated arrays:
 
 ``` php
 private $characteristics;
@@ -46,8 +46,8 @@ $variantCodes = array(
 private $variantAttributes;
 
 /*
-* In order to render it correctly it needs to know, which of the variant attributes are characteristic Fields. 
-* That is why attributes that will be displayed in b2b need to follow special rules:
+* This characteristic needs to know which of the variant attributes are characteristic Fields. 
+* That is why attributes that are displayed in B2B need to follow special rules:
 *     - characteristicCodeXXX
 *     - characteristicLabelXXX
 *
@@ -79,4 +79,4 @@ $variantAttributes = array(
 );
 ```
 
-To access the all variant codes from the template, [Variant Services](variant_services.md) has been implemented.
+To access the all variant codes from the template, use [Variant Services](variant_services.md).

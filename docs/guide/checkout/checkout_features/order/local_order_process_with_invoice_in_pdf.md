@@ -1,40 +1,40 @@
-# Local order process (with invoice in PDF)
+# Local order process
 
-If the shop is not connected to an ERP system, eZ Commerce offers a possibility to still follow the order process and create a local order that will generate an invoice PDF and send it by mail.
+If the shop is not connected to an ERP system, the customer can still follow the order process
+and create a local order that generates an invoice PDF and sends it by mail.
 
-The orders will be stored locally in the shop.
+The order is stored locally in the shop.
 
-## Generate local orders - "SisoLocalOrderManagementBundle"
+## Generating local orders
 
-By default the shop sends the order after the checkout process to ERP. But there is also the possibility to disable the usage of ERP and use 'local order process' instead.
+By default the shop sends the order after the checkout process to ERP.
+But there is also the possibility to disable the usage of ERP and use the local order process instead.
 
-Disable ERP in order to use "Local Documents":
+To do this, disable sending the order to ERP in `LocalOrderManagementBundle/Resources/config/local_order_management.yml`:
 
-`LocalOrderManagementBundle/Resources/config/local_order_management.yml`
-
-``` 
+``` yaml
 #set this to true in core and override this in the parameters.yml to false
 siso_local_order_management.default.send_order_to_erp: true
 siso_local_order_management.default.shop_owner_customer_number: 10000
 ```
 
-For the implementation of this feature event listeners are used.
+This option uses event listeners.
 
-## Listeners: onRequestEvent and `onExceptionMessage`
+## `onRequestEvent` and `onExceptionMessage`
 
-In order to avoid sending the order to ERP (see configuration above), an exception is thrown, that will interrupt the default process (sending to ERP).
+To avoid sending the order to ERP, an exception is thrown that interrupts the default process (sending to ERP).
 
-The order will not be sent, if:
+The order is not sent if:
 
 - The message request is the "Order message".
-- The order sending is disabled in the configuration.
-- The order does not contain a specific customer number (in this case the customer number of the shop owner - this is connected with the order splitting function).
+- Order sending is disabled in the configuration.
+- The order does not contain a specific customer number, in this case the customer number of the shop owner (this is connected with order splitting function).
 
-If the previous conditions are fulfilled, "LocalOrderRequiredException" exception is thrown and the order is not send to ERP.
+If these conditions are fulfilled, the `LocalOrderRequiredException` exception is thrown and the order is not sent to ERP.
 
-Please note that due to an exception during the ERP communication, the message and the order occur in the respective logs as failed.
+Due to an exception during the ERP communication, the message and the order occur in the respective logs as failed.
 
-`LocalOrderManagementBundle/Resources/config/services.xml`:
+In `LocalOrderManagementBundle/Resources/config/services.xml`:
 
 ``` xml
 <!-- Listener to listen on the request event and throw an exception in order to interuppt the process -->
@@ -44,17 +44,16 @@ Please note that due to an exception during the ERP communication, the message a
 </service>
 ```
 
-In order to return a valid response to the previous (checkout) process, an `onExceptionMessage` event listener is implemented, that reacts to the `LocalOrderRequiredException`.
+In order to return a valid response to the previous (checkout) process,
+the `onExceptionMessage` event listener reacts to the `LocalOrderRequiredException`.
 
-When the LocalOrderRequiredException is thrown the listener `onExceptionMessage` gets the exception and creates the valid Response Document filled with local data (orders).
+When the `LocalOrderRequiredException` is thrown, the listener `onExceptionMessage` gets the exception and creates the valid Response Document filled with local data (orders).
+In other words, the shop reacts like an ERP system, confirms the order and returns an order ID.
 
-In other words the shop reacts like an ERP system, confirms the order and returns an order id.
+The response has the same structure as a response returned from ERP, so no additional changes in the template are required.
 
-The response has the same structure as if it was returned from ERP, so no additional changes in the template are required.
-
-At the same time it will also generate and store the invoice data, and enerate a PDF with the invoice information. Then this information will be sent by mail.
-
-`LocalOrderManagementBundle/Resources/config/services.xml`:
+At the same time it also generates and stores invoice data, and generates a PDF with the invoice information.
+Then this information is sent by email.
 
 ``` xml
 <service id="siso_local_order_management.confirmation_listener" class="%siso_local_order_management.confirmation_listener.class%" lazy="true">
@@ -70,32 +69,17 @@ At the same time it will also generate and store the invoice data, and enerate a
 </service>
 ```
 
-## Generate the invoice data (new entity)
+## Generating invoice data (new entity)
 
 To store the invoice in the database Doctrine is used. There is a new entity with the invoice information.
 
-Steps to store the invoice data
-
-### 1. New invoice entity Invoice
+### Step 1. New invoice entity
 
 ??? note "`LocalOrderManagementBundle/Entity/Invoice.php`"
 
     ``` php
     <?php
-    /**
-     * Product silver.e-shop
-     *
-     * A powerful e-commerce solution for B2B online shops / portals and complex
-     * online applications that have access to ERP data, usually in real time.
-     * http://www.silversolutions.de/eng/Products/silver.e-shop
-     *
-     * This file contains the class Basket
-     *
-     * @copyright Copyright (C) 2013 silver.solutions GmbH. All rights reserved.
-     * @license see vendor/silversolutions/silver.e-shop/license_txt_ger.pdf
-     * @version $Version$
-     * @package silver.e-shop
-     */
+
     namespace Siso\Bundle\LocalOrderManagementBundle\Entity;
 
     use Doctrine\ORM\Mapping as ORM;
@@ -253,9 +237,7 @@ Steps to store the invoice data
     }
     ```
 
-### 2. New repository required to work with the entity invoice
-
-`LocalOrderManagementBundle/Resources/config/services.xml`:
+### Step 2. New repository to work with the invoice
 
 ``` xml
 <!-- repository service, it is an implementation of the invoice_repository -->
@@ -265,14 +247,14 @@ Steps to store the invoice data
 </service>
 ```
 
-To generate the invoice entity it will use the following data:
+Generating the invoice entity uses the following data:
 
-- Invoice number: if there is already any entry in the database it takes the last invoice number and increase it by one, otherwise, if the database is empty it gets the invoice number from the configuration.
-- Invoice prefix: It gets it from the configuration by siteaccess (see code below)
-- Basket id: It gets the current basket_id
-- Shop id: shop  id, it gets the value from the configuration (important in multishop context)  
+- Invoice number: if there is already any entry in the database it takes the last invoice number and increases it by one. Otherwise, if the database is empty, it gets the invoice number from the configuration.
+- Invoice prefix: from the configuration, per SiteAccess
+- Basket ID
+- Shop ID: from the configuration (important in multishop context)  
 
-`LocalOrderManagementBundle/Resources/config/local_order_management.yml`:
+In `LocalOrderManagementBundle/Resources/config/local_order_management.yml`:
 
 ``` yaml
 # Generate the invoice number for the local orders in multishops with no ERP
@@ -281,60 +263,59 @@ siso_local_order_management.default.invoice_number:
     prefix: 'RE'
 ```
 
-`EshopBundle/Resources/config/silver.eshop.yml`:
+In `EshopBundle/Resources/config/silver.eshop.yml`:
 
 ``` yaml
 #ShopID that is stored in the database
 siso_core.default.shop_id: 'MAIN'
 ```
 
-## Generate invoice PDF and send it by mail
+## Generating invoice PDF and sending it by email
 
-At the end of the process the invoice with all the required information is created, stored in the DB,  this invoice is generated in PDF format, and it will be send also as attachment by email.
+At the end of the process the invoice with all the required information is created and stored in the database.
+The invoice is in PDF format, and is sent also as attachment by email.
 
-To generate the PDF a tool called "wkhtmltopdf" is used, so this tool has to be installed on the server. For more information check the site <http://wkhtmltopdf.org> and use the last stable version ("0.12.4").
+To generate the PDF a tool called [`wkhtmltopdf`](http://wkhtmltopdf.org) is used,
+this tool has to be installed on the server, usinge the last stable version.
 
-To use the wkhtmltopdf is very easy, it only needs an URL with a valid HTML and the path where the PDF is going to be generated.
+The `wkhtmltopdf` tool needs only a URL with a valid HTML and the path where the PDF is going to be generated.
 
 ``` 
 Use: wkhtmltopdf [URL] [Path.pdf]
-Eg:  wkhtmltopdf http://harmony-dev.silver-eshop test.pdf
+e.g: wkhtmltopdf http://harmony-dev.silver-eshop test.pdf
 ```
 
-### Path of wkhtmltopdf configuration
+### Path of `wkhtmltopdf` configuration
 
-In some systems the path, where the tool is installed, can be different. So there is a new parameter to store the path of the "wkhtmltopdf".
-
-`LocalOrderManagementBundle/Resources/config/local_order_management.yml`
+You can configure the path where `wkhtmltopdf` is located in `LocalOrderManagementBundle/Resources/config/local_order_management.yml`:
 
 ``` 
 siso_local_order_management.default.wkhtmltopdf_server_path: '/usr/bin/wkhtmltopdf'
 ```
 
-### Config to enable/disable generation of footer and/or header on each page for invoice PDF
+### Enabling/disabling footer and header generation
 
 Usually the invoice PDF contains one header at the beginning and one footer at the end of the document.
 
-`LocalOrderManagementBundle/Resources/config/local_order_management.yml`
+You can also set the header and footer to be placed on each PDF page:
 
 ``` yaml
-#Enable or disable the possibility to generate footer and header which are displayed on all PDF pages
-siso_local_order_management.default.generate_footer_for_pdf: false
-siso_local_order_management.default.generate_header_for_pdf: false
+siso_local_order_management.default.generate_footer_for_pdf: true
+siso_local_order_management.default.generate_header_for_pdf: true
 ```
 
-With enabling (set to true) this configuration there will be a header/footer for each (printed) page of the PDF. In this case the header and/or footer will be generated using these separate templates:
+In this case the header and/or footer is generated using these separate templates:
 
 - `src/Silversolutions/Bundle/EshopBundle/Resources/views/Invoice/header.html.twig`
 - `src/Silversolutions/Bundle/EshopBundle/Resources/views/Invoice/footer.html.twig`
 
-These templates can be used directly or as a base to override them in the project. 
+These templates can be used directly or as a base for overriding. 
 
-### Process to create the PDF
+### PDF creation
 
-The PDF content (and the header and/or footer) will be stored as HTML and directly removed after usage.
+The PDF content (and the header and/or footer) is stored as HTML and directly removed after usage.
 
-??? note "`vendor/silversolutions/silver.e-shop/src/Siso/Bundle/LocalOrderManagementBundle/Service/InvoiceService.php`"
+??? note "`Siso/Bundle/LocalOrderManagementBundle/Service/InvoiceService.php`"
 
     ``` php
     public function generateInvoicePdf($invoiceNumber)
@@ -380,15 +361,15 @@ The PDF content (and the header and/or footer) will be stored as HTML and direct
 
 The first part of name of the PDF is translatable (`common.invoice_`) and the second part consist of a prefix and the invoice number.
 
-Example of the PDF generated [invoice_RE10000.pdf](../../../img/invoice_RE10000.pdf)
+For an example of a generated PDF see [invoice_RE10000.pdf](../../../img/invoice_RE10000.pdf).
 
-Once the PDF is generated and the order is stored in the database. It will attach this invoice PDF to the email that is send after the order confirmation.
+Once the PDF is generated and the order is stored in the database it is attached to the email that is sent after the order confirmation.
 
 ### Send emails with attachments
 
-The PDF will be attach to the email that generated the order process.
+The PDF is attached to the email generated in the order process.
 
-And additional to the standard email process it will send also another email the the owner of the shop. This shop owner is defined as a parameter in the configuration (It is defined by site-access).
+Additionally, the system sends copy of the email to the owner of the shop. The shop owner is defined as a parameter in the configuration (defined per SiteAccess).
 
 ``` yaml
 siso_core.default.ses_swiftmailer:
@@ -400,15 +381,12 @@ siso_core.default.ses_swiftmailer:
 
 ### Emails
 
-All these emails are based on the standard order confirmation email templates: 
-
+All these emails are based on the standard order confirmation email templates:
 `SilversolutionsEshopBundle:Checkout/Email:order_confirmation.txt.twig` and `SilversolutionsEshopBundle:Checkout/Email:order_confirmation.html.twig`
 
 #### Buyer
 
-Email with invoice attached
-
-[Example .eml](../../../img/local_order_1.eml)
+See [email with attached invoice](../../../img/local_order_1.eml).
 
 `vendor/silversolutions/silver.e-shop/src/Siso/Bundle/LocalOrderManagementBundle/EventListener/OrderConfirmationListener.php`:
 
@@ -420,12 +398,12 @@ if (!empty($recipientBuyer)) {
 }
 ```
 
-#### Sales Contact person
+#### Sales contact person
 
-Copy of the buyer email with only a few differences.
-Therefore the variable `is_sales_contact` is set to true.
+The Sales contact person receives a copy of the buyer email with only a few differences
+if the variable `is_sales_contact` is set to true.
 
-Send only if configured
+This email is sent only with the following configuration:
 
 ``` yaml
 #possible mode: config or customer
@@ -433,7 +411,7 @@ siso_checkout.default.order_confirmation.sales_email_mode: customer
 siso_checkout.default.order_confirmation.sales_email_address:
 ```
 
-`vendor/silversolutions/silver.e-shop/src/Siso/Bundle/LocalOrderManagementBundle/EventListener/OrderConfirmationListener.php`:
+In: `Siso/Bundle/LocalOrderManagementBundle/EventListener/OrderConfirmationListener.php`:
 
 ``` php
 $recipientSalesContact = $basket->getSalesConfirmationEmail();
@@ -447,17 +425,17 @@ if (!empty($recipientSalesContact)) {
 
 #### Owner of the shop
 
-This email is also a copy of the email that is send to the buyer.
-And special message and subject are set for it.
+Owner of the shop also receives a copy of the email that is sent to the buyer.
+A special message and subject are set for it.
 
 - `shop_owner_mail_subject` (Set in the email configuration)
 - `email_shop_owner_intro_text` (TextModule inside the backend)
 
-Therefore the variable `is_shop_owner` is set to true.
+This applies when the variable `is_shop_owner` is set to true.
 
 [Example .eml](../../../img/local_order_2.eml)
 
-`vendor/silversolutions/silver.e-shop/src/Siso/Bundle/LocalOrderManagementBundle/EventListener/OrderConfirmationListener.php`:
+`Siso/Bundle/LocalOrderManagementBundle/EventListener/OrderConfirmationListener.php`:
 
 ``` php
 $emailAddresses = $this->configResolver

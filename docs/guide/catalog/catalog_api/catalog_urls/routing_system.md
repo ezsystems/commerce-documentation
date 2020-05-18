@@ -1,14 +1,15 @@
 # Routing system
 
-## Motivation
-
-Since the eZ Commerce relies on the eZ Platform Content Management System, sometime the underlying routing rules of both systems cause conflicts. Also it is possible that the eZ Platform API stack is needed in eZ Commerce routes. In order to deal with this, an own route- / URL-matching solution was created.
+eZ Commerce uses its own routing/URL matching solution to avoid conflicting with the eZ Platform routing system
+and to enable using Platform API in commerce routes.
 
 !!! note
 
-    If a product url is not routed correctly (e.g. because of complex matching rules) it is possible to setup a direct routing for products. Please note that the first part of the URL (here "products") could be translated and in this case the following routing rules has to be setup for each translation.
+    If a product URL is not routed correctly (e.g. because of complex matching rules)
+    it is possible to set up a direct routing for products.
+    The first part of the URL (here `products`) could be translated, and in this case, the following routing rules have to be set up for each translation.
 
-    ``` 
+    ``` yaml
     product_route:
         path: /products/{url}
         defaults:
@@ -18,35 +19,29 @@ Since the eZ Commerce relies on the eZ Platform Content Management System, somet
             url: ".+"
     ```
 
-## Default Router
+## Default router
 
-!!! note "Namespace"
+The default router (`Silversolutions\Bundle\EshopBundle\Routing\StandardRouter`) checks each required URL.
 
-    `Silversolutions\Bundle\EshopBundle\Routing\StandardRouter`
+If the URL belongs to the [catalog element](../product_category_catalogelement.md) or [silver module](../../../../cookbook/silver.module.md),
+the router becomes active and redirects the user to the appropriate controller.
 
-There is a default routing system, that checks each required URL.
-
-If the URL belongs to the [catalog element](../product_category_catalogelement.md), or [silver module](../../../../cookbook/silver.module.md), the router become active and redirect the user to the appropriate controller.
-
-Class description:
-
-This router is a derived class from a chained router implementation. Thus it tries do match the URL to its own specifications. If no matching route could be found, it will pass the request back to the router chain in order to leave matching to another instance.
+This router is a derived class from a chained router implementation. It attempts to match the URL to its own specifications.
+If it cannot find a matching route, it passes the request back to the router chain in order to leave matching to another instance.
 
 Route matching priority:
 
-1.  If the request is in legacy mode, return and leave route matching to another instance.
-2.  Assume the request of a catalog object and try to find a responsible route by using the catalog data provider.
-3.  Assume the request of a catalog object and try to find a route by using the navigation service.
-4.  Assume the request of a silver.module object and try to find a route by using the navigation service.
-5.  Assume the request of a PIM object and try to find a route by using the catalog data provider.
-6.  Assume the request of a PIM object and try to find a route by using the navigation service.
-7.  If no route could be found at all, the route matching is left to another instance.
+1. If the request is in legacy mode, return and leave route matching to another instance.
+2. Assume the request of a catalog object and try to find a responsible route using the catalog data provider.
+3. Assume the request of a catalog object and try to find a route using the navigation service.
+4. Assume the request of a `silver.module` object and try to find a route using the navigation service.
+5. Assume the request of a PIM object and try to find a route using the catalog data provider.
+6. Assume the request of a PIM object and try to find a route using the navigation service.
+7. If no route can be found at all, the route matching is left to another instance.
 
 ### Priority
 
-The Router is defined with the priority of 280, so you can still add your own chain router, that will be executed before.
-
-`services.xml`:
+The router is defined with the priority of 280, so you can still add your own chain router that is executed before it.
 
 ``` xml
 <parameter key="ses_routers.standard_router.class">Silversolutions\Bundle\EshopBundle\Routing\StandardRouter</parameter>
@@ -71,6 +66,7 @@ The Router is defined with the priority of 280, so you can still add your own ch
 
 ## Usage of the navigation service
 
-In order to determine if the URL belongs to the catalog or [silver module](../../../../cookbook/silver.module.md), the navigation service or the [catalog data provider](../access_dataprovider_via_php) is used.
+In order to determine if a URL belongs to the catalog or [silver module](../../../../cookbook/silver.module.md),
+the navigation service or the [catalog data provider](../access_dataprovider_via_php) is used.
 
-Additionally the router uses the navigation service in order to set the [URL Mapping](../access_dataprovider_via_php) in order to set the proper URL.
+Additionally, the router uses the navigation service in order to set the [URL Mapping](../access_dataprovider_via_php) and set the proper URL.

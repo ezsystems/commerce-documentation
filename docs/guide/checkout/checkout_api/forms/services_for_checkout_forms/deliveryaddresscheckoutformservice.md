@@ -1,16 +1,11 @@
 # DeliveryAddressCheckoutFormService
 
-DeliveryAddressCheckoutFormService is a service that implements the logic for the CheckoutDeliveryAddress form. This service is assigned to the CheckoutDeliveryAddress form in the [configuration](../configuration_for_checkout_forms.md).
+`DeliveryAddressCheckoutFormService` (`Siso\Bundle\CheckoutBundle\Service\DeliveryAddressCheckoutFormService`) implements the logic for the `CheckoutDeliveryAddress` form.
+This service is assigned to the `CheckoutDeliveryAddress` form in the [configuration](../configuration_for_checkout_forms.md).
 
-This service implements both [CheckoutFormServiceInterface](interfaces_for_checkout_services.md#checkoutformserviceinterface) and the [CheckoutAddressFormServiceInterface](interfaces_for_checkout_services.md#checkoutaddressformserviceinterface)
+This service implements both [`CheckoutFormServiceInterface`](interfaces_for_checkout_services.md#checkoutformserviceinterface) and [`CheckoutAddressFormServiceInterface`](interfaces_for_checkout_services.md#checkoutaddressformserviceinterface).
 
-!!! note "Namespace"
-
-    `Siso\Bundle\CheckoutBundle\Service\DeliveryAddressCheckoutFormService`
-
-!!! note "Service ID"
-
-    `siso_checkout.checkout_form.delivery_address`
+The service ID is `siso_checkout.checkout_form.delivery_address`.
 
 ## Usage
 

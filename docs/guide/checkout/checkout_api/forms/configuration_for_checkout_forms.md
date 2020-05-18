@@ -1,16 +1,10 @@
 # Configuration for checkout forms
 
-In order to be able to override the forms and form logic in the a specific project, there is a generic configuration for checkout forms.
+You can use generic configuration for checkout forms to override the forms and form logic for your project.
 
-## Configuration class
+`Siso\Bundle\CheckoutBundle\Model\FormConfig` is the class managing the configuration.
 
-!!! note "Namespace"
-
-    `Siso\Bundle\CheckoutBundle\Model\FormConfig`
-
-## Usage of this configuration
-
-The checkout forms are configured using the file `vendor/silversolutions/silver.e-shop/src/Siso/Bundle/CheckoutBundle/Resources/config/checkout.yml` .
+The checkout forms are configured in `vendor/silversolutions/silver.e-shop/src/Siso/Bundle/CheckoutBundle/Resources/config/checkout.yml`.
 
 ``` yaml
 parameters:
@@ -52,17 +46,18 @@ parameters:
             service: siso_checkout.checkout_form.summary
 ```
 
-You are able to fully modify this configuration just by setting different values. It enables you to override e.g. the Form Type, Form Service or templates, or anything you need to change.
+You can modify this configuration to override e.g. the form type, form service or templates.
 
 !!! note
 
-    Please keep in mind that if you change the form model class, you should also override the form type, templates and also the form service cause the logic might changed.
+    If you change the form model class, you should also override the form type,
+    templates and form service, because the logic may have changed.
 
 ## Other configuration values
 
-Here the choices for the forms and preferred choices are set. The choices for the delivery address depends on the user status.
-
-`~/vendor/silversolutions/silver.e-shop/src/Siso/Bundle/CheckoutBundle/Resources/config/checkout.yml`:
+`vendor/silversolutions/silver.e-shop/src/Siso/Bundle/CheckoutBundle/Resources/config/checkout.yml`
+contains settings for forms and preferred choices.
+The choices for the delivery address depend on the user status.
 
 ``` yaml
 parameters:
@@ -96,15 +91,16 @@ parameters:
 
 !!! tip
 
-    The shipping and payment methods configuration can be also overriden by implementing an [Pre Form Checkout Event](../checkout_events.md) that will store the values in the dataMap.
+    You can also override the shipping and payment method configuration
+    by implementing a [Pre-form-checkout event](../checkout_events.md) that stores the values in the `dataMap`.
 
-!!! note "Important"
+!!! caution
 
-    Please keep in mind that the **value** of the preferred choice and the **index** of the choice must match.
+    The value of the preferred choice and the index of the choice must match.
 
-    Example:
+    For example:
 
-    ```
+    ``` yaml
     ses_forms.checkout_values:
         deliveryAddressStatusCustomerNr:
             sameAsInvoice: use_invoice_as_delivery

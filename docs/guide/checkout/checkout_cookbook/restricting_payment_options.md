@@ -1,8 +1,6 @@
-# Adapt the checkout
+# Restricting payment options
 
-## How to restrict Payment options
-
-First we need to override checkout service in project and define it in service.xml.
+To restrict payment options, first you need to override the checkout service in your project and define it in `service.xml`.
 
 ``` xml
 <parameter key="siso_checkout.form_entity.checkout_shipping_payment_type.class">MyCustomer\ProjectBundle\Form\Type\CheckoutShippingPaymentType</parameter>
@@ -19,9 +17,9 @@ First we need to override checkout service in project and define it in service.x
 </service>
 ```
 
-In the service we need to restrict building the form. In this example for blocked customers we do not offer invoice payment.
+In the service, restrict building the form. In this example you do not offer invoice payment to blocked customers.
 
-`CheckoutShippingPaymentType`:
+In `CheckoutShippingPaymentType`:
 
 ``` php
 public function buildForm(FormBuilderInterface $builder, array $options)

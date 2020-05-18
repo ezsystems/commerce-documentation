@@ -1,17 +1,19 @@
 # RMA process
 
-There is a simple RMA process in eZ Commerce. The goal is to inform user about the cancellation policies and give him the possible to return his goods - online as well.
+eZ Commerce offers a simple RMA (return merchandise authorization) process.
+The goal is to inform the user about the cancellation policies and give them the possible to return their goods - online as well.
 
-The cancellation process validates the input and sends an email to the shop webmaster. 
+The cancellation process validates the input and sends an email to the shop administrator. 
 
 ![](../../img/rma_process.png)
 
-## Links to the cancellation form in the footer
+## Link to cancellation form
 
-There is a link to the cancellation policies and online cancellation form displayed in the footer. The textmodules that are used to render the footer can be configured by siteaccess.
+There is a link to the cancellation policies and online cancellation form displayed in the footer.
+The text modules that are used to render the footer can be configured per SiteAccess:
 
 ``` yaml
-paramaters:
+parameters:
     siso_core.default.identifier_footer_block_address: footer_block_address
     siso_core.default.identifier_footer_block_company: footer_block_company
     siso_core.default.identifier_footer_block_service: footer_block_service
@@ -20,9 +22,10 @@ paramaters:
 
 ## Online cancellation form
 
-There is an online cancellation form. After the user submitted the form, an email is send to the admin. Therefore the [SendCancellationEmailDataProcessor](../../one_page_forms/one_page_forms_api/dataprocessors/dataprocessors_after_submitting/sendcancellationemaildataprocessor.md) is used.
+There is an online cancellation form.
+After the user submits the form, an email is sent to the admin using [SendCancellationEmailDataProcessor](../../one_page_forms/one_page_forms_api/dataprocessors/dataprocessors_after_submitting/sendcancellationemaildataprocessor.md).
 
-Please see the concept for the [one-page forms](../../one_page_forms/one_page_forms.md) as well.
+See [one-page forms](../../one_page_forms/one_page_forms.md) for more information.
 
 ``` html+twig
 {{ path('silversolutions_service', {'formTypeResolver': 'cancellation'}) }}
@@ -43,11 +46,12 @@ parameters:
 
 ## Online RMA form
 
-Furthermore there is also an online RMA form. After user submitted this form, an email is send to admin. There the [SendRmaEmailDataProcessor](../../one_page_forms/one_page_forms_api/dataprocessors/dataprocessors_after_submitting/sendrmaemaildataprocessor.md) is used.
+eZ Commerce also offers an online RMA form. After user submits this form, an email is sent to admin using [SendRmaEmailDataProcessor](../../one_page_forms/one_page_forms_api/dataprocessors/dataprocessors_after_submitting/sendrmaemaildataprocessor.md).
 
-The email receiver has to generate a delivery note with a return number and sends it to the customer. The customer then can return his goods together with return number.
+The email recipient has to generate a delivery note with a return number and send it to the customer.
+The customer then can return their goods together with return number.
 
-Please see the concept for the [one-page forms](../../one_page_forms/one_page_forms.md) as well.
+See [one-page forms](../../one_page_forms/one_page_forms.md) for more information.
 
 ``` html+twig
 {{ path('silversolutions_service', {'formTypeResolver': 'rma'}) }}
@@ -68,7 +72,8 @@ parameters:
 
 ## Checkout process
 
-In the summary checkout process there is a checkox, where the user has to confirm that he accepts the cancellation policies. Therefore a textmodule is used. The textmodule can be configured by siteaccess.
+In the summary checkout process there is a checkbox where the user has to confirm that they accept the cancellation policies.
+The text module that defines those texts can be configured per SiteAccess:
 
 ``` yaml
 paramaters:
@@ -77,7 +82,7 @@ paramaters:
 
 The cancellation policies are rendered in the confirmation email as well.
 
-This behavior can be generally switched off by siteaccess.
+You can switch this behavior off per SiteAccess:
 
 ``` yaml
 parameters:

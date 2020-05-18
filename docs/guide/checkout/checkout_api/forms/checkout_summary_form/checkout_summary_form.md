@@ -1,41 +1,35 @@
-# Checkout Summary Form
+# Checkout summary form
 
-!!! note "Namespace"
+`CheckoutSummary` (`\Siso\Bundle\CheckoutBundle\Form\CheckoutSummary`)
+extends `AbstractFormEntity`
+and manages the HTML form for order summary in checkout process.
 
-    `\Siso\Bundle\CheckoutBundle\Form\CheckoutSummary`
+## Fields
 
-This document describes the HTML form for order summary in checkout process.
-
-The order summary form derives from the `AbstractFormEntity`.
-
-## Input Fields
-
-|Name|Description|Assertations|
+|Name|Description|Assertions|
 |--- |--- |--- |
-|termsAndConditions|"Terms and conditions" Checkbox field|Boolean</br>NotBlank|
-|comment|Optional user comment/remark|String</br>Length, max = 255|
-|forceStep|True if user wants to force to next step with event errors|Boolean|
+|`termsAndConditions`|"Terms and conditions" Checkbox field|boolean</br>not blank|
+|`comment`|Optional user comment/remark|string</br>length, max = 255|
+|`forceStep`|`true` if the user wants to force moving to next step with event errors|boolean|
 
 ## Configuration
 
-Please see [Configuration for Checkout Forms](../configuration_for_checkout_forms.md).
+See [Configuration for Checkout Forms](../configuration_for_checkout_forms.md).
 
 ## Form Type
 
-!!! note "Namespace"
+`\Siso\Bundle\CheckoutBundle\Form\Type\CheckoutSummaryType`
+(service ID: `siso_checkout.form_entity.checkout_summary_type`)
+implements the setup for this form.
 
-    `\Siso\Bundle\CheckoutBundle\Form\Type\CheckoutSummaryType`
-
-implements the setup for this form. In this class further definitions are implemented. 
-
-This class is defined as a service in order to take advantage from other services, like TransService and to be able to read to configuration settings.
-
-The service definition ID for this form is: `siso_checkout.form_entity.checkout_summary_type`
+This class is defined as a service to take advantage of other services, such as `TransService`,
+and to be able to read configuration settings.
 
 !!! note
 
-    Please pay attention, that the scope of this service is set to 'prototype'. Against to default service behavior - a new instance of `Siso\Bundle\CheckoutBundle\Form\Type\CheckoutSummaryType` is created every time this service is called.
+    The scope of this service is set to `prototype`.
+    A new instance of  `Siso\Bundle\CheckoutBundle\Form\Type\CheckoutSummaryType` is created every time this service is called.
 
 ### Select values configuration
 
-More configuration values are set in the config file checkout.yml.
+More configuration values are set in the config file `checkout.yml`.

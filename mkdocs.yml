@@ -169,43 +169,40 @@ nav:
             - 'Breadcrumbs cookbook': 'guide/breadcrumbs/breadcrumbs_cookbook.md'
             - 'Breadcrumbs templates': 'guide/breadcrumbs/breadcrumbs_templates.md'
             - 'Breadcrumbs FAQ': 'guide/breadcrumbs/breadcrumbs_faq.md'
-        - Caching in the shop:
-            - 'Caching in the shop': 'guide/caching_in_the_shop/caching_in_the_shop.md'
+        - Cache:
+            - 'Cache': 'guide/cache/cache.md'
             - Content cache refresh:
-                - 'Content cache refresh': 'guide/caching_in_the_shop/content_cache_refresh/content_cache_refresh.md'
-                - 'Content cache refresh. Technical implementation': 'guide/caching_in_the_shop/content_cache_refresh/content_cache_refresh_technical_implementation.md'
-                - 'HTTP caching': 'guide/caching_in_the_shop/content_cache_refresh/http_caching.md'
-            - 'Caching FAQ': 'guide/caching_in_the_shop/caching_faq.md'
-            - 'Translation cache for Textmodules': 'guide/caching_in_the_shop/translations_cache_for_textmodules.md'
-            - 'Basketpreview cache and user-specific data': 'guide/caching_in_the_shop/basketpreview_cache_and_user_specific_data.md'
+                - 'Content cache refresh': 'guide/cache/content_cache_refresh/content_cache_refresh.md'
+                - 'HTTP caching': 'guide/cache/content_cache_refresh/http_caching.md'
+            - 'Caching FAQ': 'guide/cache/caching_faq.md'
+            - 'Translation cache for Text modules': 'guide/cache/translations_cache_for_textmodules.md'
+            - 'Basketpreview cache and user-specific data': 'guide/cache/basketpreview_cache_and_user_specific_data.md'
         - Catalog:
             - 'Catalog ': 'guide/catalog/catalog.md'
             - Catalog feature list:
-                - 'Catalog feature list': 'guide/catalog/catalog_feature_list/catalog_feature_list.md'
                 - Product variants:
-                    - 'Product variants': 'guide/catalog/catalog_feature_list/product_variants/product_variants.md'
-                    - 'Variants and ERP system': 'guide/catalog/catalog_feature_list/product_variants/variants_and_erp_system.md'
-                    - 'How to manage variants (backend)': 'guide/catalog/catalog_feature_list/product_variants/how_to_manage_variants_backend.md'
-                - 'Generate PDF': 'guide/catalog/catalog_feature_list/generate_pdf.md'
-                - 'Supported Field Types for products in eZ': 'guide/catalog/catalog_feature_list/supported_field_types_for_products_in_ez.md'
-                - 'Catalog data providers - Products from different sources': 'guide/catalog/catalog_feature_list/catalog_data_providers_products_from_different_sources.md'
+                    - 'Product variants': 'guide/catalog/catalog_features/product_variants/product_variants.md'
+                    - 'Variants and ERP system': 'guide/catalog/catalog_features/product_variants/variants_and_erp_system.md'
+                - 'Generate PDF': 'guide/catalog/catalog_features/generate_pdf.md'
+                - 'Supported Field Types for products in eZ Platform': 'guide/catalog/catalog_features/supported_field_types_for_products_in_ez.md'
+                - 'Catalog data providers': 'guide/catalog/catalog_features/catalog_data_providers.md'
             - Catalog API:
                 - 'Catalog API': 'guide/catalog/catalog_api/catalog_api.md'
-                - 'Access dataprovider via PHP': 'guide/catalog/catalog_api/access_dataprovider_via_php.md'
+                - 'Access data provider via PHP': 'guide/catalog/catalog_api/access_dataprovider_via_php.md'
                 - 'Product category (CatalogElement)': 'guide/catalog/catalog_api/product_category_catalogelement.md'
                 - 'ProductNode and OrderableProductNode': 'guide/catalog/catalog_api/productnode_and_orderableproductnode.md'
                 - VariantProductsNode and OrderableVariantNode:
-                    - 'How to create VariantProductNode': 'guide/catalog/catalog_api/variantproductsnode_and_orderablevariantnode/how_to_create_variantproductnode.md'
+                    - 'Create VariantProductNode': 'guide/catalog/catalog_api/variantproductsnode_and_orderablevariantnode/creating_variantproductnode.md'
                     - 'SimpleVariantCharacteristics': 'guide/catalog/catalog_api/variantproductsnode_and_orderablevariantnode/simplevariantcharacteristics.md'
                     - 'VariantProductNode and OrderableVariantNode': 'guide/catalog/catalog_api/variantproductsnode_and_orderablevariantnode/variantproductnode_and_orderablevariantnode.md'
-                    - 'Variant Services': 'guide/catalog/catalog_api/variantproductsnode_and_orderablevariantnode/variant_services.md'
+                    - 'Variant services': 'guide/catalog/catalog_api/variantproductsnode_and_orderablevariantnode/variant_services.md'
                 - 'ProductType': 'guide/catalog/catalog_api/producttype.md'
                 - 'ProductType search': 'guide/catalog/catalog_api/producttype_search.md'
                 - Catalog URLs:
                     - 'Catalog URLs': 'guide/catalog/catalog_api/catalog_urls/catalog_urls.md'
                     - 'Routing system': 'guide/catalog/catalog_api/catalog_urls/routing_system.md'
                 - 'Customer SKUs': 'guide/catalog/catalog_api/customer_skus.md'
-                - 'CMS dataprovider': 'guide/catalog/catalog_api/cms_dataprovider.md'
+                - 'Content model data provider': 'guide/catalog/catalog_api/content_model_dataprovider.md'
             - Catalog UI:
                 - 'Catalog UI': 'guide/catalog/catalog_ui/catalog_ui.md'
                 - 'Templates for catalog': 'guide/catalog/catalog_ui/templates_for_catalog.md'
@@ -213,18 +210,16 @@ nav:
                 - 'Products UI': 'guide/catalog/catalog_ui/products_ui.md'
                 - 'Product variants UI': 'guide/catalog/catalog_ui/product_variants_ui.md'
             - Catalog cookbook:
-                - 'How to extend a CatalogFactory': 'guide/catalog/catalog_cookbook/how_to_extend_a_catalogfactory.md'
-                - 'How to export products': 'guide/catalog/catalog_cookbook/how_to_export_products.md'
-                - 'How to set up variants from external source': 'guide/catalog/catalog_cookbook/how_to_set_up_variants_from_external_source.md'
+                - 'Extending a CatalogFactory': 'guide/catalog/catalog_cookbook/extending_a_catalogfactory.md'
+                - 'Exporting products': 'guide/catalog/catalog_cookbook/exporting_products.md'
+                - 'Setting up variants from external source': 'guide/catalog/catalog_cookbook/setting_up_variants_from_external_source.md'
             - 'Catalog configuration': 'guide/catalog/catalog_configuration.md'
             - 'Catalog FAQ': 'guide/catalog/catalog_faq.md'
         - Checkout:
             - 'Checkout': 'guide/checkout/checkout.md'
             - Checkout features:
-                - 'General logic in checkout': 'guide/checkout/checkout_features/general_logic_in_checkout.md'
                 - Order:
-                    - 'Confirmation of the order': 'guide/checkout/checkout_features/order/confirmation_of_the_order.md'
-                    - 'Confirmation e-mail': 'guide/checkout/checkout_features/order/confirmation_e_mail.md'
+                    - 'Order confirmation email': 'guide/checkout/checkout_features/order/order_confirmation.md'
                     - 'Local order process': 'guide/checkout/checkout_features/order/local_order_process_with_invoice_in_pdf.md'
                     - 'Order splitting for multishop': 'guide/checkout/checkout_features/order/order_splitting_for_multishop.md'
                 - 'RMA process': 'guide/checkout/checkout_features/rma_process.md'
@@ -235,11 +230,11 @@ nav:
                 - 'Checkout events': 'guide/checkout/checkout_api/checkout_events.md'
                 - Forms:
                     - 'Configuration for checkout forms': 'guide/checkout/checkout_api/forms/configuration_for_checkout_forms.md'
-                    - 'Checkout Invoice Address Form': 'guide/checkout/checkout_api/forms/checkout_invoice_address_form.md'
-                    - 'Checkout Delivery Address Form': 'guide/checkout/checkout_api/forms/checkout_delivery_address_form.md'
-                    - 'Checkout Shipping Payment Form': 'guide/checkout/checkout_api/forms/checkout_shipping_payment_form.md'
-                    - Checkout summary form:
-                        - 'Checkout Summary Form': 'guide/checkout/checkout_api/forms/checkout_summary_form/checkout_summary_form.md'
+                    - 'Invoice address form': 'guide/checkout/checkout_api/forms/checkout_invoice_address_form.md'
+                    - 'Delivery address form': 'guide/checkout/checkout_api/forms/checkout_delivery_address_form.md'
+                    - 'Shipping payment form': 'guide/checkout/checkout_api/forms/checkout_shipping_payment_form.md'
+                    - Summary form:
+                        - 'Summary form': 'guide/checkout/checkout_api/forms/checkout_summary_form/checkout_summary_form.md'
                         - 'Order summary': 'guide/checkout/checkout_api/forms/checkout_summary_form/order_summary.md'
                     - Services for checkout forms:
                         - 'Interfaces for checkout services': 'guide/checkout/checkout_api/forms/services_for_checkout_forms/interfaces_for_checkout_services.md'
@@ -248,8 +243,8 @@ nav:
                         - 'ShippingPaymentCheckoutFormService': 'guide/checkout/checkout_api/forms/services_for_checkout_forms/shippingpaymentcheckoutformservice.md'
                         - 'SummaryCheckoutFormService': 'guide/checkout/checkout_api/forms/services_for_checkout_forms/summarycheckoutformservice.md'
             - Checkout cookbook:
-                - 'Checkout cookbook': 'guide/checkout/checkout_cookbook/checkout_cookbook.md'
-                - 'Adapt the checkout': 'guide/checkout/checkout_cookbook/adapt_the_checkout.md'
+                - 'Express checkout': 'guide/checkout/checkout_cookbook/express_checkout.md'
+                - 'Restricting payment options': 'guide/checkout/checkout_cookbook/restricting_payment_options.md'
             - 'Checkout templates': 'guide/checkout/checkout_templates.md'
             - 'Checkout FAQ': 'guide/checkout/checkout_faq.md'
         - Customers:

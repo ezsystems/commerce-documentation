@@ -1,16 +1,12 @@
 # InvoiceAddressCheckoutFormService
 
-InvoiceAddressCheckoutFormService is a service that implements the logic for the CheckoutInvoiceAddress form.This service is assigned to the CheckoutInvoiceAddress form in the [configuration](../configuration_for_checkout_forms.md).
+`InvoiceAddressCheckoutFormService` (`Siso\Bundle\CheckoutBundle\Service\InvoiceAddressCheckoutFormService`)
+implements the logic for the `CheckoutInvoiceAddress` form.
+This service is assigned to the `CheckoutInvoiceAddress` form in the [configuration](../configuration_for_checkout_forms.md).
 
-This service implements both [CheckoutFormServiceInterface](interfaces_for_checkout_services.md#checkoutformserviceinterface) and the [CheckoutAddressFormServiceInterface](interfaces_for_checkout_services.md#checkoutaddressformserviceinterface)
+This service implements both [`CheckoutFormServiceInterface`](interfaces_for_checkout_services.md#checkoutformserviceinterface) and [`CheckoutAddressFormServiceInterface`](interfaces_for_checkout_services.md#checkoutaddressformserviceinterface)
 
-!!! note "Namespace"
-
-    `Siso\Bundle\CheckoutBundle\Service\InvoiceAddressCheckoutFormService`
-
-!!! note "Service ID"
-
-    `siso_checkout.checkout_form.invoice_address`
+The service ID is `siso_checkout.checkout_form.invoice_address`.
 
 ## Usage
 

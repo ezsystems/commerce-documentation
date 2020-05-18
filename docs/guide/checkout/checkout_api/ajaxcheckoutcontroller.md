@@ -1,25 +1,17 @@
 # AjaxCheckoutController
 
-The `AjaxCheckoutController` is the subcontroller responsible for the phalanx calls in the one-page checkout process.
+`AjaxCheckoutController` (`Siso\Bundle\CheckoutBundle\Controller\AjaxCheckoutController`) is the subcontroller responsible for Phalanx calls in the one-page checkout process.
 
-!!! note "Namespace"
+`AjaxCheckoutController` first calls `validateStepAction()` to calculate the current possible step depending on:
 
-    `Siso\Bundle\CheckoutBundle\Controller\AjaxCheckoutController`
+- form validation
+- submitted data (checkboxes)
+- customer data
+- basket (e.g. calling `#summary` when no delivery address is filled redirects to the delivery step)
 
-## Steps
+## How the steps are handled?
 
-AjaxCheckoutController first calls validateStepAction for calculating the current possible step depending on :
-
-1. form validation
-1. submitted data (checkboxes)
-1. customer data
-1. basket (eg. calling \#summary when no delivery address is filled will cause redirection to delivery step)
-
-### How the steps are handled?
-
-There is an interface defined for the steps handling.
-
-`Siso/Bundle/CheckoutBundle/Api/CheckoutStepServiceInterface.php`
+The `Siso/Bundle/CheckoutBundle/Api/CheckoutStepServiceInterface` interface defines steps for handling the checkout process.
 
 ``` php
 /**
@@ -39,11 +31,12 @@ There is an interface defined for the steps handling.
 public function getNextValidStep($currentStep, $requestedStep, $userStatus, Basket $basket);
 ```
 
-`Siso/Bundle/CheckoutBundle/Service/DefaultCheckoutStepService.php`
+The default implementation of this interface is `DefaultCheckoutStepService` (`Siso/Bundle/CheckoutBundle/Service/DefaultCheckoutStepService.php`)
+which ensures that the user is forwarded to the correct step and all necessary data is stored in the basket.
+It checks whether the user is able to see the requested step. If they do not have the proper permissions,
+they are forwarded to the last possible step.
 
-Default implementation of this interface is *DefaultCheckoutStepService,* that ensures that user is forwarded to the correct step and all necessary data is stored in the basket. The  goal is to check if user is able to see the requested step. If he has no right to it, he will be forwarded to the last possible step.
-
-The checkout steps are defined here.
+The checkout steps are defined in the following method:
 
 ``` php
 public static final function getAllCheckoutSteps()
@@ -58,7 +51,7 @@ public static final function getAllCheckoutSteps()
 }
 ```
 
-`validateStepAction` makes usage of this service to determine the correct step.
+`validateStepAction()` uses this service to determine the correct step.
 
 ``` php
 /** @var CheckoutStepServiceInterface $checkoutStepService */
@@ -68,9 +61,8 @@ $requestedStep = isset($data[0]['step']) && $data[0]['step'] ? $data[0]['step'] 
 $currentStep = $checkoutStepService->getNextValidStep($currentStep, $requestedStep, $userStatus, $basket);
 ```
 
-If you want to skip a step in checkout process, you will need to override the *DefaultCheckoutStepService*. When skipping steps, please make sure that you store all required data in the basket.
-
-`DefaultCheckoutStepService` service definition:
+If you want to skip a step in the checkout process, override `DefaultCheckoutStepService`.
+When skipping steps, make sure that you store all required data in the basket.
 
 ``` xml
 <parameter key="siso_checkout.default_checkout_step_service.class">Siso\Bundle\CheckoutBundle\Service\DefaultCheckoutStepService</parameter>
@@ -81,21 +73,22 @@ If you want to skip a step in checkout process, you will need to override the *D
 </service>
 ```
 
-In the `validateStepAction` Checkout Events are thrown, that allows you to interrupt the checkout process if required.
+In the `validateStepAction()` checkout events are thrown that enable you to interrupt the checkout process.
 
-#### `validateLogin`
+### `validateLogin()`
 
 |||||
 |---|---|---|---|
 |form valid||||
 |submitted data||||
-|customer data|anonymous|customer without no|customer with no|
+|customer data|anonymous|customer without number|customer with number|
 |current step|login|delivery|shippingPayment|
 
+This method displays the login form with possible options for registration and ordering as a guest. 
 
-#### `validateInvoice`
+### `validateInvoice()`
 
-form value: true
+form valid: true
 
 ||||
 |---|---|---|
@@ -103,7 +96,7 @@ form value: true
 |customer data|||
 |current step|shippingPayment|delivery|
 
-form value: false
+form valid: false
 
 ||||
 |---|---|---|
@@ -111,7 +104,10 @@ form value: false
 |customer data|	customer without no|else|
 |current step|delivery|invoice|
 
-#### `validateDelivery`
+On success this method stores the invoice address in the basket.
+If the `invoiceAsDelivery` checkbox is ticked, the method also stores the delivery address. 
+
+### `validateDelivery()`
 
 ||||
 |---|---|---|
@@ -120,7 +116,12 @@ form value: false
 |customer data|||
 |current step|shippingPayment|delivery|
 
-#### `validateShippingPayment`
+This method creates the form based on configuration and determines which `addressStatus` radio button option should be chosen.
+There are different scenarios for anonymous users, users without and with a customer number.   
+When the user has no default delivery address, the option to display existing addresses is disabled.  
+On success, the method stores the delivery address in the basket. If `saveAddress` was checked it stores the address in `CustomerProfileData`.  
+
+### `validateShippingPayment()`
 
 ||||
 |---|---|---|
@@ -129,7 +130,9 @@ form value: false
 |customer data|||
 |current step|summary|shippingPayment|
 
-#### `validateSummary`
+On success the method stores the shipping/payment method in the basket.  
+
+### `validateSummary()`
 
 ||||
 |---|---|---|
@@ -138,71 +141,39 @@ form value: false
 |customer data|||
 |current step|summary|summary|
 
-#### Steps for phalanx actions on radio buttons on delivery address
+On success this method  stores data in basket and copies the basket with state `confirmed`.
+Next, it redirects the user to order confirmation.
 
-|||||
-|--- |--- |--- |--- |
-|action name|getExistingDelivery|getEmptyDelivery|getDeliveryFromInvoice|
-|Current step|delivery|delivery|delivery|
+In this step, the total gross amount may be rounded to two decimal digits.
+This is because the amount is used to process the payment later on and nearly all payment transaction don't allow values with more than two decimal digits.
+You can disable this behavior by setting `round_totals` to `false`:
 
-## Logic
+`siso_checkout.default.payment.round_totals: false`
 
-1. validateLogin
+### Delivery step
 
-    It displays login form, possible options for registration and option to order as a guest. 
-     
-2. validateInvoice
+Phalanx performs the following actions during the delivery step:
 
-    On success it stores inovice address in basket. If a checkbox "invoiceAsDelivery" was set then it stores also delivery address in the basket.  
+1. `getExistingDelivery()` is triggered with the delivery `addressStatus` option. It looks for customer delivery parties and fills the form with them. Sets the default address if no data set. Returns delivery template form.  
+2. `getEmptyDelivery()` is triggered with delivery `addressStatus` option. It returns an empty delivery template form.
+3. `getDeliveryFromInvoice()` is triggered with delivery `addressStatus` option. It returns a delivery template form based on a previously filled invoice form.
 
-3. validateDelivery
+### Validation step
 
-    The form is created based on configuration and determines which addressStatus radio button option should be chosen. There are different scenario for anonymous, user without and with Customer Number.   
-    When user have no default delivery address, option with displaying "existing" addresses is disabled.  
-    On success it stores delivery address in basket and also if saveAddress was checked it stores the address in the CustomerProfileData.  
-
-4. validateShippingPayment
-
-    On success it stores shipping/payment method in basket.  
-
-5. validateSummary
-
-    On success:
-      
-    - it stores data in basket  
-    - copies the basket with state "Confirmed"  
-    - redirects to order confirmation
-
-    In this step, the total gross amount may be rounded to 2 decimal digits. This is because the amount is used to process the payment later on and nearly all payment transaction don't allow values with more than 2 decimal digits. It depends to some configuration:
-    
-    `#checkout.ymlsiso_checkout.default.payment.round_totals: true`
-    
-    The default is `true`. If the rounding should be avoided, it can be set to `false`.
-
-6. getExistingDelivery
- 
-    Triggered with delivery addressStatus option. It looks for customer delivery Parties and files the form with them. Sets the default address if no data set. Returns delivery template form.  
-
-7. getEmptyDelivery
-
-    Triggered with delivery addressStatus option. Returns empty delivery template form.
-    
-8. getDeliveryFromInvoice
-
-    Triggered with delivery addressStatus option. Returns delivery template form based on invoice form previously filled.
-      
-9. validateStep
-
-    Validates the step for which the request was made and return available current step. This prevents from going into steps in which user cannot be.   
-    Additionally, if user is logged with customer number, the request to NAV will take place in order to get latest invoice address. The reason for that is to prevent showing incorrect address in the basket for the user.
+`validateStep()` validates the step for which the request was made and returns the current step.
+This prevents the user from reaching steps they shouldn't have access to.
+Additionally, if the user is logged in with a customer number, the request to the ERP takes place to get the latest invoice address.
+This prevents showing incorrect addresses in the basket for the user.
 
 ### Overriding the controller
 
-To override specific or all acions of this controller, you will need to create a new controller which extends the AjaxCheckoutController (for example NewAjaxCheckoutController). In the new controller you can reimplementend the actions (For example validateSummary). In order to activate the new Controller for Ajax requests, you will need to register the new controller class as the controller for Ajax requests with the type 'checkout'. This is done by a parameter:
+To override actions from `AjaxCheckoutController`, create a new controller which extends `AjaxCheckoutController`.
+In the new controller you can reimplementend the actions.
+Then, register the new controller as the controller for Ajax requests with the type `checkout`:
 
 ``` yaml
 parameters:
     siso_eshop.ajax_controller.checkout: "YourBundle:NewAjaxCheckout"
 ```
 
-For more information please have a look at [Ajax (Phalanx)](../../../cookbook/ajax_phalanx.md).
+For more information, see [Ajax (Phalanx)](../../../cookbook/ajax_phalanx.md).

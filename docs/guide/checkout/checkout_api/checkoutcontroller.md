@@ -1,19 +1,11 @@
 # CheckoutController
 
-The CheckoutController is the entry place in the checkout process.
+`CheckoutController` (`Siso\Bundle\CheckoutBundle\Controller\CheckoutController`) is the entry point for the checkout process.
 
-!!! note "Namespace"
+## indexAction()
 
-    `Siso\Bundle\CheckoutBundle\Controller\CheckoutController`
+Before the user enters the checkout process (`indexAction()`), [Checkout Events](checkout_events.md) are thrown
+that enable you to interrupt the checkout process if required.
 
-## IndexAction
-
-Before users enter the checkout process (index action), [Checkout Events](checkout_events.md) are thrown, that allows you to interrupt the checkout process if required.
-
-!!! tip "URL"
-
-    `/checkout`
-
-!!! caution
-
-    When client calls indexAction it triggers `validateStepAction`. Depending in which step customer can be, it forwards the call to that AjaxController method. 
+Calling `indexAction()` triggers `validateStepAction()`.
+Depending on which step the user is in, it forwards the call to that `AjaxController` method. 

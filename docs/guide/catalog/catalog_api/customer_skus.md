@@ -1,45 +1,48 @@
 # Customer SKUs
 
-Advanced version only
+In some projects (B2B) customers know products by their own article number.
+This means that there is the 'real' article number (SKU), that comes from the ERP,
+but when the customer e.g. searches for a product in the shop, they search for an article number that is only known to them.
 
-## Introduction
+The shop often knows these customer article numbers, because it imports them from ERP.
+They are taken into account in search and quick order management.
 
-In some projects (B2B) customers know products by their own article number. That means, that there is the 'real' article number (sku), that comes from the ERP, but when the customer e.g. searches for a product in the shop, he searches for an article number, that is only known to him.
+You can activate/deactivate `CustomerSkuService` using the `customer_sku_service_active` configuration parameter:
 
-In the shop we often know these customer article numbers, because we import them from ERP, but we have to consider them in shop in several places:
+``` yaml
+#values: true or false
+siso_core.default.customer_sku_service_active: true
+```
 
-|Considered|Not Considered (yet)|
-|--- |--- |
-|Search</br>Quickorder|Autosuggest|
+## CustomerSkuService
 
-!!! note "Important"
+Custom SKUs are handled using the `Silversolutions\Bundle\EshopBundle\Service\CustomerSkuService` service
+(ID: `siso_core.customer_sku_service`).
 
-    It is possible to activate/deactivate the service if necessary by setting the parameter to the desired value:
+`CustomerSkuService` is used to fetch the `sku` or `customer_sku`. For that purpose the following methods are available:
 
-    `silver.eshop.yml`:
-
-    ``` yaml
-    #here you can enable/disable the CustomerSkuService
-    #values: true or false
-    siso_core.default.customer_sku_service_active: true
-    ```
+``` php
+public function getSku($customerSku, $customerNumber = null)
+public function getCustomerSku($sku, $customerNumber)
+public function getOneByCustomerSku($customerSku, $customerNumber = null)
+public function getOneBySku($sku, $customerNumber)
+```
 
 ### Search changes
 
-An event listener was implemented in the search bundle: `Siso/Bundle/SearchBundle/EventListener/CustomerSkuEshopQueryListener.php`
+`Siso/Bundle/SearchBundle/EventListener/CustomerSkuEshopQueryListener` in the search bundle checks the search term.
+If it is a customer SKU, the event listener replaces it before sending it to Solr.
 
-This event listener checks the search term and if it is a customer sku, it exchanges it before send to solr.
+### Quick order changes
 
-### Quickorder changes
+Quick order supports using the customer SKU for all functionalities:
 
-Also in the quickorder the customer sku is supported for all functionalities:
+- updating the quick order
+- adding to basket
+- uploading CSV
+- inputting CSV content
 
-- update quickorder
-- add to basket
-- upload csv
-- input csv content
-
-Before the sku is processed, it is checked for customer sku and exchanged if this is the case.
+Before the SKU is processed, it is checked for customer SKU and replaced if this is the case.
 
 ## Customer SKU table
 
@@ -75,36 +78,9 @@ Indexes in ses_customer_sku:
 +------------------+------------+---------------------+--------------+-----------------+-----------+-------------+----------+--------+------+------------+---------+---------------+
 ```
 
-## CustomerSkuService
+## Twig functions
 
-``` 
-id: siso_core.customer_sku_service
-namespace: Silversolutions\Bundle\EshopBundle\Service\CustomerSkuService;
-```
-
-The CustomerSkuService is used to fetch the sku or customer_sku. For that purpose two methods are available:
-
-Methods:
-
-``` php
-public function getSku($customerSku, $customerNumber = null)
-public function getCustomerSku($sku, $customerNumber)
-public function getOneByCustomerSku($customerSku, $customerNumber = null)
-public function getOneBySku($sku, $customerNumber)
-```
-
-## Twig methods
-
-Two twig functions have been added, they can be used to output SKUs in a template
-
-`SilvercommonExtension.php`:
-
-``` 
-new \Twig_SimpleFunction('get_customer_sku',                array($this, 'getCustomerSku')),
-new \Twig_SimpleFunction('get_sku',                         array($this, 'getSku')),
-```
-
-Usage in templates:
+Two Twig functions can output SKUs in a template:
 
 ``` 
 {{ get_sku('customer_sku', 'customer_number') }}

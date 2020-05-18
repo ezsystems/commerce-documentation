@@ -1,28 +1,25 @@
 # ProductType search
 
-## Introduction and configuration
+The `ProductType` catalog element can appear in the search result of products.
 
-The Product Type catalog element can appear in the search result of products. Now products and product types can appear in the same search result.
+For this to happen you need to modify the configuration by adding `ses_product_type` to the product list or to product search.
 
-For this to happen you can modify the configuration adding ses\_product\_type to the product list or to the product search
-
-There are two additional configuration that will enable or disable the use of the prouctType flag display in search and display in product list
-
-use\_display\_in\_search\_flag: true
+`use_display_in_product_list_flag` enables or disables the use of the `productType` flag when displaying in search and in product list:
 
 `use_display_in_product_list_flag: true`
 
-Additionally a product type will index all the data from its products. However this can be disabled using the following configuration:
+Additionally, a Product Type indexes all data from its products.
+You can disable this using the following configuration:
 
-`cp_to_product_type: false` (Disabling this will lower indexer times but product data will not be indexed along product type)
+`cp_to_product_type: false`
+
+Disabling this lowers indexer times but product data is not indexed alongside Product Types.
 
 ## Template
 
-ProductType has a new template for the search result:
+Search results display Product Types using the `src/Silversolutions/Bundle/EshopBundle/Resources/views/Catalog/listProductTypeNode.html.twig` template.
 
-src/Silversolutions/Bundle/EshopBundle/Resources/views/Catalog/listProductTypeNode.html.twig
-
-In search result a new twig function was implemented to select the correct template.
+The `get_search_result_template` Twig function selects the correct template:
 
 ``` php
 {# Search result of products, product types and categories #}

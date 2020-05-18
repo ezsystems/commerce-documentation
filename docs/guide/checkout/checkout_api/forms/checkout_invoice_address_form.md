@@ -1,29 +1,26 @@
-# Checkout Invoice Address Form
+# Invoice address form
 
-## Model Class
+## Model class
 
-This class extends the `AbstractFormEntity` and implements the `CheckoutAddressInterface`.
+`CheckoutInvoiceAddress` (`Siso\Bundle\CheckoutBundle\Form\CheckoutInvoiceAddress`)
+extends `AbstractFormEntity` and implements `CheckoutAddressInterface`.
 
-!!! note "Namespace"
+## Fields
 
-    `Siso\Bundle\CheckoutBundle\Form\CheckoutInvoiceAddress`
-
-## Input Fields
-
-|Name|Description|Assertations|
+|Name|Description|Assertions|
 |--- |--- |--- |
-|company|name or company of the user|Not blank</br>min = 2</br>max = 30|
-|companySecond|second name or company of the user|min = 2</br>max = 30|
-|street|street of the company|String</br>Not blank</br>min = 2</br>max = 30|
-|addressSecond|second address of the user|String</br>min = 2</br>max = 30|
-|zip|zip of the user|String</br>Not blank (excluding Ireland)</br>min=2</br>max=30|
-|city|city of the user|String</br>Not blank</br>min=2</br>max=30|
-|country|country of the user|String</br>Not blank|
-|county|county of the user|String</br>min=2</br>max=30|
-|phone|phone number of the user|SesAssert\Phone|
-|email|email of the user|Not blank</br>SesAssert\Email|
-|invoiceSameAsDelivery|True if user wants to use this address as delivery address|Boolean|
-|forceStep|True if user wants to force to next step with event errors|Boolean|
+|`company`|User or company name|not blank</br>min = 2</br>max = 30|
+|`companySecond`|Second name|min = 2</br>max = 30|
+|`street`|Street name|not blank</br>min = 2</br>max = 30|
+|`addressSecond`|Optional second address|min = 2</br>max = 30|
+|`zip`|ZIP number|not blank (excluding Ireland)</br>min = 3</br>max = 20</br>mumeric|
+|`city`|City name|not blank</br>min = 2</br>max = 30|
+|`country`|Country name|not blank|
+|`county`|County name|min = 2</br>max = 30|
+|`phone`|Phone number|`SesAssert\Phone`|
+|`email`|Email address|`SesAssert\Email`|
+|`invoiceSameAsDelivery`|`true` if the user wants to use this address as delivery address|boolean|
+|`forceStep`|`true` if the user wants to force move to the next step with event errors|boolean|
 
 ## Configuration
 
@@ -31,19 +28,17 @@ The parameters are set in the [Configuration for Checkout Forms](configuration_f
 
 ## Form Type
 
-!!! note "Namespace"
+`Siso\Bundle\CheckoutBundle\Form\Type\CheckoutInvoiceAddressType`
+(service ID: `siso_checkout.form_entity.checkout_invoice_address_type`)
+implements the setup for this form.
 
-    `Siso\Bundle\CheckoutBundle\Form\Type\CheckoutInvoiceAddressType`
-
-implements the setup for this form. In this class further definitions are implemented. 
-
-This class is defined as a service in order to take advantage from other services, like TransService and to be able to read the configuration settings.
-
-The service definition ID for this form is: `siso_checkout.form_entity.checkout_invoice_address_type`
+This class is defined as a service to take advantage of other services, such as `TransService`,
+and to be able to read configuration settings.
 
 !!! note 
 
-    Please pay attention, that the scope of this service is set to 'prototype'. Against to default service behavior - a new instance of `Siso\Bundle\CheckoutBundle\Form\Type\CheckoutInvoiceAddressType` is created every time this service is called.
+    The scope of this service is set to `prototype`.
+    A new instance of `CheckoutInvoiceAddressType` is created every time this service is called.
 
 ## Templates
 
@@ -54,6 +49,5 @@ The service definition ID for this form is: `siso_checkout.form_entity.checkout_
 
 ### Exceptions in validation process for invoice
 
-In some cases we need to suppress the form validation
-
-- if user has customer number
+In some cases you need to suppress the form validation, for example
+if the user has a customer number.
