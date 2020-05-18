@@ -1,8 +1,8 @@
 # Search indexing product data from the CMS
 
-If eZ Platform is used as a PIM (Product Information Management) system, the [Solr Search Engine Bundle](https://doc.ez.no/display/EZP/Solr+Search+Engine+Bundle) is used to index all product data. That means all indexed product documents are eZ content objects.
+If eZ Platform is used as a PIM (Product Information Management) system, the [Solr Search Engine Bundle](https://doc.ez.no/display/EZP/Solr+Search+Engine+Bundle) is used to index all product data. That means all indexed product documents are eZ Platform content objects.
 
-In order to customize the searchable data for products, it is possible to write plug-ins for the indexer of eZ's Solr search bundle. The API for these plug-ins is a work in progress and subject for changes.
+In order to customize the searchable data for products, it is possible to write plug-ins for the indexer of eZ Platform's Solr search bundle. The API for these plug-ins is a work in progress and subject for changes.
 
 ## ProductDocumentMapperPlugin
 
@@ -10,7 +10,7 @@ This plugin generates special field for  the price range based on product unit p
 
 ProductDocumentMapperPlugin is a service which is inject in main indexer execution based on the tag: `ezpublish.search.solr.document_mapper_plugin`
 
-This service implements EzSystems\\EzPlatformSolrSearchEngine\\DocumentMapperPluginInterface which is part of the Ez Search Bundle. As already mentioned, this interface is a subject to change.
+This service implements EzSystems\\EzPlatformSolrSearchEngine\\DocumentMapperPluginInterface which is part of the eZ Platform Search Bundle. As already mentioned, this interface is a subject to change.
 
 The method canExtend must check and will return true if the passed content type can be extended. I.E. for products it will check for a type `identifier == ses_products`
 
