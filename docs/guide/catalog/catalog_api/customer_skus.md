@@ -30,8 +30,8 @@ public function getOneBySku($sku, $customerNumber)
 
 ### Search changes
 
-`Siso/Bundle/SearchBundle/EventListener/CustomerSkuEshopQueryListener` in the search bundle
-checks the search term and if it is a customer SKU, it replaces it before sending it to Solr.
+`Siso/Bundle/SearchBundle/EventListener/CustomerSkuEshopQueryListener` in the search bundle checks the search term.
+If it is a customer SKU, the event listener replaces it before sending it to Solr.
 
 ### Quick order changes
 

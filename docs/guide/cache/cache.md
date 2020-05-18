@@ -3,7 +3,7 @@
 eZ Commerce uses different caches, including HTTP cache, which can greatly increase shop performance.
 Dynamic parts of the shop such as basket preview or prices are displayed using dynamic caching features such as ESI or JavaScript.
 
-This ensures that only small parts of a page have to be generated in realtime.
+This ensures that only small parts of a page have to be generated in real time.
 
 ## Usaging ESI-rendered blocks
 
@@ -14,7 +14,7 @@ This ensures that only small parts of a page have to be generated in realtime.
 |`SilversolutionsEshopBundle:PageLayout:getFooter`|Footer information shared among all pages|caching strategy `service_menue`|
 |`SilversolutionsEshopBundle:Bestsellers:getBestsellersEsi`|Bestseller Box for catalog pages|caching strategy `product_list`|
 |`SilversolutionsEshopBundle:Bestsellers:getCategoryBestsellers`</br>`SilversolutionsEshopBundle:EzFlow:showLastViewedProducts`|Shows last viewed products e.g. on Landing Page|caching strategy `product_list`|
-|`SisoSearchBundle:Search:productList`|Product list when the user is logged in|no caching|
+|`SisoSearchBundle:Search:productList`|Shows the product list for the logged-in user|no caching|
 |`SilversolutionsEshopBundle:ProductType:productList`|Product type list page|caching strategy `product_type_children`|
 |`SilversolutionsEshopBundle:Basket:showStoredBasketPreview`|User menu: displays a badge with the number of products in stored comparison or the number of stored baskets|caching strategy `basket_preview`</br>Purged when basket changes.</br>Tags: `siso_basket_<basketid>`|
 |`SilversolutionsEshopBundle:Navigation:showMenu`|Left menu|Tag: `siso_menu`|

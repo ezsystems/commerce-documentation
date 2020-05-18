@@ -178,7 +178,7 @@ public function process($queue)
 !!! note
 
     Please pay attention that process method uses attributes `language_code` and `content_type`
-    which were added to content modification array using method `getContentModificationAttributes`.
+    which were added to content modification array using the `getContentModificationAttributes` method.
 
 #### Supported content modification actions and triggers
 

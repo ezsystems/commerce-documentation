@@ -2,7 +2,7 @@
 
 ## Accessing product data
 
-When the URL loads a product, a `CatalogElement` object is provided to the template. 
+When the URL loads a product, a `CatalogElement` object is passed to the template.
 
 ``` html+twig
 <!-- name of the product -->
@@ -100,7 +100,7 @@ $catalogList = $catalogService->getDataProvider()
 
 ## Filtering
 
-For each data provider filters can be defined. A filter defines:
+You can define filters for each data provider. A filter defines:
 
 - which elements are fetched (e.g. just products such as `ses_product`, or just product groups)
 - sorting
