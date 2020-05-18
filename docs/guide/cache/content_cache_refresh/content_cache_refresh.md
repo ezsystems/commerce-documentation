@@ -9,11 +9,11 @@ The content cache refresh service is used in the following situations:
 
 !!! note
 
-    You need to have a cronjob set up to use this feature.
+    You need to have a cron job set up to use this feature.
 
-##  Set up cronjob to refresh caches
+##  Set up cron job to refresh caches
 
-To set up a cronjob to refresh caches, create a system cronjob to run the following console command:
+To set up a cron job to refresh caches, create a system cron job to run the following console command:
 
 ``` bash
 php bin/console silversolutions:cache:refresh
@@ -23,13 +23,13 @@ php bin/console silversolutions:cache:refresh
 
 !!! note
 
-    See [SignalSlot documentation](https://doc.ezplatform.com/en/2.5/guide/signalslots/#signals-reference) for more information about the Signal Slot system.
+    See [SignalSlot documentation](https://doc.ezplatform.com/en/2.5/guide/signalslots/#signals-reference) for more information about the SignalSlot system.
 
 The `ContentModificationSlot` pushes content modification data into the queue by using the `ContentModificationQueueService`.
 
 ## Definitions
 
-Content modification is an array with information about the modified content.
+Content modification is an array of information about the modified content.
 
 |Attribute (key)|Value type|Description|
 |--- |--- |--- |
@@ -51,7 +51,7 @@ It is implemented with Doctrine.
 
 `ContentModificationQueueService` is a service that stores content modifications in the queue and runs processors to handle content modifications.
 
-Content modification processor is a service implemented to process information about content modification (e.g. refreshes related caches)
+Content modification processor is a service implemented to process information about content modification (e.g. refreshes related caches).
 
 ## ContentModificationQueueService
 
@@ -78,7 +78,7 @@ Every content modification processor must implement two actions:
 
 Content modifications are stored in the content modification queue immediately after content is changed.
 However, processing of the queue doesn't happen immediately.
-Shop administrator can process the queue manually with a console script or configure a cronjob task.
+Shop administrator can process the queue manually with a console script or configure a cron job task.
 
 It means that if a user removes a Content item, there is no data that the processor can use for clearing the cache.
 For this reason, a content modification processor has to store information about the removed Content item before it is processed.

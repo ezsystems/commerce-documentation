@@ -4,7 +4,7 @@ eZ Commerce provides a flexible way to handle products and catalogs. The shop us
 
 ![](../../img/catalog_dataproviders.png)
 
-The products are dynamically injected into the content tree regardless of which source is used to provide the products.
+The products are dynamically injected into the Content Tree regardless of which source is used to provide the products.
 
 ## Catalog data from the content model
 
@@ -21,9 +21,9 @@ Importing products when using this data provider is time-consuming.
 
 Catalog data from eContent is provided using `EcontentCatalogDataProvider`.
 
-This option us used when you use a PIM system or an ERP which provides all product information.
+This option is used when you use a PIM system or an ERP which provides all product information.
 This information can be imported quickly from the relevant system.
 
-The catalog can then contains more than 1 million products.
+The catalog can then contain more than 1 million products.
 
 Products cannot be edited in the Back Office.

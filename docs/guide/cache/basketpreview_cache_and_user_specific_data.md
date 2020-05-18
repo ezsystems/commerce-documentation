@@ -2,13 +2,13 @@
 
 eZ Commerce uses a lot of dynamic data which has to be displayed in the shop:
 
-- basket preview showing the number of products and a list of products
+- basket preview shows the number of products and a list of products
 - the name of the customer
 - the number of items in the wishlist
 
 To improve the caching and speed up page loading, a special route is used to provide the dynamic data using a REST call.
 
-This concept enables caching pages in a more efficient way and placing dynamic attributes using JavaScript.
+This enables you to cache pages in a more efficient way and place dynamic attributes with JavaScript.
 
 ## The REST route
 
@@ -19,7 +19,7 @@ By default the following attributes are returned:
 ![](../img/basketpreview_1.png)
 
 The response is cached via HTTP cache. It is purged whenever a basket is updated or a customer logs in.
-After page load JavaScript fetches the current data from the server and update:
+After page load JavaScript fetches the current data from the server and updates:
 
 - the logged-in user
 - the basket preview
@@ -45,7 +45,7 @@ document.addEventListener("ses:dynamic-data", function(e) {
 
 ## Extending the REST call
 
-The modules section can be used for project-specific data using a tagged service which has to implement a service using a special service tag:
+The modules section can be used for the project-specific data. It uses a tagged service that has to implement a service via service tag:
 
 ```
 <tag name="siso_core.session_data" alias="mydata"/>
@@ -132,7 +132,7 @@ ezpublish:
 ....
 ```
 
-5.\ Change the Twig block `basket_preview` in `pagelayout.html.twig` using a static HTML markup which is replaced by JS after loading the session data:
+5.\ Change the Twig block `basket_preview` in `pagelayout.html.twig` using a static HTML markup which is replaced by JavaScript after loading the session data:
 
 ``` html+twig
 {% block basket_preview %}

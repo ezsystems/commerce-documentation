@@ -47,7 +47,7 @@ private $variantAttributes;
 
 /*
 * This characteristic needs to know which of the variant attributes are characteristic Fields. 
-* That is why attributes are displayed in b2b need to follow special rules:
+* That is why attributes that are displayed in B2B need to follow special rules:
 *     - characteristicCodeXXX
 *     - characteristicLabelXXX
 *

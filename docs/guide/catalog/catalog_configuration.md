@@ -56,13 +56,13 @@ siso_core.default.navigation.enable_add_product_catalog_node_depth: true
 
 The navigation settings are used to build the navigation tree.
 
-For more details see [Navigation](../navigation/navigation.md).
+For more details, see [Navigation](../navigation/navigation.md).
 
 In addition, the parameters for search have to be defined depending on the data provider (see `econtent_search.yml` or [eContent configuration](../econtent/econtent_configuration.md)).
 
 ## Configuring the CatalogFactory
 
-The following example shows the configuration used for the `CatalogFactory` to determine which method creates the `catalogElements` depending on the Content Type
+The following example shows the `CatalogFactory` configuration that determines which method creates the `catalogElements` depending on the Content Type:
 
 ``` yaml
 silver_eshop.default.catalog_factory.ses_category: createCatalogNode
@@ -71,7 +71,7 @@ silver_eshop.default.catalog_factory.ses_product: createOrderableProductNode
 silver_eshop.default.catalog_factory.ses_product_type: createProductTypeNode
 ```
 
-- `ses_category` up to `ses_product_type` are the identifiers used in the corresponding ContentTypes
+- `ses_category` up to `ses_product_type` are the identifiers used in the corresponding Content Types
 - `createCatalogNode` defines for example that if a Content Type `ses_category` is provided, the method `createCatalogNode()` is used to create the catalog element.
 
 ## Configuring variants

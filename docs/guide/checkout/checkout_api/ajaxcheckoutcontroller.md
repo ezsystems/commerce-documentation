@@ -142,10 +142,10 @@ On success the method stores the shipping/payment method in the basket.
 |current step|summary|summary|
 
 On success this method  stores data in basket and copies the basket with state `confirmed`.
-Next,it redirects the user to order confirmation.
+Next, it redirects the user to order confirmation.
 
-In this step, the total gross amount may be rounded to 2 decimal digits.
-This is because the amount is used to process the payment later on and nearly all payment transaction don't allow values with more than 2 decimal digits.
+In this step, the total gross amount may be rounded to two decimal digits.
+This is because the amount is used to process the payment later on and nearly all payment transaction don't allow values with more than two decimal digits.
 You can disable this behavior by setting `round_totals` to `false`:
 
 `siso_checkout.default.payment.round_totals: false`
@@ -176,4 +176,4 @@ parameters:
     siso_eshop.ajax_controller.checkout: "YourBundle:NewAjaxCheckout"
 ```
 
-For more information see [Ajax (Phalanx)](../../../cookbook/ajax_phalanx.md).
+For more information, see [Ajax (Phalanx)](../../../cookbook/ajax_phalanx.md).

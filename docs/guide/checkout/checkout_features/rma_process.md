@@ -10,7 +10,7 @@ The cancellation process validates the input and sends an email to the shop admi
 ## Link to cancellation form
 
 There is a link to the cancellation policies and online cancellation form displayed in the footer.
-The textmodules that are used to render the footer can be configured per SiteAccess:
+The text modules that are used to render the footer can be configured per SiteAccess:
 
 ``` yaml
 parameters:
@@ -46,7 +46,7 @@ parameters:
 
 ## Online RMA form
 
-eZ Commerce also offers an online RMA form. After user submits this form, an email is sent to admin the using [SendRmaEmailDataProcessor](../../one_page_forms/one_page_forms_api/dataprocessors/dataprocessors_after_submitting/sendrmaemaildataprocessor.md).
+eZ Commerce also offers an online RMA form. After user submits this form, an email is sent to admin using [SendRmaEmailDataProcessor](../../one_page_forms/one_page_forms_api/dataprocessors/dataprocessors_after_submitting/sendrmaemaildataprocessor.md).
 
 The email recipient has to generate a delivery note with a return number and send it to the customer.
 The customer then can return their goods together with return number.

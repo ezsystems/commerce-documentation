@@ -4,7 +4,7 @@ The central point of HTTP caching is a service called `HttpCachingStrategyServic
 It enables configuring each controller's response separately.
 
 Another important solution is `Identity\IdentityDefiner`
-which has separate caches for different users or user groups. This service is optional.
+which has separate caches for different Users or User Groups. This service is optional.
 
 ## Configuration
 
@@ -93,7 +93,7 @@ silver_eshop.default.http_cache:
 ## Usage
 
 To cache responses you need to inject an instance of `HttpCachingStrategyService`
-or to get this instance from container.
+or get this instance from a container.
 
 Symfony HTTP cache or Varnish use response headers to store the response. 
 
@@ -102,7 +102,7 @@ that gives a possibility to purge particular cache blocks matched by this ID.
 
 Parameters:
 
-- `Response $response` - response object which are modified
+- `Response $response` - response object which is modified
 - `string $blockName` - cache block name
 - `$id = null` - cache identifier (e.g, basket ID or catalog element ID)
 
@@ -129,9 +129,9 @@ php bin/console silversolutions:http-cache:purge 1056 222 --env="prod"
 ### Purging using eZ Platform service
 
 If you programmatically updated product data, basket or some other cached content,
-you need to update caches to show users fresh information.
+you need to update caches to show users current information.
 
-To do this you should inject or get the purger service:
+To do this you need to inject or get the purger service:
 
 Example:
 
@@ -141,7 +141,7 @@ Example:
 </call>
 ```
 
-Next, call the service:
+Next, call the purger service:
 
 Example:
 

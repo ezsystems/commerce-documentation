@@ -105,7 +105,7 @@ The following default setup filters content of type `ses_category` for the navig
 The sort order is controlled by the Priority field and the publish date.
 
 The second level key defines the scope, or `filterType`, for which the specific filter definitions are valid.
-In this example it is `navigation`, which is passed by the navigation service's fetch.
+In this example, the `navigation` is passed by the navigation service's fetch.
 
 ``` yaml
 silver_eshop.default.ez5_catalog_data_provider.filter:
@@ -142,6 +142,6 @@ silver_eshop.default.ez5_catalog_data_provider.filter:
 
 |Parameter|Description|
 |--- |--- |
-|contentTypes|Identifierd of the Content Types defined in the system|
+|contentTypes|Identifier of the Content Types defined in the system|
 |limit|Default limit to be used when no limit is given|
-|sortClauses|Clauses for sorting|
+|sortClauses|Sorting clauses|

@@ -7,7 +7,7 @@ and to enable using Platform API in commerce routes.
 
     If a product URL is not routed correctly (e.g. because of complex matching rules)
     it is possible to set up a direct routing for products.
-    The first part of the URL (here `products`) could be translated and in this case the following routing rules have to be set up for each translation.
+    The first part of the URL (here `products`) could be translated, and in this case, the following routing rules have to be set up for each translation.
 
     ``` yaml
     product_route:
@@ -34,7 +34,7 @@ Route matching priority:
 1. If the request is in legacy mode, return and leave route matching to another instance.
 2. Assume the request of a catalog object and try to find a responsible route using the catalog data provider.
 3. Assume the request of a catalog object and try to find a route using the navigation service.
-4. Assume the request of a silver.module object and try to find a route using the navigation service.
+4. Assume the request of a `silver.module` object and try to find a route using the navigation service.
 5. Assume the request of a PIM object and try to find a route using the catalog data provider.
 6. Assume the request of a PIM object and try to find a route using the navigation service.
 7. If no route can be found at all, the route matching is left to another instance.

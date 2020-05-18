@@ -15,7 +15,7 @@ This option uses event listeners.
 
 In order to split the orders, the `onExceptionMessage` exception is thrown that interrupts the default process (sending to ERP).
 
-A new listener is created in `Siso/Bundle/LocalOrderManagementBundle/Resources/config/services.xml`
+A new listener is created in `Siso/Bundle/LocalOrderManagementBundle/Resources/config/services.xml`:
 
 ``` xml
 <parameter key="siso_local_order_management.order_splitting.class">Siso\Bundle\LocalOrderManagementBundle\EventListener\OrderSplittingListener</parameter>
@@ -97,7 +97,7 @@ public function onExceptionMessage(MessageExceptionEvent $messageExceptionEvent)
 }
 ```
 
-The `MULTISHOP_ORDER` sttribute which is set in the `dataMap` indicates if the order comes from the main shop. 
+The `MULTISHOP_ORDER` attribute which is set in the `dataMap` indicates if the order comes from the main shop. 
 
 ``` php
 $copiedBasket->addToDataMap(true, self::MULTISHOP_ORDER);

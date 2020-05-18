@@ -38,7 +38,7 @@ A customer with addresses can choose an address from a list:
 [CheckoutController](checkout_api/checkoutcontroller.md) and [AjaxCheckoutController](checkout_api/ajaxcheckoutcontroller.md)
 are responsible for the checkout logic.
 
-One-page checkout enables the customer to go through the process back and forth. All the steps are validated when a AJAX call is sent.
+One-page checkout enables the customer to go through the process back and forth. All the steps are validated when an Ajax call is sent.
 
 All the logic is moved into controllers which are responsible also for rendering.
 
@@ -65,7 +65,7 @@ You can define an event listener which is triggered when an order has been place
 </service>
 ```
 
-There are two tags involved: one to be used when no ERP system connected and one for an installation connected with ERP.
+There are two tags involved: one to be used when no ERP system is connected and one for an installation connected with ERP.
 
 ``` php
 /**

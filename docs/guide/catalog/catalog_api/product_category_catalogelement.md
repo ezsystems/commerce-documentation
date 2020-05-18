@@ -1,6 +1,6 @@
 # Product category (CatalogElement)
 
-The `CatalogElement` class defines the generic product and category model which is used in eZ Commerce. It inherits from the general class [ValueObject](../../../api/valueobject.md) which offers a convenient way of setting properties of instances via the constructor and makes these properties public readable.
+The `CatalogElement` class defines the generic product and category model which is used in eZ Commerce. It inherits from the general class [ValueObject](../../../api/valueobject.md) which offers a convenient way of setting properties of instances via the constructor and makes these properties public.
 
 The following subclasses inherit from `CatalogElement`:
 
@@ -52,12 +52,11 @@ The following validators can be used when attributes are set in `CatalogElement`
 |`validateIntegerAttribute`|`$value`,</br>`$attribute`|Checks if the value is a valid integer|
 |`validateFieldAttribute`|`$value`,</br>`$attribute`,</br>`$fieldType`|Checks if the value is of given Field Type|
 |`validateArrayAttribute`|`$value`,</br>`$attribute`|Checks if the value is an array|
-|`validateArrayOfAttribute`|`$value`,</br>`$attribute`,</br>`$class`|Checks if the value is an array of concrete class (interface)|
+|`validateArrayOfAttribute`|`$value`,</br>`$attribute`,</br>`$class`|Checks if the value is an array of specified class (interface)|
 
 Concrete implementations of the `CatalogElement` class require you to extend `validateProperties()`.
 This method validates all given properties in the constructor of the class.
-As you do not want to overwrite the given implementation but extend it,
-use `parent::validateProperties($properties)` in your implementation.
+To extend default implementation use `parent::validateProperties($properties)`.
 
 ??? note "Example: Extending validateProperties()"
 

@@ -83,7 +83,7 @@ try {
 The `fetchChildrenList()` method enables listing `CatalogElement` or `ProductNode` objects for a given Location ID.
 Products with this Location ID are returned.
 
-Fetch products directly assigned to a `CatalogElement` starting form the first element (offset=0, limit=100).
+Fetch products directly assigned to a `CatalogElement` starting from the first element (offset=0, limit=100).
 The shop uses the language of the current SiteAccess.
 
 ``` php
@@ -91,7 +91,7 @@ $catalogList = $catalogService->getDataProvider()
         ->fetchChildrenList($locationId, 1, array(), null, 0, 100);
 ```
 
-Fetch a list of products using a filter named `productList`.
+Fetch a list of products using a `productList` filter.
 
 ``` 
 $catalogList = $catalogService->getDataProvider()
@@ -105,6 +105,6 @@ For each data provider filters can be defined. A filter defines:
 - which elements are fetched (e.g. just products such as `ses_product`, or just product groups)
 - sorting
 
-A filter's name (e.g. `navigation`) is used as a key to get the filter parameters from the config file.
+A filter's name (e.g. `navigation`) is used as a key to get the filter parameters from the configuration file.
 
-For a list of standard filters see [Catalog configuration](../catalog_configuration.md).
+For a list of standard filters, see [Catalog configuration](../catalog_configuration.md).

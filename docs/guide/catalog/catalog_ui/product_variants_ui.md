@@ -15,7 +15,7 @@ The data for the variants is provided by two Twig filters.
 
 ### `sort_characteristics()`
 
-`sort_characteristics()` sorts characteristics for a catalog element type (like unit, color, weight etc)
+`sort_characteristics()` sorts characteristics for a catalog element type (like unit, color, weight etc.):
 
 ``` html+twig
 {% set sortedCharacterictics = catalogElement.variantCharacteristics.characteristics|sort_characteristics(catalogElement.type) %}
@@ -38,7 +38,7 @@ If you want to change the order of characteristics manually (e.g. unit first and
 
 ### `sort_characteristic_codes()`
 
-`sort_characteristic_codes()` sorts specific characteristic codes (for codes like green, red, blue etc)
+`sort_characteristic_codes()` sorts specific characteristic codes (for codes like green, red, blue etc.):
 
 ``` html+twig
 // variantIndex, e.g. 1

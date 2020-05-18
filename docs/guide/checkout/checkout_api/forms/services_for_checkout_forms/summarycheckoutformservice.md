@@ -1,6 +1,6 @@
 # SummaryCheckoutFormService
 
-`SummaryCheckoutFormService` (`Siso\Bundle\CheckoutBundle\Service\SummaryCheckoutFormService`) implements the logic for the CheckoutSummary form.
+`SummaryCheckoutFormService` (`Siso\Bundle\CheckoutBundle\Service\SummaryCheckoutFormService`) implements the logic for the `CheckoutSummary` form.
 This service is assigned to the `CheckoutSummary` form in the [configuration](../configuration_for_checkout_forms.md).
 
 This service implements [`CheckoutFormServiceInterface`](interfaces_for_checkout_services.md#checkoutformserviceinterface) and  [`CheckoutSummaryFormServiceInterface`](interfaces_for_checkout_services.md#checkoutsummaryformserviceinterface).
@@ -29,7 +29,7 @@ if ($form->isValid()) {
 
 In the summary there is a comment field that the user can fill in.
 
-By default, the comment box does not have a limit, but it is possible to configure a limit it in `CheckoutBundle/Resources/config/checkout.yml`:
+By default, the comment box does not have a limit, but it is possible to configure a limit for it in `CheckoutBundle/Resources/config/checkout.yml`:
 
 ``` yaml
 siso_checkout.default.checkout_form_summary_max_length: 30

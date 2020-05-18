@@ -270,13 +270,13 @@ In `EshopBundle/Resources/config/silver.eshop.yml`:
 siso_core.default.shop_id: 'MAIN'
 ```
 
-## Generating invoice PDF and sending it by mail
+## Generating invoice PDF and sending it by email
 
 At the end of the process the invoice with all the required information is created and stored in the database.
 The invoice is in PDF format, and is sent also as attachment by email.
 
 To generate the PDF a tool called [`wkhtmltopdf`](http://wkhtmltopdf.org) is used,
-so this tool has to be installed on the server, usinge the last stable version.
+this tool has to be installed on the server, usinge the last stable version.
 
 The `wkhtmltopdf` tool needs only a URL with a valid HTML and the path where the PDF is going to be generated.
 
@@ -369,7 +369,7 @@ Once the PDF is generated and the order is stored in the database it is attached
 
 The PDF is attached to the email generated in the order process.
 
-And additional to the standard email process it sends also another email to the owner of the shop. This shop owner is defined as a parameter in the configuration (defined per SiteAccess).
+Additionally, the system sends copy of the email to the owner of the shop. The shop owner is defined as a parameter in the configuration (defined per SiteAccess).
 
 ``` yaml
 siso_core.default.ses_swiftmailer:
@@ -386,7 +386,7 @@ All these emails are based on the standard order confirmation email templates:
 
 #### Buyer
 
-See [Email of an email with invoice attached](../../../img/local_order_1.eml).
+See [email with attached invoice](../../../img/local_order_1.eml).
 
 `vendor/silversolutions/silver.e-shop/src/Siso/Bundle/LocalOrderManagementBundle/EventListener/OrderConfirmationListener.php`:
 
@@ -431,7 +431,7 @@ A special message and subject are set for it.
 - `shop_owner_mail_subject` (Set in the email configuration)
 - `email_shop_owner_intro_text` (TextModule inside the backend)
 
-This applis when the variable `is_shop_owner` is set to true.
+This applies when the variable `is_shop_owner` is set to true.
 
 [Example .eml](../../../img/local_order_2.eml)
 

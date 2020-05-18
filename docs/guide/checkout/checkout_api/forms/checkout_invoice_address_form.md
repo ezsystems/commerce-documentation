@@ -20,7 +20,7 @@ extends `AbstractFormEntity` and implements `CheckoutAddressInterface`.
 |`phone`|Phone number|`SesAssert\Phone`|
 |`email`|Email address|`SesAssert\Email`|
 |`invoiceSameAsDelivery`|`true` if the user wants to use this address as delivery address|boolean|
-|`forceStep`|`true` if the user wants to force moving to next step with event errors|boolean|
+|`forceStep`|`true` if the user wants to force move to the next step with event errors|boolean|
 
 ## Configuration
 

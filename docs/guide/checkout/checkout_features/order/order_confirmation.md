@@ -9,9 +9,9 @@ If the customer has a customer number, the data from the ERP is fetched again si
 The shop sends a confirmation email to the customer and to a sales contact (if configured).
 
 In case of a failure (e.g. if the mail server is unreachable) the issue is logged into `var/logs/dev/dev-siso.mails.log`
-(in `prod` mode the filename contains `env=prod`). 
+(in `prod` mode the file name contains `env=prod`). 
 
-The logfile contains the recipient, the email text and an error text.
+The log file contains the recipient, the email text and an error text.
 
 ### Setting confirmation email address
 
@@ -22,7 +22,7 @@ Processing the confirmation email address is handled in `\Siso\Bundle\CheckoutBu
 The customer's confirmation email address depends on the user type and is stored in the basket object during the checkout process in several steps. There are two options:
 
 - For an anonymous customer the email address is taken from the Invoice Address of the basket object which is captured during the checkout process.
-- For a logged-in customer with or without a number the email is taken from Customer Profile Data from the eshop.
+- For a logged-in customer with or without a number the email is taken from Customer Profile Data from the e-shop.
 
 #### Sales contact confirmation
 
@@ -46,7 +46,7 @@ If it's left empty, no sales contact confirmations are sent, except if `sales_em
 The `\Siso\Bundle\CheckoutBundle\EventListener\OrderConfirmationListener` event listener sends the order confirmations as soon as an order is successfully accepted by the ERP.
 
 This class is configured as a service which listens to the event `silver_eshop.exception_message`.
-If the response contains an ERP order number, it is considered successful and the confirmation mails are sent as configured.
+If the response contains an ERP order number, it is considered successful and the confirmation emails are sent as configured.
 The following parameters are used:
 
 ``` yaml
@@ -68,8 +68,8 @@ $basket = $this->getBasket($request, BasketService::STATE_CONFIRMED, $basketId);
 
 |                 |        |
 | --------------- | ------ |
-| Plain text mail | `vendor/silversolutions/silver.e-shop/src/Silversolutions/Bundle/EshopBundle/Resources/views/Checkout/Email/order_confirmation.txt.twig`  |
-| HTML mail       | `vendor/silversolutions/silver.e-shop/src/Silversolutions/Bundle/EshopBundle/Resources/views/Checkout/Email/order_confirmation.html.twig` |
+| Plain text email | `vendor/silversolutions/silver.e-shop/src/Silversolutions/Bundle/EshopBundle/Resources/views/Checkout/Email/order_confirmation.txt.twig`  |
+| HTML email       | `vendor/silversolutions/silver.e-shop/src/Silversolutions/Bundle/EshopBundle/Resources/views/Checkout/Email/order_confirmation.html.twig` |
 
 #### Example email
 

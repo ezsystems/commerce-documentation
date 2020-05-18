@@ -1,8 +1,8 @@
-# Translation cache for Textmodules
+# Translation cache for Text modules
 
 !!! note
 
-    See [SignalSlots documentation](https://doc.ezplatform.com/en/2.5/guide/signalslots/#signals-reference) for more information about the Signal Slot system.
+    See [SignalSlots documentation](https://doc.ezplatform.com/en/2.5/guide/signalslots/#signals-reference) for more information about the SignalSlot system.
 
 ## RemoveTranslationCacheSlot
 

@@ -22,7 +22,7 @@ A product variant consists of:
 |--- |--- |--- |
 |`VariantProduct(Node)`|The virtual product which contains the data for all variants that can be ordered. Since this product has no specific price or stock which is assigned to its SKU, it cannot be added to the basket directly.|SKU: 1234</br>ProductName: "RunnersX100"|
 |`OrderableVariant(Node)`|Represents one specific, orderable variation. It is defined by its unique `VariantCode` or by the deterministic set of `VariantCharacteristics`. An `OrderableVariantNode` is intended to be added to a basket.|SKU: 1234</br>ProductName: "RunnersX100"</br>Size: "EU 43"</br>Color: "Blue"|
-|`VariantCode`|Identifies an `OrderableVariant` within a `VariantProduct`, thus it must be unique in the scope of the `VariantProduct`.|VariantCode: 43_blu</br>Would have:</br>size: 43</br>color: blu|
+|`VariantCode`|Identifies an `OrderableVariant` within a `VariantProduct`. It must be unique in the scope of the `VariantProduct`.|VariantCode: 43_blu</br>Would have:</br>size: 43</br>color: blu|
 |`VariantCharacteristic`|One `VariantCharacteristic` is a specific attribute of a `VariantProduct` which is distinctive and describes one aspect of the variant. A `VariantProduct` must have at least one `VariantCharacteristic`.|Color: "Blue", "Green", "Red"</br>Size: "EU 41", "EU 42", "EU 43"|
 |`CharacteristicIdentifier`|Class unique string for a characteristic. It is equivalent to the identifier of an attribute.|1: color</br>2: size|
 |`CharacteristicLabel`|A readable name for a characteristic. It it used for frontend output.|"Color" and "Size" are the labels in this example.|
@@ -55,16 +55,15 @@ Variants:
 |grn_42|grn|42|
 |grn_43|grn|43|
 
-
 ## Variant creation
 
-The process of variant creation depends on the data provider used. If the content model is used as a data provider, the following standard way applies.
+The process of variant creation depends on the used data provider. If the content model is used as a data provider, the following standard way applies.
 
 If the `ProductNode` contains information in the matrix (`ses_variants`), `Ez5CatalogFactory` creates a [`VariantProductNode`](../../catalog_api/variantproductsnode_and_orderablevariantnode/variantproductnode_and_orderablevariantnode.md) instead of an `OrderableProductNode`.
 
 Because [`VariantProductNode`](../../catalog_api/variantproductsnode_and_orderablevariantnode/variantproductnode_and_orderablevariantnode.md) is not orderable, the [`VariantService`](../../catalog_api/variantproductsnode_and_orderablevariantnode/variant_services.md) is used to create an `OrderableVariantNode` when adding to basket.
 
-In order to provide variants, the product class `ses_product` has to be extended with a new attribute with the identifier `ses_variants` using datatype `uivarvarianttype`. 
+In order to provide variants, the product class `ses_product` has to be extended with a new attribute with the `ses_variants` identifier using `uivarvarianttype` data type. 
 
 By default eZ Commerce offers a set of variant types. The variant type defines which attributes such as size or/and color are used to identify a variant.
 
@@ -75,7 +74,7 @@ The variant types can be defined using a yml configuration, see [VariantType](..
 ## Icons
 
 The [factory](../../catalog_cookbook/setting_up_variants_from_external_source.md) that creates variants can also provide images for some characteristics.
-In the following example the factory provides images for the characteristoc 'Color'.
+In the following example the factory provides images for the 'Color' characteristic.
 If no image is provided, only text is displayed in a box.
 
 How the images should be stored in the variant characteristics:
@@ -117,7 +116,7 @@ In the basket the customer has the possibility to change a variant.
 
 ![](../../../img/product_variants_2.png)
 
-Whenthe customer clicks the pen icon, the popup shows with option to change the variant.
+When the customer clicks the pen icon, the popup shows up with option to change the variant.
 After saving, a new variant is stored in the basket and the basket is recalculated.
 
 ![](../../../img/product_variants_3.png)
@@ -133,7 +132,7 @@ The default templates used for rendering product details are stored in
 |||
 |----|----|
 |productBasketVariant.html.twig| Price block for the variant|
-|productData.html.twig| Product information (for a variant it can be additional info like country)|
+|productData.html.twig| Product information (for a variant it can be additional information like country)|
 |productDetailVariantB2B.html.twig| Variant options for B2B|
 |productDetailVariantB2C.html.twig| Variant options for B2C|
 |productVariantBlock.html.twig| All logic for B2C display|
@@ -142,7 +141,7 @@ The default templates used for rendering product details are stored in
 
 To change images used for variant's characteristics, place them under `bundles/silversolutionseshop/img/variants/`
 
-For example, if a variant's "Color" characteristic hase codes like: `grn`, `red`, `blu`, etc.,
+For example, if a variant's "Color" characteristic has codes like: `grn`, `red`, `blu`, etc.,
 in the folder you need to create the following images: `grn.jpg`, `red.jpg`, `blu.jpg`, etc.
 
 ## Variant sorting

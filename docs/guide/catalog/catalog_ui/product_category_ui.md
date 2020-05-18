@@ -13,7 +13,7 @@ Available options:
 
 - `product_list`: display product list directly
 - `both`: display subcategories and product list, including an option to display facets in the left sidebar instead of the navigation
-- `categories`:  display only subcategories and only on the last category (if there are no subcategories) display the product list
+- `categories`: display only subcategories and only on the last category (if there are no subcategories) display the product list
 
 ## Data provided for categories
 

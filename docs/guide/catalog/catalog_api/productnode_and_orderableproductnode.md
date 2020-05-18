@@ -1,8 +1,8 @@
 # ProductNode and OrderableProductNode
 
-The `ProductNode` is the abstract base class for product elements for all concrete product nodes. It inherits from product category `(CatalogElement)`.
+The `ProductNode` is the abstract base class for product elements for product nodes. It inherits from product category `(CatalogElement)`.
 
-This class defines the base methods which are needed to instantiate a product node within the tree structure. Also some important properties are predefined.
+This class defines the base methods which are needed to instantiate a product node within the tree structure. Also some properties are predefined.
 
 The `OrderableProductNode` is a concrete implementation for a product from class `ProductNode`. There are more concrete implementations available for `ProductNode`.
 
@@ -27,7 +27,7 @@ Each `ProductNode` has predefined properties. These methods are validated automa
 |imageList|ses_image_1 .. ses_image_4|ImageField[] (FieldInterface[])|List of images|
 |minOrderQuantity|ses_min_order_quantity|float|Minimum order quantity of the product|
 |maxOrderQuantity|ses_max_order_quantity|float|Maximum order quantity of the product|
-|allowedQuantity||string|Regex that indicates the allowed quantity.|
+|allowedQuantity||string|Regex that indicates the allowed quantity|
 |packagingUnit|ses_packaging_unit|float|Packaging unit of the product|
 |unit|ses_unit|string|A unit of the product|
 |vatCode|ses_vat_code|string|VAT code of the product. Needed to determine VAT percent|

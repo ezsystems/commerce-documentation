@@ -19,7 +19,7 @@ siso_core.default.customer_sku_service_active: true
 Custom SKUs are handled using the `Silversolutions\Bundle\EshopBundle\Service\CustomerSkuService` service
 (ID: `siso_core.customer_sku_service`).
 
-`CustomerSkuService` is used to fetch the `sku` or `customer_sku`. For that purpose two methods are available:
+`CustomerSkuService` is used to fetch the `sku` or `customer_sku`. For that purpose the following methods are available:
 
 ``` php
 public function getSku($customerSku, $customerNumber = null)

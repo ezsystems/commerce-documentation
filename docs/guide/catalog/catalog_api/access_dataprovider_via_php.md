@@ -23,7 +23,7 @@ You can choose the provider depending on SiteAccess, URL, etc.
 
 ## Implementation
 
-To choose the proper catalog provider, use [tags and compiler pass.](http://symfony.com/doc/current/components/dependency_injection/tags.html)
+To choose the proper catalog provider, use [tags and compiler pass.](http://symfony.com/doc/3.4/components/dependency_injection/tags.html)
 
 ### Compiler pass
 

@@ -13,7 +13,7 @@ The main goal is to map your variant structure to the [`VariantProductNode`](../
     
     The main job of every CatalogFactory is to fill the [`VariantProductNode`](../catalog_api/variantproductsnode_and_orderablevariantnode/variantproductnode_and_orderablevariantnode.md) attribute [`$variantCharacteristics`](../catalog_api/variantproductsnode_and_orderablevariantnode/simplevariantcharacteristics.md). The basic concept is to take information from provided `dataMap` (e.g. `dataMap` is coming from the data provider, either from the content model or from an external source) and create an attribute `$variantCharacteristic` for the `VariantProductNode`.
 
-Example for `Ez5CatalogFactory`: `dataMap` from th data provider
+Example for `Ez5CatalogFactory`: `dataMap` from the data provider
 
 ![](../../img/catalog_cookbook_2.png)
 
@@ -39,7 +39,7 @@ The first thing you need to do to create variants is to write your own data prov
     silver_eshop.default.catalog_template.VariantProductNode: Catalog:product_variants.html.twig
     ```
 
-    You can find more information about this is [Catalog UI](../catalog_ui/catalog_ui.md).
+    You can find more information about this in [Catalog UI](../catalog_ui/catalog_ui.md).
 
 If you are writing your own provider and factory from scratch, you have to implement all necessary methods.
 This example only shows methods related to variants.
@@ -53,7 +53,7 @@ This is the place where the factory decides which function it internally uses to
 
 !!! tip
 
-    It is good practice to define a configuration which method should be used depending on e.g. the class identifier (Content Type).
+    It is good practice to configure which method should be used depending on e.g. the class identifier (Content Type).
     This is the default configuration:
 
     ```
@@ -61,11 +61,11 @@ This is the place where the factory decides which function it internally uses to
     silver_eshop.default.catalog_factory.ses_product: createOrderableProductNode
     ```
 
-Because in this example (standard implementation), the variants are stored as Content items of the same Content Type as regular products (`ses_product`),
-`createCatalogElement()` must do additional differentiation when to call the method `createOrderableProductNode()` and when `createVariantProductNode()` (see below).
-In the default implementation the factory calls the `createVariantProductNode()` method whenever [EzMatrix with variants](../catalog_features/product_variants/product_variants.md) is filled.
+`createCatalogElement()` must do additional differentiation when to call the method `createOrderableProductNode()` and when `createVariantProductNode()`
+because in the below example (standard implementation), the variants are stored as Content items of the same Content Type as regular products (`ses_product`),.
+In the default implementation the factory calls the `createVariantProductNode()` method whenever [eZ Matrix with variants](../catalog_features/product_variants/product_variants.md) is filled.
 
-You can adapt this behavior. For example, you can receive a special flag from ERP that tells you if the product is a variant.
+You can adapt this behavior. For example, you can receive a special flag from ERP that informs you if the product is a variant.
 
 ??? note "Example"
 
@@ -111,7 +111,7 @@ Next, you need to implement the `createVariantProductNode()` method from the abs
 abstract public function createVariantProductNode($rawData = null);
 ```
 
-Example from `Ez5CatalogFactory` (we use information stored in ez matrix (`ses_variants`) which is located in `dataMap` (provided by the data provider).
+Example from `Ez5CatalogFactory` uses information stored in eZ Matrix (`ses_variants`) which is located in `dataMap` (provided by the data provider).
 
 ``` php
 public function createVariantProductNode($rawData = null)
@@ -146,7 +146,7 @@ public function createVariantProductNode($rawData = null)
 
 In your factory you need to map your `dataMap` information into the `VariantProductNode` attribute [`$variantCharacteristics`](../catalog_api/variantproductsnode_and_orderablevariantnode/simplevariantcharacteristics.md). The structure is described below.
 
-All information about variants is stored in this attribute (including prices and pictures). It contains three pieces of information:
+All information about variants is stored in this attribute (including prices and pictures). It contains the following pieces of information:
 
 - `characteristics` contains all information about characteristics (selectable options) like images or labels for displaying options in templates
 - `variantCodes` is a set of all possible combinations of variant characteristics (variants). It contains a list of the respective variant codes, which store a particular combination of the characteristics. The record structure is:
@@ -158,10 +158,10 @@ All information about variants is stored in this attribute (including prices and
 - ...
 ```
 
-In this example, the `characteristicIdentifier` is the index number of the variant level
+In the above example, the `characteristicIdentifier` is the index number of the variant level
 which is provided by the structure of eZ Matrix.
 
-- `variantAttributes` - contains all additional information for each variant (country, price, labels etc). Attributes that are displayed in B2B need to follow special rules:
+- `variantAttributes` - contains all additional information for each variant (country, price, labels etc.). Attributes that are displayed in B2B need to follow special rules:
     - `characteristicCode#`
     - `characteristicLabel#`
 

@@ -1,7 +1,6 @@
 # Creating VariantProductNode
 
-Usually you need to create a `VariantProductNode` in your factory,
-see the following example:
+Create a `VariantProductNode` in your factory, following the example:
 
 ``` php
 public function createVariantProductNode($rawData = null)

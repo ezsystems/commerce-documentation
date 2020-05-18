@@ -23,7 +23,7 @@ It manages the form for choosing delivery address in checkout process.
 |`email`|Email address|`SesAssert\Email`|
 |`saveAddress`|`true` if the user wants to store this address in their address list|boolean|
 |`partyId`|Party ID in ERP system|string|
-|`forceStep`|`true` if the user wants to force moving to next step with event errors|boolean|
+|`forceStep`|`true` if the user wants to force move to the next step with event errors|boolean|
 
 ## Form Type
 

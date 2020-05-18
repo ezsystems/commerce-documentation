@@ -13,7 +13,7 @@ This ensures that only small parts of a page have to be generated in realtime.
 |`SilversolutionsEshopBundle:Basket:showBasketPreview`|Displays a short version of the basket in the top part of the page|Purged when basket changes.</br>Tags: `siso_basket_<basketid>`</br>`siso_user_<userid>`|
 |`SilversolutionsEshopBundle:PageLayout:getFooter`|Footer information shared among all pages|caching strategy `service_menue`|
 |`SilversolutionsEshopBundle:Bestsellers:getBestsellersEsi`|Bestseller Box for catalog pages|caching strategy `product_list`|
-|`SilversolutionsEshopBundle:Bestsellers:getCategoryBestsellers`</br>`SilversolutionsEshopBundle:EzFlow:showLastViewedProducts`|Shows last viewed products e.g. on Landing Pages|caching strategy `product_list`|
+|`SilversolutionsEshopBundle:Bestsellers:getCategoryBestsellers`</br>`SilversolutionsEshopBundle:EzFlow:showLastViewedProducts`|Shows last viewed products e.g. on Landing Page|caching strategy `product_list`|
 |`SisoSearchBundle:Search:productList`|Product list when the user is logged in|no caching|
 |`SilversolutionsEshopBundle:ProductType:productList`|Product type list page|caching strategy `product_type_children`|
 |`SilversolutionsEshopBundle:Basket:showStoredBasketPreview`|User menu: displays a badge with the number of products in stored comparison or the number of stored baskets|caching strategy `basket_preview`</br>Purged when basket changes.</br>Tags: `siso_basket_<basketid>`|
@@ -31,4 +31,4 @@ eZ Commerce uses cache tags to tag and purge content.
 |`siso_basket_<id>`|Basket preview in the header|By event, on basket change|
 |`siso_menu`|Main menu and left side menus (product catalog)||
 |`content-<contentid>`|Textmodules|When content (text modules) are changed|
-|`siso_user_<userid>`|User-specific data (show name of the user)|When the user logs in or out|
+|`siso_user_<userid>`|User-specific data (shows name of the user)|When the user logs in or out|

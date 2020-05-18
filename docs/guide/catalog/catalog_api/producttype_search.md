@@ -2,9 +2,9 @@
 
 The `ProductType` catalog element can appear in the search result of products.
 
-For this to happen you can modify the configuration adding `ses_product_type` to the product list or to product search.
+For this to happen you need to modify the configuration by adding `ses_product_type` to the product list or to product search.
 
-`use_display_in_product_list_flag` enables or disables the use of the `productType` flag when displaying search and display in product list:
+`use_display_in_product_list_flag` enables or disables the use of the `productType` flag when displaying in search and in product list:
 
 `use_display_in_product_list_flag: true`
 
@@ -13,7 +13,7 @@ You can disable this using the following configuration:
 
 `cp_to_product_type: false`
 
-Disabling this lowers indexer times but product data is not be indexed alongside Product Types.
+Disabling this lowers indexer times but product data is not indexed alongside Product Types.
 
 ## Template
 

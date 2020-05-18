@@ -19,7 +19,7 @@ Remove the already generated image first:
 rm web/var/ecommerce/storage/images/thumb_medium/i/m/a/-image-not-available_thumb_medium.png
 ```
 
-## Do the prices set up in the Back Office include VAT?
+## How to include VAT in the prices from the Back Office?
 
 This can be configured by siteaccess:
 

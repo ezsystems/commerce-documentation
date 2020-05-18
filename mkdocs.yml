@@ -175,7 +175,7 @@ nav:
                 - 'Content cache refresh': 'guide/cache/content_cache_refresh/content_cache_refresh.md'
                 - 'HTTP caching': 'guide/cache/content_cache_refresh/http_caching.md'
             - 'Caching FAQ': 'guide/cache/caching_faq.md'
-            - 'Translation cache for Textmodules': 'guide/cache/translations_cache_for_textmodules.md'
+            - 'Translation cache for Text modules': 'guide/cache/translations_cache_for_textmodules.md'
             - 'Basketpreview cache and user-specific data': 'guide/cache/basketpreview_cache_and_user_specific_data.md'
         - Catalog:
             - 'Catalog ': 'guide/catalog/catalog.md'
@@ -184,7 +184,7 @@ nav:
                     - 'Product variants': 'guide/catalog/catalog_features/product_variants/product_variants.md'
                     - 'Variants and ERP system': 'guide/catalog/catalog_features/product_variants/variants_and_erp_system.md'
                 - 'Generate PDF': 'guide/catalog/catalog_features/generate_pdf.md'
-                - 'Supported Field Types for products in eZ': 'guide/catalog/catalog_features/supported_field_types_for_products_in_ez.md'
+                - 'Supported Field Types for products in eZ Platform': 'guide/catalog/catalog_features/supported_field_types_for_products_in_ez.md'
                 - 'Catalog data providers': 'guide/catalog/catalog_features/catalog_data_providers.md'
             - Catalog API:
                 - 'Catalog API': 'guide/catalog/catalog_api/catalog_api.md'

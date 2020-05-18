@@ -3,13 +3,13 @@
 If you need to prepare special fields for products or categories, or you need to do a mapping,
 then the easiest way is to extend the CatalogFactory.
 
-The factory maps the data from the provider to the standard `CatalogElements` or `ProductNodes`. It is called every time a product is provided by the data provider. For each provider a factory is defined. Some data providers could be Content items or eContent. The data provider is defined the `silver_eshop.default.catalog_data_provider` parameter.
+The factory maps the data from the provider to the standard `CatalogElements` or `ProductNodes`. It is called every time a product is provided by the data provider. For each provider a factory is defined. Some data providers could be Content items or eContent. The data provider is defined by the `silver_eshop.default.catalog_data_provider` parameter.
 
-For more information about data providers see [Catalog data provider](../catalog_features/catalog_data_providers.md).
+For more information about data providers, see [Catalog data provider](../catalog_features/catalog_data_providers.md).
 
 The following example provides one more mapping for a complex Field Type Keyword.
 
-It extends the Content Type `ses_product` by adding a new Field Tags (ezkeyword).
+It extends the Content Type `ses_product` by adding a new Field Tags (`ezkeyword`).
 In the backend you can now add tags to your products:
 
 ![](../../img/catalog_cookbook_1.png)
@@ -52,7 +52,7 @@ In this case you have to define the extended service just like the parent servic
 
 ## Extend the service class
 
-The extended service does the mapping for the Keyword Field Type. To simplify, the example the Keyword Field always uses the name `tags`. An extended implementation could use the identifier of the Content item directly. 
+The extended service does the mapping for the Keyword Field Type. To simplify, in the example the Keyword Field always uses the name `tags`. An extended implementation could use the identifier of the Content item directly. 
 
 ``` php
 <?php

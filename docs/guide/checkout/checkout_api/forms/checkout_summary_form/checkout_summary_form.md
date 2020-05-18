@@ -32,4 +32,4 @@ and to be able to read configuration settings.
 
 ### Select values configuration
 
-More configuration values are set in the config file `checkout.yml.`
+More configuration values are set in the config file `checkout.yml`.

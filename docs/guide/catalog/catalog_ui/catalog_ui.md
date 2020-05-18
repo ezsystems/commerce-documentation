@@ -20,7 +20,7 @@
 
 |No|Attribute ProductNode|Note|
 |--- |--- |--- |
-|1|`catalogElement.mainImage`|The main image or the `imageList` can come from the filesystem directly|
+|1|`catalogElement.mainImage`|The main image or the `imageList` can come from the file system directly|
 |2|`catalogElement.imageList`||
 |3|`catalogElement.sku`||
 |4|`catalogElement.unit`||
