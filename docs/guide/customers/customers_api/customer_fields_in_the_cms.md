@@ -1,29 +1,31 @@
-# Customer fields in the CMS
+# Customer fields
 
-## Content Type user in the CMS
+## User Content Type
 
-By default the eZ User class contains following fields:
+By default the User Content Type contains the following Fields:
 
-|Field|Field identifier|Datatype|Notice|
+|Field|Field identifier|Field Type|Note|
 |--- |--- |--- |--- |
-|Name|name|Text line|This attribute can not be removed from the User class.</br>There are users (like admin, editors) who don't have any customer_profile_data information.|
+|Name|name|Text line|This attribute cannot be removed from the User Content Type. There are Users (such as admin, editors) who don't have any `customer_profile_data` information.|
 |First name|first_name|Text line||
 |Last name|last_name|Text line||
-|Salutation|salutation|SesSelection|The User salutation is stored here|
+|Salutation|salutation|SesSelection||
 |User Account|user_account|User account||
 |Signature|signature|Text block||
 |Image|image|Image||
 |Customer number|customer_number|Text line||
 |Contact Number|contact_number|Text line||
-|Customer Profile Data|customer_profile_data|sesprofiledata|This field contains a Base64 encoded string.</br>If decoded and unserialized, this results in a customer profile data model entity.|
+|Customer Profile Data|customer_profile_data|sesprofiledata|This Field contains a Base64-encoded string. If decoded and unserialized, this results in a customer profile data model entity.|
 |Budget per order|budget_order|Float||
 |Budget per month|budget_month|Float||
 
 ## Access to the profile
 
-Not every user is allowed to modify his profile data in the shop (e.g. guest). You have to add the policy `siso_policy/forms_profile_edit` explicit to a role and assign it to customers. The standard already provides a role "Ecommerce registered users" which includes this policy. 
+Not every user is allowed to modify their profile data in the shop (e.g. guest).
+You have to add the Policy `siso_policy/forms_profile_edit` to a Role and assign it to customers.
+The built-in "Ecommerce registered users" Role already includes this Policy.
 
-### Getting the policy in the Controller
+### Getting the Policy in a controller
 
 ``` php
 return $this->render(
@@ -34,7 +36,7 @@ return $this->render(
         );
 ```
 
-### Using the policy in the Template
+### Using the Policy in a template
 
 ``` html+twig
 {% if grant_profile_edit %}
@@ -44,19 +46,16 @@ return $this->render(
 {% endif %}
 ```
 
-### Prohibit access to the form
+### Restricting access to the form
 
-You can also prohibit access to the form if the user calls a specific URL, where he does not have required role. This is set in the configuration.
-
-**forms.yml**
+You can also restrict access to the form if the user calls a URL that they do not have permissions for.
+This is set in configuration:
 
 ``` yaml
 ses_forms.configs.buyer:
-    ...
     policy: siso_policy/forms_profile_edit
-    ... 
 ```
 
-Example:
+For example:
 
-User calls URL `/profile/buyer` (wants to edit the buyer address) without appropriate role.
+The customer calls URL `/profile/buyer` (wants to edit the buyer address) without having the appropriate Role.

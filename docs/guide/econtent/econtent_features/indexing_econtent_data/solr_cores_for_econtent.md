@@ -1,14 +1,15 @@
-# Dedicated solr cores for econtent
+# Solr cores for eContent
 
-The main goal of dedicated solr cores for econtent data provider is to be able to import and re-index data (like products) using temporary solr core. In this case the application is not disturbed while the importer and indexer are working in 'tmp' cores.
+The main goal of dedicated Solr cores for the eContent data provider is to import and re-index data (like products) using a temporary Solr core.
+In this case the application is not disturbed while the importer and indexer are working in temporary cores.
 
-After the processes are finished, the 'tmp' cores are swaped to the production cores and the application is using fresh data.
+After the processes are finished, the temporary cores are swapped with the production cores and the application starts using fresh data.
 
-### Adapt configuration for 2 solr econtent cores
+## Adapt configuration for two Solr eContent cores
 
-The standard configuration for eZ Commerce already is shipped using this configuration (see app/config/ezcommerce_advanced.yml). 
+The standard configuration for eZ Commerce is already shipped using this configuration (see `app/config/ezcommerce_advanced.yml`).
 
-ezpublish/config/config.yml:
+In `ezpublish/config/config.yml`:
 
 ``` yaml
 nelmio_solarium:
@@ -48,9 +49,7 @@ nelmio_solarium:
                 - siso_core_admin 
 ```
 
-### Add parameters
-
-app/config/parameters.yml:
+## Add parameters
 
 ``` yaml
 parameters:
@@ -61,9 +60,9 @@ parameters:
     
 ```
 
-### Manual changes in solr
+## Manual changes in Solr
 
-eZ Commerce comes with an bash script which installs the solr engine and adapts the configuration for solr:
+eZ Commerce comes with an bash script which installs the Solr engine and adapts the configuration for Solr:
 
 ``` bash
 bash ./install-solr.sh 8983

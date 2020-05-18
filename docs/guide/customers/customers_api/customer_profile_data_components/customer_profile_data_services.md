@@ -2,35 +2,36 @@
 
 ## CustomerProfileDataServiceInterface
 
-`\Silversolutions\Bundle\EshopBundle\Services\CustomerProfileData\CustomerProfileDataServiceInterface`
-
-The general interface for any customer profile data service.
+`CustomerProfileDataServiceInterface` (`Silversolutions\Bundle\EshopBundle\Services\CustomerProfileData\CustomerProfileDataServiceInterface`)
+is the general interface for any customer profile data service.
 
 ## AbstractCustomerProfileDataService
 
-`\Silversolutions\Bundle\EshopBundle\Services\CustomerProfileData\AbstractCustomerProfileDataService`
-
-Abstract customer profile data service implementation which provides helper methods for deriving services.
+`AbstractCustomerProfileDataService` (`Silversolutions\Bundle\EshopBundle\Services\CustomerProfileData\AbstractCustomerProfileDataService`)
+is the abstract customer profile data service implementation which provides helper methods for derivative services.
 
 ## EzErpCustomerProfileDataService
 
-`\Silversolutions\Bundle\EshopBundle\Services\CustomerProfileData\EzErpCustomerProfileDataService`
-
-Concrete customer profile data service implementation using ERP as source for customer and contact data. Also uses eZ platform as source for account data and target for fallback data.
+`EzErpCustomerProfileDataService` (`Silversolutions\Bundle\EshopBundle\Services\CustomerProfileData\EzErpCustomerProfileDataService`)
+is the concrete customer profile data service implementation using ERP as source for customer and contact data.
+It also uses the content model as source for account data and target for fallback data.
 
 ## DeprecatedCustomerMappingService
 
-`\Silversolutions\Bundle\EshopBundle\Services\CustomerProfileData\DeprecatedCustomerMappingService`
-
-Concrete customer profile data service which implements the deprecated `AbstracCustomerService` to use with eZ Commerce components, which depend on the deprecated model.
+`DeprecatedCustomerMappingService` (`Silversolutions\Bundle\EshopBundle\Services\CustomerProfileData\DeprecatedCustomerMappingService`)
+is the concrete customer profile data service which implements the deprecated `AbstracCustomerService` to use with eZ Commerce components,
+which depend on the deprecated model.
 
 ## Using customer profile data services in source code
 
 !!! caution
 
-    Please do **not** use the customerservice in any place, that can not access the session. An example will be a CLI tool, or processes that are happing in background - like sending out the order if customer payed via payment service provider.
+    Do not use the customer services in any place that cannot access the session.
+    An example would be a CLI tool, or processes that happen in background,
+    like sending out the order if a customer paid via a payment service provider.
 
-To use a customer profile data service, e.g. the `EzErpCustomerProfileDataService`, you might inject the service into your method resp. using the Symfony DIC.
+To use a customer profile data service, e.g. the `EzErpCustomerProfileDataService`,
+you can inject the service into your method using Symfony DIC.
 
 ``` php
 /** @var \Silversolutions\Bundle\EshopBundle\Services\CustomerProfileData\CustomerProfileDataServiceInterface $customerProfileDataService */

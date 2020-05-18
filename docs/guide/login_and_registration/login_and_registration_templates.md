@@ -1,14 +1,15 @@
 # Login and registration templates
 
-## Templates list:
+## Template list
+
 | Path     | Description        |
 | -------- | ------------------ |
-| Silversolutions/Bundle/EshopBundle/Resources/views/Forms/register\_private.html.twig  | Form for private customer registration |
-| Silversolutions/Bundle/EshopBundle/Resources/views/Forms/register\_business.html.twig | Form for business customer registration  |
-| Silversolutions/Bundle/EshopBundle/Resources/views/Forms/register\_choice.html.twig   | Overview page for registration, which offers buttons for the different registration types (and activation of existing customers) |
-| Silversolutions/Bundle/EshopBundle/Resources/views/Forms/activate\_business.html.twig | Form for activation of existing customers   |
-| Silversolutions/Bundle/EshopBundle/Resources/views/Checkout/checkout\_login.html.twig   | Login form in checkout   |
-| Silversolutions/Bundle/EshopBundle/Resources/views/Security/login.html.twig   | Login form  |
+| `Silversolutions/Bundle/EshopBundle/Resources/views/Forms/register_private.html.twig`  | Form for private customer registration |
+| `Silversolutions/Bundle/EshopBundle/Resources/views/Forms/register_business.html.twig` | Form for business customer registration  |
+| `Silversolutions/Bundle/EshopBundle/Resources/views/Forms/register_choice.html.twig`   | Overview page for registration, which offers buttons for the different registration types (and activation of existing customers) |
+| `Silversolutions/Bundle/EshopBundle/Resources/views/Forms/activate_business.html.twig` | Form for activating of existing customers   |
+| `Silversolutions/Bundle/EshopBundle/Resources/views/Checkout/checkout_login.html.twig`   | Login form in checkout   |
+| `Silversolutions/Bundle/EshopBundle/Resources/views/Security/login.html.twig`   | Login form  |
 
 ## Related routes
 

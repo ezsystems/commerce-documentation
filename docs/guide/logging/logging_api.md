@@ -1,18 +1,20 @@
 # Logging API
 
-The logging in the eZ Commerce is based on Monolog. There is no separate logging API definition. But for the purpose of persisting logs within a database, the Monolog API implementation has been extended by Doctrine-based classes and an interface.
-
-This is just an API reference. For a more detailed description of how Doctrine-based Monolog logging was implemented and should be used, please have a look at [the logging cookbook](#).
+Logging in eZ Commerce is based on Monolog. There is no separate logging API definition.
+For the purpose of persisting logs within a database,
+the Monolog API implementation has been extended by Doctrine-based classes and an interface.
 
 ## Important service classes and interfaces of Monolog
 
 ### Psr\Log\LoggerInterface
 
-This interface SHOULD **always** be used as the dependency / service for logging. 
+`LoggerInterface` is always used as the service for logging. 
 
-In the following you will find the list of the logging methods (*in order of importance, descending*). The last method, log(), SHOULD only be used if the log level of a message can only be determined at runtime. For more information about the PSR logging standard please read [the official specification](https://github.com/php-fig/fig-standards/blob/master/accepted/PSR-3-logger-interface.md).
+Below you can find the list of the logging methods (in order of importance).
+The last method, `log()`, should only be used if the log level of a message can only be determined at runtime.
+For more information about the PSR logging standard, see [the official specification](https://github.com/php-fig/fig-standards/blob/master/accepted/PSR-3-logger-interface.md).
 
-```
+``` php
 public function emergency($message, array $context = array());
 public function alert($message, array $context = array());
 public function critical($message, array $context = array());
@@ -26,104 +28,75 @@ public function log($level, $message, array $context = array());
 
 ### Monolog\Logger
 
-This class implements the LoggerInterface but, for historical reasons, provides its own logging methods (which correspond to the interface, although are named differently).
+`Monolog\Logger` implements `LoggerInterface` but, for historical reasons, provides its own logging methods (which correspond to the interface, although are named differently).
 
 !!! note
 
-    Although huge parts of the shop rely on `Monolog\Logger` directly, it's RECOMMENDED that all new implementations rely on the PSR LoggerInterface instead of explicitly refer to this class.
-
-Because of the recommendation above, I will omit the documentation of the Monolog specific methods here.
+    Although large parts of the shop rely on `Monolog\Logger` directly, it's recommended that all new implementations rely on the PSR `LoggerInterface` instead of explicitly referring to this class.
 
 ## Base classes of Doctrine-based logging
 
-### Siso\Bundle\ToolsBundle\Entity\LogRepositoryInterface
+### LogRepositoryInterface
 
-In order to make database logging possible, for every type of log records (mail log, erp log) a specific Doctrine entity class and its respective repository class must be created.
+To make database logging possible, a specific Doctrine entity class and its respective repository class must exist
+for every type of log records (email log, ERP log).
 
-The LogRepositoryInterface must be implemented by every repository class in order to work with the DoctrineHandler.
+`LogRepositoryInterface` must be implemented by every repository class in order to work with the Doctrine handler.
 
-#### public function createNewLog(array $logRecord, $persist = false);
+#### createNewLog()
 
-Parameters:
+The `createNewLog()` method instantiates a new log record entity.
+It takes the following parameters:
 
-```
-@param array $logRecord The record as created by Doctrine loggers.
-@param bool $persist If true, call save() implicitly.
-@return Siso\Bundle\ToolsBundle\Entity\AbstractLog
-```
+|Parameter|Description|
+|---|---|
+|`$logRecord`|The record as created by Doctrine loggers|
+|`$persist`|If `true`, calls `save()` implicitly|
 
-Instantiate a new log record entity.
-Expected keys for `$logRecord`:
+#### save()
 
-- channel: string (The current monolog channel)
-- level: int (numeric log level)
-- datetime: \DataTime (date-time of the log message)
-- message: string (message to log)
-- context: array (monolog context)
-- extra: array (additional data from monolog processors)
- 
-#### public function save($logEntity);
+The `save()` method persists the given log entity.
+It takes the following parameters:
 
-Parameters:
+|Parameter|Description|
+|---|---|
+|`$logEntity`|A log entity, created by `createNewLog()`|
 
-`@param AbstractLog $logEntity A log entity, created by createNewLog()`
+### AbstractOrmLogRepository
 
-Persists the given log entity.
+This implementation of `LogRepositoryInterface` uses doctrines ORM API by deriving from `EntityRepository`.
 
-### Siso\Bundle\ToolsBundle\Entity\AbstractOrmLogRepository
+The class is abstract, but implements the complete `LogRepositoryInterface`.
+It is intended to be extended for concrete entity implementations of `AbstractLog` and, therefore, must not be instantiated directly.
 
-This implementation of LogRepositoryInterface uses doctrines ORM API by deriving from EntityRepository.
+It's recommended to extend this class for any ORM-based logging entities.
 
-The class is abstract, but implements the LogRepositoryInterface completely. It is intended to be extended for concrete entity implementations of AbstractLog and, therefore, MUST NOT instantiated directly.
+### AbstractLog
 
-It's RECOMMENDED to extend this class for any ORM based logging entities.
+`AbstractLog` is the abstract class for all Log entities.
 
-### Siso\Bundle\ToolsBundle\Entity\AbstractLog
+It cannot be persisted by itself and MUST be derived by, for example, a fully-mapped doctrine entity class.
 
-Abstract class for all Log entities.
+The attributes in the class must be considered in any DBMS mapping, as well.
 
-It is not persistable by itself and MUST be derived by e.g. a fully mapped doctrine entity class.
+!!! note
 
-The attributes in the class MUST be considered in any DBMS mapping, as well.
-
-!! note
-
-    For any deriving class that uses Symfony's annotation based configuration for object relational mapping, the base attributes must be overridden and enriched with the respective ORM tags in their DocBlocks.
-
-```
-/**
- * @var integer
- */
-protected $id;
-/**
- * @var \DateTime
- */
-protected $logTimestamp;
-/**
- * @var string $logChannel
- */
-protected $logChannel;
-/**
- * @var integer
- */
-protected $logLevel;
-/**
- * @var string
- */
-protected $logMessage;
-```
+    For any deriving class that uses Symfony's annotation-based configuration for object relational mapping,
+    the base attributes must be overridden and enriched with the respective ORM tags in their docblocks.
 
 ## Monolog extension
 
-The classes that extend Monolog by Doctrine-based persistence do not provide a public API. Instead, they implement the public API of Doctrine. I will only list the created classes here together with their descriptions and how they have to be used in the service container.
+The classes that extend Monolog by Doctrine-based persistence do not provide a public API.
+Instead, they implement the public API of Doctrine.
 
-### Siso\Bundle\ToolsBundle\Service\Logging\DoctrineFormatter
+### DoctrineFormatter
 
-Implements `Monolog\Formatter\FormatterInterface`.
+`DoctrineFormatter` implements `Monolog\Formatter\FormatterInterface`.
 
-This is a Monolog formatter class for the DoctrineHandler. It serializes all non-scalar values, so that they can be stored in to database fields.
+This is a Monolog formatter class for the Doctrine handler.
+It serializes all non-scalar values, so they can be stored in database fields.
 
-**Service definition**
+Service definition:
 
 ``` xml
 <!-- Arguments are define here with their default values. They could be omitted -->
@@ -134,13 +107,13 @@ This is a Monolog formatter class for the DoctrineHandler. It serializes all non
 </service>
 ```
 
-### Siso\Bundle\ToolsBundle\Service\Logging\DoctrineHandler
+### DoctrineHandler
 
-Extends Monolog\Handler\AbstractProcessingHandler
+`DoctrineHandler` extends `Monolog\Handler\AbstractProcessingHandler`.
 
-Monolog handler class, that writes log records into Doctrine entities.
+It is a Monolog handler class that writes log records into Doctrine entities.
 
-**Service definition**
+Service definition:
 
 ``` xml
 <!-- A doctrine handler must be assigned to a specific entity class and it's repository -->
@@ -152,7 +125,7 @@ Monolog handler class, that writes log records into Doctrine entities.
 </service>
 ```
 
-**Handler injection**
+Handler injection:
 
 ``` xml
 <service id="siso_module.log_type.logger" class="%monolog.logger.class%">
@@ -164,11 +137,11 @@ Monolog handler class, that writes log records into Doctrine entities.
 </service>
 ```
 
-### Siso\Bundle\ToolsBundle\Service\Logging\RequestDataProcessor
+### RequestDataProcessor
 
-This monolog data processor adds the request-, session- and user-id to log messages.
+`RequestDataProcessor` adds the request, session and user ID to log messages.
 
-**Service definition**
+Service definition:
 
 ``` xml
 <service id="siso_tools.logging_processor.request_data" class="%siso_tools.logging_processor.request_data.class%">
@@ -177,7 +150,7 @@ This monolog data processor adds the request-, session- and user-id to log messa
 </service>
 ```
 
-**Processor injection**
+Processor injection:
 
 ``` xml
 <service id="siso_module.log_type.logger" class="%monolog.logger.class%">

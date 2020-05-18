@@ -1,20 +1,22 @@
-# How to import products (API)
+# Importing products (API)
 
-## Intro
+Importing products via the API includes the following parts of the system:
 
-- Econtent repository: helper methods for automatically generating metadata.
+- eContent repository: helper methods for automatically generating metadata.
 - catalog data (categories, products and related attributes) need to be stored individually for every language used in the shop
-- available classes for new database objects can be obtained from the *sve\_class* table (by default only two classes: 1 = category, 2 = product)
+- available classes for new database objects can be obtained from the `sve_class` table (by default only two classes: 1 = category, 2 = product)
 
 ## Attributes
 
-Every catalog class defines a number of valid attributes for their elements. The name identifier, id and data type of all attributes are stored in the table *sve\_class\_attributes*.
+Every catalog class defines a number of valid attributes for their elements. The name identifier, ID and Content Type of all attributes are stored in the table `sve_class_attributes`.
 
-- required fields: node_id of product, attribute id and language code
+Fields `node_id` of product, `attribute_id` and language code are required.
 
-After a new product has been created, attributes can be associated with the product using its node\_id. In addition, creating a new attribute requires its id and the language code.
+After a new product is created, attributes can be associated with the product using its `node_id`.
+In addition, creating a new attribute requires its ID and the language code.
 
-Attributes use three distinct data types to store their data (text, float and int). The API provides a corresponding setter method for every data type that needs to be called explicitly on import.
+Attributes use three data types to store their data (text, float and int).
+The API provides a corresponding setter method for every data type that needs to be called explicitly on import.
 
 |Data type|Method|
 |--- |--- |
@@ -22,13 +24,14 @@ Attributes use three distinct data types to store their data (text, float and in
 |int|setDataInt|
 |text/string|setDataText|
 
-## How to import a category
+## Importing a category
 
-- class_id = 1
-- categories are used to group products by setting the parent_id of the products to the node_id of the category
-- the root node of the tree is 2 (will be the parent of first category)
+A category has `class_id` = 1.
 
-**Example - Import a new category**
+Categories are used to group products by setting the `parent_id` of the products to the `node_id` of the category.
+The root node of the tree is 2 (the parent of first category)
+
+For example:
 
 ``` php
 $categoryName = 'My category';
@@ -54,21 +57,22 @@ $this->em->persist($econtentAttribute);
 $this->em->flush();
 ```
 
-## How to import a product
+## Importing a product
 
-- class_id = 2
+A product has `class_id` = 2.
 
-Creating a product requires a parent-id (its location in the product tree/catalog). Changing the parent\_id will move the product in the tree. After creation, the products' node\_id will serve as its unique identifier.
+Creating a product requires the `parent_id` (its Location in the product tree/catalog).
+Changing the `parent_id` moves the product in the tree. After creation, the product's `node_id` serves as its unique identifier.
 
-- product entities provide getters and setters for their attributes
-- for imports in the \*\_tmp table: $nodeId = $objectRepo-\>getNextNodeId();
-- use the method generateMetaData to generate metadata such as the url alias of the product
+Product entities provide getters and setters for their attributes.
 
-## Example
+To import into the `*_tmp` table, use `$nodeId = $objectRepo->getNextNodeId();`.
 
-- create product object in db and set properties
-- create attributes and associate them with the object
-    - different attributes have different data types (text is default)
+Use the `generateMetaData()` method to generate metadata such as the URL alias of the product.
+
+The following example creates a product object in the database and sets its properties.
+It creates attributes and associates them with the object.
+Different attributes have different data types (text is default)
 
 ``` php
 // get the doctrine repository
@@ -117,17 +121,17 @@ $this->em->persist($econtentAttribute);
 $this->em->flush();
 ```
 
-Create the index for the new products (tmp area):
+Create the index for the new products (in temporary area):
 
-``` 
+``` bash
 php bin/console silversolutions:indexecontent
 ```
 
-After the the import the DB tables and solr cores have to be switched:
+After the import, the database tables and Solr cores have to be switched:
 
 ``` 
 php bin/console silversolutions:indexecontent swap
 php bin/console silversolutions:econtent-tables-swap
 ```
 
-Details see [econtent - Staging system](../../econtent_features/econtent_staging_system.md) and [Indexing econtent data](../../econtent_features/indexing_econtent_data/indexing_econtent_data.md).
+For more information see [Staging system](../../econtent_features/staging_system.md) and [Indexing econtent data](../../econtent_features/indexing_econtent_data/indexing_econtent_data.md).

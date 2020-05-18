@@ -1,27 +1,24 @@
-# Forgot / Change password
-
-## Goal
-
-This functionality allows customer to set new password. There are 2 different scenarios which are described below.
+# Forgot / change password
 
 ## Forgot password
 
-If the customer does not remember the old password and cannot login to the shop, he can use the forgot password page.
+If the customer does not remember the old password and cannot log in to the shop,
+they can use the forgot password page.
 
 ![](../img/login_1.png)
 
-#### Workflow
+### Workflow
 
-1. The customer needs to provide the login or email address to which the link for password-resetting will be sent.  
-Additionally, if the shop expects the customer number as login-name, the customer can specify the customer number - it will search through the users inside the customer center.
-2. If the user exists, an email with an unique URL will be sent. It includes the correct token.
-3. When clicked, the user is redirected to a page where he can reset the password.
+1. The customer needs to provide the login or email address that should receive the link for password resetting.  
+Additionally, if the shop expects the customer number as login, the customer can specify the customer number. The shop then searches through the users inside the Customer Center.
+2. If the user exists, they receive an email with a unique URL. It includes the correct token.
+3. When clicked, the user is redirected to a page where they can reset the password.
 
 !!! caution
 
-    Only if the token is provided and user is anonymous (i.e. the browser has no logged-in session), he will be able to change password.
+    The user is able to change the password only if the token is provided and the user is anonymous (the browser has no logged-in session).
 
-#### Implementation
+### Implementation
 
 Route:
 
@@ -48,9 +45,10 @@ ses_forms.configs.reminder:
         - siso_core.data_processor.send_password_reminder_email
 ```
 
-##### Service
+#### Service
 
-When building a form the shop checks if login with customer number is enabled. If so, customerNumber field is added.
+When building a form the shop checks if logging in with customer number is enabled.
+If so, the `customerNumber` field is added.
 
 ``` php
 if($enableCustomerNumber) {
@@ -62,39 +60,38 @@ if($enableCustomerNumber) {
 }
 ```
 
-##### Data Processors
+#### Data Processors
 
-1. `ses_forms.password_reminder_data_processor`
+The `ses_forms.password_reminder_data_processor` data processor checks if the data provided in the form is correct and if the user exists.
 
-This data processor checks if data provided in the form are correct and if the user exists.
-
-2. `siso_core.data_processor.send_password_reminder_email`
-
-If user exists email with link to change password functionality is sent. Link will be valid for a period of time specified in configuration
+The `siso_core.data_processor.send_password_reminder_email` data processor sends an email with link to change password functionality is sent if the User exists.
+The link is be valid for a period of time specified in configuration:
 
 ``` 
 siso_core.default.forget_password_token_valid: 1 hour
 ```
 
-##### Using in template
+#### Use in templates
 
-``` 
- <a href="{{ path('silversolutions_password_reminder', {'formTypeResolver': 'reminder'}) }}" class="link">{{ 'Forgot your password?'|st_translate }}</a>
+``` html+twig
+<a href="{{ path('silversolutions_password_reminder', {'formTypeResolver': 'reminder'}) }}" class="link">{{ 'Forgot your password?'|st_translate }}</a>
 ```
 
-The standard feature of Eshop does respect the special case that a shop allows registrations of more than one account having the the same email address. This is useful when eZ Commerce has to run a B2B and a B2C shop in one installation.
+The shop allows registrations of more than one account with the same email address.
+This is useful when eZ Commerce has to run a B2B and a B2C shop in one installation.
 
 ## Change password
 
-If the customer is logged in, but wants to change his password to new one (for security reasons), he can use the change password form, which is located in profile page.
+If the customer is logged in but wants to change their password (for security reasons),
+they can use the change password form located on the profile page.
 
 ![](../img/login_2.png)
 
 #### Workflow
 
-1. First action is to check if user is logged in and no token is provided. Otherwise the user cannot access this page.
-1. User fills the form with new password and click send.
-1. The form is validated and new password is set for customer.
+1. The shop checks if the user is logged in and no token is provided. Otherwise they cannot access the change password page.
+1. The user fills the form with new password and clicks send.
+1. The form is validated and new password is set for the customer.
 
 #### Implementation
 
@@ -106,7 +103,7 @@ silversolutions_password_change:
         token: null
 ```
 
-Configuration for password change (entity, service, template)
+Configuration for password change (entity, service, template):
 
 ``` yaml
 ses_forms.configs.password_change:
@@ -117,11 +114,9 @@ ses_forms.configs.password_change:
     validMessage: success_message_password_change
 ```
 
-##### Action
+#### Action
 
-First the action tries to get the correct user.
-
-`CustomerProfileDataController` -> `changePasswordAction`
+`CustomerProfileDataController::changePasswordAction()` tries to get the correct user:
 
 ``` php
 if(!isset($token)) {
@@ -135,9 +130,9 @@ if(!isset($token)) {
 }
 ```
 
-Then we submit the form data and display result.
+Then the form data is submitted and result is displayed.
 
-##### Using in template
+#### Use in templates
 
 ``` html+twig
 <a href="{{ path('silversolutions_password_change') }}" class="button float_left">{{ 'Change password'|st_translate() }}</a>         

@@ -1,49 +1,39 @@
 # eContent
 
-## What is eContent?
-
-eContent is a storage provider for eZ Commerce which can store product data in a very efficient way. It allows to store data (mostly for products and product groups) in a database tables with a simple structure. 
+The eContent storage provider can store product data in an efficient way.
+It enables storing data (mostly for products and product groups) in database tables with a simple structure. 
 
 During the import the database tables are filled and the eContent data provider and eContent factory are there to get the information from the database and create catalog elements.
 
-Main advantages:
+Main advantages of using eContent as the data provider:
 
 - Fast imports (e.g. from ERP or PIM systems)
 - Supports more than one million products
-- Search ready
+- Search-ready
 - Fast access
-- Avoids to store products in the CMS content model
+- Avoids storing products in the content model
 - Allows imports during production and switching catalogs
 
-## Data provider eZ vs. eContent
+## Content model vs. eContent data provider
 
-eZ Commerce uses an almost generic way to access the catalogue. The catalogue can be stored in eZ or in eContent. 
+eZ Commerce uses an almost generic way to access the catalog.
+The catalog can be stored in the content model or in eContent. 
 
-Nevertheless if eContent is used there are a few restrictions which have to be considered:
+If eContent is used there are a few restrictions which have to be considered:
 
-- A product cannot be embeded using a standard eZ platform embed feature. eZ Commerce offers an alternative feature which allows to embed products in richttext fields using a data provider independent way
-- eContent products will not be visible in the backend
+- A product cannot be embedded using a standard embed feature. eZ Commerce offers an alternative feature which enables embedding products in RichtText Fields.
+- eContent products are not visible in the Back Office.
 
 It depends on the requirements of the customer to decide which provider should be used. The following table compares the main features:
 
-| Feature                              | eZ                                           | econtent                                     |
+| Feature                              | content model                                | eContent                                     |
 | ------------------------------------ | -------------------------------------------- | -------------------------------------------- |
-| Flexible datamodel                   | yes  | yes  |
+| Flexible data model                   | yes  | yes  |
 | Translations                         | yes  | yes  |
 | Interface for editing                | yes  | no |
 | Versioning                           | yes  | no |
-| Simple segmentation feature          | yes  | yes  |
-| Extended segmentation feature        | no | yes  |
+| Simple segmentation          | yes  | yes  |
+| Extended segmentation        | no | yes  |
 | Fast imports (e.g. from PIM)         | no | yes  |
-| Supports large catalogs              | no | yes  |
-| Staging feature (live and tmp space) | no | yes  |
-
-## Best way to start
-
-econtent has a lot of features. If you want to get into the topic as fast as possible please check these documents:
-
-- Check the [econtent - Features](econtent_features/econtent_features.md) section to learn which features are supported
-- Learn how econtent is organizing the data in the DB - [Econtent dataprovider - database model](econtent_features/econtent_dataprovider_database_model.md)
-- Learn howto import data into econtent - Using the API - [How to import products (API)](econtent_cookbook/econtent_how_to_import_products/how_to_import_products_api.md)
-
-Please check important settings described in [econtent - Configuration](econtent_configuration.md) (especially in section "Important configuration for projects")
+| Support of large catalogs              | no | yes  |
+| Staging (live and temporary space) | no | yes  |

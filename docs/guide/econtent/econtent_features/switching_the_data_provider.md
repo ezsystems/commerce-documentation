@@ -1,74 +1,80 @@
 # Switching the data provider
 
-!!! caution
-
-    Currently only one provider can be activated per installation.
+You can switch the data provider using the command line or manually.
+Only one data provider can be activated per installation.
 
 ## Switching using a command line
 
-Especially for testing purposes eZ Commerce provides a command line tool which switches between eZ and econtent.
+The `silversolutions:switchdataprovider` command switches between the content model data provider and eContent.
+It is useful especially for testing purposes.
 
-Commandline (silversolutions:switchdataprovider) options:
+The command takes the following options:
 
 |Option|Notes|
 |--- |--- |
-|--new-root-node|By default (eZ Commerce demo data) for eZ:56, econtent:2|
-|--location-id|By default 56. This is the location id of the "Product catalog" object in eZ Platform
-If you are using another location id please use this parameter|
+|`--new-root-node`|Default value is `56` for content model data provider, `2` for eContent|
+|`--location-id`|Default value is `56`. This is the Location ID of the "Product catalog" Content item in eZ Platform. If you are using another Location ID, change this parameter|
 
 ``` bash
-# switch to econtent 
+# switch to eContent 
 php bin/console silversolutions:switchdataprovider econtent --location-id=56 --new-root-node=2
 php bin/console silversolutions:indexecontent --no-debug
 php bin/console silversolutions:indexecontent swap --no-debug
  
-# switch to ez 
+# switch to content model
 php bin/console silversolutions:switchdataprovider ez
+```
 
-# Important
+Remember to clear the cache after running the command:
+
+``` bash
 php bin/console cache:clear --env=prod
 ```
 
-## Details about switching the dataproviders
+## Data provider switch process
 
-It will change some settings and data in as as well:
+Switching the data provider introduces some changes to your project:
 
-- Changes the yml files:  app/config/ecommerce.yml is changed.  
+### Changes to `app/config/ecommerce.yml`
 
 ``` 
-# dataprovider econtent
+# eContent data provider
 resource: '../../vendor/silversolutions/silver.e-shop/src/Silversolutions/Bundle/EshopBundle/Resources/config/config_data_provider_econtent.yml' or 
  
-# dataprovider eZ
+# content model data provider
 resource: '../../vendor/silversolutions/silver.e-shop/src/Silversolutions/Bundle/EshopBundle/Resources/config/config_data_provider_ez.yml'
 ```
 
-- Changes the eZ object "Product catalog" and sets the root node accordingly
+### Changes to the "Product catalog" Content item
+
+The Product catalog's root nod ise set accordingly.
 
 ![](../../img/product_catalog.png)
 
-- for econtent the root node will be set to "2" by default, for eZ it will be 56 (in case the Demo data is used) 
-- The location id for the Product catalog can be set to a different value using the --location-id parameter 
+- For eContent, the root node is set to `2` by default, for content model it is `56` (in case the demo data is used).
+- The Location ID for the Product catalog can be set to a different value using the `--location-id parameter`.
 
 ## Manual switching
 
-Switching providers means in general. 
+### 1. Load root element
 
-### 1. First ensure that you are loading the correct  root element for your provider.
+First, ensure that you are loading the correct root element for your provider.
 
 ![](../../img/manual_switching.png)
 
-### 2. Change the config
+### 2. Change configuration
 
-The following settings are already setup in the config files econtent_search.yml or ez_search.yml
+The following settings are already set up in the configuration files `econtent_search.yml` or `ez_search.yml`:
 
 ``` yaml
 silver_eshop.default.catalog_data_provider: ez5
-# or for econtent
+# or for eContent
 silver_eshop.default.catalog_data_provider: econtent 
 ```
 
-### 3. Change alias for search services for every type (product, catalog, content)
+### 3. Configure search services
+
+Change the alias for search services for every type (product, catalog, content)
 
 ```
 # set up alias for product search 
@@ -89,17 +95,19 @@ silver_eshop.default.catalog_data_provider: econtent
 </service>
 ```
 
-### 4. Setup search groups and config accordingly
+### 4. Set up search groups
 
-Check the complete  configuration from the vendor as well:
+Set up search groups and configuration accordingly.
 
-- vendor/silversolutions/silver.e-shop/src/Siso/Bundle/SearchBundle/Resources/config/econtent_search.yml
-- vendor/silversolutions/silver.e-shop/src/Siso/Bundle/SearchBundle/Resources/config/ez_search.yml
+Check the complete configuration from the vendor as well:
 
-The path for products in econtent e.g. is "/2/" and for eZ "/1/2"
+- `vendor/silversolutions/silver.e-shop/src/Siso/Bundle/SearchBundle/Resources/config/econtent_search.yml`
+- `vendor/silversolutions/silver.e-shop/src/Siso/Bundle/SearchBundle/Resources/config/ez_search.yml`
+
+The path for products in econtent e.g. is `/2/` and for eZ `/1/2`
 
 ``` yaml
- siso_search.default.groups.search:
+siso_search.default.groups.search:
         product:
             types:
                 - ses_product

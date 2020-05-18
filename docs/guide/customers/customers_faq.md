@@ -1,22 +1,19 @@
 # Customers FAQ
 
-## How to user menu is build?
+## Building user menu
 
 You can configure the list of the bundles that will build the user menu:
 
-``` 
+``` yaml
 parameters:
     siso_core.default.user_menu_bundles: ['SilversolutionsEshopBundle', 'SisoCustomerCenterBundle', 'SisoOrderHistoryBundle']
 ```
 
 You can add your own bundle to this configuration and extend the user menu as long as:
 
-- Your Bundle name follows the conventions: `[*One word company name*][*Bundle name*]Bundle` in camelCase spelling
-- Example: CompanyCustomProjectBundle
-- You need to create following template: `views/[*Bundle name*]/Components/user_menu.html.twig`
-- Example: `views/CustomProject/Components/user_menu.html.twig`
-- You can extend the user menu by custom code
-- Example:
+- your bundle name follows the conventions: `<one-word company name><bundle name>Bundle` in camelCase spelling, for example: `CompanyCustomProjectBundle`
+- you create the following template: `views/<bundle name>/Components/user_menu.html.twig`, for example: `views/CustomProject/Components/user_menu.html.twig`
+- you extend the user menu by custom code, for example:
 
 ``` html+twig
 <li class="first_item menu_header">
@@ -29,11 +26,11 @@ You can add your own bundle to this configuration and extend the user menu as lo
 </li>
 ```
 
-## Where eZ data is stored?
+## Where is User data stored?
 
-By default the additional data of your eZ User class is stored in the dataMap of [CustomerProfileData](customers_api/customer_profile_data_components/customer_profile_data_services.md) with a prefix `ez_`.
+By default the additional data of your User Content item is stored in the `dataMap` of [`CustomerProfileData`](customers_api/customer_profile_data_components/customer_profile_data_services.md) with prefix `ez_`.
 
-These eZ types are supported:
+The following Field Types are supported:
 
 - `eZ\Publish\Core\FieldType\TextLine\Value`
 - `eZ\Publish\Core\FieldType\TextBlock\Value`
@@ -49,6 +46,6 @@ These eZ types are supported:
 
 ![](../img/customers_faq.png)
 
-In php:
+In PHP:
 
 `$customerProfileData->getDataMap()->getAttribute('ez_salutation')`

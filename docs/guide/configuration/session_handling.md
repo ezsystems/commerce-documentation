@@ -1,7 +1,7 @@
 # Session handling
 
 The default session handling should be changed, because after clearing the cache all users will be logged out.  
-Session now are handled with PDO. There is a possibility to switch also to memcache. 
+Session now are handled with PDO. You can also switch to Memcache. 
 
 ## Session table
 
@@ -16,13 +16,10 @@ CREATE TABLE session
 );
 ```
 
-## Configuration
+## Set up name for SiteAccesses
 
-You need to change the configuration:
-
-### Setup name for SiteAccesses
-
-It is very important to set a session name. Otherwise eZ Platform will generate a unique name per SiteAccess which causes issues if you switch e.g. the language/SiteAccess and users cannot share a basket and login across SiteAccesses.
+It is very important to set a session name. Otherwise eZ Platform will generate a unique name per SiteAccess
+which causes issues if you switch e.g. the language/SiteAccess and users cannot share a basket and login across SiteAccesses.
 
 ``` yaml
 site_group:

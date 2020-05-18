@@ -1,18 +1,17 @@
-# Customers cookbook
-
-## How to manage / administrate delivery addresses
-
-!!! tip
-
-    All code examples in this document are written in the context of a ContainerAwareCommand implementation. Please note the code comments, as they give further implementation details.
+# Managing delivery addresses
 
 !!! note
 
-    Web-Connector \>= 3.0 for NAV with Web-Services is assumed to be the target system in these examples. For other ERP Systems and former versions of the Web-Connector / NAV, the process and data are likely to differ slightly. The external field 'Key', and the logic bound to it, is specific for this setup.
+    These examples are based on Web Connector >= 3.0 for NAV with Web Services. For other ERP systems and former versions of the Web-Connector / NAV, the process and the data differ slightly. The external field 'Key', and the logic bound to it is specific for this setup.
 
-## Create a new delivery address in NAV
+## Create a new delivery address in ERP
 
-Delivery address management / -administration follows the standard process for all ERP messages. The following example depicts a simple implementation with hard coded address values. Please note the hint for the Code field. The Key field is explained later in the update message.
+Delivery address management follows the standard process for all ERP messages.
+The following example depicts a simple implementation with hardcoded address values.
+
+The address code generation is not managed in NAV. Unlike this hardcoded value,
+the application must track existing address codes and ensure that no duplicated codes
+are sent to the ERP.
 
 ``` php
 // Get the necessary services
@@ -25,10 +24,6 @@ $msg = $messageInq->inquireMessage(CreateDeliveryAddressFactoryListener::CREATED
 $request = $msg->getRequestDocument();
 $request->DeliveryParty->PartyIdentification[0] = new DeliveryPartyPartyIdentification();
 $request->DeliveryParty->PartyIdentification[0]->ID->value = '10000';
-/* Hint: The address code generation is not managed in NAV. Unlike this hardcoded value,
- * the application must track existing address codes and ensure that no duplicated codes
- * are sent to the ERP.
- */
 $request->DeliveryParty->SesExtension->value['Code'] = 'TEST';
 $request->DeliveryParty->SesExtension->value['Blocked'] = 'false';
 $request->DeliveryParty->PartyName = array(
@@ -55,7 +50,7 @@ $key = $response->DeliveryParty->SesExtension->value['Key'];
 
 ## Read an existing delivery address from NAV
 
-In NAV, the address code is needed additionally to the party identification in order to fetch a delivery address.
+In NAV, the address code is needed in addition to the party identification in order to fetch a delivery address.
 
 ``` php
 // Get the necessary services
@@ -77,7 +72,12 @@ $response = $messageTrans->sendMessage($msg)->getResponseDocument();
 
 ## Update an existing delivery address in NAV
 
-In order to update an address, the complete data must be sent (changed and unchanged fields), together with the Key value of the last read data. The Key is a consistency check for the update. If the data in NAV changed since it was fetched the last time, the Keys of the update request and in NAV would mismatch and the request fails. In that case, the data must be fetched again and the current changes must be merged into the new data from NAV. This might need user interaction (i.e. several HTTP requests) and goes beyond the scope of this tutorial. After that, the merged data must be sent again in an update request with the new Key.
+Complete data must be sent (changed and unchanged fields) to change the address,
+together with the Key value of the last read data. The Key is a consistency check for the update.
+If the data in NAV changed since it was fetched the last time, the Keys of the update request and in NAV would mismatch and the request fails.
+In that case, the data must be fetched again and the current changes must be merged into the new data from NAV.
+This might need user interaction (several HTTP requests).
+After that, the merged data must be sent again in an update request with the new Key.
 
 ``` php
 // Get the necessary services
@@ -117,7 +117,9 @@ $lastKey = isset($response->DeliveryParty->SesExtension->value['Key'])
 
 ## Delete an existing delivery address in NAV
 
-For the deletion of addresses, only the Key is needed for the request. But again, the value must match in NAV, else the request is rejected and the data must be re-fetched in order to get the new Key (and new data for a potential review of the changes).
+Only the Key is needed for the request to delete addresses.
+If the value does not match the one in NAV, the request is rejected and the data must be re-fetched
+to get the new Key (and new data for a potential review of the changes).
 
 ``` php
 // Get the necessary services
