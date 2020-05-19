@@ -2,7 +2,7 @@
 
 ## Which Solr version is used?
 
-eZ Commerce is using the Solr recommended by eZ systems. You can follow the instruction from eZ or check chapter [Installation](../../getting_started/installation.md)
+eZ Commerce is using the Solr recommended by Ibexa. You can follow the instruction from eZ Platform or check chapter [Installation](../../getting_started/installation.md)
 
 If you are using econtent as a storage engine 2 additional cores in Solr are required.
 
@@ -132,7 +132,7 @@ Currently the search querys are logged in a database table "ses_log_search" usin
 
 Example data from the table:
 
-``` 
+```
 +----+---------------------+---------------------+-----------+-------------+-------------------+----------------------------+---------+---------+----------+
 | id | log_timestamp       | log_channel         | log_level | log_message | request_id        | session_id                 | user_id | results | language |
 +----+---------------------+---------------------+-----------+-------------+-------------------+----------------------------+---------+---------+----------+
@@ -187,7 +187,7 @@ siso_search.default.solr_special_characters: escape
 
 These are the current Solr special characters:
 
-``` 
+```
 + - && || ! ( ) { } [ ] ^ " ~ * ? : \
 ```
 
@@ -212,7 +212,7 @@ parameters:
 
 ## How to avoid that ezplatform:solr_create_index removes the index in production?
 
-When eZ is used as dataprovider how can be avoided that during index time the shop has not a complete solr index?
+When eZ Platform is used as dataprovider how can be avoided that during index time the shop has not a complete solr index?
 
 It depends to the configuration. If Solr is configured to auto-commit, the index will be removed. If no auto-commit is configured, the index will be removed as well, but it will not be effective and everything will be searchable until the commit at the end. No auto-commit, though, means also that changes in the administration will not be visible, since the process does not include a commit.
 
@@ -226,6 +226,6 @@ Please check your solrconfig.xml of the respective Solr core and adjust the sett
  </autoCommit>
 ```
 
-## When i update prios in eZ backend the changes are not applied to the search index
+## When i update prios in eZ Platform backend the changes are not applied to the search index
 
 Currently when editor changes the Location Priority in the backend, this one is not automatically indexed in solr.

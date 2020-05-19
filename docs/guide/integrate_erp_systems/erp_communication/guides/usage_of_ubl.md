@@ -2,9 +2,9 @@
 
 ## Commonly used fields
 
-The eZ Commerce uses UBL (Universla Business Language) as a standard for the communication between the ERP systems and the shop. UBL is used also for representing data in the shop such as the customer data. 
+The eZ Commerce uses UBL (Universal Business Language) as a standard for the communication between the ERP systems and the shop. UBL is used also for representing data in the shop such as the customer data.
 
-Since UBL offers different options e,g, to transport the customer number or other fields this document describes which fields were used by the eZ Commerce.
+Since UBL offers different options e.g. to transport the customer number or other fields this document describes which fields were used by the eZ Commerce.
 
 |Field|UBL field|Used in|
 |--- |--- |--- |
