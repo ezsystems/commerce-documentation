@@ -1,6 +1,6 @@
 site_name: eZ Commerce Documentation
 repo_url: https:/github.com/ezsystems/commerce-documentation
-copyright: "Copyright 1999-2020 Ibexa AS and others"
+copyright: "Copyright 1999-2020 Ibexa and others"
 nav:
     - 'eZ Commerce Documentation': 'index.md'
     - Getting started:
