@@ -26,7 +26,7 @@ $logger->debug('My log message', $additionalContext);
 
 ## I want to log a new created ERP message. How do I do that?
 
-All transmitted messages are logged automatically, because the mandatory transport layer implicitly logs all messages. But if a new transport is implemented (other than the WebConnectorMessageTransport), this implementation hast to take care of logging measuring point a lower level. Please read the chapter [Measuring Points in the ERP logging documentation](../integrate_erp_systems/erp_communication/erp_logging.md#logging-architecture-measuring-points).
+All transmitted messages are logged automatically, because the mandatory transport layer implicitly logs all messages. But if a new transport is implemented (other than the WebConnectorMessageTransport), this implementation hast to take care of logging measuring point a lower level. Please read the chapter [Measuring Points in the ERP logging documentation](../erp_integration/erp_communication/erp_logging.md#logging-architecture-measuring-points).
 
 ## How do I log an email that is sent by the shop?
 
@@ -42,4 +42,4 @@ If the email contains a password, that should not be logged in the DB, you have 
 
 The standard log file is (relative to the shop's root directory) located at `var/logs/silver.eshop.log`
 
-More precisely, Monolog's [StreamHandler](https://github.com/Seldaek/monolog/blob/master/doc/02-handlers-formatters-processors.md#log-to-files-and-syslog) is responsible for writing logs into files. The path the destined file is a [constructor parameter](https://github.com/Seldaek/monolog/blob/master/src/Monolog/Handler/StreamHandler.php#L33) of the StreamHandler. For an example service configuration, please have a look at the [ERP Logging](../integrate_erp_systems/erp_communication/erp_logging.md#configuration).
+More precisely, Monolog's [StreamHandler](https://github.com/Seldaek/monolog/blob/master/doc/02-handlers-formatters-processors.md#log-to-files-and-syslog) is responsible for writing logs into files. The path the destined file is a [constructor parameter](https://github.com/Seldaek/monolog/blob/master/src/Monolog/Handler/StreamHandler.php#L33) of the StreamHandler. For an example service configuration, please have a look at the [ERP Logging](../erp_integration/erp_communication/erp_logging.md#configuration).

@@ -290,55 +290,51 @@ nav:
                     - 'How to import products (API)': 'guide/econtent/econtent_cookbook/econtent_how_to_import_products/how_to_import_products_api.md'
                     - 'How to import and index data (SQL)': 'guide/econtent/econtent_cookbook/econtent_how_to_import_products/how_to_import_and_index_data_sql.md'
             - 'eContent - Configuration': 'guide/econtent/econtent_configuration.md'
-        - Integrate ERP Systems:
-            - 'Integrate ERP systems': 'guide/integrate_erp_systems/integrate_erp_systems.md'
-            - 'How does the shop communicate with the ERP': 'guide/integrate_erp_systems/how_does_the_shop_communicate_with_the_erp.md'
+        - ERP integration:
+            - 'ERP integration': 'guide/erp_integration/erp_integration.md'
+            - 'Connecting shop to ERP': 'guide/erp_integration/connecting_shop_to_erp.md'
             - ERP communication:
-                - 'ERP communication': 'guide/integrate_erp_systems/erp_communication/erp_communication.md'
+                - 'ERP communication': 'guide/erp_integration/erp_communication/erp_communication.md'
                 - Guides:
-                    - 'guide/integrate_erp_systems/erp_communication/guides/guide_how_to_get_product_data_from_the_erp.md'
-                    - How to create a new ERP message:
-                        - 'How to create a new ERP message (example: ItemTransfer)': 'guide/integrate_erp_systems/erp_communication/guides/how_to_create_a_new_erp_message/how_to_create_a_new_erp_message.md'
-                        - 'Create a project specific message (SelectModifiedData)': 'guide/integrate_erp_systems/erp_communication/guides/how_to_create_a_new_erp_message/create_a_project_specific_message_selectmodified_data.md'
-                        - 'Create a standard message (UpdateCustomer)': 'guide/integrate_erp_systems/erp_communication/guides/how_to_create_a_new_erp_message/create_a_standard_message_updatecustomer.md'
-                    - 'How to implement ERP (NAV) delivery address creation and updates': 'guide/integrate_erp_systems/erp_communication/guides/how_to_implement_erp_nav_delivery_address_creation_and_updates.md'
-                    - 'Usage of UBL': 'guide/integrate_erp_systems/erp_communication/guides/usage_of_ubl.md'
-                - 'ERP Logging': 'guide/integrate_erp_systems/erp_communication/erp_logging.md'
-                - 'AdditionalLines': 'guide/integrate_erp_systems/erp_communication/additionallines.md'
+                    - 'Getting productsdata from ERP': 'guide/erp_integration/erp_communication/guides/getting_product_data_from_the_erp.md'
+                    - Creating new ERP message:
+                        - 'Creating new ERP message': 'guide/erp_integration/erp_communication/guides/creating_a_new_erp_message/creating_a_new_erp_message.md'
+                        - 'Create standard message': 'guide/erp_integration/erp_communication/guides/creating_a_new_erp_message/create_standard_message.md'
+                        - 'Create project-specific message': 'guide/erp_integration/erp_communication/guides/creating_a_new_erp_message/create_project_specific_message.md'
+                    - 'Implementing ERP delivery address creation and updates': 'guide/erp_integration/erp_communication/guides/implementing_erp_delivery_address_creation_and_updates.md'
+                - 'ERP Logging': 'guide/erp_integration/erp_communication/erp_logging.md'
+                - 'AdditionalLines': 'guide/erp_integration/erp_communication/additionallines.md'
                 - ERP components:
-                    - 'ERP Components': 'guide/integrate_erp_systems/erp_communication/erp_components/erp_components.md'
-                    - 'ERP Component: Mapping': 'guide/integrate_erp_systems/erp_communication/erp_components/erp_component_mapping.md'
+                    - 'ERP Components': 'guide/erp_integration/erp_communication/erp_components/erp_components.md'
+                    - 'ERP mapping component': 'guide/erp_integration/erp_communication/erp_components/erp_component_mapping.md'
                     - ERP component messages:
-                        - 'ERP Component: Messages': 'guide/integrate_erp_systems/erp_communication/erp_components/erp_component_messages/erp_component_messages.md'
-                        - 'ERP Message Instantiation': 'guide/integrate_erp_systems/erp_communication/erp_components/erp_component_messages/erp_message_instantiation.md'
-                        - 'ERP Message-Class-Generator': 'guide/integrate_erp_systems/erp_communication/erp_components/erp_component_messages/erp_message_class_generator.md'
-                        - 'ERP Message: CalculateSalesOrder / CreateSalesOrder': 'guide/integrate_erp_systems/erp_communication/erp_components/erp_component_messages/erp_message_calculatesalesorder_createsalesorder.md'
-                        - 'ERP Message: SelectContact': 'guide/integrate_erp_systems/erp_communication/erp_components/erp_component_messages/erp_message_selectcontact.md'
-                        - 'ERP Message: SelectCustomer': 'guide/integrate_erp_systems/erp_communication/erp_components/erp_component_messages/erp_message_select_customer.md'
-                        - 'ERP Message: InvoiceDetail': 'guide/integrate_erp_systems/erp_communication/erp_components/erp_component_messages/erp_message_invoice_detail.md'
-                        - 'ERP Message: UpdateCustomer': 'guide/integrate_erp_systems/erp_communication/erp_components/erp_component_messages/erp_message_updatecustomer.md'
-                        - 'ERP Messages: ReadDeliveryAddress, UpdateDeliveryAddress, CreateDeliveryAddress, DeleteDeliveryAddress': 'guide/integrate_erp_systems/erp_communication/erp_components/erp_component_messages/erp_messages.md'
-                    - 'ERP Component: Service': 'guide/integrate_erp_systems/erp_communication/erp_components/erp_component_service.md'
-                    - 'ERP Component: Transport': 'guide/integrate_erp_systems/erp_communication/erp_components/erp_component_transport.md'
-                - 'ERP - FAQ': 'guide/integrate_erp_systems/erp_communication/erp_faq.md'
+                        - 'ERP messages component': 'guide/erp_integration/erp_communication/erp_components/erp_component_messages/erp_component_messages.md'
+                        - 'ERP Message Instantiation': 'guide/erp_integration/erp_communication/erp_components/erp_component_messages/erp_message_instantiation.md'
+                        - 'ERP Message-Class-Generator': 'guide/erp_integration/erp_communication/erp_components/erp_component_messages/erp_message_class_generator.md'
+                        - 'ERP Message: CalculateSalesOrder / CreateSalesOrder': 'guide/erp_integration/erp_communication/erp_components/erp_component_messages/erp_message_calculatesalesorder_createsalesorder.md'
+                        - 'ERP Message: SelectContact': 'guide/erp_integration/erp_communication/erp_components/erp_component_messages/erp_message_selectcontact.md'
+                        - 'ERP Message: SelectCustomer': 'guide/erp_integration/erp_communication/erp_components/erp_component_messages/erp_message_select_customer.md'
+                        - 'ERP Message: InvoiceDetail': 'guide/erp_integration/erp_communication/erp_components/erp_component_messages/erp_message_invoice_detail.md'
+                        - 'ERP Message: UpdateCustomer': 'guide/erp_integration/erp_communication/erp_components/erp_component_messages/erp_message_updatecustomer.md'
+                        - 'ERP Messages: ReadDeliveryAddress, UpdateDeliveryAddress, CreateDeliveryAddress, DeleteDeliveryAddress': 'guide/erp_integration/erp_communication/erp_components/erp_component_messages/erp_messages_addresses.md'
+                    - 'ERP service component': 'guide/erp_integration/erp_communication/erp_components/erp_component_service.md'
+                    - 'ERP transport component': 'guide/erp_integration/erp_communication/erp_components/erp_component_transport.md'
+                - 'ERP FAQ': 'guide/erp_integration/erp_communication/erp_faq.md'
                 - ERP configuration:
-                    - 'ERP Configuration': 'guide/integrate_erp_systems/erp_communication/erp_configuration/erp_configuration.md'
                     - Adapt the mappings for ERP functions:
-                        - 'Adapt the mappings for ERP functions': 'guide/integrate_erp_systems/erp_communication/erp_configuration/adapt_the_mappings_for_erp_functions/adapt_the_mappings_for_erp_functions.md'
-                        - 'Example UBL for price calculation': 'guide/integrate_erp_systems/erp_communication/erp_configuration/adapt_the_mappings_for_erp_functions/example_ubl_for_price_calculation.md'
-                    - 'Configuration for Webservice based ERPs': 'guide/integrate_erp_systems/erp_communication/erp_configuration/configuration_for_webservice_based_erps.md'
-                    - 'Curl Configuration': 'guide/integrate_erp_systems/erp_communication/erp_configuration/curl_configuration.md'
-                    - 'Web-Connector Configuration': 'guide/integrate_erp_systems/erp_communication/erp_configuration/web_connector_configuration.md'
-            - Price calculation:
-                - 'RemotePriceProvider': 'guide/integrate_erp_systems/price_calculation/remotepriceprovider.md'
+                        - 'Adapt the mappings for ERP functions': 'guide/erp_integration/erp_communication/erp_configuration/adapt_the_mappings_for_erp_functions/adapt_the_mappings_for_erp_functions.md'
+                        - 'Example UBL for price calculation': 'guide/erp_integration/erp_communication/erp_configuration/adapt_the_mappings_for_erp_functions/example_ubl_for_price_calculation.md'
+                    - 'Configuration for Webservice based ERPs': 'guide/erp_integration/erp_communication/erp_configuration/configuration_for_webservice_based_erps.md'
+                    - 'Curl configuration': 'guide/erp_integration/erp_communication/erp_configuration/curl_configuration.md'
+                    - 'Web.Connector configuration': 'guide/erp_integration/erp_communication/erp_configuration/web_connector_configuration.md'
+            - 'RemotePriceProvider': 'guide/erp_integration/remotepriceprovider.md'
             - Checkout order:
-                - ERP order synchronisation:
-                    - Failed order process:
-                        - 'Failed Order Process': 'guide/integrate_erp_systems/checkout_order/erp_order_synchronisation/failed_order_process/failed_order_process.md'
-                        - 'Lost orders': 'guide/integrate_erp_systems/checkout_order/erp_order_synchronisation/failed_order_process/lost_orders.md'
-                    - Order submission:
-                        - 'Order Submission': 'guide/integrate_erp_systems/checkout_order/erp_order_synchronisation/order_submission/order_submission.md'
-                        - 'Order format': 'guide/integrate_erp_systems/checkout_order/erp_order_synchronisation/order_submission/order_format.md'
+                - Failed order process:
+                    - 'Failed order process': 'guide/erp_integration/checkout_order/failed_order_process/failed_order_process.md'
+                    - 'Lost orders': 'guide/erp_integration/checkout_order/failed_order_process/lost_orders.md'
+                - Order submission:
+                    - 'Order submission': 'guide/erp_integration/checkout_order/order_submission/order_submission.md'
+                    - 'Order format': 'guide/erp_integration/checkout_order/order_submission/order_format.md'
         - Logging:
             - 'Logging': 'guide/logging/logging.md'
             - 'Logging API': 'guide/logging/logging_api.md'

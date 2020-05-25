@@ -20,7 +20,7 @@ siso_core.default.gdpr.store_user_id_in_logs: false
 
 Please keep in mind that Logging is really connected with a lot of different modules in our shop. Be sure to check these out:
 
-- [ERP communication](../integrate_erp_systems/erp_communication/erp_communication.md) 
-   - [ERP Logging](../integrate_erp_systems/erp_communication/erp_logging.md)
+- [ERP communication](../erp_integration/erp_communication/erp_communication.md) 
+   - [ERP Logging](../erp_integration/erp_communication/erp_logging.md)
 - [MailHelperService](../../api/helper_services/mailhelperservice.md)
    - [Mail Logging](../../api/helper_services/mail_logging.md)
