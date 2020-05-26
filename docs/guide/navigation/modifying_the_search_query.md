@@ -1,15 +1,15 @@
-# Navigation cookbook
+# Modifying the search query
 
-## How to influence the search query?
-
-You have the possibility to extend the search query before navigation data is fetched. Before the search query is submitted, there are events that allows you to extend the query:
+You can extend the search query before navigation data is fetched
+using two events that are thrown before the search query is submitted:
 
 - `PostBuildEzContentQueryEven`
 - `PostBuildSolrQueryEvent`
 
 ## PostBuildEzContentQueryEvent
 
-This event is thrown just before the eZ content for the navigation is fetched and it allows you to extend the search query. You have to implement an event listener, if you want to listen to it.
+The `PostBuildEzContentQueryEvent` event is thrown just before content model content for the navigation is fetched.
+You can listen to it using the following example listener:
 
 ``` php
 <?php
@@ -43,9 +43,9 @@ class PostBuildEzContentQueryListener
 
 ## PostBuildSolrQueryEvent
 
-This event is thrown just before the catalog content for the navigation is fetched and it allows you to extend the search query. You have to implement an event listener, if you want to listen to it.
+The `PostBuildSolrQueryEvent` event is thrown just before catalog content for the navigation is fetched.
 
-If you are implementing a new dataprovider, you **have to** implement a listener to handle at least the languages.
+If you are implementing a new data provider, you have to implement a listener to handle at least the languages.
 
 ``` php
 <?php
@@ -123,31 +123,6 @@ class EzPostBuildSolrQueryListener implements PostBuildSolrQueryListenerInterfac
 </service>
 ```
 
-Notice that this service is not tagged as a listener yet\! This will be done via composer pass, since there is no need that all listeners are active at the same time (since depends on the dataprovider).
-
-`Siso/Bundle/SearchBundle/DependencyInjection/Compiler/SolariumClientInjectionPass.php`:
-
-``` php
-public function process(ContainerBuilder $container)
-{
-    $catalogDataProviderTarget = $container->getParameter('silver_eshop.default.catalog_data_provider');
-    if ($catalogDataProviderTarget === 'econtent') {
-        if (!$container->hasDefinition(self::SOLR_ECONTENT_CLIENT_ID)) {
-            throw new \LogicException(
-                'Catalog data provider is econtent, but service "'.self::SOLR_ECONTENT_CLIENT_ID
-                .'" is not defined. Please check your configuration!');
-        }
-        ...
-        $definition = $container->getDefinition('siso_search.econtent_post_build_solr_query_listener');
-        $definition->addTag('kernel.event_listener',
-            array('event' => 'siso_search.post_build_solr_query', 'method' => 'postBuildSolrQuery'));
-
-    } else {        
-        // Inject the default service as a fallback, if econtent is not used.   
-        ...
-        $definition = $container->getDefinition('siso_search.ez_post_build_solr_query_listener');
-        $definition->addTag('kernel.event_listener',
-            array('event' => 'siso_search.post_build_solr_query', 'method' => 'postBuildSolrQuery'));
-    }
-}
-```
+This service is not tagged as a listener yet.
+This happens with the `SolariumClientInjectionPass` Composer pass,
+because there is no need for all listeners to be active at the same time (this depends on the data provider).

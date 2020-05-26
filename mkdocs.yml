@@ -354,11 +354,10 @@ nav:
             - 'Login and registration templates': 'guide/login_and_registration/login_and_registration_templates.md'
         - Navigation:
             - 'Navigation': 'guide/navigation/navigation.md'
-            - 'Navigation API': 'guide/navigation/navigation_api.md'
-            - 'Navigation cookbook': 'guide/navigation/navigation_cookbook.md'
+            - 'Navigation configuration': 'guide/navigation/navigation_configuration.md'
+            - 'Modifying the search query': 'guide/navigation/modifying_the_search_query.md'
             - 'Navigation templates': 'guide/navigation/navigation_templates.md'
             - 'Navigation cache': 'guide/navigation/navigation_cache.md'
-            - 'Navigation FAQ': 'guide/navigation/navigation_faq.md'
         - Newsletter:
             - 'Newsletter': 'guide/newsletter/newsletter.md'
             - Newsletter API:
