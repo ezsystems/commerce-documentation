@@ -2,13 +2,13 @@
 
 ## Last viewed products
 
-The products are recorded using a JavaScript call. In order to use it on other pages as well you have to place this code in your template:
+The products are recorded by means of a JavaScript call. To use it on other pages as well, place the following code in your template:
 
 `{{ render_hinclude( controller( ``"SilversolutionsEshopBundle:Catalog:storeProductAsLastViewed"``, {``"sku"``: catalogElement.sku} ) ) }}`
 
-After each call the cache for the last viewed product slider is purged.
-By default the view is rendered by an ESI block and cached per user.
-When the customer visits a new product the list is purged and regenerated the next time it is displayed. 
+After each call, the cache for the last viewed product slider is purged.
+By default, the view is rendered by an ESI block and cached per user.
+When the customer visits a new product, the list is purged and regenerated the next time it is displayed. 
 
 Products are stored in the session.
 
@@ -43,7 +43,7 @@ silver_eshop.default.last_viewed_products_in_session_limit: 10
 
 ## Bestsellers
 
-The Bestseller block is rendered using content ID (if a product category is selected)
+The Bestseller block is rendered based on content ID (if a product category is selected)
 or a category ID (if the input field is used).
 
 If the selected Content item is not a category, an error message will be displayed. 

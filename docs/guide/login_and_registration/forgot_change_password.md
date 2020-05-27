@@ -9,14 +9,14 @@ they can use the forgot password page.
 
 ### Workflow
 
-1. The customer needs to provide the login or email address that should receive the link for password resetting.  
+1. The customer must provide the login or email address that should receive the link for password resetting.  
 Additionally, if the shop expects the customer number as login, the customer can specify the customer number. The shop then searches through the users inside the Customer Center.
 2. If the user exists, they receive an email with a unique URL. It includes the correct token.
-3. When clicked, the user is redirected to a page where they can reset the password.
+3. When the user clicks the URL, they are redirected to a page where they can reset the password.
 
 !!! caution
 
-    The user is able to change the password only if the token is provided and the user is anonymous (the browser has no logged-in session).
+    The user is able to change the password only if the token is provided and the user is anonymous (there is no logged-in session in the browser).
 
 ### Implementation
 
@@ -47,7 +47,7 @@ ses_forms.configs.reminder:
 
 #### Service
 
-When building a form the shop checks if logging in with customer number is enabled.
+When building a form, the shop checks if logging in with a customer number is enabled.
 If so, the `customerNumber` field is added.
 
 ``` php
@@ -62,10 +62,10 @@ if($enableCustomerNumber) {
 
 #### Data Processors
 
-The `ses_forms.password_reminder_data_processor` data processor checks if the data provided in the form is correct and if the user exists.
+The `ses_forms.password_reminder_data_processor` data processor checks whether the data provided in the form is correct and if the user exists.
 
-The `siso_core.data_processor.send_password_reminder_email` data processor sends an email with link to change password functionality is sent if the User exists.
-The link is be valid for a period of time specified in configuration:
+If the User exists, the `siso_core.data_processor.send_password_reminder_email` data processor sends an email with a link to change the password.
+The link is valid for a time that you can specify in configuration:
 
 ``` 
 siso_core.default.forget_password_token_valid: 1 hour
@@ -78,7 +78,7 @@ siso_core.default.forget_password_token_valid: 1 hour
 ```
 
 The shop allows registrations of more than one account with the same email address.
-This is useful when eZ Commerce has to run a B2B and a B2C shop in one installation.
+This is useful when eZ Commerce runs a B2B and a B2C shop in one installation.
 
 ## Change password
 
@@ -89,9 +89,9 @@ they can use the change password form located on the profile page.
 
 #### Workflow
 
-1. The shop checks if the user is logged in and no token is provided. Otherwise they cannot access the change password page.
-1. The user fills the form with new password and clicks send.
-1. The form is validated and new password is set for the customer.
+1. The shop checks whether the user is logged in and no token is provided. Otherwise they cannot access the change password page.
+1. The user provides a new password and submits the form.
+1. The form is validated and the password is updated for the customer.
 
 #### Implementation
 
@@ -130,7 +130,7 @@ if(!isset($token)) {
 }
 ```
 
-Then the form data is submitted and result is displayed.
+Then the form data is submitted and the result is displayed.
 
 #### Use in templates
 

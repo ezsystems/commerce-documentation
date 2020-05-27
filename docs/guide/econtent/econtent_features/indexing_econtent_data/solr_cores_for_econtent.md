@@ -1,13 +1,13 @@
 # Solr cores for eContent
 
-The main goal of dedicated Solr cores for the eContent data provider is to import and re-index data (like products) using a temporary Solr core.
+The main goal of dedicated Solr cores for the eContent data provider is to import and re-index data (e.g. products) with a temporary Solr core.
 In this case the application is not disturbed while the importer and indexer are working in temporary cores.
 
 After the processes are finished, the temporary cores are swapped with the production cores and the application starts using fresh data.
 
 ## Adapt configuration for two Solr eContent cores
 
-The standard configuration for eZ Commerce is already shipped using this configuration (see `app/config/ezcommerce_advanced.yml`).
+The standard configuration for eZ Commerce supports two Solr eContent cores by default (see `app/config/ezcommerce_advanced.yml`).
 
 In `ezpublish/config/config.yml`:
 

@@ -70,7 +70,7 @@ class PriorityFieldSortingHandler implements SolariumSearchClauseHandlerInterfac
 Register the handler as a service in `services.xml` by providing the namespace of the handler class
 and adding the tag name to the service definition.
 
-The handler is then used whenever search clause is an instance of `PriorityFieldSorting`.
+The handler is then used whenever the search clause is an instance of `PriorityFieldSorting`.
 
 This means that when you add this to `eshopQuery`, it executes the handler.
 
@@ -118,5 +118,5 @@ The order of the sorting criteria is important. In the example above the sorting
 !!! note "Modifying existing SortHandlers"
 
     Existing `SortHandlers` can't be overriden by simply extending them.
-    If you need to change the behavior of a `SortHandler`, you need to use the new implementation explicitly,
-    that is instantiate the new class like shown in the example above.
+    If you need to change the behavior of a `SortHandler`, you must use the new implementation explicitly,
+    that is instantiate the new class, as shown in the example above.

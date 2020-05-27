@@ -1,6 +1,6 @@
 # Extending EcontentCatalogFactory
 
-Catalog objects are created using `EcontentCatalogFactory`.
+Catalog objects are created with `EcontentCatalogFactory`.
 This involves both product and product groups, or any other type of elements that are part of the catalog.
 
 Sometimes projects need to extend this class to provide additional functionality or logic to the catalog elements.
@@ -24,9 +24,9 @@ class MyProjectEcontentCatalogFactory extends EcontentCatalogFactory
 {}
 ```
 
-## Step 2: Register class a service
+## Step 2: Register the class a service
 
-In `services.yml` add the new class you just created.
+In `services.yml`, add the new class that you just created.
 
 If you are not overriding the constructor, it is enough to add only the parameter with the original key and the new class:
 
@@ -38,7 +38,7 @@ If you are not overriding the constructor, it is enough to add only the paramete
 
 Create a new extraction method for the video. For this example, assume that the object has one video and its name is the SKU with the mp4 extension.
 
-Every new element that is added to the catalog element should be placed in its data map.
+Every new element that is added to the catalog element must be placed in its data map.
 The catalog element data map supports different Field objects as its elements.
 You can find the available Field elements in `EshopBundle/Content/Fields`
 
@@ -75,7 +75,7 @@ protected function extractVideo($fieldIdentifier, $dataMap)
 }
 ```
 
-## Step 4. Call your method from data map
+## Step 4. Call your method from the data map
 
 Add the call to `extractVideo()` in `fillCatalogElementDataMap()`.
 
@@ -91,9 +91,9 @@ The `fillCatalogElementDataMap()` method is responsible for generating the data 
  */
 protected function fillCatalogElementDataMap(CatalogElement $catalogElement, array $dataMap = array())
 {
-    /* Before returning the catalog element you can add the video to data map: */
+    /* Before returning the catalog element you can add the video to the data map: */
   
-    // The videos is added to products only:
+    // Videos are added to products only:
     if ($catalogElement instanceof ProductNode) {
         $videoField = $this->extractVideo('ses_sku', $dataMap);
         $catalogElement->addFieldToDataMap('video', $videoField);

@@ -1,6 +1,6 @@
 # Switching the data provider
 
-You can switch the data provider using the command line or manually.
+You can switch the data provider, either with the command line or manually.
 Only one data provider can be activated per installation.
 
 ## Switching using a command line
@@ -47,12 +47,12 @@ resource: '../../vendor/silversolutions/silver.e-shop/src/Silversolutions/Bundle
 
 ### Changes to the "Product catalog" Content item
 
-The Product catalog's root nod ise set accordingly.
+The Product catalog's root node is set accordingly.
 
 ![](../../img/product_catalog.png)
 
 - For eContent, the root node is set to `2` by default, for content model it is `56` (in case the demo data is used).
-- The Location ID for the Product catalog can be set to a different value using the `--location-id parameter`.
+- The Location ID for the Product catalog can be set to a different value by using the `--location-id parameter`.
 
 ## Manual switching
 
@@ -74,7 +74,7 @@ silver_eshop.default.catalog_data_provider: econtent
 
 ### 3. Configure search services
 
-Change the alias for search services for every type (product, catalog, content)
+Change the alias for search services for every type (product, catalog, content).
 
 ```
 # set up alias for product search 

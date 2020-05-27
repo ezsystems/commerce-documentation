@@ -27,7 +27,7 @@ It extends `ValueObject`, so any data is publicly readable.
 
 `Silversolutions\Bundle\EshopBundle\Model\CustomerProfileData\DeprecatedCustomer`
 provides a mapping class which implements the deprecated `CustomerInterface`.
-It is used for components depending on the old model within the system and built by the `DeprecatedCustomerMappingService`.
+It is used for components that depend on the old model within the system and are built by the `DeprecatedCustomerMappingService`.
 
 ## Example
 

@@ -1,7 +1,7 @@
 # Customers
 
 Customers are stored as User Content items in the database.
-eZ Commerce uses all features connected to users such as:
+eZ Commerce uses the following features that are connected to users:
 
 - Roles and Policies
 - extensible User model
@@ -12,7 +12,7 @@ eZ Commerce uses all features connected to users such as:
 
 In addition, eZ Commerce supports multiple user accounts with the same email address (e.g. for a multi-shop setup).
 
-eZ Commerce adds new Fields to the User Content Type which are required for the shop:
+eZ Commerce adds the following new Fields to the User Content Type that are required for the shop:
 
 - first name, last name
 - salutation
@@ -32,7 +32,7 @@ The customers are directly connected to the ERP system if they have a customer n
 
 The customer number is usually the main reference to the ERP system and it is stored as a read-only Field in the User Content item. 
 
-The shop automatically gets the information from the ERP the first time the user information (customer profile data) is requested.
+The shop gets the information from the ERP automatically when user information (customer profile data) is requested for the first time.
 
 The information is stored in the session to reduce the number of calls to ERP.
 
@@ -46,7 +46,7 @@ The ERP system provides:
 
 ### Accessing customer data in a template
 
-The template offers a global Twig variable which contains the main information about the current user,
+The template offers a global Twig variable that contains the main information about the current user,
 their addresses and data from the ERP.
 
 ``` html+twig
@@ -80,11 +80,11 @@ E-Mail address:          {{ ses.profile.sesUser.email }}
 
 eZ Commerce uses the UBL standard to model customer data. The most important type is the Party which describes an address. 
 
-For each user the following information is stored. If a user has a customer number this information is updated from the ERP after login: 
+For each user, the following information is stored. If the user has a customer number, the following information is updated from the ERP after login: 
 
 - Buyer Party
 - Invoice Party
-- DeliveryParties - a list of addresses using the Party format 
+- DeliveryParties - a list of addresses in the Party format 
 
 ``` xml
 <Party>

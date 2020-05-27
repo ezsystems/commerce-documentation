@@ -4,16 +4,16 @@ eContent uses four main database tables and two optional ones:
 
 |Table|Staging|Purpose|
 |--- |--- |--- |
-|`sve_class`||Stores types of catalog elements (e.g. product, product_group). Each type has an identifier which has a relation with `sve_class_attributes`|
-|`sve_class_attributes`||Stores all possible catalog element attributes (name, type) for different catalog elements (`class_id`)|
-|`sve_object`|yes|Stores all catalog elements and general information about them (URL, parent, depth, etc.)|
+|`sve_class`||Stores types of catalog elements (e.g. product, product_group). Each type has an identifier which has a relation with `sve_class_attributes`.|
+|`sve_class_attributes`||Stores all possible catalog element attributes (name, type) for different catalog elements (`class_id`).|
+|`sve_object`|yes|Stores all catalog elements and general information about them (URL, parent, depth, etc.).|
 |`sve_object_attributes`|yes|Stores all attributes for the given catalog element depending on language.|
 |`ses_externaldata`||(optional) Stores additional information for `sve_object_attributes` of `ses_externaldata`. Collects more information for that kind of catalog element.|
-|`sve_object_catalog`|yes|(optional) Used for segmentation|
+|`sve_object_catalog`|yes|(optional) Used for segmentation.|
 
-For staging purposes the database tables use the `_tmp` prefix (e.g. `sve_object_tmp`).
+For staging purposes, the database tables use the `_tmp` prefix (e.g. `sve_object_tmp`).
 The staging tables can be used to import a complete product catalog without affecting the production catalogue.
-For details, see [eContent staging system](staging_system.md). 
+For more information, see [eContent staging system](staging_system.md). 
 
 !!! note
 
@@ -25,18 +25,18 @@ For details, see [eContent staging system](staging_system.md).
 ## Metadata for products and product groups
 
 The table `sve_object` contains one entry for each product group, product, etc.
-It is possible to arrange data in a tree structure using the field `parent_id`, which is the Location ID of the parent.
+You can arrange data in a tree structure by using the field `parent_id`, which is the Location ID of the parent.
 Location IDs begin from a value of 2 due to compatibility with the eZ Platform data structure.
 
 This table contains several other pieces of information in addition to Content Type ID and Location ID, for example:
 
 - time of last change
 - Location ID of the parent
-- flag indicating whether the item is blocked
+- flag that indicates whether the item is blocked
 - priority
 - URL alias - readable URL of this document (for example `/shop/toys/kids/wooden_toy`)
 - depth
-- main Location ID - if the item is has multiple Locations, this defines the first appearance in this tree, where all data referenced to this object is stored
+- main Location ID - if the item has multiple Locations, this parameter defines the first appearance in this tree, where all data referenced to this object is stored
 
 !!! note
 
@@ -84,7 +84,7 @@ select node_id, url_alias, path_string, depth from sve_object limit 1,3;
 ## Attributes for products and product groups
 
 You can create multiple data fields for each entry in `sve_object_attributes`.
-Each of them can be set in its own language. The language codes are specified in ISO-639 (for example 'ger-DE' or 'eng-US'). 
+Each of them can be set in its own language. The language codes follow the ISO-639 standard (for example, 'ger-DE' or 'eng-US'). 
 
 Each entry consists of the following fields:
 
@@ -137,7 +137,7 @@ The data is stored in the `data_int` field.
 
 #### ezprice
 
-The price information is stored in the `data_float` field. The `data_text` field contains information about the VAT value in percent and a flag indicating if the price is incluing VAT or not.
+The price information is stored in the `data_float` field. The `data_text` field contains information about the VAT value in percent and a flag that indicates whether the price includes VAT or not.
 
 Example:
 
@@ -149,7 +149,7 @@ Example:
 +---------+--------------+------------+----------+-----------+----------+
 ```
 
-If this example, the price is 0.952 EUR (currency is defined per shop), including 19% VAT.
+In this example, the price is 0.952 EUR (currency is defined per shop), including 19% VAT.
 
 #### ezmatrix
 
@@ -166,8 +166,8 @@ For example:
 +---------+--------------+------------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------+
 ```
 
-- columns: definition of the columns using a ID and a Label
-- rows: containing the data by rows and columns. For example, if a table contains 2 rows a 2 columns 4 `<c>` tags have to be generated.
+- columns: definition of the columns with an ID and a Label
+- rows: containing the data by rows and columns. For example, if a table contains two rows and two columns, four `<c>` tags must be generated.
 
 ``` xml
 <?xml version='1.0' encoding='UTF-8'?>
@@ -231,7 +231,7 @@ node_id attribute_id    data_float  data_int    data_text       language
 
 ### Table `ses_externaldata`
 
-This table describes all external data from (SAP, PIM, TYP, etc.). The content is encoded in JSON.
+This table describes all external data from SAP, PIM, TYP, etc. The content is encoded in JSON.
 Content Type Fields are defined in `sve_class_attributes`.
 
 |Field|Type|Null|Key|Default|Extra|

@@ -2,7 +2,7 @@
 
 !!! note
 
-    If a new SiteAccess is introduced it is important to add a new Policy for the anonymous user Role.
+    If you introduce a new SiteAccess, it is important that you add a new Policy for the anonymous User Role
 
     Allow login for the new SiteAccess:
 
@@ -10,8 +10,8 @@
 
 ## Configuration
 
-- `ezpublish.siteaccess.list` - general configuration for new SiteAccess
-- `ezpublish.siteaccess.groups.ezdemo_site_clean_group` - assign the new SiteAccess to general group `ezdemo_site_clean_group`
+- `ezpublish.siteaccess.list` - general configuration for the new SiteAccess
+- `ezpublish.siteaccess.groups.ezdemo_site_clean_group` - assign the new SiteAccess to the general group `ezdemo_site_clean_group`
 - `ezpublish.siteaccess.match.Compound\LogicalAnd` - define the domain and language for this new SiteAccess, e.g.:
 
 ``` yaml
@@ -24,7 +24,7 @@ website_be_nl:
     match: website_be_nl
 ```
 
-Next, configure session name and used languages:
+Next, configure a session name and used languages:
 
 ``` yaml
 website_be_nl:            

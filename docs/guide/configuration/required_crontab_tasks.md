@@ -1,6 +1,6 @@
 # Required crontab tasks
 
-## Remove translation and navigation caches
+## Remove the translation and navigation caches
 
 The shop collects changes regarding translations (textmodules) and navigation.
 If there are changes (e.g. performed in the backend) the cache will be refreshed.   
@@ -24,7 +24,7 @@ Lost orders can be re-sent using a command-line tool. We recommend running this 
 See [JMSJobQueueBundle documentation](http://jmsyst.com/bundles/JMSJobQueueBundle/master/installation)
 for more information
 
-If you can't use the suggested `supervisord` configuration, you can [set up a cron job](https://github.com/schmittjoh/JMSJobQueueBundle/issues/205)
+If you can't use the suggested `supervisord` configuration, you can [set up a cron job.](https://github.com/schmittjoh/JMSJobQueueBundle/issues/205)
 
 ## Calculate statistical data for active sessions
 

@@ -2,7 +2,7 @@
 
 ## Which log entries are stored in the database?
 
-By default ERP messages and emails are stored in the database.
+By default, ERP messages and emails are stored in the database.
 
 All other log entries are stored in the .log file.
 
@@ -35,7 +35,7 @@ for more information.
 
 ## How do I log an email that is sent by the shop?
 
-All emails which are sent using [`MailHelperService`](../../api/helper_services/mailhelperservice.md), are logged automatically.
+All emails that are sent with [`MailHelperService`](../../api/helper_services/mailhelperservice.md) are logged automatically.
 
 ## How do I avoid logging the password in the database?
 
@@ -49,4 +49,4 @@ The standard log file is located in `var/logs/silver.eshop.log`
 
 More precisely, Monolog's [StreamHandler](https://github.com/Seldaek/monolog/blob/master/doc/02-handlers-formatters-processors.md#log-to-files-and-syslog) is responsible for writing logs into files.
 The path to the file is a [constructor parameter](https://github.com/Seldaek/monolog/blob/master/src/Monolog/Handler/StreamHandler.php#L33) of the StreamHandler.
-For an example service configuration, take a look at [ERP Logging](../integrate_erp_systems/erp_communication/erp_logging.md#configuration).
+For an example of service configuration, see [ERP Logging](../integrate_erp_systems/erp_communication/erp_logging.md#configuration).

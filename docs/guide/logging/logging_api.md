@@ -10,8 +10,8 @@ the Monolog API implementation has been extended by Doctrine-based classes and a
 
 `LoggerInterface` is always used as the service for logging. 
 
-Below you can find the list of the logging methods (in order of importance).
-The last method, `log()`, should only be used if the log level of a message can only be determined at runtime.
+The list below contains the logging methods (in order of importance).
+Use the `log()` method only if the log level of a message can only be determined at runtime.
 For more information about the PSR logging standard, see [the official specification](https://github.com/php-fig/fig-standards/blob/master/accepted/PSR-3-logger-interface.md).
 
 ``` php
@@ -50,7 +50,7 @@ It takes the following parameters:
 
 |Parameter|Description|
 |---|---|
-|`$logRecord`|The record as created by Doctrine loggers|
+|`$logRecord`|The record, as created by Doctrine loggers|
 |`$persist`|If `true`, calls `save()` implicitly|
 
 #### save()
@@ -75,7 +75,7 @@ It's recommended to extend this class for any ORM-based logging entities.
 
 `AbstractLog` is the abstract class for all Log entities.
 
-It cannot be persisted by itself and MUST be derived by, for example, a fully-mapped doctrine entity class.
+It cannot be persisted by itself and MUST be derived by, for example, a fully-mapped Doctrine entity class.
 
 The attributes in the class must be considered in any DBMS mapping, as well.
 

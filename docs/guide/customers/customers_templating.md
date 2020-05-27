@@ -5,14 +5,14 @@ The variable provides the `profile` method which contains information about the 
 
 If the user has a customer number, eZ Commerce automatically fetches information from the ERP sending a customer request.
 The data is stored in the session and is provided by the variable `ses.profile`.
-Subsequent calls do not initiate a new request to the ERP since the data from the ERP is cached and handled by the Symfony session handlers.
+Subsequent calls do not initiate a new request to the ERP because the data from the ERP is cached and handled by the Symfony session handlers.
 
 eZ Commerce provides a standard template for displaying customer data:
 `SilversolutionsEshopBundle/Resources/views/details.html.twig`.
 
 ## Getting customer profile data
 
-As `ses.profile` in template returns the currently logged in profile, you are able to use all read-only members from the [`CustomerProfileData`](customers_api/customer_profile_data_components/customer_profile_data_model.md) implementation.
+As `ses.profile` in the template returns the currently logged-in profile, you are able to use all read-only members from the [`CustomerProfileData`](customers_api/customer_profile_data_components/customer_profile_data_model.md) implementation.
 
 For example:
 

@@ -7,13 +7,13 @@ The model itself has to be defined by a developer (using SQL). The tab **eConten
 - defined eContent types (e.g. `product_group`, `product`)
 - the list of attributes per eContent type
 
-For each eContent Field Type the list of attributes will be displayed:
+For each eContent Field Type the list of attributes is displayed:
 
 - Name: identifier of this attribute
 - ID: internal unique ID
 - Type
 - Mapping: shows where the field can be found when using the `CatalogElement`.
 The mapping is defined in a yml file: `silver_econtent.default.mapping.product`
-(for more details see [econtent - Configuration](../econtent_configuration.md)).
+(For more information, see [econtent - Configuration](../econtent_configuration.md)).
 
 ![](../../img/econtent_backend_features.png)

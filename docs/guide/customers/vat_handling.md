@@ -6,11 +6,11 @@ The VAT handling for customers inside eZ Commerce is controlled by:
 - The settings from the User Content item 
 - Default settings configured in a YAML file
 
-The ERP system has the highest priority. It means if ERP can provide the info about the VAT handling, this setting is used. 
+The ERP system has the highest priority. It means that if ERP can provide the information about the VAT handling, this setting is used. 
 
-If the attributes are set up in the User Content item, these settings are used if the ERP is not used or does not provide this info.
+If the attributes are set up in the User Content item, these settings are used if the ERP is not used or does not provide this information.
 
-As a last fallback, the settings defined per SiteAccess are used. 
+As the last fallback, the settings defined per SiteAccess are used. 
 
 ||Use case|What happens in the shop|
 |--- |--- |--- |
@@ -26,7 +26,7 @@ There are two attributes which can be set by the ERP system:
 - SesExtension->`HasToPayVat` 
 - SesExtension->`DisplayPriceInclVat`
 
-The default mapping is defined in `silver.e-shop/src/Silversolutions/Bundle/EshopBundle/Resources/mapping/wc3-nav/xsl/response.select_customer.xsl`
+The default mapping is defined in `silver.e-shop/src/Silversolutions/Bundle/EshopBundle/Resources/mapping/wc3-nav/xsl/response.select_customer.xsl`:
 
 ``` xml
 <CustomerResponse>

@@ -1,12 +1,12 @@
 # Login and registration configuration
 
-When the `enable_customer_number_login` parameter is enabled, the shop can log in users with customer number:
+When the `enable_customer_number_login` parameter is enabled, the shop can log in users with the customer number:
 
 ``` yaml
 siso_core.default.enable_customer_number_login: true
 ```
 
-You can specify default Location ID for users per SiteAccess:
+You can specify the default Location ID for users per SiteAccess:
 
 ``` yaml
 siso_core.default.user_group_location: 106
@@ -31,7 +31,7 @@ siso_core.default.redirect_homepage:
 
 ### Activation link recipient
 
-You can configure emails with activation link to be sent not to the customer, but to anothr email address
+You can decide that emails with the activation link are sent to a different email address rather than the customer.
 
 The email message will contain this additional information:
 
@@ -42,7 +42,7 @@ The email message will contain this additional information:
 siso_core.default.user_activation_receiver: <email>
 ```
 
-To use this feature you must also configure `related_admin_site_access` correctly:.
+To use this feature, you must also configure `related_admin_site_access` correctly:
 
 ``` yaml
 siso_core.default.related_admin_site_access: 'admin'
@@ -52,7 +52,7 @@ It is needed to build the link to the Back Office.
 
 You have to adapt the success message of the private registration. The default one uses a text module with the identifier `success_register_private`.
 
-![Example email with activation link](../img/login_3.png)
+![Example email with an activation link](../img/login_3.png)
 
 ## Account activation email
 

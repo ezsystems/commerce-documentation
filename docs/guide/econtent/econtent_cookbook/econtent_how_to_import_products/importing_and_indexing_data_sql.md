@@ -1,6 +1,6 @@
 # Importing and indexing data (SQL)
 
-## Examples queries
+## Query examples
 
 These queries can be useful for testing imported data or debugging.
 

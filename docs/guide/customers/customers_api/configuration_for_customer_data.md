@@ -1,6 +1,6 @@
 # Configuration for customer data
 
-## User Groups for private and business customer
+## User Groups for private and business customers
 
 To separate business and private users in one installation, there are two User Groups in the "Shop user" group.
 You can configure those groups using `user_group_location.business` and `user_group_location.private`
@@ -13,7 +13,7 @@ siso_core.default.user_group_location.private: 388
 
 ## Timeout for ERP updates
 
-The shop checks how old the customer data stored in the session is.
+The shop checks the age of the customer data that is stored in the session.
 If it is too old (past timeout) the shop fetches the data from the ERP again.
 
 The default timeout is configured in `EshopBundle/Resources/config/default_values.yml`:
@@ -25,11 +25,11 @@ silver_customer.config.default_values.remote_validation_timeout: 600
 
 ## Default handling for VAT
 
-In configuration you can define VAT handling rules.
+You can define VAT handling rules in configuration.
 If `isPriceInclVat` is set to `true`, the customer always sees prices including VAT.
-For B2B shops the handling can be changed.
+For B2B shops, the handling can be changed.
 You can override the setting per customer if required (e.g. if the ERP provides this information per customer).
-In some cases the customer does not have to pay VAT at all (for example for shopping abroad).
+In some cases the customer does not have to pay VAT at all (for example, for shopping abroad).
 
 ``` yaml
 ses.customer_profile_data.isPriceInclVat: true
@@ -53,7 +53,7 @@ silver_customer.config.default_values.select_contact_mode: "onPostEvent"
 
 ##### Set up the contact number
 
-The contact number should be set up in the Back Office, in the `contact_number` Field of a User Content item,
+Set the contact number in the Back Office, in the `contact_number` Field of a User Content item,
 for example:
 
 **Contact number:** KT100210

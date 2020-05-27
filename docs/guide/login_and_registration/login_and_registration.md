@@ -32,20 +32,20 @@ When a user logs in:
 
 When the data is stored in the ERP, the shop takes care of the versions created by eZ Platform.
 eZ Platform limits the number of versions created per Content item.
-The shop uses a setting to limit the number of versions (`silver_tools.default.versions_count: 10`) and removes archived versions.
-If the number of versions to be removed exceeds 20 versions, only 20 versions are removed to ensure the login process does not take too much time (and lead to a timeout). 
+The shop uses a setting to limit the number of versions (`silver_tools.default.versions_count: 10`) and removes the archived versions.
+If the number of versions to be removed exceeds 20, only 20 versions are removed to ensure the login process does not take too much time (and lead to a timeout). 
 
 ## Login
 
-eZ Commerce provides a flexible login functionality. In the shop a user can log in with username or email and password.
-Additionally you can add a field "customer number" which is required for logging into the customer center.
+eZ Commerce provides a flexible login functionality. A user can log in to the shop with a username or email and a password.
+Additionally, you can add a field "customer number", which is required for logging into the customer center.
 
 The methods `retrieveUser()` and `checkAuthentication()` of `AuthenticationProvider` are overriden to provide the login functionality.
 
 The logic for searching for a user is:
 
-- Determined by the Location ID which is configured per SiteAccess (`siso_core.default.user_group_location`).
-- Checks if a User with given the email address is stored under the configured Location.
+- Determined by the Location ID, which is configured per SiteAccess (`siso_core.default.user_group_location`).
+- Checks if a User with the given email address is stored under the configured Location.
 The search looks in subfolders such as business, private or editors.
 
 ## Registration options
@@ -70,12 +70,12 @@ The shop owner checks the provided data and creates a customer record in the ERP
 
 1. Activate account - a business customer who already has a customer number can register using a customer number and an invoice number.
 
-The shop checks this data using a request to the ERP. There are two options:
+The shop checks this data by sending a request to the ERP. There are two options:
 
 - activate business account - the customer is created using their customer number and can immediately see their special discounts in the shop.
-- create main contact in Customer Center - if Customer Center is enabled, the company is created in the shop. The account will be created as main contact for it.  
+- create the main contact in Customer Center - if Customer Center is enabled, the company is created in the shop, and the account is created as the main contact.  
 
-For more details, see [Customercenter and user management](../user_management/customer_center/customer_center_and_user_management.md)
+For more information, see [Customer center and user management](../user_management/customer_center/customer_center_and_user_management.md)
 
 The forms and the processes behind the forms can be customized.
 
@@ -87,4 +87,4 @@ For more information about security, see [Access control](../user_management/acc
 
 ### Token
 
-For details about using the Token system offered by Symfony, see [TokenController](../user_management/token/tokencontroller/tokencontroller.md).
+For more information about using the Token system offered by Symfony, see [TokenController](../user_management/token/tokencontroller/tokencontroller.md).

@@ -2,7 +2,7 @@
 
 `ses_variants` can be used to store variant data for a product. 
 
-The variants have to be stored in a JSON format.
+The variants must be stored in a JSON format.
 For more information, see [Product Variants](../../../guide/catalog/catalog_features/product_variants/product_variants.md).
 
 ``` json

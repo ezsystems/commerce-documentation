@@ -2,7 +2,7 @@
 
 ## User Content Type
 
-By default the User Content Type contains the following Fields:
+By default, the User Content Type contains the following Fields:
 
 |Field|Field identifier|Field Type|Note|
 |--- |--- |--- |--- |

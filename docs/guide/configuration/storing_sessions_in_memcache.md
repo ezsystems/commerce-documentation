@@ -1,9 +1,9 @@
 # Storing sessions in Memcache
 
 You can configure storing sessions in Memcache, preferably using stash.
-This way you don't mix session stash cache with other stash caches (SPI, translation, navigation)
+This way you don't mix session stash cache with other stash caches, such as SPI, translation, and navigation.
 
-You can also configure a failover session cache server.
+You can also configure a cache server for the failover session.
 
 ## Step 1. Configure Memcache servers
 

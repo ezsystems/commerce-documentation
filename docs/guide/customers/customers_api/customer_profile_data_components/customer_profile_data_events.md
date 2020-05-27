@@ -3,7 +3,7 @@
 ## CustomerProfileDataEventInterface
 
 `CustomerProfileDataEventInterface` (`Silversolutions\Bundle\EshopBundle\Event\CustomerProfileData\CustomerProfileDataEventInterface`)
-is the general interface for any event which is thrown in customer profile data services.
+is the general interface for any event that is thrown in customer profile data services.
 
 ## AbstractCustomerProfileDataEvent
 

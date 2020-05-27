@@ -1,8 +1,8 @@
 # Importing products (API)
 
-Importing products via the API includes the following parts of the system:
+Importing products by means of the API includes the following parts of the system:
 
-- eContent repository: helper methods for automatically generating metadata.
+- eContent repository: helper methods for automatic metadata generation.
 - catalog data (categories, products and related attributes) need to be stored individually for every language used in the shop
 - available classes for new database objects can be obtained from the `sve_class` table (by default only two classes: 1 = category, 2 = product)
 
@@ -10,7 +10,7 @@ Importing products via the API includes the following parts of the system:
 
 Every catalog class defines a number of valid attributes for their elements. The name identifier, ID and Content Type of all attributes are stored in the table `sve_class_attributes`.
 
-Fields `node_id` of product, `attribute_id` and language code are required.
+The `node_id` of the product, `attribute_id` and language code fields are required.
 
 After a new product is created, attributes can be associated with the product using its `node_id`.
 In addition, creating a new attribute requires its ID and the language code.
@@ -28,8 +28,8 @@ The API provides a corresponding setter method for every data type that needs to
 
 A category has `class_id` = 1.
 
-Categories are used to group products by setting the `parent_id` of the products to the `node_id` of the category.
-The root node of the tree is 2 (the parent of first category)
+Categories are used to group products by setting the `parent_id` of the product to the `node_id` of the category.
+The root node of the tree is 2 (the parent of the first category).
 
 For example:
 
@@ -72,7 +72,7 @@ Use the `generateMetaData()` method to generate metadata such as the URL alias o
 
 The following example creates a product object in the database and sets its properties.
 It creates attributes and associates them with the object.
-Different attributes have different data types (text is default)
+Different attributes have different data types (text is default).
 
 ``` php
 // get the doctrine repository
@@ -134,4 +134,4 @@ php bin/console silversolutions:indexecontent swap
 php bin/console silversolutions:econtent-tables-swap
 ```
 
-For more information see [Staging system](../../econtent_features/staging_system.md) and [Indexing econtent data](../../econtent_features/indexing_econtent_data/indexing_econtent_data.md).
+For more information, see [Staging system](../../econtent_features/staging_system.md) and [Indexing econtent data](../../econtent_features/indexing_econtent_data/indexing_econtent_data.md).

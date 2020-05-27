@@ -2,10 +2,10 @@
 
 ## HTTP server configuration
 
-See [eZ Platform  installation guide](https://doc.ezplatform.com/en/latest/getting_started/install_ez_platform/#prepare-installation-for-production)
-for more information on HTTP server configuration.
+For more information about the HTTP server configuration,
+see [eZ Platform  installation guide](https://doc.ezplatform.com/en/2.5/getting_started/install_ez_platform/#prepare-installation-for-production).
 
-eZ Commerce requires one more rule in order to display images. The following examples shows the settings for Apache:
+eZ Commerce requires one more rule in order to display images. The following examples show the settings for Apache:
 
 ``` 
 RewriteRule ^/var/assets/.* - [L]
@@ -31,7 +31,7 @@ php_value session.gc_maxlifetime 86400
 
 The `registerBundles()` method in Kernel loads different bundles based on the environment.
 
-In addition, you are able to load client-specific bundles there:
+In addition, you can use this method to load client-specific bundles:
 
 ``` php
 //custom bundles for clients
@@ -130,7 +130,7 @@ Important: The secret has to be created by a command:
 php vendor/defuse/php-encryption/bin/generate-defuse-key
 ```
 
-Configure the PayPal parameters in your `parameters.yml`:
+Configure the PayPal parameters in the `parameters.yml` file:
 
 ``` yaml
 siso_paypal_api.user: 'my-api-use'

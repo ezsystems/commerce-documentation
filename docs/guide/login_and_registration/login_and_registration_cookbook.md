@@ -11,7 +11,7 @@ The first part in the authentication process is `AuthenticationListener`.
 This listener is able to read the posted values from the login form and create a `UserToken`.
 
 The default Symfony listener is extended to collect more information (`customer_number`).
-In the standard Symfony login form only username and password are allowed.
+In the standard Symfony login form, only username and password are allowed.
 
 The extended listener implements the same `AbstractAuthenticationListener` interface.
 
@@ -22,7 +22,7 @@ The extended listener implements the same `AbstractAuthenticationListener` inter
 ```
 
 A different `UsernamePasswordToken` (using `TokenInterface`) is needed here.
-You have to add new attribute to the `customer_no` token. This `UsernamePasswordToken` is passed to next service in the authentication process.
+You must add a new attribute to the `customer_no` token. This `UsernamePasswordToken` is passed to the next service in the authentication process.
 
 ``` php
 $token = new UsernamePasswordToken($username, $password, $this->providerKey);
@@ -33,7 +33,7 @@ $token->setAttribute('customer_no', $customerNo);
 
 `UserProvider` gets the created `UsernamePasswordToken` and fetches the correct User from the content model.
 
-The default fetching functionality is extended because in the Customer Center the User can be placed in different User Groups (or outside a group).
+The default fetching functionality is extended because, in the Customer Center, the User can be placed in different User Groups (or outside a group).
 
 The provider uses `locationId` in the backend to determine private/b2b customers.
 
@@ -45,7 +45,7 @@ It provides a `checkEzUser()` method which checks the Location and customer numb
 
 ### AuthenticationProvider
 
-`AuthenticationProvider` retrieves and authenticates the User (using the `UsernamePasswordToken`).
+`AuthenticationProvider` retrieves and authenticates the User (with the `UsernamePasswordToken`).
 The methods `retrieveUser()` and `checkAuthentication()` try to load a User by username or email considering the credentials.
 Afterwards, also the Location and possibly the customer number are checked by the `checkEzUser()` method from `UserProvider`.
 
@@ -85,7 +85,7 @@ public function loginAction(Request $request)
 
 ## Login form
 
-Login form is adjusted to use additional parameter `_customer_no`.
+Login form is adjusted to use the additional parameter `_customer_no`.
 
 #### Template Example
 
@@ -123,7 +123,7 @@ Login form is adjusted to use additional parameter `_customer_no`.
 ## Logging in a User from a controller
 
 Sometimes a User must be logged in directly, without providing the username/password combination.
-An example use case is logging in via SSO:
+An example use case is logging in with SSO:
 
 ``` php
 public function loginEzUserAction()

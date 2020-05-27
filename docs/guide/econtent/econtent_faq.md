@@ -38,7 +38,7 @@ select * from sve_object_attributes where node_id=2;
 
 Check if the correct class ID is set in the configuration:
 
-- check if types contains the correct `class_id` used in eContent for `product_groups`. It is usually 1
+- check if the `types` setting contains the correct `class_id` used in eContent for `product_groups`. It is usually 1
 - check if the fields used for the labels are set: `label_fields`
 
 ``` yaml
@@ -81,11 +81,11 @@ Make sure that the main attributes are defined:
 
 Check if you have issues while building the catalog elements.
 
-In dev environment exceptions are logged to `silver.eshop.log`.
+In dev environment, exceptions are logged to `silver.eshop.log`.
 
 ## How can I improve the speed of getting a product by SKU?
 
-Doctrine does not allow creating an index using a part of a string.
+Doctrine does not allow creating an index based on a part of a string.
 This is why it can be helpful to setup an index manually:
 
 ``` 

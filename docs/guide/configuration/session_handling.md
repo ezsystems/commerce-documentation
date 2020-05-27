@@ -1,7 +1,7 @@
 # Session handling
 
 The default session handling should be changed, because after clearing the cache all users will be logged out.  
-Session now are handled with PDO. You can also switch to Memcache. 
+Sessions are handled with PDO, but you can switch to Memcache. 
 
 ## Session table
 

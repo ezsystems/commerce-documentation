@@ -90,7 +90,7 @@ class MyCustomUserEcontentCatalogSegmentationService implements EcontentCatalogS
     }
 
     /**
-     * The logic to fetch the desired catalog codes should be placed here:
+     * Place the logic that fetches the desired catalog codes here:
      */
     public function getCatalogCodes()
     {

@@ -50,7 +50,7 @@ $key = $response->DeliveryParty->SesExtension->value['Key'];
 
 ## Read an existing delivery address from NAV
 
-In NAV, the address code is needed in addition to the party identification in order to fetch a delivery address.
+In NAV, the address code and party identification are required in order to fetch a delivery address.
 
 ``` php
 // Get the necessary services
@@ -74,9 +74,9 @@ $response = $messageTrans->sendMessage($msg)->getResponseDocument();
 
 Complete data must be sent (changed and unchanged fields) to change the address,
 together with the Key value of the last read data. The Key is a consistency check for the update.
-If the data in NAV changed since it was fetched the last time, the Keys of the update request and in NAV would mismatch and the request fails.
-In that case, the data must be fetched again and the current changes must be merged into the new data from NAV.
-This might need user interaction (several HTTP requests).
+If the data in NAV changed since it was fetched the last time, the Key of the update request does not match the Key in NAV and the request fails.
+In that case, the data must be fetched again and current changes must be merged into the new data from NAV.
+Fetching data might require user interaction (several HTTP requests).
 After that, the merged data must be sent again in an update request with the new Key.
 
 ``` php
