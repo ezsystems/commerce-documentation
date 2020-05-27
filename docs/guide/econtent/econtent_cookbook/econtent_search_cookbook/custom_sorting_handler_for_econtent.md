@@ -72,7 +72,7 @@ and adding the tag name to the service definition.
 
 The handler is then used whenever the search clause is an instance of `PriorityFieldSorting`.
 
-This means that when you add this to `eshopQuery`, it executes the handler.
+This means that when you add this search clause to `eshopQuery`, the method executes the handler.
 
 ``` xml
 <parameter key="siso_search.search_sort_handler.priority.econtent.class">MyProject\Bundle\ProjectBundle\Service\Search\PriorityFieldSortingHandler</parameter>

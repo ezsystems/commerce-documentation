@@ -46,7 +46,7 @@ It provides a `checkEzUser()` method which checks the Location and customer numb
 ### AuthenticationProvider
 
 `AuthenticationProvider` retrieves and authenticates the User (with the `UsernamePasswordToken`).
-The methods `retrieveUser()` and `checkAuthentication()` try to load a User by username or email considering the credentials.
+The methods `retrieveUser()` and `checkAuthentication()` try to load a User by username or email and take credentials into account.
 Afterwards, also the Location and possibly the customer number are checked by the `checkEzUser()` method from `UserProvider`.
 
 ``` xml

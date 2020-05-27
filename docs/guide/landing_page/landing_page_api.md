@@ -26,7 +26,7 @@ Products are stored in the session.
 The controller is able to render a different template if required (parameter template).
 `SilversolutionsEshopBundle:Catalog:slider.html.twig` is used by default. 
 
-The caching strategy can be defined in the config file. Since it is dynamic, you should use `vary: cookie`.
+The caching strategy can be defined in the config file. The strategy is dynamic, so use `vary: cookie`.
 
 ``` yaml
 silver_eshop.default.http_cache:

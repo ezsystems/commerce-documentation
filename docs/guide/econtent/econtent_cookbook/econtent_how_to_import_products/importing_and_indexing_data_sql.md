@@ -138,7 +138,7 @@ Remember to index the products in Solr, see [Staging system](../../econtent_feat
 ### Import procedure using temp tables
 
 Tables `sve_object` and `sve_object_attributes` have two clone temporary tables called `sve_object_tmp` and `sve_object_attributes_tmp`.
-These temporary tables are used to import new data and keep data available while importing using the normal tables.
+These temporary tables are used to import new data and keep data available while importing by means of the normal tables.
 After an import is finished, you can execute a command to rename the temporary tables to normal tables:
 
 ``` bash

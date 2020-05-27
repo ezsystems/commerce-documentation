@@ -11,7 +11,7 @@ php bin/console silversolutions:indexecontent
 ```
 
 eContent Solr configuration uses two cores to keep search services available while indexing.
-This means that the indexer indexes eContent data in a back core
+This means that the indexer indexes eContent data in a back core,
 and then the indexer can be executed again with a swap parameter to swap the cores.
 
 |Indexer options|Results|

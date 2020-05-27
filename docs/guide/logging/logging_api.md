@@ -64,7 +64,7 @@ It takes the following parameters:
 
 ### AbstractOrmLogRepository
 
-This implementation of `LogRepositoryInterface` uses doctrines ORM API by deriving from `EntityRepository`.
+This implementation of `LogRepositoryInterface` uses Doctrine's ORM API by deriving from `EntityRepository`.
 
 The class is abstract, but implements the complete `LogRepositoryInterface`.
 It is intended to be extended for concrete entity implementations of `AbstractLog` and, therefore, must not be instantiated directly.

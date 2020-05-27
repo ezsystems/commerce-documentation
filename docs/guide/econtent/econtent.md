@@ -21,7 +21,7 @@ The catalog can be stored in the content model or in eContent.
 
 If eContent is used, there are a few restrictions that have to be considered:
 
-- A product cannot be embedded using a standard embed feature. eZ Commerce offers an alternative feature which enables embedding products in RichtText Fields.
+- A product cannot be embedded by using the standard embed feature. eZ Commerce offers an alternative feature which enables embedding products in RichtText Fields.
 - eContent products are not visible in the Back Office.
 
 It depends on the requirements of the customer to decide which provider should be used. The following table compares the main features:

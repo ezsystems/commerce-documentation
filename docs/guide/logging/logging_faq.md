@@ -29,7 +29,7 @@ $logger->debug('My log message', $additionalContext);
 
 All transmitted messages are logged automatically, because the mandatory transport layer automatically logs all messages.
 But if a new transport is implemented (other than `WebConnectorMessageTransport`),
-this implementation has to take care of logging measuring point a lower level.
+this implementation has to take care of logging the measuring point on a lower level.
 See [Measuring Points in the ERP logging documentation](../integrate_erp_systems/erp_communication/erp_logging.md#logging-architecture-measuring-points)
 for more information.
 
@@ -47,6 +47,6 @@ If the email contains a password that should not be logged in the DB, you have t
 
 The standard log file is located in `var/logs/silver.eshop.log`
 
-More precisely, Monolog's [StreamHandler](https://github.com/Seldaek/monolog/blob/master/doc/02-handlers-formatters-processors.md#log-to-files-and-syslog) is responsible for writing logs into files.
+More precisely, Monolog's [StreamHandler](https://github.com/Seldaek/monolog/blob/master/doc/02-handlers-formatters-processors.md#log-to-files-and-syslog) writes logs into files.
 The path to the file is a [constructor parameter](https://github.com/Seldaek/monolog/blob/master/src/Monolog/Handler/StreamHandler.php#L33) of the StreamHandler.
 For an example of service configuration, see [ERP Logging](../integrate_erp_systems/erp_communication/erp_logging.md#configuration).

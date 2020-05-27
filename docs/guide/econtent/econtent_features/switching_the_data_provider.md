@@ -25,7 +25,7 @@ php bin/console silversolutions:indexecontent swap --no-debug
 php bin/console silversolutions:switchdataprovider ez
 ```
 
-Remember to clear the cache after running the command:
+Remember to clear the cache after you execute the command:
 
 ``` bash
 php bin/console cache:clear --env=prod

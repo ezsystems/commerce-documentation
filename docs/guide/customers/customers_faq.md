@@ -28,7 +28,7 @@ You can add your own bundle to this configuration and extend the user menu as lo
 
 ## Where is User data stored?
 
-By default the additional data of your User Content item is stored in the `dataMap` of [`CustomerProfileData`](customers_api/customer_profile_data_components/customer_profile_data_services.md) with prefix `ez_`.
+By default, the additional data of your User Content item is stored (with prefix `ez_`) in the `dataMap` of [`CustomerProfileData`](customers_api/customer_profile_data_components/customer_profile_data_services.md).
 
 The following Field Types are supported:
 

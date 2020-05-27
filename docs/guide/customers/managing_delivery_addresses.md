@@ -77,7 +77,7 @@ together with the Key value of the last read data. The Key is a consistency chec
 If the data in NAV changed since it was fetched the last time, the Key of the update request does not match the Key in NAV and the request fails.
 In that case, the data must be fetched again and current changes must be merged into the new data from NAV.
 Fetching data might require user interaction (several HTTP requests).
-After that, the merged data must be sent again in an update request with the new Key.
+The merged data must then be sent again in an update request with the new Key.
 
 ``` php
 // Get the necessary services

@@ -80,7 +80,7 @@ class MyCustomUserEcontentCatalogSegmentationService implements EcontentCatalogS
     private $userGroup;
 
     /**
-     * Set via external instance depending to request session
+     * Set via external instance depending on the request session
      *
      * @param string $groupCode
      */

@@ -27,12 +27,12 @@ website_be_nl:
 Next, configure a session name and used languages:
 
 ``` yaml
-website_be_nl:            
+website_be_nl:
     session:
         name: eZSESSID
     languages:
         - dut-NL
 ```
 
-- `ezpublish.siteaccess.ses_admin.languages` - the new language must be enabled for admin SiteAccess.
-- `ezsettings.default.languages` - the new language must be added.
+- `ezpublish.siteaccess.ses_admin.languages` - enables the new language for admin SiteAccess.
+- `ezsettings.default.languages` - adds the new language.

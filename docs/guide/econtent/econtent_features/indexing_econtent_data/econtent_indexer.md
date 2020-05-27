@@ -60,5 +60,5 @@ siso_search.default.index_econtent_languages:
 This means that if a Content item in language `ger-DE` has some missing data,
 the missing data is taken from the fallback language data (if there is any).
 
-eContent languages are defined per attribute, so its possible to have an object with a full set of attributes in one language
+eContent languages are defined per attribute, so it is possible to have an object with a full set of attributes in one language
 and a smaller set of attributes in another language.

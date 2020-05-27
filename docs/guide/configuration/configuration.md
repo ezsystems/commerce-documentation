@@ -15,7 +15,7 @@ RewriteRule ^/var/assets/.* - [L]
 
 ### Session settings
 
-The `gc_maxlifetime` parameter inshould be set in `php.ini` (e.g. `/etc/php5/apache2/php.ini`) to reduce the lifetime of a session:
+Set the `gc_maxlifetime` parameter in `php.ini` (e.g. `/etc/php5/apache2/php.ini`) to reduce the lifetime of the session:
 
 ``` 
 session.gc_maxlifetime = 86400

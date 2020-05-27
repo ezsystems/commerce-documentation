@@ -97,5 +97,5 @@ This example assumes that the SKU has a maximum length of 20, which should be fi
 
 ## Facets are lowercased
 
-The configuration `index_facet_fields` has to be defined for the specific fields which should not be lowercased.
+If facet names are lowercase, you need to set the `index_facet_fields` parameter for the specific fields which should not be lowercase.
 See [Indexing econtent data](econtent_features/indexing_econtent_data/indexing_econtent_data.md).

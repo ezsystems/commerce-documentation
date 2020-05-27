@@ -92,7 +92,7 @@ The indexer also supports these additional data types with the corresponding suf
 
 The data type is specified in `EcontentFieldNameResolver`.
 
-!!! note "Note about longs"
+!!! note "Long data types"
 
     Solr accepts the following min and max integer values:
 

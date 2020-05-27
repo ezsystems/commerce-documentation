@@ -8,12 +8,12 @@ is the general interface for any customer profile data service.
 ## AbstractCustomerProfileDataService
 
 `AbstractCustomerProfileDataService` (`Silversolutions\Bundle\EshopBundle\Services\CustomerProfileData\AbstractCustomerProfileDataService`)
-is the abstract customer profile data service implementation which provides helper methods for derivative services.
+is the abstract service implementation for customer profile data which provides helper methods for derivative services.
 
 ## EzErpCustomerProfileDataService
 
 `EzErpCustomerProfileDataService` (`Silversolutions\Bundle\EshopBundle\Services\CustomerProfileData\EzErpCustomerProfileDataService`)
-is the concrete customer profile data service implementation using ERP as source for customer and contact data.
+is the concrete service implementation for customer profile data using ERP as source for customer and contact data.
 It also uses the content model as source for account data and target for fallback data.
 
 ## DeprecatedCustomerMappingService

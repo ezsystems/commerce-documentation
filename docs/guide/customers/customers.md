@@ -30,7 +30,8 @@ Each shop stores private and business customers in different User Groups. If req
 
 The customers are directly connected to the ERP system if they have a customer number or/and a contact number. 
 
-The customer number is usually the main reference to the ERP system and it is stored as a read-only Field in the User Content item. 
+The ERP system usually identifies customers by their customer numbers.
+The customer number is stored as a read-only Field in the User Content item. 
 
 The shop gets the information from the ERP automatically when user information (customer profile data) is requested for the first time.
 

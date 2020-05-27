@@ -50,7 +50,7 @@ The VAT handling can be defined per User.
 
 ![](../img/customers_vat_setting.png)
 
-Remember to use the correct identifiers and to check the checkox **Default value**.
+Remember to use the correct identifiers and select the **Default value** checkbox.
 
 ![](../img/customers_vat_setting_2.png)
 
