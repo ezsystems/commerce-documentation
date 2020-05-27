@@ -1,9 +1,9 @@
-# Newsletter2Go Service
+# Newsletter2Go service
 
-This is the concrete implementation of the NewsletterInterface for the Newsletter2Go provider.  
-Newsletter2Go uses the REST approach to connect to the API.
+This is the concrete implementation of `NewsletterInterface` for the Newsletter2Go provider.  
+Newsletter2Go uses REST to connect to the API.
 
-[Read more](https://docs.newsletter2go.com/?_ga=1.186190697.1183183675.1471410241#/) about the API Documentation.
+See [Newsletter2Go API documentation](https://docs.newsletter2go.com/?_ga=1.186190697.1183183675.1471410241#/) for more information.
 
 Service ID
 
@@ -11,7 +11,7 @@ Service ID
 
 ## Configuration
 
-Following attributes have to be configured in order to connect to Newsletter2Go via API  
+The following attributes have to be configured in order to connect to Newsletter2Go via API  
 
 ``` yaml
 siso_newsletter.default.newsletter2go_username: '%newsletter2go_username%'
@@ -20,15 +20,16 @@ siso_newsletter.default.newsletter2go_auth_key: '%newsletter2go_auth_key%'
 siso_newsletter.default.newsletter2go_ssl_verification: false
 ```
 
-You will find the authentication data in the Newsletter2Go backend:
+You can find the authentication data in the Newsletter2Go backend:
 
-![](../../../img/newsletter2go_service_1.png)
+![](../../img/newsletter2go_service_1.png)
 
-![](../../../img/newsletter2go_service_2.png)
+![](../../img/newsletter2go_service_2.png)
 
-## How the service connects to the API?
+## API service
 
-Internally the Newsletter2GoService makes a usage of the Newsletter2GoApiService, that can be used, if new methods needs to be implemented in order to communicate with the Newsletter2Go provider via the API.
+Internally `Newsletter2GoService` uses the `Newsletter2GoApiService`.
+You can use this service if you need to implement new methods to communicate with the Newsletter2Go provider through the API:
 
 ``` php
 public function connectApi($path, $method, $data = array());
@@ -36,15 +37,13 @@ public function getApiFormattedDate(\DateTime $dateTime);
 public function getApiGenderCode($genderCode);
 ```
 
-## Send additional data to Newsletter2Go
+## Sending additional data to Newsletter2Go
 
 ### SubscribeNewsletterEvent
 
-Newsletter2GoService dispatch an event, before user is created in the address book.
+`Newsletter2GoService` dispatches an event before a user is created in the address book.
 
-**SubscribeNewsletterEvent is dispatched**
-
-``` 
+``` php
 ...
 //dispatch event before new recipient is created
 $event = new SubscribeNewsletterEvent(
@@ -68,11 +67,10 @@ $response = $this->newsletter2GoApiService->connectApi(
 
 ### SubscribeNewsletterEvent listener
 
-Every listener, that listen to this event is able to add additional data, that will be send to the Newsletter2Go provider. However, if the attribute does not exist in the provider yet, it has to be created first in order to be stored.
+Every listener that listens to this event can add additional data that is sent to the Newsletter2Go provider.
+However, if the attribute does not exist in the provider yet, it has to be created first.
 
-**Example SubscribeNewsletterEvent listener**
-
-``` 
+``` php
 public function setCustomParameters(SubscribeNewsletterEvent $event)
 {
     $params = $event->getParams();
@@ -86,7 +84,7 @@ public function setCustomParameters(SubscribeNewsletterEvent $event)
 }
 ```
 
-``` 
+``` xml
 <service id="custom_listener" class="%custom_listener.class%">
     <tag name="kernel.event_listener" event="subscribe_newsletter_event" method="setCustomParameters" />
 </service>
@@ -94,11 +92,9 @@ public function setCustomParameters(SubscribeNewsletterEvent $event)
 
 ### UpdateNewsletterEvent
 
-Newsletter2GoService dispatch an event, before user is updated.
+Newsletter2GoService dispatches an event before the user is updated.
 
-**SubscribeNewsletterEvent is dispatched**
-
-``` 
+``` php
 ...
 //dispatch event before recipient is updated
 $event = new UpdateNewsletterEvent(
@@ -122,11 +118,10 @@ $response = $this->newsletter2GoApiService->connectApi(
 
 ### UpdateNewsletterEvent listener
 
-Every listener, that listen to this event is able to add additional data, that will be send to the Newsletter2Go provider. However, if the attribute does not exist in the provider yet, it has to be created first in order to be stored.
+Every listener that listens to this event can add additional data that is sent to the Newsletter2Go provider.
+However, if the attribute does not exist in the provider yet, it has to be created first.
 
-**Example UpdateNewsletterEvent listener**
-
-``` 
+``` php
 public function setCustomParameters(UpdateNewsletterEvent $event)
 {
     $params = $event->getParams();
@@ -144,7 +139,7 @@ public function setCustomParameters(UpdateNewsletterEvent $event)
 }
 ```
 
-``` 
+``` xml
 <service id="custom_listener" class="%custom_listener.class%">
     <tag name="kernel.event_listener" event="update_newsletter_event" method="setCustomParameters" />
 </service>

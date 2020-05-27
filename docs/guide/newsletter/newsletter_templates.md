@@ -4,22 +4,22 @@
 
 |Path|Description|
 |--- |--- |
-|Silversolutions/Bundle/EshopBundle/Resources/views/Newsletter/newsletter_box.html.twig|Renders newsletter box. see Newsletter Box.|
-|Silversolutions/Bundle/EshopBundle/Resources/views/Newsletter/newsletter_message.html.twig|Renders a simple page with success/error messages after user subscribed/unsubscribed to newsletter|
-|Silversolutions/Bundle/EshopBundle/Resources/views/Emails/ConfirmationMail_SubscribeNewsletter.html.twig|HTML confirmation email that is send to the user in the DOI process|
-|Silversolutions/Bundle/EshopBundle/Resources/views/Emails/ConfirmationMail_SubscribeNewsletter.txt.twig|Text confirmation email that is send to the user in the DOI process|
+|`Silversolutions/Bundle/EshopBundle/Resources/views/Newsletter/newsletter_box.html.twig`|Renders [the newsletter box](#newsletter-box).|
+|`Silversolutions/Bundle/EshopBundle/Resources/views/Newsletter/newsletter_message.html.twig`|Renders a simple page with success/error messages after a user subscribes/unsubscribes to or from newsletter|
+|`Silversolutions/Bundle/EshopBundle/Resources/views/Emails/ConfirmationMail_SubscribeNewsletter.html.twig`|HTML confirmation email that is sent to the user in the double opt-in process|
+|`Silversolutions/Bundle/EshopBundle/Resources/views/Emails/ConfirmationMail_SubscribeNewsletter.txt.twig`|Text confirmation email that is sent to the user in the double opt-in process|
 
-### Newsletter Box
+### Newsletter box
 
-The newsletter box can be rendered as an esi block and can be rendered in the Page Builder as well. The box is cached per user.
+The newsletter box can be rendered as an ESI block and can be rendered in the Page Builder as well. The box is cached per user.
 
-All paramaters from the block template are forwarded and accesible here, example:
+All parameters from the block template are available in the box.
 
 ![](../img/newsletter_1.png)
 
-## How to render a newsletter form
+## Rendering a newsletter form
 
-You can use a render statement to render the newlsetter form in a template
+You can use a render statement to render the newsletter form in a template:
 
 ``` php
 {{ render(

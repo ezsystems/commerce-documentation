@@ -360,21 +360,18 @@ nav:
             - 'Navigation cache': 'guide/navigation/navigation_cache.md'
         - Newsletter:
             - 'Newsletter': 'guide/newsletter/newsletter.md'
-            - Newsletter API:
-                - 'Newsletter configuration': 'guide/newsletter/newsletter_api/newsletter_configuration.md'
-                - 'Newsletter interface': 'guide/newsletter/newsletter_api/newsletter_interface.md'
-            - Newsletter cookbook:
-                - 'How to send additional data to the Newsletter provider': 'guide/newsletter/newsletter_cookbook/how_to_send_additional_data_to_the_newsletter_provider.md'
+            - 'Newsletter configuration': 'guide/newsletter/newsletter_configuration.md'
+            - 'Newsletter interface': 'guide/newsletter/newsletter_interface.md'
+            - 'Additional newsletter data': 'guide/newsletter/additional_newsletter_data.md'
             - 'Newsletter templates': 'guide/newsletter/newsletter_templates.md'
             - 'Newsletter2Go':
                 - 'Newsletter2Go': 'guide/newsletter/newsletter2go/newsletter2go.md'
-                - 'Newsletter2Go - API':
-                    - 'Newsletter2Go Configuration': 'guide/newsletter/newsletter2go/newsletter2go_api/newsletter2go_configuration.md'
-                    - 'Newsletter2Go Service': 'guide/newsletter/newsletter2go/newsletter2go_api/newsletter2go_service.md'
-                - 'Newsletter2Go - Cookbook':
-                    - 'How to send additional data to Newsletter2Go': 'guide/newsletter/newsletter2go/newsletter2go_cookbook/how_to_send_additional_data_to_newsletter2go.md'
-                    - 'How to use the Newsletter2Go API to implement custom functions': 'guide/newsletter/newsletter2go/newsletter2go_cookbook/how_to_use_the_newsletter2go_api_to_implement_custom_functions.md'
-                - 'Newsletter2Go - FAQ': 'guide/newsletter/newsletter2go/newsletter2go_faq.md'
+                - 'Newsletter2Go configuration': 'guide/newsletter/newsletter2go/newsletter2go_configuration.md'
+                - 'Newsletter2Go service': 'guide/newsletter/newsletter2go/newsletter2go_service.md'
+                - 'Newsletter2Go cookbook':
+                    - 'Sending additional data to Newsletter2Go': 'guide/newsletter/newsletter2go/newsletter2go_cookbook/sending_additional_data_to_newsletter2go.md'
+                    - 'Custom Newsletter2Go functions': 'guide/newsletter/newsletter2go/newsletter2go_cookbook/custom_newsletter2go_functions.md'
+                    - 'Working with several newsletters': 'guide/newsletter/newsletter2go/newsletter2go_cookbook/working_with_several_newsletters.md'
         - One-page forms:
             - 'One-page forms': 'guide/one_page_forms/one_page_forms.md'
             - One-page forms API:
