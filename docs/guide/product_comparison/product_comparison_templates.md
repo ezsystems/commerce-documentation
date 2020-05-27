@@ -1,6 +1,6 @@
 # Product comparison templates
 
-## Templates list
+## Template list
 
 Default path:
 
@@ -8,18 +8,16 @@ Default path:
 
 |Path|Description|
 |--- |--- |
-|Comparison/comparison_list.html.twig|entry page for comparison list|
-|Basket/messages.html.twig|template with success/error/notice messages for baskets|
-|parts/user_menu.html.twig|html content for right user menu navigation with links to comparison|
+|`Comparison/comparison_list.html.twig`|Entry page for comparison list|
+|`Basket/messages.html.twig`|Template with success/error/notice messages for baskets|
+|`parts/user_menu.html.twig`|HTML content for right user menu navigation with links to comparison|
 
+## Related custom Twig functions
 
-## Related custom Twig modifiers/functions/etc
+### `ses_comparison_category`
 
-### Twig functions
-
-#### `ses_comparison_category`
-
-Returns correct comparison category for the catalog element. This is a wrapper for `ComparisonServiceInterface::getComparisonCategory()`
+Returns correct comparison category for the catalog element.
+This function is a wrapper for `ComparisonServiceInterface::getComparisonCategory()`
 
 ``` html+twig
 {{ ses_comparison_category(catalogElement) }}

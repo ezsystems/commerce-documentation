@@ -466,7 +466,6 @@ nav:
             - 'Price engine FAQ': 'guide/price_engine/price_engine_faq.md'
         - Product comparison:
             - 'Product comparison ': 'guide/product_comparison/product_comparison.md'
-            - 'Product comparison features': 'guide/product_comparison/product_comparison_features.md'
             - 'Product comparison API': 'guide/product_comparison/product_comparison_api.md'
             - 'Product comparison templates': 'guide/product_comparison/product_comparison_templates.md'
             - 'Product comparison FAQ': 'guide/product_comparison/product_comparison_faq.md'
