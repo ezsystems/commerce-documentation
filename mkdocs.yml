@@ -469,11 +469,11 @@ nav:
             - 'Product comparison API': 'guide/product_comparison/product_comparison_api.md'
             - 'Product comparison templates': 'guide/product_comparison/product_comparison_templates.md'
             - 'Product comparison FAQ': 'guide/product_comparison/product_comparison_faq.md'
-        - Quickorder:
-            - 'Quickorder': 'guide/quickorder/quickorder.md'
-            - 'Quickorder API': 'guide/quickorder/quickorder_api.md'
-            - 'Quickorder templates': 'guide/quickorder/quickorder_templates.md'
-            - 'Quickorder FAQ': 'guide/quickorder/quickorder_faq.md'
+        - Quick order:
+            - 'Quick order': 'guide/quickorder/quickorder.md'
+            - 'Quick order API': 'guide/quickorder/quickorder_api.md'
+            - 'Quick order templates': 'guide/quickorder/quickorder_templates.md'
+            - 'Quick order FAQ': 'guide/quickorder/quickorder_faq.md'
         - 'Rate and review':
             - 'Rate and review': 'guide/rate_and_review/rate_and_review.md'
             - 'Translations for rate and review': 'guide/rate_and_review/translations_for_rate_and_review.md'
