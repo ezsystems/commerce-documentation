@@ -31,7 +31,7 @@ The standard implementation uses the basket states in order to realize the queue
 Orders with the state `ordered_failed` are considered to be queued.
 
 The number of failed tries is stored in the basket's `$erpFailCounter` attribute.
-The maximum allowed number of tries is configured using `siso_checkout.default.max_failed_order`
+The maximum allowed number of tries is configured using `siso_checkout.default.max_failed_order`.
 
 Only basket objects with the states `payed` and `ordered_failed` are expected to be transmitted as order and can be processed as a failed order.
 If the given basket object has a different state, a `RuntimeException` is thrown.

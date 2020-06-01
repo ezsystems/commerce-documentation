@@ -12,7 +12,7 @@ There are several actions, that can be executed with lost orders:
 
 |Action|Description|Result|
 |--- |--- |--- |
-|transfer to ERP|the lost order is resent to ERP|The user sees an error or success message depending whether the lost order could be resent to ERP or not. If the sending the lost order failed, the administrator gets an email. If sending of lost order was successful, the customer who made this order gets an confirmation email|
+|transfer to ERP|the lost order is resent to ERP|The user sees an error or success message depending whether the lost order could be resent to ERP or not. If the sending the lost order failed, the administrator gets an email. If sending of lost order was successful, the customer who made this order gets a confirmation email|
 |remove lost order|The lost order is not removed, the state of lost order is changed to `confirmed`|The lost order does not appear in the list anymore|
 
 ## Technical implementation
@@ -61,14 +61,14 @@ vendor/silversolutions/silver.e-shop/src/Silversolutions/Bundle/EshopBundle/Reso
 You can also resend lost orders using a command-line tool:
 
 ``` bash
-php bin/console silversolutions:lostorder:process [id]]
+php bin/console silversolutions:lostorder:process [id]
 ```
 
 !!! note 
 
-    The command send the lost order in the same way as through the PHP code.
+    The command sends the lost order in the same way as through the PHP code.
     If the sending of lost order fails, the administrator gets an email.
-    If the sending was successful, the customer who made the order gets an confirmation email.
+    If the sending was successful, the customer who made the order gets confirmation email.
 
     In the context of the command-line tool there is no request.
     Because of this no images embedded in email will be sent because it is not possible to generate the image path.

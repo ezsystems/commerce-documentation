@@ -50,8 +50,8 @@ This can cause conflicts for XML elements that occur multiple times, and sequent
 
 ### Example
 
-Sometimes it is necessary to send additional (project-specific data) in the order.
-You can get this information from basket (`dataMap`) or from customer data and need to send it to ERP.
+Sometimes it is necessary to send additional project-specific data in the order.
+If you need to send the data to ERP, you can get it from basket (`dataMap`) or from customer data.
 
 In such a case, implement an event listener which subscribes to `MessageRequestEvent`.
 

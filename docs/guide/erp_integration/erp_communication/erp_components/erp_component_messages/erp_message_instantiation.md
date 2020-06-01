@@ -1,6 +1,6 @@
 # ERP Message Instantiation
 
-Message creation uses the mechanics of the [Symfony event dispatcher system.](http://symfony.com/doc/current/components/event_dispatcher/introduction.html)
+Message creation uses the mechanics of the [Symfony event dispatcher system.](https://symfony.com/doc/3.4/components/event_dispatcher.html)
 
 When a new message is required, a specific service delivers a message object of specific type (e.g. `calculate_sales_order`).
 eZ Commerce then dispatches an `InquireMessageEvent` event within that service,

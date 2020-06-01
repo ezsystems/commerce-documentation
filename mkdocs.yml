@@ -325,7 +325,7 @@ nav:
                         - 'Adapt the mappings for ERP functions': 'guide/erp_integration/erp_communication/erp_configuration/adapt_the_mappings_for_erp_functions/adapt_the_mappings_for_erp_functions.md'
                         - 'Example UBL for price calculation': 'guide/erp_integration/erp_communication/erp_configuration/adapt_the_mappings_for_erp_functions/example_ubl_for_price_calculation.md'
                     - 'Configuration for Webservice based ERPs': 'guide/erp_integration/erp_communication/erp_configuration/configuration_for_webservice_based_erps.md'
-                    - 'Curl configuration': 'guide/erp_integration/erp_communication/erp_configuration/curl_configuration.md'
+                    - 'cURL configuration': 'guide/erp_integration/erp_communication/erp_configuration/curl_configuration.md'
                     - 'Web.Connector configuration': 'guide/erp_integration/erp_communication/erp_configuration/web_connector_configuration.md'
             - 'RemotePriceProvider': 'guide/erp_integration/remotepriceprovider.md'
             - Checkout order:

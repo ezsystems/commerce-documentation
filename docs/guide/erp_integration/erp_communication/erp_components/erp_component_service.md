@@ -102,6 +102,6 @@ The service ID has to be `silver_erp.facade`. That way this implementation is au
 The arguments in the example above are another two services of the ERP bundle.
 These are injected as dependency of the example service class.
 Since the message inquiry service and the transport service are necessary for all ERP communication,
-these two dependency are the least of all ERP service implementations.
+these two dependencies are the least of all ERP service implementations.
 
 This redefines the default service configuration. Make sure that your configuration has a higher priority than the ERP bundle in your Symfony project setup.

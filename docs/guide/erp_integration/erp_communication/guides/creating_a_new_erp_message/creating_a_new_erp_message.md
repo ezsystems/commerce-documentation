@@ -111,7 +111,7 @@ the attribute `ses_unbounded="ITEM"` informs the shop that it should handle this
 ### Create XSL mapping
 
 To send and retrieve the XML in the proper format, create a mapping.
-For more information see [ERP mapping component](../../erp_components/erp_component_mapping.md))
+For more information see [ERP mapping component](../../erp_components/erp_component_mapping.md).
 
 Two mappings have to be defined (note that the file ending is now `*.xsl`):
 
@@ -146,7 +146,7 @@ Two mappings have to be defined (note that the file ending is now `*.xsl`):
 
 Now that you have the XML as expected from the shop and the mapping to/from the ERP system,
 you are ready to generate the PHP objects.
-For more information, see [ERP Message-Class-Generator](../../erp_components/erp_component_messages/erp_message_class_generator.md))
+For more information, see [ERP Message-Class-Generator](../../erp_components/erp_component_messages/erp_message_class_generator.md).
 
 ``` bash
 php bin/console silversolutions:generatemessages --message itemtransfer --sourceDir src/Demo/TestBundle/Resources/xml --targetDir src/Demo/TestBundle --force

@@ -7,7 +7,7 @@ To request prices from ERP, you must provide customer and optional contact numbe
 
 1. If the customer and contact numbers are set directly in the price request, they are used.
 1. If not, and the customer and contact numbers are set in the BuyerParty, they are used.
-1. If neither customer nor contact number are set and the usage of the template debitor is allowed in the configuration,
+1. If neither customer nor contact number is set and the usage of the template debitor is allowed in the configuration,
 the customer and/or contact number are determined from the [StandardTemplateDebitorService](../price_engine/price_engine_api/price_engine_services/standardtemplatedebitorservice.md) and used.
 
 ``` yaml
@@ -146,7 +146,7 @@ Information about requested products is also part of the request.
 
 ## Response from the ERP/Web.Connector
 
-The ERP provides a price response using the UBL Format.
+The ERP provides a price response using the UBL format.
 The whole ERP response object is returned back to `RemotePriceProvider` and is used for price calculation.
 
 For each requested product an `orderLine` in the response can be provided.
@@ -197,11 +197,11 @@ The tag `CostType` indicates which kind of cost is returned.
 
 ##### StockNumeric
 
-The tag `StockNumeric` indicates how many items are on stock.
+The tag `StockNumeric` indicates how many items are in stock.
 
 ##### OnStock
 
-The tag `OnStock` indicates if the item is available on stock.
+The tag `OnStock` indicates if the item is available in stock.
 
 ##### VatCode
 

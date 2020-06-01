@@ -1,7 +1,7 @@
 # ERP message component
 
 Communication uses specific messages classes that derive from `AbstractMessage`.
-The abstract base class defines three properties:
+The abstract base class defines following properties:
 
 ``` php
 /**
@@ -89,7 +89,7 @@ The created classes only define public member attributes, so you can access data
 
 ## Instantiation of message classes
 
-See [ERP message instantiation](erp_message_instantiation.md) for more detail.
+See [ERP message instantiation](erp_message_instantiation.md) for more details.
 
 ## Creating a new listener
 

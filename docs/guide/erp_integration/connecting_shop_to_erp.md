@@ -167,7 +167,7 @@ The shop receives the request and maps it to UBL (optional step).
 
 For example:
 
-The shop converts the answer into UBL using a mapping and converts the response to an UBL object as defined in the specification
+The shop converts the answer into UBL using a mapping and converts the response to a UBL object as defined in the specification
 (`@EshopBundle/Resources/specifications/xml/response.selectCustomer.xml`).
 
 ### Step 8: UBL response ready
@@ -178,7 +178,7 @@ The application gets a proper UBL response object.
 
     The shop uses a specification which describes how the request to the ERP (our Web.Connector) and the answer from the ERP will look like. 
 
-    The specification is written in XML and located in resources/specifications/xml. It includes always two files: a request and a response specification. 
+    The specification is written in XML and located in `resources/specifications/xml`. It includes always two files: a request and a response specification. 
 
     It is used to [generate PHP objects](erp_communication/erp_components/erp_component_messages/erp_message_class_generator.md) which can be used to define a request or get the response back from the ERP.
 

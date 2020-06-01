@@ -6,7 +6,7 @@ Let's say you need to add more fields to the customer center forms because you w
 
 !!! note
 
-    This tutorial will just explain how to extend the form with additional data, that will be stored in eZ. Sending of this additional data (e.g. in the order process) is part of a different process, that needs to be implemented separately. See [Sending additional data in the order.](../../erp_integration/checkout_order/order_submission/order_submission.md)
+    This tutorial will explain how to extend the form with additional data, that will be stored in eZ. Sending of this additional data (e.g. in the order process) is part of a different process, that needs to be implemented separately. See [Sending additional data in the order.](../../erp_integration/checkout_order/order_submission/order_submission.md).
 
 ### Steps:
 

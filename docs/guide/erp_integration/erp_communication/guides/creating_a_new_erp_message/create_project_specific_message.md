@@ -50,7 +50,7 @@ The generator uses them to create the classes automatically.
 !!! tip
 
     Instead of the `src/MyCompany/Bundle/MyCompanyBundle/Resources/specifications/xml` folder
-    you can decide to use a different structure, for example: `src/MyCompany/Bundle/MyCompanyBundle/Resources/xml`.
+    you can use a different structure, for example: `src/MyCompany/Bundle/MyCompanyBundle/Resources/xml`.
 
     The path to this folder set up anyway when you use command to generate the messages.
 

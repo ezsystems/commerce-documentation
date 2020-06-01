@@ -116,7 +116,7 @@ Elements:
 - `LegalMonetaryTotal/TaxInclusiveAmount` - The total amount including all taxes (gross)
 - `LegalMonetaryTotal/PayableAmount` - The amount which has to be paid (net or gross depends on setup)
 - `InvoiceLine` - May occur more than once. Contains information about the ordered articles
-    - `Item/Description` - Short text that describes the ordered item
+    - `Item/Description` - Description of the ordered item
     - `Item/Name` - Currently the same as Description
     - `Item/BuyersItemIdentification/ID` - Currently the same as the `SellersItemIdentification`. May be used if customers have their own identifications for items.
     - `Item/SellersItemIdentification/ID` - Item identification number.

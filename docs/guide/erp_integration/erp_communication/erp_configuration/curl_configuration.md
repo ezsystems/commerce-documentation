@@ -1,6 +1,6 @@
-# Curl configuration
+# cURL configuration
 
-## Curl
+## cURL
 
 ``` yaml
 parameters:
@@ -46,7 +46,7 @@ silver_erp.config.messages:
                 CURLOPT_PROXY: "proxy.host:1234" 
 ```
 
-In this case, for the `search_product_info` message, additionally to the `CURLOPT_HTTPHEADER` some proxy settings are set up in the Curl handle: `CURLOPT_HTTPPROXYTUNNEL` and `CURLOPT_PROXY`.
+In this case, for the `search_product_info` message, additionally to the `CURLOPT_HTTPHEADER` some proxy settings are set up in the cURL handle: `CURLOPT_HTTPPROXYTUNNEL` and `CURLOPT_PROXY`.
 
 ## Messages
 

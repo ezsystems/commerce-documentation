@@ -1,7 +1,7 @@
 # ERP Message: SelectCustomer
 
 `SelectCustomer` fetches customer information, like all types of addresses etc., from the ERP system.
-It is stored in the session afterwards to avoid duplicates calls to the ERP.
+It is stored in the session afterwards to avoid duplicate calls to the ERP.
 
 ## Request XML
 

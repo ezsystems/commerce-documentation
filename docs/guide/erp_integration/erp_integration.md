@@ -20,7 +20,7 @@ If your ERP supports webservices directly, see [Configuration for webservice-bas
 
 eZ Commerce uses the UBL ([Universal Business Language](https://www.oasis-open.org/committees/tc_home.php?wg_abbrev=ubl)) standard to model business data.
 ERP systems usually use vendor-specific structures and attribute names.
-An xslt-based mapping feature enables adapting the mapping between these formats.
+An XSLT-based mapping feature enables adapting the mapping between these formats.
 See [Adapt the mappings for ERP functions](erp_communication/erp_configuration\adapt_the_mappings_for_erp_functions/adapt_the_mappings_for_erp_functions.md) for more details.
 
 ### Monitoring the ERP connection
@@ -32,9 +32,9 @@ you get more details about the request sent to the ERP system and the applied ma
 
 ![](../img/erp_request_log.png)
 
-**Mapping** refers to the xslt file used for mapping.
+**Mapping** refers to the XSLT file used for mapping.
 
-**Input-XML** and **Output-XML** display the input data and the XML converted by the xslt transformation.
+**Input-XML** and **Output-XML** display the input data and the XML converted by the XSLT transformation.
 
 ## Supported ERP systems
 
