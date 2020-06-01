@@ -1,23 +1,27 @@
 # Customers templating
 
-The eZ Commerce provides a global Twig template variable "`ses`" which is available in all Twig templates. The variable provides a method "`profile`" which will provide the information about the current customer which is using the shop.
+eZ Commerce provides a global Twig variable `ses` which is available in all templates.
+The variable provides the `profile` method which contains information about the current customer.
 
-If the user has a customer number, eZ Commerce will automatically fetch information from the ERP sending a customer request, the data will be stored in the session and will be provided by the variable "`ses.profile`". Subsequent calls will not initiate a new request to the ERP since the data from the ERP will be cached and handled by the Symfony session handlers.
+If the user has a customer number, eZ Commerce automatically fetches customer information from the ERP.
+The data is stored in the session and is provided by the variable `ses.profile`.
+Subsequent calls do not initiate a new request to the ERP because the data from the ERP is cached and handled by the Symfony session handlers.
 
 eZ Commerce provides a standard template for displaying customer data:
-
-`SilversolutionsEshopBundle/Resources/views/details.html.twig`
+`SilversolutionsEshopBundle/Resources/views/details.html.twig`.
 
 ## Getting customer profile data
 
-As mentioned in [Twig extension](../templating/twig_extension/twig_extension.md)) there is a sub-object `profile` within the global "`ses`" template variable. As `ses.profile` in template returns the currently logged in profile, you are able to use all read-only members from the [`CustomerProfileData`](customers_api/customer_profile_data_components/customer_profile_data_model.md) implementation. A few examples:
+As `ses.profile` in the template returns the currently logged-in profile, you are able to use all read-only members from the [`CustomerProfileData`](customers_api/customer_profile_data_components/customer_profile_data_model.md) implementation.
+
+For example:
 
 ``` html+twig
 Current customer number: {{ ses.profile.sesUser.customerNumber }}
 All delivery addresses:  {% set deliveryAddresses = ses.deliveryParty %}
 E-Mail address:          {{ ses.profile.sesUser.email }}
  
-{# check, if user is logged in and blocked: #}
+{# check if the user is logged in and blocked: #}
 {% if ses.profile.sesUser.isLoggedIn %}
     Hello customer #{{ ses.profile.sesUser.customerNumber }}.
  
@@ -26,33 +30,32 @@ E-Mail address:          {{ ses.profile.sesUser.email }}
     {% endif %}
 {% endif %}
  
-{# check, if user is logged in as anonymous user: #}
+{# check if the user is logged in as an anonymous user: #}
 {% if ses.profile.sesUser.isAnonymous %}
     <p>Anonymous user</p>
 {% endif %}
 ```
 
-As you see in the examples above, you can use **any** data from `CustomerProfileData` instance, see [example in the model](customers_api/customer_profile_data_components/customer_profile_data_model.md).
+You can use any data from `CustomerProfileData`, see [example in the model](customers_api/customer_profile_data_components/customer_profile_data_model.md).
 
 ## Getting data from a buyer party
 
 ``` html+twig
-{#  Example for getting customized data from the ERP stored in the BuyerParty   #}
- 
+{# Example for getting customized data from the ERP stored in the BuyerParty #}
+
 {% set buyerParty = ses.defaultBuyerAddress %}
 {% if buyerParty.SesExtension.value.Gliederungskennzeichen is defined and buyerParty.SesExtension.value.Gliederungskennzeichen == '1' %}
- 
+
 {% endif %}
- 
-{#  Get the invoiceParty   #}
+
+{# Get the invoiceParty #}
 {% set invoiceAddress = ses.defaultInvoiceParty %}
- 
+
 {# Get the delivery address #} 
 {% set deliveryAddress = ses.defaultDeliveryParty %}
-       
 ```
 
-To output the telephone number of the contact, you have to point to the member variable `$phoneNumber` of the `Contact`.
+To output the telephone number of the contact, point to the member variable `$phoneNumber` of the `Contact`.
 
 ``` 
 Phone number of contact {{ ses.profile.sesUser.contact.phoneNumber }}
