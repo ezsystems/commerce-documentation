@@ -1,59 +1,10 @@
-# How to import and index data (SQL)
+# Importing and indexing data (SQL)
 
-See also [dedicated solr cores](../../econtent_features/indexing_econtent_data/dedicated_solr_cores_for_econtent.md)
+## Query examples
 
-### Econtent Database Tables
+These queries can be useful for testing imported data or debugging.
 
-There are 5 database tables:
-
-`sve_class` Stores types of catalog elements (ex. product, product_group). Every type has an identifier, which has a relation with sve_class_attributes
-
-Example:
-
-|class_id (pk)|class_name|name_identifier|
-|--- |--- |--- |
-|1|product_group|101|
-|2|product|201|
-
-`sve_class_attributes` Stores all possible catalog element attributes (name, type) for different catalog elements (class_id)
-
-Example:
-
-|attribute_id (pk)|class_id (fk)|attribute_name|ezdatatype|sort_field|
-|--- |--- |--- |--- |--- |
-|101|1|ses_name|ezstring|data_text|
-|201|2|ses_name|ezstring|data_text|
-|202|2|ses_sku|ezstring|data_text|
-
-As a convention, attributes that belong to class_id start with class_id first digit. Like 1 =&gt; 101 or 2 +. 202
-
-`sve_object` stores all catalog elements and general information about them (url, parent, depth etc)
-
-Example:
-
-||node_id (pk)|class_id (fk)|parent_id|change_date|blocked|hidden|priority|section|url_alias|path_string|depth|main_node_id|
-|--- |--- |--- |--- |--- |--- |--- |--- |--- |--- |--- |--- |--- |
-|This is the root element|2|1|0|2013-09-15 12:55:29|0|0|0|1|Highlite|/2/|1|2|
-|This is some product|454|2|2|2013-09-15 12:55:29|0|0|0|1|Highlite/Proscreen-electric_7|/2/454/|2|454|
-
-`sve_object_attributes` stores all attributes for the given catalog element depending on language.
-
-Example:
-
-|node_id (fk)|attribute_id (fk)|data_float|data_int|data_text|language|
-|--- |--- |--- |--- |--- |--- |
-|2|101|NULL|NULL|Highlight|eng-GB|
-|454|201|NULL|NULL|Proscreen Electrit 7|eng-GB|
-
-`ses_externaldata` stores additional information for sve_object_attributes of "ses_externaldata". It collect more information for that kind of catalog element.
-
-**Please note that although tables have relationships, there are no constraints defined in database definition.**
-
-### Examples queries
-
-This queries are could be useful for testing imported data or debugging.
-
-``` 
+``` sql
 /* Get all elements with all tables joined: */
 SELECT
     * 
@@ -106,15 +57,13 @@ ORDER BY
     sve_object_attributes.data_text;
 ```
 
-### Import process for econtent
+### Import process for eContent
 
-As you may noticed, tables sve\_class and sve\_class\_attributes have data definitions and sve\_object and sve\_object\_attributes have the data itself.
+Tables `sve_class` and `sve_class_attributes` have data definitions and `sve_object` and `sve_object_attributes` have the data itself.
 
-sve\_class and sve\_class\_attributes import example:
+`sve_class` and `sve_class_attributes` should be modified only when data definition is changed, for example:
 
-This tables should be modified only when data definition is changed.
-
-``` 
+``` sql
 /* Insert data in sve_class table */
  
 INSERT INTO `sve_class` (`class_id`, `class_name`, `name_identifier`)
@@ -138,9 +87,9 @@ VALUES
 /* This tables should be modified only when data definition is changed. */
 ```
 
-sve\_object and sve\_object\_attributes import examples:
+An example of importing `sve_object` and `sve_object_attributes` data:
 
-``` 
+``` sql
 /* Insert data in sve_object table */
 INSERT INTO `sve_object` (`node_id`, `class_id`, `parent_id`, `change_date`, `blocked`, `hidden`, `priority`, `section`, `url_alias`, `path_string`, `depth`, `main_node_id`)
 VALUES
@@ -184,11 +133,13 @@ VALUES
     (225290,204,NULL,NULL,'72\" 4:3','ger-DE');
 ```
 
-Please do not forget to index the products in solr. Details see: [econtent - Staging system](../../econtent_features/econtent_staging_system.md) and [Indexing econtent data](../../econtent_features/indexing_econtent_data/indexing_econtent_data.md)
+Remember to index the products in Solr, see [Staging system](../../econtent_features/staging_system.md) and [Indexing eContent data](../../econtent_features/indexing_econtent_data/indexing_econtent_data.md)
 
 ### Import procedure using temp tables
 
-Tables sve\_object and sve\_object\_attributes have 2 clone temp tables called sve\_object\_tmp and sve\_object\_attributes\_tmp. These tmp tables are used to import new data and keep data available while importing using the normal tables. After import is finished you can execute a command to rename tmp tables to normal tables:
+Tables `sve_object` and `sve_object_attributes` have two clone temporary tables called `sve_object_tmp` and `sve_object_attributes_tmp`.
+These temporary tables are used to import new data and keep data available while importing by means of the normal tables.
+After an import is finished, you can execute a command to rename the temporary tables to normal tables:
 
 ``` bash
 php bin/console silversolutions:econtent-tables-swap
@@ -196,27 +147,25 @@ php bin/console silversolutions:econtent-tables-swap
 
 ### Languages
 
-The language definitions of econtent elements are defined in se\_object\_attributes. Every attribute row have a language definition.
-
-Example:
+The language definitions of eContent elements are defined in `sve_object_attributes`. Every attribute row has a language definition, for example:
 
 |node_id|attribute_id |   data_float | data_int  |  data_text    | language|
 |---|---|---|---|---|---|
 |1000001|101          |   NULL       | NULL      |  Neuheiten    | ger-DE|
 |1000001|101          |   NULL       | NULL      |  New Products | eng-GB|
 
-There is no language hierarchy. But please keep in mind that only languages specified in configuration will be indexed:
+There is no language hierarchy. Only languages specified in configuration are indexed:
 
-```
+``` yaml
 siso_search.default.index_econtent_languages: [ ger-DE, eng-GB ]
 ```
 
-### Econtent Indexer
+### eContent Indexer
 
-For instructions about how to index econtent you can use this link: [Indexing econtent data](../../econtent_features/indexing_econtent_data/indexing_econtent_data.md)
+For information about indexing eContent, see [Indexing econtent data](../../econtent_features/indexing_econtent_data/indexing_econtent_data.md).
 
-For instructions for how to create custom plugins for indexing you can view this cookbook: [Cookbook - How to implement a custom indexer plugin for econtent](../econtent_search_cookbook/how_to_implement_a_custom_indexer_plugin_for_econtent)
+For information about creating custom plugins for indexing, see [Custom indexer plugin for eContent](../econtent_search_cookbook/custom_indexer_plugin_for_econtent).
 
-### Ez Attributes in econtent
+### Data model attributes in eContent
 
-If there is the need to enrich an econtent site with ez data there is a command from the following plugin that can be used for that: SisoNavEcontentImporterPlugin
+If you need to enrich an eContent site with data from the content model, use a command from the `SisoNavEcontentImporterPlugin` plugin. 

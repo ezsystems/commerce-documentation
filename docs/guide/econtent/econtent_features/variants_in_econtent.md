@@ -1,12 +1,9 @@
-# econtent - providing variants
+# Variants in eContent
 
-The class attribute "ses_variants" can be used to store variant data for a product. 
+`ses_variants` can be used to store variant data for a product. 
 
-The variants have to be stored in a JSON format. You will find more about variants in: [Product Variants](../../../guide/catalog/catalog_features/product_variants/product_variants.md).
-
-!!! note
-
-    Please note that the format of the JSON will be changed in the near future (2019) in order to be more generic.
+The variants must be stored in a JSON format.
+For more information, see [Product Variants](../../../guide/catalog/catalog_features/product_variants/product_variants.md).
 
 ``` json
 [

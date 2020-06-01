@@ -122,8 +122,8 @@ nav:
         - Configuration:
             - 'Configuration': 'guide/configuration/configuration.md'
             - 'Session handling': 'guide/configuration/session_handling.md'
-            - 'How to store sessions in Memcache using stash': 'guide/configuration/how_to_store_sessions_in_memcache_using_stash_and_separate_them_from_other_stash_caches.md'
-            - 'Set up a new language': 'guide/configuration/setup_a_new_language.md'
+            - 'Storing sessions in Memcache': 'guide/configuration/storing_sessions_in_memcache.md'
+            - 'Set up a new language': 'guide/configuration/set_up_a_new_language.md'
             - 'Required crontab tasks': 'guide/configuration/required_crontab_tasks.md'
             - 'Rotation for logfiles': 'guide/configuration/rotation_for_logfiles.md'
             - 'Advanced configuration': 'guide/configuration/advanced_configuration.md'
@@ -260,36 +260,35 @@ nav:
                     - 'Customer profile data listeners': 'guide/customers/customers_api/customer_profile_data_components/customer_profile_data_listeners.md'
                 - 'Configuration for customer data': 'guide/customers/customers_api/configuration_for_customer_data.md'
                 - 'Customer profile data controller': 'guide/customers/customers_api/customer_profile_data_controller.md'
-            - 'Customers cookbook': 'guide/customers/customers_cookbook.md'
             - 'Customers templating': 'guide/customers/customers_templating.md'
             - 'Customers FAQ': 'guide/customers/customers_faq.md'
+            - 'Managing delivery addresses': 'guide/customers/managing_delivery_addresses.md'
             - 'VAT handling': 'guide/customers/vat_handling.md'
         - eContent:
             - 'eContent': 'guide/econtent/econtent.md'
             - eContent features:
-                - 'eContent - Features': 'guide/econtent/econtent_features/econtent_features.md'
-                - 'eContent dataprovider - database model': 'guide/econtent/econtent_features/econtent_dataprovider_database_model.md'
+                - 'eContent database model': 'guide/econtent/econtent_features/econtent_database_model.md'
                 - 'Switching the data provider': 'guide/econtent/econtent_features/switching_the_data_provider.md'
-                - 'eContent dataprovider - catalog segmentation': 'guide/econtent/econtent_features/econtent_dataprovider_catalog_segmentation.md'
-                - 'eContent - providing variants': 'guide/econtent/econtent_features/econtent_providing_variants.md'
+                - 'Catalog segmentation': 'guide/econtent/econtent_features/catalog_segmentation.md'
+                - 'Variants in eContent': 'guide/econtent/econtent_features/variants_in_econtent.md'
                 - Indexing eContent data:
                     - 'Indexing eContent data': 'guide/econtent/econtent_features/indexing_econtent_data/indexing_econtent_data.md'
-                    - 'Dedicated solr cores for econtent': 'guide/econtent/econtent_features/indexing_econtent_data/dedicated_solr_cores_for_econtent.md'
-                    - 'How eContent Indexer Works': 'guide/econtent/econtent_features/indexing_econtent_data/how_econtent_indexer_works.md'
-                - 'eContent - Staging system': 'guide/econtent/econtent_features/econtent_staging_system.md'
-                - 'eContent - backend features': 'guide/econtent/econtent_features/econtent_backend_features.md'
-            - 'eContent - API': 'guide/econtent/econtent_api.md'
-            - 'eContent - FAQ': 'guide/econtent/econtent_faq.md'
-            - eContent tutorials:
-                - 'eContent dataprovider - How to extend EcontentCatalogFactory class': 'guide/econtent/econtent_cookbook/econtent_dataprovider_how_to_extend_econtentcatalogfactory_class.md'
+                    - 'Solr cores for eContent': 'guide/econtent/econtent_features/indexing_econtent_data/solr_cores_for_econtent.md'
+                    - 'eContent indexer': 'guide/econtent/econtent_features/indexing_econtent_data/econtent_indexer.md'
+                - 'Staging system': 'guide/econtent/econtent_features/staging_system.md'
+                - 'eContent Back Office': 'guide/econtent/econtent_features/econtent_back_office.md'
+            - 'eContent API': 'guide/econtent/econtent_api.md'
+            - 'eContent FAQ': 'guide/econtent/econtent_faq.md'
+            - eContent cookbook:
+                - 'Extending EcontentCatalogFactory': 'guide/econtent/econtent_cookbook/extending_econtentcatalogfactory.md'
                 - eContent search:
-                    - 'How to implement a custom sorting handler for eContent': 'guide/econtent/econtent_cookbook/econtent_search_cookbook/how_to_implement_a_custom_sorting_handler_for_econtent.md'
-                    - 'Solr Minimum Match specification for eContent': 'guide/econtent/econtent_cookbook/econtent_search_cookbook/solr_minimum_match_specification_for_econtent.md'
-                    - 'How to implement a custom indexer plugin for eContent': 'guide/econtent/econtent_cookbook/econtent_search_cookbook/how_to_implement_a_custom_indexer_plugin_for_econtent.md'
-                - eContent how to import products:
-                    - 'How to import products (API)': 'guide/econtent/econtent_cookbook/econtent_how_to_import_products/how_to_import_products_api.md'
-                    - 'How to import and index data (SQL)': 'guide/econtent/econtent_cookbook/econtent_how_to_import_products/how_to_import_and_index_data_sql.md'
-            - 'eContent - Configuration': 'guide/econtent/econtent_configuration.md'
+                    - 'Custom sorting handler for eContent': 'guide/econtent/econtent_cookbook/econtent_search_cookbook/custom_sorting_handler_for_econtent.md'
+                    - 'Solr Minimum Should Match': 'guide/econtent/econtent_cookbook/econtent_search_cookbook/solr_minimum_should_match.md'
+                    - 'Custom indexer plugin for eContent': 'guide/econtent/econtent_cookbook/econtent_search_cookbook/custom_indexer_plugin_for_econtent.md'
+                - Importing products:
+                    - 'Import products (API)': 'guide/econtent/econtent_cookbook/econtent_how_to_import_products/importing_products_api.md'
+                    - 'Importing and indexing data (SQL)': 'guide/econtent/econtent_cookbook/econtent_how_to_import_products/importing_and_indexing_data_sql.md'
+            - 'eContent configuration': 'guide/econtent/econtent_configuration.md'
         - ERP integration:
             - 'ERP integration': 'guide/erp_integration/erp_integration.md'
             - 'Connecting shop to ERP': 'guide/erp_integration/connecting_shop_to_erp.md'
@@ -339,8 +338,7 @@ nav:
             - 'Logging': 'guide/logging/logging.md'
             - 'Logging API': 'guide/logging/logging_api.md'
             - 'Logging FAQ': 'guide/logging/logging_faq.md'
-            - Logging feature list:
-                - 'TokenController logging': 'guide/logging/logging_feature_list/tokencontroller_logging.md'
+            - 'TokenController logging': 'guide/logging/tokencontroller_logging.md'
         - Login and registration:
             - 'Login and registration': 'guide/login_and_registration/login_and_registration.md'
             - 'Forgot / Change password': 'guide/login_and_registration/forgot_change_password.md'
@@ -418,10 +416,10 @@ nav:
             - 'Orderhistory cookbook': 'guide/order_history/orderhistory_cookbook.md'
             - 'Orderhistory configuration': 'guide/order_history/orderhistory_configuration.md'
             - 'Orderhistory FAQ': 'guide/order_history/orderhistory_faq.md'
-        - Landing Page with Page Builder:
-            - 'Landing Page with Page Builder': 'guide/landingpage_with_page_builder/landingpage_with_page_builder.md'
-            - 'Landing Page API': 'guide/landingpage_with_page_builder/landingpage_api.md'
-            - 'Landing Page UI': 'guide/landingpage_with_page_builder/landingpage_ui.md'
+        - Landing Page:
+            - 'Landing Page': 'guide/landing_page/landing_page.md'
+            - 'Landing Page API': 'guide/landing_page/landing_page_api.md'
+            - 'Landing Page UI': 'guide/landing_page/landing_page_ui.md'
         - Payment:
             - 'Payment': 'guide/payment/payment.md'
             - 'Payment API': 'guide/payment/payment_api.md'

@@ -1,8 +1,9 @@
 # Customers API
 
-### How to get data in PHP
+## Retrieving data in PHP
 
-This example gives access to the data available for the current user. If the call is the first call after a login the data from the ERP ist fetched automatically in case the user has a customer number. 
+The following example gives access to the data available for the current user.
+If the call is the first call after a login, the data from the ERP is fetched automatically if the user has a customer number. 
 
 ``` php
 $customer = $this->get('silver_customer.customer_service')->getCurrentCustomer();
@@ -17,13 +18,13 @@ $deliveryAddresses = $customer->getDeliveryAddresses();
  
 ```
 
-If the ERP provides further information you will find this in an SesExtension Attribute:
+If the ERP provides further information, you can find it in the `SesExtension` attribute:
 
 ``` php
 $postingGroup = $deliveryAddresses[0]->SesExtension->value['CustomerPostingGroup'];
 ```
 
-If you want to access data from the eZ user object. Please note that the ContentField in eZ is prefixed with a `ez_` (The field in eZ user ContentType has the identifier "testfield"):
+To access data from the User Content item: 
 
 ``` php
 $customerProfileDataService = $this->get('ses.customer_profile_data.ez_erp');
@@ -31,6 +32,8 @@ $customerProfileData = $customerProfileDataService->getCustomerProfileData();
 
 $testfield = $customerProfileData->getDataMap()->getAttribute('ez_testfield');
 ```
+
+Note that the field in `dataMap` is prefixed with `ez_`. (The Field in the User Content Type has identifier `testfield`).
 
 ### Request a customer by number from the ERP
 

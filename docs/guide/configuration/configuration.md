@@ -1,20 +1,21 @@
 # Configuration
 
-## Http server configuration
+## HTTP server configuration
 
-Please check the documentation for eZ Platform for more details: https://doc.ezplatform.com/en/latest/getting_started/install_ez_platform/#prepare-installation-for-production
+For more information about the HTTP server configuration,
+see [eZ Platform  installation guide](https://doc.ezplatform.com/en/2.5/getting_started/install_ez_platform/#prepare-installation-for-production).
 
-eZ Commerce requires one more rule in order to display images. The following examples shows the settings for apache2: 
+eZ Commerce requires one more rule in order to display images. The following examples show the settings for Apache:
 
 ``` 
 RewriteRule ^/var/assets/.* - [L]
 ```
 
-# PHP settings
+## PHP settings
 
-## Session settings
+### Session settings
 
-A parameter in `php.ini` (e.g. `/etc/php5/apache2/php.ini`) should be set up since it reduces the lifetime of a session:
+Set the `gc_maxlifetime` parameter in `php.ini` (e.g. `/etc/php5/apache2/php.ini`) to reduce the lifetime of the session:
 
 ``` 
 session.gc_maxlifetime = 86400
@@ -30,7 +31,7 @@ php_value session.gc_maxlifetime 86400
 
 The `registerBundles()` method in Kernel loads different bundles based on the environment.
 
-In addition, you are able to load client-specific bundles here:
+In addition, you can use this method to load client-specific bundles:
 
 ``` php
 //custom bundles for clients
@@ -129,7 +130,7 @@ Important: The secret has to be created by a command:
 php vendor/defuse/php-encryption/bin/generate-defuse-key
 ```
 
-Configure the Paypal parameters in your `parameters.yml`:
+Configure the PayPal parameters in the `parameters.yml` file:
 
 ``` yaml
 siso_paypal_api.user: 'my-api-use'
@@ -139,7 +140,7 @@ siso_paypal_api.signature: 'paypal-api-signature'
 
 ## Changing the logo for eZ Commerce
 
-If you want to change the logos you need to provide a link to the assets located in the `web/*` folder:
+If you want to change the logo in the Back Office, provide a link to the assets located in the `web/*` folder:
 
 ``` yaml
 # Logo for the shop

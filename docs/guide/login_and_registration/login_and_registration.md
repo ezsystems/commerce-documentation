@@ -1,86 +1,90 @@
 # Login and registration
 
-## Introduction
+eZ Commerce uses eZ Platform's user management functionality. Users are located in the "Users" Section.
 
-The shop uses the standard user management of the CMS system. Users are located under the section /users.
-
-eZ Commerce extended the user management with these new attributes:
+eZ Commerce extends the user management with the following attributes:
 
 - Customer profile data
 - Customer number
 - Contact number
 
-The attribute Customer profile data is able to store additional information coming from the ERP such as invoice address, buyer address, delivery addresses and other customer related information. 
+Customer profile data is able to store additional information coming from the ERP,
+such as invoice address, buyer address, delivery addresses and other customer-related information. 
 
-The customer number and contact number is used to assign a shop user to a customer in the ERP-system.
+Customer number and contact number are used to assign a shop user to a customer in the ERP system.
 
-For each shop a special user group can be used to separate users. It is also possible to share users among different shops.
+Each shop can use a special user group to separate users. It is also possible to share users between different shops.
 
-## Important URLs
+## Important routes
 
 - Login: `/login`
 - Registration for private customers: `/register/private`
-- Registration entry page (Advanced version only): `/registration/choice`
+- Registration entry page: `/registration/choice`
 
-## What happens during a login process
+## Login process
 
-What happens during a login process:
+When a user logs in:
 
-- When a user logs in 
-  - the shop checks if the user has a customer number 
-      - The customer data  from the ERP will be stored in a field in the eZ User record (Customer profile data). In case of the ERP system is not available the shop has access to the latest data from the ERP-System.
-  - the shop checks if the user has a contact number  
-      - The contact data from the ERP will be fetched and stored in "Customer profile data" as well
-- When the data is stored in the ERP the shop will take care of the versions created by eZ Platform. eZ Platform does limit the number of versions created in case a user (or object) has been updated. The shop uses a setting to limit the number of versions (silver\_tools.default.versions\_count: 10) and will remove archived versions. If the number of versions to be removed will exceed 20 versions just 20 versions will be removed to avoid that the login process takes to much time (and might lead to a timeout). 
+- The shop checks if the user has a customer number 
+    - The customer data from the ERP is stored in a field in the eZ User Content item (Customer profile data). If the ERP system is not available, the shop accesses the most recent data from the ERP.
+- The shop checks if the user has a contact number  
+    - The contact data from the ERP is fetched and stored in Customer profile data as well.
+
+When the data is stored in the ERP, the shop takes care of the versions created by eZ Platform.
+eZ Platform limits the number of versions created per Content item.
+The shop uses a setting to limit the number of versions (`silver_tools.default.versions_count: 10`) and removes the archived versions.
+If the number of versions to be removed exceeds 20, only 20 versions are removed to ensure the login process does not take too much time (and lead to a timeout). 
 
 ## Login
 
-eZ Commerce provides a flexible login functionality. In the shop a user can login with username or email password. Additionally we can add a field "customer number", which is required for logging into customer center.
+eZ Commerce provides a flexible login functionality. A user can log in to the shop with a username or email and a password.
+Additionally, you can add a field "customer number", which is required for logging into the customer center.
 
-The methods `retrieveUser` and `checkAuthentication` of the `AuthenticationProvider` have been overriden in order to provide the login functionality.
+The methods `retrieveUser()` and `checkAuthentication()` of `AuthenticationProvider` are overriden to provide the login functionality.
 
 The logic for searching for a user is:
 
-- Determined by the location id, which is configured by the siteaccess (`siso_core.default.user_group_location`).
-- Check if a user with given the email address is stored beneath configured location. The search will look in subfolders such as business, private or editors.
+- Determined by the Location ID, which is configured per SiteAccess (`siso_core.default.user_group_location`).
+- Checks if a User with the given email address is stored under the configured Location.
+The search looks in subfolders such as business, private or editors.
 
 ## Registration options
 
-The eZ Commerce provides different options for users to register into the shop. 
+eZ Commerce provides different options for users to register in the shop. 
 
-There are different registration forms for different target groups such as private or business customers.
+There are different registration forms for different target groups, such as private or business customers.
 
-### Private Customer
+### Private customer
 
 A private customer can register directly.
 
-A double opt-in process will check the email address, create and activate the user
+A double opt-in process checks the email address, creates and activates the user.
 
-### Business Customer
+### Business customer
 
 A business customer has two options to register:
 
-1. **Apply for new account** - fill the business form and apply for an account.   
+1. Apply for new account - fill the business form and apply for an account.   
 
-The shop owner will check the provided data and create a customer record in the [ERP](http://confluence.ng.silverproducts.de/display/EX/Term+-+ERP)system.
+The shop owner checks the provided data and creates a customer record in the ERP system.
 
-1. **Activate account** - a business customer who already has a customer number can register using a customer number and a invoice number.  
+1. Activate account - a business customer who already has a customer number can register using a customer number and an invoice number.
 
-The shop will check this data using a request to the ERP. There are two options:
+The shop checks this data by sending a request to the ERP. There are two options:
 
-- **activate business account** - The customer will be created using his customer number and he will see immediately his special discounts in the shop.
-- **create main contact in Customer Center** - if customer center is enabled your company will be created in the shop. Your account will be created as main contact for it.  
-      
-For more details see: [Customercenter and user management](http://confluence.ng.silverproducts.de/display/EX/Customercenter+and+user+management)
+- activate business account - the customer is created using their customer number and can immediately see their special discounts in the shop.
+- create the main contact in Customer Center - if Customer Center is enabled, the company is created in the shop, and the account is created as the main contact.  
 
-The forms and the processes behind the forms can be customized. The shop uses the very flexible form features of the Framework Symfony2.
+For more information, see [Customer center and user management](../user_management/customer_center/customer_center_and_user_management.md)
 
-## Technical info
+The forms and the processes behind the forms can be customized.
 
-**Access control**
+## Technical information
 
-You will find Details about how security system work in the document [Access control](../user_management/access_control.md)
+### Access control
 
-**Token**
+For more information about security, see [Access control](../user_management/access_control.md).
 
-Details about using the Token system offered by Symfony is document in [TokenController](../user_management/token/tokencontroller/tokencontroller.md)
+### Token
+
+For more information about using the Token system offered by Symfony, see [TokenController](../user_management/token/tokencontroller/tokencontroller.md).

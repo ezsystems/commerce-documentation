@@ -1,12 +1,13 @@
-# How to implement a custom sorting handler for econtent
+# Custom sorting handler for eContent
 
-## In this example we will create a custom sorting that will use priority field.
+This example shows how to create a custom sorting that uses priority field.
 
-This will create a new sort criteria for use with Solr. You will be able to specify the Solr field name for sort. In this example it will be a field that stores product priority, but it can be any Solr field you want.
+This creates a new sort criterion for use with Solr. You can specify the Solr field name for sorting.
+In this example it will be a field that stores product priority, but it can be any Solr field you want.
 
-## Steps
+## 1. Create a class
 
-### 1. Create a new class that extends AbstractSortCriterion
+Create a new class that extends `AbstractSortCriterion`:
 
 ``` php
 <?php
@@ -20,25 +21,21 @@ class PriorityFieldSorting extends AbstractSortCriterion
 }
 ```
 
-### 2. Create new handler class.
+## 2. Create a handler class
 
-Please note that variable $indexName is the Solr field that will be used to sort.
-
-You can choose any field you like.
+Variable `$indexName` is the Solr field that will be used for sorting:
 
 ``` php
 <?php
- 
+
 namespace MyProject\Bundle\ProjectBundle\Service\Search;
- 
- 
+
 use Siso\Bundle\SearchBundle\Api\AbstractSortCriterion;
 use Siso\Bundle\SearchBundle\Api\SearchClauseInterface;
 use Siso\Bundle\SearchBundle\Api\SolariumSearchClauseHandlerInterface;
 use Solarium\QueryType\Select\Query\Query;
 use MyProject\Bundle\ProjectBundle\Api\Search\PriorityFieldSorting;
- 
- 
+
 class PriorityFieldSortingHandler implements SolariumSearchClauseHandlerInterface
 {
     /**
@@ -68,17 +65,16 @@ class PriorityFieldSortingHandler implements SolariumSearchClauseHandlerInterfac
 }
 ```
 
-### 3. Add configuration in services.xml
+## 3. Register the class as a service
 
-In parameters you should place the namespace of the handler class.
+Register the handler as a service in `services.xml` by providing the namespace of the handler class
+and adding the tag name to the service definition.
 
-Don't forget to add the tag name to the service definition.
+The handler is then used whenever the search clause is an instance of `PriorityFieldSorting`.
 
-This will register handler and it will be used whenever search clause is an instance of PriorityFieldSorting.
+This means that when you add this search clause to `eshopQuery`, the method executes the handler.
 
-This means that when you add this to eshopQuery it will executre the handler
-
-```
+``` xml
 <parameter key="siso_search.search_sort_handler.priority.econtent.class">MyProject\Bundle\ProjectBundle\Service\Search\PriorityFieldSortingHandler</parameter>
   
 <service id="siso_search.search_sort_handler.priority.econtent.class" class="%siso_search.search_sort_handler.priority.econtent.class%">
@@ -86,7 +82,7 @@ This means that when you add this to eshopQuery it will executre the handler
 </service>
 ```
 
-### 4. Use it!
+You can now use the handler in the following way:
 
 ``` php
 $query = new EshopQuery();
@@ -105,7 +101,7 @@ $query->setSortCriteria(
 );
 ```
 
-## Please note that a query could have several sorting criteria
+A query could have several sorting criteria:
 
 ``` php
 $eshopQuery->setSortCriteria(
@@ -117,8 +113,10 @@ $eshopQuery->setSortCriteria(
     )
 ```
 
-The order of the sorting criteria is important. In the example above the sorting will be in the order they are set into the array.
+The order of the sorting criteria is important. In the example above the sorting is in the order they are set into the array.
 
 !!! note "Modifying existing SortHandlers"
 
-    Existing SortHandlers can't be overriden by simply extending them. If you need to change the behavior of a SortHandler, you need to use the new implementation explicitly, i.e. instantiate the new class like shown in the example above.
+    Existing `SortHandlers` can't be overriden by simply extending them.
+    If you need to change the behavior of a `SortHandler`, you must use the new implementation explicitly,
+    that is instantiate the new class, as shown in the example above.
