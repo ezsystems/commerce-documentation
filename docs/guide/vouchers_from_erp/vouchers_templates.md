@@ -1,10 +1,8 @@
-# Vouchers - Templates
+# Voucher templates
 
-### Templates list
+## Template list
 
-Path: `Silversolutions/Bundle/EshopBundle/Resources/views/Basket/show.html.twig`
-
-Block with vouchers is included here:
+The block with vouchers is included in `Silversolutions/Bundle/EshopBundle/Resources/views/Basket/show.html.twig`:
 
 ``` html+twig
 {% block vouchers %}
@@ -12,13 +10,11 @@ Block with vouchers is included here:
 {% endblock %}
 ```
 
-### Related custom Twig modifiers/functions/etc/:
+## Twig functions
 
-#### Twig functions
+### ses_contains_basket_vouchers
 
-##### ses_contains_basket_vouchers
-
-Returns true if basket contains some vouchers
+`ses_contains_basket_vouchers` returns true if the basket contains any vouchers.
 	
 ``` html+twig
 {% if ses_contains_basket_vouchers(basket) %}
@@ -28,9 +24,9 @@ Returns true if basket contains some vouchers
 {% endif %}
 ```
 
-##### ses_get_basket_vouchers
+### ses_get_basket_vouchers
 
-Returns list of vouchers from the basket
+`ses_get_basket_vouchers` returns a list of vouchers from the basket.
 
 ``` html+twig	
 {% set vouchers = ses_get_basket_vouchers(basket) %}
@@ -42,7 +38,7 @@ Returns list of vouchers from the basket
 {% endfor %}
 ```
 
-### Related routes:
+## Routes
 
 ``` yaml
 siso_redeem_voucher:

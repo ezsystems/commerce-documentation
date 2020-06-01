@@ -1,81 +1,65 @@
 # Wishlist
 
-### Who is able to use wishlist
+Wishlists are only available for logged-in users.
 
-!!! note
+One user can only have one wishlist.
+To store products in different list, use a stored basket.
 
-    Wishlist is available only for logged users. There is 1 wishlist per 1 user.
+### Adding products to the wishlist
 
-There is no possibility to have more than one wishlist. If a client wants to store some products in different list, he can use stored basket functionality.
-
-### How to add product to wishlist
-
-Add to wishlist link is placed in product detail page in the right column. See below:
+The link for adding to wishlist is located in the product detail page in the right column:
 
 ![](../img/wishlist_6.png)
 
-For products that are **variants** user need to choose actual variant to be able to store it. Add to wishlist will be not visible, until options are selected. See below: 
+For products that are variants you need to choose an actual variant to be able to store it.
+Adding to wishlist is not visible until all options are selected:
 
 ![](../img/wishlist_7.png)
 
-### Messages that are shown when adding to wishlist
-
-After successful adding to wishlist a message is displayed. 
+After successfully adding a product to the wishlist you see a notification:
 
 ![](../img/wishlist_8.png)
 
-Items can be stored only once. Notice is displayed:
+Items can be stored only once:
 
 ![](../img/wishlist_9.png)
 
-When adding product:
+When adding product to the wishlist no prices and no quantity is stored.
 
-- no prices are stored
-- no quantity is stored
+### Wishlist links
 
-### Where to find wishlist links
-
-Wishlist can be found in the header of the website and in the profile page in right user menu. See below (Mein Merkzettel):
-
-**Header**
+You can find the wishlist in the header of the website and in the profile page in right user menu:
 
 ![](../img/wishlist_10.png)
-
-**Profile**
 
 ![](../img/wishlist_11.png)
 
 ### Wishlist overview page
 
-In the overview there are some information about product:
+The overview contains the following information about the products:
 
 - name
-- sku
+- SKU
 - short description
 - image
 - variant information
 
 ![](../img/wishlist_12.png)
 
-#### Adding products to cart
+#### Adding products to basket
 
-There are 2 ways to add items to cart:
-
-- add 1 product into cart 
-- add all products into cart
+You can add a single product or all products from a stored basket into the basket.
 
 ##### Quantity field
 
-When adding into basket the user can define how many items of product will he want to add to cart. If there is no quantity field the minimum order quantity will be taken.
+When adding to the basket, you can define how many products you want to add. If there is no quantity field, the minimum order quantity is used.
 
-!!! tip
+Products stay in the wishlist until you remove them.
 
-    Products will stay in the wishlist as long as user does not remove them.
+#### Removing products from wishlist
 
-#### Remove products from wishlist
+User can remove products from wishlist one by one.
 
-User can remove products from wishlist one by one. They will not be visible anymore in wishlist.
+#### Unavailable products
 
-#### Product not available
-
-If the product is not in catalog anymore, user will see a proper message in the overview page.
+If a product is not in the catalog anymore, you can see a message in the overview page.

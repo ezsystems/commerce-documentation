@@ -1,45 +1,35 @@
-# Stored Baskets
+# Stored baskets
 
-### Who is able to use stored basket
+Stored baskets are available only for logged-in users. One user can have multiple named baskets.
 
-!!! note
+You can store the whole basket under a name for later purposes and new stored basket will be created.
 
-    Stored basket is available only for logged users. There can be many stored baskets per 1 user.
+### Adding products to a stored basket
 
-Every stored basket have a name, that has to be provided by user. 
+There are two ways to add products to a stored basket:
 
-User can store the whole basket under a name for later purposes and new stored basket will be created.
-
-### How to add products to stored basket 
-
-There are 2 ways to add products to stored basket:
-
-- User can **add** an item into a stored basket from product detail page. See below:  
+- You can add a product to a stored basket from the product detail page:
 ![](../img/wishlist_1.png)
 
-- User can add all items from the basket into stored basket (user must choose stored basket from a list or provide new one).  
+- You can add all items from the basket into a stored basket (choose a stored basket from a list or provide a new one).  
 ![](../img/wishlist_2.png)
 
-There are 2 options user can take within the popup:
+In the pop-up you can either:
 
-- **save as new stored basket** - if the user doesn't have any *stored baskets* yet, a pop-up-window is shown, with similar text: '*You don't have any stored baskets yet. Please enter a name for your stored basket*'. Here an input field can be displayed where the user must enter the basket name.
-- **choose existing stored basket** - if the user has some *stored baskets* already, a list (pop-up-window) is shown, where the user can choose which *stored basket* he wants to add item into. Also he has possibility to enter a new basket name.    
+- save a new stored basket - if you do not have any stored baskets yet, you see a pop-up-window where you have to enter a basket name.
+- choose existing stored basket - if you already have some stored baskets, you see a pop-up-window where you can choose which stored basket you want to add item to. You can also add a new basket.
 
-If the product is a **variant** user needs to choose all options to be able to add product.
+If the product is a variant, you must choose all options to be able to add it.
 
-!!! tip
+### Stored basket links
 
-    For stored baskets the price and quantity for product is stored.
-
-### Where to find stored basket links
-
-User can find the list of *stored baskets* in his profile page. He can click on one of the stored baskets and see the details. 
+You can find the list of stored baskets in your profile page. Click on one of the stored baskets to see the details. 
 
 #### List of stored baskets
 
-User can find a list of all his stored baskets in the shop functions.
+You can find a list of all stored baskets in the shop functions.
 
-On the list page he has an overview, can choose or delete one of the stored baskets.
+The list has an overview where you can choose or delete any of the stored baskets.
 
 ![](../img/wishlist_3.png)
 
@@ -49,40 +39,34 @@ On the list page he has an overview, can choose or delete one of the stored bask
 
 !!! note
     
-    The prices in the stored basket are updated immediately after user entered the stored basket page.
+    The prices in the stored basket are updated immediately after you enter the stored basket page.
 
-In the overview there are some information about product:
+The overview contains the following information about the products:
 
 - name
-- sku
+- SKU
 - short description
 - image
 - variant information
 - price and availability
-- the stored quantity - possible to change for add to basket functionality
+- the stored quantity - can be changed before adding to basket
 
 ![](../img/wishlist_5.png)
 
 #### Adding products to basket
 
-There are 2 ways to add items to basket:
-
-- add 1 product into basket 
-- add all products into basket
+You can add a single product or all products from a stored basket into the basket.
 
 ##### Quantity field
 
-When adding into basket the user can define how many items of product will he want to add to basket. If there is no quantity field the minimum order quantity will be taken.
+When adding to the basket, you can define how many products you want to add. If there is no quantity field, the minimum order quantity is used.
 
-Products will stay in the stored basket as long as user does not remove them.
+Products stay in the stored basket until you remove them.
 
-#### Remove products from stored basket
+#### Removing products from a stored basket
 
-User can remove products in 2 ways:
+You can remove products from a stored basket by deleting it or by deleting the whole stored basket (use the trash icon in the right user menu section).
 
-- delete an item from *stored basket*
-- delete the whole stored basket (trash icon in the right user menu section)
+#### Unavailable products
 
-#### Product not available
-
-If the product is not in catalog anymore, user will see a proper message in the overview page.
+If a product is not in the catalog anymore, you can see a message in the overview page.
