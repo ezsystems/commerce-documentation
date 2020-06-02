@@ -402,16 +402,13 @@ nav:
         - Order history:
             - 'Orderhistory': 'guide/order_history/orderhistory.md'
             - Order history features:
-                - 'Orderhistory functions': 'guide/order_history/order_history_features/orderhistory_functions.md'
                 - 'ERP messages': 'guide/order_history/order_history_features/orderhistory_erp_messages.md'
-                - 'Local orders when ERP not available': 'guide/order_history/order_history_features/orderhistory_local_orders_when_erp_not_available.md'
-            - Order history API:
-                - 'Orderhistory API': 'guide/order_history/order_history_api/orderhistory_api.md'
-                - 'Install order history': 'guide/order_history/order_history_api/install_order_history.md'
-            - 'Orderhistory templates': 'guide/order_history/orderhistory_templates.md'
-            - 'Orderhistory cookbook': 'guide/order_history/orderhistory_cookbook.md'
+                - 'Local orders': 'guide/order_history/order_history_features/orderhistory_local_orders.md'
             - 'Orderhistory configuration': 'guide/order_history/orderhistory_configuration.md'
-            - 'Orderhistory FAQ': 'guide/order_history/orderhistory_faq.md'
+            - 'Orderhistory API': 'guide/order_history/orderhistory_api.md'
+            - 'Orderhistory templates': 'guide/order_history/orderhistory_templates.md'
+            - 'Displaying custom column': 'guide/order_history/displaying_custom_column.md'
+            - 'Overriding semantic configuration': 'guide/order_history/overriding_semantic_configuration.md'
         - Landing Page:
             - 'Landing Page': 'guide/landing_page/landing_page.md'
             - 'Landing Page API': 'guide/landing_page/landing_page_api.md'
