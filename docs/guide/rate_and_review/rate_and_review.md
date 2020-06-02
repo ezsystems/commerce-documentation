@@ -30,7 +30,7 @@ Rate and review uses the [FOSCommentBundle](https://github.com/FriendsOfSymfony/
 
 Every user review is stored in the Comment table.
 
-The `thread_id` fields stores the product SKU.
+The `thread_id` field stores the product SKU.
 
 Field state represents the following states:
 
@@ -70,7 +70,7 @@ Because the bundle uses REST, the loading of current reviews might not be immedi
 
 The `EshopBundle/Resources/views/Catalog/product.html.twig` template adds a new tab with ratings and comments to product view.
 
-it is only visible if rate and review is enabled in configuration.
+It is only visible if rate and review is enabled in configuration.
 
 ### Configuration
 

@@ -76,7 +76,7 @@ The Content Type `st_textmodule` has the following Fields:
 | Field      | Description                                                      |
 | ---------- | ---------------------------------------------------------------- |
 | Name       | Internal name                                |
-| Identifier | Here the source or identifier for translation have to be defined. |
+| Identifier | The source or identifier for translation that have to be defined. |
 | Context    | Optional context                                                 |
 | Content    | Content for frontend                                             |
 
@@ -98,9 +98,9 @@ To take advantage of this, use the `fieldIdentifier` parameter:
 
 ## Configuration
 
-The following configuration settings exist for text modules:
+The text modules configuration settings:
 
-|Configuration||DescriptionDefault|
+|Configuration||Description|Default|
 |--- |--- |--- |
 |`silver_tools.default.translationFolderId`|Location ID of the text module folder|`89`|
 |`silver_tools.default.textmoduleTranslationEnabled`|Enable/disable text modules|`true`|

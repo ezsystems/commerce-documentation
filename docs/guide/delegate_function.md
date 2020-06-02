@@ -1,7 +1,7 @@
 # Delegate function
 
-You can delegate you operations on the shop to another user.
-This user can then handle in the shop as if they had a different customer number.
+You can delegate you operations in the shop to another user.
+This user can then take over as if they had a different customer number.
 
 The user must have the `siso_policy/delegate` Policy which gives them access to special delegate functions.
 They can access these functions in the site header.
@@ -9,12 +9,12 @@ On the delegate page the user can enter a customer number of a known customer an
 
 User data for the provided customer number is then fetched from ERP. 
 If the customer number is valid the number is assigned to the current user.
-The delegate user then handles as a different customer with a different customer number
+The delegate user then takes over as a different customer with a different customer number
 and can even create an order with the given customer number.
 They only get the ERP profile data from the different customer, but not other things, such as the basket.
 The user always uses their own basket.
 
-The user stays is the delegate role until they click **Undelegate**.
+The user stays in the delegate role until they click **Undelegate**.
 
 ## Configuration
 
@@ -40,7 +40,7 @@ silver_eshop.default.enable_delegate: true
 
 When a user enters a customer number in the **Delegate** screen, the delegate function is called directly.
 
-If no user is found with this customer number, an error message is displayed.
+If no user is found with provided customer number, an error message is displayed.
 
 If the delegation is successful, new user data is displayed.
 In the top right corner in the header you can see the new customer number.
@@ -79,7 +79,7 @@ silversolutions_undelegate:
     defaults: { _controller: SilversolutionsEshopBundle:DelegateCustomer:undelegate }
 ```
 
-Delegating is not always allowed, so you can use the `DelegateCustomerController::isDelegateAllowed` method to check that.
+Delegating is not always allowed, you can use the `DelegateCustomerController::isDelegateAllowed` method to check that.
 The method returns true if delegation is allowed.
 
 ## Form and entity

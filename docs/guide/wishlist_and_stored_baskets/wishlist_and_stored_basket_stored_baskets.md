@@ -1,6 +1,6 @@
 # Stored baskets
 
-Stored baskets are available only for logged-in users. One user can have multiple named baskets.
+Stored baskets are available only for logged-in users. One user can have multiple baskets.
 
 You can store the whole basket under a name for later purposes and new stored basket will be created.
 
@@ -11,7 +11,7 @@ There are two ways to add products to a stored basket:
 - You can add a product to a stored basket from the product detail page:
 ![](../img/wishlist_1.png)
 
-- You can add all items from the basket into a stored basket (choose a stored basket from a list or provide a new one).  
+- You can add all items from the basket into a stored basket (choose a stored basket name from a list or provide a new one).  
 ![](../img/wishlist_2.png)
 
 In the pop-up you can either:
@@ -65,7 +65,7 @@ Products stay in the stored basket until you remove them.
 
 #### Removing products from a stored basket
 
-You can remove products from a stored basket by deleting it or by deleting the whole stored basket (use the trash icon in the right user menu section).
+You can remove products from a stored basket by deleting them or by deleting the whole stored basket (use the trash icon in the right user menu section).
 
 #### Unavailable products
 

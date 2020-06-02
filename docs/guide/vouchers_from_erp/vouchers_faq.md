@@ -47,7 +47,7 @@ The message must be mapped into a response like this:
 </SesExtension>
 ```
 
-In addition in the `LineType` and `CostType` have to be set in `OrderLine` (response):
+In addition the `LineType` and `CostType` have to be set in `OrderLine` (response):
 
 ``` xml
 <SesExtension>

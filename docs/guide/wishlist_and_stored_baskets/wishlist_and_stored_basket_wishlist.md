@@ -3,7 +3,7 @@
 Wishlists are only available for logged-in users.
 
 One user can only have one wishlist.
-To store products in different list, use a stored basket.
+To store products in a different list, use a stored basket.
 
 ### Adding products to the wishlist
 
@@ -28,7 +28,7 @@ When adding product to the wishlist no prices and no quantity is stored.
 
 ### Wishlist links
 
-You can find the wishlist in the header of the website and in the profile page in right user menu:
+You can find the wishlist in the header of the website and in the profile page in the right user menu:
 
 ![](../img/wishlist_10.png)
 

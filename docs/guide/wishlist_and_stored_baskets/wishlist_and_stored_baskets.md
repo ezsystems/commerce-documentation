@@ -7,7 +7,7 @@ Two different types of lists are available:
 - [wishlists](wishlist_and_stored_basket_wishlist.md)
 - [stored baskets](wishlist_and_stored_basket_stored_baskets.md) - custom named lists
 
-This feature is available only for logged-in customers with accounts.
+This feature is available only for logged-in customers.
 
 The difference between a wishlist and a stored basket is that there is only one wishlist per user,
 but there can be many stored baskets with different names for one user. 
