@@ -8,7 +8,7 @@ In Newsletter2Go you need to provide an address book per newsletter topic.
 
 ![](../../../img/newsletter2go_4.png)
 
-2\. Behind every newsletter topic the address book ID must be configured.
+2\. Configure the address book ID for every newsletter topic.
 
 3\. When submitting the newsletter form data, you also submit a list of all subscribed newsletter address books:
 
@@ -31,6 +31,6 @@ parameters:
   siso_newsletter.default.support_several_newsletters: true
 ```
 
-5\. The user can be created in selected address books:
+5\. Create a user in the selected address books:
 
 ![](../../../img/newsletter2go_5.png)

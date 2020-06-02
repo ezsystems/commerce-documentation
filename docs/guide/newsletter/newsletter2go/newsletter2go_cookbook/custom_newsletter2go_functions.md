@@ -1,6 +1,6 @@
 # Custom Newsletter2Go functions
 
-If you need to implement custom functions to extend the newsletter functionality, you can use:
+If you need to implement custom functions to extend the newsletter, you can use:
 
 - `Newsletter2GoService`
 - `Newsletter2GoApiService`

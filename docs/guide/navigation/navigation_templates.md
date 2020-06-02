@@ -92,7 +92,7 @@ Parameters:
 
 ### `get_data_location_ids`
 
-Returns a comma separated string of data_locations of the given element. All parent locations incl. the element location are returned. These data_locations are used to highlight the active node in the navigation.
+Returns a comma separated string of `data_locations` of the given element. All parent Locations including the element Location are returned. These `data_locations` are used to highlight the active node in the navigation.
 
 Parameters:
 

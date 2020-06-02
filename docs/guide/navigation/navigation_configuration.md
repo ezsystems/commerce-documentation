@@ -36,7 +36,7 @@ siso_core.default.product_catalog_enabled: false
 
 ## Change caching time
 
-To change the time for which navigation is cached, set the `router_cache_ttl` parameter (in seconds):
+To change the navigation cache time, set the `router_cache_ttl` parameter (in seconds):
 
 ``` yaml
 siso_core.default.router_cache_ttl: 86400
@@ -55,7 +55,7 @@ siso_core.default.navigation_ez_location_root: 2
 
 The `navigation_ez_depth` parameter is responsible for the main navigation depth.
 Content from the Back Office is fetched only up to this depth.
-This does not include the product catalog, which has it's own depth specified.
+This does not include the product catalog, which has its own depth specified.
 
 ``` yaml
 siso_core.default.navigation_ez_depth: 3
@@ -63,7 +63,7 @@ siso_core.default.navigation_ez_depth: 3
 
 ## Change navigation sorting
 
-Use `navigation_sort_order` to set the order or sorting by priority, ascending or descending:
+Use `navigation_sort_order` to set the order or sorting by priority to ascending or descending:
 
 ``` yaml
 siso_core.default.navigation_sort_order: 'asc'
@@ -123,7 +123,7 @@ siso_core.default.navigation.catalog:
 
 You can use additional field for example to display an image instead of the node label
 if you have the image stored in the content model.
-Then you can additionally store the image in the navigation node and output it on the site:
+Then you can additionally store the image in the navigation node and display it on the site:
 
 ``` yaml
 parameters:   

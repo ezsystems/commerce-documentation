@@ -39,7 +39,7 @@ siso_solr.default.search.auto_suggest_fields:
     - ses_variant_main_sku_s
 ```
 
-The fields `ses_variant_\*` are additional fields indexed in the Solr index.
+The `ses_variant_\*` fields are additional fields indexed in the Solr.
 The standard shop is able to index the variant fields stored in eZ Platform Matrix Field.
 
 For projects which extend the product's Content Type with new fields, the indexer has to be extended as well:

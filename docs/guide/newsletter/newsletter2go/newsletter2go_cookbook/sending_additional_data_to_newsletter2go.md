@@ -2,7 +2,7 @@
 
 Before a user is created in the Newsletter2Go address book,
 an [event is dispatched](../newsletter2go_service.md) that enables you to send some additional data.
-Any data can be sent to Newsletter2Go, but custom attributes have to be created first in the Newsletter2Go backend.
+To send additional data to Newsletter2Go, you have to also create custom attributes in the Newsletter2Go backend.
 
 To send the amount of products in a user's order to Newsletter2Go:
 

@@ -7,7 +7,7 @@ eZ Commerce provides a common interface for newsletter providers: `Siso\Bundle\N
 The `subscribeNewsletter` and `unsubscribeNewsletter` methods subscribe or unsubscribe to/from a newsletter with given `$params`.
 You can pass to the method any data that is, for example, posted from a form.
 If `$customerProfileData` is provided, attributes from `$customerProfileData` are used to (un)subscribe to/from the newsletter
-otherwise the required attributes must be specified in $params.
+otherwise the required attributes must be specified in `$params`.
 
 Returns a list with the newsletter IDs and whether the action was successful (true/false).
 
@@ -26,10 +26,10 @@ Returns a list with the newsletter IDs and whether the action was successful (tr
 
 ## getEmail
 
-The `getEmail` method returns the correct email address.
+The `getEmail` method returns the email address.
 
-If `CustomerProfileData` is provided, the email from `SesUser` has to be used
-If `CustomerProfileData` is not provided, the email from `$params` has to be used
+If `CustomerProfileData` is provided, the email from `SesUser` is used.
+If `CustomerProfileData` is not provided, the email from `$params` is used.
 
 ## doesUserExistInNewsletter
 
@@ -39,7 +39,7 @@ This method checks if the user is known to the newsletter provider, but does not
 
 The goal of this method is to find out if a user exists in the DB of the newsletter provider (active/inactive),
 because even if the user is inactive, they probably already confirmed their email address in the past
-(e.g. through the double opt-in process)
+(e.g. through the double opt-in process).
 
 ## doesUserSubscribeNewsletter
 

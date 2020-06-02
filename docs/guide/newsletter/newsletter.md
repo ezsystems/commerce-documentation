@@ -5,7 +5,7 @@ and see the newsletter status or update newsletter details information in their 
 
 There is no specific newsletter provider connection configured out of the box.
 The standard offers only processes, templates, routes, configurations and an interface which can be used for newsletter integration.
-Only a newsletter provider service with specific API implementation of this provider has to be implemented.
+A newsletter provider service with specific API implementation of this provider has to be implemented separately.
 
 One available plugin for eZ Commerce is Newsletter2Go.
 
@@ -56,12 +56,12 @@ There are places where you can add or modify additional user data and send it to
 - After the user updates their profile or creates an order. By default the newsletter details are updated with latest information about:
     - `last_order_date` - date when last order was made 
     - `last_order_amount` - order amount from last order
-    - `order_amount_total` - total amount for the user
+    - `order_amount_total` - total order amount for the user
 
 In both cases any data from the [customer profile](../customers/customers.md) can be sent,
 but you have to implement a custom event listener for that.
 
-Attributes that do not exist in the newsletter provider has to be created first.
+Attributes that do not exist in the newsletter provider have to be created first.
 
 ## Double-opt-in process
 
@@ -74,4 +74,4 @@ If the user is not known to the newsletter provider, the double opt-in process i
 User data is stored in the shop in a [token](../user_management/token/token.md) and the user receives an email where they have to confirm their email address.
 
 After the user clicks the link in the confirmation email, the token is invalidated and the user is subscribed to the newsletter.
-If they is logged in, they can immediately update the status in their profile.
+If they are logged in, they can immediately update the status in their profile.

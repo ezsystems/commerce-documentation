@@ -17,7 +17,7 @@ ses_basket.default.additional_text_for_basket_line: false
 
 ## Adding to basket
 
-Customers can type SKUs and quantities and either directly add products to the basket by clicking on the **Add to basket** button,
+Customers can type SKUs and quantities to either directly add products to the basket by clicking on the **Add to basket** button,
 or store items in the quick order by clicking **Refresh quickorder**.
 
 ## Updating quick order
@@ -87,7 +87,7 @@ parameters:
 
 ![](../img/quickorder_8.png)
 
-!!! note
+!!! caution
 
     The configured delimiter cannot be a part of the existing SKUs or variant codes.
 
@@ -95,7 +95,7 @@ parameters:
 
 ## Line preview
 
-If a customer leaves the SKU field (for example by choosing one of the autosuggestion result) and sets the cursor on another field (e.g. quantity field or next line), a background search starts which displays the product name (and variant code) and the unit price.
+If a customer leaves the SKU field (for example by choosing one of the autosuggestion result) and sets the cursor on another field (e.g. quantity field or next line), a background search starts. It displays the product name (and variant code) and the unit price.
 This visible feedback is a confirmation for users that the entered SKU is correct.
 
 ![](../img/quickorder_9.png)
@@ -125,7 +125,7 @@ The CSV format can take 1-3 columns:
 !!! note
 
     Optionally, if custom text is enabled, the customer also has the possibility to upload a custom text in CSV upload.
-    The custom text should be the 4th column.
+    In this case, the custom text should be the last column (3rd or 4th).
 
     ``` yaml
     #enable/disable additional text line in basket per basket line

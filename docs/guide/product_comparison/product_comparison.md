@@ -2,7 +2,7 @@
 
 eZ Commerce offers the option to compare products on a single page.
 Customers can save products on their own comparison lists.
-Comparison lists are divided per product type (for example, like speakers, microphones, etc.). 
+Comparison lists are divided per product type (for example speakers, microphones, etc.). 
 
 The comparison function is based on the basket system.
 
@@ -80,7 +80,7 @@ Configuration parameters determine if eZ Commerce should hide groups which have 
 Customers can move or rearrange products in the comparison list using drag and drop (the arrow-cross above the product image in the list is clickable).
 
 After dragging and dropping, the position in the list is stored in the current [comparison-basket](product_comparison_api.md).
-In the next call the customer will see sorted list by his preference.
+In the next call the customer will see sorted list by their preference.
 
 #### Public comparison lists
 

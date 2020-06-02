@@ -2,10 +2,10 @@
 
 ## Category logic
 
-To change the logic of determining to which categories should be assigned to particular products,
+To change the logic that determines to which categories to assign particular products,
 you need to override the comparison service or implement a new one.
 
-First of all the service must implement `ComparisonServiceInterface`.
+First, the service must implement `ComparisonServiceInterface`.
 The `getComparisonCategory()` method takes a CatalogElement (including products) as an argument.
 This method must implement the logic to determine the comparison category for the passed product.
 
@@ -13,7 +13,7 @@ The standard logic implementation:
 
 1. Tries to take product type from CatalogElement
 1. Tries to take it from parent element category
-1. If all else fails, places the product in the default category
+1. If everything else fails, places the product in the default category
 
 ## Storing product attributes
 
@@ -24,7 +24,7 @@ There are two types of information:
 
 |Type|Attribute Names|Features|
 |--- |--- |--- |
-|Dynamic fields from the `dataMap` attribute|`manufacturer`</br>`manufacturerSku`</br>`color`|These attributes are stored in `dataMap`. They are part of the Technical Information group.</br>Manufacturer, ManufacturerSku and Color is handled without eZ matrix. The names that should be read from `dataMap` must be configured in the `siso_comparison.<default>.technical_attributes` attribute|
+|Dynamic fields from the `dataMap` attribute|`manufacturer`</br>`manufacturerSku`</br>`color`|These attributes are stored in `dataMap`. They are part of the Technical Information group.</br>Manufacturer, ManufacturerSku and Color are handled without eZ matrix. The names that should be read from `dataMap` must be configured in the `siso_comparison.<default>.technical_attributes` attribute|
 |Dynamic fields from specification attribute|`specification`|See [SpecificationsType](../../api/additional_ez_fieldtypes/specificationstype.md)|
 
 ## Collapsing groups and attributes
@@ -55,11 +55,11 @@ siso_comparison.default.collapse_groups: true
 
 ## Drag and drop sorting
 
-Drag and drop working differently for public and private (customer-specific) lists.
+Drag and drop works differently for public and private (customer-specific) lists.
 
 ### Public Lists
 
-In public lists the customer can use drag and drop, but the order is not be saved.
+In public lists the customer can use drag and drop, but the order is not saved.
 
 Only the administrator is able to change the order permanently.
 

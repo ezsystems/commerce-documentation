@@ -8,7 +8,7 @@ using two events that are thrown before the search query is submitted:
 
 ## PostBuildEzContentQueryEvent
 
-The `PostBuildEzContentQueryEvent` event is thrown just before content model content for the navigation is fetched.
+The `PostBuildEzContentQueryEvent` event is thrown just before content model for the navigation is fetched.
 You can listen to it using the following example listener:
 
 ``` php

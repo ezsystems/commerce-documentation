@@ -1,9 +1,9 @@
 # Newsletter2Go
 
-The Newsletter2Go plugin integrates the newsletter service https://www.newsletter2go.de into the API.
+The Newsletter2Go plugin integrates the newsletter service https://www.sendinblue.com/newsletter2go/ into the API.
 
 Newsletter2Go offers several address books. A user can be stored in one or several address books.
-One address books equals one newsletter topic, so the user can choose if they want to subscribe to different topics separately.
+One address book equals one newsletter topic, so the user can choose if they want to subscribe to different topics separately.
 
 Using several address books is optional. eZ Commerce out of the box works with the default address book only.
 See the [Working with several newsletters](newsletter2go_cookbook/working_with_several_newsletters.md) if you want to support several address books.

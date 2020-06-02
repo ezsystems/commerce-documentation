@@ -9,7 +9,7 @@ a universal `NavigationService` ensures that the data providers are used to load
 ### Using a product catalog
 
 A product catalog has to be set up in the Back Office using a Product Catalog Content item
-which introduces the products for the shop, for example: 
+which adds products to the shop, for example: 
 
 ![](../img/navigation_5.png)
 
@@ -20,21 +20,21 @@ eZ Commerce supports different ways of constructing the navigation:
 - with the root element as the product catalog
 - with the root element as the product catalog, but displaying only part of a catalog (displaying only sub-elements that belongs to one category)
 
-The navigation can also store any additional data in the navigation node.
+The navigation can also store additional data in the navigation node.
 
 You can set up a different Location depth for content from the content model and from catalog.
 
 !!! caution "Catalogs with multiple Locations"
 
     The navigation does not support product catalogs and categories with multiple Locations.
-    If you want to have the same categories on several places, you need to copy the content.
+    If you want to have the same categories in several places, you need to copy the content.
     Products can be assigned to one or more categories.
 
 ## Fetching the data
 
 Navigation uses the built-in search to fetch the content and a custom search service to fetch to catalog data directly from Solr.
 Every data provider must ensure that the data is indexed in the correct format.
-The following data must at least be indexed:
+The following data must be indexed:
 
 ``` 
 document_type_id: [content/econtent]
@@ -116,5 +116,5 @@ The following Fields are defined in the `ses_productcatalog` Content Type:
 |Attribute name|Attribute identifier|Description|
 |--- |--- |--- |
 |Name|`name`|Name of the product catalog used for navigation|
-|Root node|`root_node`|Root Location of the product catalog in the storage engine|
-|Depth|`depth`|The depth of the product catalog. The navigation is built using this parameter. A depth of 1 means that there is just one level starting at "Root node"|
+|Root node|`root_node`|Root Location of the product catalog in the storage engine.|
+|Depth|`depth`|The depth of the product catalog. The navigation is built using this parameter. A depth of 1 means that there is just one level starting at "Root node".|
