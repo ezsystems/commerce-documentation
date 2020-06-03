@@ -1,8 +1,8 @@
 # Email server
 
-The GDPR requires handling emails in a secure way.
+GDPR requires handling emails in a secure way.
 
-We recommend configuring a secure STMP transport (here in `parameters.yml`):
+We recommend configuring a secure SMTP transport (here in `parameters.yml`):
 
 ``` yaml
 mailer_host: <your mail server>
@@ -15,7 +15,7 @@ mailer_stream_options:
         verify_peer_name: false
 ```
 
-Required configuration for swiftmailer:
+Required configuration for Swift Mailer:
 
 ``` yaml
 swiftmailer:

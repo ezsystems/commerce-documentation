@@ -6,7 +6,7 @@ Let's say you need to add more fields to the customer center forms because you w
 
 !!! note
 
-    This tutorial will just explain how to extend the form with additional data, that will be stored in eZ. Sending of this additional data (e.g. in the order process) is part of a different process, that needs to be implemented separately. See [Sending additional data in the order.](../../integrate_erp_systems/checkout_order/erp_order_synchronisation/order_submission/order_submission.md)
+    This tutorial will explain how to extend the form with additional data, that will be stored in eZ. Sending of this additional data (e.g. in the order process) is part of a different process, that needs to be implemented separately. See [Sending additional data in the order.](../../erp_integration/checkout_order/order_submission/order_submission.md).
 
 ### Steps:
 
@@ -38,7 +38,7 @@ Let's say you need to add more fields to the customer center forms because you w
 
 If you need a special process to be started after one of the form was submitted, you need to write a new data processor. Let´s say you need to update the contact data in ERP, after you have edited the user in the shop.
 
-Condition for this recipe is, that you have prepared a message 'updateContact' to update the contact data in ERP. If you don´t know how to create a message, that will be sent to ERP, see our [tutorials](../../integrate_erp_systems/erp_communication/guides/how_to_create_a_new_erp_message/create_a_project_specific_message_selectmodified_data.md).  
+Condition for this recipe is, that you have prepared a message 'updateContact' to update the contact data in ERP. If you don´t know how to create a message, that will be sent to ERP, see our [tutorials](../../erp_integration/erp_communication/guides/creating_a_new_erp_message/create_project_specific_message.md).  
 
 ### Steps:
 

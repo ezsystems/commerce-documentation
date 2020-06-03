@@ -122,8 +122,8 @@ nav:
         - Configuration:
             - 'Configuration': 'guide/configuration/configuration.md'
             - 'Session handling': 'guide/configuration/session_handling.md'
-            - 'How to store sessions in Memcache using stash': 'guide/configuration/how_to_store_sessions_in_memcache_using_stash_and_separate_them_from_other_stash_caches.md'
-            - 'Set up a new language': 'guide/configuration/setup_a_new_language.md'
+            - 'Storing sessions in Memcache': 'guide/configuration/storing_sessions_in_memcache.md'
+            - 'Set up a new language': 'guide/configuration/set_up_a_new_language.md'
             - 'Required crontab tasks': 'guide/configuration/required_crontab_tasks.md'
             - 'Rotation for logfiles': 'guide/configuration/rotation_for_logfiles.md'
             - 'Advanced configuration': 'guide/configuration/advanced_configuration.md'
@@ -260,91 +260,85 @@ nav:
                     - 'Customer profile data listeners': 'guide/customers/customers_api/customer_profile_data_components/customer_profile_data_listeners.md'
                 - 'Configuration for customer data': 'guide/customers/customers_api/configuration_for_customer_data.md'
                 - 'Customer profile data controller': 'guide/customers/customers_api/customer_profile_data_controller.md'
-            - 'Customers cookbook': 'guide/customers/customers_cookbook.md'
             - 'Customers templating': 'guide/customers/customers_templating.md'
             - 'Customers FAQ': 'guide/customers/customers_faq.md'
+            - 'Managing delivery addresses': 'guide/customers/managing_delivery_addresses.md'
             - 'VAT handling': 'guide/customers/vat_handling.md'
         - eContent:
             - 'eContent': 'guide/econtent/econtent.md'
             - eContent features:
-                - 'eContent - Features': 'guide/econtent/econtent_features/econtent_features.md'
-                - 'eContent dataprovider - database model': 'guide/econtent/econtent_features/econtent_dataprovider_database_model.md'
+                - 'eContent database model': 'guide/econtent/econtent_features/econtent_database_model.md'
                 - 'Switching the data provider': 'guide/econtent/econtent_features/switching_the_data_provider.md'
-                - 'eContent dataprovider - catalog segmentation': 'guide/econtent/econtent_features/econtent_dataprovider_catalog_segmentation.md'
-                - 'eContent - providing variants': 'guide/econtent/econtent_features/econtent_providing_variants.md'
+                - 'Catalog segmentation': 'guide/econtent/econtent_features/catalog_segmentation.md'
+                - 'Variants in eContent': 'guide/econtent/econtent_features/variants_in_econtent.md'
                 - Indexing eContent data:
                     - 'Indexing eContent data': 'guide/econtent/econtent_features/indexing_econtent_data/indexing_econtent_data.md'
-                    - 'Dedicated solr cores for econtent': 'guide/econtent/econtent_features/indexing_econtent_data/dedicated_solr_cores_for_econtent.md'
-                    - 'How eContent Indexer Works': 'guide/econtent/econtent_features/indexing_econtent_data/how_econtent_indexer_works.md'
-                - 'eContent - Staging system': 'guide/econtent/econtent_features/econtent_staging_system.md'
-                - 'eContent - backend features': 'guide/econtent/econtent_features/econtent_backend_features.md'
-            - 'eContent - API': 'guide/econtent/econtent_api.md'
-            - 'eContent - FAQ': 'guide/econtent/econtent_faq.md'
-            - eContent tutorials:
-                - 'eContent dataprovider - How to extend EcontentCatalogFactory class': 'guide/econtent/econtent_cookbook/econtent_dataprovider_how_to_extend_econtentcatalogfactory_class.md'
+                    - 'Solr cores for eContent': 'guide/econtent/econtent_features/indexing_econtent_data/solr_cores_for_econtent.md'
+                    - 'eContent indexer': 'guide/econtent/econtent_features/indexing_econtent_data/econtent_indexer.md'
+                - 'Staging system': 'guide/econtent/econtent_features/staging_system.md'
+                - 'eContent Back Office': 'guide/econtent/econtent_features/econtent_back_office.md'
+            - 'eContent API': 'guide/econtent/econtent_api.md'
+            - 'eContent FAQ': 'guide/econtent/econtent_faq.md'
+            - eContent cookbook:
+                - 'Extending EcontentCatalogFactory': 'guide/econtent/econtent_cookbook/extending_econtentcatalogfactory.md'
                 - eContent search:
-                    - 'How to implement a custom sorting handler for eContent': 'guide/econtent/econtent_cookbook/econtent_search_cookbook/how_to_implement_a_custom_sorting_handler_for_econtent.md'
-                    - 'Solr Minimum Match specification for eContent': 'guide/econtent/econtent_cookbook/econtent_search_cookbook/solr_minimum_match_specification_for_econtent.md'
-                    - 'How to implement a custom indexer plugin for eContent': 'guide/econtent/econtent_cookbook/econtent_search_cookbook/how_to_implement_a_custom_indexer_plugin_for_econtent.md'
-                - eContent how to import products:
-                    - 'How to import products (API)': 'guide/econtent/econtent_cookbook/econtent_how_to_import_products/how_to_import_products_api.md'
-                    - 'How to import and index data (SQL)': 'guide/econtent/econtent_cookbook/econtent_how_to_import_products/how_to_import_and_index_data_sql.md'
-            - 'eContent - Configuration': 'guide/econtent/econtent_configuration.md'
-        - Integrate ERP Systems:
-            - 'Integrate ERP systems': 'guide/integrate_erp_systems/integrate_erp_systems.md'
-            - 'How does the shop communicate with the ERP': 'guide/integrate_erp_systems/how_does_the_shop_communicate_with_the_erp.md'
+                    - 'Custom sorting handler for eContent': 'guide/econtent/econtent_cookbook/econtent_search_cookbook/custom_sorting_handler_for_econtent.md'
+                    - 'Solr Minimum Should Match': 'guide/econtent/econtent_cookbook/econtent_search_cookbook/solr_minimum_should_match.md'
+                    - 'Custom indexer plugin for eContent': 'guide/econtent/econtent_cookbook/econtent_search_cookbook/custom_indexer_plugin_for_econtent.md'
+                - Importing products:
+                    - 'Import products (API)': 'guide/econtent/econtent_cookbook/econtent_how_to_import_products/importing_products_api.md'
+                    - 'Importing and indexing data (SQL)': 'guide/econtent/econtent_cookbook/econtent_how_to_import_products/importing_and_indexing_data_sql.md'
+            - 'eContent configuration': 'guide/econtent/econtent_configuration.md'
+        - ERP integration:
+            - 'ERP integration': 'guide/erp_integration/erp_integration.md'
+            - 'Connecting shop to ERP': 'guide/erp_integration/connecting_shop_to_erp.md'
             - ERP communication:
-                - 'ERP communication': 'guide/integrate_erp_systems/erp_communication/erp_communication.md'
+                - 'ERP communication': 'guide/erp_integration/erp_communication/erp_communication.md'
                 - Guides:
-                    - 'guide/integrate_erp_systems/erp_communication/guides/guide_how_to_get_product_data_from_the_erp.md'
-                    - How to create a new ERP message:
-                        - 'How to create a new ERP message (example: ItemTransfer)': 'guide/integrate_erp_systems/erp_communication/guides/how_to_create_a_new_erp_message/how_to_create_a_new_erp_message.md'
-                        - 'Create a project specific message (SelectModifiedData)': 'guide/integrate_erp_systems/erp_communication/guides/how_to_create_a_new_erp_message/create_a_project_specific_message_selectmodified_data.md'
-                        - 'Create a standard message (UpdateCustomer)': 'guide/integrate_erp_systems/erp_communication/guides/how_to_create_a_new_erp_message/create_a_standard_message_updatecustomer.md'
-                    - 'How to implement ERP (NAV) delivery address creation and updates': 'guide/integrate_erp_systems/erp_communication/guides/how_to_implement_erp_nav_delivery_address_creation_and_updates.md'
-                    - 'Usage of UBL': 'guide/integrate_erp_systems/erp_communication/guides/usage_of_ubl.md'
-                - 'ERP Logging': 'guide/integrate_erp_systems/erp_communication/erp_logging.md'
-                - 'AdditionalLines': 'guide/integrate_erp_systems/erp_communication/additionallines.md'
+                    - 'Getting productsdata from ERP': 'guide/erp_integration/erp_communication/guides/getting_product_data_from_the_erp.md'
+                    - Creating new ERP message:
+                        - 'Creating new ERP message': 'guide/erp_integration/erp_communication/guides/creating_a_new_erp_message/creating_a_new_erp_message.md'
+                        - 'Create standard message': 'guide/erp_integration/erp_communication/guides/creating_a_new_erp_message/create_standard_message.md'
+                        - 'Create project-specific message': 'guide/erp_integration/erp_communication/guides/creating_a_new_erp_message/create_project_specific_message.md'
+                    - 'Implementing ERP delivery address creation and updates': 'guide/erp_integration/erp_communication/guides/implementing_erp_delivery_address_creation_and_updates.md'
+                - 'ERP Logging': 'guide/erp_integration/erp_communication/erp_logging.md'
+                - 'AdditionalLines': 'guide/erp_integration/erp_communication/additionallines.md'
                 - ERP components:
-                    - 'ERP Components': 'guide/integrate_erp_systems/erp_communication/erp_components/erp_components.md'
-                    - 'ERP Component: Mapping': 'guide/integrate_erp_systems/erp_communication/erp_components/erp_component_mapping.md'
+                    - 'ERP Components': 'guide/erp_integration/erp_communication/erp_components/erp_components.md'
+                    - 'ERP mapping component': 'guide/erp_integration/erp_communication/erp_components/erp_component_mapping.md'
                     - ERP component messages:
-                        - 'ERP Component: Messages': 'guide/integrate_erp_systems/erp_communication/erp_components/erp_component_messages/erp_component_messages.md'
-                        - 'ERP Message Instantiation': 'guide/integrate_erp_systems/erp_communication/erp_components/erp_component_messages/erp_message_instantiation.md'
-                        - 'ERP Message-Class-Generator': 'guide/integrate_erp_systems/erp_communication/erp_components/erp_component_messages/erp_message_class_generator.md'
-                        - 'ERP Message: CalculateSalesOrder / CreateSalesOrder': 'guide/integrate_erp_systems/erp_communication/erp_components/erp_component_messages/erp_message_calculatesalesorder_createsalesorder.md'
-                        - 'ERP Message: SelectContact': 'guide/integrate_erp_systems/erp_communication/erp_components/erp_component_messages/erp_message_selectcontact.md'
-                        - 'ERP Message: SelectCustomer': 'guide/integrate_erp_systems/erp_communication/erp_components/erp_component_messages/erp_message_select_customer.md'
-                        - 'ERP Message: InvoiceDetail': 'guide/integrate_erp_systems/erp_communication/erp_components/erp_component_messages/erp_message_invoice_detail.md'
-                        - 'ERP Message: UpdateCustomer': 'guide/integrate_erp_systems/erp_communication/erp_components/erp_component_messages/erp_message_updatecustomer.md'
-                        - 'ERP Messages: ReadDeliveryAddress, UpdateDeliveryAddress, CreateDeliveryAddress, DeleteDeliveryAddress': 'guide/integrate_erp_systems/erp_communication/erp_components/erp_component_messages/erp_messages.md'
-                    - 'ERP Component: Service': 'guide/integrate_erp_systems/erp_communication/erp_components/erp_component_service.md'
-                    - 'ERP Component: Transport': 'guide/integrate_erp_systems/erp_communication/erp_components/erp_component_transport.md'
-                - 'ERP - FAQ': 'guide/integrate_erp_systems/erp_communication/erp_faq.md'
+                        - 'ERP messages component': 'guide/erp_integration/erp_communication/erp_components/erp_component_messages/erp_component_messages.md'
+                        - 'ERP Message Instantiation': 'guide/erp_integration/erp_communication/erp_components/erp_component_messages/erp_message_instantiation.md'
+                        - 'ERP Message-Class-Generator': 'guide/erp_integration/erp_communication/erp_components/erp_component_messages/erp_message_class_generator.md'
+                        - 'ERP Message: CalculateSalesOrder / CreateSalesOrder': 'guide/erp_integration/erp_communication/erp_components/erp_component_messages/erp_message_calculatesalesorder_createsalesorder.md'
+                        - 'ERP Message: SelectContact': 'guide/erp_integration/erp_communication/erp_components/erp_component_messages/erp_message_selectcontact.md'
+                        - 'ERP Message: SelectCustomer': 'guide/erp_integration/erp_communication/erp_components/erp_component_messages/erp_message_select_customer.md'
+                        - 'ERP Message: InvoiceDetail': 'guide/erp_integration/erp_communication/erp_components/erp_component_messages/erp_message_invoice_detail.md'
+                        - 'ERP Message: UpdateCustomer': 'guide/erp_integration/erp_communication/erp_components/erp_component_messages/erp_message_updatecustomer.md'
+                        - 'ERP Messages: ReadDeliveryAddress, UpdateDeliveryAddress, CreateDeliveryAddress, DeleteDeliveryAddress': 'guide/erp_integration/erp_communication/erp_components/erp_component_messages/erp_messages_addresses.md'
+                    - 'ERP service component': 'guide/erp_integration/erp_communication/erp_components/erp_component_service.md'
+                    - 'ERP transport component': 'guide/erp_integration/erp_communication/erp_components/erp_component_transport.md'
+                - 'ERP FAQ': 'guide/erp_integration/erp_communication/erp_faq.md'
                 - ERP configuration:
-                    - 'ERP Configuration': 'guide/integrate_erp_systems/erp_communication/erp_configuration/erp_configuration.md'
                     - Adapt the mappings for ERP functions:
-                        - 'Adapt the mappings for ERP functions': 'guide/integrate_erp_systems/erp_communication/erp_configuration/adapt_the_mappings_for_erp_functions/adapt_the_mappings_for_erp_functions.md'
-                        - 'Example UBL for price calculation': 'guide/integrate_erp_systems/erp_communication/erp_configuration/adapt_the_mappings_for_erp_functions/example_ubl_for_price_calculation.md'
-                    - 'Configuration for Webservice based ERPs': 'guide/integrate_erp_systems/erp_communication/erp_configuration/configuration_for_webservice_based_erps.md'
-                    - 'Curl Configuration': 'guide/integrate_erp_systems/erp_communication/erp_configuration/curl_configuration.md'
-                    - 'Web-Connector Configuration': 'guide/integrate_erp_systems/erp_communication/erp_configuration/web_connector_configuration.md'
-            - Price calculation:
-                - 'RemotePriceProvider': 'guide/integrate_erp_systems/price_calculation/remotepriceprovider.md'
+                        - 'Adapt the mappings for ERP functions': 'guide/erp_integration/erp_communication/erp_configuration/adapt_the_mappings_for_erp_functions/adapt_the_mappings_for_erp_functions.md'
+                        - 'Example UBL for price calculation': 'guide/erp_integration/erp_communication/erp_configuration/adapt_the_mappings_for_erp_functions/example_ubl_for_price_calculation.md'
+                    - 'Configuration for Webservice based ERPs': 'guide/erp_integration/erp_communication/erp_configuration/configuration_for_webservice_based_erps.md'
+                    - 'cURL configuration': 'guide/erp_integration/erp_communication/erp_configuration/curl_configuration.md'
+                    - 'Web.Connector configuration': 'guide/erp_integration/erp_communication/erp_configuration/web_connector_configuration.md'
+            - 'RemotePriceProvider': 'guide/erp_integration/remotepriceprovider.md'
             - Checkout order:
-                - ERP order synchronisation:
-                    - Failed order process:
-                        - 'Failed Order Process': 'guide/integrate_erp_systems/checkout_order/erp_order_synchronisation/failed_order_process/failed_order_process.md'
-                        - 'Lost orders': 'guide/integrate_erp_systems/checkout_order/erp_order_synchronisation/failed_order_process/lost_orders.md'
-                    - Order submission:
-                        - 'Order Submission': 'guide/integrate_erp_systems/checkout_order/erp_order_synchronisation/order_submission/order_submission.md'
-                        - 'Order format': 'guide/integrate_erp_systems/checkout_order/erp_order_synchronisation/order_submission/order_format.md'
+                - Failed order process:
+                    - 'Failed order process': 'guide/erp_integration/checkout_order/failed_order_process/failed_order_process.md'
+                    - 'Lost orders': 'guide/erp_integration/checkout_order/failed_order_process/lost_orders.md'
+                - Order submission:
+                    - 'Order submission': 'guide/erp_integration/checkout_order/order_submission/order_submission.md'
+                    - 'Order format': 'guide/erp_integration/checkout_order/order_submission/order_format.md'
         - Logging:
             - 'Logging': 'guide/logging/logging.md'
             - 'Logging API': 'guide/logging/logging_api.md'
             - 'Logging FAQ': 'guide/logging/logging_faq.md'
-            - Logging feature list:
-                - 'TokenController logging': 'guide/logging/logging_feature_list/tokencontroller_logging.md'
+            - 'TokenController logging': 'guide/logging/tokencontroller_logging.md'
         - Login and registration:
             - 'Login and registration': 'guide/login_and_registration/login_and_registration.md'
             - 'Forgot / Change password': 'guide/login_and_registration/forgot_change_password.md'
@@ -354,28 +348,24 @@ nav:
             - 'Login and registration templates': 'guide/login_and_registration/login_and_registration_templates.md'
         - Navigation:
             - 'Navigation': 'guide/navigation/navigation.md'
-            - 'Navigation API': 'guide/navigation/navigation_api.md'
-            - 'Navigation cookbook': 'guide/navigation/navigation_cookbook.md'
+            - 'Navigation configuration': 'guide/navigation/navigation_configuration.md'
+            - 'Modifying the search query': 'guide/navigation/modifying_the_search_query.md'
             - 'Navigation templates': 'guide/navigation/navigation_templates.md'
             - 'Navigation cache': 'guide/navigation/navigation_cache.md'
-            - 'Navigation FAQ': 'guide/navigation/navigation_faq.md'
         - Newsletter:
             - 'Newsletter': 'guide/newsletter/newsletter.md'
-            - Newsletter API:
-                - 'Newsletter configuration': 'guide/newsletter/newsletter_api/newsletter_configuration.md'
-                - 'Newsletter interface': 'guide/newsletter/newsletter_api/newsletter_interface.md'
-            - Newsletter cookbook:
-                - 'How to send additional data to the Newsletter provider': 'guide/newsletter/newsletter_cookbook/how_to_send_additional_data_to_the_newsletter_provider.md'
+            - 'Newsletter configuration': 'guide/newsletter/newsletter_configuration.md'
+            - 'Newsletter interface': 'guide/newsletter/newsletter_interface.md'
+            - 'Additional newsletter data': 'guide/newsletter/additional_newsletter_data.md'
             - 'Newsletter templates': 'guide/newsletter/newsletter_templates.md'
             - 'Newsletter2Go':
                 - 'Newsletter2Go': 'guide/newsletter/newsletter2go/newsletter2go.md'
-                - 'Newsletter2Go - API':
-                    - 'Newsletter2Go Configuration': 'guide/newsletter/newsletter2go/newsletter2go_api/newsletter2go_configuration.md'
-                    - 'Newsletter2Go Service': 'guide/newsletter/newsletter2go/newsletter2go_api/newsletter2go_service.md'
-                - 'Newsletter2Go - Cookbook':
-                    - 'How to send additional data to Newsletter2Go': 'guide/newsletter/newsletter2go/newsletter2go_cookbook/how_to_send_additional_data_to_newsletter2go.md'
-                    - 'How to use the Newsletter2Go API to implement custom functions': 'guide/newsletter/newsletter2go/newsletter2go_cookbook/how_to_use_the_newsletter2go_api_to_implement_custom_functions.md'
-                - 'Newsletter2Go - FAQ': 'guide/newsletter/newsletter2go/newsletter2go_faq.md'
+                - 'Newsletter2Go configuration': 'guide/newsletter/newsletter2go/newsletter2go_configuration.md'
+                - 'Newsletter2Go service': 'guide/newsletter/newsletter2go/newsletter2go_service.md'
+                - 'Newsletter2Go cookbook':
+                    - 'Sending additional data to Newsletter2Go': 'guide/newsletter/newsletter2go/newsletter2go_cookbook/sending_additional_data_to_newsletter2go.md'
+                    - 'Custom Newsletter2Go functions': 'guide/newsletter/newsletter2go/newsletter2go_cookbook/custom_newsletter2go_functions.md'
+                    - 'Working with several newsletters': 'guide/newsletter/newsletter2go/newsletter2go_cookbook/working_with_several_newsletters.md'
         - One-page forms:
             - 'One-page forms': 'guide/one_page_forms/one_page_forms.md'
             - One-page forms API:
@@ -422,10 +412,10 @@ nav:
             - 'Orderhistory cookbook': 'guide/order_history/orderhistory_cookbook.md'
             - 'Orderhistory configuration': 'guide/order_history/orderhistory_configuration.md'
             - 'Orderhistory FAQ': 'guide/order_history/orderhistory_faq.md'
-        - Landing Page with Page Builder:
-            - 'Landing Page with Page Builder': 'guide/landingpage_with_page_builder/landingpage_with_page_builder.md'
-            - 'Landing Page API': 'guide/landingpage_with_page_builder/landingpage_api.md'
-            - 'Landing Page UI': 'guide/landingpage_with_page_builder/landingpage_ui.md'
+        - Landing Page:
+            - 'Landing Page': 'guide/landing_page/landing_page.md'
+            - 'Landing Page API': 'guide/landing_page/landing_page_api.md'
+            - 'Landing Page UI': 'guide/landing_page/landing_page_ui.md'
         - Payment:
             - 'Payment': 'guide/payment/payment.md'
             - 'Payment API': 'guide/payment/payment_api.md'
@@ -470,15 +460,14 @@ nav:
             - 'Price engine FAQ': 'guide/price_engine/price_engine_faq.md'
         - Product comparison:
             - 'Product comparison ': 'guide/product_comparison/product_comparison.md'
-            - 'Product comparison features': 'guide/product_comparison/product_comparison_features.md'
             - 'Product comparison API': 'guide/product_comparison/product_comparison_api.md'
             - 'Product comparison templates': 'guide/product_comparison/product_comparison_templates.md'
             - 'Product comparison FAQ': 'guide/product_comparison/product_comparison_faq.md'
-        - Quickorder:
-            - 'Quickorder': 'guide/quickorder/quickorder.md'
-            - 'Quickorder API': 'guide/quickorder/quickorder_api.md'
-            - 'Quickorder templates': 'guide/quickorder/quickorder_templates.md'
-            - 'Quickorder FAQ': 'guide/quickorder/quickorder_faq.md'
+        - Quick order:
+            - 'Quick order': 'guide/quickorder/quickorder.md'
+            - 'Quick order API': 'guide/quickorder/quickorder_api.md'
+            - 'Quick order templates': 'guide/quickorder/quickorder_templates.md'
+            - 'Quick order FAQ': 'guide/quickorder/quickorder_faq.md'
         - 'Rate and review': 'guide/rate_and_review/rate_and_review.md'
         - Search:
             - 'Search': 'guide/search/search.md'

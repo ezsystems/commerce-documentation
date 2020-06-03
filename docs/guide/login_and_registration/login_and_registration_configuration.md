@@ -1,17 +1,12 @@
 # Login and registration configuration
 
-## General Yaml configurations
-
-When this parameter is enabled, the shop can login users also with customer number.
-
-`vendor/silversolutions/silver.e-shop/src/Silversolutions/Bundle/EshopBundle/Resources/config/silver.eshop.yml`:
+When the `enable_customer_number_login` parameter is enabled, the shop can log in users with the customer number:
 
 ``` yaml
-# possible values: true, false
 siso_core.default.enable_customer_number_login: true
 ```
 
-There is a need to specify location id for users by siteaccess:
+You can specify the default Location ID for users per SiteAccess:
 
 ``` yaml
 siso_core.default.user_group_location: 106
@@ -20,7 +15,7 @@ siso_core.default.user_group_location.private: 106
 siso_core.default.user_group_location.editor: 14
 ```
 
-Default list of url's from which user will be redirected after login.
+`redirect_homepage` configures the default list of URLs from which the user is redirected after login.
 
 ``` yaml
 siso_core.default.redirect_homepage:
@@ -32,49 +27,40 @@ siso_core.default.redirect_homepage:
     - /change_password
 ```
 
-## Configuration options for Private customer registration
+## Private customer registration
 
-### Send email with activation link to configured email address
+### Activation link recipient
 
-This is an optional configuration, that has to be set, when the emails with activation link should not be send to the customer, but to a defined email address.
+You can decide that emails with the activation link are sent to a different email address rather than the customer.
 
-The email will contain these additional information:
+The email message will contain this additional information:
 
 - name of the user
-- link to the user in backend
+- link to the user in the Back Office
 
-Optional config:
-
-``` 
+``` yaml
 siso_core.default.user_activation_receiver: <email>
 ```
 
-To use this feature it is neccessary to also configure this parameter corectly.
+To use this feature, you must also configure `related_admin_site_access` correctly:
 
-Default value in `EshopBundle/Resources/config/ses_parameters.yml`:
-
-``` 
+``` yaml
 siso_core.default.related_admin_site_access: 'admin'
 ```
 
-It is needed to build the link to the backend.
+It is needed to build the link to the Back Office.
 
-You have to adapt the success message of the private registration. The standard uses a textmodule with the identifier 'success\_register\_private'.
+You have to adapt the success message of the private registration. The default one uses a text module with the identifier `success_register_private`.
 
-### Email example
+![Example email with an activation link](../img/login_3.png)
 
-![](../img/login_3.png)
+## Account activation email
 
-## Send info email to customer after successfull activation of account via activation link
+When the `info_email_after_user_activation` parameter is set to true,
+the customer receives an email when the account is enabled using the activation link.
 
-When this parameter is set to true, the customer will receive an email when the account was enabled, using the activation link.
-
-Default value in `EshopBundle/Resources/config/emails.yml`:
-
-``` 
+``` yaml
 siso_core.default.info_email_after_user_activation: false
 ```
 
-### Email example
-
-![](../img/login_4.png)
+![Example account activation email](../img/login_4.png)

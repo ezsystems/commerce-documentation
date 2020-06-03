@@ -1,59 +1,56 @@
 # Customers
 
-## Introduction
+Customers are stored as User Content items in the database.
+eZ Commerce uses the following features that are connected to users:
 
-Customers are stored as eZ Users in the CMS. eZ Commerce uses all features connected to users and roles such as
-
-- Policies
-- extendable User model
-- User groups
+- Roles and Policies
+- extensible User model
+- User Groups
 - password management
 - activation of accounts
-- Session handling
+- session handling
 
-In addition eZ Commerce supports multiple user accounts using the same email address (e.g. for a multishop setup).
+In addition, eZ Commerce supports multiple user accounts with the same email address (e.g. for a multi-shop setup).
 
-### Users in the CMS
+eZ Commerce adds the following new Fields to the User Content Type that are required for the shop:
 
-The shop uses an eZ user for shop customers. 
-
-It enriches the eZ User ContentType with new fields which are required for the shop:
-
-- firast name, last name
+- first name, last name
 - salutation
 - customer profile data
-- customer number, contact number (will be used for Advanced only)
-- budget per order and per month (will be used by advanced version/plugin customer center)
+- customer number, contact number
+- budget per order and per month (used by the Customer Center plugin)
 
-### User groups
+### User Groups
 
-For each shop a user group is used and private and business customers are stored in different sub user groups. If required shops can also share one common user group.
+Each shop stores private and business customers in different User Groups. If required, shops can also share one common User Group.
 
 ![](../img/customers_1.png)
 
 ### ERP system as the master
 
-The customers are directly connected to the ERP system as soon as they are having a customer number or/and a contact number. 
+The customers are directly connected to the ERP system if they have a customer number or/and a contact number. 
 
-The customer number is usually the main reference to the ERP system and it is stored as a readonly field in the user record. 
+The ERP system usually identifies customers by their customer numbers.
+The customer number is stored as a read-only Field in the User Content item. 
 
-The shop automatically gets the information from the ERP the first time the user information (customerprofile data) is requested.
+The shop gets the information from the ERP automatically when user information (customer profile data) is requested for the first time.
 
-The information will be stored in the session in order to reduce the calls to the ERP system.
+The information is stored in the session to reduce the number of calls to ERP.
 
-The ERP will provide:
+The ERP system provides:
 
-- the invoice adress
-- the buyer address
+- invoice address
+- buyer address
 - a list of delivery addresses
-- contact infos if the user has a contact number
-- further infos depending on the ERP system
+- contact information if the user has a contact number
+- further information depending on the ERP system
 
-### How to access customer data in a template
+### Accessing customer data in a template
 
-The template offers a global twig variable which contains the main information about the current user and also infos about addresses. It also contains infos about data from the ERP.
+The template offers a global Twig variable that contains the main information about the current user,
+their addresses and data from the ERP.
 
-``` 
+``` html+twig
 Current customer number: {{ ses.profile.sesUser.customerNumber }}
 All delivery addresses:  {% set deliveryAddresses = ses.deliveryParty %}
 E-Mail address:          {{ ses.profile.sesUser.email }}
@@ -73,21 +70,22 @@ E-Mail address:          {{ ses.profile.sesUser.email }}
 {% endif %}
 ```
 
-!!! note "Important note"
-
-    Please do not use methods of the customerservice inside a constructor of a service. The reason is that the constructor is build at a very early stage of the process and the system may not have the information that a user is already logged in
-
 !!! caution
 
-    Please do **not** use the [customerservice](customers_api/customer_profile_data_components/customer_profile_data_services.md) in any place, that can not access the session. An example will be a CLI tool, or processes that are happing in background - like sending out the order if customer payed via payment service provider.
+    Do not use methods of the customer service inside a constructor of a service.
+    The constructor is built at a very early stage of the process and the system may not have the information that a user is already logged in.
 
-eZ Commerce is using the standard UBL to model customer data. The most important type is the Party which describes a Address. 
+    Do not use the [customer service](customers_api/customer_profile_data_components/customer_profile_data_services.md) in any place that cannot access the session.
+    An example would be a CLI tool, or processes that happen in background,
+    like sending out the order if a customer paid via a payment service provider.
 
-Foreach user these information will be stored. If a user has a customernumber this info will be updated from the ERP after the login: 
+eZ Commerce uses the UBL standard to model customer data. The most important type is the Party which describes an address. 
 
-  - Buyer Party
-  - Invoice Party
-  - DeliveryParties - a list of Addresses using the Party format 
+For each user, the following information is stored. If the user has a customer number, the following information is updated from the ERP after login: 
+
+- Buyer Party
+- Invoice Party
+- DeliveryParties - a list of addresses in the Party format 
 
 ``` xml
 <Party>

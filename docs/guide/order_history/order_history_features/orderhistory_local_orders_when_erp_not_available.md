@@ -48,7 +48,7 @@ In case there is no connection with ERP and the local documents should be used (
 
 #### Listener `onExceptionMessage`
 
-Checks the exception, that was thrown by the previous listener and creates a [ResponseDocument](../../integrate_erp_systems/erp_communication/erp_components/erp_component_messages/erp_component_messages.md) filled with local data (orders). The response will have the same structure as if it was returned from ERP, so no additional changes in the template are required.
+Checks the exception, that was thrown by the previous listener and creates a [ResponseDocument](../../erp_integration/erp_communication/erp_components/erp_component_messages/erp_component_messages.md) filled with local data (orders). The response will have the same structure as if it was returned from ERP, so no additional changes in the template are required.
 
 ``` xml
 <service id="siso_order_history.use_local_documents_listener" class="%siso_order_history.use_local_documents_listener.class%">
