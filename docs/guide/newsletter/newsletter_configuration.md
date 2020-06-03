@@ -1,12 +1,9 @@
 # Newsletter configuration
 
-See general newsletter configuration:
-
-`newsletter.yml`
+General newsletter configuration is located in `newsletter.yml`:
 
 ``` yaml
 parameters:
-    #******** general newsletter configuration ************#
     # you can disable the newsletter module here
     siso_newsletter.default.newsletter_active: true
     # enable if you want to support several newsletter topics

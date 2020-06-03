@@ -1,10 +1,9 @@
-# Newsletter2Go Configuration
+# Newsletter2Go configuration
 
-See newsletter2go configuration (in newsletter.yml):
+You can configure Newsletter2Go in `newsletter.yml` with the following settings:
 
 ``` yaml
 parameters:
-    #******** configuration for newsletter2go provider ************#
     # authentication
     siso_newsletter.default.newsletter2go_username: '%newsletter2go_username%'
     siso_newsletter.default.newsletter2go_password: '%newsletter2go_password%'

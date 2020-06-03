@@ -2,22 +2,21 @@
 
 ## Basket type
 
-Comparison is a Basket with a special type `comparison`. 
+Comparison is a basket with a special type `comparison`. 
 
-When adding items no Events are thrown, therefore from the performance perspective it is quicker than adding items into basket. However, there is no data validation in the background, so it is allowed to mix different products. So the data validation, like checking the minimum order amount or checking the mixing of downloads with normal products, is done when adding those items into cart.
-
-``` php
-// \Silversolutions\Bundle\EshopBundle\Services\BasketService
-const TYPE_COMPARISON = 'comparison';
-```
+When adding items no events are thrown, so adding to comparison is quicker than adding items to a basket.
+However, there is no data validation in the background, so you can mix different products.
+Data validation, such as checking the minimum order amount or checking the mixing of downloads with normal products,
+is done when adding those items into a cart.
 
 ## Additional attributes
 
-In order to handle the necessary additional data for the comparison list, new attributes are added to the basket instances of type `comparison`. These attributes are **not declared** in the class Basket, but must be **added dynamically** by the ComparisonServiceInterface implementation.
+New attributes are added to `comparison` baskets to handle the necessary additional data for the comparison list.
+These attributes are not declared in the class Basket, but must be added dynamically by the `ComparisonServiceInterface` implementation.
 
-##### $comparisonAttributes
+### $comparisonAttributes
 
-This is an associative array, which defines the comparable attributes for the current object's comparison category. The sub-structure looks as following:
+`$comparisonAttributes` is an associative array which defines the comparable attributes for the current object's comparison category. The sub-structure looks as following:
 
 ``` php
 array(
@@ -34,11 +33,11 @@ array(
 )
 ```
 
-##### $comparisonElements
+### $comparisonElements
 
- This is an array, which contains the data for the product columns in the comparison list. The sub-structure looks as following:
+`$comparisonElements` is an array which contains the data for the product columns in the comparison list. The sub-structure looks as following:
 
-``` 
+``` php
 array(
     array(
         'catalogElement' => (ProductNode) object, // the respective CatalogElement / ProductNode for the current column
@@ -49,9 +48,9 @@ array(
 )
 ```
 
-### Service
+## Service
 
-Comparison feature has an interface, which determines methods necessary to implement different comparison services. 
+The `ComparisonServiceInterface` interface determines methods necessary to implement different comparison services.
 
 ``` php
 interface ComparisonServiceInterface {

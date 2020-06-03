@@ -1,211 +1,193 @@
-# Quickorder
+# Quick order
 
-## Introduction
+Quick order is an order form that speeds up the checkout and order process.
+The customer can enter a list of SKUs and add them all together to the basket.
 
-Quickorder is an order form, that provides a fast and convenient tool for 'power'-users, which speeds up the checkout- / order-process by entering SKUs sequentially and add them altogether into the basket.
-
-It supports autosuggestions, as well as a CSV upload.
+Quick order supports autosuggestions and an upload of product data in CVS format.
 
 ![](../img/quickorder_2.png)
 
-Analog to the [basket](../basket/basket.md) there is a possibility to add additional data to the quickorder.
+Like in the [basket](../basket/basket.md), you can add additional data to the quick order.
 
-By default you can enable additional text in the quickorder:
-
-`basket.yml`:
+By default you can enable additional text in the quick order:
 
 ``` yaml
-#enable/disable additional text line in basket per basket line
 ses_basket.default.additional_text_for_basket_line: false
 ```
 
-## Before you start 
+## Adding to basket
 
-Please keep in mind that Quickorder is really connected with a lot of different modules in our shop. Be sure to check these out:
+Customers can type SKUs and quantities to either directly add products to the basket by clicking on the **Add to basket** button,
+or store items in the quick order by clicking **Refresh quickorder**.
 
-- [Basket](../basket/basket.md)
+## Updating quick order
 
-## Basic Features
-
-### Add to basket
-
-Users can type SKUs and quantity and either directly add products to the basket by clicking on the 'Add to basket' button, or store items in the quickorder by clicking on the button 'Update quickorder'.
-
-### Update quickorder
-
-If users store items in the quickorder, they will see the real prices and availability.
+If a customer stores items in the quick order, they can see the real prices and availability.
 
 ![](../img/quickorder_3.png)
 
-If the ERP system is offline, users will see the list prices and an error message will be displayed. Also there is no information about the availability.
+If the ERP system is offline, customers see list prices and an error message. There is also no information about product availability.
 
 ![](../img/quickorder_4.png)
 
-Users can remove the items from the quickorder by checking the checkbox 'Delete' or entering 0 into the item quantity and then clicking on the button 'Update quickorder'.
+Customers can remove the items from the quick order by checking the delete checkbox or entering 0 into the quantity field and then clicking **Refresh quickorder**.
 
-#### How long the items will be stored?
+### Storage time
 
-- if a user is *anonymous*: as long as the session exists and the user did not click on 'Add to basket button', or removed items from quickorder
-- if a user is *logged in*: as long as the user did not click on 'Add to basket' button, or removed items from quickorder
+A quick order for an anonymous user is stored for as long as the session exists and the user did not click **Add to basket**, or removed items from quick order.
 
-### Add more lines
+A quick order for a logged-in customer is stored for as long as the user did not click **Add to basket** button, or remove items from quick order.
 
-If users needs more lines in his quickorder, they can add new ones by
+## Add more lines
 
-- either clicking on the plus icon - will add one line
-- or choosing from the drop down list and clicking on the 'Add more lines' button - will add chosen amount of lines
+If a customer needs more lines in their quick order, they can add new ones by:
+
+- clicking the plus icon, which adds one line
+- choosing a number of lines from the drop down menu and clicking **Add lines**, which adds the selected number of lines.
 
 ![](../img/quickorder_5.png)
 
-## Advanced features
+## Autosuggestions
 
-There are some features, such as autosuggestion or CSV upload, that makes it even easier for the user to use the quickorder form.
-
-### Autosuggestions
-
-*Solr* is used to look-up a list of matching results.
-
-**Autosuggestion results returned from Solr**
+When entering SKUs, Solr looks up a list of matching results.
 
 ![](../img/quickorder_6.png)
 
-If you want to disable the autosuggest in quickorder you can use this setting:
+If you want to disable autosuggestions in quick order, use the `auto_suggest_limit` setting:
 
 ``` yaml
 siso_search.default.search.auto_suggest_limit: 0
 ```
 
-#### Variant handling
+### Variant handling
 
-Quickorder also supports variants. For this is the autosuggestion feature used. Users can type the product name or SKU and/or a variant code (or parts of it) into the SKU field.
+Quick order supports variants in autosuggestion.
+Customers can type the product name or SKU and/or a variant code (or parts of it) into the SKU field.
 
-*Solr* will be used to return the list of correct SKUs and variant codes.
+Solr returns the list of correct SKUs and variant codes.
 
-##### Configuration
+#### Configuration
 
-Regarding the variants, users can use different delimiters between SKU and the variant code when typing it into the SKU field.These delimiters are configurable.
+Customers can use different delimiters between SKU and the variant code when typing into the SKU field.
+The delimiters are configurable:
 
 ``` yaml
 parameters:
     siso_quickorder.default.autosuggest_delimiters: [' ', '/', '-', '::']
 ```
 
-##### Searching for a variant
+![](../img/quickorder_7.png "Searching for a variant")
 
-![](../img/quickorder_7.png)
-
-##### Returned results
-
-The autosuggestion results contain the SKU and the variant code separated by a configurable delimiter.
-
-![](../img/quickorder_8.png)
-
-!!! note "Important"
-
-    The configured delimiter MUST NOT be a part of the existing SKUs or variant codes\!
-
-    This delimiter is used to separate the variant code from the SKU when adding items into the quickorder or to the basket.
+Autosuggestion results contain the SKU and the variant code separated by a configurable delimiter.
 
 ``` yaml
 parameters:
-     #this delimiter can not be a part of sku or variant code!!!
-     siso_quickorder.default.sku_variant_code_delimiter: '::'
+    siso_quickorder.default.sku_variant_code_delimiter: '::'
 ```
 
-### Line preview
+![](../img/quickorder_8.png)
 
-If users leave the SKU field (for example by choosing of one autosuggestion result) and set the cursor position to another field (e.g. quantity field or next line), a background search is automatically started, that will display the product name (and variant code) and the unit price. This visible feedback is a confirmation for users, which indicates that the entered SKU was correct.
+!!! caution
 
-![](../img/quickorder_9).png)
+    The configured delimiter cannot be a part of the existing SKUs or variant codes.
 
-If the SKU was not correct, users will see an error message
+    This delimiter is used to separate the variant code from the SKU when adding items into the quick order or to the basket.
+
+## Line preview
+
+If a customer leaves the SKU field (for example by choosing one of the autosuggestion result) and sets the cursor on another field (e.g. quantity field or next line), a background search starts. It displays the product name (and variant code) and the unit price.
+This visible feedback is a confirmation for users that the entered SKU is correct.
+
+![](../img/quickorder_9.png)
+
+If the SKU is not correct, the customer sees an error message.
 
 ![](../img/quickorder_10.png)
 
-In order to see the real prices and the availability, users must click on the 'Update quickorder' button.
+In order to see the real prices and the availability, users must click **Refresh quickorder**.
 
 ![](../img/quickorder_11.png)
 
-### CSV upload
+## CSV upload
 
-Another possibility how to add items to the quickorder is to use a CSV file. Users can either
+The customer can also add items to the quick order with a CSV file. 
+They can either:
 
-- upload one .csv file
-- enter a .csv file's content into a textarea
+- upload one CSV file
+- enter CSV content into a text area
 
-The format of the .csv file is flexible to take 1, 2 or 3 columns:
+The CSV format can take 1-3 columns:
 
-- **SKU** - required column that has to be provided first (if only 1 column is provided there should be no delimiter at the end of the line)
-- **variant code** - optional second column. It can be omitted for the shops that do not use variants
-- **quantity** - optional last column which specifies quantity for given SKU. It is always the last column (2nd or 3rd)
+- **SKU** - required column that has to be provided first (if only 1 column is provided, there should be no delimiter at the end of the line)
+- **variant code** - optional second column. It can be omitted for shops that do not use variants
+- **quantity** - optional last column which specifies quantity for the given SKU. It is always the last column (2nd or 3rd)
 
 !!! note
 
-    Optionally, if custom text is enabled, user has the possibility to also upload custom text via csv upload. In this case the custom text shall be added as 4-th column.
+    Optionally, if custom text is enabled, the customer also has the possibility to upload a custom text in CSV upload.
+    In this case, the custom text should be the last column (3rd or 4th).
 
-    ``` 
+    ``` yaml
     #enable/disable additional text line in basket per basket line
     ses_basket.default.additional_text_for_basket_line: false
     ```
 
-Examples: 
+??? note "Example CSV input"
 
-Only SKU:
+    SKU only:
 
-```
-SE0100
-12201300
-SE0101
-SE0105
-SE0302
-13201380
-```
+    ```
+    SE0100
+    12201300
+    SE0101
+    SE0105
+    SE0302
+    13201380
+    ```
 
-SKU and quantity:
+    SKU and quantity:
 
-```	
-SE0100,2
-12201300,3
-SE0101,1
-SE0105,5
-SE0302,1
-13201380,4
-```
+    ```	
+    SE0100,2
+    12201300,3
+    SE0101,1
+    SE0105,5
+    SE0302,1
+    13201380,4
+    ```
 
-SKU, variant code and quantity:
+    SKU, variant code and quantity:
 
-```
-SE0100,,2
-12201300,,3
-SE0101,VAR-BLK,1
-SE0105,,5
-SE0302,,1
-13201380,,4
-```
+    ```
+    SE0100,,2
+    12201300,,3
+    SE0101,VAR-BLK,1
+    SE0105,,5
+    SE0302,,1
+    13201380,,4
+    ```
 
-The values can by separated by a configurable delimiter:
+The values in CSV files can by separated by a configurable delimiter:
 
-#### Configuration
-
-``` 
+``` yaml
 parameters:
     siso_quickorder.default.csv_delimiters: [';', ',']
 ```
 
-#### Upload CSV file
+### Uploading CSV file
 
-Users can upload only one .csv file at once. They can either add the file by drag and drop to the upload area or use the search button.
+Users can upload only one CSV file at once. They can drag and drop the file to the upload area or browse to the file.
 
 ![](../img/quickorder_12.png)
 
-#### Entering CSV file content into a textarea
+### Entering CSV file content into a textarea
 
-User can also enter the content of the .csv file directly into a textarea and click on the 'Fill quickorder' button.
+The customer can also enter the content of the .csv file directly into a text area and click **Fill quickorder**.
 
 ![](../img/quickorder_13.png)
 
-#### Result of an uploaded / entered .csv file
+### Result of CSV import
 
-It doesn't matter which method was used. In both cases the quickorder will be filled with given data and appropriate messages will be displayed.
+Regardless of the method used, the quick order is filled with the given data:
 
 ![](../img/quickorder_14.png)

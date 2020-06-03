@@ -1,10 +1,8 @@
-# Quickorder FAQ
+# Quick order FAQ
 
-## Can i also search for a name of a product or variant?
+## Can I search for the name of a product or variant?
 
-Yes this is possible. An example:
-
-The name of the product is "Entry Level Series" and some variants are named "MC-8":
+Yes, you can. For example, the name of the product is "Entry Level Series" and some variants are named "MC-8":
 
 ![](../img/quickorder_1.jpg)
 

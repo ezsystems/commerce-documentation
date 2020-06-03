@@ -1,18 +1,15 @@
-# How to use the Newsletter2Go API to implement custom functions
+# Custom Newsletter2Go functions
 
-## How to use the Newsletter2Go API to extend the newsletter functionality
+If you need to implement custom functions to extend the newsletter, you can use:
 
-If you need to implement custom functions to extend the newsletter functionality, you can make usage of:
+- `Newsletter2GoService`
+- `Newsletter2GoApiService`
 
-- Newsletter2GoService
-- Newsletter2GoApiService
+See [Newsletter2Go API documentation](https://docs.newsletter2go.com/?_ga=1.186190697.1183183675.1471410241) for more information.  
 
-See full documentation of the [Newsletter2Go API](https://docs.newsletter2go.com/?_ga=1.186190697.1183183675.1471410241).  
-Let´s say, you want to get a list of all newsletters for the default address book.
+In the example below you get a list of all newsletters for the default address book.
 
 ![](../../../img/newsletter2go_cookbook_4.png)
-
-ProjectController.php:
 
 ``` php
 public function showNewslettersAction()
