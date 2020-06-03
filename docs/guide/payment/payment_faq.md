@@ -1,17 +1,15 @@
 # Payment FAQ
 
-## How do I implement a new payment provider plugin?
+## How can I activate payment options in checkout process?
 
-Please refer to [Building new payment plugins](payment_cookbook/building_new_payment_plugins.md).
-
-## How can I activate the payment options in checkout process?
-
-Individual payment options / payment methods are implemented in symfony bundles. As soon as they are registered in the kernel, they are displayed in the checkout payment form. The respective options are registered to the checkout form by a DIC compiler pass und must fulfill some requirements:
+Individual payment options / payment methods are implemented in Symfony bundles.
+As soon as they are registered in the kernel, they are displayed in the checkout payment form. The respective options are registered in the checkout form by a DIC compiler pass and must fulfill some requirements:
 
 - The bundle must define a form type service
-- The form type must define the tag: `payment.method_form_type`
-- The form type must define the tag: `form.type` with an alias attribute, that is used as text in the payment choice.
-- Example:
+- The form type must define the `payment.method_form_type` tag
+- The form type must define the `form.type` tag with an alias attribute that is used as text in the payment choice.
+
+For example:
 
 ``` xml
 <service id="payment.form.telecash_connect_type"
@@ -23,23 +21,29 @@ Individual payment options / payment methods are implemented in symfony bundles.
 
 The compiler pass is defined in the checkout bundle: `\Siso\Bundle\CheckoutBundle\DependencyInjection\Compiler\PaymentMethodsPass`
 
-## How can I influence / customize the payment options, displayed on the box payment options (e.g. Hide some if products are not available)?
+## How can I customize the payment options?
 
-In order to change the shipping-payment form, the form type service itself has to be replaced / rewritten. The form type for the options choice is implemented in the checkout bundle: `\Siso\Bundle\CheckoutBundle\Form\Type\CheckoutShippingPaymentType`
+To customize payment options displayed on the box payment options
+(e.g. to hide some if products are not available), change the payment form.
+
+To change the shipping/payment form, replace or rewrite the form type service.
+The form type for the options choice is implemented in the checkout bundle in `\Siso\Bundle\CheckoutBundle\Form\Type\CheckoutShippingPaymentType`
 
 The methods `CheckoutShippingPaymentType::buildForm()` and `CheckoutShippingPaymentType::setDefaultOptions()` are called to assemble the HTML form.
 
-Please check the [Configuration for the Checkout Forms](../checkout/checkout_api/forms/configuration_for_checkout_forms.md).
+See [Configuration for the Checkout Forms](../checkout/checkout_api/forms/configuration_for_checkout_forms.md)
+and [Symfony's form documention](http://symfony.com/doc/current/book/forms.html) for more information.
 
-Please refer to [symfony's form documention](http://symfony.com/doc/current/book/forms.html) for more details.
+## Can I extend the size limit on orders?
 
-## Due to a restriction in JmsPaymentBundle there is a restriction that an order exceeding 99999.99999 causes an error message. How do I extend it?
+Due to a restriction in JmsPaymentBundle, an order exceding 99999.99999 causes an error message.
 
-There is an official workaround for the JMSPaymentCoreBundle: <http://jmspaymentcorebundle.readthedocs.io/en/latest/guides/overriding_entity_mapping.html>
+It is possible to extend this limit using an [official workaround for the JMSPaymentCoreBundle.](http://jmspaymentcorebundle.readthedocs.io/en/latest/guides/overriding_entity_mapping.html)
 
-You will need to override the service class `\Siso\Bundle\PaymentBundle\Api\StandardPaymentService` and adapt the constant `EXCEEDED_ENTITY_AMOUNT_VALUE`. This constant is read via late static binding and will use the overridden value.
+You need to override the service class `Siso\Bundle\PaymentBundle\Api\StandardPaymentService` and adapt the constant `EXCEEDED_ENTITY_AMOUNT_VALUE`.
+This constant is read by late static binding and will use the overridden value.
 
-Example:
+For example:
 
 ``` php
 <?php
@@ -60,9 +64,11 @@ class ExamplePaymentService extends StandardPaymentService
 }
 ```
 
-## The redirection from the Shop to the Paygate fails because of an execution timeout
+## The redirection from the shop to the paygate fails because of an execution timeout
 
-It could happen that during the encryption of the transaction data, the PHP process runs into an execution timeout. This would occur after clicking the "Buy now" button at the order summary page. The exception in the AJAX Response would look like:
+During the encryption of the transaction data the PHP process can run into an execution timeout.
+This can occur after clicking the **Buy now** button at the order summary page.
+The exception in the AJAX Response can look like this:
 
 ```
 Exception message:
@@ -72,21 +78,20 @@ Error: Maximum execution time of 60 seconds exceeded
 Occured in file /var/www/project/vendor/jms/payment-core-bundle/JMS/Payment/CoreBundle/Cryptography/MCryptEncryptionService.php line 89
 ```
 
-The problem is the usage of the PHP function [`mcrypt_create_iv`](http://php.net/manual/en/function.mcrypt-create-iv.php) in that line. The default implementation uses the /dev/urandom device in order to determine a random number. This could take a long time if the hosting system doesn't generate enough random events per time. And thus the call runs into a timeout.
+The problem is the usage of the PHP function [`mcrypt_create_iv`](http://php.net/manual/en/function.mcrypt-create-iv.php) in that line.
+The default implementation uses the `/dev/urandom` device to determine a random number.
+This can take a long time if the hosting system doesn't generate enough random events per time.
+Then the call runs into a timeout.
 
-### Solution(s)
+To solve this, check the currently available entropy on the system:
 
-Check the current available entropy on the system:
-
-``` 
+``` bash
 cat /proc/sys/kernel/random/entropy_avail
 ```
 
-the result should be a number greater than 300, if less the entropy is not enough to generate random numbers.
+The result should be a number greater than 300. If it is less, the entropy is not enough to generate random numbers.
 
-To increase the entropy an application has to be installed.
-
-#### haveged installation
+To increase the entropy you have to install the `haveged` application.
 
 Install the package with apt-get:
 
@@ -94,4 +99,4 @@ Install the package with apt-get:
 sudo apt-get install haveged
 ```
 
-This tool will start automatically at boot and will keep entropy greater than 1000.
+This tool starts automatically at boot and keeps entropy greater than 1000.

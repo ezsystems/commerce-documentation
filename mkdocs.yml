@@ -416,8 +416,7 @@ nav:
         - Payment:
             - 'Payment': 'guide/payment/payment.md'
             - 'Payment API': 'guide/payment/payment_api.md'
-            - Payment cookbook:
-                - 'Building new payment plugins': 'guide/payment/payment_cookbook/building_new_payment_plugins.md'
+            - 'Building new payment plugins': 'guide/payment/building_new_payment_plugins.md'
             - 'Payment FAQ': 'guide/payment/payment_faq.md'
             - Payment configuration:
                 - 'Telecash': 'guide/payment/payment_configuration/telecash.md'
