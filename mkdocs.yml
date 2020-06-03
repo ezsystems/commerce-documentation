@@ -468,9 +468,7 @@ nav:
             - 'Quick order API': 'guide/quickorder/quickorder_api.md'
             - 'Quick order templates': 'guide/quickorder/quickorder_templates.md'
             - 'Quick order FAQ': 'guide/quickorder/quickorder_faq.md'
-        - 'Rate and review':
-            - 'Rate and review': 'guide/rate_and_review/rate_and_review.md'
-            - 'Translations for rate and review': 'guide/rate_and_review/translations_for_rate_and_review.md'
+        - 'Rate and review': 'guide/rate_and_review/rate_and_review.md'
         - Search:
             - 'Search': 'guide/search/search.md'
             - Search features:
@@ -515,15 +513,14 @@ nav:
             - 'OneSky': 'guide/translations/onesky.md'
         - Vouchers from ERP:
             - 'Vouchers from ERP': 'guide/vouchers_from_erp/vouchers_from_erp.md'
-            - 'Vouchers - API': 'guide/vouchers_from_erp/vouchers_api.md'
-            - 'Vouchers - FAQ': 'guide/vouchers_from_erp/vouchers_faq.md'
-            - 'Vouchers - Templates': 'guide/vouchers_from_erp/vouchers_templates.md'
+            - 'Voucher templates': 'guide/vouchers_from_erp/vouchers_templates.md'
+            - 'Voucher FAQ': 'guide/vouchers_from_erp/vouchers_faq.md'
         - Wishlist and stored baskets:
-            - 'Wishlist and Stored Baskets': 'guide/wishlist_and_stored_baskets/wishlist_and_stored_baskets.md'
+            - 'Wishlist and stored baskets': 'guide/wishlist_and_stored_baskets/wishlist_and_stored_baskets.md'
             - 'Wishlist': 'guide/wishlist_and_stored_baskets/wishlist_and_stored_basket_wishlist.md'
             - 'Stored Baskets': 'guide/wishlist_and_stored_baskets/wishlist_and_stored_basket_stored_baskets.md'
-            - 'Wishlist and Stored Basket API': 'guide/wishlist_and_stored_baskets/wishlist_and_stored_basket_api.md'
-            - 'Wishlist and Stored Basket templates': 'guide/wishlist_and_stored_baskets/wishlist_and_stored_basket_templates.md'
+            - 'Wishlist and stored basket API': 'guide/wishlist_and_stored_baskets/wishlist_and_stored_basket_api.md'
+            - 'Wishlist and stored basket templates': 'guide/wishlist_and_stored_baskets/wishlist_and_stored_basket_templates.md'
         - User management:
             - 'Customer Center':
                 - 'Customer Center': 'guide/user_management/customer_center/customer_center.md'
@@ -559,7 +556,7 @@ nav:
                 - 'TokenService': 'guide/user_management/token/tokenservice.md'
             - 'Tracking': 'guide/user_management/tracking.md'
             - 'Access control': 'guide/user_management/access_control.md'
-        - 'Delegate Function': 'guide/delegate_function.md'
+        - 'Delegate function': 'guide/delegate_function.md'
         - 'Job system': 'guide/job_system.md'
     - Extending eZ Commerce:
         - Extending the shop:

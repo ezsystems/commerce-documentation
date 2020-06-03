@@ -1,89 +1,64 @@
 # Translations
 
-## Introduction
+eZ Commerce uses special translation Content items called "text modules" to offer translations of the interface.
+The translation service first checks if a Content item with a specific identifier exists and then returns the text attribute of this object.
+If it finds no translations, the standard Symfony translation service is used.
 
-eZ Commerce offers the possibility to use objects from eZ Platform as translation objects, called "textmodule". The translation service checks first if an object with a specific identifier exists and return the text attribute of this object. If no object was found the standard symfony translation service will be used. 
-
-For details of symfony translations see also <http://symfony.com/doc/current/book/translation.html>
+For more details, see [Symfony translations documentation.](http://symfony.com/doc/3.4/book/translation.html)
 
 ## Twig filter
 
-The translation service offers the twig filter **st\_translate**. 
+The translation service offers the Twig filter `st_translate`.
 
-It uses a code which identifies the text to be translated and an optional context. The context can be used to differentiate between different meanings, e.g. in context "shop" order means to "buy something" but in the CMS part it may have the meaning of "sorting content".
+The filter uses a code which identifies the text to be translated and an optional context.
+The context can be used to differentiate between different meanings, e.g. in the shop context "order" refer to purchasing,
+but in content management it can refer to sorting content.
 
-``` 
+``` html+twig
 {{ 'sku'|st_translate() }}
 ```
 
-#### Examples of usage
+### Examples of use
 
-``` 
-{# Use twig filter #}
+``` html+twig
 {{  messageOrCode|st_translate }}
 
-{# Use the optional context parameter #}
 {{  messageOrCode|st_translate('context') }}
+```
 
-{# Only possible if using Symfony Translations, not Textmodules #}
-{# Use a message with placeholders and define a different translation domain: validators.de.xliff #}
+When you use Symfony translations, not text modules, you can use a message with placeholders
+and define a different translation domain, in this example, `validators.de.xliff`.
+
+``` html+twig
 <h2>{{ 'This is a test with %placeholder%'|st_translate('', { '%placeholder%':'My text' }, 'validators' ) }}</h2>
 
-#specify trans domain - only possible for symfony translations
 {{ 'error'|st_translate(null, {}, 'validators') }}
 ```
 
-### Specify the translation language
+### Specifying translation language
 
-!!! tip
+By default the translation service uses the language of the current SiteAccess and the current locale.
+You can additionally send the language as a parameter.
 
-    Per default the translation service use the language of the current siteaccess and current locale. If desired it is possible to send this parameter in addition.
-
-The translation service is able to use given siteaccess in order to specify the eZ language or locale required for the translation process.
+The translation service can use the given SiteAccess to specify the language or locale required for the translation process.
 
 ``` html+twig
-{# get siteaccess e.g. from basket #}
+{# Get SiteAccess e.g. from basket #}
 {% set siteaccess = basket.dataMap.siteaccess is defined ? basket.dataMap.siteaccess : null %}
 
-{# Translation in another siteaccess than current siteaccess #}
+{# Translation in an different SiteAccess than the current one #}
 {{ 'Thank you for using our shop.'|st_translate(null, {}, null, siteaccess) }}
 ```
 
 ### Pluralisation
 
-Symfony itself offers a possibility to use pluralisation for translations. So it is easy to handle translations that may have plural based on some variables.
+To handle plurals in translations, use [Symfony pluralization](https://symfony.com/doc/3.4/translation.html#pluralization).
 
-eZ Commerce doesn't have any custom logic to handle pluralisation. If you need to handle such a translations, please use [Symfony](http://symfony.com/doc/current/components/translation/usage.html#component-translation-pluralization) for that.
+## Translation in PHP code
 
-Example:
+In PHP code you can use the `silver_trans.translator` service to get translations:
 
-``` 
-<div class="grid_12">
-    <h3 class="header">
-        {% transchoice basket.lines.count with {'%count%' : basket.lines.count} %}
-        {1}%count% item in your basket|%count% items in your basket
-        {% endtranschoice %}
-    </h3>
-```
-
-!!! caution
-
-    If you use the `{% transchoice %}` filter, please make sure, that you always add the translation to your translation file. Missing translation will throw an exception.
-
-    ```
-    return array(
-    ...
-
-    '{1}%count% item in your basket|%count% items in your basket' => '1 item in your basket|%count% items in your basket',
-    ...
-    );
-    ```
-
-## PHP Translation Service
-
-The same like in Twig you can use in PHP via service **silver\_trans.translator**.
-
-``` 
+``` php
 $messageOrCode = 'This is either some message that should be translated or a code for a text module';
 $context = 'context';
 
@@ -94,22 +69,24 @@ $container->get('silver_trans.translator')->translate($messageOrCode);
 $container->get('silver_trans.translator')->translate($messageOrCode, $context);
 ```
 
-## Translations in eZ Platform via content type textmodules
+## Translations with text modules
 
-The content type textmodule has the following attributes:
+The Content Type `st_textmodule` has the following Fields:
 
 | Field      | Description                                                      |
 | ---------- | ---------------------------------------------------------------- |
-| Name       | Used for internal name in backend                                |
-| Identifier | Here the source or identifier for translation has to be defined. |
+| Name       | Internal name                                |
+| Identifier | The source or identifier for translation that have to be defined. |
 | Context    | Optional context                                                 |
 | Content    | Content for frontend                                             |
 
 ### Field identifier
 
-By default the translated value is get from the field 'content'. However it is possible to extend the text module class with a new field from a type *XML block*. If you do so, the translation service is able to fetch from the appropriate field.
+By default the translated value is taken from the `content` Field.
+You can extend the text module Content Type with a new Field of the XMLText Field Type.
+Then, the translation service can fetch from the appropriate Field.
 
-The take advantage of this, use parameter 'fieldIdentifier':
+To take advantage of this, use the `fieldIdentifier` parameter:
 
 ``` html+twig
 {# without context #}
@@ -121,25 +98,22 @@ The take advantage of this, use parameter 'fieldIdentifier':
 
 ## Configuration
 
-For translations exist the following configurations:
+The text modules configuration settings:
 
-|Description|Configuration|Default|
+|Configuration||Description|Default|
 |--- |--- |--- |
-|LocationID of textmodule folder|silver_tools.default.translationFolderId|89|
-|Enable/disable textmodules ("true" or "false")|silver_tools.default.textmoduleTranslationEnabled|true|
-|Enable/disable default Symfony translation|silver_tools.default.defaultTranslationEnabled|true|
-|Enable/disable logging missing translations|silver_tools.default.loggTranslations|false|
-|Enable/disable translation cache|silver_tools.default.translation_cache|true|
-|Defines how long the translation will be stored in the cache.</br>When TTL value is set to null, then cache is generated forever.|silver_tools.default.translation_cache_ttl||
-
+|`silver_tools.default.translationFolderId`|Location ID of the text module folder|`89`|
+|`silver_tools.default.textmoduleTranslationEnabled`|Enable/disable text modules|`true`|
+|`silver_tools.default.defaultTranslationEnabled`|Enable/disable default Symfony translation|`true`|
+|`silver_tools.default.loggTranslations`|Enable/disable logging missing translations|`false`|
+|`silver_tools.default.translation_cache`|Enable/disable translation cache|`true`|
+|`silver_tools.default.translation_cache_ttl`|Defines how long the translation is stored in the cache. When the TTL value is set to `null`, cache is stored forever.||
 
 ## Logging
 
-Translations that are missing are logged. You can enable/disable logging of missing translations in the configuration (see configuration chapter)
+Missing translations are logged. You can enable/disable logging of missing translations in the configuration.
 
-All missing translations are logged to this file:
-
-`var/logs/siso.translations.log`
+All missing translations are logged in `var/logs/siso.translations.log`.
 
 ``` xml
 <service id="silver_trans.logging_handler.stream" class="%monolog.handler.stream.class%">
@@ -149,11 +123,13 @@ All missing translations are logged to this file:
 
 ## Cache
 
-Translation is cached using Stash. Currently there are 2 types of translations, which comes from eZ Platform or Symfony.
+Translations are cached using Stash. If there is no translation for the given message (or code),
+a special `null` translation message is cached. Thanks to this there is no need to repeat fetches from eZ Platform.
 
-- Translations which comes from eZ Platform can be cached using Stash. If there is no translation for the given message (or code) in eZ Platform, it will be cached anyway using special "null" translation message. It allows to avoid repeating fetches from eZ Platform.
-- Translations which comes from Symfony are not cached.
+Translations from Symfony are not cached.
 
-#### Purging of cache
+#### Cache purging
 
-When `st_translate()` is used in twig templates the cache will be tagged with content-\<content-id\>. In case a text module is updated in eZ Platform eZ will purge all http cache blocks which are tagged with the given content\_id. In addition a signalslot handler will purge the stash cache for this translation as well.
+When `st_translate()` is used in Twig templates, the cache is tagged with `content-<content-id>`.
+If a text module is updated, eZ Platform purges all HTTP cache blocks which are tagged with the given `content_id`.
+In addition a SignalSlot handler purges the Stash cache for this translation as well.

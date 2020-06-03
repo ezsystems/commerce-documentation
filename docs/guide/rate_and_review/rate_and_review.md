@@ -1,46 +1,36 @@
-# Rate and Review
+# Rate and review
 
-## Description
+Rate and review is a component that assigns a star rating (1 to 5 stars), a review or a comment to eZ Commerce products.
 
-Rate and review is a component that assigns a rate of stars (1 to 5), a review or a comment to eZ Commerce products.
+#### Customer reviews tab
 
-### Frontend
-
-From the frontend perspective the following things are set:
-
-#### A new tab called Customer reviews will appears in every product detail page and the logged user is able to create a review.
+A new tab called **Customer reviews** appears in every product detail page and the logged-in user can create reviews.
 
 ![](../img/rate_and_review_1.png)
 
-#### The tab has a summary part with the total count of reviews and a percentage for every rate.
+The tab has a summary part with the total number of reviews and a percentage for every rating.
 
 ![](../img/rate_and_review_2.png)
 
-#### A text field and a star selector to allow the user to enter the rate and review.
+A text field and stars enable the user to enter the rating and review.
 
 ![](../img/rate_and_review_3.png)
 
-#### A list of reviews
+![](../img/rate_and_review_4.png "A list of reviews")
 
-![](../img/rate_and_review_4.png)
+### Back Office
 
-### Backend
-
-In eZ Commerce backend there is a simple module that manages user rates and reviews.
+You can manage rating and review from the Back Office:
 
 ![](../img/rate_and_review_5.png)
 
 ## Technical description
 
-!!! note
+Rate and review uses the [FOSCommentBundle](https://github.com/FriendsOfSymfony/FOSCommentBundle) for handling comments.
 
-    Rate and review uses a bundle called FOS/Comment
+Every user review is stored in the Comment table.
 
-    https://github.com/FriendsOfSymfony/FOSCommentBundle
-
-Every user review is stored in table **Comment**
-
-The link to the product is the field `thread_id`, in which the product SKU is stored.
+The `thread_id` field stores the product SKU.
 
 Field state represents the following states:
 
@@ -51,27 +41,20 @@ const STATE_SPAM = 2;
 const STATE_PENDING = 3;
 ```
 
-State 3 means the comment is hidden
+Currently states 0 (visible) and 3 (hidden or pending) are supported.
+Comments with state 3 are not taken into consideration.
 
-Currently we only support states 0 (visible) and 3 (hidden or pending).
+The star rating is stored in the `rating` field. The numbers range from 1 to 5 and represent the number of stars.
 
-**Comments with state 3 are not taken into consideration.**
+### Controllers and services
 
-The star rating is stored in field **rating**. The numbers go from 1 to 5 and represent the amount of starts.
+The original controller from `FOSCommentBundle` is overridden by `SilverEshopThreadController`.
 
-### Controllers and services involved
-
-Original FOS controller was overriden by the following controller:
-
-**SilverEshopThreadController**
-
-Additional logic for manager and some customised features can be found in the following service:
-
-**RateReviewService (ID: `siso_core.rate_review_service`)**
+`RateReviewService` (service ID: `siso_core.rate_review_service`) contains additional logic and some customized features.
 
 ### Routing
 
-FOS Comment bundle uses a rest controller. The following routing entry was added to eZ Platform routing yaml:
+`FOSCommentBundle` uses a REST controller. The following routing entry is added to `routing.yaml`:
 
 ``` yaml
 fos_comment_api:
@@ -81,27 +64,18 @@ fos_comment_api:
     defaults: { _format: html }
 ```
 
-!!! note
-
-    Since this is using rest, the loading of current reviews might not be immediately visible after the product is loaded.
+Because the bundle uses REST, the loading of current reviews might not be immediately visible after the product is loaded.
 
 ### Templates
 
-Product detail template was modified. A new tab was added with the rate and reviews.
+The `EshopBundle/Resources/views/Catalog/product.html.twig` template adds a new tab with ratings and comments to product view.
 
-`vendor/silversolutions/silver.e-shop/src/Silversolutions/Bundle/EshopBundle/Resources/views/Catalog/product.html.twig`
-
-Please note that this will be visible only if rate and review is enabled in configuration.
+It is only visible if rate and review is enabled in configuration.
 
 ### Configuration
 
-Currently only `reviews_enable` configuration is active.
+To enable the rate and review function, set `reviews_enabled` to `true`:
 
-Only registered users can create rate and reviews. Logic to allow anonymous reviews is not yet implemented.
-
-``` 
-siso_core.default.reviews_enabled: %reviews_enabled%
-siso_core.default.reviews_allow_anonymous: %reviews_allow_anonymous%
-siso_core.default.reviews_email_required: %reviews_email_required%
-siso_core.default.reviews_comment_required: %reviews_comment_required%
+``` yaml
+siso_core.default.reviews_enabled: true
 ```

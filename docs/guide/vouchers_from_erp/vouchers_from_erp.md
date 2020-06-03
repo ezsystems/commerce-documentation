@@ -1,51 +1,25 @@
 # Vouchers from ERP
 
-## Introduction
+eZ Commerce supports vouchers that are managed in ERP. The customer can enter a voucher number in the basket.
+Then the voucher is sent to the ERP and, if valid, the customer gets a discount.
 
-Vouchers in eZ Commerce can be managed in:
-
-- ERP
-- Shop Admin Interface - CMS
-
-eZ Commerce supports vouchers that are managed in ERP. The user knows the voucher number and can enter it in the basket. Then the voucher is send to the ERP and if valid, user gets a discount.
-
-## Before you start 
-
-Please keep in mind that Vouchers is really connected with a lot of different modules in your shop. Be sure to check these out:
-
-- [ERP](../erp_integration/erp_communication/erp_communication.md)
-- [Basket](../../guide/basket/basket.md)
-- [PriceEngine](../../guide/price_engine/price_engine.md)
-- [Checkout](../../guide/checkout/checkout.md)
-
-## Templating
-
-The Vouchers is using a list of templates which can be overridden if required. 
-
-[Read more...](vouchers_templates.md)
-
-## API
-
-### Configuration
+## Configuration
 
 ``` yaml
 twig:
-  globals:
-    # if false vouchers should not be active in the project
-    # - then user can not enter the voucher number in the basket
-    voucher_active: true
+    globals:
+        # if false, vouchers are not active in the project
+        voucher_active: true
 
 parameters:
-    # if true the vocher will be send to ERP as additional line with negative quantity
-    # otherwise it will be send just in the header
+    # if true the voucher is sent to ERP as additional line with negative quantity
+    # otherwise it is sent in the header
     siso_voucher.default.send_vouchers_as_lines: true
 ```
 
-### VoucherManager
+## VoucherManager
 
-`Siso/Bundle/VoucherBundle/Service/VoucherManager.php`
-
-This service manages general voucher processes, like redeeming or removing of the voucher.
+The `Siso/Bundle/VoucherBundle/Service/VoucherManager.php` service manages general voucher processes, like redeeming or removing the voucher.
 
 ``` php
 $voucherNumber = '123456789';

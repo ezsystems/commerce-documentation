@@ -1,12 +1,13 @@
-# Vouchers - FAQ
+# Voucher FAQ
 
-Q: How the voucher data is send to ERP?
+## How is voucher data sent to ERP?
 
-A: Voucher data will be sent to ERP in the **PriceRequest** and **CreateOrderRequest**.
+Voucher data is sent to ERP in `PriceRequest` and `CreateOrderRequest`.
 
-If enabled in the [configuration](vouchers_api.md), also additional line with negative quantity will be sent. NAV must response with negative cost.
+If enabled in the [configuration](vouchers_from_erp.md#configuration), an additional line with negative quantity is also sent.
+The ERP must respond with negative cost.
 
-#### Data send in the header
+### Data sent in the header
 
 ``` xml
 //Data sent in the header, in SesExtension:
@@ -35,17 +36,10 @@ If enabled in the [configuration](vouchers_api.md), also additional line with ne
 </OrderLine>
 ```
 
-Q: What happens if voucher is invalid?
+## What happens if a voucher is invalid?
 
-A: ERP can send a message that the voucher is invalid. In that case this message will be displayed in the basket. The message must be mapped into Response like this:
-
-``` xml
-<SesExtension>
-    <ErpMessage>008</ErpMessage>
-</SesExtension>
-```
-
-In addition in the OrderLine (Response) the LineType and CostType has to be set:
+The ERP can send a message that the voucher is invalid. In that case this message is displayed in the basket.
+The message must be mapped into a response like this:
 
 ``` xml
 <SesExtension>
@@ -53,12 +47,20 @@ In addition in the OrderLine (Response) the LineType and CostType has to be set:
 </SesExtension>
 ```
 
-Q: Does the price engine has access to a voucher code?
+In addition the `LineType` and `CostType` have to be set in `OrderLine` (response):
 
-A: The priceRequest contains the voucher code:
+``` xml
+<SesExtension>
+    <ErpMessage>008</ErpMessage>
+</SesExtension>
+```
+
+## Does the price engine have access to a voucher code?
+
+The price request contains the voucher code:
 
 ![](../img/vouchers_faq.png)
 
-Important:
-
-A use can provide one or more vouchers during checkout. The extendedData structure provides simple data structures only. This is why the field name contains the voucher number as well (here voucher\_200).
+The customer can provide one or more vouchers during checkout.
+The `extendedData` structure provides simple data structures only.
+This is why the field name contains the voucher number as well (here `voucher_200`).

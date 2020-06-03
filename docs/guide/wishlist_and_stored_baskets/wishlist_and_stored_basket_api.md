@@ -1,12 +1,16 @@
-# Wishlist and Stored Basket API
+# Wishlist and stored basket API
 
 ## Basket type
 
-Wishlist and Stored Baskets are Baskets with a special type `wishlist` and `storedBasket`. 
+Wishlists and stored baskets are baskets with a special type `wishlist` or `storedBasket`. 
 
-When adding items no Events are thrown, therefore from the performance perspective it is quicker than adding items into basket. However, there is no data validation in the background, so it is allowed to mix different products. So the data validation, like checking the minimum order amount or checking the mixing of downloads with normal products, is done when adding those items into cart.
+When adding items no events are thrown, so adding to wishlists or stored baskets is quicker than adding items to a basket.
+However, there is no data validation in the background, so you can mix different products.
 
-For wishlist and stored baskets only one template is used. The attributes that are shown can be handled via basket type.
+Data validation, such as checking the minimum order amount or checking the mixing of downloads with normal products,
+is done when adding those items into a cart.
+
+One template is used for both wishlists and stored baskets. The attributes that are shown can be handled through the basket type:
 
 ``` php
 const TYPE_STORED_BASKET = 'storedBasket';

@@ -1,36 +1,20 @@
-# Wishlist and Stored Baskets
+# Wishlist and stored baskets
 
-## Introduction
+The customer can save their favorite products in a list and easily access them or add them to the cart.
 
-eZ Commerce offers feature to save your favorite products in a list, so the customer can easily access them or add them to his cart. There are 2 options for storing: 
+Two different types of lists are available:
 
-- **Wishlist** 
-- custom named lists called **Stored Basket**.
+- [wishlists](wishlist_and_stored_basket_wishlist.md)
+- [stored baskets](wishlist_and_stored_basket_stored_baskets.md) - custom named lists
 
-This feature is available only for the customers that have an account in eZ Commerce and are logged in.
+This feature is available only for logged-in customers.
 
-The difference between Wishlist and Stored Basket is that there is only one wishlist per user, but there can be many stored baskets with different names for one user. 
+The difference between a wishlist and a stored basket is that there is only one wishlist per user,
+but there can be many stored baskets with different names for one user. 
 
-Comparison table: 
+A stored basket can also contain quantity of products and prices.
 
-| Feature                | Wishlist    | Stored basket |
-| ---------------------- | ------- | ------- |
-| More than one list     | NO | YES           |
-| Add products to basket | YES  | YES           |
-| Store the quantity     | NO | YES           |
-| Give list a name       | NO | YES           |
-| Show prices            | NO | YES           |
-
-The wishlist and stored basket function is based on the basket system of eZ Commerce. 
-
-## Before you start 
-
-Please keep in mind that Wishlist/Stored Baskets is really connected with different modules in our shop. Be sure to check these out:
-
-- [Basket](../basket/basket.md)
-- [BasketService](../basket/basket_api/basketservice.md)
-
-The stored basket feature can be deactivated in a config file:
+The stored basket feature can be deactivated in configuration:
 
 ``` yaml
 twig:

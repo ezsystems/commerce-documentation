@@ -1,37 +1,32 @@
-# Delegate Function
+# Delegate function
 
-## Introduction
+You can delegate you operations in the shop to another user.
+This user can then take over as if they had a different customer number.
 
-The goal of the delegate function is that a special user can delegate to another user, means that he can handle in the shop as he would be a different user with a different customer number.
+The user must have the `siso_policy/delegate` Policy which gives them access to special delegate functions.
+They can access these functions in the site header.
+On the delegate page the user can enter a customer number of a known customer and click **Delegate**.
 
-## Details
+User data for the provided customer number is then fetched from ERP. 
+If the customer number is valid the number is assigned to the current user.
+The delegate user then takes over as a different customer with a different customer number
+and can even create an order with the given customer number.
+They only get the ERP profile data from the different customer, but not other things, such as the basket.
+The user always uses their own basket.
 
-User who has a special policy in the backend have this function 'delegate'. He can enter this function via his shop functions in the header. On the delegate page user can enter a customer number of a known customer and click on delegate.
+The user stays in the delegate role until they click **Undelegate**.
 
-Then in the background the user data with the given customer number from ERP will be fetched. If customer number is valid the customer number will be assigned to the current user. So the user handles as a different customer with a different customer number and can even create an order with the given customer number. But he will only get the ERP profile data from the different customer, not other things, like e.g. basket. He will always keep his basket.
+## Configuration
 
-The user stays as long in this delegated role, as he clicks on the function 'undelegate'.
-
-### Delegate Roles and Policies in BackEnd
-
-- New policy for delegate should be created in the backend "Delegate [Role]"
-  - Module: `siso_policy`
-  - Function: delegate
-  - Limitation: No limitations
-- Add this role to the delegate users the new role. Another option is to create an user group "Delegate" and add to it the roles: "Anonymous", "Member", "Delegate"
-
-### Configuration
-
-The delegate function is disabled by default. The configuration has to be changed
+The delegate function is disabled by default. To enable it, use the following configuration:
 
 ``` yaml
-silver_eshop.default.enable_delegate: false    
+silver_eshop.default.enable_delegate: true    
 ```
 
 ??? note "EshopBundle/Resources/config/ses_routing.yml"
 
     ``` yaml
-    # Delegate function
     silversolutions_delegate:
      path: /delegate
         defaults: { _controller: SilversolutionsEshopBundle:DelegateCustomer:delegate }
@@ -39,24 +34,24 @@ silver_eshop.default.enable_delegate: false
     silversolutions_undelegate:
      path: /undelegate
         defaults: { _controller: SilversolutionsEshopBundle:DelegateCustomer:undelegate }
-
     ```
 
-### Delegate and undelegate Logic
+### Delegation logic
 
-We offer just an input field, where user can enter a customer number directly and then directly call the delegate function.
+When a user enters a customer number in the **Delegate** screen, the delegate function is called directly.
 
-If no user is found with this customer number, an error message is display.
+If no user is found with provided customer number, an error message is displayed.
 
-If the delegate is successful we display the new user data. In the top right corner in the header we see a new customer number.
+If the delegation is successful, new user data is displayed.
+In the top right corner in the header you can see the new customer number.
 
-Function "Undelegate" is also offer in the shop functions, so the user can return to his own profile.
+The user can return to their own profile by clicking the **Undelegate** button.
 
 Delegate:
 
 ![](img/delegate.png)
 
-Delegate successful
+Successful delegation:
 
 ![](img/delegate_successful.png)
 
@@ -64,64 +59,17 @@ Undelegate:
 
 ![](img/undelegate.png)
 
-Access to the Delegate from the Menu:
+Access the delegation from the menu:
 
 ![](img/delegate_access_from_menu.png)
 
 ### Routing / Controller (New actions) and logic
 
-There is a new controller for the ***delegate*** and ***undelegate*** actions:
+The `EshopBundle/Controller/DelegateCustomerController.php` controller handles delegating and undelegating actions.
 
-??? note "EshopBundle/Controller/DelegateCustomerController.php"
-
-    ``` php
-    /**
-     * The goal of the delegate function is that a special user can delegate to another user,
-     * this means that he can handle in the shop as he would be a different user with a different customer number.
-     *
-     * The users with this possibility have a special policy in the backend with this function 'delegate'.
-     *
-     * Class DelegateCustomerController
-     */
-    class DelegateCustomerController extends BaseController
-    {
-        /**
-         * On the delegate page user can enter a customer number of a known customer and click on delegate.
-         * Then in the background we
-         *  1- Fetch the user data with the given customer number from ERP
-         *  2- Assign the fetch "user data" to the "current user".
-         *
-         * So the "current user" handles as a different customer with a different customer number
-         * and can even create an order with the given customer number.
-         *
-         * But he will only get the ERP profile data from the different customer,
-         * not other things, like e.g. basket. He will always keep his basket.
-         *
-         * @param Request $request
-         * @return Response
-         *
-         */
-        public function delegateAction(Request $request)
-        {
-            ...
-        }
-        /**
-         * Undelegate function
-         *
-         * @return Response
-         *
-         */
-        public function undelegateAction()
-        {
-            ...
-        }
-    }
-    ```
-
-EshopBundle/Resources/config/ses_routing.yml:
+The function adds two routes:
 
 ``` yaml
-# Delegate function
 silversolutions_delegate:
     path:  /delegate
     defaults: { _controller: SilversolutionsEshopBundle:DelegateCustomer:delegate }
@@ -131,32 +79,10 @@ silversolutions_undelegate:
     defaults: { _controller: SilversolutionsEshopBundle:DelegateCustomer:undelegate }
 ```
 
-Delegate function is not always allow, is that why there is also a method that returns true or false if the use is allow to delegate in another one:
+Delegating is not always allowed, you can use the `DelegateCustomerController::isDelegateAllowed` method to check that.
+The method returns true if delegation is allowed.
 
-??? note "EshopBundle/Controller/DelegateCustomerController.php"
-
-    ``` php
-    /**
-     * Returns true if the delegate function is enabled and user has the delegate role
-     *
-     * @return bool
-     *
-     */
-    protected function isDelegateAllowed()
-    {
-        /** @var \eZ\Publish\Core\MVC\ConfigResolverInterface $configResolver */
-        $configResolver = $this->get('ezpublish.config.resolver');
-        $enableDelegate = $configResolver->getParameter('enable_delegate', 'silver_eshop');
-
-        if ($enableDelegate && $this->isGranted(new AuthorizationAttribute('siso_policy', 'delegate'))){
-            return true;
-        } else {
-            return false;
-        }
-    }
-    ```
-
-## New form and entity
+## Form and entity
 
 ??? note "src/Silversolutions/Bundle/EshopBundle/Controller/DelegateCustomerController.php"
 
@@ -186,7 +112,7 @@ Delegate function is not always allow, is that why there is also a method that r
     }
     ```
 
-For the form implementation is required to have a new entity
+For the form implementation you must have a new entity:
 
 ??? note "EshopBundle/Entity/Delegate.php"
 
@@ -224,11 +150,11 @@ For the form implementation is required to have a new entity
     }
     ```
 
-There are also two new templates to show the delegate forms and information
+There are also two new templates to show the delegate forms and information.
 
 ## Customer profile data
 
-The information if the user is delegate or not is stored in the customer profile data. For that the class that defines de customer profile data is changed.
+The information whether the user is a delegate or not is stored in the customer profile data.
 
 ??? note "EshopBundle/Model/CustomerProfileData/CustomerProfileData.php"
 
@@ -246,39 +172,5 @@ The information if the user is delegate or not is stored in the customer profile
         $delegated = $dataMap->getAttribute('delegated');
 
         return (bool) $delegated;
-    }
-    ```
-
-And also the data of the DataProcessor is adapted to the new implementation.
-
-??? note "EshopBundle/Services/Forms/DataProcessor/UpdateCustomerProfileDataProcessor.php"
-
-    ``` 
-    /**
-     * @param NormalizedEntity $formEntity
-     * @param array|null $lastResult
-     * @param Response $response
-     * @return mixed|null
-     * @throws \Silversolutions\Bundle\EshopBundle\Exceptions\FormDataProcessorException
-     */
-    public function execute(NormalizedEntity $formEntity, $lastResult = null, Response $response = null)
-    {
-        $customerProfileData = $this->customerProfileDataService->getCustomerProfileData();
-
-        //only call the fetch method if user is not in the delegate mode
-        if ($customerProfileData->isDelegated()) {
-            $this->customerProfileDataService->updateRemoteDataForDelegateUser(
-                $customerProfileData->sesUser->customerNumber,
-                $customerProfileData,
-                true
-            );
-        } else {
-            $customerProfileData->sesUser->setLastErpUpdate(null);
-            $this->customerProfileDataService->fetchProfileData();
-        }
-
-        $lastResult[self::SUCCESSFUL_LAST_RESULT_KEY] = true;
-
-        return $lastResult;
     }
     ```
