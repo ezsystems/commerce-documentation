@@ -493,17 +493,16 @@ nav:
                 - 'Search Solr schema configuration': 'guide/search/search_configuration/solr_schema_configuration.md'
         - Templating:
             - 'Templating': 'guide/templating/templating.md'
-            - Templates for the shop:
-                - 'Templates for the shop': 'guide/templating/templates_for_the_shop/templates_for_the_shop.md'
+            - Shop templates:
                 - 'Reusable address template': 'guide/templating/templates_for_the_shop/reusable_address_template.md'
                 - 'Reusable message template': 'guide/templating/templates_for_the_shop/reusable_message_template.md'
             - 'Template resolver': 'guide/templating/template_resolver.md'
             - Twig extension:
                 - 'Twig extension': 'guide/templating/twig_extension/twig_extension.md'
-                - 'st_tag - selector tagging for Behat and Google Tag manager': 'guide/templating/twig_extension/st_tag_selector_tagging_for_behat_and_google_tag_manager.md'
-            - ezdesign engine:
-                - 'eZ Design Engine': 'guide/templating/ezdesign_engine/ez_design_engine.md'
-                - 'Set up new project design': 'guide/templating/ezdesign_engine/set_up_new_project_design.md'
+                - 'st_tag selector': 'guide/templating/twig_extension/st_tag_selector.md'
+            - Design engine:
+                - 'Design engine': 'guide/templating/design_engine/design_engine.md'
+                - 'Setting up new project design': 'guide/templating/design_engine/set_up_new_project_design.md'
         - Translations:
             - 'Translations': 'guide/translations/translations.md'
             - 'OneSky': 'guide/translations/onesky.md'

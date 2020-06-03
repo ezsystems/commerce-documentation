@@ -1,16 +1,10 @@
 # Template resolver
 
-## General
+Template resolver enables overriding templates.
+It is an alternative to the [Symfony override functionality](http://symfony.com/doc/current/book/templating.html#overriding-bundle-templates).
 
-Template resolver allows to **override** templates, e.g. to override e-shop templates in project bundles. It is another way how to override templates beside the default Symfony overriding functionality (<http://symfony.com/doc/current/book/templating.html#overriding-bundle-templates>).
-
-Moreover, a web-site redesign is an another case when template resolver could come useful.
-
-!!! note
-
-    The idea behind the template resolver came from old eZ Publish 4 times, when it was possible to override any template using [design combinations](https://doc.ez.no/eZ-Publish/Technical-manual/5.x/Concepts-and-basics/Designs/Design-combinations).
-
-Template resolver sequentially goes through all configured bundles and designs (if specified), looking for the requested template. At last, if the requested template still hasn't been found, template resolver takes this template or default one if the requested template doesn't exist.
+The template resolver goes through all configured bundles and designs (if specified), looking for the requested template.
+If it can't find the requested template, the template resolver takes this template or default one if the requested template doesn't exist.
 
 An override is activated by a template resolver configuration. You can configure:
 
@@ -18,15 +12,14 @@ An override is activated by a template resolver configuration. You can configure
 - list of designs (folders with templates)
 - default template
 
-## How to configure and use template resolver
+## Overriding templates
 
-### Example 1: how to override templates
+In this example you have a project with a bundle `src/Client/Bundle/WebsiteBundle`, a SiteAccess `website_de_de`
+and you want to override eZ Commerce bundle templates.
 
-Let's say you have a project with a bundle src/Client/Bundle/WebsiteBundle, a site access `website_de_de` and you want to override  eZ Commerce bundle templates.
+### Step 1. Change `config_{env}.yml` or `parameters.yml`
 
-#### Step 1. Change your `config_{env}.yml` or `parameters.yml`
-
-Template resolver is deactivated in the default configuration and has to be activated.
+The template resolver is disabled in the default configuration and has to be enabled:
 
 ``` yaml
 parameters:
@@ -39,34 +32,33 @@ parameters:
 
 !!! note
 
-    Template resolver uses dynamic configuration of [eZ Publish config resolver](https://doc.ez.no/display/EZP/Configuration#Configuration-DynamicconfigurationwiththeConfigResolver).
+    The template resolver uses dynamic configuration of [the ConfigResolver](https://doc.ezplatform.com/en/2.5/guide/config_dynamic/#configresolver).
 
-    If you want to have one configuration for all site accesses, change site access name to "default". E.g.:
+    If you want to have one configuration for all SiteAccesses, use the `default` scope:
 
-    ``` 
+    ``` yaml
     siso_tools.default.template_resolver.enabled: false
     ```
 
-#### Step 2. Create new templates in ClientWebsiteBundle
+### Step 2. Create new templates
 
-In order to override templates you have to reflect a structure of eZ Commerce vendor bundles, e.g.:  
+To override templates, you have to reflect the structure of eZ Commerce vendor bundles, e.g.:  
 
 |                   |     |
 | ----------------- | --- |
-| Original template | /vendor/silversolutions/silver.e-shop/src/Silversolutions/Bundle/EshopBundle/Resources/views/Catalog/catalog.html.twig |
-|      New template | /src/Client/Bundle/WebsiteBundle/Resources/views/Catalog/catalog.html.twig  |
+| Original template | `vendor/silversolutions/silver.e-shop/src/Silversolutions/Bundle/EshopBundle/Resources/views/Catalog/catalog.html.twig` |
+|      New template | `/src/Client/Bundle/WebsiteBundle/Resources/views/Catalog/catalog.html.twig`  |
 
 In this example the template from `ClientWebsiteBundle` overrides `catalog.html.twig` from `SilversolutionsEshopBundle`.
 
-Next, you can create more and more templates using the folder structure of eZ Commerce bundle.
+## Overriding templates using designs
 
-### Example 2: how to override templates using designs
+Design is an additional folder in your `Resources/views`.
+Templates in the design folder have to reflect the structure of the bundle or bundles that you want to override.
 
-Design is just an additional folder in your `Resources/views`. Templates in the design folder have to reflect a structure of the bundle or bundles that you want to override.
+In this example you prepare templates for a website redesign with a provisional name `redesign2020`.
 
-Assume that you are preparing templates for a website redesign with a provisional name `redesign2015`.
-
-#### Step 1. Change your `config_{env}.yml` or `parameters.yml`
+### Step 1. Change `config_{env}.yml` or `parameters.yml`
 
 ``` yaml
 parameters:
@@ -74,38 +66,38 @@ parameters:
     siso_tools.website_de_de.template_resolver.bundles: [ClientWebsiteBundle]
  
     # Define design name
-    siso_tools.website_de_de.template_resolver.designs: [redesign2015]
+    siso_tools.website_de_de.template_resolver.designs: [redesign2020]
 ```
 
-#### Step 2. Create new templates in ClientWebsiteBundle in the design folder
+### Step 2. Create new templates in the design folder
 
-Create new folder Resources/views/designs/redesign2015 in your bundle and put new templates there:
+Create new folder `Resources/views/designs/redesign2020` in your bundle and put new templates there:
 
 |                   |        |
 | ----------------- | ------ |
-| Original template | /vendor/silversolutions/silver.e-shop/src/Silversolutions/Bundle/EshopBundle/Resources/views/Catalog/catalog.html.twig  |
-|      New template | /src/Client/Bundle/WebsiteBundle/Resources/views/designs/redesign2015/Catalog/catalog.html.twig |
+| Original template | `vendor/silversolutions/silver.e-shop/src/Silversolutions/Bundle/EshopBundle/Resources/views/Catalog/catalog.html.twig`  |
+|      New template | `src/Client/Bundle/WebsiteBundle/Resources/views/designs/redesign2020/Catalog/catalog.html.twig` |
 
-In this example the template from the desing `redesign2015` in the `ClientWebsiteBundle` overrides `catalog.html.twig` from `SilversolutionsEshopBundle`.
+In this example the template from the design `redesign2020` in the `ClientWebsiteBundle` overrides `catalog.html.twig` from `SilversolutionsEshopBundle`.
 
 Templates in design folders always have precedence over other templates.
 
-If you have both `redesign2015/Catalog/catalog.html.twig` and `Catalog/catalog.html.twig`, the first one will win.
+If you have both `redesign2020/Catalog/catalog.html.twig` and `Catalog/catalog.html.twig`, the first one is used.
 
 ## Configuration
 
 | Parameter    | Type    | Description       | Default      | Example        |
 | ------------ | ------- | ----------------- | ------------ | -------------- |
-| `siso_tools.<scope>.template_resolver.enabled`  | bool (true|false) | Enable or disable template resolver   | true       | true   |
+| `siso_tools.<scope>.template_resolver.enabled`  | bool (`true`\|`false`) | Enable or disable template resolver   | `true`       | `true`   |
 | `siso_tools.<scope>.template_resolver.bundles`    | array   | List of bundle names  | `[ ]` (all bundles)  | `[Bundle1, Bundle2, Bundle3]`   |
 | `siso_tools.<scope>.template_resolver.designs`  | array   | List of bundle names   | `[ ]` (none)  | `[Design1, Design2]`    |
 | `siso_tools.<scope>.template_resolver.default_template` | string  | Default template to return if nothing is found | `SisoToolsBundle:TemplateResolver:default.html.twig` | `SisoToolsBundle:TemplateResolver:default.html.twig` |
 
-## How to develop with TemplateResolver
+## Developing with the template resolver
 
-### Using in templates
+### Use in templates
 
-To make a template overridable, you have to use a template filter st_resolve_template with its name.
+To make a template overridable, use the template filter `st_resolve_template` with its name.
 
 ``` html+twig
 {% extends "SilversolutionsEshopBundle::pagelayout.html.twig"|st_resolve_template %}
@@ -115,15 +107,19 @@ To make a template overridable, you have to use a template filter st_resolve_tem
 
 !!! note 
 
-    It is not possible to include blocks with "[use](http://twig.sensiolabs.org/doc/tags/use.html)" tag because of specific implementation of this tag.
+    You cannot include blocks with the [`use`](http://twig.sensiolabs.org/doc/tags/use.html) tag
+    because of specific implementation of this tag.
 
-    Because `use` statements are resolved independently of the context passed to the template, the template reference cannot be an expression.
+    Because `use` statements are resolved independently of the context passed to the template,
+    the template reference cannot be an expression.
 
-### Using in PHP code
+### Use in PHP code
 
-#### Using in controllers
+#### Use in controllers
 
-To make using of TemplateResolver in controllers easier, you can inherit your controller from `Silversolutions\Bundle\EshopBundle\Controller\BaseController`. In this case `render` and `renderView` method will get rendered template using `TemplateResolver`, i.e. overriden template.
+To make using of the template resolver in controllers easier, you can inherit the controller from
+`Silversolutions\Bundle\EshopBundle\Controller\BaseController`.
+In this case the `render` and `renderView` methods get rendered with a template using `TemplateResolver`, i.e. overridden template.
 
 ``` php
 use Silversolutions\Bundle\EshopBundle\Controller\BaseController;
@@ -135,44 +131,47 @@ class ExampleController extends BaseController
         return $this->render(
             'SilversolutionsEshopBundle:Basket:show.html.twig',
             array(
-                'param' => 'taram'
+                'param' => 'example_param'
             )
         );
     }
 }
 ```
 
-#### General using
+#### General usage
 
-Alternatively, you can inject TemplateResolver in your service (or take it from container) and resolve template there
+Alternatively, you can inject the template resolver in your service (or take it from container) and resolve the template there:
 
 ``` php
 /** @var TemplateResolverServiceInterface $templateResolverService */
 $templateResolverService = $this->get('siso_tools.template_resolver');
 
-$resolvedTemplate = $templateResolverService->resolve('YourBundle:redesign2015/Catalog/catalog.html.twig');
+$resolvedTemplate = $templateResolverService->resolve('YourBundle:redesign2020/Catalog/catalog.html.twig');
 ```
 
 ## Debugging
 
-You can information about TemplateResolver configuration and overridden templates in the SilverSolutions tab of symfony web provider.
+You can information about the template resolver configuration and overridden templates in the SilverSolutions tab of the Symfony debug toolbar:
 
 ![](../img/search_19.png)
 
-Example:
+For example:
 
 ![](../img/search_20.png)
 
 ## Limitations
 
-- `pagelayout.html.twig` can not be resolved via template resolver
-- it is not possible to override templates included with the twig use operator.
-- it is not possible to use the template resolver in the configuration, therefore for overriding standard templates for e.g. full eZ template or templates defined for eZ flow, you need to override the configuration  
+Using the template resolver has the following limitations:
+
+- `pagelayout.html.twig` can not be resolved by the template resolver
+- it is not possible to override templates included with the Twig `use` operator.
+- it is not possible to use the template resolver in the configuration,
+so for overriding standard templates, for example full eZ templates, you need to override the configuration:
 
 ``` yaml
 ezpublish:
     system:
-        %siteaccess_group%:
+        <scope>:
             location_view:
                 full:
                     silverModuleRuleset:
