@@ -426,18 +426,11 @@ nav:
         - Price engine:
             - 'Price engine': 'guide/price_engine/price_engine.md'
             - Price engine API:
-                - Data model for prices:
-                    - 'Price': 'guide/price_engine/price_engine_api/data_model_for_prices/price.md'
+                - 'Data model for prices': 'guide/price_engine/price_engine_api/data_model_for_prices.md'
                 - Price engine services:
-                    - PriceFactoryInterface:
-                        - 'PriceFactoryInterface': 'guide/price_engine/price_engine_api/price_engine_services/pricefactoryinterface/pricefactoryinterface.md'
-                        - 'StandardPriceFactory': 'guide/price_engine/price_engine_api/price_engine_services/pricefactoryinterface/standardpricefactory.md'
-                    - ScaledPriceServiceInterface:
-                        - 'ScaledPriceServiceInterface': 'guide/price_engine/price_engine_api/price_engine_services/scaledpriceserviceinterface/scaledpriceserviceinterface.md'
-                        - 'Ez5ScaledPriceService': 'guide/price_engine/price_engine_api/price_engine_services/scaledpriceserviceinterface/ez5scaledpriceservice.md'
-                    - VATServiceInterface:
-                        - 'LocalVatService': 'guide/price_engine/price_engine_api/price_engine_services/vatserviceinterface/vatserviceinterface.md'
-                        - 'VatServiceInterface': 'guide/price_engine/price_engine_api/price_engine_services/vatserviceinterface/localvatservice.md'
+                    - 'StandardPriceFactory': 'guide/price_engine/price_engine_api/price_engine_services/standardpricefactory.md'
+                    - 'Ez5ScaledPriceService': 'guide/price_engine/price_engine_api/price_engine_services/ez5scaledpriceservice.md'
+                    - 'LocalVatService': 'guide/price_engine/price_engine_api/price_engine_services/localvatservice.md'
                     - Chainpriceservice:
                         - 'ChainPriceService': 'guide/price_engine/price_engine_api/price_engine_services/chainpriceservice/chainpriceservice.md'
                         - Price providers:
@@ -448,8 +441,8 @@ nav:
                 - 'Price engine constants': 'guide/price_engine/price_engine_api/price_engine_constants.md'
             - Price engine cookbook:
                 - 'Price engine cookbook': 'guide/price_engine/price_engine_cookbook/price_engine_cookbook.md'
-                - 'How to implement new price provider': 'guide/price_engine/price_engine_cookbook/recipe_how_to_implement_new_price_provider.md'
-                - 'How to work with PriceRequest and PriceResponse': 'guide/price_engine/price_engine_cookbook/recipe_how_to_work_with_pricerequest_and_priceresponse.md'
+                - 'Implementing new price provider': 'guide/price_engine/price_engine_cookbook/recipe_how_to_implement_new_price_provider.md'
+                - 'Working with PriceRequest and PriceResponse': 'guide/price_engine/price_engine_cookbook/recipe_how_to_work_with_pricerequest_and_priceresponse.md'
             - Price engine templates:
                 - 'Price engine templates': 'guide/price_engine/price_engine_templates/price_engine_templates.md'
                 - 'Rendering for prices': 'guide/price_engine/price_engine_templates/rendering_for_prices.md'

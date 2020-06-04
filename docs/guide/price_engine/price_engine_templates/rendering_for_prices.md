@@ -1,51 +1,54 @@
 # Rendering for prices
 
-## Render PriceField
+## Rendering PriceField
 
-To render the `customerPrice` (instance of `PriceField`) of the `ProductNode`, you might use the Twig function `ses_render_field()` within the template `MyTestBundle::product.html.twig.`
+To render the `customerPrice` (instance of `PriceField`) of the `ProductNode`,
+use the Twig function `ses_render_field()` within the template `MyTestBundle::product.html.twig.`
 
-``` 
+``` html+twig
 {{ ses_render_field(catalogElement, 'customerPrice') }}
 ```
 
-Following optional render parameters are available for a `PriceField`:
+The following optional rendering parameters are available for a `PriceField`:
 
-##### outputPrice
+### outputPrice
 
-Enables actions on the output of the price value
-
-|Parameter|Description|Default|
-|--- |--- |--- |
-|id|Optional string of ID to use for price|"" (undefined)|
-|cssClass|Optional string of CSS class(es) to use for price|"" (undefined)|
-|locale|Two digit locale code (e.g.: "en", "us", "de")|"en"|
-|currency|Three digit currency code (e.g.: EUR, GBP, USD)|price.currency|
-|property|Property of price field used for outputted value|price.price|
-|raw|Price is outputted without any HTML tags, if true|false (undefined)|
-
-##### vatLabel
-
-Enables actions on the optional VAT label
+`outputPrice` enables actions on the output of the price value
 
 |Parameter|Description|Default|
 |--- |--- |--- |
-|id|Optional string of ID to use for VAT label|"" (undefined)|
-|show|VAT label is shown, if true|false (undefined)|
-|cssClass|Optional string of CSS class(es) to use for VAT label|"" (undefined)|
-|text|Override of the outputted text|Default text depending on price.isVatPrice ("Including VAT" or "Excluding VAT")|
-|raw|VAT label is outputted without any HTML tags, if true|false (undefined)|
+|`id`|Optional string with ID to use for price|`""` (undefined)|
+|`cssClass`|Optional string with CSS class(es) to use for price|`""` (undefined)|
+|`locale`|Two-digit locale code (e.g.: "en", "us", "de")|`"en"`|
+|`currency`|Three-digit currency code (e.g.: EUR, GBP, USD)|`price.currency`|
+|`property`|Property of price field used for the output value|`price.price`|
+|`raw`|Price is output without any HTML tags, if true|`false` (undefined)|
 
-##### schema
+### vatLabel
 
-Enables to ouput schema infos
+`vatLabel` enables actions on the optional VAT label
 
-If set then a schema `itemprop="price"` will be used:
+|Parameter|Description|Default|
+|--- |--- |--- |
+|`id`|Optional string with ID to use for VAT label|`""` (undefined)|
+|`show`|VAT label is shown if `true`|`false` (undefined)|
+|`cssClass`|Optional string with CSS class(es) to use for VAT label|`""` (undefined)|
+|`text`|Override of the output text|Default text depending on `price.isVatPrice` ("Including VAT" or "Excluding VAT")|
+|`raw`|VAT label is output without any HTML tags, if `true`|`false` (undefined)|
+
+### schema
+
+`schema` enables outputting schema information.
+
+If set, schema `itemprop="price"` is used:
 
 ```
 <span itemprop="price" content="1865.00">1.865,00&nbsp;€</span>
 ```
 
-Following example would output the value of property "`priceExclVat`" (property: "`priceExclVat`") from the price field in German (locale: "`de`") standard format with enforced used of the Euro sign (currency: "`EUR`"). The CSS class "`price_med`" is set to the price `<p>` tag. Furthermore a VAT label is shown below the price (show: `true`) with defined text "`Excluding VAT`" and CSS classes "`price_info`" and "`smaller`" to the VAT `<p>` tag.
+The following example outputs the value of property `priceExclVat` from the price field in German (locale: `de`) standard format
+with enforced used of the Euro sign (currency: `EUR`). The CSS class `price_med` is added to the price `<p>` tag.
+A VAT label is shown below the price (`show: true`) with defined text `Excluding VAT` and CSS classes `price_info` and `smaller` added to the VAT `<p>` tag:
 
 ``` html+twig
 {{ ses_render_field(

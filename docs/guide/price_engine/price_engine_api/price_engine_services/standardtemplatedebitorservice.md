@@ -1,16 +1,17 @@
 # StandardTemplateDebitorService
 
-## Goal
+`StandardTemplateDebitorService` can be used when the customer doesn't have a customer or contact number yet,
+but the number is necessary when communicating data to ERP.
+An example is price calculation, when prices are calculated using ERP.
 
-This service can be used when customer doesn't have customer or contact number yet, but such a number is necessary when communicating data to ERP. An example is price calculation, when prices shall be calculated using ERP.
+The ERP system is using a concept called "template debitors".
 
-The ERP system is using a concept called Template Debitors.
+This service uses [`StandardCountryZoneService`](standardcountryzoneservice.md) to get the correct zone for the country.
+The country is determined from the given BuyerParty.
 
-This service makes usage of [StandardCountryZoneService](standardcountryzoneservice.md) to get the correct zone for the country. The country is determined from the given BuyerParty.
+Customer groups from the BuyerParty are also considered when determining the template debitor information.
 
-Also customer groups from BuyerParty are considered when determining the template debitor information.
-
-### How the customer groups are stored inside the BuyerParty
+### Storing customer groups in BuyerParty
 
 ``` xml
 <Party ses_unbounded="PartyIdentification PartyName" ses_type="ses:Contact" ses_tree="SesExtension">
@@ -25,11 +26,7 @@ Also customer groups from BuyerParty are considered when determining the templat
 
 ## Configuration
 
-Service ID:
-
-``` 
- siso_core.template_debitor.standard
-```
+Service ID: `siso_core.template_debitor.standard`
 
 Default template customer information:
 
@@ -71,9 +68,9 @@ siso_core.template_debitor.contact_numbers:
     default: KT100210
 ```
 
-# API: TemplateDebitorServiceInterface
+## TemplateDebitorServiceInterface
 
 |Method|Description|
 |--- |--- |
-|public function getTemplateCustomerNumber(</br> Party $buyerParty = null,</br> Party $invoiceParty = null,</br> Party $deliveryParty = null</br>);|This method will return template customer number depending on the given parties.</br>If no parties are provided, configuration shall be used to provide fallback template customer number.|
-|public function getTemplateContactNumber(</br> Party $buyerParty = null,</br> Party $invoiceParty = null,</br> Party $deliveryParty = null</br>);|This method will return template contact number depending on the given parties.</br>If no parties are provided, configuration shall be used to provide fallback template contact number.|
+|`public function getTemplateCustomerNumber(Party $buyerParty = null, Party $invoiceParty = null, Party $deliveryParty = null);`|This method returns the template customer number depending on the given parties. If no parties are provided, configuration is used to provide fallback template customer number.|
+|`public function getTemplateContactNumber(Party $buyerParty = null,Party $invoiceParty = null,Party $deliveryParty = null);`|This method returns template contact number depending on the given parties. If no parties are provided, configuration is be used to provide fallback template contact number.|
