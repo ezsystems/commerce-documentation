@@ -1,10 +1,6 @@
 # Use query filter in product search
 
-## Introduction
-
-Filter by a search engine field in PHP.
-
-## Example Filter by type and brand
+You can filter by a search engine field in PHP code in the following way:
 
 ``` php
 use Siso\Bundle\SearchBundle\Api\SearchContext;

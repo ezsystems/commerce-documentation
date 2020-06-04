@@ -1,6 +1,6 @@
-# How to search for products
+# Searching for products
 
-This examples is using the product search API in order to search products using a searchterm:
+This example uses the product search API to search products using `searchterm`:
 
 ``` php
  /**

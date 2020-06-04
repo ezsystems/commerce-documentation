@@ -461,29 +461,31 @@ nav:
         - Search:
             - 'Search': 'guide/search/search.md'
             - Search features:
-                - Search autosuggest:
-                    - 'Search autosuggest': 'guide/search/search_features/search_autosuggest/search_autosuggest.md'
-                    - 'Autosuggest filters': 'guide/search/search_features/search_autosuggest/autosuggest_filters.md'
+                - Autosuggestion:
+                    - 'Autosuggestion': 'guide/search/search_features/search_autosuggest/search_autosuggest.md'
+                    - 'Adding elements to autosuggestion': 'guide/search/search_features/search_autosuggest/adding_elements_to_autosuggestion.md'
                 - Search indexing:
-                    - 'Additional indexing of eZ PDF content and other file content': 'guide/search/search_features/search_indexing/additional_indexing_of_ez_pdf_content_and_other_file_content.md'
-                    - 'Additional Indexing - User Email Data from eZ': 'guide/search/search_features/search_indexing/additional_indexing_user_email_data_from_ez.md'
-                    - 'Search indexing product data from the CMS': 'guide/search/search_features/search_indexing/search_indexing_product_data_from_the_cms.md'
+                    - 'Indexing file content': 'guide/search/search_features/search_indexing/indexing_file_content.md'
+                    - 'Indexing email data': 'guide/search/search_features/search_indexing/indexing_email_data.md'
+                    - 'Indexing content model product data': 'guide/search/search_features/search_indexing/indexing_content_model_product_data.md'
                 - 'Search statistics': 'guide/search/search_features/search_statistics.md'
-            - Search API:
-                - 'Search API': 'guide/search/search_api/search_api.md'
-                - 'Important things to consider': 'guide/search/search_api/important_things_to_consider.md'
+            - 'Search API': 'guide/search/search_api.md'
             - 'Search templates': 'guide/search/search_templates.md'
             - Search cookbook:
                 - 'Search cookbook': 'guide/search/search_cookbook/search_cookbook.md'
-                - 'How to modify the search query': 'guide/search/search_cookbook/how_to_modify_the_search_query.md'
-                - 'How to search for products': 'guide/search/search_cookbook/how_to_search_for_products.md'
-                - 'How to use Solr spellcheck': 'guide/search/search_cookbook/how_to_use_solr_spellcheck.md'
+                - 'Implement custom search': 'guide/search/search_cookbook/custom_search.md'
+                - 'Implement custom search condition': 'guide/search/search_cookbook/custom_search_conditions.md'
+                - 'Implement custom sorting option for search': 'guide/search/search_cookbook/custom_sorting_options.md'
+                - 'Modifying the search query': 'guide/search/search_cookbook/modifying_the_search_query.md'
+                - 'Searching for products': 'guide/search/search_cookbook/searching_for_products.md'
+                - 'Implement an indexer plugin for custom Field Types': 'guide/search/search_cookbook/indexer_plugin_for_custom_field_types.md'
+                - 'Using Solr spellcheck': 'guide/search/search_cookbook/using_solr_spellcheck.md'
                 - 'Solr managed resources': 'guide/search/search_cookbook/solr_managed_resources.md'
                 - 'Use query filter in product search': 'guide/search/search_cookbook/use_query_filter_in_product_search.md'
             - 'Search FAQ': 'guide/search/search_faq.md'
             - Search configuration:
                 - 'Search configuration': 'guide/search/search_configuration/search_configuration.md'
-                - 'Search Solr schema configuration': 'guide/search/search_configuration/solr_schema_configuration.md'
+                - 'Solr schema configuration': 'guide/search/search_configuration/solr_schema_configuration.md'
         - Templating:
             - 'Templating': 'guide/templating/templating.md'
             - Shop templates:
