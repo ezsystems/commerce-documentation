@@ -17,7 +17,7 @@ eZ Commerce offers the following Twig functions and filter for use in templates:
 |`ses_render_stock`|`StockField $field = null,`</br>`array $params = array()`|Renders a StockField|
 |`ses_basket`|-|Gets the basket of the current user|
 |`ses_wish_list`|-|Gets the wishlist of the current user|
-|`ses_total_comparison`|-|Get total basket lines array for basket flyout|
+|`ses_total_comparison`|-|Gets total basket lines array for basket flyout|
 |`ses_check_product_in_comparison`|`$sku`</br>`$variantCode = null`|Returns true if product with the given SKU and variant code is already in the product comparison|
 |`ses_check_product_in_wish_list`|`$sku`</br>`$variantCode = null`|Returns true if product with the given SKU and variant code is already in the wishList|
 |`ses_pagination`|`Pagerfanta $pagerfanta`</br>`$viewName = null`</br>`array $options = array()`|Renders pagination|
@@ -27,7 +27,7 @@ eZ Commerce offers the following Twig functions and filter for use in templates:
 |`ses_track_product`|`ProductNode $catalogElement`</br>`$mode`</br>`array $params = array()`|Returns a list with rendered template snippets for product tracking|
 |`ses_track_base`|`array $params = array()`|Returns a list with rendered template snippets for general tracking|
 |`get_search_query`|-|Returns search query|
-|`get_siteaccess_locale`|`$siteAccessName = null`|Returns the Symfony locale that matches the given SiteAccess. if no SiteAccess name is given, the current SiteAccess is used.</br>`{% set locale = get_siteaccess_locale('ger') %}`|
+|`get_siteaccess_locale`|`$siteAccessName = null`|Returns the Symfony locale that matches the given SiteAccess. If no SiteAccess name is given, the current SiteAccess is used.</br>`{% set locale = get_siteaccess_locale('ger') %}`|
 |`get_characteristics_b2b`|`VariantProductNode $catalogElement`</br>`array $order = array()`|Returns characteristic sorted for B2B|
 |`has_user_role`|`$module`</br>`$function`|Checks if the user has a Role|
 |`get_parent_product_catalog`|`CatalogElement $catalogElement`|Fetches the parent product catalog element for the `$identifier`|
@@ -37,7 +37,7 @@ eZ Commerce offers the following Twig functions and filter for use in templates:
 |`get_customer_sku`|`$sku`</br>`$customerNumber`|Returns customer SKU for the given SKU with customer number|
 |`get_sku`|`$customerSku`</br>`$customerNumber = null`|Returns SKU for th given customer SKU with customer number|
 |`get_search_result_template`|`$catalogElement`|Selects the correct template according to catalog element type|
-|`ses_fetch_content_by_identifier`|`string $contentType`</br>`string $identifier`|Fetches a Content item of the specific type and a Field `identifier` with a specific value.|
+|`ses_fetch_content_by_identifier`|`string $contentType`</br>`string $identifier`|Fetches a Content item of the specific type and a Field `identifier` with a specific value|
 |`ses_config_parameter`|`$code, $domain, $scope = null`|Returns a SiteAccess parameter from the configuration|
 |`st_imageconverter`|`Abstract $imageFieldstring $size`|Provides an image in the required resolution|
 |`st_siteaccess_lang`|`string $siteAccessName`|Returns the prioritiest language for given siteaccess|
@@ -55,13 +55,13 @@ eZ Commerce offers the following Twig functions and filter for use in templates:
 |basket_discounts|`Basket $basket`|Returns the discounts from the basket|
 |basket_add_costs|`Basket $basket`|Returns the additional costs from the basket|
 |basket_add_lines|`Basket $basket`|Returns the additional lines from the basket|
-|code_label|`$code`</br>`$context = null`|Returns the translated code label</br>If the context is `country`, first Symfony Intl Bundle is used to resolve the country code to country name|
+|code_label|`$code`</br>`$context = null`|Returns the translated code label.</br>If the context is `country`, first Symfony Intl Bundle is used to resolve the country code to country name|
 |sort_characteristic_codes|`array $characteristicCodes`</br>`$characteristicIndex`|By default the list of all variant codes is sorted alphabetically in the ASC order|
 |sort_characteristics|`array $characteristics`</br>`$type`</br>`array $order = array()`|Returns sorted characteristics|
 |ses_format_args|`$args`|Formats exception arguments|
 |truncate|`$text`</br>`$limit`</br>`$break = ' '`</br>`$pad = '...'`|Truncates the given text</br>`$break` can be used to indicate where the truncate should break, e.g. words (`$break = ' '`), sentences (`$break = '.'`)|
 |st_siteaccess_path|`string $urlPath`</br>`string $siteAccessName = null`|Formats the given URL path into a SiteAccess path, e.g. `home` -> `/de/home`|
-|st_siteaccess_url|`string $urlPath`</br>`string $siteAccessName = null`|Formats the given URL path into a SiteAccess URL</br>e.g. `home` -> `http://harmony.silver-eshop.de/de/home`|
+|st_siteaccess_url|`string $urlPath`</br>`string $siteAccessName = null`|Formats the given URL path into a SiteAccess URL</br>e.g. `home` -> <your domain>/en/home|
 |st_translate|`$messageOrCode`</br>`$context = ''`</br>`$array $parameters = array()`</br>`$domain = null`</br>`$siteaccess = null`|Returns translation for `$messageOrCode`|
 |st_resolve_template|`$templateName, $theme = null`|Returns resolved template name with `TemplateResolverService`|
 
