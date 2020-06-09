@@ -1,11 +1,11 @@
 # Building new payment plugins
 
 You can create a custom payment plugin based on `JMSPaymentCoreBundle`.
-The steps overlap with the requirements for [new payment plugins for JMS payment](http://jmsyst.com/bundles/JMSPaymentCoreBundle/master/plugins).
+The steps overlap with the requirements for [new payment plugins for JMS payment.](http://jmsyst.com/bundles/JMSPaymentCoreBundle/master/plugins)
 
 ## Create new plugin class
 
-Create a new plugin class which extends `JMS\Payment\CoreBundle\Plugin\AbstractPlugin`
+Create a new plugin class which extends `JMS\Payment\CoreBundle\Plugin\AbstractPlugin`.
 
 ### Create a payment method identifier
 
@@ -155,7 +155,7 @@ In the configuration class you can define extended data specific for the payment
 
 Most payment provider implementations need more than data that is defined by `JMSPaymentCoreBundle`.
 
-The extended data can be prepared and provided by implementing the `\Siso\Bundle\PaymentBundle\Api\PluginConfigurationInterface`.
+The extended data can be prepared and provided by implementing the `\Siso\Bundle\PaymentBundle\Api\PluginConfigurationInterface` interface.
 
 In this example you implement two methods:
 

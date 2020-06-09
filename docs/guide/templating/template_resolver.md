@@ -1,10 +1,10 @@
 # Template resolver
 
 Template resolver enables overriding templates.
-It is an alternative to the [Symfony override functionality](http://symfony.com/doc/current/book/templating.html#overriding-bundle-templates).
+It is an alternative to the [Symfony override functionality](https://symfony.com/doc/3.4/templating/overriding.html).
 
 The template resolver goes through all configured bundles and designs (if specified), looking for the requested template.
-If it can't find the requested template, the template resolver takes this template or default one if the requested template doesn't exist.
+If it can't find the requested template, the template resolver takes this template or the default one.
 
 An override is activated by a template resolver configuration. You can configure:
 
@@ -56,7 +56,7 @@ In this example the template from `ClientWebsiteBundle` overrides `catalog.html.
 Design is an additional folder in your `Resources/views`.
 Templates in the design folder have to reflect the structure of the bundle or bundles that you want to override.
 
-In this example you prepare templates for a website redesign with a provisional name `redesign2020`.
+In this example you prepare templates for a website redesign with a provisional name `new_redesign`.
 
 ### Step 1. Change `config_{env}.yml` or `parameters.yml`
 
@@ -66,23 +66,23 @@ parameters:
     siso_tools.website_de_de.template_resolver.bundles: [ClientWebsiteBundle]
  
     # Define design name
-    siso_tools.website_de_de.template_resolver.designs: [redesign2020]
+    siso_tools.website_de_de.template_resolver.designs: [new_redesign]
 ```
 
 ### Step 2. Create new templates in the design folder
 
-Create new folder `Resources/views/designs/redesign2020` in your bundle and put new templates there:
+Create new folder `Resources/views/designs/new_redesign` in your bundle and put new templates there:
 
 |                   |        |
 | ----------------- | ------ |
 | Original template | `vendor/silversolutions/silver.e-shop/src/Silversolutions/Bundle/EshopBundle/Resources/views/Catalog/catalog.html.twig`  |
-|      New template | `src/Client/Bundle/WebsiteBundle/Resources/views/designs/redesign2020/Catalog/catalog.html.twig` |
+|      New template | `src/Client/Bundle/WebsiteBundle/Resources/views/designs/new_redesign/Catalog/catalog.html.twig` |
 
-In this example the template from the design `redesign2020` in the `ClientWebsiteBundle` overrides `catalog.html.twig` from `SilversolutionsEshopBundle`.
+In this example the template from the design `new_redesign` in the `ClientWebsiteBundle` overrides `catalog.html.twig` from `SilversolutionsEshopBundle`.
 
 Templates in design folders always have precedence over other templates.
 
-If you have both `redesign2020/Catalog/catalog.html.twig` and `Catalog/catalog.html.twig`, the first one is used.
+If you have both `new_redesign/Catalog/catalog.html.twig` and `Catalog/catalog.html.twig`, the first one is used.
 
 ## Configuration
 
@@ -146,12 +146,12 @@ Alternatively, you can inject the template resolver in your service (or take it 
 /** @var TemplateResolverServiceInterface $templateResolverService */
 $templateResolverService = $this->get('siso_tools.template_resolver');
 
-$resolvedTemplate = $templateResolverService->resolve('YourBundle:redesign2020/Catalog/catalog.html.twig');
+$resolvedTemplate = $templateResolverService->resolve('YourBundle:new_redesign/Catalog/catalog.html.twig');
 ```
 
 ## Debugging
 
-You can information about the template resolver configuration and overridden templates in the SilverSolutions tab of the Symfony debug toolbar:
+You can get information about the template resolver configuration and overridden templates in the SilverSolutions tab of the Symfony debug toolbar:
 
 ![](../img/search_19.png)
 
@@ -163,7 +163,7 @@ For example:
 
 Using the template resolver has the following limitations:
 
-- `pagelayout.html.twig` can not be resolved by the template resolver
+- `pagelayout.html.twig` cannot be resolved by the template resolver
 - it is not possible to override templates included with the Twig `use` operator.
 - it is not possible to use the template resolver in the configuration,
 so for overriding standard templates, for example full eZ templates, you need to override the configuration:

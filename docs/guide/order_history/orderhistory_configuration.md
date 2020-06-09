@@ -1,9 +1,9 @@
 # Orderhistory configuration
 
-Order history uses semantic configuration, so it only exposes parameters that are allowed to be configurable.
+Order history uses semantic configuration, so it only exposes parameters that are configurable.
 
 However it is possible to [override this configuration per SiteAccess](overriding_semantic_configuration.md).
-When an event is thrown, before the configuration is used and you can implement a listener that changes this configuration.
+When an event is thrown, before the configuration is used, you can implement a listener that changes this configuration.
 eZ Commerce uses this event to display [local orders](order_history_features/orderhistory_local_orders.md).
 See the [Overriding semantic configuration](overriding_semantic_configuration.md) to find out how to implement a new configuration listener.
 
@@ -33,7 +33,7 @@ Allowed vales are:
 
 - `numeric-comma` - for numbers which use a comma as the decimal place like currency
 - `datetime` - for datetime in the format `<dd.mm.YYYY HH:mm>` or `<dd.mm.YYYY>`
-- `false` - disables sorting for a column
+- `false` - disables sorting of a column
     
 ``` yaml
 siso_order_history:

@@ -1,6 +1,6 @@
 # st_tag selector
 
-Template operator `st_tag` creates a custom HTML attribute that enables quickly finding an HTML tag with this attribute.
+Template operator `st_tag` creates a custom HTML attribute that enables you to quickly find an HTML tag with this attribute.
 
 This is especially helpful for Behat testing, because `st_tag` provides consistent naming convention for page selectors.
 
@@ -12,7 +12,7 @@ Twig template:
 <p {{ st_tag('product', 'price', 'read') }}>1.865,00 €</p>
 ```
 
-is rendered to html:
+is rendered to HTML:
 
 ``` html+twig
 <p data-tag-product-price-read>1.865,00 €</p>
@@ -35,17 +35,17 @@ Tagging is implemented with a template operator `st_tag`.
 
 The operator takes the following parameters:
 
-|Parameter|Description|Example|
-|--- |--- |--- |
-|Module/Component|required (string) - Identifies module/component/page that you are working on.|`product`, `form`|
-|Element (target)|required (string) - Identifies specific field that you are searching for.|`price`, `field`, `text`, `label`|
-|Action|required (string) - Identifies desired action for the selector.|`read` - reads to value of text node</br>`fill`/`write` - fills in form field</br>`click`/`follow`/`submit` - clicking on buttons, following links|
-|ID|optional (number, string) - Identifies a unique element that occurs more than once on a page. Helpful when searching for specific element in collections, e.g. product list, multiple images, buttons, etc.|`1200`, `button_action`|
-|Value|optional (mix) - If you don't want to take the value from the wrapper because it contains special characters or format, you can use this parameter to set a standard format. Can be helpfulfor example for getting prices.|`1600.00` (instead of `1.600,00 €`)|
+|Parameter|Required|Type| Description|Example|
+|--- |--- |--- |--- |---|
+|Module/Component|required |string | Identifies module/component/page that you are working on.|`product`, `form`|
+|Element (target)|required |string | Identifies specific field that you are searching for.|`price`, `field`, `text`, `label`|
+|Action|required |string | Identifies desired action for the selector.|`read` - reads to value of text node</br>`fill`/`write` - fills in form field</br>`click`/`follow`/`submit` - clicking on buttons, following links|
+|ID|optional |number, string | Identifies a unique element that occurs more than once on a page. Helpful when searching for specific element in collections, e.g. product list, multiple images, buttons, etc.|`1200`, `button_action`|
+|Value|optional |mix | If you don't want to take the value from the wrapper because it contains special characters or format, you can use this parameter to set a standard format. Can be helpful for example for getting prices.|`1600.00` (instead of `1.600,00 €`)|
 
 !!! caution
 
-    Don't use these attributes in CSS (for styling) or JavaScript (for selecting, hooks, etc).
+    Don't use these attributes in CSS (for styling) or JavaScript (for selecting, hooks, etc.).
     These attributes have different and specific purpose.
     In addition, in production mode they can be disabled, which breaks the selectors.
 

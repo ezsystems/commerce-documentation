@@ -1,9 +1,9 @@
 # Ez5ScaledPriceService
 
 `Ez5ScaledPriceService` determines the correct price by comparing base price from the price request to the `scaledPrices` array
-stored in extended data (also in `PriceRequest`). The service determines the best price if more scaled prices match.
+stored in extended data (also in `PriceRequest`). The service determines the best price if there are multiple scaled prices that match.
 
-This data may come from the backend. It is the task of the CatalogFactory to store data in the correct format in the catalog element.
+This data may come from the backend. The CatalogFactory stores data in the correct format in the catalog element.
 
 Scaled prices can be set up per product in the Back Office:
 
@@ -14,7 +14,7 @@ Scaled prices can be set up per product in the Back Office:
 |Customer Group|`customerGroup`|no|Code for the customer group|`GROUPA`|
 |Minimum Quantity|`minQuantity`|yes|Minimum quantity for the given price. If more than one scaled price entry matches, the latest matching entry is used|`2`|
 |Start Date|`startDate`|yes (can be empty)|Start date can be set in two formats (date with and without time). If no time is given, "00:00:00" (hour-minutes-seconds) is used. 2015-06-01 becomes 2015-06-01 00:00:00|`2015-06-01 00:00`|
-|End Date|`endDate`|no|End date can be set in two formats (date with and without time). If no time is given, "23:59:59" (hour-minutes-seconds) is used. 2015-06-01 becomes 2015-06-01 23:59:59|`2015-06-01 22:00`|
+|End Date|`endDate`|no|End date can be set in two formats (date with and without time). If no time is given, "23:59:59" (hour-minutes-seconds) is used. 2015-06-01 becomes 2015-06-01 23:59:59|`2015-06-01 22:00:00`|
 |Price|`price`|yes|Price used to calculate price gross and price net value. Price can be with or without VAT|`12.65`|
 |Is Including VAT|`isInclVat`|yes|Determines if the price includes VAT or not.|`0` or `1`|
 |Price Gross|`priceGross`|no|If not set, it's calculated based on two previous values: Price and Is Including VAT. If set, gross price value overrides the calculation.||

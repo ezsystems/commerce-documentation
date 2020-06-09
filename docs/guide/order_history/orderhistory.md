@@ -3,7 +3,7 @@
 Order history enables you to see an overview and details of your orders or other documents from the ERP system.
 You can see documents based on online purchases as well as orders placed e.g. by a telephone call.
 
-On the detail page you can see the buyer, delivery address, ordered items and some more details about the order,
+On the detail page you can see the buyer, delivery address, ordered items and other details about the order,
 such as status, delivery and payment selection.
 
 You can also use the `addToBasket` functionality and speed up the order process, for example if you often order the same items.

@@ -1,7 +1,7 @@
 # Price providers
 
 A price provider fetches or calculates the prices for the price request. If an error occurs or the prices cannot be calculated properly,
-it throws a `PriceCalculationFailedException`, which gives responsibility back to the [price service](../chainpriceservice.md).
+price provider throws a `PriceCalculationFailedException`, which passes the price calculation to the [price service](../chainpriceservice.md).
 
 When providing the prices, every price provider must return both `list_price` and `custom_price`.
 

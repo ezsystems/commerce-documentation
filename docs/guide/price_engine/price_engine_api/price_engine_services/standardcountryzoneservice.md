@@ -3,7 +3,7 @@
 `StandardCountryZoneService` is uses as a helper to resolve settings based on a region or zone.
 It uses simple configuration to determine the zone by given country.
 
-It is used for example for selecting template debitors in [`StandardTemplateDebitorService`](standardtemplatedebitorservice.md).
+It is used for example to select template debitors in [`StandardTemplateDebitorService`](standardtemplatedebitorservice.md).
 
 ## Configuration
 

@@ -1,6 +1,6 @@
 # Payment
 
-Payments in eZ Commerce depends on the [JMSPaymentCoreBundle](http://jmsyst.com/bundles/JMSPaymentCoreBundle).
+Payments in eZ Commerce depends on the [JMSPaymentCoreBundle.](http://jmsyst.com/bundles/JMSPaymentCoreBundle)
 
 !!! note
 
@@ -11,8 +11,8 @@ The eZ Commerce supports the following payment providers out of the box:
 
 |Payment provider|Code used in Basket|
 |--- |--- |
-|[Paypal Express](payment_configuration/paypal.md)|`paypal_express_checkout`|
-|[Telecash](payment_configuration/telecash.md)|`telecash_connect`|
+|[PayPal Express](payment_configuration/paypal.md)|`paypal_express_checkout`|
+|[TeleCash](payment_configuration/telecash.md)|`telecash_connect`|
 |[Ogone](payment_configuration/ogone.md)|`ogone_gateway`|
 |[Invoice](payment_configuration/invoice.md), used for non-electronic payments|`invoice`|
 

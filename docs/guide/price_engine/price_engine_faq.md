@@ -181,4 +181,4 @@ If this is not done, the first call is cached for all users.
 
 ## Why can't a user see prices in sliders, catalog list, product detail or comparison?
 
-The user doesn't have the necessary `siso_policy/see_product_price` Role to see prices.
+The user doesn't have the necessary `siso_policy/see_product_price` Policy to see prices.

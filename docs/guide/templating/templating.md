@@ -8,7 +8,7 @@ eZ Commerce comes with a [template resolver](template_resolver.md) system which 
 
 ## Design engine
 
-Instead of the template resolver you can use the [design engine](https://doc.ezplatform.com/en/latest/guide/design_engine/).
+Instead of the template resolver you can use the [design engine](https://doc.ezplatform.com/en/2.5/guide/design_engine/).
 See [Integration of the design engine](design_engine/design_engine.md) for more information.
 
 ## Shop templates

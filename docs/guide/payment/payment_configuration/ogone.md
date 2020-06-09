@@ -18,7 +18,7 @@ ets_payment_ogone:
 
 |Parameter|Details|
 |--- |--- |
-|`pspid`|The `psid` used for login in the Ogone backend.|
+|`pspid`|The `pspid` used for login in the Ogone backend.|
 |`shain`|Has to be defined in the Ogone backend/administration.|
 |`shaout`|Has to be defined in the Ogone backend/administration.|
 |`api.user`|The user.|
@@ -40,7 +40,7 @@ ets_payment_ogone:
     ```
 
     Only this service relies on the account parameters. In order to configure the values effectively, the `ets_payment_ogone` configuration can't be used any longer.
-    The configuration above would now look like this:
+    The configuration above should look like this:
 
     ``` 
     project_domain.site_access_name.payment_ogone_pspid: my psid
@@ -56,7 +56,7 @@ ets_payment_ogone:
 
 ### 1. Activate necessary 3-tiers option
 
-In **Configuration**->**Account**->**Your Options* activate the option **e-Commerce 3-tiers access**.
+In **Configuration**->**Account**->**Your Options** activate the option **e-Commerce 3-tiers access**.
 
 ![](../../img/payment_2.png)
 

@@ -16,7 +16,7 @@ The Local price provider supports the following price models:
 
 Scaled prices must be stored in the catalog element in a correct format, see [ScaledPriceServiceInterface](../../ez5scaledpriceservice.md#scaledpriceserviceinterface). This is the task of `CatalogFactory`.
 
-Scaled prices can set up in the Back Office:
+You can set up the scaled prices in the Back Office:
 
 ![](../../../../../img/price_engine_3.png)
 
@@ -24,13 +24,13 @@ Scaled prices can set up in the Back Office:
 
     Order for checking if a scaled price applies:
 
-    1. Check if the provided quantity matches the scaled price line
+    1. Check if the provided quantity matches the scaled price line.
     2. Check if the provided start date matches. For multiple lines the highest date matches. For example, for quantity 1 the start date "2015-06-17" is at the end of the list, before default empty value. 
     3. If the quantity and start date are the same, the lowest price is taken. The price includes VAT (gross price) and may come from Price or Price Gross. If Price is used and does not include VAT, VAT has to be added first for comparison reasons. 
 
     If no scaled price is found, the standard price from the product is used.
 
-    If several scaled prices matches, the best scaled price is used.
+    If several scaled prices match, the best scaled price is used.
 
 ## Data considered for price calculation
 
@@ -38,7 +38,7 @@ If [scaled prices](../../ez5scaledpriceservice.md#scaledpriceserviceinterface) a
 
 The base price is used to calculate the list price and customer price.
 
-The local price provider makes a best price search. The customer price is always the best price (scaled or base price).
+The local price provider performs the best price search. The customer price is always the best price (scaled or base price).
 
 ## VAT and currency
 

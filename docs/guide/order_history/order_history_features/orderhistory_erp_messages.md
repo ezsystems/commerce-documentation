@@ -40,4 +40,4 @@ The specification for the request (`request.invoiceDetail.xml`) reflects the fie
 </InvoiceDetailRequest>
 ```
 
-The response list defined in `response.invoiceDetail.xml`.
+The response list is defined in `response.invoiceDetail.xml`.

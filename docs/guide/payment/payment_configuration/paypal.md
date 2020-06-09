@@ -2,7 +2,7 @@
 
 ## Installation and configuration
 
-PayPal Express Checkout payments require the third-party library [`JMSPaymentPaypalBundle`](http://jmspaymentpaypalbundle.readthedocs.io/en/stable/setup.html).
+PayPal Express Checkout payments require the third-party library [`JMSPaymentPaypalBundle`.](http://jmspaymentpaypalbundle.readthedocs.io/en/stable/setup.html)
 
 ``` bash
 php composer.phar require jms/payment-paypal-bundle

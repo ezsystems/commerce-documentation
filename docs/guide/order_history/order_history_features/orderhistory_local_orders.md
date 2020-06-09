@@ -2,7 +2,7 @@
 
 You can display user orders even if the shop is not connected to an ERP system.
 
-The user sees the orders stored locally in the shop. Order history shows only documents of type `orders` and no other documents.
+The user sees the orders stored locally in the shop. Order history shows only documents of type `orders`.
 
 Because the shop only has local data for orders, the available document types are different.
 
@@ -23,7 +23,7 @@ siso_order_history.default.read_configuration_listener_active: true
 
 If local documents are used (parameter `use_local_documents == true`), the logic checks if the requested message is `OrderListMessage` or `OrderListMessage`.
 If so, it throws an exception `UseLocalDocumentsException` that is caught by the exception event.
-It then creates the same response as is sent by ERP (the response contains the same information as if it were using ERP.)
+The system then creates the same response as is sent by ERP (the response contains the same information as if it were using ERP.)
 
 ## UseLocalDocumentsListener
 
@@ -131,7 +131,7 @@ A new Twig block shows the new link to the invoice if the invoice number is set.
 
 #### Order history detail
 
-To show the link invoice in the detail page modify the Twig template.
+To show the link to the invoice in the detail page modify the Twig template.
 
 #### Order history page
 
@@ -157,7 +157,7 @@ if ($basket instanceof Basket) {
 
 ### Templates
 
-The template used to generated the invoice view and the invoice PDF is `EshopBundle/Resources/views/Invoice/show.html.twig`.
+`EshopBundle/Resources/views/Invoice/show.html.twig` template is used to generated the invoice view and the invoice PDF.
 
 This template does not extend any other template, so it also generates the `<html>` and `<head>` tags.
 

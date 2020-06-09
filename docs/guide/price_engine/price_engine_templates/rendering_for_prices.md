@@ -34,7 +34,7 @@ The following optional rendering parameters are available for a `PriceField`:
 |`show`|VAT label is shown if `true`|`false` (undefined)|
 |`cssClass`|Optional string with CSS class(es) to use for VAT label|`""` (undefined)|
 |`text`|Override of the output text|Default text depending on `price.isVatPrice` ("Including VAT" or "Excluding VAT")|
-|`raw`|VAT label is output without any HTML tags, if `true`|`false` (undefined)|
+|`raw`|Output VAT label without any HTML tags, if `true`|`false` (undefined)|
 
 ### schema
 

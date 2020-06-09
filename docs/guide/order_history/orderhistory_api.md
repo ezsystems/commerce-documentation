@@ -10,7 +10,7 @@ override the form type and form validation service.
 
 ### Form type
 
-For type is located in `OrderHistoryBundle/Form/Type/OrderType.php`.
+Form type is located in `OrderHistoryBundle/Form/Type/OrderType.php`.
 
 Service definition:
 
@@ -43,7 +43,7 @@ $builder->add('orders_from', 'text', array(
 
 ### Form validation
 
-For validation is located in `OrderHistoryBundle/Services/FormValidationService.php`.
+Form validation is located in `OrderHistoryBundle/Services/FormValidationService.php`.
 
 Service definition:
 

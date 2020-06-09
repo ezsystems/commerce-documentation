@@ -16,11 +16,11 @@ you can set the necessary properties a new `Price` object using an array in the 
 | `price`            | `float`   |    yes    | The main price value                                               |
 | `priceInclVat`     | `float`   |    no     | The price value including VAT                           |
 | `priceExclVat`     | `float`   |    no     | The price value excluding VAT                           |
-| `isVatPrice`       | `boolean` |    yes    | If true, the main price value is including VAT                     |
+| `isVatPrice`       | `boolean` |    yes    | If true, the main price value includes VAT                     |
 | `vatCode`          | `float`   |    yes    | VAT percentage                      |
-| `currency`         | `string`  |    yes    | The ISO 4217 currency code (e.g. "EUR", "USD", "GBP", ...)         |
+| `currency`         | `string`  |    yes    | The ISO 4217 currency code (e.g. "EUR")         |
 | `discount`         | `float`   |    no     | Discount in percentage                                             |
-| `timestamp`        | `string`  |    no     | Timestamp information                                              |
+| `timestamp`        | `string`  |    no     | Timestamp |
 | `campaign`         | `string`  |    no     | Campaign code resp. value                                          |
 | `source`           | `string`  |    yes    | The source of this price (e.g. "NAV")                              |
 | `quantityDiscount` | `array`   |    no     | Information regarding block prices, etc. |

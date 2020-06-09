@@ -2,7 +2,7 @@
 
 The shop uses constants for consistent naming of price-related request and response values.
 
-All constants for price engine are stored in final class `Silversolutions\Bundle\EshopBundle\Model\Price\PriceConstants`.
+All constants for price engine are stored in the final class `Silversolutions\Bundle\EshopBundle\Model\Price\PriceConstants`.
 
 ## Types of constants
 

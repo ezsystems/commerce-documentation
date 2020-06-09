@@ -33,7 +33,7 @@ public function getPricesAction()
 To get the prices and stock information for your catalog element(s),
 use the `CatalogService` that contains helper methods to create the PriceRequest.
 
-It also already assigns the correct prices and stock back to catalog element(s).
+It also assigns the correct prices and stock back to catalog element(s).
 
 ``` php
 public function getPricesForCatalogElement($catalogElement)

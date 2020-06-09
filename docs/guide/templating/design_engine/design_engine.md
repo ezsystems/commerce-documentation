@@ -2,7 +2,7 @@
 
 !!! tip
 
-    See [Design engine](https://doc.ezplatform.com/en/latest/guide/design_engine/) for more information
+    See [Design engine](https://doc.ezplatform.com/en/2.5/guide/design_engine/) for more information
     about using the design engine in eZ Platform.
 
 eZ Commerce comes with the configured `base_design` and `base_theme` which use the existing standard templates used with the template resolver.
@@ -31,7 +31,7 @@ admin_group:
 
 ## Activation
 
-If the template resolver of eZ Commerce is disabled (standard), the design engine of eZ Platform is automatically active:
+If the template resolver of eZ Commerce is disabled (standard), the design engine of eZ Platform is automatically activated:
 
 ``` yaml
 siso_tools.default.template_resolver.enabled: false

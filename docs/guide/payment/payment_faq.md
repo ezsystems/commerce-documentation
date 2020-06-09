@@ -23,18 +23,18 @@ The compiler pass is defined in the checkout bundle: `\Siso\Bundle\CheckoutBundl
 
 ## How can I customize the payment options?
 
-To customize payment options displayed on the box payment options
+To customize payment options displayed in the payment options box
 (e.g. to hide some if products are not available), change the payment form.
 
 To change the shipping/payment form, replace or rewrite the form type service.
-The form type for the options choice is implemented in the checkout bundle in `\Siso\Bundle\CheckoutBundle\Form\Type\CheckoutShippingPaymentType`
+The form type for the options choice is implemented in the checkout bundle in `\Siso\Bundle\CheckoutBundle\Form\Type\CheckoutShippingPaymentType`.
 
 The methods `CheckoutShippingPaymentType::buildForm()` and `CheckoutShippingPaymentType::setDefaultOptions()` are called to assemble the HTML form.
 
 See [Configuration for the Checkout Forms](../checkout/checkout_api/forms/configuration_for_checkout_forms.md)
-and [Symfony's form documention](http://symfony.com/doc/current/book/forms.html) for more information.
+and [Symfony's form documention](http://symfony.com/doc/3.4/book/forms.html) for more information.
 
-## Can I extend the size limit on orders?
+## Can I extend the order size limit?
 
 Due to a restriction in JmsPaymentBundle, an order exceding 99999.99999 causes an error message.
 
