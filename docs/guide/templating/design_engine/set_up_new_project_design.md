@@ -1,12 +1,10 @@
-# Set up new project design
+# Setting up new project design
 
-1\.  Add a new `ez_design.yml` to your project bundle.
+1\. Add an `ez_design.yml` file to your project bundle.
 
 !!! caution
     
     Don't remove the `base_theme` when adding a `project_theme` to the project design.
-
-`src/ProjectBundle/Resources/config/ez_design.yml`
 
 ``` yaml
 design_list:
@@ -16,9 +14,9 @@ templates_theme_paths:
         - '%kernel.root_dir%/../src/ProjectBundle/Resources/views'
 ```
 
-2\.  Prepend the `ez_design.yml` so that the configuration can be used by the ez design engine
+2\. Prepend `ez_design.yml` so the configuration can be used by the design engine.
 
-`src/ProjectBundle/DependencyInjection/ProjectExtension.php`:
+In `src/ProjectBundle/DependencyInjection/ProjectExtension.php`:
 
 ``` 
 <?php
@@ -47,9 +45,7 @@ class ProjectExtension extends Extension implements PrependExtensionInterface
 }
 ```
 
-3\.  Add the `project_design` either to a SiteAccess or SiteAccess group.
-
-`app/config/ezplatform.yml`:
+3\. Add `project_design` either to a SiteAccess or SiteAccess group.
 
 ``` yaml
 # Siteaccess configuration, with one siteaccess per default
@@ -64,5 +60,3 @@ siteaccess:
 site_group:
     design: project_design
 ```
-
-4\.  Start developing/overriding templates

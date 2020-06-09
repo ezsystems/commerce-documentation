@@ -1,22 +1,14 @@
 # Price providers
 
-## Goal
+A price provider fetches or calculates the prices for the price request. If an error occurs or the prices cannot be calculated properly,
+price provider throws a `PriceCalculationFailedException`, which passes the price calculation to the [price service](../chainpriceservice.md).
 
-A price provider will fetch or calculate the prices for the price request. If an error occurred or the prices could not be calculated properly, it will throw a PriceCalculationFailedException, which gives responsibility back to the [price service](../chainpriceservice.md).
+When providing the prices, every price provider must return both `list_price` and `custom_price`.
 
-When providing the prices, every price provider must return both: 
+All price providers must use the `siso_price.price_provider` tag.
 
-- `list_price`
-- `custom_price`
-
-!!! note "Tag: PriceProvider"
-
-    All price providers must use following tag:
-
-    `siso_price.price_provider`
-
-## API: PriceProviderInterface
+## PriceProviderInterface
 
 |Method|Description|
 |--- |--- |
-|public function calculatePrices(PriceRequest $priceRequest);|This method will always return an instance of PriceResponse or throw the PriceCalculationFailedException.</br>A price provider will fetch or calculate the prices for the price request. If an error occurred or the prices could not be calculated properly, it will throw a PriceCalculationFailedException, which gives responsibility back to the price service.|
+|`public function calculatePrices(PriceRequest $priceRequest);`|This method always returns an instance of `PriceResponse` or throws `PriceCalculationFailedException`.|

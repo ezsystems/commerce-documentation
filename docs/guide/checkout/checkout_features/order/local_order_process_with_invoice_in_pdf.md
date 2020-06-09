@@ -452,4 +452,4 @@ if (!empty($shopOwnerMailReceiver)) {
 
 !!! note
 
-    See [OrderHistory - Local Orders when ERP not available](../../../order_history/order_history_features/orderhistory_local_orders_when_erp_not_available.md)
+    See [Local orders](../../../order_history/order_history_features/orderhistory_local_orders.md)

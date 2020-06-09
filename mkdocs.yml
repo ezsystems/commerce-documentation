@@ -402,16 +402,13 @@ nav:
         - Order history:
             - 'Orderhistory': 'guide/order_history/orderhistory.md'
             - Order history features:
-                - 'Orderhistory functions': 'guide/order_history/order_history_features/orderhistory_functions.md'
                 - 'ERP messages': 'guide/order_history/order_history_features/orderhistory_erp_messages.md'
-                - 'Local orders when ERP not available': 'guide/order_history/order_history_features/orderhistory_local_orders_when_erp_not_available.md'
-            - Order history API:
-                - 'Orderhistory API': 'guide/order_history/order_history_api/orderhistory_api.md'
-                - 'Install order history': 'guide/order_history/order_history_api/install_order_history.md'
-            - 'Orderhistory templates': 'guide/order_history/orderhistory_templates.md'
-            - 'Orderhistory cookbook': 'guide/order_history/orderhistory_cookbook.md'
+                - 'Local orders': 'guide/order_history/order_history_features/orderhistory_local_orders.md'
             - 'Orderhistory configuration': 'guide/order_history/orderhistory_configuration.md'
-            - 'Orderhistory FAQ': 'guide/order_history/orderhistory_faq.md'
+            - 'Orderhistory API': 'guide/order_history/orderhistory_api.md'
+            - 'Orderhistory templates': 'guide/order_history/orderhistory_templates.md'
+            - 'Displaying custom column': 'guide/order_history/displaying_custom_column.md'
+            - 'Overriding semantic configuration': 'guide/order_history/overriding_semantic_configuration.md'
         - Landing Page:
             - 'Landing Page': 'guide/landing_page/landing_page.md'
             - 'Landing Page API': 'guide/landing_page/landing_page_api.md'
@@ -419,8 +416,7 @@ nav:
         - Payment:
             - 'Payment': 'guide/payment/payment.md'
             - 'Payment API': 'guide/payment/payment_api.md'
-            - Payment cookbook:
-                - 'Building new payment plugins': 'guide/payment/payment_cookbook/building_new_payment_plugins.md'
+            - 'Building new payment plugins': 'guide/payment/building_new_payment_plugins.md'
             - 'Payment FAQ': 'guide/payment/payment_faq.md'
             - Payment configuration:
                 - 'Telecash': 'guide/payment/payment_configuration/telecash.md'
@@ -430,18 +426,11 @@ nav:
         - Price engine:
             - 'Price engine': 'guide/price_engine/price_engine.md'
             - Price engine API:
-                - Data model for prices:
-                    - 'Price': 'guide/price_engine/price_engine_api/data_model_for_prices/price.md'
+                - 'Data model for prices': 'guide/price_engine/price_engine_api/data_model_for_prices.md'
                 - Price engine services:
-                    - PriceFactoryInterface:
-                        - 'PriceFactoryInterface': 'guide/price_engine/price_engine_api/price_engine_services/pricefactoryinterface/pricefactoryinterface.md'
-                        - 'StandardPriceFactory': 'guide/price_engine/price_engine_api/price_engine_services/pricefactoryinterface/standardpricefactory.md'
-                    - ScaledPriceServiceInterface:
-                        - 'ScaledPriceServiceInterface': 'guide/price_engine/price_engine_api/price_engine_services/scaledpriceserviceinterface/scaledpriceserviceinterface.md'
-                        - 'Ez5ScaledPriceService': 'guide/price_engine/price_engine_api/price_engine_services/scaledpriceserviceinterface/ez5scaledpriceservice.md'
-                    - VATServiceInterface:
-                        - 'LocalVatService': 'guide/price_engine/price_engine_api/price_engine_services/vatserviceinterface/vatserviceinterface.md'
-                        - 'VatServiceInterface': 'guide/price_engine/price_engine_api/price_engine_services/vatserviceinterface/localvatservice.md'
+                    - 'StandardPriceFactory': 'guide/price_engine/price_engine_api/price_engine_services/standardpricefactory.md'
+                    - 'Ez5ScaledPriceService': 'guide/price_engine/price_engine_api/price_engine_services/ez5scaledpriceservice.md'
+                    - 'LocalVatService': 'guide/price_engine/price_engine_api/price_engine_services/localvatservice.md'
                     - Chainpriceservice:
                         - 'ChainPriceService': 'guide/price_engine/price_engine_api/price_engine_services/chainpriceservice/chainpriceservice.md'
                         - Price providers:
@@ -452,8 +441,8 @@ nav:
                 - 'Price engine constants': 'guide/price_engine/price_engine_api/price_engine_constants.md'
             - Price engine cookbook:
                 - 'Price engine cookbook': 'guide/price_engine/price_engine_cookbook/price_engine_cookbook.md'
-                - 'How to implement new price provider': 'guide/price_engine/price_engine_cookbook/recipe_how_to_implement_new_price_provider.md'
-                - 'How to work with PriceRequest and PriceResponse': 'guide/price_engine/price_engine_cookbook/recipe_how_to_work_with_pricerequest_and_priceresponse.md'
+                - 'Implementing new price provider': 'guide/price_engine/price_engine_cookbook/recipe_how_to_implement_new_price_provider.md'
+                - 'Working with PriceRequest and PriceResponse': 'guide/price_engine/price_engine_cookbook/recipe_how_to_work_with_pricerequest_and_priceresponse.md'
             - Price engine templates:
                 - 'Price engine templates': 'guide/price_engine/price_engine_templates/price_engine_templates.md'
                 - 'Rendering for prices': 'guide/price_engine/price_engine_templates/rendering_for_prices.md'
@@ -497,17 +486,16 @@ nav:
                 - 'Search Solr schema configuration': 'guide/search/search_configuration/solr_schema_configuration.md'
         - Templating:
             - 'Templating': 'guide/templating/templating.md'
-            - Templates for the shop:
-                - 'Templates for the shop': 'guide/templating/templates_for_the_shop/templates_for_the_shop.md'
+            - Shop templates:
                 - 'Reusable address template': 'guide/templating/templates_for_the_shop/reusable_address_template.md'
                 - 'Reusable message template': 'guide/templating/templates_for_the_shop/reusable_message_template.md'
             - 'Template resolver': 'guide/templating/template_resolver.md'
             - Twig extension:
                 - 'Twig extension': 'guide/templating/twig_extension/twig_extension.md'
-                - 'st_tag - selector tagging for Behat and Google Tag manager': 'guide/templating/twig_extension/st_tag_selector_tagging_for_behat_and_google_tag_manager.md'
-            - ezdesign engine:
-                - 'eZ Design Engine': 'guide/templating/ezdesign_engine/ez_design_engine.md'
-                - 'Set up new project design': 'guide/templating/ezdesign_engine/set_up_new_project_design.md'
+                - 'st_tag selector': 'guide/templating/twig_extension/st_tag_selector.md'
+            - Design engine:
+                - 'Design engine': 'guide/templating/design_engine/design_engine.md'
+                - 'Setting up new project design': 'guide/templating/design_engine/set_up_new_project_design.md'
         - Translations:
             - 'Translations': 'guide/translations/translations.md'
             - 'OneSky': 'guide/translations/onesky.md'

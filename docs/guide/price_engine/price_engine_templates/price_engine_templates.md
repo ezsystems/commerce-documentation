@@ -1,40 +1,27 @@
 # Price engine templates
 
-### Templates list
+## Catalog/Subrequests/product.html.twig
 
-Default path:
+This template is used on product detail page.
+It defines the parameters for price rendering and includes the `product_price.html.twig` template.
 
-    vendor/silversolutions/silver.e-shop/src/Silversolutions/Bundle/
-    EshopBundle/Resources/views
+## Catalog/listProductNode.html.twig
 
-#### Catalog/Subrequests/product.html.twig
-
-Used on product detail page
-
-Defines the parameters for price rendering and includes the `product_price.html.twig` template.
-
-#### Catalog/Subrequests/product.html.twig
-
-Used on product list page
-
-Defines the parameters for price rendering and includes the `product_price.html.twig` template
-
-##### How to set the parameters
+This template is used on product detail page.
+It defines the parameters for price rendering and includes the `product_price.html.twig` template.
 
 ![](../../img/price_engine_5.png)
 
-Example: VariantProductNode
+## Catalog/Subrequests/product_price.html.twig
 
-#### Catalog/Subrequests/product.html.twig
+This is a common template for rendering the price, displaying a label about the price type (e.g. list price) and the price source (e.g. ERP).
 
-Common template to render the price, display a label about the price type (e.g. 'list price') and display the price source (e.g. ERP).
+It includes `PriceField.html.twig` to render the price.
 
-Includes PriceField.html.twig to render the price.
+### Accepted parameters
 
-##### Accepted parameters
-
-```
-{# parameters, that will be passed to the
+``` html+twig
+{# parameters that are passed to the
 PriceField.html.twig  template to render the price #} 
 
 'renderParams': renderParams
@@ -48,9 +35,9 @@ label and specify the css class #}
 'displaySource' : true
 ```
 
-##### How to set the parameters
+### Setting the parameters
 
-```
+``` html+twig
 {% set labelParams = {
  'priceRange' : {
  'cssClass': 'right_align block',
@@ -66,17 +53,17 @@ label and specify the css class #}
 %}
 ```
 
-#### Fieldtypes/PriceField.html.twig
+## Fieldtypes/PriceField.html.twig
 
-Renders the given price from catalog element, see [ses_render_price](rendering_for_prices.md).
+This template renders the given price from catalog element, see [ses_render_price](rendering_for_prices.md).
 
-##### Accepted parameters
+### Accepted parameters
 
 `'params' : renderParams`
 
-##### How to set the parameters
+### Setting the parameters
 
-```
+``` html+twig
 {% set renderParams = {
  'outputPrice': {
  'cssClass': 'price price_med',
@@ -91,17 +78,16 @@ Renders the given price from catalog element, see [ses_render_price](rendering_f
 %}
 ```
 
-### Related custom Twig modifiers/functions/etc/:
+## Related custom Twig functions
 
 |Twig filter|Description|Usage|
 |--- |--- |--- |
-|shipping|gets the list of shipping costs from the basket|{% set shippingCosts = basket|shipping %}|
-|basket_discounts|gets the list of discounts from the basket|{% set discounts = basket|basket_discounts %}|
-|basket_add_costs|gets the list of additional costs from the basket|{% set addCosts = basket|basket_add_costs %}|
-|basket_add_lines|gets the list of additional lines from the basket|{% set addLines = basket|basket_add_lines %}|
-
+|`shipping`|Gets the list of shipping costs from the basket|`{% set shippingCosts = basket|shipping %}`|
+|`basket_discounts`|Gets the list of discounts from the basket|{`% set discounts = basket|basket_discounts %}`|
+|`basket_add_costs`|Gets the list of additional costs from the basket|`{% set addCosts = basket|basket_add_costs %}`|
+|`basket_add_lines`|Gets the list of additional lines from the basket|`{% set addLines = basket|basket_add_lines %}`|
 
 |Twig function|Description|Usage|
 |--- |--- |--- |
-|price_format|Formats a price value|{{ priceValue|price_format(currency, locale) }}|
-|ses_render_price|Renders a PriceField from CatalogElement|{{ ses_render_price(catalogElement, minPrice,</br> {</br> 'outputPrice': {'cssClass': 'price price_med'}</br> }</br>) }}|
+|`price_format`|Formats a price value|`{{ priceValue|price_format(currency, locale) }}`|
+|`ses_render_price`|Renders a PriceField from CatalogElement|`{{ ses_render_price(catalogElement, minPrice, { 'outputPrice': {'cssClass': 'price price_med'} }) }}`|

@@ -1,15 +1,16 @@
-# Orderhistory API
+# Order history API
 
-### Order search form
+## Order search form
 
-The order search form is using the DatePicker plugin for better user experience.  
-If you need to pass some additional parameters for this plugin, or adapt the form attributes, you need to override the form type and form validation service.
+The order search form uses the `DatePicker` plugin for better user experience.  
+If you need to pass additional parameters to this plugin or adapt the form attributes,
+override the form type and form validation service.
 
-![](../../img/orderhistory_6.jpg)
+![](../img/orderhistory_6.jpg)
 
-#### Form type - OrderType
+### Form type
 
-`vendor/silversolutions/silver.orderhistory/src/Siso/Bundle/OrderHistoryBundle/Form/Type/OrderType.php`
+Form type is located in `OrderHistoryBundle/Form/Type/OrderType.php`.
 
 Service definition:
 
@@ -40,11 +41,11 @@ $builder->add('orders_from', 'text', array(
 );
 ```
 
-#### Form validation - FormValidationService
+### Form validation
 
-`vendor/silversolutions/silver.orderhistory/src/Siso/Bundle/OrderHistoryBundle/Services/FormValidationService.php`
+Form validation is located in `OrderHistoryBundle/Services/FormValidationService.php`.
 
-**Service definition**
+Service definition:
 
 ``` xml
 <parameter key="siso_order_history.form_validation.class">Siso\Bundle\OrderHistoryBundle\Services\FormValidationService</parameter>

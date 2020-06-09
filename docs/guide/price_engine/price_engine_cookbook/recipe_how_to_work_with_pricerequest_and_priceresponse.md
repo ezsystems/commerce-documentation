@@ -1,8 +1,8 @@
-# How to work with PriceRequest and PriceResponse
+# Working with PriceRequest and PriceResponse
 
-## How to create the PriceRequest
+## Creating a price request
 
-To create a price request you need to set all necessary data.
+To create a price request you need to set all necessary data:
 
 ``` php
 private function createPriceRequest(array $catalogElements, array $catalogElementQuantities = array())
@@ -77,9 +77,10 @@ private function createRequestPriceLine(ProductNode $catalogElement, $lineNumber
 }
 ```
 
-## How to evaluate the PriceResponse
+## Evaluating the price response
 
-The price response contains all necessary information, like list and customer prices, additional costs and totals. It is up to you, how you will handle it. In our example we will simply assign prices back to our catalog elements (but not handle totals or additional costs).
+The price response contains all necessary information, for example list and customer prices, additional costs and totals.
+It is up to you to handle it. The following example assigns prices back to catalog elements (but does not handle totals or additional costs).
 
 ``` php
 public function getPricesForProductNodes(

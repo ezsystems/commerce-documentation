@@ -162,7 +162,7 @@ This might have several reasons:
 #### VAT
 
 If the ERP System does not provide information about VAT, the VAT can be determined in the shop.
-In that case the shop uses [VatService](../price_engine/price_engine_api/price_engine_services/vatserviceinterface/localvatservice.md) to get the `vatPercent` by the `vatCode`.
+In that case the shop uses [VatService](../price_engine/price_engine_api/price_engine_services/localvatservice.md) to get the `vatPercent` by the `vatCode`.
 
 ### SesExtension Fields
 

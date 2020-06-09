@@ -1,12 +1,12 @@
 # Price engine FAQ
 
-## Does the price engine support volume based prices?
+## Does the price engine support volume-based prices?
 
-It depends on the Priceprovider.
+It depends on the price provider.
 
-The Priceprovider ERP will provide volume based prices as defined in the ERP.
+The remote price engine provides volume-based prices as defined in the ERP.
 
-## How do i get delivery costs or additional costs?
+## How do I get delivery costs or additional costs?
 
 The price provider returns such information as additional lines with a special type.
 
@@ -64,9 +64,9 @@ $priceResponse?setAdditionalLines($additionalLines);
 
 ![](../img/price_engine_1.png)
 
-## How can i access stock information?
+## How can I access stock information?
 
-You can get stock information from the PriceLine in the PriceResponse
+You can get stock information from `PriceLine` in `PriceResponse`:
 
 ``` php
 $priceResponse = $priceService->getPrices($priceRequest, $contextId);
@@ -83,16 +83,16 @@ foreach ($priceResponse->getLines() as $priceLine) {
 
 ## How is currency handled?
 
-It depends on the Priceprovider.
+It depends on the price provider.
 
-- LocalPriceProvider is using the customer currency that is set in the PriceRequest.
-- RemotePriceProvider is using the currency returned from the ERP and if not set, it is also using the customer currency.
+- Local price provider uses the customer currency that is set in the price request.
+- Remote price provider uses the currency returned from the ERP and if not set, also uses the customer currency.
 
-## How can i pass additional information to the price provider?
+## How can I pass additional information to the price provider?
 
-If your price provider needs some additional information, you can provide them in several ways:
+If the price provider needs additional information, you can provide it in several ways:
 
-- On the top level in `extendedData`
+- On the top level in `extendedData`:
 
 ``` php
 $priceRequest = new PriceRequest();
@@ -104,7 +104,7 @@ $extendedData = array(
 $priceRequest->setExtendedData($extendedData);
 ```
 
-- On the line level in `extendedData`
+- On line level in `extendedData`:
 
 ``` php
 $priceLine = new PriceLine();
@@ -115,7 +115,7 @@ $extendedData = array(
 $priceLine->setExtendedData($extendedData);
 ```
 
-- You can also pass additional data in the parties, if they are connected to a customer
+- You can also pass additional data in the parties, if they are connected to a customer:
 
 ``` php
 $priceRequest = new PriceRequest();
@@ -125,9 +125,9 @@ $buyerParty->SesExtension->value['customerGroup'] = 'WIKI';
 $priceRequest->setBuyerParty($buyerParty);
 ```
 
-## How can I find out which provider calculated my prices?
+## How can I find out which provider calculates my prices?
 
-If the price provider calculated the prices, it will set a source type in the PriceResponse. This source type can be evaluated.
+If the price provider calculates the prices, it sets a source type in `PriceResponse`.
 
 Possible source types:
 
@@ -137,7 +137,7 @@ PriceConstants::PRICE_RESPONSE_SOURCE_TYPE_LOCAL = 'local'
 ```
 
 ``` php
-//if the prices were not calculated by a remote source, set an error message in the basket
+//if the prices are not calculated by a remote source, set an error message in the basket
 if ($priceResponse->getSourceType() !== PriceConstants::PRICE_RESPONSE_SOURCE_TYPE_REMOTE) {
     $basket->setErrorMessage(
         $this->transService->translate('Remote prices can not be calculated!')
@@ -145,18 +145,22 @@ if ($priceResponse->getSourceType() !== PriceConstants::PRICE_RESPONSE_SOURCE_TY
 }
 ```
 
-## What happens in case the ERP is not available?
+## What happens if ERP is not available?
 
-For the basket the LocalPriceProvider will calculate prices as a fallback. The customer will see an error message that the realtime prices are not available at the moment - if the remote price provider was configured in the chain on the first place. See: [When an error message is shown?](#PriceEngine-FAQ-error_message)
+For the basket, the local price provider calculates prices as a fallback.
+The customer sees an error message that real-time prices are not available at the moment,
+if the remote price provider is configured in the chain on the first place.
 
 ## When is an error message shown?
 
-When the chain for your context id was configured in a way, that the first provider is remote and the remote price calculation fails, en error message might be displayed. The shop will check the chain for your context id. So it is possible that in the basket there is an error message displayed if the remote price calculation failed, but not in the wishlit.
+When the chain for the context ID is configured so that the first provider is remote
+and the remote price calculation fails, en error message can be displayed.
+The shop checks the chain for the context ID.
+An error message can be displayed in the basket if the remote price calculation fails, but not in the wishlist.
 
-You have to configure the service id of the remote price provider.
+You have to configure the service ID of the remote price provider:
 
 ``` yaml
-#configure the service id of the remote price provider
 siso_price.default.price_service_chain_remote: siso_price.price_provider.remote
 
 siso_price.default.price_service_chain.basket:
@@ -170,10 +174,11 @@ siso_price.default.price_service_chain.wish_list:
  - siso_price.price_provider.local
 ```
 
-## Why can user see/not see prices on product detail page with/without the necessary role?
+## Why can's the user see prices on product detail page with the necessary Role?
 
-Caching has to be configured to use user-hash in order to display the correct product detail page to anonymous or registered users. If this is not done, the first call will be cached for all users.
+Caching has to be configured to use `user-hash` in order to display the correct product detail page to anonymous or registered users.
+If this is not done, the first call is cached for all users.
 
-## Why can user not see prices in sliders, catalog list, product detail or comparison?
+## Why can't a user see prices in sliders, catalog list, product detail or comparison?
 
-They don't have the necessary role to see prices, it has to be configured for users in the backend. (`siso_policy/see_product_price`)
+The user doesn't have the necessary `siso_policy/see_product_price` Policy to see prices.

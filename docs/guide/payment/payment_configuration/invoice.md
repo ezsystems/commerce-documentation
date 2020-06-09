@@ -1,5 +1,6 @@
 # Invoice
 
-This payment provider is a simple Plugin which just offers the option "invoice".
+This payment provider is a simple plugin which offers the option `invoice`.
 
-When a customer select invoice and clicks on "Order" the order will be accepted immediately without a redirect to a payment provider.
+When a customer select the invoice and clicks **Order**,
+the order is accepted immediately without a redirection to a payment provider.

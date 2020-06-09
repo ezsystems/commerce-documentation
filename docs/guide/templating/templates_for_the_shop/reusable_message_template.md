@@ -1,24 +1,37 @@
 # Reusable message template
 
-We use this template to render inline messages within the content pages. With this approach we are more flexible. Changes in one file affects all the places where it's included.
+The message template renders inline messages within content pages.
 
-#### File location:
-
-``` 
-vendor/silversolutions/silver.e-shop/src/Silversolutions/Bundle/EshopBundle/Resources/views/parts/message.html.twig
-```
+`EshopBundle/Resources/views/parts/message.html.twig`
 
 ## Parameters
 
-|Name|Description|Required|
-|--- |--- |--- |
-|content|Content that is displayed inside a message box. Can be mixed with any type of HTML / text|Yes|
-|close|Flag - allow to close the message</br>Default: false</br>Accepts: true or false|No|
-|attrs|Array of attributes. It accepts any HTML attributes (that is allowed for a <div> element) as well as some special attributes.</br>Common attributes:</br>'class': 'alert|success|info|warning|secondary',</br>'id: 'message-id',</br>'data-custo-attr': 'data custom value',</br>'style': 'display: none;'</br>Since we use Foundation framework we can pass a CSS class that will style message based on the class we pass. Currently we support these classes:</br>alert (for alerts/errors)</br>success</br>info</br>warning</br>secondary</br>It's possible to pass multiple class names if required, e.g.:</br>'class': 'alert radius u-margin-top-1x'|No|
+- `content` (required) - Content that is displayed inside a message box. Can be mixed with any type of HTML or text.
+- `close` - Flag that indicates if you can close the message. Default: `false`.
+- `attrs` - Array of any HTML attributes that is allowed for a `<div>` element as well as some special attributes.
+
+Common attributes:
+
+```
+'class': 'alert|success|info|warning|secondary',
+'id: 'message-id',
+'data-custom-attr': 'data custom value',
+'style': 'display: none;'
+```
+
+You can pass a CSS class that will style message. Currently the following classes are supported:
+
+- alert (for alerts/errors)
+- success
+- info
+- warning
+- secondary
+
+You can pass multiple class names if required, e.g.:`'class': 'alert radius u-margin-top-1x'`
 
 ## Examples
 
-### Simple success message:
+### Success message
 
 ``` html+twig
 {{ include('SilversolutionsEshopBundle:parts:message.html.twig'|st_resolve_template, {
@@ -28,7 +41,7 @@ vendor/silversolutions/silver.e-shop/src/Silversolutions/Bundle/EshopBundle/Reso
   } }) }}
 ```
 
-### Simple alert message with close icon:
+### Alert message with a close icon
 
 ``` html+twig
 {{ include('SilversolutionsEshopBundle:parts:message.html.twig'|st_resolve_template, {
@@ -39,7 +52,7 @@ vendor/silversolutions/silver.e-shop/src/Silversolutions/Bundle/EshopBundle/Reso
   } }) }}
 ```
 
-### Notice message with multiline content:
+### Notice message with multiline content
 
 ``` html+twig
 // setting the message content
@@ -56,7 +69,7 @@ vendor/silversolutions/silver.e-shop/src/Silversolutions/Bundle/EshopBundle/Reso
   } }) }}
 ```
 
-### Warning message with `st_translate()` as a content:
+### Warning message with `st_translate()` as content
 
 ``` html+twig
 {{ include('SilversolutionsEshopBundle:parts:message.html.twig'|st_resolve_template, {
@@ -66,7 +79,7 @@ vendor/silversolutions/silver.e-shop/src/Silversolutions/Bundle/EshopBundle/Reso
   } }) }}
 ```
 
-### Alert message with an extra attribute for behat testing:
+### Alert message with an extra attribute for Behat testing
 
 ``` html+twig
 {{ include('SilversolutionsEshopBundle:parts:message.html.twig'|st_resolve_template, {
@@ -77,7 +90,7 @@ vendor/silversolutions/silver.e-shop/src/Silversolutions/Bundle/EshopBundle/Reso
   } }) }}
 ```
 
-### Alert message with some extra css classes and inline styling:
+### Alert message with extra CSS classes and inline styling
 
 ``` html+twig
 {{ include('SilversolutionsEshopBundle:parts:message.html.twig'|st_resolve_template, {
@@ -90,12 +103,12 @@ vendor/silversolutions/silver.e-shop/src/Silversolutions/Bundle/EshopBundle/Reso
 
 ### Behat extra information
 
-Message elements will render with data tag followed by the behat attirs parameters separated by a '-'
+Message elements are rendered with a data tag followed by the Behat `attrs` parameters separated by `-`
 
-Example to check for a success message with the following configuration:
+The following example checks for a success message with the following configuration:
 
 ``` html+twig
-// twig file with success message:
+// Twig file with success message:
 include('SilversolutionsEshopBundle:parts:message.html.twig'|st_resolve_template, {
   'content': s,
   'close': true,
