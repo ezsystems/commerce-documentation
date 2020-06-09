@@ -23,7 +23,7 @@ parameters:
 ## Online cancellation form
 
 There is an online cancellation form.
-After the user submits the form, an email is sent to the admin using [SendCancellationEmailDataProcessor](../../one_page_forms/one_page_forms_api/dataprocessors/dataprocessors_after_submitting/sendcancellationemaildataprocessor.md).
+After the user submits the form, an email is sent to the admin using [SendCancellationEmailDataProcessor](../../one_page_forms/one_page_forms_api/dataprocessors/dataprocessors.md#sendcancellationemaildataprocessor).
 
 See [one-page forms](../../one_page_forms/one_page_forms.md) for more information.
 
@@ -46,7 +46,7 @@ parameters:
 
 ## Online RMA form
 
-eZ Commerce also offers an online RMA form. After user submits this form, an email is sent to admin using [SendRmaEmailDataProcessor](../../one_page_forms/one_page_forms_api/dataprocessors/dataprocessors_after_submitting/sendrmaemaildataprocessor.md).
+eZ Commerce also offers an online RMA form. After user submits this form, an email is sent to admin using [SendRmaEmailDataProcessor](../../one_page_forms/one_page_forms_api/dataprocessors/dataprocessors.md#sendrmaemaildataprocessor).
 
 The email recipient has to generate a delivery note with a return number and send it to the customer.
 The customer then can return their goods together with return number.

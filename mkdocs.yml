@@ -368,37 +368,15 @@ nav:
                     - 'Working with several newsletters': 'guide/newsletter/newsletter2go/newsletter2go_cookbook/working_with_several_newsletters.md'
         - One-page forms:
             - 'One-page forms': 'guide/one_page_forms/one_page_forms.md'
-            - One-page forms API:
-                - 'One-page forms API': 'guide/one_page_forms/one_page_forms_api/one_page_forms_api.md'
+            - One-page form API:
+                - 'One-page form API': 'guide/one_page_forms/one_page_forms_api/one_page_forms_api.md'
                 - Dataprocessors:
-                    - Dataprocessors after submitting:
-                        - 'dataProcessors': 'guide/one_page_forms/one_page_forms_api/dataprocessors/dataprocessors_after_submitting/dataprocessors_after_submitting.md'
-                        - 'CreateCustomerProfileDataDataProcessor': 'guide/one_page_forms/one_page_forms_api/dataprocessors/dataprocessors_after_submitting/createcustomerprofiledatadataprocessor.md'
-                        - 'CreateRegistrationTokenDataProcessor': 'guide/one_page_forms/one_page_forms_api/dataprocessors/dataprocessors_after_submitting/createregistrationtokendataprocessor.md'
-                        - 'EzCreateUserDataProcessor': 'guide/one_page_forms/one_page_forms_api/dataprocessors/dataprocessors_after_submitting/ezcreateuserdataprocessor.md'
-                        - 'EzUserDisableDataProcessor': 'guide/one_page_forms/one_page_forms_api/dataprocessors/dataprocessors_after_submitting/ezuserdisabledataprocessor.md'
-                        - 'EzUserLoginDataProcessor': 'guide/one_page_forms/one_page_forms_api/dataprocessors/dataprocessors_after_submitting/ezuserlogindataprocessor.md'
-                        - 'HasFormChangedDataProcessor': 'guide/one_page_forms/one_page_forms_api/dataprocessors/dataprocessors_after_submitting/hasformchangeddataprocessor.md'
-                        - 'SendCancellationEmailDataProcessor': 'guide/one_page_forms/one_page_forms_api/dataprocessors/dataprocessors_after_submitting/sendcancellationemaildataprocessor.md'
-                        - 'SendConfirmationMailDataProcessor': 'guide/one_page_forms/one_page_forms_api/dataprocessors/dataprocessors_after_submitting/sendconfirmationmaildataprocessor.md'
-                        - 'SendContactEmailDataProcessor': 'guide/one_page_forms/one_page_forms_api/dataprocessors/dataprocessors_after_submitting/sendcontactemaildataprocessor.md'
-                        - 'SendRmaEmailDataProcessor': 'guide/one_page_forms/one_page_forms_api/dataprocessors/dataprocessors_after_submitting/sendrmaemaildataprocessor.md'
-                        - 'UpdateBuyerDataProcessor': 'guide/one_page_forms/one_page_forms_api/dataprocessors/dataprocessors_after_submitting/updatebuyerdataprocessor.md'
-                        - 'UpdateCustomerProfileDataProcessor': 'guide/one_page_forms/one_page_forms_api/dataprocessors/dataprocessors_after_submitting/updatecustomerprofiledataprocessor.md'
-                        - 'UpdateMyAccountDataProcessor': 'guide/one_page_forms/one_page_forms_api/dataprocessors/dataprocessors_after_submitting/updatemyaccountdataprocessor.md'
-                        - 'ValidateBusinessActivationDataProcessor': 'guide/one_page_forms/one_page_forms_api/dataprocessors/dataprocessors_after_submitting/validatebusinessactivationdataprocessor.md'
-                    - Predataprocessors before submitting:
-                        - 'preDataProcessors': 'guide/one_page_forms/one_page_forms_api/dataprocessors/predataprocessors_before_submitting/predataprocessors_before_submitting.md'
-                        - 'PreFillBuyerDataProcessor': 'guide/one_page_forms/one_page_forms_api/dataprocessors/predataprocessors_before_submitting/prefillbuyerdataprocessor.md'
-                        - 'PreFillContactDataProcessor': 'guide/one_page_forms/one_page_forms_api/dataprocessors/predataprocessors_before_submitting/prefillcontactdataprocessor.md'
-                        - 'PreFillMyAccountDataProcessor': 'guide/one_page_forms/one_page_forms_api/dataprocessors/predataprocessors_before_submitting/prefillmyaccountdataprocessor.md'
-                    - 'Events before and after DataProcessor': 'guide/one_page_forms/one_page_forms_api/dataprocessors/events_before_and_after_a_dataprocessor.md'
-                - Form interfaces:
-                    - 'Form interfaces': 'guide/one_page_forms/one_page_forms_api/form_interfaces/form_interfaces.md'
-                    - 'AbstractFormEntity': 'guide/one_page_forms/one_page_forms_api/form_interfaces/abstractformentity.md'
-            - 'One-page forms cookbook': 'guide/one_page_forms/one_page_forms_cookbook.md'
-            - 'One-page forms templates': 'guide/one_page_forms/one_page_forms_templates.md'
-            - 'One-page forms FAQ': 'guide/one_page_forms/one_page_forms_faq.md'
+                    - 'Data processors': 'guide/one_page_forms/one_page_forms_api/dataprocessors/dataprocessors.md'
+                    - 'Pre-data processors': 'guide/one_page_forms/one_page_forms_api/dataprocessors/predataprocessors.md'
+                    - 'Events before and after data processor': 'guide/one_page_forms/one_page_forms_api/dataprocessors/events_before_and_after_a_dataprocessor.md'
+            - 'One-page form templates': 'guide/one_page_forms/one_page_forms_templates.md'
+            - 'Implement custom one-page form': 'guide/one_page_forms/implement_custom_one_page_form.md'
+            - 'Using reCAPTCHA': 'guide/one_page_forms/using_recaptcha.md'
         - Order history:
             - 'Orderhistory': 'guide/order_history/orderhistory.md'
             - Order history features:
