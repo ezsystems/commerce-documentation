@@ -1,22 +1,24 @@
 # ContentServiceInterface
 
-## Introduction
-
-The purpose of this interface is to predefine methods for operations with eZ content object in a customer center.
-
-## ContentServiceInterface
+`ContentServiceInterface` predefines methods for operations with Content items in the Customer center.
 
 |Method|Description|
 |--- |--- |
-|public function createCompanyObject(Party $customerParty);|Creates eZ Content company object using party data|
-|public function getCompanyObjectByCustomerNumber($customerNumber);|Fetches the company's eZ content object with the given customer number|
-|public function updateUserContentObject($userID, UserUpdateStruct $struct);|Updates user content object using provided parameters|
-|public function updateUserStatus($userID, UserUpdateStruct $struct);|Updates user status using provided parameters|
-|public function getUsers($customerNumber, array $parameters = []);|Gets a list of user content objects using given criteria|
-|public function getUsersByRoleName($customerNumber, $roleName);|Gets a list of user content objects by customer no and roleName|
-|public function getMainContacts($customerNumber);|Get the list of main contacts for a given customer number|
-|public function getUser($customerNumber, $email);|Gets a user content object|
-|public function getUserById($ezUserId);|Gets a user content object using a given eZ user ID|
-|public function getRolesOfUserObject(User $user);|Returns list of user roles of user object|
-|public function getAvailableRoles($userId = null);|Returns an array of roles that are registered as customer center roles|
-|public function loadRoleByIdentifierWithSudo($roleIdentifier);|Return Role by identifier|
+|`createCompanyObject(Party $customerParty)`|Creates a Company Content item using party data|
+|`getCompanyObjectByCustomerNumber($customerNumber)`|Fetches the Company's Content item with the given customer number|
+|`updateUserContentObject($userID, UserUpdateStruct $struct)`|Updates the User Content item with the provided parameters|
+|`updateUserStatus($userID, UserUpdateStruct $struct)`|Updates user status with the provided parameters|
+|`getUsers($customerNumber, array $parameters = [])`|Gets a list of User Content items with the given criteria|
+|`getUsersByRoleName($customerNumber, $roleName)`|Gets a list of user Content items by customer number and `roleName`|
+|`getMainContacts($customerNumber)`|Get the list of main contacts for a given customer number|
+|`getUser($customerNumber, $email)`|Gets a User Content item|
+|`getUserById($ezUserId)`|Gets a User Content item using a given User ID|
+|`getRolesOfUserObject(User $user)`|Returns list of user Roles of a User Content item|
+|`getAvailableRoles($userId = null)`|Returns an array of Roles that are registered as Customer center roles|
+|`loadRoleByIdentifierWithSudo($roleIdentifier)`|Returns a Role by identifier|
+
+## CustomerCenterContentService
+
+`CustomerCenterContentService` is the concrete implementation of `ContentServiceInterface`.
+
+Service ID: `siso_customer_center.content_service`

@@ -1,44 +1,30 @@
 # Access control
 
-## Introduction
-
-eZ Commerce uses the eZ Platform policies to avoid access to some specific pages. The policies can be assigned in the backend to a specific user role. eZ Platform allows you to create your own role system.
+eZ Commerce uses Policies to control access to some specific pages and functions.
 
 ## eZ Commerce policies
 
-One policy consists of a module and a function.
-
 |Module|Function|Description|
 |--- |--- |--- |
-|eZ Commerce|||
-|siso_policy|checkout|Can access the checkout process|
-|siso_policy|dashboard_view|Can access the backend cockpit|
-|siso_policy|forms_profile_edit|Can access the user profile|
-|siso_policy|lostorder_list|Can access the lostorders in the backend|
-|siso_policy|lostorder_manage||
-|siso_policy|lostorder_process||
-|siso_policy|quickorder|Can access the quickorder|
-|siso_policy|read_basket|Can see the basket|
-|siso_policy|write_basket|Can modify the basket (add, update, delete)|
-|customercenter|||
-|siso_customercenter|approve|Can approve baskets in the customer center|
-|siso_customercenter|buy|Can buy as the customer center user|
-|siso_customercenter|view|Can access the customer center user management|
+|`siso_policy`|`checkout`|Access the checkout process|
+|`siso_policy`|`dashboard_view`|Access the Back Office cockpit|
+|`siso_policy`|`forms_profile_edit`|Access the user profile|
+|`siso_policy`|`lostorder_list`|Access the lost orders in the Back Office|
+|`siso_policy`|`lostorder_manage`||
+|`siso_policy`|`lostorder_process`||
+|`siso_policy`|`quickorder`|Access the quick order|
+|`siso_policy`|`read_basket`|See the basket|
+|`siso_policy`|`write_basket`|Modify the basket (add, update, delete)|
+|`siso_customercenter`|`approve`|Approve baskets in the customer center|
+|`siso_customercenter`|`buy`|Buy as the customer center user|
+|`siso_customercenter`|`view`|Access the customer center user management|
 
 ## Handling the access control
 
-eZ Commerce has a flexible way, how to handle the access to some specific area.
+You can handle access to specific areas in th following places:
 
-- Controllers: If there is a defined route, you can simple add the policy in the routing file.
-- [eZ Commerce forms](../one_page_forms/one_page_forms.md): you can add the policy in the forms configuration  
-
-!!! note
-
-    When defining the policies, you must follow the **module/function** syntax.
-
-### Defining policies in the routing file
-
-If you want to avoid user to access a page that is rendered by a controller and a route definition exists for it, you can simply do it in the routing file.
+- In [one-page forms](../one_page_forms/one_page_forms.md) you can add the Policy in the form configuration. 
+- In controllers, if there is a defined route, you can add the Policy in the routing file:
 
 ``` yaml
 siso_quick_order:
@@ -48,59 +34,18 @@ siso_quick_order:
         policy: siso_policy/quickorder
 ```
 
-For a simple check if user has a definied policy, this configuration is pretty enough. If you need some more complex rules, e.g. check the section or check more policies at once, you need your own implementation in your controller (or other appropriate place).
+For a simple check if a user has a defined policy, this configuration is enough.
+If you need more complex rules, e.g. to check the Section or check multiple Policies at once,
+you need your own implementation in the controller.
 
-### How this works in the backround?
+!!! note
 
-There is a central event listener, that will check the configuration from the routing file and user policies on every request. If user does not have a defined policy, an AccessDenied Exception is thrown and forwarded to the [ExceptionListener](../../cookbook/exception_handling/exception_handling.md).
+    When defining the policies, you must follow the `module/function` syntax.
 
-**Silversolutions/Bundle/EshopBundle/EventListener/VerifyUserPoliciesRequestListener.php**
+### Access control mechanism
 
-- listens to a "kernel.finish\_request" event
+A central event listener checks the configuration from the routing file and Policies on every request.
+If a user does not have the required Policy, `AccessDeniedException` is thrown and forwarded to the [`ExceptionListener`](../../cookbook/exception_handling/exception_handling.md).
+Then the exception listener renders an access denied page.
 
-``` php
-/**
- * Checks the user policies for given request.
- * Therefore the information for current route from the routing file are evaluated.
- *
- * Example:
- *  silversolutions_basket_show:
- *      pattern:  /basket/show
- *      defaults:
- *          _controller: SilversolutionsEshopBundle:Basket:show
- *          policy: siso_policy/read_basket
- *
- * @param FinishRequestEvent $event
- * @return void
- * @throws AccessDeniedException
- */
-public function verifyUserPolicies(FinishRequestEvent $event)
-{
-    $request = $event->getRequest();
-    $routeParams = $request->attributes->get('_route_params');
-
-    if (is_array($routeParams)
-        && array_key_exists('policy', $routeParams)
-    ) {
-        $policy = explode('/', $routeParams['policy']);
-        if (is_array($policy)
-            && array_key_exists(0, $policy)
-            && array_key_exists(1, $policy)
-        ) {
-            $module = $policy[0];
-            $function = $policy[1];
-
-            $isGrantProfileEdit = $this->authorizationChecker->isGranted(
-                new AuthorizationAttribute($module, $function)
-            );
-
-            if (!$isGrantProfileEdit) {
-                throw new AccessDeniedException('access_denied_' . $module . '_' . $function);
-            }
-        }
-    }
-}
-```
-### What happen by missing policy?
-
-When the user tries to call a url, where he needs a special policy, that he doesn't have, **VerifyUserPoliciesRequestListener** is throwing an exception. Then the exception listener is rendering an access denied page.
+`VerifyUserPoliciesRequestListener.php` listens to a `kernel.finish_request` event,

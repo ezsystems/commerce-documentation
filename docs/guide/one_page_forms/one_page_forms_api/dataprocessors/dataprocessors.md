@@ -38,7 +38,7 @@ parameters:
 
 ## CreateRegistrationTokenDataProcessor
 
-`CreateRegistrationTokenDataProcessor` creates a new token with the help of [`TokenService`](../../../user_management/token/tokenservice.md).
+`CreateRegistrationTokenDataProcessor` creates a new token with the help of [`TokenService`](../../../user_management/token/token.md#tokenservice).
 
 Service ID: `ses_forms.create_registration_token_data_processor`
 
