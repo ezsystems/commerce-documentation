@@ -1,16 +1,14 @@
 # Language switcher
 
-eZ Commerce comes with a language switcher functionality, if your shop supports multiple siteaccesses because of the multilingualism. You can easily switch the language in the shop by clicking on the language in the language switcher list.
+If your shop supports multiple language SiteAccesses, you can use the built-in language switcher function.
 
-If user clicks on another language from the list, he will be redirected to the same page with the appropriate language.
+If a user clicks on a language in the switcher list, they are redirected to the same page in the appropriate language.
 
 ![](img/language_switcher_1.png)
 
-## Technical background
+## Configuration
 
-### Configuration
-
-The siteaccess and languages are configured in ezplatform.yml
+SiteAccesses and languages are configured in `ezplatform.yml`:
 
 ``` yaml
 ezpublish:
@@ -31,15 +29,13 @@ ezpublish:
                 - ger-DE
 ```
 
-### Template
+## Template
 
-The language switcher is integrated in the **pagelayout.html.twig**, so it can be displayed on every page.
+The language switcher is integrated in `pagelayout.html.twig`, so it can be displayed on every page.
 
 !!! note
 
-    The parameters for the language switcher controller are set here. Do not change them to ensure the full functionality\!
-
-**Parameters for the controller - do not change!**
+    The parameters for the language switcher controller are set here. Do not change them to ensure the full functionality.
 
 ``` html+twig
 {#parameters for the language switcher#}
@@ -62,11 +58,9 @@ The language switcher is integrated in the **pagelayout.html.twig**, so it can b
 {#end - parameters for the language switcher#}
 ```
 
-The list of languages are configured in these blocks. You have to change them depending on your siteaccess configuration.
+The list of languages is configured in these blocks. You have to change them depending on your SiteAccess configuration.
 
-Per language you need to set the correct siteaccess name.
-
-**List of languages - change\!**
+You need to set the correct SiteAccess name per language.
 
 ``` html+twig
 {% block language_switcher_mobile %}
@@ -82,8 +76,6 @@ Per language you need to set the correct siteaccess name.
   </ul>
 
 {% endblock %}
-
-...
 
 {% block language_switcher %}
       <li>
@@ -111,9 +103,8 @@ Per language you need to set the correct siteaccess name.
 
 ## Controller
 
-The LanguageSwitcherController will generate the correct url depending on the given GET parameters in the template and redirect user to the correct page. If no url can be generated, user will be redirected to the homepage of the requested siteaccess.
-
-**routing.yml**
+`LanguageSwitcherController` generates the correct URL depending on the given GET parameters in the template and redirects the user to the correct page.
+If no URL can be generated, the user is redirected to the homepage of the requested SiteAccess.
 
 ``` yaml
 silversolutions_language_switcher:

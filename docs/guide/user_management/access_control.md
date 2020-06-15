@@ -52,7 +52,7 @@ For a simple check if user has a definied policy, this configuration is pretty e
 
 ### How this works in the backround?
 
-There is a central event listener, that will check the configuration from the routing file and user policies on every request. If user does not have a defined policy, an AccessDenied Exception is thrown and forwarded to the [ExceptionListener](../../cookbook/exception_handling/exception_handling.md).
+There is a central event listener, that will check the configuration from the routing file and user policies on every request. If user does not have a defined policy, an AccessDenied Exception is thrown and forwarded to the [ExceptionListener](../../cookbook/exception_handling.md).
 
 **Silversolutions/Bundle/EshopBundle/EventListener/VerifyUserPoliciesRequestListener.php**
 

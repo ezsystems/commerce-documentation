@@ -1,21 +1,16 @@
 # StorageService
 
-Utilities and helper for interacting with files, which are stored on the server.
+`StorageService` provides utilities and a helper for interacting with files which are stored on the server.
 
-|StorageService||Parameters|Return|
-|--- |--- |--- |--- |
-|Id|silver_tools.storage_service|||
-|Meaning|fetches a list of files by a provided $productId from $storagePath|||
-|Function|GetFilesByProductId()|string $productId</br>string $storagePath</br>string $suffix = ''</br>int $subFolder = 0</br>string $separator = '_'|array of strings - path names of the existing files or an empty array|
+Service ID: `silver_tools.storage_service`
 
-## public function getFilesByProductId($productId, $storagePath, $suffix = '', $subFolder = 0, $separator = '\_')
+Theservice fetches a list of files by a provided $productId from `$storagePath`.
 
-This makes use of the Symfony-Component 'Finder'.  
-See: <http://symfony.com/doc/current/components/finder.html>
+## getFilesByProductId
 
-### Usage
+`getFilesByProductId` uses the [Symfony Finder component.](http://symfony.com/doc/current/components/finder.html)
 
-The example code:
+The following example code:
 
 ``` php
 use Silversolutions\Bundle\ToolsBundle\Services\StorageService;
@@ -27,7 +22,7 @@ $storageService = $this->get('silver_tools.storage_service');
 $pdfFiles = $storageService->getFilesByProductId($productId, $storagePath, array('pdf'));
 ```
 
-will return the following exemplary structure:
+returns the following example structure:
 
 ``` 
 // example output of var_dump($pdfFiles)
@@ -39,50 +34,4 @@ array (3) => (
     [2] => 
     string () "var/storage/manuals/1002_datasheet.pdf"
 )
-```
-
-### Documentation
-
-``` php
-    /**
-     * Fetches a list of files by a provided $productId from $storagePath.
-     *
-     * $productId is the complete identification of a single product. It could
-     * contain a variant-code or similar codes (e.g. 'abc', '08/15', 'a02-04')
-     *
-     * $storagePath is the root path to where files are stored.
-     *
-     * If $suffix is not empty, only files includes in $suffix will be matched.
-     * $suffix can be an array of strings or a single string.
-     *
-     * If $subFolder is not 0 (zero), the first n characters of $productId,
-     * are used as a part of the paths.
-     *
-     * For example: getFilesByProductId('abcd', '/media/', array('jpg', 'pdf'), '3')
-     * would match: '/media/a/b/c/abcd.jpg', '/media/a/b/c/abcd_1.jpg'
-     * but NOT    : '/media/abcd.pdf', '/media/a/b/abcd_big.jpg'
-     *
-     * The $separator is used to identify multiple files for a single $productId.
-     *
-     * For example: getFilesByProductId('product-manuals', '/media/', 'pdf', 0, '-')
-     * would match: '/media/product-manuals.pdf', '/media/product-manuals-v2.pdf'
-     * but NOT    : '/media/product-reference.pdf', '/media/product-2.pdf'
-     *
-     * Will return an array filled with of paths (as strings) or and empty array.
-     *
-     * @param string $productId    The complete product id
-     * @param string $storagePath  Path to the beginning of the storage
-     * @param array|string $suffix Suffixes to filter (include)
-     * @param int $subFolder       Number of character of $productId to use as path
-     * @param string $separator    Separator for multiple files per $productId
-     *
-     * @throws \InvalidArgumentException When $productId is not a string or empty
-     * @throws \InvalidArgumentException When $storagePath is not a string, empty or not a readable path
-     * @throws \InvalidArgumentException When $suffix is not a string or array of strings
-     * @throws \InvalidArgumentException When $subFolder is not an integer or is negative
-     * @throws \InvalidArgumentException When $separator is not a string or is empty
-     *
-     * @return array Array of strings of path names of existing files or empty array
-     */
-    public function getFilesByProductId($productId, $storagePath, $suffix = '', $subFolder = 0, $separator = '_')
 ```

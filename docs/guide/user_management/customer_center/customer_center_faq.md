@@ -30,4 +30,4 @@ If you need to introduce a special process, after the form was submitted, you wi
 
 ## How can I add the customer center actions into user menu?
 
-Please check [Component - User Menu](../../../cookbook/frontend_customizing/4_front_end_stack_in_details/4.2_customized_foundation_framework/4.2.2_components/component_user_menu.md) or [How to user menu is build?](../../customers/customers_faq.md)
+Refer to [How to user menu is build?](../../customers/customers_faq.md)
