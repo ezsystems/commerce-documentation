@@ -1,16 +1,8 @@
 # loadProducts
 
-## catalog.load_products
-
-method: loadProducts
-
-operation: catalog
-
-description: Loads products from storage
+`catalog.load_products` loads products from storage.
 
 ## Example call to Business API
-
-**Call Catalog Business API**
 
 ``` php
 /** @var InputLoadList $input */
@@ -37,9 +29,9 @@ $html = $this->renderView(
 );
 ```
 
-## BusinessAPI loadProducts
+## Business API `loadProducts`
 
-Business API calls catalog service to fetch all products and passes the filterType as an argument.
+Business API calls catalog service to fetch all products and passes the `filterType` as an argument.
 
 ``` php
 public function loadProducts(InputLoadList $input)
@@ -66,14 +58,15 @@ public function loadProducts(InputLoadList $input)
 
 ## CatalogService
 
-It provides a method for searching catalog elements using the proper data provider. It also gets prices and total count of elements without offset, limit.
+`CatalogService` provides a method for searching catalog elements using the proper data provider.
+It also gets prices and total count of elements without offset or limit.
 
 !!! note
 
-    **fetchChildrenList** returns an **array** with 2 elements:
+    `fetchChildrenList` returns an array with 2 elements:
 
     - `$catalogList` - list of catalog elements  
-    - `$catalogCount` - total number of elements (without offset and limit) for pagination purpose
+    - `$catalogCount` - total number of elements (without offset and limit) for pagination purposes
 
 ``` php
 public function fetchChildrenList($identifier, $depth, $filter, $languages = null, $offset = 0, $limit = 3)
@@ -103,9 +96,8 @@ public function fetchChildrenList($identifier, $depth, $filter, $languages = nul
 
 ## Configuration
 
-The filter *catalogList* and *productList* are defined in the configuration file. It is used in catalog data provider to filter and sort all elements or products list from catalog
-
-**silver.eshop.yml**
+Filters `catalogList` and `productList` are defined in the configuration file.
+They are used in catalog data provider to filter and sort all elements or products list from catalog.
 
 ``` yaml
 silver_eshop.default.ez5_catalog_data_provider.filter:
@@ -125,7 +117,7 @@ silver_eshop.default.ez5_catalog_data_provider.filter:
                     order: "\\eZ\\Publish\\API\\Repository\\Values\\Content\\Query::SORT_DESC"
 ```
 
-## Input Parameters
+## Input parameters
 
 ``` php
 namespace Silversolutions\Bundle\EshopBundle\Entities\BusinessLayer\InputValueObjects;
@@ -177,7 +169,7 @@ class LoadList extends ValueObject
 }
 ```
 
-## Returns Output
+## Returns output
 
 ``` php
 namespace Silversolutions\Bundle\EshopBundle\Entities\BusinessLayer\OutputValueObjects;

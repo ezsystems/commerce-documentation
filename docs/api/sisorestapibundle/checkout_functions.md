@@ -2,17 +2,13 @@
 
 ## getBasketPaymentMethods
 
-### Resourcename
+`/api/ezp/v2/siso-rest/checkout/payment-methods (GET)`
 
-/api/ezp/v2/siso-rest/checkout/payment-methods (GET)
+Returns available payment options for the current basket.
 
-### Summary
+Parameter-based default implementation can be replaced by overriding the service ID.
 
-returns available payment options for current basket
-
-Parameter based default implementation can be replaced via overridden service ID
-
-standard service id: 'siso_rest_api.payment_methods_service'
+Standard service ID: `siso_rest_api.payment_methods_service`
 
 ### Request
 
@@ -35,17 +31,13 @@ empty
 
 ## getBasketShippingMethods
 
-### Resourcename
+`/api/ezp/v2/siso-rest/checkout/shipping-methods (GET)`
 
-/api/ezp/v2/siso-rest/checkout/shipping-methods (GET)
+Returns available delivery options for the current basket.
 
-### Summary
+Parameter-based default implementation can be replaced by overriding the service ID.
 
-returns available delivery options for current basket
-
-Parameter based default implementation can be replaced via overridden service ID
-
-standard service id: 'siso_rest_api.shipping_methods_service'
+Standard service ID: `siso_rest_api.shipping_methods_service`
 
 ### Request
 

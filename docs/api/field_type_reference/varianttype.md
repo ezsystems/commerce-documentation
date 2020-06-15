@@ -1,12 +1,12 @@
 # VariantType
 
-The VariantType Fieldtype offers a user interface for editing variants. It stores the information about the variants in a json format.
+The VariantType Field Type offers a user interface for editing variants.
 
-The FieldType offers a selection of preconfigured varianttypes.
+The FieldType offers a selection of preconfigured variant types.
 
 ![](../img/additional_ez_fieldtypes_12.png)
 
-A variant type can be a 1level or 2level variant. The variant types offered can be setup in a yml file: 
+A variant type can be a one level or two level variant. The variant types can be setup in a YAML file: 
 
 ``` yaml
 siso_core.default.variant_types:
@@ -39,11 +39,11 @@ siso_core.default.variant_types:
 
 ```
 
-Depending on the variant type a edit form is generated:
+Depending on the variant type, different edit forms are generated:
 
 ![](../img/additional_ez_fieldtypes_13.png)
 
-The data is stored in a JSON format:
+The data is stored in JSON format:
 
 ``` json
 [

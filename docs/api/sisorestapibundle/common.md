@@ -1,27 +1,16 @@
 # Common
 
-## This page documents general REST API calls:
-
-- getCountrySelection
-- getCustomerPrice
-
 ## getCountrySelection
 
-### Resourcename
+`/api/ezp/v2/siso-rest/country-selection (GET)`
 
-/api/ezp/v2/siso-rest/country-selection (GET)
+Returns the list of configured country codes and their translations for the current SiteAccess.
 
-### Summary
+Service ID: `siso_rest_api.country_selection_service`.
 
-returns the list of configured country codes and their translation for current siteaccess
+Inside this service the countries are fetched from the `siso_tools.country` service.
 
-### Service ID
-
-siso_rest_api.country_selection_service
-
-Inside this service the countries will be fetched from service: siso_tools.country (see <a href="Country-Service_29819029.html">Country Service</a>)
-
-parameter ses_forms.default.preferred_country is used for defaultCountry
+Parameter `ses_forms.default.preferred_country` is used for `defaultCountry`.
 
 ### Request
 
@@ -96,15 +85,9 @@ empty
 
 ## getCustomerprice
 
-### Resourcename
+`/api/ezp/v2/siso-rest/customerprice (POST)`
 
-/api/ezp/v2/siso-rest/customerprice (POST)
-
-### Summary
-
-returns the customer price
-
-### Service ID
+Returns the customer price.
 
 ### Request
 
@@ -157,7 +140,3 @@ returns the customer price
     }]
 }
 ```
-
-ConfigResolver Variable, ob Stock nach außen übergeben werden soll
-
-Service mit PriceResponse, Sku, Quantity und ermittelt die Verfügbarkeit, Response ist ein Code "red", "green", "yellow", "grey"

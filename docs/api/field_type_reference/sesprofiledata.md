@@ -1,14 +1,15 @@
 # SesProfileData
 
-This datatype is used to store the [CustomerProfileData](../../guide/customers/customers_api/customer_profile_data_components/customer_profile_data_model.md) in the User class in eZ Platform.
+This Field Type stores [`CustomerProfileData`](../../guide/customers/customers_api/customer_profile_data_components/customer_profile_data_model.md) in the User Content Type.
 
 !!! note
 
-    CustomerProfileData must be stored in eZ as a serialized string in **base64** format, since it is not possible to store any special HTML characters(`<`,`>`, `""`,`''`, `&`) in textfield or textarea field.
+    `CustomerProfileData` must be stored as a serialized string in base64 format,
+    because it is not possible to store any special HTML characters(`<`,`>`, `""`,`''`, `&`) in text field or text area field.
 
-# Symfony Datatype
+# Symfony data type
 
-Symfony Datatype is stored in:
+The Symfony data type is stored in:
 
 ```
 Silversolutions/Bundle/DatatypesBundle/FieldType/SesProfileData/*
@@ -16,8 +17,6 @@ Silversolutions/Bundle/DatatypesBundle/Converter/SesProfileData.php
 ```
 
 #### Configuration
-
-**Silversolutions/Bundle/DatatypesBundle/Resources/config/services.xml**
 
 ``` xml
 <parameters>
@@ -38,8 +37,9 @@ Silversolutions/Bundle/DatatypesBundle/Converter/SesProfileData.php
 </services> 
 ```
 
-The name of the customer (used from the contact section) can be used in the backend for lists. This can be achieved by using the name pattern in the class definition of the ezuser class:
+The name of the customer (taken from the contact section) can be used for lists.
+To do it, use the name pattern in the Content Type definition of the User Content Type:
 
 ![](../img/additional_ez_fieldtypes_7.png)
 
-"customer\_profile\_data" is the identifier of the attribute where the profile data is stored.
+`customer_profile_data` is the identifier of the Field where the profile data is stored.

@@ -1,25 +1,110 @@
 # SisoRestApiBundle
 
-welcome to SisoRestApiBundle documentation.
+## Using the REST interface
 
-!!! tip
+For GET requests a token is not required.
 
-    Check SisoRestApiBundle functionality in action by visiting our Demo Shop at: [demo.silver-eshop.de](http://demo.silver-eshop.de/)
+``` 
+axios.get('/api/ezp/v2/siso-rest/basket')
+    .then(function (response) {
 
-Compatible to silver.eShop version: 3.7
+           app.basketObject = response.data;
+           if(app.basketObject.Basket) {
+                   .....
+           }
+                
+}
+```
 
-Source (git): http://gitlab.silversolutions.de:8081/silver.eshop-plugins/silver.rest-api.git
+If you are using a PATCH request, a token is required. A Twig function provides the current token.
 
-## Before you start
+``` 
+var token = "{{ csrf_token('rest') }}";
+axios.patch('/api/ezp/v2/siso-rest/basket/current/shippingmethod', {
+    "ShippingMethodData": {
+        "shippingMethod": app.shippingMethod
+    }
+}, {
+    headers: {
+        'X-CSRF-Token': token,
+        'Content-Type': 'application/vnd.ez.api.ShippingMethodData+json',
+        'Accept': 'application/vnd.ez.api.Basket+json'
+    }
+})
+```
 
-Please keep in mind that SisoRestApiBundle is really connected with a lot of different modules in our shop. Be sure to check these out:
+## Error handling / responses
 
-## Installation and Configuration
+```
+{
+    "ValidationResponse": {
+        "_media-type": "application\/vnd.ez.api.ValidationResponse+json",
+        "messages": {
+            "Party": {
+                "_errors": [
+                    {
+                        "_code": 103,
+                        "_message": "This address is already stored in your address book"
+                    }
+                ]
+                "PartyName": [
+                    {
+                        "Name": {
+                            "_errors": [
+                                {
+                                    "_code": 100,
+                                    "_message": "This value should not be blank."
+                                }
+                            ]
+                        }
+                    }
+                ],
+                "PostalAddress": {
+                    "StreetName": {
+                        "_errors": [
+                            {
+                                "_code": 100,
+                                "_message": "This value should not be blank."
+                            }
+                        ]
+                    },
+                    "CityName": {
+                        "_errors": [
+                            {
+                                "_code": 100,
+                                "_message": "This value should not be blank."
+                            }
+                        ]
+                    },
+                    "PostalZone": {
+                        "_errors": [
+                            {
+                                "_code": 100,
+                                "_message": "This value should not be blank."
+                            },
+                            {
+                                "_code": 101,
+                                "_message": "\"\" is not a valid ZIP code. For valid ZIP code use following pattern \"1234\"."
+                            }
+                        ]
+                    }
+                },
+                "Contact": {
+                    "ElectronicMail": {
+                        "_errors": [
+                            {
+                                "_code": 100,
+                                "_message": "This value should not be blank."
+                            }
+                        ]
+                    }
+                }
+            }
+        }
+    }
+}
+```
 
-Read the manual for installation and configuration of the SisoRestApiBundle plugin.
-
-[Readme.md](http://gitlab.silversolutions.de:8081/silver.eshop-plugins/silver.rest-api/blob/master/readme.md)
-
-And setup your site for eZ Publish's REST API (Mostly session based authentication is required):
-
-https://doc.ez.no/display/EZP/REST+API+Authentication
+``` 
+{{ error_message([Party][PartyName][Name]) }}
+```

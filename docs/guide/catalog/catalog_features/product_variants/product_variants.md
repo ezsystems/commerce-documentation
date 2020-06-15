@@ -67,7 +67,7 @@ In order to provide variants, the product class `ses_product` has to be extended
 
 By default eZ Commerce offers a set of variant types. The variant type defines which attributes such as size or/and color are used to identify a variant.
 
-The variant types can be defined using a yml configuration, see [VariantType](../../../../api/additional_ez_fieldtypes/varianttype.md).
+The variant types can be defined using a yml configuration, see [VariantType](../../../../api/field_type_reference/varianttype.md).
 
 ![](../../../img/product_variants.png)
 

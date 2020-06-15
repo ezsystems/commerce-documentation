@@ -2,15 +2,13 @@
 
 ## getBasket
 
-### Resourcename
+`/api/ezp/v2/siso-rest/basket/current (GET)`
 
-/api/ezp/v2/siso-rest/basket/current (GET)
+Returns the current basket of the user with header information and order lines.
 
-### Summary
+Standard service ID: `silver_basket.basket_service`
 
-returns the current basket of the user with header infos and order lines</br>standard service id: 'silver_basket.basket_service'
-
-### Request 
+### Request
 
 empty
 
@@ -213,13 +211,11 @@ empty
 
 ## readBasketList
 
-### Resourcename
+`/api/ezp/v2/siso-rest/basket/header/{basket_type} (GET)`
 
-/api/ezp/v2/siso-rest/basket/header/{basket_type} (GET)
+Returns all baskets of the given type of the user with header information.
 
-### Summary
-
-returns all baskets of the given type of the user with header infos</br>standard service id: 'silver_basket.basket_service'
+Standard service ID: `silver_basket.basket_service`
 
 ### Request
 
@@ -445,27 +441,27 @@ empty
 
 ## updateBasketParty
 
-### Resourcename
-
 ```
 /api/ezp/v2/siso-rest/basket/current/party/invoice (PATCH)
 /api/ezp/v2/siso-rest/basket/current/party/delivery (PATCH)
 /api/ezp/v2/siso-rest/basket/current/party/buyer (PATCH)
 ```
 
-### Summary
+Validates party data and stores it in basket.
 
-Validates party data and stores it in basket
-
-Standard service id: 'siso_rest_api.basket_helper_service' (methods validateParty and storePartyInBasket)
+Standard service ID: `siso_rest_api.basket_helper_service` (methods `validateParty` and `storePartyInBasket`)
 
 ### Validation in standard
 
 !!! note
 
-    Due to a bug in the Symfony Validation component, it is not possible to pass groups to sub-constraints of composite constraints. But the composite constraints themselfes can be configured with validation groups. This means that if the sub-constraints should be validated in different groups, the composite (in this example StringObject) must be duplicated with the respective combinations of groups. An example of this can be found in the ElectronicMail field of the Contact class below.
+    Due to a bug in the Symfony Validation component, it is not possible to pass groups to sub-constraints of composite constraints.
+    Composite constraints themselves can be configured with validation groups.
+    This means that if the sub-constraints should be validated in different groups,
+    the composite (in this example `StringObject`) must be duplicated with the respective combinations of groups.
+    An example of this can be found in the ElectronicMail field of the Contact class below.
     
-```
+``` yaml
 Silversolutions\Bundle\EshopBundle\Entities\Messages\Document\Party:
     properties:
         PartyName:
@@ -654,13 +650,9 @@ Error:
 
 ## updateStoredBasket
 
-### Resourcename
+`/api/ezp/v2/siso-rest/basket/update-stored/{basketId} (POST)`
 
-/api/ezp/v2/siso-rest/basket/update-stored/{basketId} (POST)
-
-### Summary
-
-Adds lines to stored basket with id basketId
+Adds lines to stored basket with `basketId`.
 
 ### Request
 
@@ -778,15 +770,11 @@ Error:
 
 ## updateBasketShippingMethod
 
-### Resourcename
+`/api/ezp/v2/siso-rest/basket/current/shippingmethod (PATCH)`
 
-/api/ezp/v2/siso-rest/basket/current/shippingmethod (PATCH)
+Validates and stores shipping method in the current basket.
 
-### Summary
-
-Validates and stores shipping method in current basket
-
-Standard service id: 'siso_rest_api.basket_helper_service' (methods validateShippingMethod and storeShippingMethodInBasket)
+Standard service ID: `siso_rest_api.basket_helper_service` (methods `validateShippingMethod` and `storeShippingMethodInBasket`)
 
 ### Validation in standard
 
@@ -828,15 +816,11 @@ Error:
 
 ## updateBasketPaymentMethod
 
-### Resourcename
+`/api/ezp/v2/siso-rest/basket/current/paymentmethod (PATCH)`
 
-/api/ezp/v2/siso-rest/basket/current/paymentmethod (PATCH)
+Validates and stores shipping method in the current basket.
 
-### Summary
-
-Validates and stores shipping method in current basket<
-
-Standard service id: 'siso_rest_api.basket_helper_service' (methods validatePaymentMethod and storePaymentMethodInBasket)
+Standard service ID: `siso_rest_api.basket_helper_service` (methods `validatePaymentMethod` and `storePaymentMethodInBasket`)
 
 ### Validation in standard
 
@@ -878,15 +862,11 @@ Error:
 
 ## updateBasketVoucher
 
-### Resourcename
+`/api/ezp/v2/siso-rest/basket/current/voucher (PATCH)`
 
-/api/ezp/v2/siso-rest/basket/current/voucher (PATCH)
+Validates and stores the voucher code in the current basket. If an empty field is sent, the current voucher is deleted.
 
-### Summary
-
-Validates and stores the voucher code in current. If an empty field is sent, the current voucher will be deleted.
-
-Standard service id: 'siso_rest_api.basket_helper_service' (method validateAndStoreVoucherCode)
+Standard service ID: `siso_rest_api.basket_helper_service` (method `validateAndStoreVoucherCode`)
 
 ### Request
 
@@ -920,11 +900,7 @@ Error:
 
 ## AddToBasket
 
-### Resourcename
-
-/api/ezp/v2/siso-rest/basket/current/lines (POST)
-
-### Summary
+`/api/ezp/v2/siso-rest/basket/current/lines (POST)`
 
 Call to add one or more items to the current basket.
 
@@ -978,21 +954,17 @@ Error:
 
 ## UpdateBasket
 
-### Resourcename
+`/api/ezp/v2/siso-rest/basket/update (POST)`
 
-/api/ezp/v2/siso-rest/basket/update (POST)
-
-### Summary
-
-Call to update one or more items to the current basket.
+Calls to update one or more items in the current basket.
 
 If the quantity is 0, the line is removed from the basket
 
-Currently only these properties are updated:
+Currently only the following properties are updated:
 
-- quantity
-- RemoteDataMap
-- remark
+- `quantity`
+- `RemoteDataMap`
+- `remark`
 
 ### Request
 

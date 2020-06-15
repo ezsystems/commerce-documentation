@@ -1,10 +1,14 @@
 # SpecificationsType
 
-The FieldType is used to store a structured list of attributes for products:
+The Field Type stores a structured list of attributes for products:
 
 ![](../img/additional_ez_fieldtypes_10.png)
 
-The data is stored in json format.
+!!! caution "Field naming"
+
+    A Field of the SpecificationsType must have `ses_specifications` as its Field identifier.
+
+The data is stored in JSON format.
 
 ``` json
 [
@@ -39,7 +43,7 @@ The data is stored in json format.
 
 ## Adding a unit selection
 
-The optional attribute "option" allows to add a select field offering e.g. a selection of units:
+The optional `option` attribute enables you to add a select field offering e.g. a selection of units:
 
 ![](../img/additional_ez_fieldtypes_11.png)
 
@@ -68,7 +72,8 @@ The optional attribute "option" allows to add a select field offering e.g. a sel
 
 ## Adding default values
 
-The FieldType is using a configuration which controls which groups will be offered. Default attributes can be provided as well:
+The Field Type uses a configuration that controls which groups are offered.
+You can also provide default attributes:
 
 ``` yaml
 siso_core.default.specification_groups:
@@ -89,12 +94,6 @@ siso_core.default.specification_groups:
         default_values: ~
 ```
 
-## Used template:
+## Template
 
 `SilversolutionsDatatypesBundle::sesselectiontype_content_field.html.twig`
-
-## Using SpecificationsType in a content field definition for a content type
-
-!!! note "Field identifier naming restriction"
-
-    The SpecificationsType requires that its field identifier is set to `ses_specifications`

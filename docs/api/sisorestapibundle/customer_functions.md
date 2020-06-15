@@ -1,24 +1,16 @@
 # Customer functions
 
-On this page you will find REST API calls for customer data:
-
-- getShippingAddresses
-
 ## getShippingAddresses
 
-### Resourcename
+`/api/ezp/v2/siso-rest/customer/addresses/shipping (GET)`
 
-/api/ezp/v2/siso-rest/customer/addresses/shipping (GET)
+Returns available delivery addresses for the current customer.
 
-### Summary
+Use the standard `ses.customer_profile_data.ez_erp` service to get shipping addresses: 
 
-returns available delivery addresses for current customer
-
-### Service
-
-Use standard service to get shipping addresses: 'ses.customer_profile_data.ez_erp'
-
-(getCustomerProfileData()-&gt;deliveryParties)
+```
+getCustomerProfileData()->deliveryParties
+```
 
 ### Request
 

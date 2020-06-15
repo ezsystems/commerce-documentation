@@ -1,46 +1,28 @@
-# Country Service
+# CountryService
 
-The purpose of this service is to return a list of countries with corresponding country codes. The country names are translated for every siteaccess. This list of countries is used in all forms in the shop to be displayed as list of choices.
+`CountryService` returns a list of countries with corresponding country codes.
+The country names are translated for every SiteAccess.
+This list of countries is used in all forms in the shop as a list of choices.
 
-Because this service has knowledge about the form type name, it is possible to return different countries for every form. So it is possible to display different list for the checkout process and different list for the registration process.  
+Because this service is aware of the form type name, it can return different countries for every form.
+It can display a different list for the checkout process and a different list for the registration process.  
 
-!!! note "CountryService"
-
-    Namespace: Siso/Bundle/ToolsBundle/Service
-
-    Service-ID: siso_tools.country
-
-    Interface: Siso/Bundle/ToolsBundle/Service/CountryServiceInterface
+Service ID: `siso_tools.country`
 
 ## Configuration
 
-The list of possible countries to choice can be configued in:
+The list of possible countries to choice can be configured in `siso_tools.default.countries`.
 
-``` 
-siso_tools.default.countries
-```
+## `getCountryNames`
 
-## Methods
+The `getCountryNames` method takes the following parameters:
 
-### User Components
+- `$formTypeName = null`
+- `$locale = null`
 
-Method: getCountryNames
-
-Parameter:
-
-`$formTypeName = null,`
-
-`$locale = null`
-
-Returns:
-
-`string[]`
-
-Description: 
-
-Returns an array of country codes and names
-The country name is translated for required Locale $locale. If $locale is not set, current Locale is used.
-This function can be customized depending on given $formTypeName, e.g.:
+It returns an array of country codes and names.
+The country name is translated for required `Locale $locale`. If `$locale` is not set, current Locale is used.
+This function can be customized depending on the given `$formTypeNam`e, e.g.:
 
 ```
 array (

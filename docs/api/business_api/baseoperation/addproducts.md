@@ -1,16 +1,10 @@
 # addProducts
 
-## basket.add_products
+`basket.add_products` adds one or more products to the basket.
 
-method: addProducts
+Exceptions:
 
-operation: basket
-
-description: Adds one or more products to the basket
-
-exceptions:
-
-`\InvalidArgumentException` - thrown if variant without variantCode is choosen
+- `\InvalidArgumentException` - thrown if variant without `variantCode` is chosen
 
 ## Example
 
@@ -120,7 +114,7 @@ class ItemData extends ValueObject
 }
 ```
 
-## Returns Output
+## Returns output
 
 ``` php
 namespace Silversolutions\Bundle\EshopBundle\Entities\BusinessLayer\OutputValueObjects;

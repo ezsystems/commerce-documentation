@@ -10,8 +10,16 @@ nav:
         - 'First steps': 'getting_started/first_steps.md'
     - API:
         - Field Type:
+            - Field Type reference:
+                - 'Field Type reference': 'api/field_type_reference/field_type_reference.md'
+                - 'ProductSelection': 'api/field_type_reference/productselection.md'
+                - 'SesExternalData': 'api/field_type_reference/sesexternaldata.md'
+                - 'SesProfileData': 'api/field_type_reference/sesprofiledata.md'
+                - 'SesSelection': 'api/field_type_reference/sesselection.md'
+                - 'SpecificationsType': 'api/field_type_reference/specificationstype.md'
+                - 'VariantType': 'api/field_type_reference/varianttype.md'
             - Fields for eCommerce data:
-                - 'Fields for ecommerce data': 'api/fields_for_ecommerce_data/fields_for_ecommerce_data.md'
+                - 'Fields for eCommerce data': 'api/fields_for_ecommerce_data/fields_for_ecommerce_data.md'
                 - 'ArrayField': 'api/fields_for_ecommerce_data/arrayfield.md'
                 - 'FileField': 'api/fields_for_ecommerce_data/filefield.md'
                 - 'ImageField': 'api/fields_for_ecommerce_data/imagefield.md'
@@ -19,42 +27,26 @@ nav:
                 - 'StockField': 'api/fields_for_ecommerce_data/stockfield.md'
                 - 'TextBlockField': 'api/fields_for_ecommerce_data/textblockfield.md'
                 - 'TextLineField': 'api/fields_for_ecommerce_data/textlinefield.md'
-            - Additional eZ FieldTypes:
-                - 'Additional eZ fieldtypes': 'api/additional_ez_fieldtypes/additional_ez_fieldtypes.md'
-                - 'ProductSelection': 'api/additional_ez_fieldtypes/productselection.md'
-                - 'SesExternalData': 'api/additional_ez_fieldtypes/sesexternaldata.md'
-                - 'SesProfileData': 'api/additional_ez_fieldtypes/sesprofiledata.md'
-                - 'SesSelection': 'api/additional_ez_fieldtypes/sesselection.md'
-                - 'SpecificationsType': 'api/additional_ez_fieldtypes/specificationstype.md'
-                - 'VariantType': 'api/additional_ez_fieldtypes/varianttype.md'
         - Helper services:
-            - 'Country Service': 'api/helper_services/country_service.md'
+            - 'CountryService': 'api/helper_services/country_service.md'
             - 'EzHelperService': 'api/helper_services/ezhelperservice.md'
             - 'MailHelperService': 'api/helper_services/mailhelperservice.md'
             - 'Mail Logging': 'api/helper_services/mail_logging.md'
         - Business API:
             - 'Business API': 'api/business_api/business_api.md'
+            - 'Business API Invocation Service': 'api/business_api/businessapi_invocation_service.md'
             - Base operation:
                 - 'BaseOperation': 'api/business_api/baseoperation/baseoperation.md'
-                - Operation basket:
-                    - 'Operation Basket': 'api/business_api/baseoperation/operation_basket/operation_basket.md'
-                    - 'addProducts': 'api/business_api/baseoperation/operation_basket/addproducts.md'
-                    - 'getBasket': 'api/business_api/baseoperation/operation_basket/getbasket.md'
-                - Opertation catalog:
-                    - 'Operation Catalog': 'api/business_api/baseoperation/operation_catalog/operation_catalog.md'
-                    - 'loadProducts': 'api/business_api/baseoperation/operation_catalog/loadproducts.md'
-                - 'Business API Invocation Service': 'api/business_api/businessapi_invocation_service.md'
-        - 'ValueObject': 'api/valueobject.md'
-        - 'REST API (Version 4.2)': 'api/rest_api.md'
+                - 'addProducts': 'api/business_api/baseoperation/addproducts.md'
+                - 'getBasket': 'api/business_api/baseoperation/getbasket.md'
+                - 'loadProducts': 'api/business_api/baseoperation/loadproducts.md'
+        - 'REST API': 'api/rest_api.md'
         - 'SisoRestApiBundle':
             - 'SisoRestApiBundle': 'api/sisorestapibundle/sisorestapibundle.md'
-            - 'API':
-                - 'API': 'api/sisorestapibundle/api/api.md'
-                - 'Basket functions': 'api/sisorestapibundle/api/basket_functions.md'
-                - 'Checkout functions': 'api/sisorestapibundle/api/checkout_functions.md'
-                - 'Common': 'api/sisorestapibundle/api/common.md'
-                - 'Customer functions': 'api/sisorestapibundle/api/customer_functions.md'
-            - 'Background infos': 'api/sisorestapibundle/background_infos.md'
+            - 'Basket functions': 'api/sisorestapibundle//basket_functions.md'
+            - 'Checkout functions': 'api/sisorestapibundle/checkout_functions.md'
+            - 'Common': 'api/sisorestapibundle/common.md'
+            - 'Customer functions': 'api/sisorestapibundle/customer_functions.md'
     - User manual:
         - General:
             - 'General': 'user_manual/general/general.md'

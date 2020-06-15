@@ -1,6 +1,6 @@
 # MailHelperService
 
-The `MailHelperService `is used to create, render and send various kind of e-mails for eZ Commerce.
+`MailHelperService` is used to create, render and send emails from eZ Commerce.
 
 ## Interface and implementations
 
@@ -13,13 +13,15 @@ The `MailHelperService `is used to create, render and send various kind of e-mai
 
 !!! note
 
-    Please note that the $subject is translated in the helper service. Translating it in advance is unnecessary or, in rare cases, could even cause conflicts.
+    `$subject` is translated in the helper service. Translating it in advance is unnecessary or, in rare cases, could even cause conflicts.
 
 !!! note
 
-    The `SwiftMailHelperService` uses the [Mail Logging](../../guide/logging/logging.md) in order to provide administrators to keep track of all sent e-mails. PLEASE NOTE: There is a special case for the Customer Center. The content of any template parameter, which is named 'password', will be logged with a masked/removed value. This was needed for notification e-mails for new customer center accounts, which contain a generated, temporary password.
+    The `SwiftMailHelperService` uses [Mail Logging](../../guide/logging/logging.md) to help administrators keep track of all the sent emails.
+    
+    In the Customer center the content of any template parameter named `password` is logged with a masked/removed value.
 
-You are able to send predefined plain-text and/or HTML content by using sendMail(), or use the convinient sendMailWithRenderedTemplate() method.
+You can send predefined plain text and/or HTML content by using `sendMail()` or `sendMailWithRenderedTemplate()`.
 
 ``` php
 $sender = 'fd@silversolutions.de';

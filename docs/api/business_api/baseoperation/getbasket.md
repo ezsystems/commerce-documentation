@@ -1,12 +1,6 @@
 # getBasket
 
-## basket.get_basket
-
-method: getBasket
-
-operation: basket
-
-description: Gets the current basket
+`basket.get_basket` gets the current basket.
 
 ## Example
 
@@ -23,7 +17,7 @@ $outputGetBasket = $this->getBusinessApi()->call('basket.get_basket', $inputGetB
 $message = $this->getBasketMessage($outputGetBasket->basket);
 ```
 
-## Input Parameters
+## Input parameters
 
 ``` php
 namespace Silversolutions\Bundle\EshopBundle\Entities\BusinessLayer\InputValueObjects;
@@ -53,7 +47,7 @@ class GetBasket extends ValueObject
 }
 ```
 
-## `Returns Output`
+## Returns output
 
 ``` php
 namespace Silversolutions\Bundle\EshopBundle\Entities\BusinessLayer\OutputValueObjects;
