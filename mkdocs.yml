@@ -538,23 +538,23 @@ nav:
             - 'Access control': 'guide/user_management/access_control.md'
         - 'Delegate function': 'guide/delegate_function.md'
         - 'Job system': 'guide/job_system.md'
-    - Extending eZ Commerce:
-        - Extending the shop:
-            - 'Extending the shop - how to start': 'extending/extending_the_shop/extending_the_shop_how_to_start.md'
-            - 'Step 1 - Install the DigitalProductBundle': 'extending/extending_the_shop/step_1_install_the_digitalproductbundle.md'
-            - 'Step 2 - Add new field for products in the Backend': 'extending/extending_the_shop/step_2_add_new_field_for_products_in_the_backend.md'
-            - 'Step 3 - Display the new fields on the products detail page': 'extending/extending_the_shop/step_3_display_the_new_fields_on_the_products_detail_page.md'
-            - 'Step 4 - Show download in the basket': 'extending/extending_the_shop/step_4_show_download_in_the_basket.md'
-            - 'Step 5 - Deliver the download to the customer': 'extending/extending_the_shop/step_5_deliver_the_download_to_the_customer.md'
-        - Extending the frontend:
-            - 'Extending the frontend': 'extending/extending_the_frontend/extending_the_frontend.md'
-            - 'Change product template': 'extending/extending_the_frontend/change_product_template.md'
-            - 'How to: Change button color (css)': 'extending/extending_the_frontend/how_to_change_button_color_css.md'
-            - 'How to: Change button color (scss)': 'extending/extending_the_frontend/how_to_change_button_color_scss.md'
-            - 'Frontend Workflow with SASS': 'extending/extending_the_frontend/frontend_workflow_with_sass.md'
-            - 'How to: Change catalog layout': 'extending/extending_the_frontend/how_to_change_catalog_layout.md'
-            - 'How to: Change logo': 'extending/extending_the_frontend/how_to_change_logo.md'
-        - 'How to adapt the UI for configuration': 'extending/how_to_adapt_the_ui_for_configuration.md'
+    # - Extending eZ Commerce:
+        # - Extending the shop:
+        #     - 'Extending the shop - how to start': 'extending/extending_the_shop/extending_the_shop_how_to_start.md'
+        #     - 'Step 1 - Install the DigitalProductBundle': 'extending/extending_the_shop/step_1_install_the_digitalproductbundle.md'
+        #     - 'Step 2 - Add new field for products in the Backend': 'extending/extending_the_shop/step_2_add_new_field_for_products_in_the_backend.md'
+        #     - 'Step 3 - Display the new fields on the products detail page': 'extending/extending_the_shop/step_3_display_the_new_fields_on_the_products_detail_page.md'
+        #     - 'Step 4 - Show download in the basket': 'extending/extending_the_shop/step_4_show_download_in_the_basket.md'
+        #     - 'Step 5 - Deliver the download to the customer': 'extending/extending_the_shop/step_5_deliver_the_download_to_the_customer.md'
+        # - Extending the frontend:
+        #     - 'Extending the frontend': 'extending/extending_the_frontend/extending_the_frontend.md'
+        #     - 'Change product template': 'extending/extending_the_frontend/change_product_template.md'
+        #     - 'How to: Change button color (css)': 'extending/extending_the_frontend/how_to_change_button_color_css.md'
+        #     - 'How to: Change button color (scss)': 'extending/extending_the_frontend/how_to_change_button_color_scss.md'
+        #     - 'Frontend Workflow with SASS': 'extending/extending_the_frontend/frontend_workflow_with_sass.md'
+        #     - 'How to: Change catalog layout': 'extending/extending_the_frontend/how_to_change_catalog_layout.md'
+        #     - 'How to: Change logo': 'extending/extending_the_frontend/how_to_change_logo.md'
+        # - 'How to adapt the UI for configuration': 'extending/how_to_adapt_the_ui_for_configuration.md'
     - Cookbook:
         # - Frontend customizing:
         #     - 'Frontend customizing': 'cookbook/frontend_customizing/frontend_customizing.md'
