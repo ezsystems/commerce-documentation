@@ -1,7 +1,7 @@
 # Solr schema configuration
 
 eZ Commerce uses an adapted schema definition which is installed using the shell script `install-solr.sh`.
-The following changes are applies:
+The following changes are applied:
 
 In `custom-fields-types.xml`:
 

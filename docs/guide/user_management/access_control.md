@@ -48,4 +48,4 @@ A central event listener checks the configuration from the routing file and Poli
 If a user does not have the required Policy, `AccessDeniedException` is thrown and forwarded to the [`ExceptionListener`](../../cookbook/exception_handling/exception_handling.md).
 Then the exception listener renders an access denied page.
 
-`VerifyUserPoliciesRequestListener.php` listens to a `kernel.finish_request` event,
+`VerifyUserPoliciesRequestListener.php` listens to a `kernel.finish_request` event.

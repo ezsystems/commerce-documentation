@@ -17,7 +17,7 @@ You need to add this dynamic field to your form configuration.
 
 2\. Add this new Field to the form configuration as a dynamic field. First choose the [form field type](https://symfony.com/doc/3.4/reference/forms/types.html) which defines how the field should be rendered.
 
-3\. Add validation and other settings. The options depends on the form field type.
+3\. Add validation and other settings. The options depend on the form field type.
 
 ``` yaml
 siso_customer_center.default.form.request_user:

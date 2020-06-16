@@ -2,7 +2,7 @@
 
 The indexer is a class that implements the `DocumentMapperPluginInterface` interface from `ezplatform-solr-search-engine`.
 
-It enables indexing additional data Solr. For example, it enables searching with additional complex data type like specification matrix, variant matrix, etc., as conditions.
+It enables indexing additional data with Solr. For example, it enables searching with additional complex data type like specification matrix, variant matrix, etc., as conditions.
 
 The interface has the following methods that must be implemented:
 
@@ -130,7 +130,6 @@ For example:
 },
 ```
 
-
 Multiple string example:
 
 ``` php
@@ -142,7 +141,7 @@ Multiple string example:
 
 ### Step 6. Test new fields
 
-If you want to test how your new fields looks like in Solr you have to run the reindex command
+If you want to test how your new fields look like in Solr you have to run the reindex command
 and perform a Solr query directly in Solr interface.
 
 ``` bash
@@ -153,7 +152,7 @@ Make sure you execute this in your project home directory.
 
 To perform a Solr query go to Solr URL, usually: `http://<yourdomain>:8983/solr/`
 
-The select your collection (usually `collection1`) and then select query.
+Then select your collection (usually `collection1`) and select a query.
 
 Additionally you can set Solr to only show the new field by adding the field name to the `fl` field.
 

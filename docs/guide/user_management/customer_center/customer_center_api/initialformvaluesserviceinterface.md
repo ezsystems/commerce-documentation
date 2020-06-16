@@ -16,19 +16,19 @@ The `getAttributesValues` method loads the values for the form attributes from a
 e.g. content model, ERP or `CustomerProfileData`, and returns the initial values for the form attributes.
 The goal of this function is to pre-fill the form with predefined values.
 
-The given `$formAttributes` define the attribute names that are suppose to be fetched and returned with values:
+The given `$formAttributes` defines the attribute names that are suppose to be fetched and returned with values:
 
  - the static attributes may be fetched from the content model, ERP or `CustomerProfileData`
  - the dynamic attributes are fetched only from content
 
 ## InitialAddUserValuesService
 
-`InitialAddUserValuesService` tries to pre-fill `customer_number` and `contact_number` from the query parameters of the request and assigns the values to the `add_user` form array.
+`InitialAddUserValuesService` tries to pre-fill `customer_number` and `contact_number` from the query parameters of the request and assign the values to the `add_user` form array.
 
 Service ID: `siso_customer_center.initial_add_user_values_service`
 
 ## InitialEditUserValuesService
 
-`InitialEditUserValuesService` loads content from an User Content item and assigns the values to the `edit_user` form array.
+`InitialEditUserValuesService` loads content from a User Content item and assigns the values to the `edit_user` form array.
 
 Service ID: `siso_customer_center.initial_edit_user_values_service`

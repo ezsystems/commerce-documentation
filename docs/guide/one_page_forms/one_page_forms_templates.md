@@ -9,7 +9,7 @@
 |`activate_business.html.twig`|Renders the account activation form for existing customers|
 |`my_account.html.twig`|Renders the update my account data form|
 |`buyer.html.twig`|Renders the update the buyer address form|
-|`invoice.html.twig`|Renders update the invoice address form|
+|`invoice.html.twig`|Renders the update the invoice address form|
 |`password_change.html.twig`|Renders the change password form|
 |`password_reminder.html.twig`|Renders the forgot password form|
 |`cancellation.html.twig`|Renders the online cancellation form (RMA)|

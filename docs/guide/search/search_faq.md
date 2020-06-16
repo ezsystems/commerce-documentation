@@ -2,7 +2,7 @@
 
 ## Which Solr version is used?
 
-eZ Commerce uses the Solr version [recommended by Ibexa](https://doc.ezplatform.com/en/latest/getting_started/requirements/).
+eZ Commerce uses the Solr version [recommended by Ibexa](https://doc.ezplatform.com/en/2.5/getting_started/requirements/).
 
 If you are using eContent as storage engine, two additional cores in Solr are required.
 
@@ -76,7 +76,7 @@ nelmio_solarium:
 
 When the content model is used as data provider, `ezplatform:solr_create_index` removes the index in production.
 
-It depends ono the configuration. If Solr is configured to auto-commit, the index is removed.
+It depends on the configuration. If Solr is configured to auto-commit, the index is removed.
 If no auto-commit is configured, the index is removed as well, but the removal only takes effect after the commit at the end. Until that time everything is still searchable.
 No auto-commit also means that changes in the administration are be visible, since the process does not include a commit.
 

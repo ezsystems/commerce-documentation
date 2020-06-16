@@ -16,7 +16,7 @@ siso_customer_center.default.form.add_user:
 
 ## CheckUserEmailFormProcessor
 
-CheckUserEmailFormProcessor checks if a User with given email address already exists in the company structure.  
+`CheckUserEmailFormProcessor` checks if a User with given email address already exists in the company structure.  
 
 Service ID: `siso_customer_center.processor.check_user_email`
 

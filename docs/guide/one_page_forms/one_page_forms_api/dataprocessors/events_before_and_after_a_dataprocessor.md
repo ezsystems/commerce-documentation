@@ -30,7 +30,7 @@ To listen to one of these events, you have to define a service and tag it in con
 </service>
 ```
 
-In your class you can access and manipulate the normalized `FormEntity`:
+In the implemented class you can access and manipulate the normalized `FormEntity`:
 
 ``` php
 use Silversolutions\Bundle\EshopBundle\Entities\Forms\Normalize\Entity;
@@ -55,4 +55,4 @@ class EzCreateUserEventHandler
 }
 ```
 
-If you manipulate the normalized entity, remember that it effect the next `DataProcessors`.
+If you manipulate the normalized entity, remember that it affects the next `DataProcessors`.

@@ -2,7 +2,7 @@
 
 Indexing the content of files stored in the content model uses an additional component called Apache Tika.
 
-Apache Tika has two available modes: Server Mode and App Mode. eZ Commerce are using Apache Tika in App mode.
+Apache Tika has two available modes: Server Mode and App Mode. eZ Commerce uses Apache Tika in App mode.
 
 You can specify which MIME types are indexed in configuration:
 
@@ -25,10 +25,10 @@ See [Supported Document Formats](http://tika.apache.org/1.13/formats.html) for a
 !!! caution
 
     Make sure [Apache Tika Bundle](https://packagist.org/packages/jolicode/apache-tika-bundle) is installed
-    and its bundle is enabled in the kernel.
+    and is enabled in the kernel.
 
     Apache Tika log file (`/tmp/tika-error.log`) is hardcoded. Make sure the file is writable both by the command-line user who executes the indexer
-    and the Apache user, because the indexer is triggered after a file is modified modification in the backend.
+    and the Apache user, because the indexer is triggered after a file is modified in the backend.
 
     If this file is not writable, the indexer does not index file contents.
 

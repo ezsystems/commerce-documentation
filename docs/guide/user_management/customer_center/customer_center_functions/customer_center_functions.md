@@ -32,14 +32,14 @@ The customer is logged in.
 
 ## Customer center overview
 
-The Customer center is visible for users only if you have the rights for it.
+The Customer center is visible for users only if they have the rights for it.
 The main contact who has activated the account is always able to use the Customer center.
 
 The Customer center can be accessed in **My Profile** and **Users management**. 
 
 ![](../../../img/customer_center_functions_3.jpg)
 
-The list displayed on the entry page shows 
+The list displayed on the entry page shows:
 
 - the shop users already registered for the shop, including user name, the status and the roles assigned.
 - a list of ERP contacts, which are not yet set up as a user in the shop.
@@ -69,7 +69,7 @@ This feature is available in the user management overview.
 
 You can add a user who is displayed in the "ERP users" list to the shop.
 
-You cannow change the customer number and contact number. After storing the form, the user gets a shop account.
+You cannot change the customer number and contact number. After storing the form, the user gets a shop account.
 
 ![](../../../img/customer_center_functions_5.png)
 

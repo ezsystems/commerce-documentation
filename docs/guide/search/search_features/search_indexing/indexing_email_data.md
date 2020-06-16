@@ -1,7 +1,7 @@
 # Indexing email data
 
 Indexing email data requires creating the class Search Field for the user Content item.
-The User Field Type don't have an implementation of `SearchField`, so this `SearchField` class must implement the `Indexable` interface.
+The User Field Type doesn't have an implementation of `SearchField`, so this `SearchField` class must implement the `Indexable` interface.
 
 Service definition:
 

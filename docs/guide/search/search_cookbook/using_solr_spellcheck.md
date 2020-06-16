@@ -21,12 +21,12 @@ Add the following lines to the `requestHandler` named `/select`.
 </arr>
 ```
 
-Make sure you have also this element in the XML file:
+Make sure you have also the following element in the XML file:
 
 `<searchComponent name="spellcheck" class="solr.SpellCheckComponent">`
 
 Additional definitions for spellcheck can be configured here,
-but spellcheck should albo work with the default values.
+but spellcheck should also work with the default values.
 
 Go to your Solr installation directory and execute the following commands:
 

@@ -55,17 +55,17 @@ class SendEmailDataProcessor extends AbstractDataProcessor
 
 ## Form validators
 
-Besides standard [Symfony validators,](http://symfony.com/doc/current/validation.html)
+Besides standard [Symfony validators,](http://symfony.com/doc/3.4/validation.html)
 eZ Commerce offers additional validators.
 
 ### ZIP validator
 
-The post code (ZIP) validation rules are different for each country.
-To define the different code pattern for each post code a new service is defined.
+The ZIP code validation rules are different for each country.
+To define the different code pattern for each ZIP code a new service is defined.
 
 !!! note
 
-    This validator validates the post code based on the submitted country.
+    This validator validates the ZIP code based on the submitted country.
     If you want to use this validator in your project, make sure that your Form contains the `$country` attribute.
 
 ``` xml
@@ -141,7 +141,7 @@ ses_ez_helper.default.parent_location_id_users_members: 12
 
 ### Phone/fax number validator
 
-A phone and/or fax validator verify a valid number format. The folowing formats are supported:
+A phone and/or fax validator verifies a valid number format. The following formats are supported:
 
 - 0123456789
 - +490123456789

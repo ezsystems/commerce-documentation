@@ -5,7 +5,7 @@ The eCommerce uses the token system in the registration process to create a  dou
 The token service can generate a unique token which is valid for a given time.
 When a user tries to use the token, a universal controller triggers the service and method assigned to this token. 
 
-After user registration a token is created a stored in the database. The token is valid for a specific time.
+After user registration a token is created and stored in the database. The token is valid for a specific time.
 After the user clicks the generated URL that they receive via email, the token is validated and fetched from the database.
 After the user has been activated, the token is removed from the database.
 
@@ -74,15 +74,15 @@ Doctrine is used to stored the token in the database.
 |`lastAccess`|\DateTime|yes|Timestamp when the token was last requested.|
 |`lockTimeout`|\DateTime|no|Timestamp how long the token is locked. The token cannot be used during this time after last access.|
 |`actionServiceId`|string|yes|ID of the service that is invoked|
-|`actionServiceMethod`|string|yes|Name of the service method that is invoked|
-|`actionServiceMethodParameter`|eZ\Publish\Core\Repository\Values\User\User|yes|Parameter for the service method|
+|`actionServiceMethod`|string|yes|Name of the service method that is invoked.|
+|`actionServiceMethodParameter`|eZ\Publish\Core\Repository\Values\User\User|yes|Parameter for the service method.|
 |`tokenType`|string|yes|Type of the token. Currently only `one_time_token`. Only defined types are allowed.|
 
 ## TokenService
 
 Service ID: `silver_tools.token_service`
 
-If you have cannot inject the service, you can use the container:
+If you cannot inject the service, you can use the container:
 
 `$tokenService = $this->container->get('silver_tools.token_service');`
 

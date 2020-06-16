@@ -39,5 +39,5 @@ one user record is provided. Special contacts (such as Company contacts) are ski
 |`Name`|Name of the person|
 |`Telephone`|Phone number|
 |`Telefax`||
-|`ElectronicMail`|Email address of this person|
+|`ElectronicMail`|Email address|
 |`LanguageCode`||

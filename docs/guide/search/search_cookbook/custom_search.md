@@ -88,7 +88,7 @@ class myController extends BaseController
         );
         $eshopQuery->addCondition(new FieldBoosting(array('boost' => $boosts)));
   
-        // 5. Add offset and limit.
+        // 5. Add offset and limit
         $eshopQuery->setOffset(0);
         $eshopQuery->setLimit(10);
   
@@ -106,10 +106,10 @@ class myController extends BaseController
         );
         $eshopQuery->addFacet($productFacet);
         
-        // 8. Finally we perform the search.
+        // 8. Perform the search
         $productSearchResult = $searchService->searchProducts($eshopQuery, new SearchContext());
   
-        // 9. The hits could be found here
+        // 9. The hits can be found here
         $numberOfHits = $productSearchResult->numFound;
   
         // 10. The search results can be found in this array:
@@ -150,7 +150,7 @@ $myQuery->addCondition(new SearchTermCondition(array(
 
 `ProductFieldSorting` - sorting for products. Supports sorting by name, SKU or price in a given direction.
 
-`ContentNameSorting` - sorting by content Field name in a given direction.
+`ContentNameSorting` - sorts the results by content Field name in a given direction.
 
 ### Facets API
 

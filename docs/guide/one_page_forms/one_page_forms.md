@@ -8,7 +8,7 @@ One-page forms have several common criteria:
 - After submitting some processes are executed in the backend.
 - After server response the user sees a confirmation page with a success or error message.
 
-eZ Commerce uses the [Symfony forms](http://symfony.com/doc/current/forms.html) as a part of the solution,
+eZ Commerce uses the [Symfony forms](http://symfony.com/doc/3.4/forms.html) as a part of the solution,
 so you can take advantage of what Symfony forms offer:
 
 - easy handling with form entities
@@ -28,9 +28,9 @@ If process execution is not successful, the process can store an error message
 and display it on the confirmation page.
 
 You can decide what happens after the form is submitted - on server response.
-You can differ between valid and invalid responses and change the behavior according your needs.
+You can differ between valid and invalid responses and change the behavior according to your needs.
 
-Usually a confirmation page is displayed, but you can choose one of following behaviors:
+Usually a confirmation page is displayed, but you can choose one of the following behaviors:
 
 - confirmation page
 - redirect to another page:

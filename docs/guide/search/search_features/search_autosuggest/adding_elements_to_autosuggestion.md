@@ -43,7 +43,7 @@ The `resultLine` array has all information received from Solr, so you can use it
 You can also show in autosuggestion information which is not available directly in Solr and requires processing.
 To do this, create an indexer plugin and have your information processed. 
 
-In this example you display a flag with for new products.
+In this example you display a flag for new products.
 
 First, define what is a "new" product.
 The example assumes a new product is a product that was published within the last month.

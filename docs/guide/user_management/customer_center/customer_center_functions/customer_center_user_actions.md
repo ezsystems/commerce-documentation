@@ -11,7 +11,7 @@ There are two types of form fields:
 
 ### Form field configuration
 
-You can change the [form field type](http://symfony.com/doc/current/reference/forms/types.html).
+You can change the [form field type.](http://symfony.com/doc/3.4/reference/forms/types.html)
 This changes the way the field is rendered.
 You can change the form field options. They depend on the field type.
 
@@ -106,12 +106,12 @@ The content of `invalidMessage` should contain correction suggestions.
 
 A form can define a service in the `initialFormValuesService` key that pre-fills the form fields with specific values.
 These values can be read from an external data source or from content.
-The configuration value must a valid service ID and the service's class must implement [`InitialFormValuesServiceInterface`](../customer_center_api/initialformvaluesserviceinterface.md).
+The configuration value must be a valid service ID and the service's class must implement [`InitialFormValuesServiceInterface`](../customer_center_api/initialformvaluesserviceinterface.md).
 
 ## Form processors
 
 The form processors are services that perform special actions after the form is submitted.
-They are executed sequentially according the order of definition in the configuration.
+They are executed sequentially according to the order of definition in the configuration.
 
 You can specify the form processors for a form in the configuration by the their respective service IDs.
 The service classes of all form processors must implement [`FormProcessorInterface`](../customer_center_api/formprocessorinterface.md).

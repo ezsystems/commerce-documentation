@@ -10,7 +10,7 @@
 |`updateUserStatus($userID, UserUpdateStruct $struct)`|Updates user status with the provided parameters|
 |`getUsers($customerNumber, array $parameters = [])`|Gets a list of User Content items with the given criteria|
 |`getUsersByRoleName($customerNumber, $roleName)`|Gets a list of user Content items by customer number and `roleName`|
-|`getMainContacts($customerNumber)`|Get the list of main contacts for a given customer number|
+|`getMainContacts($customerNumber)`|Gets the list of main contacts for a given customer number|
 |`getUser($customerNumber, $email)`|Gets a User Content item|
 |`getUserById($ezUserId)`|Gets a User Content item using a given User ID|
 |`getRolesOfUserObject(User $user)`|Returns list of user Roles of a User Content item|

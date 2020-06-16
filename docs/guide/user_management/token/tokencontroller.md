@@ -6,7 +6,7 @@ for example: `/token/124f564f6d4df4fd3fd4df34fd34fd`.
 `TokenController` is called to process a token, e.g. after user registration when the user clicks the activation link.
 This controller loads the token from the database, activates the user account and invalidates the token.
 
-Each token as has the following attributes to process the token-specific logic:
+Each token has the following attributes to process the token-specific logic:
 
 - `$actionServiceId`
 - `$actionServiceMethod`
@@ -27,7 +27,7 @@ The `silver_eshop.token_service_method_processor` service implements the custom 
 
 ## TokenServiceMethodProcessorService
 
-Inside the token controller `TokenServiceMethodProcessorService` implements the custom logic for each token.
+Inside the token `TokenServiceMethodProcessorService` controller implements the custom logic for each token.
 
 For example, for the registration token, it calls the method that is stored in the token attribute `$actionServiceMethod`
 to the service that is stored in the attribute `$actionServiceId`. In addition, it performs validation and returns a response object.

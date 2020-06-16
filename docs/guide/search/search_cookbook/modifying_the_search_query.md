@@ -1,7 +1,7 @@
 # Modifying the search query
 
 Sometimes you need to modify the [EshopQuery](../search_api.md) before it is sent to the search service.
-This event listener handles this situation.
+The event listener handles this situation.
 You can use it if you need to modify the search term, or add some sorting criteria.
 
 For example, when searching for a book ISBN number that needs to be modified.

@@ -18,7 +18,7 @@ You can configure groups displayed in tabs such as products and content.
 The products can be shown in a list or gallery view.
 
 The user can use the back button to go back without leaving the search.
-URLs are unique, so you can share a link to a search result
+URLs are unique, so you can share a link to a search result.
 
 The search uses Ajax to refresh the list.
 

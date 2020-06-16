@@ -4,7 +4,7 @@ With this method you create a managed synonym resource that can be updated via R
 
 !!! tip
 
-    For more information about Solr managed resources, see [Solr documentation](https://lucene.apache.org/solr/guide/7_1/managed-resources.html).
+    For more information about Solr managed resources, see [Solr documentation.](https://lucene.apache.org/solr/guide/7_1/managed-resources.html)
 
 ``` xml
 <!-- A text type for English text where stopwords and synonyms are managed using the REST API -->
@@ -16,7 +16,7 @@ With this method you create a managed synonym resource that can be updated via R
 </fieldType>
 ```
 
-This definition should be placed in `schema.xml` files. It defines `solr.ManagedSynonymFilterFactory` for synonym main class instead of `SynonymFilterFactory`.
+This definition should be placed in `schema.xml` file. It defines `solr.ManagedSynonymFilterFactory` for synonym main class instead of `SynonymFilterFactory`.
 
 Now you have to add the dynamic field definitions for the fields that you want to use as synonyms.
 
@@ -60,7 +60,7 @@ To add a new synonym, use the following cURL call:
 curl -XPUT "<http://localhost:8983/solr/collection1/schema/analysis/synonyms/english>" -H 'Content-type:application/json' --data-binary '{"word":\["synonym1","synonym2"\]}'
 ```
 
-With the current version of Solr, if you use managed synonyms you have to use to one-to-many synonyms definition.
+With the current version of Solr, if you use managed synonyms you have to use the one-to-many synonyms definition.
 In the example above the a search for `word`, or `synonym1`, or `synonym2` match any records containing `word` but a search for `word` or `synonym1` never returns results with the words `synonym1` or `synonym2`.
 
 If you decide to use the synonym file, you can define synonyms of the same level.

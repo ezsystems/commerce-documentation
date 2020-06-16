@@ -3,7 +3,7 @@
 This example shows how to implement a form for ordering the product catalog in a printed form.
 
 The user inputs their email address and confirms that they want to order the catalog.
-This sends as email to the shop administrator.
+An email is then sent to the shop administrator.
 
 ## Step 1: Build the form components
 
@@ -86,7 +86,7 @@ class OrderCatalog extends AbstractFormEntity
 Form type defines which form attributes are rendered and how.
 You can define other data here, such as labels, CSS classes, data attributes, etc.
 
-You should define this type as a service, so you can inject any logic that you need.
+You define this type as a service, so you can inject any logic that you need.
 
 ``` php
 namespace Company\Bundle\ProjectBundle\Form\Type;
@@ -179,7 +179,7 @@ Service definition:
 ### Form template
 
 Then you need to prepare template that renders the form.
-See [How to render Symfony forms](https://symfony.com/doc/current/form/form_customization.html) for more information.
+See [How to render Symfony forms](https://symfony.com/doc/3.4/form/form_customization.html) for more information.
 
 ``` html+twig
 {% extends "SilversolutionsEshopBundle::pagelayout.html.twig"|st_resolve_template %}
