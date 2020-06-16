@@ -6,43 +6,44 @@
 
 ![](img/price_management_prices.png)
 
-This feature offers to setup prices in case if the shop price provider (siso_price.price_provider.shop) is configured for calculating prices.
+You can set up product prices if the shop price provider (`siso_price.price_provider.shop`) is configured for calculating prices.
 
-The price management allows to setup prices manually. A price can be setup per sku and sku/variant. Each price can contain an offer
-
-price and a base price. If an offer price is set it will be displayed in the shop as
+Price management enables you to set up prices manually. A price can be setup per SKU and SKU/variant.
+Each price can contain an offer price and a base price.
+If an offer price is set, it is displayed in the shop as:
 
 ~~Old price: 10.00 €~~ New price: 9.80 €
 
-In addition prices can vary per customer group. There are 3 customer goups set up per default.
+In addition, prices can vary per customer group.
 
-Currencies in eZ Commerce:
+### Currencies
 
-The currency is configured per country in the [configuration settings](../../guide/product_description/ecommerce_administration.md).
+Currency is configured per country in the [configuration settings](../../guide/product_description/ecommerce_administration.md).
 
-- if a product has a price for a product and a currency this price will be displayed in the shop
-- if no price for a currency is set in a shop eZ Commerce offers 2 options, these can be set in the configuration per shop.
-    - Calculate the price for the requested currency using the base price defined in the product (using the base currency setup for the installation) and an exchange rate defined in the configuration
-    - Display an error in the frontend that no price is available
-    
-## Product - stock
+If a product has a price for a product and a currency, this price is displayed in the shop.
+If no price for a currency is set in a shop, eZ Commerce offers two possibilities, configured per shop:
+
+- Calculate the price for the requested currency using the base price defined in the product
+(using the base currency setup for the installation) and an exchange rate defined in the configuration
+- Display an error in the frontend that no price is available
+
+## Stock management
 
 ![](img/stock_management.png)
 
-This menu offers to setup stock in case if the shop price provider (siso_price.price_provider.shop) is configured for calculating prices.
+This menu enables you to set up stock if the shop price provider (`siso_price.price_provider.shop`) is configured for calculating prices.
 
-## Product - prices
+## Importing and exporting prices and stock
 
 ![](img/import_export_prices.png)
 
-This feature allows to update stock and prices using a csv file. Prices and stock can be downloaded and uploaded in case if the shop price provider (siso_price.price_provider.shop) is configured for calculating prices.
+You can update stock and prices using a CSV file.
+Prices and stock can be downloaded and uploaded if the shop price provider (`siso_price.price_provider.shop`) is configured for calculating prices.
 
 ## Shipping costs
 
 ![](img/shipping_costs.png)
 
-Shipping cost management offers to setup shipping cost rules. Shipping rules can be mangaged per delivery country, state, zip and shipping method.
+In **Shipping cost management** you can set up shipping cost rules. Shipping rules can be managed per delivery country, state, zip and shipping method.
 
-In addition it is possible to configure different shipping cost depending on the amount of the basket (including free of freight rules)
-
-## 
+You can also configure different shipping costs depending on the amount of the basket (including free shipping rules).
