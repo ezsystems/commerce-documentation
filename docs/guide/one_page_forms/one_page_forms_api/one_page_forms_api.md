@@ -1,52 +1,18 @@
-# One-page forms API
+# One-page form API
 
 ## PreDataProcessor and DataProcessors
 
-The most important services are the `preDataProcessor` and `dataProcessors`. Both of them must implement the `AbstractDataProcessor`, therefore the services must implement the `execute()`` method.
+The main services for one-page forms services are `preDataProcessor` and `dataProcessors`.
+Both implement the `AbstractDataProcessor`, so the services must implement the `execute()` method.
 
-`AbstractDataProcessor`:
+Because every form entity is a custom class, when the form is passed to `AbstractDataProcessor`,
+it is encapsulated and passed in a `NormalizedEntity $formEntity`.
 
-``` php
-namespace Silversolutions\Bundle\EshopBundle\Services\Forms\DataProcessor;
+Every implementation of the `AbstractDataProcessor` can get and set the form data from/in the original form.
+Every implementation must return `$lastResult`.
 
-abstract class AbstractDataProcessor implements DataProcessorInterface
-{
-    ...
-}
-```
-
-``` php
-namespace Silversolutions\Bundle\EshopBundle\Services\Forms\DataProcessor;
-
-use Symfony\Component\HttpFoundation\Response;
-use Silversolutions\Bundle\EshopBundle\Entities\Forms\Normalize\Entity as NormalizedEntity;
-
-/**
- * Defines the interface of all DataProcessors.
- *
- */
-interface DataProcessorInterface
-{
-    /**
-     * @param \Silversolutions\Bundle\EshopBundle\Entities\Forms\Normalize\Entity $formEntity
-     * @param null $lastResult
-     * @param Response $response
-     * @return mixed
-     */
-    public function execute(NormalizedEntity $formEntity, $lastResult = null, Response $response = null);
-}
-```
-
-### What the services can/should do?
-
-Since every form entity is a custom class, when the form is passed to the `AbstractDataProcessor`, it is encapsulated and passed in a `NormalizedEntity $formEntity`.
-
-- Every implementation of the `AbstractDataProcessor` can get and set the form data from/in the original form.
-- Every implementation of the `AbstractDataProcessor` has to return the `$lastResult`
-- Every `dataProcessor` can get/update the results of the previous `dataProcessors`, that are stored in the `$lastResult`
-- Every `dataProcessor` can set additional error message, that will be displayed for the user, if the process was not successful  
-
-Example: `SendEmailDataProcessor`:
+Every `dataProcessor` can get/update the results of the previous `dataProcessors` that are stored in `$lastResult`.
+Every `dataProcessor` can set an additional error message that is displayed for the user if the process is not successful.
 
 ``` php
 class SendEmailDataProcessor extends AbstractDataProcessor
@@ -89,21 +55,18 @@ class SendEmailDataProcessor extends AbstractDataProcessor
 
 ## Form validators
 
-Next to the standard [Symfony validators](http://symfony.com/doc/current/validation.html), eZ Commerce offers some additional validators.
+Besides standard [Symfony validators,](http://symfony.com/doc/3.4/validation.html)
+eZ Commerce offers additional validators.
 
-### ZIP Validator
+### ZIP validator
 
-A custom ZIP validator has been implemented in order to extend the standard Symfony validation.
-
-The post code - ZIP - validation rules are different for each country. To define the different code pattern for each post code a new service is defined.
+The ZIP code validation rules are different for each country.
+To define the different code pattern for each ZIP code a new service is defined.
 
 !!! note
 
-    Please notice, that this validator validates the post code based on the submitted country. If you want to use this validator in your project, make sure, that your Form contains an attribute `$country`
-
-New Service ZIP Validator
-
-`EshopBundle/Resources/config/ses_services.xml`:
+    This validator validates the ZIP code based on the submitted country.
+    If you want to use this validator in your project, make sure that your Form contains the `$country` attribute.
 
 ``` xml
 <parameter key="ses_forms.zip_validator.class">Silversolutions\Bundle\EshopBundle\Entities\Forms\Constraints\ZipValidator</parameter>
@@ -120,9 +83,8 @@ New Service ZIP Validator
 </service>
 ```
 
-To validate the ZIP code it takes the pattern by country from the configuration, and compare with the value in the form. In the file `ses_patern_zip.yml` are define the country codes, the pattern and the code rule.
-
-So in the `ses_forms.zip_validator` service it checks that values (See code.)
+The validator takes the pattern by country from the configuration, and compares it with the value in the form.
+Country codes, pattern and code rules are defined in `ses_patern_zip.yml`.
 
 ``` php
 //Check if the value matches with the "POST_CODE_RULE"
@@ -132,7 +94,7 @@ if (preg_match($codeRule, $value)){
 }
 ```
 
-Example of the `ses_pattern_zip.yml` YML file:
+Example of the `ses_pattern_zip.yml` file:
 
 ``` yaml
 parameters:
@@ -155,49 +117,31 @@ parameters:
              POST_CODE_RULE: ".*"
 ```
 
-This new file is include in `silver.eshop.yml` file:
+This new file must be imported in `silver.eshop.yml`:
 
 ``` yaml
 - { resource: "ses_patern_zip.yml"}
 ```
 
-### Email Validator
+### Email validator
 
-A custom email validator has been implemented in order to extend the standard Symfony validation.
+A custom email validator extends the standard Symfony validation.
 
-``` 
-use Silversolutions\Bundle\EshopBundle\Entities\Forms\Constraints as SesAssert;
- 
-/**
- * @SesAssert\Email()
- */
-protected $email;
-```
+#### NonExistingEmailValidator
 
-### NonExistingEmail Validator
-
-A custom validator has been implement, that checks if user with given email already exists.
-
-``` 
-use Silversolutions\Bundle\EshopBundle\Entities\Forms\Constraints as SesAssert;
- 
-/**
- * @SesAssert\NonExistingEmail()
- */
-protected $email;
-```
+`NonExistingEmailValidator` checks if a user with the given email already exists.
 
 #### User searching
 
-It is possible to manage the searching for a user in a given location. The locationId must be set in a configuration file.
+You can set the Location where Users are contained in the following configuration:
 
 ``` yaml
 ses_ez_helper.default.parent_location_id_users_members: 12
 ```
 
-### Phone/fax number Validator
+### Phone/fax number validator
 
-A phone and/or fax validator has been implemented to verify a valid number format. These formats are supported:
+A phone and/or fax validator verifies a valid number format. The following formats are supported:
 
 - 0123456789
 - +490123456789
@@ -207,26 +151,13 @@ A phone and/or fax validator has been implemented to verify a valid number forma
 - +4930/1234567
 - 0123 456 789 (spaces)
 
-Rule: All combination of 0-9, +, - and / is possible, if minimum and maximum length (see section Configuration) fits.
-
-Regex:
+The following regex allows all combinations of 0-9, `+`, `-` and `/`, if minimum and maximum length fit.
 
 ``` 
 ('/^[0-9\-\+\/]{%min%,%max%}$/')
 ```
 
-``` php
-use Silversolutions\Bundle\EshopBundle\Entities\Forms\Constraints as SesAssert;
- 
-/**
- * @SesAssert\Phone()
- */
-protected $phoneNumber;
-```
-
-#### Configuration
-
-You can define the min and max length for the validator:
+You can define the minimum and maximum length for the validator:
 
 ``` yaml
 ses_phone_validator:
@@ -234,36 +165,27 @@ ses_phone_validator:
     max: 15
 ```
 
-### VatNumber Validator
+### VAT number validator
 
-A custom validator has been implemented to check if the VAT number for commercial customers inside the European Union is valid. For the validation the VIES web-service (SOAP) of the European Commission is used. The condition for validation is that the vat number contains the country code.
+`VatNumberValidator` checks if the VAT number for commercial customers inside the European Union is valid.
+The [VIES web-service (SOAP)](http://ec.europa.eu/taxation_customs/vies/checkVatService.wsdl) of the European Commission is used. The condition for validation is that the VAT number contains the country code.
 
-##### Location of the VIES Webservice
+## Form interfaces
 
-``` 
-http://ec.europa.eu/taxation_customs/vies/checkVatService.wsdl
-```
+### FormEntityInterface
 
-``` php
-use Silversolutions\Bundle\EshopBundle\Entities\Forms\Constraints as SesAssert;
- 
-/**
- * @SesAssert\VatNumber()
- */
-protected $vatNumber;
-```
+`FormEntityInterface` (`Silversolutions\Bundle\EshopBundle\Entities\Forms\FormEntityInterface`) is an interface for form entities
+which defines a common way to access to the entity data.
 
-## reCAPTCHA
+### CheckoutFormInterface
 
-The EWZRecaptchaBundle is used, it provides reCAPTCHA form field for Symfony.
+`CheckoutFormInterface` (`Siso\Bundle\CheckoutBundle\Api\CheckoutFormInterface`) provides methods that are necessary for all checkout forms.
 
-An additional validator is provided by EWZRecaptchaBundle
+### CheckoutAddressInterface
 
-``` 
-use EWZ\Bundle\RecaptchaBundle\Validator\Constraints as Recaptcha;
- 
-/**
- * @Recaptcha\IsTrue(groups={"recaptcha"})
- */
-public $recaptcha;
-```
+`CheckoutAddressInterface` (`Silversolutions\Bundle\EshopBundle\Form\CheckoutAddressInterface`) provides methods that are necessary for forms
+that are handling addresses in checkout process.
+
+### AbstractFormEntity
+
+`AbstractFormEntity` (`Silversolutions\Bundle\EshopBundle\Entities\Forms\AbstractFormEntity`) implements the methods of the [FormEntityInterface](#formentityinterface).

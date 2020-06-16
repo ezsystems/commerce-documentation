@@ -1,20 +1,15 @@
 # BudgetServiceInterface
 
-## Introduction
+`BudgetServiceInterface` predefines methods to handle the user budget.
 
-The purpose of this interface is to predefine methods to handle the user budget.
+## isBudgetExceeded
 
-## BudgetServiceInterface
+This method checks if the budget for user (by user ID) is exceeded.
+Throws `BudgetExceededException` if user budget is exceeded.
 
-### public function isBudgetExceeded($amount, $userId);
+## getBudgetDetails
 
-This function checks if the budget for user (by user id) is exceeded.
-Throws BudgetExceededException if user budget was exceeded.
-
-### public function getBudgetDetails($userId);
-
-Returns a list with user budgets.
-Example:
+Returns a list with user budgets, for example:
 
 ```
 array(
@@ -23,6 +18,13 @@ array(
 )
 ```
  
-### public function getOrderSumOfLastMonth($userId);
+## getOrderSumOfLastMonth
 
 Returns the sum of the user orders of the last month.
+
+## OrderBudgetService
+
+`OrderBudgetService` is the concrete implementation of `BudgetServiceInterface`.
+It checks the user budget that is set in the content. Budget per order and budget per month are considered here.
+
+Service ID: `siso_customer_center.budget_service.order`

@@ -1,56 +1,53 @@
 # One-page forms
 
-## Introduction
-
-eZ Commerce offers a common concept for one-page forms.
+eZ Commerce offers a unified way of handling all one-page forms.
 
 One-page forms have several common criteria:
 
-- They are displayed on a single page
-- After submitting some processes are executed in the backend
-- After server response user sees a confirmation page with a success or error messages.
+- They are displayed on a single page.
+- After submitting some processes are executed in the backend.
+- After server response the user sees a confirmation page with a success or error message.
 
-If you have a use case like that (e.g. registration form, contact form...) you are welcome to make a usage of the eZ Commerce one-page forms concept.
+eZ Commerce uses the [Symfony forms](http://symfony.com/doc/3.4/forms.html) as a part of the solution,
+so you can take advantage of what Symfony forms offer:
 
-eZ Commerce uses the [Symfony forms](http://symfony.com/doc/current/forms.html) as a part of the solution, so you can profit of the Symfony forms benefits:
+- easy handling with form entities
+- simple and dynamic rendering with form types
+- automatic form validation
+- validation groups and much more
 
-- Easy handling with form entities
-- Simple and dynamic rendering with form types
-- Automatic forms validation
-- Usage of the validation groups and much more
+Additionally, you can pre-fill the form when it is loaded for the first time.
+This gives you the opportunity to improve the user experience by offering default values.
+The process that pre-fills the form is called `preDataProcessor`.
 
-Additionally you are able to pre-fill the form, when it is loaded for the first time. This gives you the opportunity e.g. to read some user data and improve the user experience by offering some values by default. The process that pre-fills the form is called `preDataProcessor`.
+You can define processes that are executed after the form is submitted.
+These processes are services that are executed is a sequence and are able to exchange the data.
+These processes are called `dataProcessors`.
 
-You are also able to define processes that will be executed after the form was submitted. These processes are services that will be executed one after each other and they are able to exchange the data. These processes are called `dataProcessors`.
+If process execution is not successful, the process can store an error message
+and display it on the confirmation page.
 
-If the process execution was not successfull, the process is able to store an error message, that will be displayed for the user on the confirmation page.
+You can decide what happens after the form is submitted - on server response.
+You can differ between valid and invalid responses and change the behavior according to your needs.
 
-You can decide what should happend, after the form was submitted - on server response. You can differ between valid and invalid response and change the  behavior according your needs.
-
-Usually the confirmation page will be displayed, but you can choose one of following behaviors (see configuration below):
+Usually a confirmation page is displayed, but you can choose one of the following behaviors:
 
 - confirmation page
 - redirect to another page:
-  - another route from the shop
-  - external url
+    - another route from the shop
+    - external URL
 
-## How does it work?
+## Creating a form
 
-Your task is to define and implement the form component parts (form entity, form type, template) and its services (preDataProcessor and dataProcessors) and bind everything within the [configuration](#One-pageforms-config).
-
-The configuration parameter must follow this syntax:
-
-``` 
-# the last part of the parameter name - formTypeResolver - identifies your form 
-# and has a special function, see below
-ses_forms.configs.{formTypeResolver}
-```
+To create a form you must define and implement the form component parts (form entity, form type, template)
+and its services (`preDataProcessor` and `dataProcessors`) and bind everything in [configuration](#configuration).
 
 ### FormTypeResolver
 
-The `{formTypeResolver}` identifies your form in the url.
+`formTypeResolver` identifies the form in the URL.
 
-`FormsController::formsAction` is responsible to handle the form and `{formTypeResolver}` is the parameter, that tells him, which forms configuration should be used.
+`FormsController::formsAction` handles the form and `formTypeResolver` is the parameter that tells it
+which forms configuration should be used.
 
 ``` yaml
 silversolutions_service:
@@ -58,15 +55,14 @@ silversolutions_service:
     defaults: { _controller: SilversolutionsEshopBundle:Forms:forms }
 ```
 
-That's why when you call the url `/service/registration_private`.
+When you call the URL `/service/registration_private` the `FormsController::formsAction` method
+uses the forms configuration.
 
-The *FormsController::formsAction* uses the forms configuration, that is mentioned in th example below.
+#### Define another URL for the form
 
-#### Define another url for the form
+If you want to change the URL for the form, define a new route for `FormsController::formsAction`.
 
-If you want to change the url for your specific usecase, you can define a new route for the *FormsController::formsAction.*
-
-The parameter {formTypeResolver} still must be part of the url.
+The parameter `formTypeResolver` must still be part of the URL.
 
 ``` yaml
 test_project_forms:
@@ -74,17 +70,21 @@ test_project_forms:
     defaults: { _controller: SilversolutionsEshopBundle:Forms:forms }
 ```
 
-Then by calling the url, the `FormsController::formsAction` will be used.
-
-``` 
-/shop_functions/registration_private
-```
+Then, when you call `/shop_functions/registration_private`, the `FormsController::formsAction` is used.
 
 ### Configuration
 
-By a simple configuration you are able to define the whole form behavior. See the full configuration example:
+The configuration parameter must follow this syntax:
 
-`$formTypeResolver = 'registration_private'` 
+``` yaml
+ses_forms.configs.{formTypeResolver}
+```
+
+`formTypeResolver` identifies the form and has a special function.
+
+You can define the whole form behavior using configuration.
+
+In the following example, `formTypeResolver` value is `registration_private`.
 
 ``` yaml
 parameters:
@@ -94,20 +94,20 @@ parameters:
         typeClass: Silversolutions\Bundle\EshopBundle\Entities\Forms\Types\RegisterPrivateType
         typeService: silver_forms.register_private_type
         template: SilversolutionsEshopBundle:Forms:register_private.html.twig
-        # translation key should be defined here
+        # translation key
         invalidMessage: error_message_register
         validMessage: success_register_private 
         policy: siso_policy/forms_profile_edit
         response:
-            # behaviour on valid response
+            # behavior on valid response
             valid:
                 # renders a template - confirmation page
                template: SilversolutionsEshopBundle:Forms:register_private_valid.html.twig
-                # redirect to external url              
+                # redirect to external URL              
                 httpResponse: 'http://www.google.de'
                 # redirect the another shop route
                 routeName: 'silversolutions_forms_user_choice'
-            # behaviour on invalid response         
+            # behavior on invalid response         
             invalid:         
                 template: SilversolutionsEshopBundle:Forms:register_private_valid.html.twig
                 httpResponse: 'http://www.google.de'
@@ -122,21 +122,13 @@ parameters:
 
 |Configuration key (* required)|Description|
 |--- |--- |
-|modelClass *|Full qualified class path to the form entity. This class needs to extend the class Silversolutions\Bundle\EshopBundle\Entities\Forms\AbstractFormEntity|
-|typeClass (* if typeService not defined)|Full qualified class path to the form type. Possible, but usage of `typeService` will give you more flexibility.|
-|typeService (* if typeClass not defined)|ID of the form type service.|
-|template *|Template that renders the form.|
-|validMessage|General success message that will be displayed on the confirmation page, if the form submission was successful.|
-|invalidMessage|General error message that will be displayed on the confirmation page, if the form submission failed.|
-|preDataProcessor|ID of the service that pre-fills the form.|
-|dataProcessors|List of service IDs, that will be executed one after each other after the form was submitted.|
-|response|Behavior definition on the server response. If not defined, the confirmation page (template) is displayed.|
-|policy|Defines the eZ user required policy. If user doesn't have the policy, he will not be able to see the form. The policy must be defined in following form "module/function"|
-
-## reCAPTCHA
-
-[EWZRecaptchaBundle](https://github.com/excelwebzone/EWZRecaptchaBundle) is used and provides easy reCAPTCHA form field for Symfony.
-
-reCAPTCHA is a free service that protects your website from spam and abuse.
-
-Have a look at the reCAPTCHA implementation in the [cookbook](one_page_forms_cookbook.md).
+|`modelClass`|Required. Fullly-qualified class path to the form entity. This class needs to extend `Silversolutions\Bundle\EshopBundle\Entities\Forms\AbstractFormEntity`|
+|`typeClass`|Required if `typeService` is not defined. Fullly-qualified class path to the form type. Using `typeService` gives more flexibility.|
+|`typeService` |Required if `typeClass` is not defined. ID of the form type service.|
+|`template`|Required. Template that renders the form.|
+|`validMessage`|General success message displayed on the confirmation page if form submission is successful.|
+|`invalidMessage`|General error message displayed on the confirmation page if form submission failed.|
+|`preDataProcessor`|ID of the service that pre-fills the form.|
+|`dataProcessors`|List of service IDs that are executed in sequence after the form is submitted.|
+|`response`|Behavior definition on the server response. If not defined, the confirmation page (template) is displayed.|
+|`policy`|Required user Policy. If the user doesn't have the Policy, they cannot see the form. The Policy must be defined as `module/function`|
