@@ -1,25 +1,13 @@
-# Documentation center 
+# eZ Commerce documentation
 
-## eZ Commerce for eZ Platform
+**Get started with the [Installation](getting_started/installation.md).**
 
-eZ Commerce is an add-on to eZ Platform that turns eZ Platform (version 2) into a high performance content and e-Commerce platform.
+**Learn how to manage your shop in the [User manual](user_manual/general/general.md).**
 
-eZ Commerce  supports different e-commerce use cases and goes beyond the simple e-shop. In particular, it provides a set of advanced features focusing on B2B e-commerce use cases with reliable, fast and flexible connection to the leading ERP and PIM systems.
+**Find more information about the system in the [Developer guide](guide/basket/basket.md).**
 
-## Version 2.5 - June 2019
+!!! tip
 
-## eZ Commerce offers a lot of new features and improvements
-
-  - New features
-      - Editing of addresses in the backend
-      - improved job system in backend
-      - Improvements for eContent - bestsellers
-      - Improved landingpage features
-      - Improved editing for specification data (unit field)
-      - Contact forms are pre filled if user is logged in
-      - New ERP transport layer for Microsoft Dynamics NAV
-  - Further changes
-      - eZ Commerce 2.5 comes with eZ Platform version 2.5.1
-      - Support for the eZ design engine
-
-The documentation has been written for users who are working on a daily base with the ecommerce platform and for developers planning to use eZ Commerce in oder to extend the functionality of the software. 
+    Take a look at the [eZ Platform developer manual.](https://doc.ezplatform.com)
+    
+    To learn more about using the eZ Platform Back Office, see [eZ Platform user manual.](https://doc.ezplatform.com/projects/userguide)
