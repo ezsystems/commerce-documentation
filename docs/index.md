@@ -2,7 +2,7 @@
 
 **Get started with the [Installation](getting_started/installation.md).**
 
-**Learn how to manage your shop in the [User manual](user_manual/general/general.md).**
+**Learn how to manage your shop from the [User manual](user_manual/general/general.md).**
 
 **Find more information about the system in the [Developer guide](guide/basket/basket.md).**
 
