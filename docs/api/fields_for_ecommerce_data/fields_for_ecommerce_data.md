@@ -43,9 +43,9 @@ if($field instanceof AbstractField) {
 
 ## Templates
 
-For each concrete Field a template has to be provided to render the Field in the template. 
+For each concrete Field you have to provide a template to render the Field in the template. 
 
-The templates have to be provided in the `FieldTypes` folder. The name of the template has to start with the identifier of the Field, e.g.:
+The templates have to be put in the `FieldTypes` folder. The name of the template has to start with the identifier of the Field, e.g.:
 
 - `ImageField.html.twig`
 - `TextBlockField.html.twig`

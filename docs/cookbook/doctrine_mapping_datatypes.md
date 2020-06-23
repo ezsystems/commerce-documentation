@@ -6,7 +6,7 @@ it uses objects or arrays to handle the attributes.
 
 By default, Doctrine uses the `serialize()` method when storing this data in the database.
 
-If the data cannot be unserialized (for example maybe because the object changed in the meantime, or the data is corrupted),
+If the data cannot be unserialized (for example the object changed in the meantime, or the data is corrupted),
 Doctrine throws an exception. In that case the whole basket or basket line cannot be returned.
 
 That is why eZ Commerce overrides the Doctrine mapping types for arrays and objects so the exception can be handled.

@@ -45,7 +45,7 @@ $output = $this->get('ses_eshop.business_api.invocation')->call('basket.get_bask
 ### Implementing a Business API operation
 
 To extend the Business API, you need to create a new service class.
-The operations of that class contain the business logic respectively and are stored in `EshopBundle/Services/BusinessLayer/Operations/*`
+The operations of that class contain the business logic respectively and are stored in `EshopBundle/Services/BusinessLayer/Operations/*`.
 
 Each operation, e.g. basket, is a service which must be tagged in the following way:
 

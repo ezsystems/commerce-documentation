@@ -63,7 +63,7 @@ It also gets prices and total count of elements without offset or limit.
 
 !!! note
 
-    `fetchChildrenList` returns an array with 2 elements:
+    `fetchChildrenList` returns an array with two elements:
 
     - `$catalogList` - list of catalog elements  
     - `$catalogCount` - total number of elements (without offset and limit) for pagination purposes
@@ -96,8 +96,8 @@ public function fetchChildrenList($identifier, $depth, $filter, $languages = nul
 
 ## Configuration
 
-Filters `catalogList` and `productList` are defined in the configuration file.
-They are used in catalog data provider to filter and sort all elements or products list from catalog.
+`catalogList` and `productList` filters are defined in the configuration file.
+They are used in catalog data provider to filter and sort all elements or product lists from catalog.
 
 ``` yaml
 silver_eshop.default.ez5_catalog_data_provider.filter:

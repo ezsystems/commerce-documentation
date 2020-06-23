@@ -11,7 +11,7 @@ php bin/console silversolutions:navigation_cache:refresh --siteaccess=de
 
 ## Removing Content item versions
 
-`silversolutions:ez:clean-version-history` cleans Content item version histories.
+`silversolutions:ez:clean-version-history` cleans Content item version history.
 It deletes old versions of Content items. 
 
 The content to be cleaned can be specified with the filter options.
@@ -29,7 +29,7 @@ php bin/console silversolutions:ez:clean-version-history --siteaccess ezdemo_sit
 # Remove Content items by filter
 php bin/console silversolutions:ez:clean-version-history --siteaccess ezdemo_site_clean_admin --type-id 4 --subtree-path "/1/5/485/474/476/"
 # Use the limit option to define how many versions should be removed 
-# If no limit is provided, all versions except the 10 latest are removed
+# If no limit is provided, all versions except the last 10 are removed
 php bin/console silversolutions:ez:clean-version-history --siteaccess ezdemo_site_clean_admin --content-id 496 --content-id 497 --limit 10
 ```
 

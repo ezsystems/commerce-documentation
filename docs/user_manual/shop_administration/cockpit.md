@@ -14,7 +14,7 @@ Currently, available sections:
     - ERP Status
 - Active shopping carts (in last 30 minutes)
 - Number of customers
-- Number of products  (Note: the number of products only respects the content model data provider.
+- Number of products  (The number of products only respects the content model data provider.
 The number of products in the eContent is displayed in **Control Center** / **Manage eContent**.)
 
 ## Data per shop
@@ -50,7 +50,7 @@ The search section offers the following statistics:
 
 1\. Top search terms
 
-The top 50 search terms were listed including how often they were searched for and how many hits (average) were found.
+Lists top 50 search terms including how often they are searched for and how many hits (average) they have.
 
 2\. Last search terms
 

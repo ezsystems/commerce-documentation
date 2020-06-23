@@ -4,7 +4,7 @@ Business API is the layer between the application entry points (like controllers
 
 ![](../img/business_api_1.png)
 
-To access the Business API, you have to use the [BusinessApi Invocation Service](businessapi_invocation_service.md). 
+To access the Business API, you have to use the [Business API invocation service](businessapi_invocation_service.md). 
 
 Business API Operations work with input/output data.
 The Business API invocation service calls the Operation service with input data.

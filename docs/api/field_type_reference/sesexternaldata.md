@@ -1,12 +1,12 @@
 # SesExternalData
 
-Field Type `sesexternaldatatype` use external storage to store data. The data must be stored in the `ses_externaldata` table.
+Field Type `sesexternaldatatype` uses external storage to store data. The data must be stored in the `ses_externaldata` table.
 
 |Field|Type|Description|
 |--- |--- |--- |
-|`sku`|char(40)|Unique ID of the Product category (CatalogElement)|
-|`identifier`|char(40)|ID of the Field. Constant prefix (`ses`) + lower case letters from the ERP fields</br>Example: `VENDOR_NO  --> ses_vendor_no`|
-|`language_code`|char(8)|e.g. ger-DE|
+|`sku`|char(40)|Unique ID of the Product category (CatalogElement).|
+|`identifier`|char(40)|ID of the Field. Constant prefix (`ses`) + lower case letters from the ERP fields</br>Example: `VENDOR_NO  --> ses_vendor_no`.|
+|`language_code`|char(8)|Language code e.g. ger-DE.|
 |`ses_field_type`|char(20)|The data type used for this data.|
 |`content`|longtext|Serialized data in string format.|
 

@@ -20,7 +20,7 @@ This class implements business logic for basket.
 
 | Method | Parameters  | Returns    | Purpose  | Operation identifier |
 | ------ | ----------- | ---------- | -------- | -------------------- |
-| [`addProducts`](addproducts.md) | `InputAddItemToBasket $operationInput` | `OutputAddItemToBasket $operationOutput` | add products to the basket | `basket.add_products` |
+| [`addProducts`](addproducts.md) | `InputAddItemToBasket $operationInput` | `OutputAddItemToBasket $operationOutput` | adds products to the basket | `basket.add_products` |
 | [`getBasket`](getbasket.md)     | `InputGetBasket $input`                | `OutputGetBasket $output`                | returns current basket     | `basket.get_basket`   |
 
 ### Service definition

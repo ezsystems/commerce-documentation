@@ -1,7 +1,7 @@
 # Mail logging
 
 Every email sent by `MailHelperService` is recorded by `siso_tools.mailer.logger`.
-It is a special service of the class `Monolog/Logger`.
+It is a special service of the `Monolog/Logger` class.
 
 For more information about logging, see [logging documentation](../../guide/logging/logging.md).
 

@@ -8,7 +8,7 @@ You can link these legal documents in the footer:
 
 ![](img/legal_footer.png)
 
-The legal documents are used at various places in the shop. The Terms & Conditions are shown as s full page or as a popup during the checkout process:
+The legal documents are used at various places in the shop. The Terms and Conditions are shown as s full page or as a popup during the checkout process:
 
 ![](img/legal_checkout.png)
 

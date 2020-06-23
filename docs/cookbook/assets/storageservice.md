@@ -4,11 +4,11 @@
 
 Service ID: `silver_tools.storage_service`
 
-Theservice fetches a list of files by a provided $productId from `$storagePath`.
+The service fetches a list of files by provided $productId from `$storagePath`.
 
 ## getFilesByProductId
 
-`getFilesByProductId` uses the [Symfony Finder component.](http://symfony.com/doc/current/components/finder.html)
+`getFilesByProductId` uses the [Symfony Finder component.](http://symfony.com/doc/3.4/components/finder.html)
 
 The following example code:
 

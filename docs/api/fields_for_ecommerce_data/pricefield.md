@@ -28,5 +28,5 @@ You can also render a `priceField` with a Twig function `ses_render_price()`:
 
 |Twig function|Parameters|Usage|
 |--- |--- |--- |
-|`ses_render_field()`|`$catalogElement`</br>`string $fieldIdentifier`</br>`array $params`|Also renders other `FieldInterface $fields` from `$catalogElement`, like TextBlockField, ImageField, PriceField.|
+|`ses_render_field()`|`$catalogElement`</br>`string $fieldIdentifier`</br>`array $params`|Renders `FieldInterface $fields` from `$catalogElement`, like TextBlockField, ImageField, PriceField.|
 |`ses_render_price()`|`$catalogElement`</br>`PriceField $priceField`</br>`array $params`|Renders only `PriceField $price`.|

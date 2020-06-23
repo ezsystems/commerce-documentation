@@ -9,7 +9,7 @@ Following attributes are possible:
 |Attribute name|Description|Example value|
 |--- |--- |--- |
 |Name|The name of the silver.module. It is shown on the front end and is translatable.|"My test module", results in the URL: `/my-test-module`|
-|Controller|The controller which should be loaded when clicking that module. Define the controller including the fully-qualified namespace and the controller method separated by two colons (`::`). The silver.module controller handler which loads the target controller automatically validates if the controller class and action method are available and throws an exception otherwise.|`\Silversolutions\Bundle\EshopBundle\Controller\CommonController::testAction`|
+|Controller|The controller which should be loaded when clicking that module. Define the controller including the fully-qualified namespace and the controller method separated by two colons (`::`). The silver.module controller handler which loads the target controller automatically validates if the controller class and action method are available or throws an exception otherwise.|`\Silversolutions\Bundle\EshopBundle\Controller\CommonController::testAction`|
 |Parameters|Optional parameters (list of hashes) which are directed to the target controller. Only string key-value pairs are possible. The key value pairs are separated by a semicolon (`;`)|Parameter key: `formTypeResolver`</br>Parameter value: `contact`|
 
 ## Functionality

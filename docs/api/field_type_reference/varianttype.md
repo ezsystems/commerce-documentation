@@ -2,7 +2,7 @@
 
 The VariantType Field Type offers a user interface for editing variants.
 
-The FieldType offers a selection of preconfigured variant types.
+The Field Type offers a selection of preconfigured variant types.
 
 ![](../img/additional_ez_fieldtypes_12.png)
 

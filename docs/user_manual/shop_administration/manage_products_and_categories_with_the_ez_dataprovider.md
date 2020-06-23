@@ -46,12 +46,12 @@ one PDF, and one link to a video (e.g. YouTube).
 	
 The stock can be managed by SKU and SKU/variant. This can be done manually or per upload.
 
-In addition, you can add a text about stock availability (e.g. informing that a product is not on stock but will be back on a given date).
+In addition, you can add a text about stock availability (e.g. informing that a product is out of stock but will be back on a given date).
 After an order is placed, the stock is reduced by the number of products bought by the customer.
 
 You can manage stock in two places:
 
-1\. In the product on the **eCommerce** tab:
+1\. In the product in the **eCommerce** tab:
 
 ![](img/product_stock.png)
 

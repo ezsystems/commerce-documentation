@@ -9,7 +9,7 @@ Ajax requests use POST or GET methods (configured in hoplites):
 - GET should be used for most requests except of sensitive data. GET requests can be cached.
 - POST should be used to send sensitive information. POST requests are never cached.
 
-All Ajax requests go the same URL:
+All Ajax requests use the same URL:
 
 ``` yaml
 silversolutions_phalanx:
@@ -18,8 +18,8 @@ silversolutions_phalanx:
         _controller: SilversolutionsEshopBundle:Ajax:phalanx
 ```
 
-`AjaxController` then decides which `AjaxSubController` the request is forwarded to.
-This depends on the parameters that needs to be send from the hoplite.  
+`AjaxController` then decides to which `AjaxSubController` to forward the request.
+This depends on the parameters that need to be send from the hoplite.  
 
 - `type` defines which subcontroller is called
 - key of the method defines which method in the subcontroller is called.

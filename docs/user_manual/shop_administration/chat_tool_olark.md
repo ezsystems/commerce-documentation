@@ -28,11 +28,11 @@ If a salesperson is online, the chat indicates this and it is possible to displa
 
 ### Change the text inside the chat
 
-You can to change and translate all texts and labels used in the chat.
+You can change and translate all texts and labels used in the chat.
 
 ### Using the chat for sales
 
-Olark offers a web interface were chats can be handled.
+Olark offers a web interface where chats can be handled.
 
 In addition, local chat clients can be used as well, e.g.:
 
@@ -65,7 +65,7 @@ Depending on your privacy rules, information about the user can be displayed in 
 
 You can modify the design of the plugin in Olark backend.
 
-### Groups of sales persons
+### Groups of salespersons
 
 A chat can be assigned to a group of users as well.
 
@@ -85,21 +85,21 @@ Co-browsing is supported by IE8+, Firefox, Safari, Chrome, and Opera, as well as
 
 ### Chat commands
 	
-Olark supports a lot of chat functions. For a complete list see [Olark documentation](https://www.olark.com/help/commands).
+Olark supports multiple chat functions. For a complete list see [Olark documentation.](https://www.olark.com/help/commands)
 
 Important commands:
 
-- `tag` - tag a chat to label conversations 
+- `tag` - tags a chat to label conversations 
 - `transfer` - transfers a conversation to another operator
 - `push` - sends a visitor to a different website URL
-- `name` - give a website user a name
+- `name` - gives a website user a name
 - `case` - pushes the transcript for your chat into your CRM 
-- `send` - enables you to forward a chat transcript via email during a chat 
+- `send` - enables you to forward a chat transcript by email during a chat 
 - `feedback` - enables you to send a Chat Rating to the visitor
 
 ## Configuration
 
-Create an account on [www.olark.com.](http://www.olark.com.) You can choose a free version or another option as required.
+Create an account on [www.olark.com.](http://www.olark.com) You can choose a free version or another option as required.
 We recommend the paid version since it offers support features such as co-browsing.
 
 Configure Olark in the **Customer** section of configuration settings:
@@ -115,9 +115,9 @@ You can find the Olark Account ID in the "Installation" section.
 
 ![](img/olark_installation.png)
 
-After storing the configuration you see a chat tool at the bottom of your page.
+After storing the configuration you should see a chat tool at the bottom of your page.
 
-In the settings section on [www.olark.com](http://www.olark.com) you can also configure, among others:
+In the settings section on [www.olark.com](http://www.olark.com) you can also configure:
 
 - the location where the chat should appear
 - translations

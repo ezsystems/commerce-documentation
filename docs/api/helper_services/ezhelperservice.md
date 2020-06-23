@@ -41,6 +41,6 @@ Service ID: `silver_tools.ez_helper`
 |`getEzContentByLocation()`|`Location $ezLocation`|`Content`|Returns content by Location|
 |`getEzContentByContentId()`|`$ezContentId`|`Content`|Returns content by content ID|
 |`getEzTypeIdentifierByEzContent()`|`Content $ezContent`|string|Returns the Content Type identifier for the given Content item|
-|`getEzContentFieldValue()`|`Content $ezContent`</br>`$fieldIdentifier`</br>`$languageCode`</br>`$fieldType`|null\|mixed|Returns a Dield value for the given Content item by identifier|
+|`getEzContentFieldValue()`|`Content $ezContent`</br>`$fieldIdentifier`</br>`$languageCode`</br>`$fieldType`|null\|mixed|Returns a Field value for the given Content item by identifier|
 |`getUrlAliasByUrl()`|`$url`</br>`$languageCode`|`\eZ\Publish\API\Repository\Values\Content\URLAlias`</br>`@throws \eZ\Publish\API\Repository\Exceptions\NotFoundException`|Looks up the URL alias for the given URL.|
 |`getUrlAliasByLocation()`|`Location $ezLocation`</br>`$languageCode`|null\|`\eZ\Publish\API\Repository\Values\Content\URLAlias`|Returns the URL alias for the given Location|

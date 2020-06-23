@@ -2,7 +2,7 @@
 
 ![](img/navigation_structure_menu.png)
 
-Click **Content** > **Content structure** to access the objects displayed at the top navigation
+Click **Content** > **Content structure** to access the objects displayed in the top navigation
 
 ![](img/navigation_content_structure.png)
 

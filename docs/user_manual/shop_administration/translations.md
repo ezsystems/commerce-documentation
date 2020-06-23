@@ -35,6 +35,6 @@ However, if the full page is cached in HTTP cache, the new translation for the t
 
 ## Working with OneSky
 
-[OneSky]((https://www.oneskyapp.com/) ) is an external platform for managing translations. You can use this platform to offer a user interface for translations management.
+[OneSky](https://www.oneskyapp.com/) is an external platform for managing translations. You can use this platform to offer a user interface for translations management.
 
 See [OneSky in the guide](../../guide/translations/onesky.md) to learn how to set up OneSky for your shop.

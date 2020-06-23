@@ -30,4 +30,4 @@ If you need to introduce a special process, after the form was submitted, you wi
 
 ## How can I add the customer center actions into user menu?
 
-Refer to [How to user menu is build?](../../customers/customers_faq.md)
+Refer to [How the user menu is built?](../../customers/customers_faq.md)

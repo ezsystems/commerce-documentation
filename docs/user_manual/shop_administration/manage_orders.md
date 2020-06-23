@@ -25,13 +25,13 @@ You can filter orders using the following criteria:
     - Approval - orders using an approval workflow
     - Rejected - orders refused by the approver
 - Payment option - the list has to be configured in the section **Configuration settings** under **Checkout**.
-- Payment transaction id.
+- Payment transaction ID.
 
 ### Order list
 
 ![](img/order_management_filter_1.png)
 
-- Basket ID - ID of the basket stored in the database.
+- Basket ID - ID of the basket stored in the database
 - Date - date and time this basket was last modified
 - Customer name
 - Total - total amount from the basket including VAT and shipping costs

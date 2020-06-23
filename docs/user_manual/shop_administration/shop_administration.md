@@ -22,7 +22,7 @@ Depending on the chosen data provider and whether an ERP is connected, some tabs
 
 This section is available only if an ERP system is connected.
 
-All communication (request- and response messages), that is sent between shop and ERP system is recorded and displayed here.
+All communication (request and response messages), that is sent between shop and ERP system is recorded and displayed here.
 
 ![](img/erprequest_log.png)
  

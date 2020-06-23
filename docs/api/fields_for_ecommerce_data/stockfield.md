@@ -22,7 +22,7 @@ This method renders the StockField from a central template:
 `Silversolutions/Bundle/EshopBundle/Resources/views/Fieldtypes/StockField.html.twig`
 
 The availability is displayed depending on the given parameters.
-If the StockField is not defined (e.g. ERP is not responding), an information is displayed that there is no availability information for this product.
+If the StockField is not defined (e.g. ERP is not responding), no availability information for this product is displayed.
 
 ``` html+twig
 {# display availability for the basket line, pass additionally the requested quantity in order to find out if the product is available in required amount #}

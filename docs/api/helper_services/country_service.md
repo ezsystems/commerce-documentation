@@ -11,7 +11,7 @@ Service ID: `siso_tools.country`
 
 ## Configuration
 
-The list of possible countries to choice can be configured in `siso_tools.default.countries`.
+The list of possible countries can be configured in `siso_tools.default.countries`.
 
 ## `getCountryNames`
 
@@ -21,7 +21,7 @@ The `getCountryNames` method takes the following parameters:
 - `$locale = null`
 
 It returns an array of country codes and names.
-The country name is translated for required `Locale $locale`. If `$locale` is not set, current Locale is used.
+The country names are translated for required `Locale $locale`. If `$locale` is not set, current Locale is used.
 This function can be customized depending on the given `$formTypeNam`e, e.g.:
 
 ```

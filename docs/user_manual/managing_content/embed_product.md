@@ -15,7 +15,7 @@ If you want to embed more than one product inside a RichText Field, use the Prod
 
 ### Box type
 
-eZ Commerce offers types of boxes designs:  
+eZ Commerce offers the following types of box designs:  
 
 - Slider
 
@@ -27,4 +27,4 @@ eZ Commerce offers types of boxes designs:
 
 ### Slider title
 
-The title is used only if you choose "Type of product box" as "Slider". It is be displayed as a tab.
+The title is used only if you choose "Type of product box" as "Slider". It is displayed as a tab.

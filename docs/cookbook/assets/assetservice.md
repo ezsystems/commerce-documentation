@@ -164,7 +164,7 @@ Assets can now be cached using Stash. Cache is created depending both on `produc
 
 |Parameter|Description|
 |--- |--- |
-|`silver_eshop.default.asset_cache`|When set to true, translation cache is enabled|
+|`silver_eshop.default.asset_cache`|When set to true, translation cache is enabled.|
 |`silver_eshop.default.asset_cache_ttl`|Defines how long the item is stored in the cache. When TTL value is set to null, cache is stored forever.|
 
 ``` yaml

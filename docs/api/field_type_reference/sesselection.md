@@ -2,7 +2,7 @@
 
 This Field Type renders a selection in the backend, so the editor can choose a value. 
 
-Unlike the standard selection Field Type, the SesSelection Field Type configuration is a located in a YAML file 
+Unlike the standard selection Field Type, the SesSelection Field Type configuration is located in a YAML file.
 For that reason, it is possible to set up SiteAccess-specific selection Field Types.
 
 ## Configuration
