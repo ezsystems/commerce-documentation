@@ -1,22 +1,20 @@
-# How to modify the search query
+# Modifying the search query
 
-Sometimes you need to modify the [EshopQuery](../search_api/search_api.md) just before it is send to the search service. This event listener will handle this situation. Maybe you need to modify the search term, or add some sorting criteria.
+Sometimes you need to modify the [EshopQuery](../search_api.md) before it is sent to the search service.
+The event listener handles this situation.
+You can use it if you need to modify the search term, or add some sorting criteria.
 
-### Example
+For example, when searching for a book ISBN number that needs to be modified.
+When a user searches for `2-245-5-4878-0`, you want to modify the search term to remove the `-` and search only for `224558780`.
 
-A use case can be searching for a book ISBN number, that needs to be modified.
+`SearchController` already contains an event that is dispatched after the complete query is built.
+If you want to modify it, you need to implement an event listener for your project.
 
-User searches for 2-245-5-4878-0
+In the following example you modify the sort criteria of a query if the query is empty
+and if you detect that current sort criteria is relevance sorting (default).
 
-You want to modify the search term to remove the - and search only for 224558780
-
-## Usage
-
-If you are using the SearchController, there is already an event that is dispatched after the complete query is builded. If you want to modify it, you need to implement an event listener for your project.
-
-In the following example we are modifying the sort criteria of a query if the query is empty and if we detect that current sort criteria is Relevance Sorting (Which is the default one).
-
-Please note that you can use any [EshopQuery](../search_api/search_api.md) getter methods to check any condition or property and then use any setter method to modify what ever you need.
+You can use any [EshopQuery](../search_api.md) getter methods to check any condition or property
+and then use any setter method to modify whatever you need.
 
 ``` php
 use Siso\Bundle\SearchBundle\Api\Common\RelevanceSorting;

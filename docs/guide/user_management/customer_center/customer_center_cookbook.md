@@ -1,124 +1,125 @@
-# Customer Center - Cookbook
+# Customer center cookbook
 
-## How to extend the customer center forms?
+## Extending the Customer center forms
 
-Let's say you need to add more fields to the customer center forms because you want to know to 'Cost center' of the user. This cost center will be stored in eZ and could be sent to the ERP during the order process. Then you need to add this field as dynamic field to your form configuration.
+The following example shows how to extend the Customer center forms by adding more fields to the forms
+to display the "Cost center" of the user.
+The cost center is stored in the content model and can be sent to the ERP during the order process.
+You need to add this dynamic field to your form configuration.
 
 !!! note
 
-    This tutorial will explain how to extend the form with additional data, that will be stored in eZ. Sending of this additional data (e.g. in the order process) is part of a different process, that needs to be implemented separately. See [Sending additional data in the order.](../../erp_integration/checkout_order/order_submission/order_submission.md).
+    This example explains how to extend the form with additional data.
+    Sending this additional data (e.g. in the order process) is part of a different process that needs to be implemented separately.
+    See [Sending additional data in the order](../../erp_integration/checkout_order/order_submission/order_submission.md#sending-additional-data-in-the-order) for more information.
 
-### Steps:
+1\. Extend the User Content Type with a new Field `cost_center`. The Field must be one of the supported Field Types: Text line, Float, Integer, or Checkbox.
 
-1.  Extend your User class in eZ with a new field 'cost\_center'. The field type must be one of the supported field types: Text line, Float, Integer, Checkbox.
-2.  Add this new field to the form configuration as a dynamic field, first choose the form field type, how the field should be rendered (<http://symfony.com/doc/current/reference/forms/types.html>).
-3.  Add validation and other settings. The options are depending on the field type, that you have choosen.
-    
-    Example: type: *text*, see settings: <http://symfony.com/doc/current/reference/forms/types/text.html>
-    
-    ``` yaml
-    siso_customer_center.default.form.request_user:
-       ...
-        attributes:
-            dynamic:
-                cost_center:
-                    type: text
-                    options:                    
-                        constraints:
-                            Symfony\Component\Validator\Constraints\NotBlank:
-    ```
+2\. Add this new Field to the form configuration as a dynamic field. First choose the [form field type](https://symfony.com/doc/3.4/reference/forms/types.html) which defines how the field should be rendered.
 
-4.  The new field will appear in your form and can be edited. The data will be stored in the eZ field. If you have extended the request form, the new field might be sent to ERP also, when new contact is created in ERP.
-        
-!!! warning
-        
-    The eZ field identifier and the field identifier in the configuration must match, if you want to store data in eZ\!
+3\. Add validation and other settings. The options depend on the form field type.
 
-## How to write a new form data processor?
+``` yaml
+siso_customer_center.default.form.request_user:
+    attributes:
+        dynamic:
+            cost_center:
+                type: text
+                options:                    
+                    constraints:
+                        Symfony\Component\Validator\Constraints\NotBlank:
+```
 
-If you need a special process to be started after one of the form was submitted, you need to write a new data processor. Let´s say you need to update the contact data in ERP, after you have edited the user in the shop.
+4\. The new Field appears in the form and can be edited. The data is stored in the content Field.
+If you extended the request form, the new Field can also be sent to ERP when the new contact is created in ERP.
 
-Condition for this recipe is, that you have prepared a message 'updateContact' to update the contact data in ERP. If you don´t know how to create a message, that will be sent to ERP, see our [tutorials](../../erp_integration/erp_communication/guides/creating_a_new_erp_message/create_project_specific_message.md).  
+!!! caution
 
-### Steps:
+    The content Field identifier and the field identifier in the configuration must match, if you want to store data in the content model.
 
-1.  Create a new form processor, that implements the [FormProcessorInterface](customer_center_api/formprocessorinterface.md).
+## Writing a new form data processor
 
-    **Example**
+If you need a special process to be started after a form is submitted, you need to write a new data processor.
+In the example below you need to update the contact data in ERP after editing the user in the shop.
 
-    ``` php
-    class UpdateContactInErpProcessor implements FormProcessorInterface
-    {
-        public function execute(Form $form, array $lastResult = array())
-        {    
-            try {
-                $updateContactMessage = $this->messageInquiry
-                    ->inquireMessage(UpdateContactFactoryListener::UPDATECONTACT);
-            } catch(MessageInquiryException $messageException) {
-               //TODO handle exception
-            }
-    
-            if (!$updateContactMessage instanceof UpdateContactMessage) {
-               //TODO handle exception
-            }
-    
-            /** @var UpdateContact $updateContactMessage */
-            $updateContactRequest = $updateContactMessage->getRequestDocument();
-            
-            //TODO set request data
-    
-            try {
-                $updateContactResponse = $this->transport->sendMessage($updateContactMessage)->getResponseDocument();
-    
-                if (!$updateContactResponse instanceof ResponseUpdateContact) {
-                    //TODO handle missing response
-                }
-                
-                //TODO if required set some response data into last result
-                //Example: $lastResult['updateContact'] = $updateContactResponse->status;
-    
-            } catch (\RuntimeException $rtException) {
-                //TODO handle exception
-            }    
-    
-            return $lastResult;
+You need to have an `updateContact` message prepared to update the contact data in ERP.
+If you don't know how to create a message that is sent to ERP, see [Creating a project-specific message](../../erp_integration/erp_communication/guides/creating_a_new_erp_message/create_project_specific_message.md).  
+
+1\. Create a new form processor that implements [FormProcessorInterface](customer_center_api/formprocessorinterface.md).
+
+``` php
+class UpdateContactInErpProcessor implements FormProcessorInterface
+{
+    public function execute(Form $form, array $lastResult = array())
+    {    
+        try {
+            $updateContactMessage = $this->messageInquiry
+                ->inquireMessage(UpdateContactFactoryListener::UPDATECONTACT);
+        } catch(MessageInquiryException $messageException) {
+           //TODO handle exception
         }
+
+        if (!$updateContactMessage instanceof UpdateContactMessage) {
+           //TODO handle exception
+        }
+
+        /** @var UpdateContact $updateContactMessage */
+        $updateContactRequest = $updateContactMessage->getRequestDocument();
+        
+        //TODO set request data
+
+        try {
+            $updateContactResponse = $this->transport->sendMessage($updateContactMessage)->getResponseDocument();
+
+            if (!$updateContactResponse instanceof ResponseUpdateContact) {
+                //TODO handle missing response
+            }
+            
+            //TODO if required set some response data into last result
+            //Example: $lastResult['updateContact'] = $updateContactResponse->status;
+
+        } catch (\RuntimeException $rtException) {
+            //TODO handle exception
+        }    
+
+        return $lastResult;
     }
-    ```
+}
+```
 
-2.  Define your processor as a service
+2\.  Define the processor as a service:
 
-    ``` 
-    <parameter key="siso_customer_center.processor.update_contact_in_erp.class">Project\Bundle\MyProjectBundle\Service\Forms\UpdateContactInErpProcessor</parameter>
-    
-    <service id="siso_customer_center.processor.update_contact_in_erp" class="%siso_customer_center.processor.update_contact_in_erp.class%">    
-    </service>
-    ```
+``` xml
+<parameter key="siso_customer_center.processor.update_contact_in_erp.class">Project\Bundle\MyProjectBundle\Service\Forms\UpdateContactInErpProcessor</parameter>
 
-3.  Add your data processor to the form configuration
+<service id="siso_customer_center.processor.update_contact_in_erp" class="%siso_customer_center.processor.update_contact_in_erp.class%">    
+</service>
+```
 
-    ``` yaml
-    siso_customer_center.default.form.edit_user:
-        invalidMessage: error_message_customer_center_forms
-        validMessage: success_message_customer_center_edit_user
-        #this initialFormValuesService will prefill the form
-        initialFormValuesService: siso_customer_center.initial_edit_user_values_service
-        formProcessors:
-            - siso_customer_center.processor.store_user_form_in_ez
-            - siso_customer_center.processor.update_user_roles
-            - siso_customer_center.processor.save_profile_in_session
-            - siso_customer_center.processor.update_contact_in_erp
-    ```
+3\. Add the data processor to the form configuration:
 
-# How to extend the budget with budget per year?
+``` yaml
+siso_customer_center.default.form.edit_user:
+    invalidMessage: error_message_customer_center_forms
+    validMessage: success_message_customer_center_edit_user
+    #this initialFormValuesService will prefill the form
+    initialFormValuesService: siso_customer_center.initial_edit_user_values_service
+    formProcessors:
+        - siso_customer_center.processor.store_user_form_in_ez
+        - siso_customer_center.processor.update_user_roles
+        - siso_customer_center.processor.save_profile_in_session
+        - siso_customer_center.processor.update_contact_in_erp
+```
 
-Let´s say you need to prove the user budget also per year. Then you should extend the Ez User class first.
+## Extending the budget with budget per year
 
-Edit your user class and add a new attribute of type 'Float'. The field type must be one of the supported field types: Text line, Float, Integer, Checkbox.
+To provide user budget per year, extend the User Content Type.
+The Field must be one of the supported Field Types: Text line, Float, Integer, Checkbox.
+Add a new Field of type Float. 
 
 ![](../../img/customer_center_cookbook_1.png)
 
-Name the attribute and add a unique identifier, e.g. budget\_year.
+Name the attribute and add a unique identifier, e.g. `budget_year`.
 
 ![](../../img/customer_center_cookbook_2.png)
 
@@ -126,15 +127,12 @@ Then you can assign the user budget per year to some users.
 
 ![](../../img/customer_center_cookbook_3.png)
 
-## What needs to be extended in the shop?
+By default only the budget per order and budget per year are checked by the shop.
+[`OrderBudgetService`](customer_center_api/budgetserviceinterface.md#orderbudgetservice) is used to check the budget service.
 
-By default only the budget per order and budget per year are checked by the shop. The [OrderBudgetService](customer_center_api/orderbudgetservice.md) is used to check the budget service.
+Override this service in your project and consider also the budget per year in the interface methods:
 
-The easiest way is to override this service in your project and consider also the budget per year in the interface methods.
-
-### How to override the service?
-
-``` 
+``` xml
 <parameter key="siso_customer_center.budget_service.order.class">CompanyName\Bundle\ProjectBundle\Service\OrderBudgetService</parameter>
 
 <service id="siso_customer_center.budget_service.order" class="%siso_customer_center.budget_service.order.class%">
@@ -147,9 +145,7 @@ The easiest way is to override this service in your project and consider also th
 </service>
 ```
 
-##### Implementation example:
-
-`CompanyName\Bundle\ProjectBundle\Service\OrderBudgetService`
+Override the bundget service with `CompanyName\Bundle\ProjectBundle\Service\OrderBudgetService`:
 
 ``` php
 public function isBudgetExceeded($amount, $userId)

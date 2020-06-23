@@ -345,37 +345,15 @@ nav:
                     - 'Working with several newsletters': 'guide/newsletter/newsletter2go/newsletter2go_cookbook/working_with_several_newsletters.md'
         - One-page forms:
             - 'One-page forms': 'guide/one_page_forms/one_page_forms.md'
-            - One-page forms API:
-                - 'One-page forms API': 'guide/one_page_forms/one_page_forms_api/one_page_forms_api.md'
+            - One-page form API:
+                - 'One-page form API': 'guide/one_page_forms/one_page_forms_api/one_page_forms_api.md'
                 - Dataprocessors:
-                    - Dataprocessors after submitting:
-                        - 'dataProcessors': 'guide/one_page_forms/one_page_forms_api/dataprocessors/dataprocessors_after_submitting/dataprocessors_after_submitting.md'
-                        - 'CreateCustomerProfileDataDataProcessor': 'guide/one_page_forms/one_page_forms_api/dataprocessors/dataprocessors_after_submitting/createcustomerprofiledatadataprocessor.md'
-                        - 'CreateRegistrationTokenDataProcessor': 'guide/one_page_forms/one_page_forms_api/dataprocessors/dataprocessors_after_submitting/createregistrationtokendataprocessor.md'
-                        - 'EzCreateUserDataProcessor': 'guide/one_page_forms/one_page_forms_api/dataprocessors/dataprocessors_after_submitting/ezcreateuserdataprocessor.md'
-                        - 'EzUserDisableDataProcessor': 'guide/one_page_forms/one_page_forms_api/dataprocessors/dataprocessors_after_submitting/ezuserdisabledataprocessor.md'
-                        - 'EzUserLoginDataProcessor': 'guide/one_page_forms/one_page_forms_api/dataprocessors/dataprocessors_after_submitting/ezuserlogindataprocessor.md'
-                        - 'HasFormChangedDataProcessor': 'guide/one_page_forms/one_page_forms_api/dataprocessors/dataprocessors_after_submitting/hasformchangeddataprocessor.md'
-                        - 'SendCancellationEmailDataProcessor': 'guide/one_page_forms/one_page_forms_api/dataprocessors/dataprocessors_after_submitting/sendcancellationemaildataprocessor.md'
-                        - 'SendConfirmationMailDataProcessor': 'guide/one_page_forms/one_page_forms_api/dataprocessors/dataprocessors_after_submitting/sendconfirmationmaildataprocessor.md'
-                        - 'SendContactEmailDataProcessor': 'guide/one_page_forms/one_page_forms_api/dataprocessors/dataprocessors_after_submitting/sendcontactemaildataprocessor.md'
-                        - 'SendRmaEmailDataProcessor': 'guide/one_page_forms/one_page_forms_api/dataprocessors/dataprocessors_after_submitting/sendrmaemaildataprocessor.md'
-                        - 'UpdateBuyerDataProcessor': 'guide/one_page_forms/one_page_forms_api/dataprocessors/dataprocessors_after_submitting/updatebuyerdataprocessor.md'
-                        - 'UpdateCustomerProfileDataProcessor': 'guide/one_page_forms/one_page_forms_api/dataprocessors/dataprocessors_after_submitting/updatecustomerprofiledataprocessor.md'
-                        - 'UpdateMyAccountDataProcessor': 'guide/one_page_forms/one_page_forms_api/dataprocessors/dataprocessors_after_submitting/updatemyaccountdataprocessor.md'
-                        - 'ValidateBusinessActivationDataProcessor': 'guide/one_page_forms/one_page_forms_api/dataprocessors/dataprocessors_after_submitting/validatebusinessactivationdataprocessor.md'
-                    - Predataprocessors before submitting:
-                        - 'preDataProcessors': 'guide/one_page_forms/one_page_forms_api/dataprocessors/predataprocessors_before_submitting/predataprocessors_before_submitting.md'
-                        - 'PreFillBuyerDataProcessor': 'guide/one_page_forms/one_page_forms_api/dataprocessors/predataprocessors_before_submitting/prefillbuyerdataprocessor.md'
-                        - 'PreFillContactDataProcessor': 'guide/one_page_forms/one_page_forms_api/dataprocessors/predataprocessors_before_submitting/prefillcontactdataprocessor.md'
-                        - 'PreFillMyAccountDataProcessor': 'guide/one_page_forms/one_page_forms_api/dataprocessors/predataprocessors_before_submitting/prefillmyaccountdataprocessor.md'
-                    - 'Events before and after DataProcessor': 'guide/one_page_forms/one_page_forms_api/dataprocessors/events_before_and_after_a_dataprocessor.md'
-                - Form interfaces:
-                    - 'Form interfaces': 'guide/one_page_forms/one_page_forms_api/form_interfaces/form_interfaces.md'
-                    - 'AbstractFormEntity': 'guide/one_page_forms/one_page_forms_api/form_interfaces/abstractformentity.md'
-            - 'One-page forms cookbook': 'guide/one_page_forms/one_page_forms_cookbook.md'
-            - 'One-page forms templates': 'guide/one_page_forms/one_page_forms_templates.md'
-            - 'One-page forms FAQ': 'guide/one_page_forms/one_page_forms_faq.md'
+                    - 'Data processors': 'guide/one_page_forms/one_page_forms_api/dataprocessors/dataprocessors.md'
+                    - 'Pre-data processors': 'guide/one_page_forms/one_page_forms_api/dataprocessors/predataprocessors.md'
+                    - 'Events before and after data processor': 'guide/one_page_forms/one_page_forms_api/dataprocessors/events_before_and_after_a_dataprocessor.md'
+            - 'One-page form templates': 'guide/one_page_forms/one_page_forms_templates.md'
+            - 'Implement custom one-page form': 'guide/one_page_forms/implement_custom_one_page_form.md'
+            - 'Using reCAPTCHA': 'guide/one_page_forms/using_recaptcha.md'
         - Order history:
             - 'Orderhistory': 'guide/order_history/orderhistory.md'
             - Order history features:
@@ -438,29 +416,31 @@ nav:
         - Search:
             - 'Search': 'guide/search/search.md'
             - Search features:
-                - Search autosuggest:
-                    - 'Search autosuggest': 'guide/search/search_features/search_autosuggest/search_autosuggest.md'
-                    - 'Autosuggest filters': 'guide/search/search_features/search_autosuggest/autosuggest_filters.md'
+                - Autosuggestion:
+                    - 'Autosuggestion': 'guide/search/search_features/search_autosuggest/search_autosuggest.md'
+                    - 'Adding elements to autosuggestion': 'guide/search/search_features/search_autosuggest/adding_elements_to_autosuggestion.md'
                 - Search indexing:
-                    - 'Additional indexing of eZ PDF content and other file content': 'guide/search/search_features/search_indexing/additional_indexing_of_ez_pdf_content_and_other_file_content.md'
-                    - 'Additional Indexing - User Email Data from eZ': 'guide/search/search_features/search_indexing/additional_indexing_user_email_data_from_ez.md'
-                    - 'Search indexing product data from the CMS': 'guide/search/search_features/search_indexing/search_indexing_product_data_from_the_cms.md'
+                    - 'Indexing file content': 'guide/search/search_features/search_indexing/indexing_file_content.md'
+                    - 'Indexing email data': 'guide/search/search_features/search_indexing/indexing_email_data.md'
+                    - 'Indexing content model product data': 'guide/search/search_features/search_indexing/indexing_content_model_product_data.md'
                 - 'Search statistics': 'guide/search/search_features/search_statistics.md'
-            - Search API:
-                - 'Search API': 'guide/search/search_api/search_api.md'
-                - 'Important things to consider': 'guide/search/search_api/important_things_to_consider.md'
+            - 'Search API': 'guide/search/search_api.md'
             - 'Search templates': 'guide/search/search_templates.md'
             - Search cookbook:
                 - 'Search cookbook': 'guide/search/search_cookbook/search_cookbook.md'
-                - 'How to modify the search query': 'guide/search/search_cookbook/how_to_modify_the_search_query.md'
-                - 'How to search for products': 'guide/search/search_cookbook/how_to_search_for_products.md'
-                - 'How to use Solr spellcheck': 'guide/search/search_cookbook/how_to_use_solr_spellcheck.md'
+                - 'Implement custom search': 'guide/search/search_cookbook/custom_search.md'
+                - 'Implement custom search condition': 'guide/search/search_cookbook/custom_search_conditions.md'
+                - 'Implement custom sorting option for search': 'guide/search/search_cookbook/custom_sorting_options.md'
+                - 'Modifying the search query': 'guide/search/search_cookbook/modifying_the_search_query.md'
+                - 'Searching for products': 'guide/search/search_cookbook/searching_for_products.md'
+                - 'Implement an indexer plugin for custom Field Types': 'guide/search/search_cookbook/indexer_plugin_for_custom_field_types.md'
+                - 'Using Solr spellcheck': 'guide/search/search_cookbook/using_solr_spellcheck.md'
                 - 'Solr managed resources': 'guide/search/search_cookbook/solr_managed_resources.md'
                 - 'Use query filter in product search': 'guide/search/search_cookbook/use_query_filter_in_product_search.md'
             - 'Search FAQ': 'guide/search/search_faq.md'
             - Search configuration:
                 - 'Search configuration': 'guide/search/search_configuration/search_configuration.md'
-                - 'Search Solr schema configuration': 'guide/search/search_configuration/solr_schema_configuration.md'
+                - 'Solr schema configuration': 'guide/search/search_configuration/solr_schema_configuration.md'
         - Templating:
             - 'Templating': 'guide/templating/templating.md'
             - Shop templates:
@@ -487,40 +467,28 @@ nav:
             - 'Wishlist and stored basket API': 'guide/wishlist_and_stored_baskets/wishlist_and_stored_basket_api.md'
             - 'Wishlist and stored basket templates': 'guide/wishlist_and_stored_baskets/wishlist_and_stored_basket_templates.md'
         - User management:
-            - 'Customer Center':
-                - 'Customer Center': 'guide/user_management/customer_center/customer_center.md'
-                - 'Customer Center and ERP': 'guide/user_management/customer_center/customer_center_and_erp.md'
-                - 'Customer Center and user management': 'guide/user_management/customer_center/customer_center_and_user_management.md'
-                - 'Customer Center - API':
-                    - 'BudgetServiceInterface':
-                        - 'BudgetServiceInterface': 'guide/user_management/customer_center/customer_center_api/budgetserviceinterface.md'
-                        - 'OrderBudgetService': 'guide/user_management/customer_center/customer_center_api/orderbudgetservice.md'
-                    - 'ContentServiceInterface':
-                        - 'ContentServiceInterface': 'guide/user_management/customer_center/customer_center_api/contentserviceinterface.md'
-                        - 'CustomerCenterContentService': 'guide/user_management/customer_center/customer_center_api/customercentercontentservice.md'
-                    - 'FormProcessorInterface':
-                        - 'FormProcessorInterface': 'guide/user_management/customer_center/customer_center_api/formprocessorinterface.md'
-                        - 'FormProcessorServices': 'guide/user_management/customer_center/customer_center_api/formprocessorservices.md'
-                    - 'InitialFormValuesServiceInterface':
-                        - 'InitialFormValuesServiceInterface': 'guide/user_management/customer_center/customer_center_api/initialformvaluesserviceinterface.md'
-                        - 'InitialFormValuesServices': 'guide/user_management/customer_center/customer_center_api/initialformvaluesservices.md'
-                - 'Customer Center budget workflow': 'guide/user_management/customer_center/customer_center_budget_workflow.md'
-                - 'Customer Center - Cookbook': 'guide/user_management/customer_center/customer_center_cookbook.md'
-                - 'Customer Center - FAQ': 'guide/user_management/customer_center/customer_center_faq.md'
-                - 'Customer Center functions':
-                    - 'Customer Center functions': 'guide/user_management/customer_center/customer_center_functions/customer_center_functions.md'
-                    - 'Customer center roles': 'guide/user_management/customer_center/customer_center_functions/customer_center_roles.md'
-                    - 'Customer center - user actions': 'guide/user_management/customer_center/customer_center_functions/customer_center_user_actions.md'
-                - 'Customer Center - installation and configuration': 'guide/user_management/customer_center/customer_center_installation_and_configuration.md'
-                - 'Customer Center - Templates': 'guide/user_management/customer_center/customer_center_templates.md'
+            - 'Access control': 'guide/user_management/access_control.md'
             - Token:
                 - 'Token': 'guide/user_management/token/token.md'
-                - Tokencontroller:
-                    - 'TokenController': 'guide/user_management/token/tokencontroller/tokencontroller.md'
-                    - 'Token Service Method Processor': 'guide/user_management/token/tokencontroller/token_service_method_processor.md'
-                - 'TokenService': 'guide/user_management/token/tokenservice.md'
+                - 'TokenController': 'guide/user_management/token/tokencontroller.md'
             - 'Tracking': 'guide/user_management/tracking.md'
-            - 'Access control': 'guide/user_management/access_control.md'
+            - 'Customer center':
+                - 'Customer center': 'guide/user_management/customer_center/customer_center.md'
+                - 'Customer center and ERP': 'guide/user_management/customer_center/customer_center_and_erp.md'
+                - 'User management': 'guide/user_management/customer_center/customer_center_and_user_management.md'
+                - 'Customer center API':
+                    - 'BudgetServiceInterface': 'guide/user_management/customer_center/customer_center_api/budgetserviceinterface.md'
+                    - 'ContentServiceInterface': 'guide/user_management/customer_center/customer_center_api/contentserviceinterface.md'
+                    - 'FormProcessorInterface': 'guide/user_management/customer_center/customer_center_api/formprocessorinterface.md'
+                    - 'InitialFormValuesServiceInterface': 'guide/user_management/customer_center/customer_center_api/initialformvaluesserviceinterface.md'
+                - 'Budget workflow': 'guide/user_management/customer_center/customer_center_budget_workflow.md'
+                - 'Customer center cookbook': 'guide/user_management/customer_center/customer_center_cookbook.md'
+                - 'Customer center functions':
+                    - 'Customer center functions': 'guide/user_management/customer_center/customer_center_functions/customer_center_functions.md'
+                    - 'Customer center roles': 'guide/user_management/customer_center/customer_center_functions/customer_center_roles.md'
+                    - 'Customer center user actions': 'guide/user_management/customer_center/customer_center_functions/customer_center_user_actions.md'
+                - 'Customer center installation': 'guide/user_management/customer_center/customer_center_installation_and_configuration.md'
+                - 'Customer center templates': 'guide/user_management/customer_center/customer_center_templates.md'
         - 'Delegate function': 'guide/delegate_function.md'
         - 'Job system': 'guide/job_system.md'
     # - Extending eZ Commerce:
@@ -680,7 +648,6 @@ theme:
       accent: 'deep orange'
 
   font: false
-  logo: 'images/eZ-Brandmark.png'
   feature:
       tabs: false
   search_index_only: false

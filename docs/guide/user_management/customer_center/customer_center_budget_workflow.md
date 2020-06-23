@@ -1,57 +1,54 @@
-# Customer Center budget workflow
+# Budget workflow
 
-## What is the budget workflow?
+Customer Center comes with standard handling for budget workflow. If a user with Customer Center has a defined budget (e.g. budget per order, budget per month),
+eZ Commerce checks the budget during the checkout process.
 
-Customer Center comes with standard handling for budget workflow. If the user of Customer Center has a defined budget, that can not be exceeded (e.g. budget per order, budget per month), eZ Commerce will check the budget during the checkout process.
+If the budget is exceeded, the user cannot make the order and is processed through an approval process.
+The approvers in the company are informed by email and have to approve the user basket or reject it.
 
-If the budget is exceeded, user can not order and will be processed through the approval process. In that case the approvers of the company will be informed by email and they have to approve the user basket or reject it.
+Customer center considers budget per order and budget per month by default.
 
-By default the budget per order and budget per month are considered.
+### Setting up a budget
 
-### How to set up the budget for a user?
-
-The user budget is stored in the User object in eZ Platform. There is no currency, because in the shop the default customer currency will be taken.
+User budget is stored in the User Content item in the default customer currency.
 
 ![](../../img/customer_center_budget_1.png)
 
-### What happens if user exceeds his budget?
-
-If user exceeds his budget and enters the basket, he will see an error message.
+If user exceeds their budget and enters the basket, they see an error message.
 
 ![](../../img/customer_center_budget_2.png)
 
-In the checkout process on the last page he has the possibility to enter a comment for the approver and send the basket to the approver. Then an email is sent to all approvers of the company. If there is no approver, email is sent to the main contact.
+In the checkout process on the last page the user can enter a comment and send the basket to the approver.
+All approvers in the company receive an email. If there is no approver, the email is sent to the main contact.
 
 ![](../../img/customer_center_budget_3.png)
 
-The approvers will get an email:
+The approvers get the following email:
 
 ![](../../img/customer_center_budget_4.jpg)
 
-### How the user will know the status of his approval request?
+### Checking status of approval request
 
-User can find in his profile a menu with his approval requests.
+You can find your approval requests in the user profile.
 
 ![](../../img/customer_center_budget_5.png)
 
-There he can see the status and can take some actions. If the basket was still not handled by an approver, user can not take any action. Otherwise user can:
+There you can see the request status and take action.
+If the basket is still not handled by an approver, you cannot take any action. Otherwise, you can:
 
-- delete - delete the basket (e.g. if it is not possible to change the amount under the budget, because an item is too expensive)
-- change - he can take over the basket, change it and order
+- **Delete** - delete the basket (e.g. if it is not possible to change the amount under the budget, because an item is too expensive).
+- **Change** - take over the basket, change it and order again.
 
 ![](../../img/customer_center_budget_6.png)
 
-## Workflow for the approvers
+## Approver workflow
 
-After user exceeds his budget, approver will get an email with a direct link to the approval requests. But he can find this link also in his user menu in his profile. There he can find a list of all baskets that needs to be approved.
+After a user exceeds their budget, the approver gets an email with a direct link to the approval request.
+The approver can also find this link in their user menu. The user profile contains a list of all baskets that need to be approved.
 
-He can take actions:
+The approver can take the following actions:
 
-- approve - he can take over this basket and order, both (approver and buyer) will get a confirmation email
-- reject - he can let a comment for the buyer and reject the basket. Then the basket will be assigned back to buyer.
+- `approve` - take over the basket and order, sending it to ERP. Both approver and buyer get a confirmation email.
+- `reject` - leave a comment for the buyer and reject the basket. The basket is assigned back to the buyer.
 
 ![](../../img/customer_center_budget_7.png)
-
-### What happens if an Approver orders
-
-The order will be send to the ERP system. An email will be send to the approver and the buyer.

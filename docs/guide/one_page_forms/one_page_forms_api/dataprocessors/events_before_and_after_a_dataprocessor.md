@@ -1,26 +1,27 @@
-# Events before and after DataProcessor
+# Events before and after data processor
 
-To be able to extend the logic of the DataProcessors, you can listen to two events for each DataProcessor. Before and after the execution, an event is triggered.
+You can listen to two events for each data processor to extend its logic.
+Before and after the execution, an event is triggered.
 
-## Event Names
+## Event names
 
 The name of the event is put together dynamically by a prefix and a suffix.
 
-#### Prefix
+### Prefix
 
-- The prefix for the event before the execution is: `ses_pre_execute_`
-- The prefix for the event after the execution is: `ses_post_execute_`
+- `ses_pre_execute_` - the event before the execution 
+- `ses_post_execute_` - the event after the execution
 
-This value is stored in the class: `Silversolutions\Bundle\EshopBundle\Event\DataProcessor\DataProcessorEvents`
+The prefix values are in `Silversolutions\Bundle\EshopBundle\Event\DataProcessor\DataProcessorEvents`.
 
-#### Suffix
+### Suffix
 
-The suffix is the ID of the DataProcessor service. An example for the service `ses_forms.create_ez_user` is:
+The suffix is the ID of the `DataProcessor` service. An example for the service `ses_forms.create_ez_user` is:
 
 - `ses_pre_execute_ses_forms.create_ez_user`
 - `ses_post_execute_ses_forms.create_ez_user`
 
-To listen to one of this events, you have to define a service and tag it like this:
+To listen to one of these events, you have to define a service and tag it in configuration:
 
 ``` xml
 <service id="ses_data_processor.pre_execute.create_ez_user_handler" class="%ses_data_processor.pre_execute.create_ez_user_handler.class%">
@@ -29,11 +30,7 @@ To listen to one of this events, you have to define a service and tag it like th
 </service>
 ```
 
-Beside the event, you want to listen to, make sure you implement the methods in the corresponding class.
-
-Of course, you have to implement this class and you can inject dependencies into.
-
-Now, you can implement your class where you can access and manipulate the normalized FormEntity like this:
+In the implemented class you can access and manipulate the normalized `FormEntity`:
 
 ``` php
 use Silversolutions\Bundle\EshopBundle\Entities\Forms\Normalize\Entity;
@@ -58,4 +55,4 @@ class EzCreateUserEventHandler
 }
 ```
 
-If you manipulate the normalized entity, please note that it will effect the next DataProcessors.
+If you manipulate the normalized entity, remember that it affects the next `DataProcessors`.

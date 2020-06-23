@@ -87,4 +87,4 @@ For more information about security, see [Access control](../user_management/acc
 
 ### Token
 
-For more information about using the Token system offered by Symfony, see [TokenController](../user_management/token/tokencontroller/tokencontroller.md).
+For more information about using the Token system offered by Symfony, see [TokenController](../user_management/token/tokencontroller.md).

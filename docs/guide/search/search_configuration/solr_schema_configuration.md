@@ -1,12 +1,9 @@
-# Search Solr schema configuration
+# Solr schema configuration
 
-eZ Commerce is using an adapted schema definition which is installed using the shell script `install-solr.sh`.
+eZ Commerce uses an adapted schema definition which is installed using the shell script `install-solr.sh`.
+The following changes are applied:
 
-## Changes for eZ Commerce
-
-The following changes are required for the shop. The changes will be applied using the shell script `install-solr.sh`. 
-
-`custom-fields-types.xml`:
+In `custom-fields-types.xml`:
 
 ``` xml
 <!--
@@ -16,7 +13,7 @@ The following changes are required for the shop. The changes will be applied usi
 <copyField source="meta_content__text_t" dest="ext_prefix_ngram" />
 ```
 
-`language-fieldtypes.xml`:
+In `language-fieldtypes.xml`:
 
 ``` xml
 <!-- This field can be used to query prefixes up to 15 characters.
@@ -34,4 +31,4 @@ The following changes are required for the shop. The changes will be applied usi
     </fieldType>
 ```
 
-In addition the parameter solr.autoSoftCommit.maxTime:20 is set to 20 ms in order to apply changes in Solr in a short time. 
+In addition, the `solr.autoSoftCommit.maxTime` parameter is set to 20 ms to apply changes in Solr quickly.

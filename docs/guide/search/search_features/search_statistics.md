@@ -1,6 +1,7 @@
 # Search statistics
 
-eZ Commerce provides a functionality to display the searches that are performed by the users. Every search query is logged into the database table: 
+eZ Commerce provides a functionality to display the searches that are performed by the users.
+Every search query is logged into the database table: 
 
 `ses_log_search`
 
@@ -33,17 +34,14 @@ mysql> select * from ses_log_search order by log_timestamp DESC limit 20;
 20 rows in set (0.01 sec)
 ```
 
-This search statistics can be displayed in eCommerce cockpit
+This search statistics can be displayed in eCommerce cockpit.
+This logic is generated in the `QuerySearchLogService` service.
 
-This logic is generated in the following service:
+There are three tables displayed.
 
-`QuerySearchLogService`
+## Top search terms
 
-There are 3 tables displayed
-
-## Top search Terms
-
-Get the most searched terms order by times searched.
+**Top search terms** displays the most searched terms sorted by times searched.
 
 Query:
 
@@ -65,9 +63,9 @@ $queryBuilder = $this->searchOrmLogRepository->createQueryBuilder('ses_log_searc
 
 ![](../../img/search_10.png)
 
-### Last search terms
+## Last search terms
 
-Get the last searches order by date and time.
+**Last search terms** displays the last searches order by date and time.
 
 Query:
 
@@ -89,11 +87,9 @@ $queryBuilder = $this->searchOrmLogRepository->createQueryBuilder('ses_log_searc
 
 ![](../../img/search_11.png)
 
-### Most searched terms with less results
+## Most searched terms with less hits
 
-Get the most searched terms with less hits.
-
-This means something that the user is interested in, but with no results.
+**Most searched terms with less hits** gets the most searched terms with less hits.
 
 Query:
 
@@ -116,11 +112,8 @@ $queryBuilder = $this->searchOrmLogRepository->createQueryBuilder('ses_log_searc
 
 ![](../../img/search_12.png)
 
-### Additional notes
+## Additional notes
 
-Search queries from main search box are logged
-
-Search queries from second search box are logged only if:
-
-- No facets are selected
-- Search term is different than previous search term. 
+Search queries from main search box are logged.
+Search queries from secondary search box are logged only if no facets are selected
+and the search term is different from the previous search term. 

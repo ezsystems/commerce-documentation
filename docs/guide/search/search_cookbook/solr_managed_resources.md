@@ -1,8 +1,10 @@
 # Solr managed resources
 
-## Method 1: Creating a managed synonym resource defined in schema.xml
+With this method you create a managed synonym resource that can be updated via REST.
 
-With this method we will create a managed synonym resource that can be updated via REST.
+!!! tip
+
+    For more information about Solr managed resources, see [Solr documentation.](https://lucene.apache.org/solr/guide/7_1/managed-resources.html)
 
 ``` xml
 <!-- A text type for English text where stopwords and synonyms are managed using the REST API -->
@@ -14,9 +16,9 @@ With this method we will create a managed synonym resource that can be updated v
 </fieldType>
 ```
 
-This definition should be putted in schema.xml files. It will define solr.ManagedSynonymFilterFactory for synonyms main class instead of SynonymFilterFactory
+This definition should be placed in `schema.xml` file. It defines `solr.ManagedSynonymFilterFactory` for synonym main class instead of `SynonymFilterFactory`.
 
-Now we have to add the dynamic field definitions for the fields that we want to use synonyms.
+Now you have to add the dynamic field definitions for the fields that you want to use as synonyms.
 
 ``` xml
 <dynamicField name="*_s"  type="managed_en"    indexed="true"  stored="true" multiValued="true"/>
@@ -28,13 +30,13 @@ This code should replace the current definition of this dynamic field:
 <!--     <dynamicField name="*_s" type="string" indexed="true" stored="true"/> -->
 ```
 
-or it may me defined with another name
+You can also define it with another name:
 
 ``` xml
 <dynamicField name="*value_s"  type="managed_en"    indexed="true"  stored="true" multiValued="true"/>
 ```
 
-If we omit this the synonym definition will be taken from file language-fielddefinition.xml where you can view this code:
+If you omit this, the synonym definition is taken from `language-fielddefinition.xml`:
 
 ``` xml
 <fieldType name="text" class="solr.TextField" positionIncrementGap="100">
@@ -52,15 +54,17 @@ If we omit this the synonym definition will be taken from file language-fielddef
 </fieldType>
 ```
 
-To add a new synonym we just use this curl call:
+To add a new synonym, use the following cURL call:
 
 ``` bash
 curl -XPUT "<http://localhost:8983/solr/collection1/schema/analysis/synonyms/english>" -H 'Content-type:application/json' --data-binary '{"word":\["synonym1","synonym2"\]}'
 ```
 
-Please note that with current version of Solr, if we use managed synonyms we have to stick to one to many synonyms definition. In the example above the a search for word, or synonym1, or synonym2 will match any records containing word but a search for word or synonym1 will never return results with the words synonym1 or synonym2.
+With the current version of Solr, if you use managed synonyms you have to use the one-to-many synonyms definition.
+In the example above the a search for `word`, or `synonym1`, or `synonym2` match any records containing `word` but a search for `word` or `synonym1` never returns results with the words `synonym1` or `synonym2`.
 
-If you decide to use the synonym file it is possible to define synonyms of the same level. As a result, any synonym will match any other in the search result.
+If you decide to use the synonym file, you can define synonyms of the same level.
+As a result, any synonym matches any other in the search result.
 
 ```
 // Create synonyms REST  
@@ -79,9 +83,7 @@ If you decide to use the synonym file it is possible to define synonyms of the s
 // curl -X DELETE "<http://localhost:8983/solr/collection1/schema/analysis/synonyms/german/mad>"
 ```
 
-Managed resources expose a REST API endpoint for performing Create-Read-Update-Delete (CRUD) operations on a Solr object. Any long-lived Solr object that has configuration settings and/or data is a good candidate to be a managed resource.  Managed resources complement other programmatically manageable components in Solr, such as the RESTful schema API to add fields to a managed schema. Consider a Web-based UI that offers Solr-as-a-Service where users need to configure a set of stop words and synonym mappings as part of an initial setup process for their search application. This type of use case can easily be supported using the Managed Stop Filter & Managed Synonym Filter Factories provided by Solr, via the Managed resources REST API. 
-
-Create managed resource using schema xml for stop words and for synonyms
+Create a managed resource using schema XML for stop words and synonyms.
 
 ``` xml
 <fieldType name="managed_en" class="solr.TextField" positionIncrementGap="100">
@@ -93,7 +95,7 @@ Create managed resource using schema xml for stop words and for synonyms
 </fieldType>
 ```
 
-Create using REST API
+Create using REST API:
 
 ```
 curl -XPUT -H 'Content-type:application/json' --data-binary '{"class":"org.apache.solr.rest.schema.analysis.ManagedWordSetResource"}' "<http://localhost:8983/solr/collection1/schema/analysis/stopwords/german>"

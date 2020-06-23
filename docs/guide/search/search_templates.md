@@ -1,20 +1,6 @@
 # Search templates
 
-Configuration for facets
-
-``` yaml
-globals:
-    # defines limit for maximum number of boxes that are displayed. If in this case more than 10 facets boxes are found there will be a "More" button"
-    boxes_visibility_limit: 10 
- 
-    # defines limit for maximum number of items shown in the one box.
-    items_visibility_limit: 5 
- 
-    # defines limit from which mega box with facets will be displayed. 
-    mega_visibility_limit: 50  
-```
-
-Templates list:
+The following templates are used for search:
 
 ```
 Search/search_results.html.twig
@@ -35,19 +21,19 @@ Search/result/search_content_list/blog_post.html.twig
 
 ## Line templates for content and products
 
-For each content type a line template for search has to be offered. The line templates are responsible for displaying one product or one content item. 
+Each Content Type requires a line template for search.
+Line templates are responsible for displaying one product or one Content item. 
 
 ### Products
 
-For each product the template "Catalog/listProductNode.html.twig" is used for displaying the content for a product. Te template has access to the catalogElement containing all the data including price information. 
+`Catalog/listProductNode.html.twig` is used for displaying the content for a product.
+The template has access to the `catalogElement` containing all the data including price information. 
 
 ### Content items
 
-For each content type a template has to be provided. It shall be stored in the folders "Search/result/search_content_list" 
+Each Content Type requires a template. It is stored in `Search/result/search_content_list`.
 
-![](../img/search_5.png)
-
-In addition the template has to be defined in the configuration for the eZ templating system:
+In addition, the template has to be defined in the templating configuration:
 
 ``` yaml
 search_content_list:
@@ -81,9 +67,9 @@ search_content_list:
              Identifier\ContentType: [video]
 ```
 
-The template itself has access to the content object.
+The template itself has access to the Content item.
 
-Example for the blog post template (`Search/result/search_content_list/blog_post.html.twig)``:
+Example for the blog post template (`Search/result/search_content_list/blog_post.html.twig`):
 
 ``` html+twig
 {% block content %}
@@ -112,13 +98,11 @@ Example for the blog post template (`Search/result/search_content_list/blog_post
 {% endblock %}
 ```
 
-## How to
+## Hiding the more / download link
 
-### Hide (remove) more / download link
-
-In order to hide or remove the link make sure to pass false value to the uri parameter. We use this technique to hide download button for a video content type but it can be used for every type of content. In order to make it work you need to make some changes to a specific content type template like we do in the video template.
-
-`vendor/silversolutions/silver.e-shop/src/Silversolutions/Bundle/EshopBundle/Resources/views/Search/result/search_content_list/video.html.twig`:
+In order to hide or remove the link make sure to pass `false` to the URI parameter.
+This way you can, for example, hide the download button for a video, but keep it for all other Content Types.
+You need to make some changes to a specific Content Type template:
 
 ``` html+twig
 {% block content %}
@@ -159,4 +143,4 @@ In order to hide or remove the link make sure to pass false value to the uri par
 {% endblock %}
 ```
 
-When including `search_content_footer.html.twig` make sure to pass false to the uri parameter
+When including `search_content_footer.html.twig`, make sure to pass `false` to the URI parameter.

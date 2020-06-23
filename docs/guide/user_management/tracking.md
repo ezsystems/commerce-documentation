@@ -1,42 +1,27 @@
 # Tracking
 
-Silver.e-shop comes with a simple extendible system for tracking tools. Any tracking tool can be plugged in - in a simple way.
+eZ Commerce comes with a simple extensible system for tracking tools. Any tracking tool can be plugged in.
 
-The tracking tools are able to output the tracking code in the template, where they are included (product detail, basket...) on a desired position on the page (top/bottom). The tracking tools are included directly in the template by usage of [twig helper methods](#Tracking-twig_helpers).
+The tracking tools can output the tracking code in the template where they are included (product detail, basket, etc.)
+in the selected position on the page (top/bottom).
+The tracking tools are included directly in the template using [Twig helper methods](#twig).
 
-The tracking services will be executed one after each other depending on the priority.
+The tracking services are executed in sequence depending on the priority.
 
 !!! note
 
-    Every tracking tool service must implement the *TrackerInterface* and must be tagged as *'tracker'* and have a defined priority.
+    Every tracking tool service must implement `TrackerInterface`, be tagged as `tracker` and have a defined priority.
 
 ## TrackerInterface
 
-The purpose of this interface is to return rendered tracking code snippets and a desired position, where these snippets should be placed (top/bottom).
-
-Silversolutions\Bundle\EshopBundle\Api\TrackerInterface:
-
-``` php
-public function getBasketTrackingHtmlResult(Basket $basket, $mode, $params = array());
-
-public function getProductTrackingHtmlResult(ProductNode $catalogElement, $mode, $params = array());
-
-public function getBaseTrackingHtmlResult($params = array()); 
-```
+`TrackerInterface` returns rendered tracking code snippets and a selected position where the snippets should be placed (top/bottom).
 
 ## Twig
 
-There are two Twig macros, which implement the common loop, that prints all tracker contents for a specific position. The macros are implemented in:
-
-`Silversolutions/Bundle/EshopBundle/Resources/views/Components/tracker_macros.html.twig`
+`EshopBundle/Resources/views/Components/tracker_macros.html.twig` contains two Twig macros which loop over all tracker contents for a specific position.
+Both take `tracking_codes` (array) as parameter.
 
 ### top
-
-Parameters:
-
-tracking_codes (array)
-
-Definition:
 
 ``` html+twig
 {% macro top(tracking_codes) %}
@@ -48,12 +33,6 @@ Definition:
 
 ### bottom
 
-Parameters:
-
-tracking_codes (array)
-
-Definition:
-
 ``` html+twig
 {% macro bottom(tracking_codes) %}
     {% for tracking_html in tracking_codes[constant('Silversolutions\\Bundle\\EshopBundle\\Api\\TrackerInterface::POSITION_BOTTOM')] %}
@@ -62,19 +41,21 @@ Definition:
 {% endmacro %}
 ```
 
-In order to get the tracking code that is supposed to be passed to the macros, there are several Twig template functions.
+## Twig functions
 
-### ses_track_basket
+To get the tracking code that should be passed to the macros you can use the following Twig template functions.
+
+### `ses_track_basket`
 
 Parameters:
 
-- Basket $basket
-- $mode (view, add, buy...)
-- $params = array()
+- `$basket`
+- `$mode`
+- `$params`
 
-This method will execute all tagged services and return a list of rendered basket tracking contents depending on given parameters.
+This method executes all tagged services and returns a list of rendered basket tracking contents depending on given parameters.
 
-Example:
+For example:
 
 ``` html+twig
 {% import "SilversolutionsEshopBundle:Components:tracker_macros.html.twig"|st_resolve_template as tracker %}
@@ -88,17 +69,17 @@ Example:
 {% endblock %}
 ```
 
-### ses_track_product
+### `ses_track_product`
 
 Parameters:
 
-- ProductNode $catalogElement
-- $mode (view, ad, buy...)
-- $params = array()
+- `$catalogElement`
+- `$mode`
+- `$params`
 
-This method will execute all tagged services and return a list of rendered product tracking contents depending on given parameters.
+This method executes all tagged services and returns a list of rendered product tracking contents depending on given parameters.
 
-Example:
+For example:
 
 ``` html+twig
 {% import "SilversolutionsEshopBundle:Components:tracker_macros.html.twig"|st_resolve_template as tracker %}
@@ -112,15 +93,15 @@ Example:
 {% endblock %}
 ```
 
-### ses_track_base
+### `ses_track_base`
 
 Parameters:
 
-- $params = array()
+- `$params`
 
-This method will execute all tagged services and return a list of rendered base tracking contents depending on given parameters.
+This method executes all tagged services and returns a list of rendered base tracking contents depending on given parameters.
 
-Example:
+For example:
 
 ``` html+twig
 {% import "SilversolutionsEshopBundle:Components:tracker_macros.html.twig"|st_resolve_template as tracker %}
@@ -134,9 +115,10 @@ Example:
 {% endblock %} 
 ```
 
-## Example: RecommendationTracker
+## Implementing a custom tracker
 
-As an example, you can try to implement a recommendation tracker service. Your service must implement the [TrackerInterface](#Tracking-tracker_interface). You can get any configuration or other services, that you may need. The implementation is up to you.
+The following example shows how to implement a recommendation tracker service.
+The service must implement the [TrackerInterface](#tracker-interface).
 
 ``` php
 namespace Company\ProjectBundle\Service;
@@ -211,7 +193,8 @@ class RecommendationTrackerService implements TrackerInterface
 }
 ```
 
-You must define the implementation as a symfony service and tag it as *"tracker"* with a mandatory *priority* attribute. With the priority you can customize the order of invocation for all tracking services (lower number = earlier invocation).
+You must register the implementation as a service and tag it with `tracker` with a `priority` attribute.
+With the priority you can customize the order of invocation for all tracking services (lower number means earlier invocation).
 
 ``` xml
     <parameters>
