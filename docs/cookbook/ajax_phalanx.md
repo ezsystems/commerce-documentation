@@ -4,31 +4,30 @@
 
 ## Workflow
 
-!!! note "Phalanx"
+Ajax requests use POST or GET methods (configured in hoplites):
 
-    For a detailed usage of Phalanx, please see: <frontend_customizing/4_front_end_stack_in_details/4.4_phalanx/4.4.1_how_to_create_hoplite/4.4.1_how_to_create_a_hoplite.md>
+- GET should be used for most requests except of sensitive data. GET requests can be cached.
+- POST should be used to send sensitive information. POST requests are never cached.
 
-    For the detailed information about how to create a hoplite, see: [How to create a hoplite](frontend_customizing/4_front_end_stack_in_details/4.4_phalanx/4.4_phalanx.md).
+All Ajax requests use the same URL:
 
-- Ajax requests use POST or GET method (configured in hoplites):
-  - GET should be used for most requests except of sensitive data. GET requests can be cached.
-  - POST should be used to send sensitive information. POST requests are never cached.
-- All ajax requests go the same URL:
-
-``` 
+``` yaml
 silversolutions_phalanx:
     path: /_ajax_/phalanx
     defaults:
         _controller: SilversolutionsEshopBundle:Ajax:phalanx
 ```
 
-- The AjaxController (see above) then decides, which AjaxSubController should the request be forwarded to. This depends on the parameters, that needs to be send from the hoplite.  
-  - 'type' - defines which SubController will be called
-  - key of the method - defines which method in the SubController will be called. The key always must follow these rules: lowercase letters separated by underscore.
+`AjaxController` then decides to which `AjaxSubController` to forward the request.
+This depends on the parameters that need to be send from the hoplite.  
 
-**How the parameters are sent from hoplite**
+- `type` defines which subcontroller is called
+- key of the method defines which method in the subcontroller is called.
+The key must always be in lowercase letters separated by underscore.
 
-``` 
+### Sending parameters from hoplite
+
+``` php
 var data = [];
 // 'type' needs to be send in every call inside of data and determines the SubController
 data[0] = {
@@ -42,9 +41,9 @@ requestCollection['add_basket'].add(data);
 // see explanation below
 ```
 
-**How the SubController and the method are determined in backend**
+### Determining the subcontroller and the method in backend
 
-``` 
+``` php
 //Every SubController will follow this syntax
 $type = 'basket';
 $subController = 'Ajax' . ucfirst(strtolower($type)) . 'Controller'; 
@@ -58,12 +57,13 @@ $method = $this->underscoreToCamelcase($keyOfTheMethod) . 'Action';
 $method = 'addBasketAction';
 ```
 
-- Every SubController method must follow these rules:
-  - Every SubController must extend Silversolutions\\Bundle\\EshopBundle\\Controller\\**BaseController**
-  - Every SubController method excepts following paramaters: *Request $request, array $data = array()*
-  - Every SubController method must return AjaxSubResponse() to the AjaxController  
+Every subcontroller method must follow these rules:
 
-``` 
+- Every subcontroller must extend `Silversolutions\Bundle\EshopBundle\Controller\BaseController``
+- Every subcontroller method excepts following parameters: `Request $request`, `array $data = array()`
+- Every subcontroller method must return `AjaxSubResponse()` to the AjaxController
+
+``` php
 use Silversolutions\Bundle\EshopBundle\Http\AjaxSubResponse;
 use Silversolutions\Bundle\EshopBundle\Controller\BaseController;
 
@@ -83,29 +83,28 @@ class AjaxBasketController extends BaseController
 }
 ```
 
-- AjaxController returns all data in json format.
+AjaxController returns all data in JSON format.
 
-### How to override AjaxSubControllers
+### Overriding AjaxSubControllers
 
-#### Override the SubController
-
-1.  Create a new controller class, which extends the controller that will be overridden.
-    - Example: `Silversolutions\Bundle\ProjectBundle\Controller\AjaxProjectBasketController` extends `Silversolutions\Bundle\EshopBundle\Controller\AjaxBasketController`
-2.  Implement a new action method or reimplement a parent method.
-3.  You have two possibilities to override the default logic and influence which *SubController* will be called:  
-    1.  Either you make sure, that your bundle is loaded in Kernel after the affected silver.e-shop bundle
-    2.  Or you create a parameter that defines the new controller, just make sure to keep the correct syntax
+1. Create a new controller class which extends the controller that should be overridden.
+For example: `Silversolutions\Bundle\ProjectBundle\Controller\AjaxProjectBasketController` extends `Silversolutions\Bundle\EshopBundle\Controller\AjaxBasketController`
+2. Implement a new action method or reimplement a parent method.
+3. You have two possibilities to override the default logic and influence which subcontroller is called:  
+    - Either make sure that your bundle is loaded in kernel after the affected eZ Commerce bundle
+    - Or create a parameter that defines the new controller (make sure to keep the correct syntax):
 
     ``` 
-    # following syntax must be kept:
     # siso_eshop.ajax_controller.<type>
     siso_eshop.ajax_controller.basket: SilversolutionsProjectBundle:AjaxProjectBasket
     ```
 
-### HTTP caching of ajax requests
+### HTTP caching of Ajax requests
 
-A response of GET requests could be cached. To cache it you should [use HttpCachingServiceStrategy](../guide/cache/content_cache_refresh/http_caching.md) in your `Ajax\<Type\>Controller`.
+A response of GET requests can be cached.
+To cache it, [use HttpCachingServiceStrategy](../guide/cache/content_cache_refresh/http_caching.md) in `Ajax<Type>Controller`.
 
 !!! caution
 
-    AjaxController copies **all http headers** from `Ajax<Type>Controller` subresponse to the final response. It is done to pass caching headers to reverse proxy.
+    AjaxController copies all HTTP headers from `Ajax<Type>Controller` subresponse to the final response.
+    It is done to pass caching headers to reverse proxy.

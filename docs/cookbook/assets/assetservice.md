@@ -1,34 +1,25 @@
 # AssetService
 
-It is possible that images or other files (like pdf, exe, zip...) are not stored in CatalogElement (**dataprovider**), but stored in a special folder on the web-server (**storage**). The file names contain sku (later with variant code) for assigning the files to the product.
+Instead of storing images or other files (like pdf, exe, zip, etc.) in CatalogElement (dataprovider),
+you can store them in a special folder on the web-server (storage).
+The file names contain SKU (later with variant code) for assigning the files to the product.
 
-There is a special AssetService, that checks the given strategy and gets all assets for a single CatalogElement.
-
+AssetService checks the given strategy and gets all assets for a single catalog element.
 AssetServices uses the [StorageService](storageservice.md) to get the assets from the storage.
 
-### Strategy
+`AssetService` represents the entry point to the CatalogElement assets. It determines the proper strategy, how the assets are stored in CatalogElement. It may call the StorageService, which gets the assets from the file system and stores all assets for a single CatalogElement.
 
-|merge|dataprovider|storage|
-|--- |--- |--- |
-|mainImage from the dataprovider is used</br>imageList from dataprovider is used - if catalogElement contains imageList - and all images from storage are stored in imageList|mainImage from the dataprovider is used</br>imageList from dataprovider is used - if catalogElement contains imageList|mainImage from the dataprovider is overwritten by storage</br>imageList from storage is used|
+Service ID: `silver_catalog.asset_service`
 
-## AssetService
-
-||AssetService|
-|--- |--- |
-|Id|silver_catalog.asset_service|
-|Meaning|AssetService represents the entry point to the CatalogElement assets. It determines the proper strategy, how the assets are stored in CatalogElement. It may call the StorageService, which gets the assets from the file system and stores all assets for a single CatalogElement.|
-
-
-##### **AssetService Functions**
+## AssetService Functions
 
 |Function|Parameters|Returns|Meaning|TWIG Helper function|
 |--- |--- |--- |--- |--- |
-|getAssetsByGroup()|CatalogElement $catalogElement</br>string $settingsGroup</br>string $productId = null|array()|returns all assets for a single CatalogElement by settingGroup</br>$productId is optional, if it isn´t set, by default the sku of catalogElement is used.|{{ses_assets_by_group(catalogElement, 'Manuals', catalogElement.sku) }}</br>{{ ses_assets_by_group(catalogElement, 'Manuals') }}|
-|getMainImage()|CatalogElement $catalogElement</br>string $productId = null|FileField or null|returns the main Image for the catalogElement</br>$productId is optional, if it isn´t set, by default the sku of catalogElement is used.|{{ ses_assets_main_image(catalogElement, catalogElement.sku) }}</br>{{ ses_assets_main_image(catalogElement) }}|
-|getImageList()|CatalogElement $catalogElement</br>string $productId = null|array of FileFields or null|returns a list of images for the catalogElement</br>$productId is optional, if it isn´t set, by default the sku of catalogElement is used.|{{ ses_assets_image_list(catalogElement, catalogElement.sku) }}</br>{{ ses_assets_image_list(catalogElement) }}|
+|`getAssetsByGroup()`|`CatalogElement $catalogElement`</br>`string $settingsGroup`</br>`string $productId = null`|`array()`|Returns all assets for a single CatalogElement by `settingGroup`. `$productId` is optional, if it isn't set, by default the SKU of `catalogElement` is used.|`{{ses_assets_by_group(catalogElement, 'Manuals', catalogElement.sku) }}`</br>`{{ ses_assets_by_group(catalogElement, 'Manuals') }}`|
+|`getMainImage()`|`CatalogElement $catalogElement`</br>`string $productId = null`|FileField or null|Returns the main image for the `catalogElement`. `$productId` is optional, if it isn't set, by default the SKU of `catalogElement` is used.|`{{ ses_assets_main_image(catalogElement, catalogElement.sku) }}`</br>`{{ ses_assets_main_image(catalogElement) }}`|
+|`getImageList()`|`CatalogElement $catalogElement`</br>`string $productId = null`|array of FileFields or null|Returns a list of images for the `catalogElement`. `$productId` is optional, if it isn't set, by default the SKU of `catalogElement` is used.|`{{ ses_assets_image_list(catalogElement, catalogElement.sku) }}`</br>`{{ ses_assets_image_list(catalogElement) }}`|
 
-##### Usage:
+### Usage
 
 ``` php
 //in the controller
@@ -36,7 +27,7 @@ $assetService = $this->get('silver_catalog.asset_service');
 $mainImage = $assetService->getMainImage($catalogElement);
 ```
 
-##### Usage inside the twig template:
+### Usage inside a Twig template
 
 ``` html+twig
 {# get the main image #}
@@ -58,9 +49,9 @@ $mainImage = $assetService->getMainImage($catalogElement);
 {% endfor %}
 ```
 
-## Product VARIANTs
+## Product variants
 
-If you want to get the assets for a specific variant of the catalogElement, you have to set the optional parameter `$productId`.
+If you want to get the assets for a specific variant of a catalog element, you have to set the optional parameter `$productId`.
 
 ``` html+twig
 {# create the productId e.g. 1110_green #}
@@ -75,15 +66,14 @@ If you want to get the assets for a specific variant of the catalogElement, you 
 
 ## Configuration
 
-The assets configuration is stored in **silver.eshop.yml**
-
 !!! note "separator"
 
-    Please notice that the '**separator**' is not required, but you can specify it, if you want to use custom one. By default '\_' is used.
+    The `separator` key is not required, but you can specify it if you want to use acustom separator.
+    By default `_` is used.
 
-??? note "~EshopBundle/Resources/config/silver.eshop.yml"
+??? note "EshopBundle/Resources/config/silver.eshop.yml"
 
-    ``` 
+    ``` yaml
     parameters:
         silver_eshop.default.catalog_factory.assets:
 
@@ -164,20 +154,18 @@ The assets configuration is stored in **silver.eshop.yml**
 
 ### Webserver configuration
 
-Please be aware the webserver configuration need a new rewrite rule (see [Configuration](../../guide/configuration/configuration.md)).
+Webserver configuration needs a new rewrite rule (see [Configuration](../../guide/configuration/configuration.md#http-server-configuration)).
 
 ## Cache
 
-Assets can now be cached using Stash. Cache is created depending both on productId and group settings.
+Assets can now be cached using Stash. Cache is created depending both on `productId` and group settings.
 
-#### Configuration:
+### Configuration:
 
 |Parameter|Description|
 |--- |--- |
-|silver_eshop.default.asset_cache|When set to true then translation cache is enabled|
-|silver_eshop.default.asset_cache_ttl|Defines how long the Item will be stored in the cache.</br>When TTL value is set to null, then cache is generated forever.|
-
-**silver.eshop.yml**
+|`silver_eshop.default.asset_cache`|When set to true, translation cache is enabled.|
+|`silver_eshop.default.asset_cache_ttl`|Defines how long the item is stored in the cache. When TTL value is set to null, cache is stored forever.|
 
 ``` yaml
 silver_eshop.default.asset_cache: true

@@ -18,7 +18,7 @@ silver_eshop.default.catalog_template.ProductType: Catalog:productType.html.twig
 
 ## Configuring variants
 
-See [VariantType](../../api/additional_ez_fieldtypes/varianttype.md).
+See [VariantType](../../api/field_type_reference/varianttype.md).
 
 ## Configuring the data provider 
 
@@ -76,7 +76,7 @@ silver_eshop.default.catalog_factory.ses_product_type: createProductTypeNode
 
 ## Configuring variants
 
-See [VariantType](../../api/additional_ez_fieldtypes/varianttype.md).
+See [VariantType](../../api/field_type_reference/varianttype.md).
 
 ## Filter for creating product lists
 

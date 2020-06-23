@@ -1,6 +1,7 @@
 # FileField
 
-`FileField` is the representative implementation of `AbstractField` for a media file in a defined storage directory. An file is identified by a productId, storagePath and serveral optional parameters.
+`FileField` is the representative implementation of `AbstractField` for a media file in a defined storage directory.
+A file is identified by a `productId`, `storagePath` and several optional parameters.
 
 ``` php
 const IDENTIFIER = 'sesfile';
@@ -14,9 +15,7 @@ public $mimetype;  // e.g. application/pdf,
 public $description;
 ```
 
-## Usage
-
-A new `FileField` can be created usingf the following data:
+A new `FileField` can be created using the following data:
 
 ``` php
 use Silversolutions\Bundle\EshopBundle\Content\Fields\FileField;

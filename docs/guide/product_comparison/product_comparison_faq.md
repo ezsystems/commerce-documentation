@@ -25,7 +25,7 @@ There are two types of information:
 |Type|Attribute Names|Features|
 |--- |--- |--- |
 |Dynamic fields from the `dataMap` attribute|`manufacturer`</br>`manufacturerSku`</br>`color`|These attributes are stored in `dataMap`. They are part of the Technical Information group.</br>Manufacturer, ManufacturerSku and Color are handled without eZ matrix. The names that should be read from `dataMap` must be configured in the `siso_comparison.<default>.technical_attributes` attribute|
-|Dynamic fields from specification attribute|`specification`|See [SpecificationsType](../../api/additional_ez_fieldtypes/specificationstype.md)|
+|Dynamic fields from specification attribute|`specification`|See [SpecificationsType](../../api/field_type_reference/specificationstype.md)|
 
 ## Collapsing groups and attributes
 

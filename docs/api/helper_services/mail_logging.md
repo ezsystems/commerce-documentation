@@ -1,61 +1,47 @@
-# Mail Logging
+# Mail logging
 
-Every mail, that is sent by the MailHelperService, will be recorded by the *siso\_tools.mailer.logger*. This is a specially configured service of the class `Monolog/Logger`. This document describes the DI container configuration of this service and the associated classes.
+Every email sent by `MailHelperService` is recorded by `siso_tools.mailer.logger`.
+It is a special service of the `Monolog/Logger` class.
 
-If you want to know more about how logging is implemented in the eZ Commerce, please read [the logging documentation](../../guide/logging/logging.md).
+For more information about logging, see [logging documentation](../../guide/logging/logging.md).
 
 ## MailLog entity and repository
 
-Mails are logged in a database for more sophisticated administrative handling. Database logging is handled by [the doctrine logger](../../guide/logging/logging_api.md#base-classes-of-doctrine-based-logging).
+Emails are logged in a database. Database logging is handled by [the Doctrine logger](../../guide/logging/logging_api.md#base-classes-of-doctrine-based-logging).
 
-### Class Siso\\Bundle\\ToolsBundle\\Entity\\MailLog
+### Siso\Bundle\ToolsBundle\Entity\MailLog
 
-This is the mail logging extension of AbstractLog. The following attributes have been added:
+This is the mail logging extension of `AbstractLog`. It contains the following attributes:
 
-- `private $requestId`
-  - string
-  - A value which identifies uniquely every HTTP request across all logs.
-- `private $sessionId`
-  - string
-  - A value which identifies uniquely every client session across all logs and requests.
-- `private $userId`
-  - string
-  - The identifier for the user (mostly eZ User object ID).
-- `private $sender`
-  - string
-  - The sender's email address.
-- `private $receiver`
-  - string
-  - The receiver's email address.
-- `private $subject`
-  - string
-  - The mail subject content.
-- `private $sentTimestamp`
-  - \\DateTime
-  - The date and time of sending.
-- `private $status`
-  - boolean
-  - True if the mail has been sent successfully, false otherwise.
+- `private $requestId` - string - A value which identifies uniquely every HTTP request across all logs.
+- `private $sessionId` - string - A value which identifies uniquely every client session across all logs and requests.
+- `private $userId` - string - The identifier for the user (mostly eZ User object ID).
+- `private $sender` - string - The sender's email address.
+- `private $receiver` - string - The receiver's email address.
+- `private $subject` - string - The mail subject content.
+- `private $sentTimestamp` - `\DateTime` - The date and time of sending.
+- `private $status` - boolean - True if the mail has been sent successfully, false otherwise.
 
 ### Class Siso\Bundle\ToolsBundle\Service\Logging\MailDataProcessor
 
+This Monolog data processor replaces the original log message with the non-empty contents of `context/content_html` or `context/content_text`, in this order of precedence.
+
 !!! note:
 
-    Most mails are sent via the MailHelperService. Error messages during the mail process are only logged to the database if the mail body couldn't be rendered. If just sending of the mail failed, the mail body is logged and any error message is ignored in this logging process.
+    Most emails are sent with `MailHelperService`.
+    Error messages during the email process are only logged to the database if the email body cannot be rendered.
+    If sending of the email failed, the email body is logged and any error message is ignored in this logging process.
 
-The mail log entity has no field for the content body. This is on purpose as it is intended to log this data within the message attribute.
+The email log entity has no field for the content body. It is intended to log this data within the message attribute.
 
-Class description: This Monolog data processor replaces the original log message with the non-empty contents of context/content_html or context/content_text, in this order of precedence.
+### Siso\Bundle\ToolsBundle\Entity\MailOrmLogRepository
 
-### Class Siso\\Bundle\\ToolsBundle\\Entity\\MailOrmLogRepository
-
-This is the doctrine repository class for MailLog entities. Currently, it just exists to comply with the doctrine conventions and to inject it into the mail logging instance of DoctrineHandler.
+This is the Doctrine repository class for `MailLog` entities.
+It exists to comply with the Doctrine conventions and to inject it into the mail logging instance of `DoctrineHandler`.
 
 ## Configuration
 
-### Container set-tp for mail logging
-
-**From services.xml**
+### Container `set-tp` for mail logging
 
 ``` xml
 <parameters>
@@ -111,11 +97,11 @@ This is the doctrine repository class for MailLog entities. Currently, it just e
  
 ```
 
-### Entity table ses_log_mail
+### Entity table `ses_log_mail`
 
-Currently, the ORM is defined by annotations in Siso\Bundle\ToolsBundle\Entity\MailLog.
+The ORM is defined by annotations in `Siso\Bundle\ToolsBundle\Entity\MailLog`.
 
-Example of generated MySQL table:
+Example of a generated MySQL table:
 
 ``` sql
 CREATE TABLE `ses_log_mail` (

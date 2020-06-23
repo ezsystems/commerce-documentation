@@ -1,6 +1,7 @@
 # ImageField
 
-`ImageField` is the representative implementation of `AbstractField` for an image. An image is identified and initiated by a given path and an optional alternative text.
+`ImageField` is the representative implementation of `AbstractField` for an image.
+An image is identified and initiated by a given path and an optional alternative text.
 
 A new `ImageField` can be created using the following data:
 

@@ -1,8 +1,8 @@
 # StockField
 
-`StockField` is the representative implementation of `AbstractField` for a stock information.
+`StockField` is the representative implementation of `AbstractField` for stock information.
 
-The 'stockNumeric' information must be either *int* or *float*.
+The `stockNumeric` information must be either an int or a float.
 
 A new `StockField` can be created using the following data:
 
@@ -13,15 +13,16 @@ use Silversolutions\Bundle\EshopBundle\Content\Fields\StockField;
 $stockField = new StockField(array('stockNumeric' => 15));
 ```
 
-### StockField Rendering
+### StockField rendering
 
-The StockField can be rendered via [twig helper](../../guide/templating/twig_extension/twig_extension.md) `ses_render_stock`.
+The StockField can be rendered with the `ses_render_stock` [Twig helper](../../guide/templating/twig_extension/twig_extension.md).
 
-This method is rendering the StockField from a central template:
+This method renders the StockField from a central template:
 
 `Silversolutions/Bundle/EshopBundle/Resources/views/Fieldtypes/StockField.html.twig`
 
-The availability is displayed depending on given parameters. If the StockField is not defined (e.g. ERP is not responding), an information is displayed, that there is not availability information for this product.
+The availability is displayed depending on the given parameters.
+If the StockField is not defined (e.g. ERP is not responding), no availability information for this product is displayed.
 
 ``` html+twig
 {# display availability for the basket line, pass additionally the requested quantity in order to find out if the product is available in required amount #}

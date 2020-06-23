@@ -1,6 +1,6 @@
 # TextBlockField
 
-`TextBlockField` is the representative implementation of `AbstractField` for a multi line text (or DOMDocument).
+`TextBlockField` is the representative implementation of `AbstractField` for a multi-line text (or DOMDocument).
 
 A new `TextBlockField` can be created using the following data:
 
@@ -17,4 +17,4 @@ $textBlockField = new TextBlockField(
 
 !!! note
 
-    TextBlockField object can be reliable serialized, such it implements the magic `__sleep()` and `__wakeup()` methods.
+    A TextBlockField object can be reliably serialized, because it implements the magic `__sleep()` and `__wakeup()` methods.

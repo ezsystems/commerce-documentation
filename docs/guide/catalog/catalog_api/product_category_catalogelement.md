@@ -1,6 +1,6 @@
 # Product category (CatalogElement)
 
-The `CatalogElement` class defines the generic product and category model which is used in eZ Commerce. It inherits from the general class [ValueObject](../../../api/valueobject.md) which offers a convenient way of setting properties of instances via the constructor and makes these properties public.
+The `CatalogElement` class defines the generic product and category model which is used in eZ Commerce. It inherits from the general class `ValueObject` which offers a convenient way of setting properties of instances through the constructor and makes these properties public.
 
 The following subclasses inherit from `CatalogElement`:
 

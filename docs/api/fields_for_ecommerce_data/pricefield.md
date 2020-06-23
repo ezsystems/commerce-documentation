@@ -1,6 +1,6 @@
 # PriceField
 
-`PriceField` is the representative implementation of `AbstractField` for a **`Price`**.
+`PriceField` is the representative implementation of `AbstractField` for a `Price`.
 
 A new `PriceField` can be created using the following data:
 
@@ -21,13 +21,12 @@ $price = new Price(
 $priceField = new PriceField(array('price' => $price));
 ```
 
-#### Rendering
+## Rendering
+See [Rendering for prices](../../guide/price_engine/price_engine_templates/rendering_for_prices.md) to see the possibilities of outputting a `PriceField` using the `ses_render_field()` function.
 
-Please refer to [Rendering for prices](../../guide/price_engine/price_engine_templates/rendering_for_prices.md) to see the possibilities of outputting a PriceField using the `ses_render_field()` function.
+You can also render a `priceField` with a Twig function `ses_render_price()`:
 
-It is also possible to render a priceField with a twig function **ses\_render\_price().** The difference see in the table below:
-
-|Twig function|Paramaters|Usage|
+|Twig function|Parameters|Usage|
 |--- |--- |--- |
-|ses_render_field()|$catalogElement</br>string $fieldIdentifier</br>array $params|more general -</br>renders also other FieldInterface $fields from $catalogElement</br>like TextBlockField, ImageField, PriceField|
-|ses_render_price()|$catalogElement</br>PriceField $priceField</br>array $params|renders only PriceField $price|
+|`ses_render_field()`|`$catalogElement`</br>`string $fieldIdentifier`</br>`array $params`|Renders `FieldInterface $fields` from `$catalogElement`, like TextBlockField, ImageField, PriceField.|
+|`ses_render_price()`|`$catalogElement`</br>`PriceField $priceField`</br>`array $params`|Renders only `PriceField $price`.|
