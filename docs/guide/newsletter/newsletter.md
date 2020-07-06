@@ -7,8 +7,6 @@ There is no specific newsletter provider connection configured out of the box.
 The standard offers only processes, templates, routes, configurations and an interface which can be used for newsletter integration.
 A newsletter provider service with specific API implementation of this provider has to be implemented separately.
 
-One available plugin for eZ Commerce is Newsletter2Go.
-
 ## Newsletter features in eZ Commerce
 
 - Double-opt-in process when a user subscribes to the newsletter
