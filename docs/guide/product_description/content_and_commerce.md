@@ -16,10 +16,6 @@ eZ Commerce adds the following blocks to the Page Builder:
 - Product slider - displays a slider of chosen products
 - Last viewed - displays the last viewed products
 
-!!! note
-
-    The Newsletter2Go Plugin adds a Newsletter block to the Page Builder.
-
 ![Elements](img/Elements.png)
 
 Bestseller block:

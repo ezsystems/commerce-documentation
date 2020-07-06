@@ -2,25 +2,6 @@
 
 ## Plugins
 
-### Newsletter2Go
-
-The plugin Newsletter2Go can be activated in the configuration settings.
-
-![Newsletter2Go](img/Newsletter2go.png)
-
-eZ Commerce supports the standard attributes of Newsletter2Go as email address, name, gender, telephone number, date of birth, etc.
-
-Additional attributes for shopping behavior are also supported as date of last order, value of last order, total value of all orders of the user.
-
-The following Newsletter2Go functions are supported:
-
-- Subscribe to newsletter via a form box
-- Subscribe to newsletter while registering in the shop
-- Subscribe to and unsubscribe from the user profile
-- Change newsletter details in the user profile of the shop
-- User data is updated during the checkout process (total order amount, date of order)
-- After the login in the shop, the newsletter information is obtained in real time from Newsletter2Go and updated in the shop profile
-
 ### Customer center
 
 The customer center offers B2B advantages especially for large customers.
