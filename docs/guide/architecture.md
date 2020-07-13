@@ -16,7 +16,7 @@ eZ Commerce is divided into several bundles located in the vendor directory:
 |PaypalPaymentBundle|PayPal implementation|
 |TelecashPaymentBundle|Telecash implementation|
 |OgonePaymentBundle|Ogone implementation|
-|DatatypesBundle|Fieldtypes for the shop|
+|IbexaPlatformCommerceFieldTypesBundle|Field Types for the shop|
 |EzStudioBundle|Page Builder blocks and controllers|
 |LocalOrderManagementBundle|Local order handling|
 |VariantTypeBundle|Variant handling|

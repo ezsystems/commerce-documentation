@@ -96,4 +96,4 @@ siso_core.default.specification_groups:
 
 ## Template
 
-`SilversolutionsDatatypesBundle::sesselectiontype_content_field.html.twig`
+`IbexaPlatformCommerceFieldTypesBundle::sesselectiontype_content_field.html.twig`

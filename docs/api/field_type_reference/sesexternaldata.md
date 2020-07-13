@@ -73,8 +73,8 @@ $dbStatement = "INSERT INTO ses_externaldata VALUES(308488, ses_gewicht, ger-DE,
 Symfony data type is stored in:
 
 ```
-Silversolutions/Bundle/DatatypesBundle/FieldType/SesExternalData/*
-Silversolutions/Bundle/DatatypesBundle/Converter/SesExternalData.php
+Ibexa/Platform/Commerce/FieldTypes/FieldType/SesExternalData/*
+Ibexa/Platform/Commerce/FieldTypes/Converter/SesExternalData.php
 ```
 
 !!! note

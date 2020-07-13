@@ -12,8 +12,8 @@ This Field Type stores [`CustomerProfileData`](../../guide/customers/customers_a
 The Symfony data type is stored in:
 
 ```
-Silversolutions/Bundle/DatatypesBundle/FieldType/SesProfileData/*
-Silversolutions/Bundle/DatatypesBundle/Converter/SesProfileData.php
+Ibexa/Platform/Commerce/FieldTypes/FieldType/SesProfileData/*
+Ibexa/Platform/Commerce/FieldTypes/Converter/SesProfileData.php
 ```
 
 #### Configuration

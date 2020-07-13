@@ -39,7 +39,7 @@ The following Field Types are supported:
 - `eZ\Publish\Core\FieldType\Checkbox\Value`
 - `eZ\Publish\Core\FieldType\Date\Value`
 - `eZ\Publish\Core\FieldType\DateAndTime\Value`
-- `Silversolutions\Bundle\DatatypesBundle\FieldType\SesSelection\Value`
+- `Ibexa\Platform\Commerce\FieldTypes\FieldType\SesExternalData\Value`
 - `EzSystems\EzPlatformMatrixFieldtype\FieldType\Value`
 
 #### Default User class definition
