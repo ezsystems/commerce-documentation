@@ -84,33 +84,15 @@ Ibexa/Platform/Commerce/FieldTypes/Converter/SesExternalData.php
 
 #### Configuration
 
-``` xml
-<parameters>
-    <parameter key="ezpublish.fieldType.sesexternaldata.class">Silversolutions\Bundle\DatatypesBundle\FieldType\SesExternalData\Type</parameter>
-    <parameter key="ezpublish.fieldType.indexable.sesexternaldata.class">Silversolutions\Bundle\DatatypesBundle\FieldType\SesExternalData\SearchField</parameter>
-    <parameter key="ezpublish.fieldType.sesexternaldata.converter.class">Silversolutions\Bundle\DatatypesBundle\Converter\SesExternalData</parameter>  
-</parameters>
- 
-<services>     
-    <!-- sesexternaldata type service -->
-    <service id="ezpublish.fieldType.sesexternaldata" class="%ezpublish.fieldType.sesexternaldata.class%" parent="ezpublish.fieldType">
-        <tag name="ezpublish.fieldType" alias="sesexternaldata" />
-    </service>
-    <service id="ezpublish.fieldType.indexable.sesexternaldata" class="%ezpublish.fieldType.indexable.sesexternaldata.class%">
-        <call method="setIndexDefinition">
-            <argument>$ses_external_data_index_definition;siso_datatypes$</argument>
-        </call>
-        <tag name="ezpublish.fieldType.indexable" alias="sesexternaldata" />
-    </service>
- 
-    <!-- sesexternaldata converter service -->
-    <service id="ezpublish.fieldType.sesexternaldata.converter" class="%ezpublish.fieldType.sesexternaldata.converter.class%">
-        <argument type="service" id="ezpublish.api.storage_engine.legacy.dbhandler" />
-        <argument type="service" id="ezpublish.config.resolver" />
-        <argument type="service" id="silver_common.logger" />
-        <tag name="ezpublish.storageEngine.legacy.converter" alias="sesexternaldata"  />
-    </service>
-</services> 
+``` yaml
+services:
+    Ibexa\Platform\Commerce\FieldTypes\Converter\SesExternalData:
+        arguments:
+            $db: '@ezpublish.persistence.connection'
+            $configResolver: '@ezpublish.config.resolver'
+            $logService: '@silver_common.logger'
+        tags:
+            - { name: ezpublish.storageEngine.legacy.converter, alias: sesexternaldata }
 ```
 
 ## Handling of `sesexternaldata` in the content model data provider
