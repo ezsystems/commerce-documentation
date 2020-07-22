@@ -23,6 +23,9 @@ services:
     Ibexa\Platform\Commerce\FieldTypes\Converter\SesProfileData:
         tags:
             - { name: ezpublish.storageEngine.legacy.converter, alias: sesprofiledata }
+    Ibexa\Platform\Commerce\FieldTypes\FieldType\SesProfileData\Type:
+        tags:
+            - { name: ezpublish.fieldType, alias: sesprofiledata }
 ```
 
 The name of the customer (taken from the contact section) can be used for lists.

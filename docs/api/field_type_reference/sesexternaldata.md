@@ -93,6 +93,17 @@ services:
             $logService: '@silver_common.logger'
         tags:
             - { name: ezpublish.storageEngine.legacy.converter, alias: sesexternaldata }
+    Ibexa\Platform\Commerce\FieldTypes\FieldType\SesExternalData\Type:
+        tags:
+            - { name: ezpublish.fieldType, alias: sesexternaldata }
+
+    Ibexa\Platform\Commerce\FieldTypes\FieldType\SesExternalData\SearchField:
+        arguments:
+            $configResolver: '@ezpublish.config.resolver'
+        calls:
+            - [ setIndexDefinition ]
+        tags:
+            - { name: ezpublish.fieldType.indexable, alias: sesexternaldata }
 ```
 
 ## Handling of `sesexternaldata` in the content model data provider
