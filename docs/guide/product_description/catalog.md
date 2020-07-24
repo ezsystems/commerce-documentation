@@ -2,7 +2,7 @@
 
 eZ Commerce generates the shop catalog automatically from the products and content in the installation or an ERP/PIM system.
 
-The source of products depends of the data provider you have configured.
+The source of products depends on the data provider you have configured.
 
 ## Data providers
 
@@ -25,7 +25,7 @@ Importing products when using this data provider is time-consuming.
 Use the eContent data provider when you have a PIM system or an ERP which provides product information.
 This information can be imported quickly from the relevant system.
 
-The catalog can then contain more than 1 million products.
+The catalog can contain more than 1 million products.
 
 The products cannot be edited in the Back Office.
 

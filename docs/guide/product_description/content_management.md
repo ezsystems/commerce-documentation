@@ -28,7 +28,7 @@ A Product contains the following Fields:
 |Color | ses_color | ezstring | Product color |
 |Technical specification | ses_specification | eztext | Technical product description |
 |Video | ses_video | ezstring | Link to a product video |
-|Add. Product image 1-4 | ses_image_1 | ezimage | Up to four additional images | |
+|Add. Product image 1-4 | ses_image_1 | ezimage | Up to four additional images | 
 |Currency | ses_currency | ezstring | Default product currency |
 |VAT Code | ses_vat_code | sesselection | One of predefined VAT rates |
 |Product Type | ses_product_type | ezstring | Product type used for grouping products in comparison |
@@ -71,4 +71,4 @@ When you choose a first attribute, the shop narrows down the options for the sec
 ## Product type
 
 A product type represents a collection of very similar products that differ only in some characteristics.
-It is used to show a list of products in a tabular way, every product can be added to the basket directly from overview page. 
+It is used to show a list of products in a tabular way, every product can be added to the basket directly from the overview page. 

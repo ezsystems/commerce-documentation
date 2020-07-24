@@ -13,7 +13,7 @@ The order of the navigation items can be defined by the editor in the Back Offic
 
 The customer can add products to a comparison list and access it from the "My shop" menu.
 The comparison list automatically groups products per product category and product type (so it is impossible to compare products belonging to different types).
-The customer can change the order of the sorting by dragging and can display differences of the products only.
+The customer can change the order of the sorting by dragging and can display only differences of the products.
 
 ![Product comparison](img/comparison_list.png)
 
@@ -26,7 +26,7 @@ The customer can also add products to a personal wishlist or to a named, stored 
 
 ![Stored baskets](img/stored_basket.png)
 
-Products that are not in the catalog any more are automatically marked as "not available".
+Products that are not in the catalog are automatically marked as "not available".
 
 ## Quickorder
 
