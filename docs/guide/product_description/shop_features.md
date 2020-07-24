@@ -55,7 +55,7 @@ The customer can order the same products again:
 
 Customers can submit ratings and product reviews.
 
-![Rating & Review](img/rating_review.png)
+![Rating & Review](img/rate_review.png)
 
 ![Rating & Review](img/rating_review_2.png)
 

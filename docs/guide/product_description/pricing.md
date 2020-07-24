@@ -5,7 +5,7 @@ Every price can contain an offer price and a base price. If an offer price is se
 
 In addition, prices can vary per customer group.
 
-![Price management](img/price_management.png)
+![Price management](img/price_mgmt.png)
 
 ## Currencies
 
