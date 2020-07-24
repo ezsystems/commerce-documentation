@@ -1,35 +1,47 @@
 # User management
 
-## Users
+eZ Commerce by default adds the Shop users User Group, containing subgroups Business customers and Private customers.
 
-eZ Commerce users are stored as User Content items. This enables the shop owner to use the full power of the permission system.
+These groups are assigned Roles that allow them to use the shop as customers.
 
-![](img/Users.png)
+You can get information about a User's last orders and sales statistics. If a user has a current basket it is displayed as well.
 
-In addition, a shop owner gets information about the last orders and the sales statistics of the customer. If a user has a current basket it is displayed as well.
+![](img/user_information.png)
 
-![](img/image2018-4-4_19-40-59.png)
+## Roles and Policies
 
-## User Groups
+The built-in Roles than allow using the shop are:
 
-In the backend user groups can be created.
+- Ecommerce anonymous
+- Ecommerce checkout
+- Ecommerce registered users
 
-![](img/User_groups.png)
+eZ Commerce adds [special shop-related Policies](../user_management/access_control.md#ez-commerce-policies).
 
-Afterwards specific Roles can be assigned to the User Group. In eZ Commerce new users are created in a given User Group. The location ID of the User Group is configured in a yml file.
+## User registration
 
-![](img/Assign_to_user.png)
+A user can register as private, business or existing customer.
 
-## Available policies
+When registering as a business customer, you need to provide additional information such as the VAT number (checked for EU VAT codes using an online service (VIES)) or a PDF with company registration.
 
-For eZ Commerce special Policies are defined that can be assigned to specific Roles.
+![](img/registration_advanced.png)
 
-![](img/image2018-4-4_19-43-33.png)
+A newly registered account is not active by default. The shop owner or administrator must enable it first.
 
-![](img/Roles_policies.png)
+### Existing customers
 
-## Profile Data
-	
-Buyer and Delivery Addresses of an user can be edited in the backend. It's possible to add, remove and edit addresses.
+Customers who are set up in the connected ERP can activate their eZ Commerce accounts themselves by entering their customer number and one invoice number.
+The data is sent to the ERP. If the data in ERP and the entered data match, the customer gets access to the shop immediately.
+A User Content item is created automatically with the customer number from the ERP.
 
-![](img/Bildschirmfoto_4.png)
+## Account management
+
+The customer can access **My account** on the front page to manage their account, including changing account data, password and addresses.
+
+### Addresses
+
+![](img/addresses.png)
+
+The customer can manage their delivery addresses in the address book. The addresses are offered for selection during checkout process.
+
+![](img/manage_addresses.png)
