@@ -1,55 +1,8 @@
 # Navigation templates
 
-## Navigation rendering
-
-### Left navigation with product catalog as root element
-
-``` html+twig
-{# get the parent product catalog of the current catalog element #}
-{% set product_catalog_id = get_parent_product_catalog(catalogElement) %}
-
-{% include 'SilversolutionsEshopBundle:Navigation:left_navigation.html.twig'
-  with { 'locationId': product_catalog_id}
-%}
-
-{# if you want, you can pass the id of the active catalog element, but it is not required, since the active node will be highlited automatically via js #}
-{# if you pass th eactive node id, the navigation will be cached for this id #}
-{% include 'SilversolutionsEshopBundle:Navigation:left_navigation.html.twig'
-  with { 'locationId': product_catalog_id, 'active_node': catalogElement.id}
-%}
-```
-
-### Left navigation that renders only part of the catalog
-
-(e.g. subcategories of the current catalog element)
-
-``` html+twig
-{# get the parent product catalog of the current catalog element #}
-{% set product_catalog_id = get_parent_product_catalog(catalogElement) %}
-
-{# even if you want to display only part of the catalog, the root node still must be the parent product catalog! #}
-{% include 'SilversolutionsEshopBundle:Navigation:left_navigation.html.twig'
-  with {'locationId': product_catalog_id, 'catalog_subtree': catalogElement.identifier}
-%}
-```
-
-### Main navigation
-
-``` html+twig
-{% include 'SilversolutionsEshopBundle:Navigation:main_navigation.html.twig'|st_resolve_template
-  with {'locationId':ses_config_parameter('navigation_ez_location_root', 'siso_core')}
-%}
-```
-
-### Offcanvas navigation
-
-``` html+twig
-{% include 'SilversolutionsEshopBundle:Navigation:offcanvas_navigation.html.twig'|st_resolve_template
-with {'locationId':ses_config_parameter('navigation_ez_location_root', 'siso_core')}
-%}
-```
-
 ## Template list
+
+Navigation uses the following built-in templates.
 
 ### Main navigation
 
@@ -75,26 +28,23 @@ with {'locationId':ses_config_parameter('navigation_ez_location_root', 'siso_cor
 |`Silversolutions/Bundle/EshopBundle/Resources/views/Navigation/offcanvas_menu.html.twig`|Renders the offcanvas navigation list `<ul>` and includes `knp_offcanvas.html.twig`|
 |`Silversolutions/Bundle/EshopBundle/Resources/views/Navigation/knp_offcanvas.html.twig`|Renders the offcanvas navigation nodes as `<li>` elements|
 
-## Related custom Twig functions
+## Custom Twig functions
 
 ### `get_parent_product_catalog`
 
-Fetches the parent product catalog element for the `$identifier`.
-
-Parameters:
-
-- `Silversolutions\Bundle\EshopBundle\Catalog\CatalogElement`
+Fetches the parent product catalog Location ID from a `Silversolutions\Bundle\EshopBundle\Catalog\CatalogElement` parameter.
 
 ``` html+twig
 {% set product_catalog_id = get_parent_product_catalog(catalogElement) %}
 ```
 
-
 ### `get_data_location_ids`
 
-Returns a comma separated string of `data_locations` of the given element. All parent Locations including the element Location are returned. These `data_locations` are used to highlight the active node in the navigation.
+Returns a comma-separated string of `data_location-id` attributes of the given element.
+All parent Locations including the element Location are returned.
+These `data_location-id`s are used to highlight the active node in the navigation.
 
-Parameters:
+The function can take as parameters:
 
 - `eZ\Publish\API\Repository\Values\Content\Location`
 - `Silversolutions\Bundle\EshopBundle\Catalog\CatalogElement`
