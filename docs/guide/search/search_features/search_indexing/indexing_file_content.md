@@ -34,7 +34,7 @@ See [Supported Document Formats](http://tika.apache.org/1.13/formats.html) for a
 
 ## Extending file content indexer
 
-In order to extend the indexer for files you have to extend the `DatatypesBundle/FieldType/BinaryFile/SearchField.php` service.
+In order to extend the indexer for files you have to extend the `Ibexa\Platform\Commerce\FieldTypes\FieldType\BinaryFile\SearchField` service.
 
 The main method that returns the data to be indexed is `getIndexData(Field $field, FieldDefinition $fieldDefinition)`.
 

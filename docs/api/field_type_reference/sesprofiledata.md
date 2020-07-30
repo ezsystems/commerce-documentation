@@ -12,29 +12,20 @@ This Field Type stores [`CustomerProfileData`](../../guide/customers/customers_a
 The Symfony data type is stored in:
 
 ```
-Silversolutions/Bundle/DatatypesBundle/FieldType/SesProfileData/*
-Silversolutions/Bundle/DatatypesBundle/Converter/SesProfileData.php
+Ibexa/Platform/Commerce/FieldTypes/FieldType/SesProfileData/*
+Ibexa/Platform/Commerce/FieldTypes/Converter/SesProfileData.php
 ```
 
 #### Configuration
 
-``` xml
-<parameters>
-    <parameter key="ezpublish.fieldType.sesprofiledata.class">Silversolutions\Bundle\DatatypesBundle\FieldType\SesProfileData\Type</parameter>
-    <parameter key="ezpublish.fieldType.sesprofiledata.converter.class">Silversolutions\Bundle\DatatypesBundle\Converter\SesProfileData</parameter>
-</parameters>
-
-<services>      
-    <!-- sesprofiledata type service -->
-    <service id="ezpublish.fieldType.sesprofiledata" class="%ezpublish.fieldType.sesprofiledata.class%" parent="ezpublish.fieldType">
-        <tag name="ezpublish.fieldType" alias="sesprofiledata" />
-    </service>
-
-    <!-- sesprofiledata converter service -->
-    <service id="ezpublish.fieldType.sesprofiledata.converter" class="%ezpublish.fieldType.sesprofiledata.converter.class%">
-        <tag name="ezpublish.storageEngine.legacy.converter" alias="sesprofiledata"  />
-    </service>      
-</services> 
+``` yaml
+services:
+    Ibexa\Platform\Commerce\FieldTypes\Converter\SesProfileData:
+        tags:
+            - { name: ezpublish.storageEngine.legacy.converter, alias: sesprofiledata }
+    Ibexa\Platform\Commerce\FieldTypes\FieldType\SesProfileData\Type:
+        tags:
+            - { name: ezpublish.fieldType, alias: sesprofiledata }
 ```
 
 The name of the customer (taken from the contact section) can be used for lists.

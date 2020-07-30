@@ -74,7 +74,7 @@ Following eZ fields are supported and will be stored automatically in the produc
 |Rich text (ezrichtext)|\eZ\Publish\Core\FieldType\XmlText\Value|Silversolutions\Bundle\EshopBundle\Content\Fields\TextBlockField|
 |Image (ezimage)|\eZ\Publish\Core\FieldType\Image\Value|Silversolutions\Bundle\EshopBundle\Content\Fields\ImageField|
 |BInary (ezbinary)|\eZ\Publish\Core\FieldType\BinaryFile\Value|Silversolutions\Bundle\EshopBundle\Content\Fields\FileField|
-|SesSelection (sesselection)|\Silversolutions\Bundle\DatatypesBundle\FieldType\SesSelection\Value|Silversolutions\Bundle\EshopBundle\Content\Fields\TextLineField|
+|SesSelection (sesselection)|Ibexa/Platform/Commerce/FieldTypes/FieldType/SesExternalData\Value|Silversolutions\Bundle\EshopBundle\Content\Fields\TextLineField|
 
 !!! tip
 
