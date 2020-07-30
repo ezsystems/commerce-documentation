@@ -51,14 +51,6 @@ The customer can order the same products again:
 
 ![](img/order_history.png)
 
-## Rate and review
-
-Customers can submit ratings and product reviews.
-
-![Rating & Review](img/rate_review.png)
-
-![Rating & Review](img/rating_review_2.png)
-
 ## GDPR compliance
 
 eZ Commerce offers tools to set up a shop that is compliant with GDPR (General Data Protection Regulation):

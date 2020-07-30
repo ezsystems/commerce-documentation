@@ -23,14 +23,14 @@ By default eZ Commerce offers the following predefined Roles:
 |Siso policy / Dashboard view|User can access the dashboard|
 |Siso policy/ Forms profile edit|User can access profile editing|
 |Siso policy / Manage orders|User can manage orders|
-|Siso policy / Manage rating|User can use the rate and review panel|
+|Siso policy / Manage rating|Unused|
 |Siso policy / Manage prices|User can manage prices|
 |Siso policy / Manage stock|User can manage stock|
 |Siso policy / Manage config|User can manage configuration settings|
 |Siso policy / Order list|User can access their list of orders|
 |Siso policy / See product price|User can see prices in the catalog, slider, product detail and comparison|
 |Siso policy / Translations|User can change translations in the Back Office|
-|Siso policy / Rating review|User can use rate and review|
+|Siso policy / Rating review|Unused|
 |Siso policy / Red customers and orders|User can see the **Last orders** and **Best clients** tabs in the cockpit|
 |siso_customercener/approve|Company user can approve/reject orders in the Customer center|
 |siso_customercenter/buy|Company user can buy products in the Customer center|
