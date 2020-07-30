@@ -397,7 +397,6 @@ nav:
             - 'Quick order API': 'guide/quickorder/quickorder_api.md'
             - 'Quick order templates': 'guide/quickorder/quickorder_templates.md'
             - 'Quick order FAQ': 'guide/quickorder/quickorder_faq.md'
-        - 'Rate and review': 'guide/rate_and_review/rate_and_review.md'
         - Search:
             - 'Search': 'guide/search/search.md'
             - Search features:
