@@ -130,15 +130,9 @@ nav:
             - 'Bestseller FAQ': 'guide/bestseller/bestseller_faq.md'
         - Breadcrumbs:
             - 'Breadcrumbs': 'guide/breadcrumbs/breadcrumbs.md'
-            - Breadcrumbs API:
-                - 'Breadcrumbs API': 'guide/breadcrumbs/breadcrumbs_api/breadcrumbs_api.md'
-                - 'CatalogBreadcrumbsGenerator': 'guide/breadcrumbs/breadcrumbs_api/catalogbreadcrumbsgenerator.md'
-                - 'EzContentBreadcrumbsGenerator': 'guide/breadcrumbs/breadcrumbs_api/ezcontentbreadcrumbsgenerator.md'
-                - 'PostSilverModuleBreadcrumbsGenerator': 'guide/breadcrumbs/breadcrumbs_api/postsilvermodulebreadcrumbsgenerator.md'
-                - 'RoutesBreadcrumbsGenerator': 'guide/breadcrumbs/breadcrumbs_api/routesbreadcrumbsgenerator.md'
-            - 'Breadcrumbs cookbook': 'guide/breadcrumbs/breadcrumbs_cookbook.md'
-            - 'Breadcrumbs templates': 'guide/breadcrumbs/breadcrumbs_templates.md'
-            - 'Breadcrumbs FAQ': 'guide/breadcrumbs/breadcrumbs_faq.md'
+            - 'Breadcrumb templates': 'guide/breadcrumbs/breadcrumbs_templates.md'
+            - 'Breadcrumb API': 'guide/breadcrumbs/breadcrumbs_api.md'
+            - 'Custom breadcrumbs': 'guide/breadcrumbs/custom_breadcrumbs.md'
         - Cache:
             - 'Cache': 'guide/cache/cache.md'
             - Content cache refresh:
