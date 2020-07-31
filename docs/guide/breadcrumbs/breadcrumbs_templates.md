@@ -9,7 +9,7 @@
 
 !!! note "No breadcrumbs displayed"
 
-    If not breadcrumbs are displayed, the possible reason may be:
+    The possible reasons why breadcrumbs might not be displayed:
 
     - The `breadcrumb` block of the `pagelayout.html.twig` template is overridden, extending the template with empty content.
     - The matched generator encounters an error and doesn't render the breadcrumbs
@@ -35,7 +35,7 @@ which includes `type` of the breadcrumb. The type depends on the generator used:
 
 Additional data can be used, for example, to define if a breadcrumb of a Location should be clickable or hidden.
 
-The following example (in `breadcrumb_list.html.twig`) changes the breadcrumbs to non-clickable bold text (if `translationParameters.type` is of type `catalog`):
+The following example (from `breadcrumb_list.html.twig`) changes the breadcrumbs to non-clickable bold text (if `translationParameters.type` is of type `catalog`):
 
 ``` html+twig
 {% if not loop.last %}

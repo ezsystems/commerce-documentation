@@ -1,7 +1,7 @@
 # Breadcrumbs
 
 eZ Commerce automatically generates breadcrumbs for every part of the shop, including the catalog,
-internal shop routes  (e.g. my profile, search), Content items and forms.
+internal shop routes (e.g. my profile, search), Content items and forms.
 
 ![](../img/breadcrumbs_1.png)
 
