@@ -125,10 +125,10 @@ In the `.env` file configure the following parameters to your Solr values:
 - `SISO_SEARCH_SOLR_PORT`
 - `SISO_SEARCH_SOLR_CORE`
 
-In `config/ezplatform.yaml` set Solr as the search engine:
+Also in `.env` set Solr as the search engine:
 
-``` yaml
-search_engine: 'solr'
+```
+SEARCH_ENGINE=solr
 ```
 
 ## Create database
