@@ -105,6 +105,7 @@ The configuration requires providing the following parameters:
 - `DATABASE_PORT`
 - `DATABASE_PLATFORM` —  prefix for distinguishing the database you are connecting to (e.g. `mysql` or `pgsql`)
 - `DATABASE_DRIVER` — driver used by Doctrine to connect to the database (e.g. `pdo_mysql` or `pdo_pgsql`)
+- `DATABASE_VERSION` - set to your version if it is different than the default
 
 !!! note "JMS payment secret"
     
