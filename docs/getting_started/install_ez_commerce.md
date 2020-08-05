@@ -113,9 +113,11 @@ The configuration requires providing the following parameters:
 
 ## Install Solr
 
-eZ Commerce requires Solr as search engine. The demo provides a Solr installation which has to be started:
+eZ Commerce requires Solr as search engine. To install it, run the included script:
 
-TODO
+``` bash
+bash ./install-solr.sh
+```
 
 ## Create database
 
