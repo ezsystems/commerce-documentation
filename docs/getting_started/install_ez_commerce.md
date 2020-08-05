@@ -111,12 +111,24 @@ The configuration requires providing the following parameters:
     To provide the `JMS_PAYMENT_SECRET` secret for the payment system, run `./vendor/defuse/php-encryption/bin/generate-defuse-key`
     and use the generated secret. 
 
-## Install Solr
+## Install and configure Solr
 
 eZ Commerce requires Solr as search engine. To install it, run the included script:
 
 ``` bash
 bash ./install-solr.sh
+```
+
+In the `.env` file configure the following parameters to your Solr values:
+
+- `SISO_SEARCH_SOLR_HOST`
+- `SISO_SEARCH_SOLR_PORT`
+- `SISO_SEARCH_SOLR_CORE`
+
+In `config/ezplatform.yaml` set Solr as the search engine:
+
+``` yaml
+search_engine: 'solr'
 ```
 
 ## Create database
