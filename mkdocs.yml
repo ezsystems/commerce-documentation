@@ -338,10 +338,7 @@ nav:
             - 'Orderhistory templates': 'guide/order_history/orderhistory_templates.md'
             - 'Displaying custom column': 'guide/order_history/displaying_custom_column.md'
             - 'Overriding semantic configuration': 'guide/order_history/overriding_semantic_configuration.md'
-        - Landing Page:
-            - 'Landing Page': 'guide/landing_page/landing_page.md'
-            - 'Landing Page API': 'guide/landing_page/landing_page_api.md'
-            - 'Landing Page UI': 'guide/landing_page/landing_page_ui.md'
+        - 'Page': 'guide/page.md'
         - Payment:
             - 'Payment': 'guide/payment/payment.md'
             - 'Payment API': 'guide/payment/payment_api.md'
