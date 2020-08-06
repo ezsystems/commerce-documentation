@@ -7,7 +7,7 @@ The user must have the `siso_policy/delegate` Policy which gives them access to 
 They can access these functions in the site header.
 On the delegate page the user can enter a customer number of a known customer and click **Delegate**.
 
-User data for the provided customer number is then fetched from ERP. 
+User data for the provided customer number is then fetched from ERP.
 If the customer number is valid the number is assigned to the current user.
 The delegate user then takes over as a different customer with a different customer number
 and can even create an order with the given customer number.
@@ -18,23 +18,11 @@ The user stays in the delegate role until they click **Undelegate**.
 
 ## Configuration
 
-The delegate function is disabled by default. To enable it, use the following configuration:
+The delegate function is disabled by default. To enable it, add the following configuration in your eZ Platform project folder, the `config\packages\ezplatform.yaml` file, under the `parameters` key:
 
 ``` yaml
 silver_eshop.default.enable_delegate: true    
 ```
-
-??? note "EshopBundle/Resources/config/ses_routing.yml"
-
-    ``` yaml
-    silversolutions_delegate:
-     path: /delegate
-        defaults: { _controller: SilversolutionsEshopBundle:DelegateCustomer:delegate }
-
-    silversolutions_undelegate:
-     path: /undelegate
-        defaults: { _controller: SilversolutionsEshopBundle:DelegateCustomer:undelegate }
-    ```
 
 ### Delegation logic
 
@@ -116,7 +104,7 @@ For the form implementation you must have a new entity:
 
 ??? note "EshopBundle/Entity/Delegate.php"
 
-    ``` 
+    ```
     <?php
 
     /**
@@ -158,7 +146,7 @@ The information whether the user is a delegate or not is stored in the customer 
 
 ??? note "EshopBundle/Model/CustomerProfileData/CustomerProfileData.php"
 
-    ``` 
+    ```
     /**
      * Return true if user is in the delegate mode
      *
