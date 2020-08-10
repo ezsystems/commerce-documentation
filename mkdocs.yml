@@ -122,12 +122,7 @@ nav:
                 - 'Adding products to a stored basket or wishlist': 'guide/basket/basket_ui/adding_products_to_a_stored_basket_or_wishlist.md'
                 - 'Adding products to the basket': 'guide/basket/basket_ui/adding_products_to_the_basket.md'
             - 'Basket FAQ': 'guide/basket/basket_faq.md'
-        - Bestseller:
-            - 'Bestseller': 'guide/bestseller/bestseller.md'
-            - 'Bestseller cookbook': 'guide/bestseller/bestseller_cookbook.md'
-            - 'Bestseller UI': 'guide/bestseller/bestseller_ui.md'
-            - 'Bestseller API': 'guide/bestseller/bestseller_api.md'
-            - 'Bestseller FAQ': 'guide/bestseller/bestseller_faq.md'
+        - 'Bestsellers': 'guide/bestsellers.md'
         - Breadcrumbs:
             - 'Breadcrumbs': 'guide/breadcrumbs/breadcrumbs.md'
             - 'Breadcrumb templates': 'guide/breadcrumbs/breadcrumbs_templates.md'
