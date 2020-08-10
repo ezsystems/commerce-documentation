@@ -13,9 +13,7 @@ To enable bestsellers, set the following parameter to true:
 siso_core.default.enable_bestsellers: true
 ```
 
-In the Back Office, go to eCommerce->Configuration Settings->Miscellaneous
-
-The following settings are available:
+The following settings are available in the eCommerce->Configuration Settings->Miscellaneous section in the Back Office:
 
 | Configuration        | Description      |
 | -------------------- | ---------------- |
