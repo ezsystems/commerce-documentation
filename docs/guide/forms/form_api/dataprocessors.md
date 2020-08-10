@@ -1,15 +1,15 @@
 # Data processors
 
-Data processors are executed after the form is submitted. You can execute any number of data processors for one form.
-The configuration specifies an array of data processors that are executed in sequence, for example:
+Data processors are executed after a form is submitted. You can use any number of data processors per form.
+The configuration lists data processors that are executed in sequence, for example:
 
 ``` yaml
 ses_forms.configs.business_activation:
-        dataProcessors:
-            - ses_forms.validate_business_activation
-            - ses.customer_profile_data.data_processor.create_customer_profile_data
-            - ses_forms.create_ez_user
-            - ses_forms.login_new_ez_user 
+    dataProcessors:
+        - ses_forms.validate_business_activation
+        - ses.customer_profile_data.data_processor.create_customer_profile_data
+        - ses_forms.create_ez_user
+        - ses_forms.login_new_ez_user 
 ```
 
 ## FormDataProcessorException
@@ -20,7 +20,7 @@ The user sees the filled form with the error message from `FormDataProcessorExce
 
 ## CreateCustomerProfileDataDataProcessor
 
-`CreateCustomerProfileDataDataProcessor` creates a new [`CustomerProfileData`](../../../customers/customers_api/customer_profile_data_components/customer_profile_data_model.md) object and fills it with data from the registration process.
+`CreateCustomerProfileDataDataProcessor` creates a new [`CustomerProfileData`](../../customers/customers_api/customer_profile_data_components/customer_profile_data_model.md) object and fills it with data from the registration process.
 
 Service ID: `ses.customer_profile_data.data_processor.create_customer_profile_data`
 
@@ -38,7 +38,7 @@ parameters:
 
 ## CreateRegistrationTokenDataProcessor
 
-`CreateRegistrationTokenDataProcessor` creates a new token with the help of [`TokenService`](../../../user_management/token/token.md#tokenservice).
+`CreateRegistrationTokenDataProcessor` creates a new token with the help of [`TokenService`](../../user_management/token/token.md#tokenservice).
 
 Service ID: `ses_forms.create_registration_token_data_processor`
 
@@ -46,16 +46,16 @@ The parameters for the `createToken()` method are taken from the configuration:
 
 ``` yaml
 ses_registration:
-        #time in seconds how long the token is valid
-        registration_token_valid_until: 7200
-        registration_token_action_service: silver_forms.token.enable_ez_user
-        registration_token_action_service_method: enableEzUser 
+    #time in seconds how long the token is valid
+    registration_token_valid_until: 7200
+    registration_token_action_service: silver_forms.token.enable_ez_user
+    registration_token_action_service_method: enableEzUser 
 ```
 
 ## EzCreateUserDataProcessor
 
 `EzCreateUserDataProcessor` creates a new `EzUser` object. This data processor relies on the result of `CreateCustomerProfileDataDataProcessor`,
-because the [`CustomerProfileData`](../../../customers/customers_api/customer_profile_data_components/customer_profile_data_model.md) object must be given.
+because the [`CustomerProfileData`](../../customers/customers_api/customer_profile_data_components/customer_profile_data_model.md) object must be given.
 
 The data processor sets the following fields in the User Content item:
 

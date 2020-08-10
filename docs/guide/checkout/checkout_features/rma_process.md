@@ -23,9 +23,9 @@ parameters:
 ## Online cancellation form
 
 There is an online cancellation form.
-After the user submits the form, an email is sent to the admin using [SendCancellationEmailDataProcessor](../../one_page_forms/one_page_forms_api/dataprocessors/dataprocessors.md#sendcancellationemaildataprocessor).
+After the user submits the form, an email is sent to the admin using [SendCancellationEmailDataProcessor](../../forms/form_api/dataprocessors.md#sendcancellationemaildataprocessor).
 
-See [one-page forms](../../one_page_forms/one_page_forms.md) for more information.
+See [Forms](../../forms/forms.md) for more information.
 
 ``` html+twig
 {{ path('silversolutions_service', {'formTypeResolver': 'cancellation'}) }}
@@ -46,12 +46,12 @@ parameters:
 
 ## Online RMA form
 
-eZ Commerce also offers an online RMA form. After user submits this form, an email is sent to admin using [SendRmaEmailDataProcessor](../../one_page_forms/one_page_forms_api/dataprocessors/dataprocessors.md#sendrmaemaildataprocessor).
+eZ Commerce also offers an online RMA form. After user submits this form, an email is sent to admin using [SendRmaEmailDataProcessor](../../forms/form_api/dataprocessors.md#sendrmaemaildataprocessor).
 
 The email recipient has to generate a delivery note with a return number and send it to the customer.
 The customer then can return their goods together with return number.
 
-See [one-page forms](../../one_page_forms/one_page_forms.md) for more information.
+See [Forms](../../forms/forms.md) for more information.
 
 ``` html+twig
 {{ path('silversolutions_service', {'formTypeResolver': 'rma'}) }}

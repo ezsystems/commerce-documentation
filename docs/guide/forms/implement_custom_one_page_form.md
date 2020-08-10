@@ -19,7 +19,7 @@ Form entity is a simple class that holds the data. No business logic is defined 
 This is the place where you have to define:
 
 - form attributes
-- [validation](one_page_forms_api/one_page_forms_api.md#form-validators)
+- [validation](form_api/form_api.md#form-validators)
 
 Every form entity has to extend `AbstractFormEntity`.
 
@@ -386,7 +386,7 @@ parameters:
 
 ### Form URL
 
-You can use any of the predefined [`FormsController::formsAction` routes](one_page_forms_templates.md) to call the form,
+You can use any of the predefined [`FormsController::formsAction` routes](form_templates.md) to call the form,
 or even define a new one. In this example use following route:
 
 ``` html+twig
