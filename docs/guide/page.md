@@ -1,6 +1,6 @@
 # Pages
 
-eZ Commerce adds the following blocks for the Page Builder:
+eZ Commerce adds the following blocks to the Page Builder:
 
 - Last viewed items - list of products recently viewed by the current user
 - Bestsellers - list of bestsellers for a given product category
@@ -38,6 +38,8 @@ Products are stored in the session.
 
 #### Displaying products
 
+To display a list of recently viewed products, place the following code in a template:
+
 ``` html+twig
 {{ render_esi(
     controller(
@@ -46,7 +48,7 @@ Products are stored in the session.
     )) }}
 ```
 
-The controller is able to render a different template if required (parameter template).
+The controller is able to render a different template if required (a parameter template).
 `SilversolutionsEshopBundle:Catalog:slider.html.twig` is used by default. 
 
 The caching strategy can be defined in the config file. The strategy is dynamic, so use `vary: cookie`.
@@ -58,8 +60,8 @@ silver_eshop.default.http_cache:
         vary: cookie
 ```
 
-You can configure the maximum number of last viewed products in configuration
-in **eCommerce** -> **Configuration Settings** -> **Catalog** -> **Last viewed product limit**.
+You can configure the maximum number of last viewed products by selecting
+**eCommerce** -> **Configuration Settings** -> **Catalog** -> **Last viewed product limit**.
 
 The default value is set in:
 
