@@ -317,17 +317,16 @@ nav:
             - 'Newsletter interface': 'guide/newsletter/newsletter_interface.md'
             - 'Additional newsletter data': 'guide/newsletter/additional_newsletter_data.md'
             - 'Newsletter templates': 'guide/newsletter/newsletter_templates.md'
-        - One-page forms:
-            - 'One-page forms': 'guide/one_page_forms/one_page_forms.md'
-            - One-page form API:
-                - 'One-page form API': 'guide/one_page_forms/one_page_forms_api/one_page_forms_api.md'
-                - Dataprocessors:
-                    - 'Data processors': 'guide/one_page_forms/one_page_forms_api/dataprocessors/dataprocessors.md'
-                    - 'Pre-data processors': 'guide/one_page_forms/one_page_forms_api/dataprocessors/predataprocessors.md'
-                    - 'Events before and after data processor': 'guide/one_page_forms/one_page_forms_api/dataprocessors/events_before_and_after_a_dataprocessor.md'
-            - 'One-page form templates': 'guide/one_page_forms/one_page_forms_templates.md'
-            - 'Implement custom one-page form': 'guide/one_page_forms/implement_custom_one_page_form.md'
-            - 'Using reCAPTCHA': 'guide/one_page_forms/using_recaptcha.md'
+        - Forms:
+            - 'Forms': 'guide/forms/forms.md'
+            - Form API:
+                - 'Form API': 'guide/forms/form_api/form_api.md'
+                - 'Data processors': 'guide/forms/form_api/dataprocessors.md'
+                - 'Pre-data processors': 'guide/forms/form_api/predataprocessors.md'
+                - 'Data processor events': 'guide/forms/form_api/data_processor_events.md'
+            - 'Form templates': 'guide/forms/form_templates.md'
+            # - 'Implement custom one-page form': 'guide/forms/implement_custom_one_page_form.md'
+            - 'Using reCAPTCHA': 'guide/forms/using_recaptcha.md'
         - Order history:
             - 'Orderhistory': 'guide/order_history/orderhistory.md'
             - Order history features:

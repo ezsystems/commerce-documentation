@@ -1,4 +1,4 @@
-# One-page form templates
+# Form templates
 
 ### Template list
 
@@ -20,31 +20,8 @@
 |`party.html.twig`|Renders the party form attributes|
 |`custom_form_label.html.twig`|Renders custom template for the form label|
 
-### Custom Twig functions
+To define a route to a form, pass the `formTypeResolver` as a parameter:
 
 ``` html+twig
-# define a route to your form, pass the formTypeResolver as a parameter
 <a href="{{ path('silversolutions_service', {'formTypeResolver': 'registration_private'}) }}">{{ 'msg.register_here'|st_translate }}</a>
-```
-
-### Related routes
-
-Alternative routes for the `FormsController::formsAction`
-
-``` yaml
-silversolutions_forms:
-    path:  /register/{formTypeResolver}
-    defaults: { _controller: SilversolutionsEshopBundle:Forms:forms }
-
-silversolutions_profile:
-    path:  /profile/{formTypeResolver}
-    defaults: { _controller: SilversolutionsEshopBundle:Forms:forms }
-
-silversolutions_password_reminder:
-    path:  /password/{formTypeResolver}
-    defaults: { _controller: SilversolutionsEshopBundle:Forms:forms }
-
-silversolutions_service:
-    path:  /service/{formTypeResolver}
-    defaults: { _controller: SilversolutionsEshopBundle:Forms:forms }
 ```

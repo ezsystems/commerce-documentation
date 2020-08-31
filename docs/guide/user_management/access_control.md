@@ -23,7 +23,7 @@ eZ Commerce uses Policies to control access to some specific pages and functions
 
 You can handle access to specific areas in th following places:
 
-- In [one-page forms](../one_page_forms/one_page_forms.md) you can add the Policy in the form configuration. 
+- In [forms](../forms/forms.md) you can add the Policy in the form configuration. 
 - In controllers, if there is a defined route, you can add the Policy in the routing file:
 
 ``` yaml

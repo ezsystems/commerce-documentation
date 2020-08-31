@@ -28,7 +28,7 @@ Go to: http://www.google.com/recaptcha/admin and log in.
 
 Register a new domain to get a pair of keys.
 
-### 2\. Configure the reCAPTCHA
+### 2\. Configure reCAPTCHA
 
 Add the generated keys to `parameters.yml`:
 
@@ -45,4 +45,4 @@ Refer to `EshopBundle/Entities/Forms/RegisterBusiness.php` and `EshopBundle/Enti
 
 When you have extended the form entity and type you must add a parameter to `forms.yml` and extend `configuration_core.yml` (`silver_form_type_business`):
 
-Refer to `/EshopBundle/Resources/config/forms.yml` and `EshopBundle/Resources/config/backend/configuration_core.yml` for examples.
+Refer to `EshopBundle/Resources/config/forms.yml` and `EshopBundle/Resources/config/backend/configuration_core.yml` for examples.
