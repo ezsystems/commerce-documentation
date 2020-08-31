@@ -91,7 +91,7 @@ This is used by Symfony when generating [CSRF tokens](https://symfony.com/doc/5.
 [encrypting cookies](http://symfony.com/doc/5.0/cookbook/security/remember_me.html),
 and for creating signed URIs when using [ESI (Edge Side Includes)](https://symfony.com/doc/5.0/http_cache/esi.html).
 
-Alternatively, you can also change individual installation parameters in `.env`.
+Instead of setting `DATABASE_URL`, you can change individual installation parameters in `.env`.
 
 !!! tip
 
