@@ -26,13 +26,14 @@ Before getting started, make sure you review the [requirements](https://doc.ezpl
 ## Get Composer
 
 Install a recent stable version of Composer, the PHP command line dependency manager.
-Use the package manager for your Linux distribution. For example on Ubuntu:
+Use the package manager for your Linux distribution. 
+For example, on Ubuntu:
 
 ``` bash
 apt-get install composer
 ```
 
-To verify you got a recent stable version of Composer, you can run:
+To verify that you have the most recent stable version of Composer, you can run:
 
 ``` bash
 composer -V
@@ -47,17 +48,17 @@ composer -V
     php -r "readfile('https://getcomposer.org/installer');" | php
     ```
 
-    After this you need to replace `composer` with `php -d memory_limit=-1 composer.phar` in all commands below.
+    If you do so, you must replace `composer` with `php -d memory_limit=-1 composer.phar` in all commands below.
 
 ## Set up authentication tokens
 
 See [Set up authentication tokens](https://doc.ezplatform.com/en/latest/getting_started/install_ez_enterprise/#set-up-authentication-tokens)
-in eZ Platform installation to learn how to authenticate yourself for commercial packages.
+to learn about authenticating yourself for commercial packages.
 
 ## Create project
 
-In order to install a new project using `composer create-project` to get latest version of eZ Commerce,
-you'll need to tell Composer which token to use before the project folder is created in the first place.
+In order to install a new project using `composer create-project` to get the latest version of eZ Commerce,
+you must first inform the Composer, which token to use before the project folder is created.
 This can be done in the following way:
 
 ``` bash
@@ -71,7 +72,7 @@ COMPOSER_AUTH='{"http-basic":{"updates.ez.no":{"username":"<installation-key>","
 
 !!! note "Moving from trial"
 
-    If you started with a trial installation, you should [adjust the channel(s)](#edit-composerjson) you use in order to get software under [BUL license instead of a TTL license](https://ibexa.co/About-our-Software/Licenses-and-agreements/).
+    If you started with a trial installation, you must [adjust the channel(s)](#edit-composerjson) you use in order to get software under [BUL license instead of a TTL license](https://ibexa.co/About-our-Software/Licenses-and-agreements/).
 
 ## Edit composer.json
 
@@ -94,7 +95,7 @@ Alternatively, you can also change individual installation parameters in `.env`.
 
 !!! tip
 
-    It is recommended to store the database credentials in your `.env.local` file and not commit it to the Version Control System.
+    Do not store the database credentials in your `.env.local` file, nor commit them to the Version Control System.
 
 The configuration requires providing the following parameters:
 
@@ -105,7 +106,7 @@ The configuration requires providing the following parameters:
 - `DATABASE_PORT`
 - `DATABASE_PLATFORM` —  prefix for distinguishing the database you are connecting to (e.g. `mysql` or `pgsql`)
 - `DATABASE_DRIVER` — driver used by Doctrine to connect to the database (e.g. `pdo_mysql` or `pdo_pgsql`)
-- `DATABASE_VERSION` - set to your version if it is different than the default
+- `DATABASE_VERSION` - database server version (for a MariaDB database, prefix the value with `mariadb-`)
 
 !!! note "JMS payment secret"
     
@@ -120,13 +121,13 @@ eZ Commerce requires Solr as search engine. To install it, run the included scri
 bash ./install-solr.sh
 ```
 
-In the `.env` file configure the following parameters to your Solr values:
+Configure the following parameters in the `.env` file:
 
 - `SISO_SEARCH_SOLR_HOST`
 - `SISO_SEARCH_SOLR_PORT`
 - `SISO_SEARCH_SOLR_CORE`
 
-Also in `.env` set Solr as the search engine:
+Also in the `.env` file, set Solr as the search engine:
 
 ```
 SEARCH_ENGINE=solr
@@ -157,11 +158,11 @@ Before executing it make sure that the database user has sufficient permissions.
 
 If Composer asks for your token, you must log in to your GitHub account and generate a new token
 (edit your profile, go to Developer settings > Personal access tokens and Generate new token with default settings).
-This operation is performed only once when you install eZ Commerce for the first time.
+This operation is performed only once, when you install eZ Commerce for the first time.
 
 !!! tip "Enabling Link manager"
 
-    To make use of [Link Manager](../guide/url_management.md), you need to [set up cron](../guide/url_management.md#enable-automatic-url-validation).
+    To make use of the [Link Manager](../guide/url_management.md), you must [set up cron](../guide/url_management.md#enable-automatic-url-validation).
 
 ## Prepare installation for production
 
@@ -175,14 +176,15 @@ For development needs, the web user can be made the owner of all your files (for
 chown -R www-data:www-data <your installation directory>
 ```
 
-Directories `var` and `public/var` need to be writable by CLI and web server user.
+Directories `var` and `public/var` need to be writable by CLI and the web server user.
 Future files and directories created by these two users will need to inherit those permissions.
 
 !!! caution
 
-    For security reasons, in production web server should not have write access to other directories than `var`. Skip the step above and follow the link below for production needs instead.
+    For security reasons, in production, the web server should not have write access to other directories than `var`. Skip the step above and follow the link below for production needs instead.
 
-    You must also make sure that the web server cannot interpret files in the `var` directory through PHP. To do so, follow the instructions on [setting up a virtual host below](#set-up-virtual-host).
+    You must also make sure that the web server cannot interpret files in the `var` directory through PHP. 
+    To do so, follow the instructions on [setting up a virtual host below](#set-up-virtual-host).
 
 To set up permissions for production, it is recommended to use an ACL (Access Control List).
 See [Setting up or Fixing File Permissions](http://symfony.com/doc/5.0/setup/file_permissions.html) in Symfony documentation
@@ -199,11 +201,11 @@ Check out the source of `vhost.sh` to see the options provided.
 
 Copy `/<your installation directory>/doc/apache2/vhost.template` to `/etc/apache2/sites-available` as a `.conf` file.
 
-Modify it to fit your project.
+Modify the file to fit your project.
 
 Specify `/<your installation directory>/public` as the `DocumentRoot` and `Directory`.
 Uncomment the line that starts with `#if [SYMFONY_ENV]` and set the value to `prod` or `dev`,
-depending on the environment you want:
+depending on the environment that you are configuring:
 
 ```
 SetEnvIf Request_URI ".*" SYMFONY_ENV=prod
@@ -218,7 +220,9 @@ a2ensite ezplatform
 a2dissite 000-default.conf
 ```
 
-Finally, restart the Apache server. The command may vary depending on your Linux distribution. For example of Ubuntu use:
+Finally, restart the Apache server. 
+The command may vary depending on your Linux distribution. 
+For example, on Ubuntu use:
 
 ``` bash
 service apache2 restart
@@ -228,6 +232,6 @@ Open your project in the browser and you should see the welcome page.
 
 !!! tip "eZ Launchpad for quick deployment"
 
-    If you want to get your eZ Commerce installation up and running quickly,
-    you can use Docker-based [eZ Launchpad](https://ezsystems.github.io/launchpad/), supported by the eZ Community,
-    which takes care of the whole setup for you.
+    To get your eZ Commerce installation up and running quickly,
+    use the Docker-based [eZ Launchpad](https://ezsystems.github.io/launchpad/), which takes care of the whole setup for you.
+    eZ Launchpad is supported by the eZ Community.
