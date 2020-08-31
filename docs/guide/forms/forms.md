@@ -11,10 +11,10 @@ One-page forms have several common criteria:
 eZ Commerce uses [Symfony forms](http://symfony.com/doc/3.4/forms.html) as a part of the solution.
 
 You can pre-fill the form with default values when it is loaded for the first time.
-The process that pre-fills the form is called [`preDataProcessor`](form_api/predataprocessors.md).
+The process that pre-fills the form is called a [pre-data processor](form_api/predataprocessors.md).
 
 You can define actions that are executed after the form is submitted.
-These actions are services that are called is a sequence and are able to exchange the data.
+These actions are services that are called in a sequence and are able to exchange the data.
 These actions are called [`dataProcessors`](form_api/dataprocessors.md).
 
 If process execution is not successful, the process can store an error message
@@ -109,8 +109,8 @@ parameters:
 
 |Configuration key|Description|
 |--- |--- |
-|`modelClass`|Required. Fully-qualified class path to the form entity. This class must extend `Silversolutions\Bundle\EshopBundle\Entities\Forms\AbstractFormEntity`|
-|`typeClass`|Required if `typeService` is not defined. Fully-qualified class path to the form type. Using `typeService` gives more flexibility.|
+|`modelClass`|Required. A fully-qualified class path to the form entity. This class must extend `Silversolutions\Bundle\EshopBundle\Entities\Forms\AbstractFormEntity`|
+|`typeClass`|Required if `typeService` is not defined. A fully-qualified class path to the form type. Using `typeService` gives more flexibility.|
 |`typeService` |Required if `typeClass` is not defined. ID of the form type service.|
 |`template`|Required. Template that renders the form.|
 |`validMessage`|General success message displayed on the confirmation page if form submission is successful.|

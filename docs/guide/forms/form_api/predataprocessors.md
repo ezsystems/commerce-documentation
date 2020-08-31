@@ -21,7 +21,7 @@ with the help of [`EzErpCustomerProfileDataService`](../../customers/customers_a
 
 ### Configuration
 
-The `use_single_name_field` setting defines if first name and surname from the form are stored in one or two separate fields:
+The `use_single_name_field` setting defines whether the first name and surname from the form are stored in one or two separate fields:
 
 ``` yaml
 ses_forms.default.use_single_name_field: true/false

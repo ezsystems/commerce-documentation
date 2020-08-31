@@ -5,7 +5,7 @@
 The main services for form services are `preDataProcessor` and `dataProcessors`.
 Both implement the `AbstractDataProcessor`, so the services must implement the `execute()` method.
 
-Because every form entity is a custom class, when the form is passed to `AbstractDataProcessor`,
+Every form entity is a custom class, therefore, when the form is passed to `AbstractDataProcessor`,
 it is encapsulated and passed in a `NormalizedEntity $formEntity`.
 
 Every implementation of the `AbstractDataProcessor` can get and set the form data from/in the original form.
@@ -77,4 +77,5 @@ ses_phone_validator:
 ### VAT number validator
 
 `VatNumberValidator` checks if the VAT number for commercial customers inside the European Union is valid.
-The [VIES web-service (SOAP)](http://ec.europa.eu/taxation_customs/vies/checkVatService.wsdl) of the European Commission is used. The condition for validation is that the VAT number contains the country code.
+The [VIES web-service (SOAP)](http://ec.europa.eu/taxation_customs/vies/checkVatService.wsdl) of the European Commission is used. 
+A condition for validation is that the VAT number contains a country code.
