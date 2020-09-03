@@ -1,6 +1,6 @@
 # eZ Commerce documentation
 
-**Get started with the [Installation](getting_started/installation.md).**
+**Get started with the [Installation](getting_started/install_ez_commerce.md).**
 
 **Learn how to manage your shop from the [User manual](user_manual/general.md).**
 

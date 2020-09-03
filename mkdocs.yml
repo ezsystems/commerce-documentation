@@ -4,8 +4,7 @@ copyright: "Copyright 1999-2020 Ibexa and others"
 nav:
     - 'eZ Commerce Documentation': 'index.md'
     - Getting started:
-        - 'Requirements': 'getting_started/requirements.md'
-        - 'Installation': 'getting_started/installation.md'
+        - 'Install eZ Commerce': 'getting_started/install_ez_commerce.md'
         - 'Installation and configuration FAQ': 'getting_started/installation_and_configuration_faqs.md'
         - 'First steps': 'getting_started/first_steps.md'
     - API:
