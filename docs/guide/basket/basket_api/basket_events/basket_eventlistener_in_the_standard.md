@@ -20,7 +20,7 @@ The allowed quantity is stored in `catalogElement` as a regex - `$allowedQuantit
 
 !!! note
 
-    If the [catalog factory](../../../catalog/catalog_api/content_model_dataprovider.md) did not set the `$allowedQuantity` attribute in the catalog element, only `int` quantity is valid.
+    If the [catalog factory](../../../data_providers/content_model_dataprovider.md) did not set the `$allowedQuantity` attribute in the catalog element, only `int` quantity is valid.
 
 #### Min and max quantity
 

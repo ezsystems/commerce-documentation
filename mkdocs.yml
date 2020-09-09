@@ -138,42 +138,19 @@ nav:
             - 'Basketpreview cache and user-specific data': 'guide/cache/basketpreview_cache_and_user_specific_data.md'
         - Catalog:
             - 'Catalog ': 'guide/catalog/catalog.md'
-            - Catalog feature list:
-                - Product variants:
-                    - 'Product variants': 'guide/catalog/catalog_features/product_variants/product_variants.md'
-                    - 'Variants and ERP system': 'guide/catalog/catalog_features/product_variants/variants_and_erp_system.md'
-                - 'Generate PDF': 'guide/catalog/catalog_features/generate_pdf.md'
-                - 'Supported Field Types for products in eZ Platform': 'guide/catalog/catalog_features/supported_field_types_for_products_in_ez.md'
-                - 'Catalog data providers': 'guide/catalog/catalog_features/catalog_data_providers.md'
+            - 'Catalog templates': 'guide/catalog/catalog_templates.md'
+            - 'Product rendering': 'guide/catalog/product_rendering.md'
+            - Product variants:
+                - 'Product variants': 'guide/catalog/product_variants/product_variants.md'
+                - 'Product variant API': 'guide/catalog/product_variants/product_variant_api.md'
+                - 'Setting up variants from external source': 'guide/catalog/product_variants/setting_up_variants_from_external_source.md'
             - Catalog API:
-                - 'Catalog API': 'guide/catalog/catalog_api/catalog_api.md'
-                - 'Access data provider via PHP': 'guide/catalog/catalog_api/access_dataprovider_via_php.md'
-                - 'Product category (CatalogElement)': 'guide/catalog/catalog_api/product_category_catalogelement.md'
-                - 'ProductNode and OrderableProductNode': 'guide/catalog/catalog_api/productnode_and_orderableproductnode.md'
-                - VariantProductsNode and OrderableVariantNode:
-                    - 'Create VariantProductNode': 'guide/catalog/catalog_api/variantproductsnode_and_orderablevariantnode/creating_variantproductnode.md'
-                    - 'SimpleVariantCharacteristics': 'guide/catalog/catalog_api/variantproductsnode_and_orderablevariantnode/simplevariantcharacteristics.md'
-                    - 'VariantProductNode and OrderableVariantNode': 'guide/catalog/catalog_api/variantproductsnode_and_orderablevariantnode/variantproductnode_and_orderablevariantnode.md'
-                    - 'Variant services': 'guide/catalog/catalog_api/variantproductsnode_and_orderablevariantnode/variant_services.md'
+                - 'Catalog element': 'guide/catalog/catalog_api/catalog_element.md'
+                - 'ProductNode': 'guide/catalog/catalog_api/productnode.md'
                 - 'ProductType': 'guide/catalog/catalog_api/producttype.md'
-                - 'ProductType search': 'guide/catalog/catalog_api/producttype_search.md'
-                - Catalog URLs:
-                    - 'Catalog URLs': 'guide/catalog/catalog_api/catalog_urls/catalog_urls.md'
-                    - 'Routing system': 'guide/catalog/catalog_api/catalog_urls/routing_system.md'
+                - 'Routing system': 'guide/catalog/catalog_api/routing_system.md'
                 - 'Customer SKUs': 'guide/catalog/catalog_api/customer_skus.md'
-                - 'Content model data provider': 'guide/catalog/catalog_api/content_model_dataprovider.md'
-            - Catalog UI:
-                - 'Catalog UI': 'guide/catalog/catalog_ui/catalog_ui.md'
-                - 'Templates for catalog': 'guide/catalog/catalog_ui/templates_for_catalog.md'
-                - 'Product category UI': 'guide/catalog/catalog_ui/product_category_ui.md'
-                - 'Products UI': 'guide/catalog/catalog_ui/products_ui.md'
-                - 'Product variants UI': 'guide/catalog/catalog_ui/product_variants_ui.md'
-            - Catalog cookbook:
-                - 'Extending a CatalogFactory': 'guide/catalog/catalog_cookbook/extending_a_catalogfactory.md'
-                - 'Exporting products': 'guide/catalog/catalog_cookbook/exporting_products.md'
-                - 'Setting up variants from external source': 'guide/catalog/catalog_cookbook/setting_up_variants_from_external_source.md'
-            - 'Catalog configuration': 'guide/catalog/catalog_configuration.md'
-            - 'Catalog FAQ': 'guide/catalog/catalog_faq.md'
+                - 'Extending a CatalogFactory': 'guide/catalog/catalog_api/extending_a_catalogfactory.md'
         - Checkout:
             - 'Checkout': 'guide/checkout/checkout.md'
             - Checkout features:
@@ -223,11 +200,14 @@ nav:
             - 'Customers FAQ': 'guide/customers/customers_faq.md'
             - 'Managing delivery addresses': 'guide/customers/managing_delivery_addresses.md'
             - 'VAT handling': 'guide/customers/vat_handling.md'
+        - Data providers:
+            - 'Data providers': 'guide/data_providers/data_providers.md'
+            - 'Content model data provider': 'guide/data_providers/content_model_dataprovider.md'
+            - 'Accessing data provider via PHP': 'guide/data_providers/access_dataprovider_via_php.md'
         - eContent:
             - 'eContent': 'guide/econtent/econtent.md'
             - eContent features:
                 - 'eContent database model': 'guide/econtent/econtent_features/econtent_database_model.md'
-                - 'Switching the data provider': 'guide/econtent/econtent_features/switching_the_data_provider.md'
                 - 'Catalog segmentation': 'guide/econtent/econtent_features/catalog_segmentation.md'
                 - 'Variants in eContent': 'guide/econtent/econtent_features/variants_in_econtent.md'
                 - Indexing eContent data:
@@ -426,6 +406,7 @@ nav:
             - Design engine:
                 - 'Design engine': 'guide/templating/design_engine/design_engine.md'
                 - 'Setting up new project design': 'guide/templating/design_engine/set_up_new_project_design.md'
+            - 'Product images': 'guide/templating/product_images.md'
         - Translations:
             - 'Translations': 'guide/translations/translations.md'
             - 'OneSky': 'guide/translations/onesky.md'

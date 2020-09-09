@@ -3,7 +3,7 @@
 eZ Commerce uses custom Fields to store eCommerce related data, for example for the catalog or basket.
 
 The shop provides a flexible way to store data using concrete instances of classes implementing `FieldInterface` and inheriting from the `AbstractField` class.
-Fields are used for fixed attributes of a product/catalog and for flexible attributes (property `dataMap` in [`CatalogElement`](../../guide/catalog/catalog_api/product_category_catalogelement.md)).
+Fields are used for fixed attributes of a product/catalog and for flexible attributes (property `dataMap` in [`CatalogElement`](../../guide/catalog/catalog_api/catalog_element.md)).
 
 Each instance of a concrete Field provides the following methods:
 

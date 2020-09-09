@@ -1,8 +1,8 @@
-# Access data provider via PHP
+# Accessing data provider via PHP
 
 ## Catalog Data Provider Service
 
-Example usage in Controller or services
+Example usage in Controller or services:
 
 ``` php
 /** @var $catalogService \Silversolutions\Bundle\EshopBundle\Services\Catalog\CatalogDataProviderService */

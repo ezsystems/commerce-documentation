@@ -1,6 +1,6 @@
 # ProductType
 
-`ProductType` extends [CatalogElement](product_category_catalogelement.md) and implements `ProductNodeContainerInterface`.
+`ProductType` extends [CatalogElement](catalog_element.md) and implements `ProductNodeContainerInterface`.
 
 This class defines the methods needed to instantiate a Product Type.
 
@@ -24,4 +24,24 @@ This class defines the methods needed to instantiate a Product Type.
 |`addChildProducts`|`ProductNode[]`||InvalidArgumentException|Adds the products passed as argument to the list of child products|
 |`hasChildProducts`||int||Returns the number of children|
 |`getChildProductBySku`|string|CatalogElement||Returns the child product that has the SKU passed as an argument|
-|`addChildProduct`|`ProductNode`|||Add a single product to the list of child products|
+|`addChildProduct`|`ProductNode`|||Adds a single product to the list of child products|
+
+## ProductType search
+
+A `ProductType` element can appear in the search result of products.
+
+For this to happen you need to modify the configuration by adding `ses_product_type` to the product list or to product search.
+
+`use_display_in_product_list_flag` enables or disables the use of the `productType` flag when displaying in search and in product list.
+
+Additionally, a Product Type indexes all data from its products.
+You can disable this using the following configuration:
+
+``` yaml
+parameters:
+    siso_search.default.cp_to_product_type: false
+```
+
+Disabling this lowers indexer times but product data is not indexed alongside Product Types.
+
+Search results display Product Types using the `EshopBundle/Resources/views/Catalog/listProductTypeNode.html.twig` template.
