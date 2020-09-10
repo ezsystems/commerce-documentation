@@ -2,21 +2,22 @@
 
 ## Basket type
 
-Comparison is a basket with a special type `comparison`. 
+Comparison is a [basket](../basket/basket.md) with a special type `comparison`. 
 
-When adding items no events are thrown, so adding to comparison is quicker than adding items to a basket.
-However, there is no data validation in the background, so you can mix different products.
-Data validation, such as checking the minimum order amount or checking the mixing of downloads with normal products,
-is done when adding those items into a cart.
+No events are thrown when adding products to a comparison, so adding to comparison is quicker than adding items to a basket.
+However, there is no data validation in the background.
+Data validation, such as for the minimum order amount or for mixing of downloads with normal products,
+is done when adding those items into the shopping basket.
 
 ## Additional attributes
 
 New attributes are added to `comparison` baskets to handle the necessary additional data for the comparison list.
-These attributes are not declared in the class Basket, but must be added dynamically by the `ComparisonServiceInterface` implementation.
+These attributes are not declared in the `Basket` class, but must be added dynamically by the `ComparisonServiceInterface` implementation.
 
-### $comparisonAttributes
+### `comparisonAttributes`
 
-`$comparisonAttributes` is an associative array which defines the comparable attributes for the current object's comparison category. The sub-structure looks as following:
+`comparisonAttributes` is an associative array which defines the comparable attributes for the current object's comparison category.
+`comparisonAttributes` has the following sub-structure:
 
 ``` php
 array(
@@ -33,9 +34,10 @@ array(
 )
 ```
 
-### $comparisonElements
+### `comparisonElements`
 
-`$comparisonElements` is an array which contains the data for the product columns in the comparison list. The sub-structure looks as following:
+`comparisonElements` is an array which contains the data for the product columns in the comparison list.
+`comparisonElements` has the following sub-structure:
 
 ``` php
 array(
@@ -50,28 +52,23 @@ array(
 
 ## Service
 
-The `ComparisonServiceInterface` interface determines methods necessary to implement different comparison services.
+The `ComparisonServiceInterface` interface determines methods necessary for implementing different comparison services.
 
-``` php
-interface ComparisonServiceInterface {
+`getComparisonCategory(CatalogElement $catalogElement)` determines the correct comparison category for the given catalog element.
 
-    // Determines the correct comparison category for the given catalog element.
-    //
-    // returns The category string
-    public function getComparisonCategory(CatalogElement $catalogElement);
+`getComparisonInformation(array $comparisonList)` determines the necessary comparison information for every given comparison category
 
-    // This method determines the necessary comparison information for every given comparison category.
-    //
-    // It accepts an array of Baskets with the type BasketService::TYPE_COMPARISON. Every basket represents one
-    // comparison category. All Baskets in the list are expanded dynamically by additional object attributes:
-    // $comparisonAttributes
-    // $comparisonElements
-    // 
-    // These object attributes contain the following information:
-    // - comparison attributes and their values for products
-    // - additionally which groups or attributes should be collapsed
-    //
-    // return The given array of Baskets with the additional attributes.
-    public function getComparisonInformation(array $comparisonList);
-}
-```
+## Category logic
+
+To change the logic that determines to which categories to assign particular products,
+you need to override the comparison service or implement a new one.
+
+First, the service must implement `ComparisonServiceInterface`.
+The `getComparisonCategory()` method takes a catalog element (including products) as an argument.
+This method must implement the logic to determine the comparison category for the passed product.
+
+The standard logic implementation:
+
+1. Tries to get product type from the `catalogElement`
+1. Tries to get the type from parent element category
+1. If everything else fails, places the product in the default category

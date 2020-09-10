@@ -355,7 +355,6 @@ nav:
             - 'Product comparison ': 'guide/product_comparison/product_comparison.md'
             - 'Product comparison API': 'guide/product_comparison/product_comparison_api.md'
             - 'Product comparison templates': 'guide/product_comparison/product_comparison_templates.md'
-            - 'Product comparison FAQ': 'guide/product_comparison/product_comparison_faq.md'
         - Quick order:
             - 'Quick order': 'guide/quickorder/quickorder.md'
             - 'Quick order API': 'guide/quickorder/quickorder_api.md'
