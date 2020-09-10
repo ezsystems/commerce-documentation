@@ -408,12 +408,7 @@ nav:
             - 'Vouchers from ERP': 'guide/vouchers_from_erp/vouchers_from_erp.md'
             - 'Voucher templates': 'guide/vouchers_from_erp/vouchers_templates.md'
             - 'Voucher FAQ': 'guide/vouchers_from_erp/vouchers_faq.md'
-        - Wishlist and stored baskets:
-            - 'Wishlist and stored baskets': 'guide/wishlist_and_stored_baskets/wishlist_and_stored_baskets.md'
-            - 'Wishlist': 'guide/wishlist_and_stored_baskets/wishlist_and_stored_basket_wishlist.md'
-            - 'Stored Baskets': 'guide/wishlist_and_stored_baskets/wishlist_and_stored_basket_stored_baskets.md'
-            - 'Wishlist and stored basket API': 'guide/wishlist_and_stored_baskets/wishlist_and_stored_basket_api.md'
-            - 'Wishlist and stored basket templates': 'guide/wishlist_and_stored_baskets/wishlist_and_stored_basket_templates.md'
+        - 'Wishlist and stored baskets': 'guide/wishlist_and_stored_baskets.md'
         - User management:
             - 'Access control': 'guide/user_management/access_control.md'
             - Token:
