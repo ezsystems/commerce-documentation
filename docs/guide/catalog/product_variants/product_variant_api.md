@@ -15,7 +15,10 @@ It also returns all available variant codes for the `VariantProductNode`.
 
 ### VariantProductNode
 
-`VariantProductNode` is the virtual product which contains the data for all variants that can be ordered. Since this product has no specific price or stock which is assigned to its SKU, it cannot be added to the basket directly. It inherits from [`ProductNode`](../catalog_api/productnode.md) and contains additional properties. These properties are automatically validated within the constructor using the `validateProperties()` method.
+`VariantProductNode` is the virtual product which contains the data for all variants that can be ordered. 
+Since this product has no specific price or stock which is assigned to its SKU, it cannot be added to the basket directly. 
+It inherits from [`ProductNode`](../catalog_api/productnode.md) and contains additional properties. 
+These properties are automatically validated within the constructor by using the `validateProperties()` method.
 
 | Identifier             | Type          | Description                          |
 | ---------------------- | ------------ | ------------------------------------ |
@@ -24,11 +27,14 @@ It also returns all available variant codes for the `VariantProductNode`.
 
 ### OrderableVariantNode
 
-`OrderableVariantNode` represents one specific, orderable variation. It is defined by its unique `VariantCode` or by the deterministic set of `VariantCharacteristics`. An `OrderableVariantNode` is intended to be added to a basket.
+`OrderableVariantNode` represents one specific, orderable variation. 
+It is defined by its unique `VariantCode` or by the deterministic set of `VariantCharacteristics`. 
+An `OrderableVariantNode` is intended to be added to a basket.
 
 ### Variant characteristics
 
-One `VariantCharacteristic` is a specific attribute of a `VariantProduct` which is distinctive and describes one aspect of the variant. A `VariantProduct` must have at least one `VariantCharacteristic`.
+One `VariantCharacteristic` is a specific attribute of a `VariantProduct` that is distinctive and describes one aspect of the variant. 
+A `VariantProduct` must have at least one `VariantCharacteristic`.
 
 A characteristic has a class-unique identifier and a label that is a readable name for a characteristic, for example `color` with label `Color`.
 

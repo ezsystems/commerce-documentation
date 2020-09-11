@@ -48,7 +48,7 @@ silver_eshop.default.ez5_catalog_data_provider.filter:
     If a product has multiple Locations, the shop ensures that the proper Location is returned,
     so the URL of the product is correct.
 
-    By default hidden items (e.g. products) are not fetched.
+    By default, hidden items (e.g. products) are not fetched.
 
 |Parameter|Description|
 |--- |--- |

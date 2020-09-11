@@ -3,14 +3,14 @@
 Product images and assets can be taken from the content model (if this data provider is used).
 External images can also be stored in the file system. 
 
-If images come from the file system, they have to be stored in the following folders (the folders can be configured):
+If images come from the file system, they have to be stored in the following folders:
 
 - Product images in `web/var/assets/product_images`
 - Product group images `web/var/assets/product_group_images`
 
 To avoid too many files in one directory, subfolders are used.
 
-For example, images for a product with SKU `D4241`, are stored in the file system in:
+For example, images for a product with SKU `D4241` are stored in the following file system folders:
 
 ``` 
 web/var/assets/product_images/D/4/D4142_picture.jpg
@@ -35,7 +35,8 @@ web/var/ecommerce/storage//images/thumb_smaller/D/4/1/-D4142_picture_2_thumb_sma
 web/var/ecommerce/storage//images/thumb_smaller/D/4/1/-D4142_picture_thumb_smaller.jpg
 ```
 
-Image paths are cached in order to avoid accessing the file system in production mode. The cache uses stash. 
+Image paths are cached in order to avoid accessing the file system in production mode. 
+The cache uses stash. 
 
 ## Remove stash cache for images and one SKU
 

@@ -1,6 +1,7 @@
 # ProductNode
 
-`ProductNode` is the abstract base class for product elements. It inherits from product category `CatalogElement`.
+`ProductNode` is an abstract base class for product elements. 
+It inherits from product category `CatalogElement`.
 `OrderableProductNode` is a concrete implementation of `ProductNode` for a product.
 
 Each `ProductNode` has predefined properties. These methods are validated automatically on constructor by the `validateProperties()` method.
@@ -15,9 +16,9 @@ Each `ProductNode` has predefined properties. These methods are validated automa
 |`isOrderable`||boolean|True, if the product is orderable|
 |`price`|`ses_unit_price`|FieldInterface|Price of the product|
 |`customerPrice`||PriceField (FieldInterface)|Customer price of the product which might be generated from a price provider|
-|`scaledPrices`||ArrayField|An array with scaled prices and parameters to determine which scale price should be applied|
+|`scaledPrices`||ArrayField|Array with scaled prices and parameters to determine which scale price should be applied|
 |`stock`|`ses_stock_numeric`|FieldInterface|Available stock of the product|
-|`subtitle`|`ses_subtitle`|TextBlockField (FieldInterface)||
+|`subtitle`|`ses_subtitle`|TextBlockField (FieldInterface)|Product subtitle|
 |`shortDescription`|`ses_short_description`|TextBlockField (FieldInterface)|Short product description|
 |`longDescription`|`ses_long_description`|TextBlockField (FieldInterface)|Long product description|
 |`specifications`|`ses_specifications`|FieldInterface[]|List of specifications of the product|
@@ -26,13 +27,13 @@ Each `ProductNode` has predefined properties. These methods are validated automa
 |`maxOrderQuantity`|`ses_max_order_quantity`|float|Maximum quantity that can be ordered|
 |`allowedQuantity`||string|Regex that indicates the allowed quantity|
 |`packagingUnit`|`ses_packaging_unit`|float|Packaging unit of the product|
-|`unit`|`ses_unit`|string|A unit of the product|
+|`unit`|`ses_unit`|string|Unit of the product|
 |`vatCode`|`ses_vat_code`|string|VAT code of the product. Needed to determine VAT rate|
 
 ## `allowedQuantity` regex
 
 This regex can be evaluated using the `preg_match()` function by some processes to check if the given quantity corresponds to the allowed quantity.
-Values of `ProductNodeConstants::ALLOWED_QUANTITY_*` can be used. Possible values:
+The following values can be used:
 
 - `ALLOWED_QUANTITY_INTEGER`
 - `ALLOWED_QUANTITY_UP_TO_ONE_DECIMAL_PLACE`

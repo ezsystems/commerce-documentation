@@ -28,11 +28,11 @@ This class defines the methods needed to instantiate a Product Type.
 
 ## ProductType search
 
-A `ProductType` element can appear in the search result of products.
+A `ProductType` element can appear in the result of a search for products.
 
-For this to happen you need to modify the configuration by adding `ses_product_type` to the product list or to product search.
+For this to happen you need to modify the configuration by adding `ses_product_type` to the product list or product search.
 
-`use_display_in_product_list_flag` enables or disables the use of the `productType` flag when displaying in search and in product list.
+`use_display_in_product_list_flag` enables or disables the use of the `productType` flag when displayed in product search and product list.
 
 Additionally, a Product Type indexes all data from its products.
 You can disable this using the following configuration:
@@ -42,6 +42,6 @@ parameters:
     siso_search.default.cp_to_product_type: false
 ```
 
-Disabling this lowers indexer times but product data is not indexed alongside Product Types.
+Disabling this feature results in quicker indexing but product data is not indexed alongside Product Types.
 
 Search results display Product Types using the `EshopBundle/Resources/views/Catalog/listProductTypeNode.html.twig` template.

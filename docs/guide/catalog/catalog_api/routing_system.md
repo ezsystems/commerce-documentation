@@ -66,7 +66,7 @@ The router is defined with the priority of 280, so you can still add your own ch
 
 ## Usage of the navigation service
 
-In order to determine if a URL belongs to the catalog or [silver module](../../../cookbook/silver.module.md),
+In order to determine whether a URL belongs to the catalog or [silver module](../../../cookbook/silver.module.md),
 the navigation service or the [catalog data provider](../../data_providers/access_dataprovider_via_php.md) is used.
 
 Additionally, the router uses the navigation service in order to set the [URL Mapping](../../data_providers/access_dataprovider_via_php.md) and set the proper URL.

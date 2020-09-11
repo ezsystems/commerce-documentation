@@ -10,11 +10,11 @@ The following templates are used to render the catalog and its parts:
 - `Catalog/Subrequests/listChildren.html.twig` - product categories
 
 The templates have access to the catalog node provided by the controller.
-To show all available attributes use `getAttributeNames()`: `{{ catalogElement.attributeNames|json_encode }}`.
+To show all the available attributes, use `getAttributeNames()`: `{{ catalogElement.attributeNames|json_encode }}`.
 
 ### Product categories
 
-You can display a product category page using different layouts:
+You can use different layouts to display a product category page:
 
 ``` yaml
 siso_core.default.category_view: product_list
@@ -24,7 +24,7 @@ Available options:
 
 - `product_list`: display product list directly
 - `both`: display subcategories and product list, including an option to display facets in the left sidebar instead of the navigation
-- `categories`: display only subcategories and only on the last category (if there are no subcategories) display the product list
+- `categories`: display only subcategories. For the last category only, if there are no subcategories, display the product list
 
 ## Configuration for templates
 

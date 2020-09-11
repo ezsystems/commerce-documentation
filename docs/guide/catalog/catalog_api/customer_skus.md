@@ -1,6 +1,6 @@
 # Customer SKUs
 
-In some projects (B2B) customers know products by their own article number (SKU), that comes from the ERP.
+In some projects, (B2B) customers know products by their own article number (SKU) that comes from the ERP.
 When the customer e.g. searches for a product in the shop, they search for an article number that is only known to them.
 
 The shop often knows these customer article numbers, because it imports them from ERP.
@@ -8,7 +8,7 @@ They are taken into account in search and quick order management.
 
 ## CustomerSkuService
 
-Customer SKUs are handled using `Silversolutions\Bundle\EshopBundle\Service\CustomerSkuService` (ID: `siso_core.customer_sku_service`).
+Customer SKUs are handled by means of the `Silversolutions\Bundle\EshopBundle\Service\CustomerSkuService` (ID: `siso_core.customer_sku_service`).
 
 `CustomerSkuService` is used to fetch the `sku` or `customer_sku`. For that purpose the following methods are available:
 

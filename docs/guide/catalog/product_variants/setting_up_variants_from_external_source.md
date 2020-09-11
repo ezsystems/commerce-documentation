@@ -1,7 +1,8 @@
 # Setting up variants from external source
 
 The default data provider and `CatalogFactory` ([content model data provider](../../data_providers/content_model_dataprovider.md))
-already support variants up to two levels which can be set up [using a special variant Field Type](product_variants.md) in the Back Office. 
+already support variants up to two levels.
+You can set the variants up by [using a variant Field Type](product_variants.md) in the Back Office. 
 
 You can also set up variants if you are not using the default Content Types
 and don't want to set up variants manually in the Back Office.
@@ -19,7 +20,7 @@ To do this, you need to map your variant structure to the [`VariantProductNode`]
 
 ### 1. Create data provider and catalog factory
 
-The first thing you need to do to create variants is to create a custom data provider and factory for catalog elements. 
+To create variants. the first thing you must do is create a custom data provider and factory for catalog elements. 
 
 !!! tip
 
@@ -53,9 +54,9 @@ This is the place where the factory decides which function it internally uses to
     silver_eshop.default.catalog_factory.ses_product: createOrderableProductNode
     ```
 
-`createCatalogElement()` must additionally decide when to call the method `createOrderableProductNode()` and when `createVariantProductNode()`
-because in the example below (standard implementation), the variants are stored as Content items of the same Content Type as regular products (`ses_product`).
-In the default implementation the factory calls the `createVariantProductNode()` method whenever [eZ Matrix with variants](product_variants.md) is filled.
+`createCatalogElement()` must additionally decide whether to call the `createOrderableProductNode()` or the `createVariantProductNode()` method
+because in the example below (standard implementation), the variants are stored, like regular products, in Product Content items (`ses_product`).
+In the default implementation, the factory calls the `createVariantProductNode()` method whenever [eZ Matrix with variants](product_variants.md) is filled.
 
 You can adapt this behavior. For example, you can receive a special flag from ERP that informs you if the product is a variant.
 

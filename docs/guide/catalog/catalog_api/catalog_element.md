@@ -6,23 +6,23 @@ All parts of the catalog, such as products, product categories or product types 
 
 ## Properties
 
-Each `CatalogElement` has predefined properties. These methods are validated automatically by the `validateProperties()` method.
+Each `CatalogElement` has predefined properties. These properties are validated automatically by the `validateProperties()` method.
 
 |Identifier|Type|Description|
 |--- |--- |--- |
-|`name`|string|The name of the element|
+|`name`|string|A name of the element|
 |`text`|string|A short introduction text for the element|
 |`image`|ImageField (FieldInterface)|An image for the element|
-|`path`|array|The path to the element (array of identifiers)|
-|`url`|string|The internal URL of the element. This URL should not be used for generating links. Use `seoUrl` instead|
-|`seoUrl`|string|The human-readable URL of the element|
-|`permanentUrl`|string|The internal permanent URL|
-|`parentElementIdentifier`|string|The unique identifier of the parent element|
-|`identifier`|string|The unique identifier|
+|`path`|array|A path to the element (array of identifiers)|
+|`url`|string|An internal URL of the element. Do not use this URL for generating links. Use `seoUrl` instead|
+|`seoUrl`|string|A human-readable URL of the element|
+|`permanentUrl`|string|An internal permanent URL|
+|`parentElementIdentifier`|string|A unique identifier of the parent element|
+|`identifier`|string|A unique identifier|
 |`dataMap`|FieldInterface[]|A list of Fields|
-|`cacheIdentifier`|int\|string|Cache identifier of the element to use as key in cache storage|
+|`cacheIdentifier`|int\|string|A cache identifier of the element. Used as key in cache storage|
 
-There are four public methods to set the properties: 
+There are four public methods that you can use to set the properties: 
 
 - `setImage()`
 - `setName()`
@@ -35,7 +35,7 @@ The following validators can be used when attributes are set in `CatalogElement`
 
 |Name|Parameters|Description|
 |--- |--- |--- |
-|`validateStringAttribute`|`$value`,</br>`$attribute`|Checks if the value is a valid string|
+|`validateStringAttribute`|`$value`,</br>`$attribute`|Checks whether the value is a valid string|
 |`validateBooleanAttribute`|`$value`,</br>`$attribute`|Checks if the value is a valid boolean|
 |`validateFloatAttribute`|`$value`,</br>`$attribute`|Checks if the value is a valid float|
 |`validateIntegerAttribute`|`$value`,</br>`$attribute`|Checks if the value is a valid integer|

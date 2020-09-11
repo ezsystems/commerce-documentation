@@ -7,11 +7,11 @@ Built-in variants enable you to offer Size, Color, Package, or Size and Color va
 
 ![Product variants](../../img/catalog_product_variants.png)
 
-To have variants, the product Content Type must have a Field with the `ses_variants` identifier belonging to the `uivarvarianttype` Field Type. 
+To have variants, the product Content Type must have a Field with the `ses_variants` identifier that belongs to the `uivarvarianttype` Field Type. 
 
 ## Variant display
 
-In the configuration you can select one of two interfaces for displaying variants:
+In the configuration, you can select one of two interfaces for displaying variants:
 **B2C** (default) and **B2B**.
 Choose the interface in **eCommerce**->**Configuration Settings**->**Advanced catalog features**->**User interface for ordering variants**.
 
@@ -156,10 +156,14 @@ If you want to change the order of characteristics manually (e.g. unit first and
 
 There are two ways in which ERP systems handle variants:
 
-- The ERP system can use an SKU and offer a list of variant codes for each individual product (e.g. a bed in size 160 and in white). In this case the product is identified by the SKU and the `variantCode`: `SKU_AND_VARIANT`
-- Often the ERP system doesn't store variants as "real" variants but uses a unique SKU for each variant. Often these "variants" are grouped by a PIM system or a special field in the ERP system. In this case, the `variantCode` from the catalog is the actual SKU that is sent to the ERP: `SKU_ONLY`
+- The ERP system can use an SKU and offer a list of variant codes for each individual product (e.g. a bed in size 160 and in white). 
+In this case the product is identified by the SKU and the `variantCode`: `SKU_AND_VARIANT`
+- However, the ERP system might not store variants as "real" variants but use a unique SKU for each variant instead. 
+These "variants" can be grouped by a PIM system or a special field in the ERP system. 
+In this case, the `variantCode` from the catalog is the actual SKU that is sent to the ERP: `SKU_ONLY`
 
-eZ Commerce supports both methods. To select a method, use the following configuration:
+eZ Commerce supports both methods. 
+To select a method, use the following configuration:
 
 ``` yaml
 parameters: 
@@ -186,4 +190,5 @@ If `SKU_AND_VARIANT` is used then the UBL request contains the SKU (ID) and the 
 </Item>
 ```
 
-If `SKU_ONLY` is used, the shop sends the variant code in both fields to the ERP. The variant code contains the SKU in this case. 
+If `SKU_ONLY` is used, the shop sends the variant code in both fields to the ERP. 
+The variant code contains the SKU in this case. 

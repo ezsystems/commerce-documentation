@@ -9,7 +9,7 @@ You can use one of two data providers: the content model data provider and the e
 You can switch the data provider either with the command line or manually.
 Only one data provider can be activated per installation.
 
-### Switching using command line
+### Command line switching
 
 The `silversolutions:switchdataprovider` command switches between the content model data provider and eContent.
 It is useful especially for testing purposes.
