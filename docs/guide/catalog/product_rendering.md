@@ -69,14 +69,12 @@ Parameters:
 
 You can generate a PDF from the product detail page using a tool called `wkhtmltopdf`.
  
-!!! note
-
-    For security reasons, the PDF for product detail can only display general information
-    that would be also visible for anonymous users.
-    As a consequence, some details such as customer price cannot be displayed.
+For security reasons, the PDF for product detail can only display general information
+that would be also visible for anonymous users.
+As a consequence, some details such as customer price cannot be displayed.
     
-    This is because `wkhtmltopdf` would need user data to generate user-specific PDFs.
-    The user data would have to be attached to the URL and would be visible to everyone.  
+This is because `wkhtmltopdf` would need user data to generate user-specific PDFs.
+The user data would have to be attached to the URL and would be visible to everyone.  
 
 !!! note
 
