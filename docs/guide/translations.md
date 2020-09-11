@@ -1,32 +1,24 @@
 # Translations
 
-eZ Commerce uses special translation Content items called "text modules" to offer translations of the interface.
+You can use special translation Content items called "text modules" to create translations of the interface.
 The translation service first checks if a Content item with a specific identifier exists and then returns the text attribute of this object.
-If it finds no translations, the standard Symfony translation service is used.
-
-For more details, see [Symfony translations documentation.](http://symfony.com/doc/3.4/book/translation.html)
+If it finds no translations, the [standard Symfony translation service](http://symfony.com/doc/3.4/book/translation.html) is used.
 
 ## Twig filter
 
 The translation service offers the Twig filter `st_translate`.
 
 The filter uses a code which identifies the text to be translated and an optional context.
-The context can be used to differentiate between different meanings, e.g. in the shop context "order" refer to purchasing,
+The context can be used to differentiate between different meanings, e.g. in the shop context `order` refers to purchasing,
 but in content management it can refer to sorting content.
 
 ``` html+twig
-{{ 'sku'|st_translate() }}
+{{ messageOrCode|st_translate }}
+
+{{ messageOrCode|st_translate('context') }}
 ```
 
-### Examples of use
-
-``` html+twig
-{{  messageOrCode|st_translate }}
-
-{{  messageOrCode|st_translate('context') }}
-```
-
-When you use Symfony translations, not text modules, you can use a message with placeholders
+When you use Symfony translations instead of text modules, you can use a message with placeholders
 and define a different translation domain, in this example, `validators.de.xliff`.
 
 ``` html+twig
@@ -43,10 +35,8 @@ You can additionally send the language as a parameter.
 The translation service can use the given SiteAccess to specify the language or locale required for the translation process.
 
 ``` html+twig
-{# Get SiteAccess e.g. from basket #}
 {% set siteaccess = basket.dataMap.siteaccess is defined ? basket.dataMap.siteaccess : null %}
 
-{# Translation in an different SiteAccess than the current one #}
 {{ 'Thank you for using our shop.'|st_translate(null, {}, null, siteaccess) }}
 ```
 
@@ -76,14 +66,14 @@ The Content Type `st_textmodule` has the following Fields:
 | Field      | Description                                                      |
 | ---------- | ---------------------------------------------------------------- |
 | Name       | Internal name                                |
-| Identifier | The source or identifier for translation that have to be defined. |
+| Identifier | The source or identifier for translation that has to be defined. |
 | Context    | Optional context                                                 |
 | Content    | Content for frontend                                             |
 
 ### Field identifier
 
 By default the translated value is taken from the `content` Field.
-You can extend the text module Content Type with a new Field of the XMLText Field Type.
+You can extend the text module Content Type with a new RichText Field.
 Then, the translation service can fetch from the appropriate Field.
 
 To take advantage of this, use the `fieldIdentifier` parameter:
@@ -98,9 +88,7 @@ To take advantage of this, use the `fieldIdentifier` parameter:
 
 ## Configuration
 
-The text modules configuration settings:
-
-|Configuration||Description|Default|
+|Configuration|Description|Default|
 |--- |--- |--- |
 |`silver_tools.default.translationFolderId`|Location ID of the text module folder|`89`|
 |`silver_tools.default.textmoduleTranslationEnabled`|Enable/disable text modules|`true`|
@@ -111,25 +99,26 @@ The text modules configuration settings:
 
 ## Logging
 
-Missing translations are logged. You can enable/disable logging of missing translations in the configuration.
+Missing translations are logged.
+You can enable/disable logging of missing translations in the configuration with the `silver_tools.default.loggTranslations` parameter.
 
 All missing translations are logged in `var/logs/siso.translations.log`.
 
 ``` xml
 <service id="silver_trans.logging_handler.stream" class="%monolog.handler.stream.class%">
-    <argument type="string">%kernel.logs_dir%/siso.translations.log</argument> <!-- This is the file definition -->
+    <argument type="string">%kernel.logs_dir%/siso.translations.log</argument>
 </service>
 ```
 
 ## Cache
 
 Translations are cached using Stash. If there is no translation for the given message (or code),
-a special `null` translation message is cached. Thanks to this there is no need to repeat fetches from eZ Platform.
+a special `null` translation message is cached. Thanks to this there is no need to repeat fetches.
 
 Translations from Symfony are not cached.
 
-#### Cache purging
+### Cache purging
 
 When `st_translate()` is used in Twig templates, the cache is tagged with `content-<content-id>`.
-If a text module is updated, eZ Platform purges all HTTP cache blocks which are tagged with the given `content_id`.
-In addition a SignalSlot handler purges the Stash cache for this translation as well.
+If a text module is updated, the system purges all HTTP cache blocks which are tagged with the given `content_id`
+as well as the Stash cache for this translation.

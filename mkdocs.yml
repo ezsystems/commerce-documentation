@@ -401,9 +401,7 @@ nav:
                 - 'Design engine': 'guide/templating/design_engine/design_engine.md'
                 - 'Setting up new project design': 'guide/templating/design_engine/set_up_new_project_design.md'
             - 'Product images': 'guide/templating/product_images.md'
-        - Translations:
-            - 'Translations': 'guide/translations/translations.md'
-            - 'OneSky': 'guide/translations/onesky.md'
+        - 'Translations': 'guide/translations.md'
         - Vouchers from ERP:
             - 'Vouchers from ERP': 'guide/vouchers_from_erp/vouchers_from_erp.md'
             - 'Voucher templates': 'guide/vouchers_from_erp/vouchers_templates.md'
