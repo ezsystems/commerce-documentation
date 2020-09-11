@@ -63,8 +63,6 @@ If you need to get the `CatalogElement`, you can fetch it by `{{ line.sku }}`. T
 
 This ensures that the basket get a fast access to the product data and that during a checkout/payment process the product data will be available even when the product is removed from the catalog meanwhile. 
 
-See [Get a ProductNode by SKU](../../catalog/catalog_ui/catalog_ui.md).
-
 If a basket line does not provide product data (e.g. the caching life time of a product has been exceeded) the product can be fetched using a twig function.  
 
 ``` html+twig

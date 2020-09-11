@@ -21,9 +21,9 @@ and to enable using Platform API in commerce routes.
 
 ## Default router
 
-The default router (`Silversolutions\Bundle\EshopBundle\Routing\StandardRouter`) checks each required URL.
+The default router (`Silversolutions\Bundle\EshopBundle\Routing\StandardRouter`) checks each requested URL.
 
-If the URL belongs to the [catalog element](../product_category_catalogelement.md) or [silver module](../../../../cookbook/silver.module.md),
+If the URL belongs to a [catalog element](catalog_element.md) or a [silver module](../../../cookbook/silver.module.md),
 the router becomes active and redirects the user to the appropriate controller.
 
 This router is a derived class from a chained router implementation. It attempts to match the URL to its own specifications.
@@ -66,7 +66,7 @@ The router is defined with the priority of 280, so you can still add your own ch
 
 ## Usage of the navigation service
 
-In order to determine if a URL belongs to the catalog or [silver module](../../../../cookbook/silver.module.md),
-the navigation service or the [catalog data provider](../access_dataprovider_via_php) is used.
+In order to determine whether a URL belongs to the catalog or [silver module](../../../cookbook/silver.module.md),
+the navigation service or the [catalog data provider](../../data_providers/access_dataprovider_via_php.md) is used.
 
-Additionally, the router uses the navigation service in order to set the [URL Mapping](../access_dataprovider_via_php) and set the proper URL.
+Additionally, the router uses the navigation service in order to set the [URL Mapping](../../data_providers/access_dataprovider_via_php.md) and set the proper URL.

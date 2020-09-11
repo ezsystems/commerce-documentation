@@ -33,7 +33,7 @@ eContent offers a staging feature and enhanced catalog segmentation and allows i
 
 ### Changing data providers
 
-See [Switching the data provider](../econtent/econtent_features/switching_the_data_provider.md)
+See [Switching the data provider](../data_providers/data_providers#switching-the-data-provider.md)
 to learn how to change the data provider.
 
 ## Product categories
