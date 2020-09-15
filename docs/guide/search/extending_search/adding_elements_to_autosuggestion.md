@@ -50,7 +50,7 @@ The example assumes a new product is a product that was published within the las
 
 You can use the Solr field `"published_dt": "2016-01-19T09:59:24Z"` to calculate whether the product is new or not.
 
-[Create an indexer plugin](../../search_cookbook/indexer_plugin_for_custom_field_types.md) to add a new boolean field which is set to true if the current date - product published date <= 30 days.
+[Create an indexer plugin](indexer_plugin_for_custom_field_types.md) to add a new boolean field which is set to true if the current date - product published date <= 30 days.
 
 If the new field is `ext_product_new_s`, add it to the result fields of Solr in product configuration:
 

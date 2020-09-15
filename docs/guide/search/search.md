@@ -1,18 +1,10 @@
 # Search
 
-eZ Commerce comes with a powerful search engine capable of providing one common search for product data and content. 
-
-Product data and content is indexed automatically using the built-in search engine based on Solr. 
+The built-in search engine based on Solr automatically indexes both content and products.
 
 The search displays the results in different groups. A group can consist of products, videos, downloads, etc.
 
-![](../img/search_1.png "Products in search results")
-
-![](../img/search_2.png "Content in search results")
-
-Facets can be grouped and the user can remove all facets of a group with one click: 
-
-![](../img/search_3.png)
+![](../img/search_categories.png "Categories in search results")
 
 You can configure groups displayed in tabs such as products and content.
 The products can be shown in a list or gallery view.
@@ -22,24 +14,25 @@ URLs are unique, so you can share a link to a search result.
 
 The search uses Ajax to refresh the list.
 
-Facets are build dynamically as defined in configuration.
-The data which is used for facets can be indexed in a project-specific indexer plugin.
-You can configure whether facets are displayed on top of the list or in the left column on the search result page.
-
 Boosting can be defined in the configuration.
 
-The search comes with an extension plugin system which enables indexing custom fields by Content Type. 
+The search comes with an extension plugin system which enables indexing custom fields by Content Type.
 
-### Autosuggestion
+## Search statistics
 
-eZ Commerce provides a user friendly [autosuggestion](search_features/search_autosuggest/search_autosuggest.md) feature:
+eCommerce cockpit displays the log of searches that are performed by the users.
 
-![](../img/search_4.png)
+This includes search queries from main search box
+It also includes search queries from secondary search box if no facets are selected
+and the search term is different from the previous search term.
 
-### Reindexing
+There are three tables displayed:
 
-To reindex search content, use the following command:
+- **Top search terms** displays the most searched terms sorted by times searched.
+- **Last search terms** displays the last searches order by date and time.
+- **Most searched terms with less hits** gets the most searched terms with less hits.
 
-``` bash
-php -d memory_limit=-1 bin/console ezplatform:solr_create_index
-```
+![Search statistics table](../img/search_statistics.png)
+
+Every search query is logged into the `ses_log_search` database table.
+This logic is generated in the `QuerySearchLogService` service.

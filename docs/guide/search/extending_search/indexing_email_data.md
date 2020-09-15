@@ -1,12 +1,11 @@
 # Indexing email data
 
-Indexing email data requires creating the class Search Field for the user Content item.
+Indexing email data requires creating the `SearchField` class for the User Content item.
 The User Field Type doesn't have an implementation of `SearchField`, so this `SearchField` class must implement the `Indexable` interface.
 
 Service definition:
 
 ``` xml
-<!-- service to index email data of Ez User -->
 <service id="ezpublish.fieldType.indexable.user" class="%ezpublish.fieldType.indexable.user.class%">
     <tag name="ezpublish.fieldType.indexable" alias="ezuser" />
 </service>

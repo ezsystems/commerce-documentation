@@ -1,4 +1,4 @@
-# Use Solr spellcheck
+# Solr spellcheck
 
 !!! caution
 
@@ -10,7 +10,7 @@ Make sure your Solr core is configured correctly. Restart Solr if you did any ch
 
 Look for the `solrconfig.xml` file inside your Solr core directory:
 
-`/solr-4.10.4/example/solr/econtent1/conf/solrconfig.xml`
+`/solr/server/ez/template/solrconfig.xml`
 
 Add the following lines to the `requestHandler` named `/select`.
 
@@ -28,11 +28,11 @@ Make sure you have also the following element in the XML file:
 Additional definitions for spellcheck can be configured here,
 but spellcheck should also work with the default values.
 
-Go to your Solr installation directory and execute the following commands:
+Go to your root directory and execute the following commands:
 
 ``` bash
-solr-4.10.4/bin/solr stop -all
-solr-4.10.4/bin/solr start
+solr/bin/solr stop -all
+solr/bin/solr start
 ```
 
 ### Step 2: Enable spellcheck in configuration
@@ -69,7 +69,6 @@ return array(
 The following Twig template displays these results:
 
 ``` html+twig
-{# Start Spellcheck results #}
 {% if spellcheckCollationResults is defined and spellcheckCollationResults > 0 %}
   <br/>{{ 'msg.did_you_mean'|st_translate }}
   <a href="{{ path('siso_global_search') }}?query={{ spellcheckCollation }}">{{ spellcheckCollation }}
@@ -78,7 +77,7 @@ The following Twig template displays these results:
     {0} No result|[2,Inf[ %count% results|{1} One result
     {% endtranschoice %}
     )
-  </a>?
+  </a>
 {% endif %}
 {% if spellcheckSuggestions is defined and spellcheckSuggestions|length > 0 %}
   <ul>{{ 'msg.suggested_words'|st_translate}}:
@@ -87,5 +86,4 @@ The following Twig template displays these results:
     {% endfor %}
   </ul>
 {% endif %}
-{# End Spellcheck results #}
 ```
