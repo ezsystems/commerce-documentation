@@ -2,7 +2,7 @@
 
 You can use special translation Content items called "text modules" to create translations of the interface.
 The translation service first checks if a Content item with a specific identifier exists and then returns the text attribute of this object.
-If it finds no translations, the [standard Symfony translation service](http://symfony.com/doc/3.4/book/translation.html) is used.
+If it does not find any translations, the [standard Symfony translation service](http://symfony.com/doc/3.4/book/translation.html) is used.
 
 ## Twig filter
 
@@ -18,7 +18,7 @@ but in content management it can refer to sorting content.
 {{ messageOrCode|st_translate('context') }}
 ```
 
-When you use Symfony translations instead of text modules, you can use a message with placeholders
+When you use Symfony translation service instead of text modules, you can use a message with placeholders
 and define a different translation domain, in this example, `validators.de.xliff`.
 
 ``` html+twig
@@ -66,7 +66,7 @@ The Content Type `st_textmodule` has the following Fields:
 | Field      | Description                                                      |
 | ---------- | ---------------------------------------------------------------- |
 | Name       | Internal name                                |
-| Identifier | The source or identifier for translation that has to be defined. |
+| Identifier | The source or identifier for the translation that has to be defined. |
 | Context    | Optional context                                                 |
 | Content    | Content for frontend                                             |
 

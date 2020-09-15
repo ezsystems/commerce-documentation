@@ -9,7 +9,7 @@ The comparison function is based on the [basket](../basket/basket.md) system.
 !!! note
 
     There can be many comparison lists for all users including unregistered (anonymous) browser sessions.
-    It is recommended to use a service to frequently clean old anonymous comparison lists for sites with heavy traffic.
+    It is recommended that you use a service to frequently clean old anonymous comparison lists for sites with heavy traffic.
 
 ### Adding a product to a comparison list
 
@@ -18,7 +18,7 @@ If a product is a variant, the compare button is only shown when all characteris
 
 ![](../img/product_comparison_1.png "Add to comparison")
 
-No prices and no product quantity are stored in the comparison list.
+Neither prices nor product quantity details are stored in the comparison list.
 
 ### Comparison list
 
@@ -40,8 +40,8 @@ If all products in a comparison list have the same attribute value, you can conf
 
 ###### Show/Hide attributes for the same value
 
-There is an icon in top left corner to show/hide attributes.
-If `collapse_attributes` is set to true, hiding/showing the same attributes is enabled.
+There is an icon in the top left corner to show/hide the attributes.
+If `collapse_attributes` is set to true, hiding/showing attributes with the same value is enabled.
 
 ``` yaml
 siso_comparison.default.collapse_attributes: true

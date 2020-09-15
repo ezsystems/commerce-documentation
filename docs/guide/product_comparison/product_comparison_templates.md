@@ -6,7 +6,7 @@
 |--- |--- |
 |`Comparison/comparison_list.html.twig`|Entry page for the comparison list|
 |`Basket/messages.html.twig`|Template with success/error/notice messages for baskets|
-|`parts/user_menu.html.twig`|HTML content for right user menu navigation with links to comparison|
+|`parts/user_menu.html.twig`|HTML content for the right-hand user menu navigation with links to a comparison|
 
 ## Custom Twig functions
 

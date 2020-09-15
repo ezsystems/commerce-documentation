@@ -64,7 +64,7 @@ To change the logic that determines to which categories to assign particular pro
 you need to override the comparison service or implement a new one.
 
 First, the service must implement `ComparisonServiceInterface`.
-The `getComparisonCategory()` method takes a catalog element (including products) as an argument.
+The `getComparisonCategory()` method takes a catalog element (products included) as an argument.
 This method must implement the logic to determine the comparison category for the passed product.
 
 The standard logic implementation:
