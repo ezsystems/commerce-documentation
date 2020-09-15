@@ -35,6 +35,9 @@ By default this is set to `false`.
 ## Navigation labels
 
 To use a different field as the navigation node label, change the `label_fields` parameter.
+The parameter takes Field Type identifier for `siso_core.default.navigation.content`
+and Solr field name for `siso_core.default.navigation.catalog`.
+
 The field has to exist in Solr indexed data.
 
 ``` yaml
