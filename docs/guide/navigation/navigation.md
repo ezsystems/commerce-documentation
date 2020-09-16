@@ -1,6 +1,6 @@
 # Navigation
 
-Navigation is generated automatically and can include one or more product catalogs and any other Content items
+Navigation is generated automatically and can include one or more product catalogs and other Content items
 in the root Location defined in [the configuration](navigation_configuration.md).
 
 You can control which items are included in the navigation by setting the displayed Content Types,
@@ -29,19 +29,20 @@ Navigation uses the built-in search to fetch the content, and a custom search se
 
 ### Modifying the search query
 
-You can extend the search query before navigation data is fetched
-using two events that are thrown before the search query is submitted:
+You can extend the search query before navigation data is fetched.
+You do this by using two events that are thrown before the search query is submitted:
 
 - `PostBuildEzContentQueryEven` -  thrown just before content model for the navigation is fetched.
 - `PostBuildSolrQueryEvent` - thrown just before catalog content for the navigation is fetched.
 
 ### Injecting catalog data
 
-The product catalog is injected into the prepared navigation. You can have multiple product catalogs, on any level. 
+The product catalog is injected into the prepared navigation. 
+You can have multiple product catalogs on any level. 
 
 If you are using the content model data provider, place categories and products directly under the product catalog
-and then in the catalog's Root node Field point to the catalog's Location ID.
+and then, in the catalog's Root node Field, point to the catalog's Location ID.
 
 ![](../img/navigation_6.png)
 
-If you are using the eContent data provider, in the catalog's Root node Field point to the installation's root element.
+If you are using the eContent data provider, in the catalog's Root node Field, point to the installation's root element.

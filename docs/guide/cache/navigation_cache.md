@@ -3,11 +3,11 @@
 Navigation uses HTTP cache to store navigation, and stash cache to store generated URLs.
 
 After an element is modified in the Back Office, it is added to the queue to be deleted from HTTP cache and stash cache.
-(see [Content cache refresh](../cache/content_cache_refresh/content_cache_refresh.md) for more information).
+See [Content cache refresh](../cache/content_cache_refresh/content_cache_refresh.md) for more information.
 
 The top navigation and the left menu are cached using HTTP cache, with one cache per SiteAccess.
 
-By default navigation is cached by `user-hash` for 10 hours.
+By default, navigation is cached by `user-hash` for 10 hours.
 
 ``` yaml
 silver_eshop.default.http_cache:
@@ -31,7 +31,7 @@ siso_core.default.router_cache_ttl: 86400
 
 ## Caching in debug mode
 
-On some environments (e.g. dev) the HTTP caching is not active, so navigation is stored in the stash cache to improve performance.
+In some environments (e.g. dev) the HTTP caching is not active, so navigation is stored in the stash cache to improve performance.
 
 To check if the debug mode is active, use the following parameter:
 

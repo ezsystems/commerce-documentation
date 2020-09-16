@@ -14,7 +14,7 @@ The `navigation_ez_depth` parameter is responsible for the main navigation depth
 Content from the Back Office is fetched only up to this depth.
 This does not include the product catalog, which has its own depth specified.
 
-Use `navigation_sort_order` to set the order or sorting by priority.
+Use `navigation_sort_order` to set the order of sorting by priority.
 
 ## Fetching content
 
@@ -45,7 +45,8 @@ siso_core.default.navigation.catalog:
     label_fields: ['name_s']
 ```
 
-You can define the name used for navigation in configuration. The `label_fields` parameter contains a list of attribute names (Solr names) which are used as the name in the menu. The first available attribute is used. 
+You can define the name used for navigation in configuration. The `label_fields` parameter contains a list of attribute names (Solr names) that are used as the name in the menu. 
+The first available attribute is used. 
 
 !!! caution
 
