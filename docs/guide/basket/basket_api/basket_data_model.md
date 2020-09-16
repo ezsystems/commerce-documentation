@@ -20,7 +20,7 @@ The following attributes are provided by the basket header.
 |erpFailCounter|Used in the `processFailedOrder()` method of the `BasketService` in order to count the number of attempts (of submitting the order to the ERP)|int||
 |sessionId|`sessionId` of the anonymous user|string||
 |userId|`userId` if user is logged in|int||
-|basketName|The basket name given by a user to function `storedBasket`. In this case the attribute `type` is `storedBasket` (see [Wishlist and stored baskets](../../wishlist_and_stored_baskets/wishlist_and_stored_baskets.md))|string||
+|basketName|The basket name given by a user to function `storedBasket`. In this case the attribute `type` is `storedBasket` (see [Wishlist and stored baskets](../wishlist_and_stored_baskets.md))|string||
 |invoiceParty|Invoice address. Note: in order to process, the address may have to be updated if the customer changes the invoice address (see Customers)|Party||
 |deliveryParty|Delivery address chosen for the order (see Customers)|Party||
 |buyerParty|Customer address.  Note: in order to process, the address may have to be updated if the customer changes the invoice address (see Customers)|Party||

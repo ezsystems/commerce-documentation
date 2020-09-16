@@ -354,7 +354,6 @@ nav:
             - 'Product comparison ': 'guide/product_comparison/product_comparison.md'
             - 'Product comparison API': 'guide/product_comparison/product_comparison_api.md'
             - 'Product comparison templates': 'guide/product_comparison/product_comparison_templates.md'
-            - 'Product comparison FAQ': 'guide/product_comparison/product_comparison_faq.md'
         - Quick order:
             - 'Quick order': 'guide/quickorder/quickorder.md'
             - 'Quick order API': 'guide/quickorder/quickorder_api.md'
@@ -401,19 +400,12 @@ nav:
                 - 'Design engine': 'guide/templating/design_engine/design_engine.md'
                 - 'Setting up new project design': 'guide/templating/design_engine/set_up_new_project_design.md'
             - 'Product images': 'guide/templating/product_images.md'
-        - Translations:
-            - 'Translations': 'guide/translations/translations.md'
-            - 'OneSky': 'guide/translations/onesky.md'
+        - 'Translations': 'guide/translations.md'
         - Vouchers from ERP:
             - 'Vouchers from ERP': 'guide/vouchers_from_erp/vouchers_from_erp.md'
             - 'Voucher templates': 'guide/vouchers_from_erp/vouchers_templates.md'
             - 'Voucher FAQ': 'guide/vouchers_from_erp/vouchers_faq.md'
-        - Wishlist and stored baskets:
-            - 'Wishlist and stored baskets': 'guide/wishlist_and_stored_baskets/wishlist_and_stored_baskets.md'
-            - 'Wishlist': 'guide/wishlist_and_stored_baskets/wishlist_and_stored_basket_wishlist.md'
-            - 'Stored Baskets': 'guide/wishlist_and_stored_baskets/wishlist_and_stored_basket_stored_baskets.md'
-            - 'Wishlist and stored basket API': 'guide/wishlist_and_stored_baskets/wishlist_and_stored_basket_api.md'
-            - 'Wishlist and stored basket templates': 'guide/wishlist_and_stored_baskets/wishlist_and_stored_basket_templates.md'
+        - 'Wishlist and stored baskets': 'guide/wishlist_and_stored_baskets.md'
         - User management:
             - 'Access control': 'guide/user_management/access_control.md'
             - Token:
