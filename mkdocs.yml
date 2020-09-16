@@ -132,6 +132,7 @@ nav:
             - Content cache refresh:
                 - 'Content cache refresh': 'guide/cache/content_cache_refresh/content_cache_refresh.md'
                 - 'HTTP caching': 'guide/cache/content_cache_refresh/http_caching.md'
+            - 'Navigation cache': 'guide/cache/navigation_cache.md'
             - 'Caching FAQ': 'guide/cache/caching_faq.md'
             - 'Translation cache for Text modules': 'guide/cache/translations_cache_for_textmodules.md'
             - 'Basketpreview cache and user-specific data': 'guide/cache/basketpreview_cache_and_user_specific_data.md'
@@ -287,9 +288,7 @@ nav:
         - Navigation:
             - 'Navigation': 'guide/navigation/navigation.md'
             - 'Navigation configuration': 'guide/navigation/navigation_configuration.md'
-            - 'Modifying the search query': 'guide/navigation/modifying_the_search_query.md'
             - 'Navigation templates': 'guide/navigation/navigation_templates.md'
-            - 'Navigation cache': 'guide/navigation/navigation_cache.md'
         - Newsletter:
             - 'Newsletter': 'guide/newsletter/newsletter.md'
             - 'Newsletter configuration': 'guide/newsletter/newsletter_configuration.md'
