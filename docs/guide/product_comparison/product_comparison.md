@@ -2,7 +2,7 @@
 
 eZ Commerce offers the option to compare products on a single page.
 Customers can save products on their own comparison lists.
-Comparison lists are divided per product type (separately for, e.g. sofas, tables, etc.). 
+Comparison lists are divided per kind of product (separately for, e.g. sofas, tables, etc.). 
 
 The comparison function is based on the [basket](../basket/basket.md) system.
 
