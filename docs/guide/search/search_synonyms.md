@@ -9,9 +9,9 @@ You cannot expect users to always spell out "gigabyte", so you can add synonyms 
 Every time the user searches for any of those synonyms, the search engine also finds all the synonyms.
 For example, user search for "1 gb" returns "1 gigabyte".
 
-The synonyms are defined in `synonyms.txt` file which can be found inside Solr collection `directory/conf`.
+The synonyms are defined in the `synonyms.txt` file which can be found inside Solr collection `directory/conf`.
 
-After changing `synonyms.txt` you have to restart Solr.
+After you modify `synonyms.txt`, you have to restart Solr.
 
 ## Solr managed resources
 
@@ -30,7 +30,8 @@ With this method you create a managed synonym resource that can be updated via R
 </fieldType>
 ```
 
-This definition should be placed in the `schema.xml` file. It defines `solr.ManagedSynonymFilterFactory` for synonym main class instead of `SynonymFilterFactory`.
+You must place this definition in the `schema.xml` file. 
+It defines `solr.ManagedSynonymFilterFactory` for synonym main class instead of `SynonymFilterFactory`.
 
 Now you have to replace the current definition of this dynamic field with definitions for the fields that you want to use as synonyms:
 
@@ -69,7 +70,7 @@ curl -XPUT "<http://localhost:8983/solr/collection1/schema/analysis/synonyms/eng
 ```
 
 With the current version of Solr, if you use managed synonyms you have to use the one-to-many synonyms definition.
-In the example above a search for `word`, `synonym1`, or `synonym2` match any records containing `word` but a search for `word` or `synonym1` never returns results with the words `synonym1` or `synonym2`.
+In the example above, a search for `word`, `synonym1`, or `synonym2` match any records containing `word` but a search for `word` or `synonym1` never returns results with the words `synonym1` or `synonym2`.
 
 If you decide to use the synonym file, you can define synonyms of the same level.
 As a result, any synonym matches any other in the search result.

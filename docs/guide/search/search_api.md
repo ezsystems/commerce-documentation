@@ -26,7 +26,7 @@ This information can be used by the respective search service implementation.
 
 The conditions API offers the following Conditions:
 
-- `ContentTypesCondition` - filters results by Content Type. Valid Content Types are for example `ses_product`, `ses_category` or `ses_content`.
+- `ContentTypesCondition` - filters results by Content Type. Valid Content Types are, for example, `ses_product`, `ses_category` or `ses_content`.
 - `SearchTermCondition` - filters results by phrase, potentially in a specific field. For example: search for `SE10000` in field `sku`:
 
 ``` php

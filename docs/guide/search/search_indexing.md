@@ -2,7 +2,7 @@
 
 ## Reindexing
 
-To reindex search content, use the following command:
+Use the following command to reindex the search content:
 
 ``` bash
 php bin/console ezplatform:reindex
@@ -10,14 +10,15 @@ php bin/console ezplatform:reindex
 
 ## Removing index in production
 
-When the content model is used as data provider, `ezplatform:solr_create_index` removes the index in production.
+When you use the content model as a data provider, `ezplatform:solr_create_index` removes the index in production.
 
 Details of this action depend on the configuration. If Solr is configured to auto-commit, the index is removed.
-If no auto-commit is configured, the index is removed as well, but the removal only takes effect after the commit at the end. Until that time the index can be used for searching.
+If no auto-commit is configured, the index is removed as well, but the removal takes effect after the commit at the end. 
+Until that time the index can be used for searching.
 
 No auto-commit also means that changes are not visible in the Back Office, since the process does not include a commit.
 
-To resolve this, you can increase the auto-commit time to a value close to the needed time of the indexing process.
+To resolve this, you can increase the auto-commit time to a value close to the required time of the indexing process.
 This is only applicable for setups with data that does not take very long to index.
 
 Check `solrconfig.xml` of the respective Solr core and adjust the settings:
