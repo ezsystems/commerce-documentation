@@ -1,4 +1,19 @@
-# Solr managed resources
+# Search synonyms
+
+Synonyms enable different phrase inputs that have the same meaning.
+
+For example, you have products with gigabyte specification (such as a 250 gigabyte hard drive).
+You cannot expect users to always spell out "gigabyte", so you can add synonyms for the word:
+"gigabyte", "giga byte", "gb", "Gb", "gigab", "gbyte", and so on.
+
+Every time the user searches for any of those synonyms, the search engine also finds all the synonyms.
+For example, user search for "1 gb" returns "1 gigabyte".
+
+The synonyms are defined in the `synonyms.txt` file which can be found inside Solr collection `directory/conf`.
+
+After you modify `synonyms.txt`, you have to restart Solr.
+
+## Solr managed resources
 
 With this method you create a managed synonym resource that can be updated via REST.
 
@@ -7,7 +22,6 @@ With this method you create a managed synonym resource that can be updated via R
     For more information about Solr managed resources, see [Solr documentation.](https://lucene.apache.org/solr/guide/7_1/managed-resources.html)
 
 ``` xml
-<!-- A text type for English text where stopwords and synonyms are managed using the REST API -->
 <fieldType name="managed_en" class="solr.TextField" positionIncrementGap="100">
   <analyzer>
     <tokenizer class="solr.StandardTokenizerFactory"/>
@@ -16,24 +30,19 @@ With this method you create a managed synonym resource that can be updated via R
 </fieldType>
 ```
 
-This definition should be placed in `schema.xml` file. It defines `solr.ManagedSynonymFilterFactory` for synonym main class instead of `SynonymFilterFactory`.
+You must place this definition in the `schema.xml` file. 
+It defines `solr.ManagedSynonymFilterFactory` for synonym main class instead of `SynonymFilterFactory`.
 
-Now you have to add the dynamic field definitions for the fields that you want to use as synonyms.
-
-``` xml
-<dynamicField name="*_s"  type="managed_en"    indexed="true"  stored="true" multiValued="true"/>
-```
-
-This code should replace the current definition of this dynamic field:
+Now you have to replace the current definition of this dynamic field with definitions for the fields that you want to use as synonyms:
 
 ``` xml
-<!--     <dynamicField name="*_s" type="string" indexed="true" stored="true"/> -->
+<dynamicField name="*_s" type="managed_en" indexed="true" stored="true" multiValued="true"/>
 ```
 
 You can also define it with another name:
 
 ``` xml
-<dynamicField name="*value_s"  type="managed_en"    indexed="true"  stored="true" multiValued="true"/>
+<dynamicField name="*value_s" type="managed_en" indexed="true" stored="true" multiValued="true"/>
 ```
 
 If you omit this, the synonym definition is taken from `language-fielddefinition.xml`:
@@ -61,7 +70,7 @@ curl -XPUT "<http://localhost:8983/solr/collection1/schema/analysis/synonyms/eng
 ```
 
 With the current version of Solr, if you use managed synonyms you have to use the one-to-many synonyms definition.
-In the example above the a search for `word`, or `synonym1`, or `synonym2` match any records containing `word` but a search for `word` or `synonym1` never returns results with the words `synonym1` or `synonym2`.
+In the example above, a search for `word`, `synonym1`, or `synonym2` match any records containing `word` but a search for `word` or `synonym1` never returns results with the words `synonym1` or `synonym2`.
 
 If you decide to use the synonym file, you can define synonyms of the same level.
 As a result, any synonym matches any other in the search result.
@@ -87,11 +96,11 @@ Create a managed resource using schema XML for stop words and synonyms.
 
 ``` xml
 <fieldType name="managed_en" class="solr.TextField" positionIncrementGap="100">
-<analyzer>
-<tokenizer class="solr.StandardTokenizerFactory"/>
-<filter class="solr.ManagedStopFilterFactory" managed="english" />
-<filter class="solr.ManagedSynonymFilterFactory" managed="english" />
-</analyzer>
+  <analyzer>
+    <tokenizer class="solr.StandardTokenizerFactory"/>
+    <filter class="solr.ManagedStopFilterFactory" managed="english" />
+    <filter class="solr.ManagedSynonymFilterFactory" managed="english" />
+  </analyzer>
 </fieldType>
 ```
 

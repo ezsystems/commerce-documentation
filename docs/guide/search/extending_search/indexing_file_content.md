@@ -4,13 +4,7 @@ Indexing the content of files stored in the content model uses an additional com
 
 Apache Tika has two available modes: Server Mode and App Mode. eZ Commerce uses Apache Tika in App mode.
 
-You can specify which MIME types are indexed in configuration:
-
-``` yaml
-siso_search.default.index_content:
-    - application/pdf
-```
-
+You can specify which MIME types are indexed in configuration.
 If you need additional file types to be indexed, add them to this configuration, for example:
 
 ``` yaml
@@ -36,30 +30,28 @@ See [Supported Document Formats](http://tika.apache.org/1.13/formats.html) for a
 
 In order to extend the indexer for files you have to extend the `Ibexa\Platform\Commerce\FieldTypes\FieldType\BinaryFile\SearchField` service.
 
-The main method that returns the data to be indexed is `getIndexData(Field $field, FieldDefinition $fieldDefinition)`.
-
-`getIndexData()` returns an array of `\eZ\Publish\SPI\Search\Field` objects.
+The `getIndexData(Field $field, FieldDefinition $fieldDefinition)` returns an array of `\eZ\Publish\SPI\Search\Field` objects.
 
 This object is created with the following parameters:
 
 - `name` - a name that is used to build the Solr field name.
 - `data` - the data to be indexed.
-- Solr field type - you can use any [Solr field type.](https://cwiki.apache.org/confluence/display/solr/Field+Type+Definitions+and+Properties) In the PDF example you index the data both as FullTextField and as TextField.
+- Solr field type - you can use any Solr field type. In the PDF example you index the data both as FullTextField and as TextField.
 
 ``` php
 $parentData = parent::getIndexData($field, $fieldDefinition);
 
-// This will return the data that is coming from Apache Tika
+// Return the data that is coming from Apache Tika
 $fileContent = $this->getFileContent($field);
  
-// This will create a Solr FullTextField
+// Create a Solr FullTextField
 $parentData[] = new Search\Field(
     'file_content',
     $fileContent,
     new Search\FieldType\FullTextField()
 );
  
-// This will create a Solr TextField
+// Create a Solr TextField
 $parentData[] = new Search\Field(
     'file_content',
     $fileContent,

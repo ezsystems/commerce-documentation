@@ -361,32 +361,23 @@ nav:
             - 'Quick order FAQ': 'guide/quickorder/quickorder_faq.md'
         - Search:
             - 'Search': 'guide/search/search.md'
-            - Search features:
-                - Autosuggestion:
-                    - 'Autosuggestion': 'guide/search/search_features/search_autosuggest/search_autosuggest.md'
-                    - 'Adding elements to autosuggestion': 'guide/search/search_features/search_autosuggest/adding_elements_to_autosuggestion.md'
-                - Search indexing:
-                    - 'Indexing file content': 'guide/search/search_features/search_indexing/indexing_file_content.md'
-                    - 'Indexing email data': 'guide/search/search_features/search_indexing/indexing_email_data.md'
-                    - 'Indexing content model product data': 'guide/search/search_features/search_indexing/indexing_content_model_product_data.md'
-                - 'Search statistics': 'guide/search/search_features/search_statistics.md'
-            - 'Search API': 'guide/search/search_api.md'
             - 'Search templates': 'guide/search/search_templates.md'
-            - Search cookbook:
-                - 'Search cookbook': 'guide/search/search_cookbook/search_cookbook.md'
-                - 'Implement custom search': 'guide/search/search_cookbook/custom_search.md'
-                - 'Implement custom search condition': 'guide/search/search_cookbook/custom_search_conditions.md'
-                - 'Implement custom sorting option for search': 'guide/search/search_cookbook/custom_sorting_options.md'
-                - 'Modifying the search query': 'guide/search/search_cookbook/modifying_the_search_query.md'
-                - 'Searching for products': 'guide/search/search_cookbook/searching_for_products.md'
-                - 'Implement an indexer plugin for custom Field Types': 'guide/search/search_cookbook/indexer_plugin_for_custom_field_types.md'
-                - 'Using Solr spellcheck': 'guide/search/search_cookbook/using_solr_spellcheck.md'
-                - 'Solr managed resources': 'guide/search/search_cookbook/solr_managed_resources.md'
-                - 'Use query filter in product search': 'guide/search/search_cookbook/use_query_filter_in_product_search.md'
-            - 'Search FAQ': 'guide/search/search_faq.md'
-            - Search configuration:
-                - 'Search configuration': 'guide/search/search_configuration/search_configuration.md'
-                - 'Solr schema configuration': 'guide/search/search_configuration/solr_schema_configuration.md'
+            - 'Search configuration': 'guide/search/search_configuration.md'
+            - 'Search API': 'guide/search/search_api.md'
+            - 'Product search': 'guide/search/searching_for_products.md'
+            - 'Search indexing': 'guide/search/search_indexing.md'
+            - 'Search synonyms': 'guide/search/search_synonyms.md'
+            - 'Autosuggestion': 'guide/search/search_autosuggest.md'
+            - 'Solr spellcheck': 'guide/search/using_solr_spellcheck.md'
+            # - Extending search:
+            #     - 'Adding elements to autosuggestion': 'guide/search/extending_search/adding_elements_to_autosuggestion.md'
+            #     - 'Indexing file content': 'guide/search/extending_search/indexing_file_content.md'
+            #     - 'Indexing email data': 'guide/search/extending_search/indexing_email_data.md'
+            #     - 'Implement custom search': 'guide/search/extending_search/custom_search.md'
+            #     - 'Implement custom search condition': 'guide/search/extending_search/custom_search_conditions.md'
+            #     - 'Implement custom sorting option for search': 'guide/search/extending_search/custom_sorting_options.md'
+            #     - 'Modifying the search query': 'guide/search/extending_search/modifying_the_search_query.md'
+            #     - 'Implement an indexer plugin for custom Field Types': 'guide/search/extending_search/indexer_plugin_for_custom_field_types.md'
         - Templating:
             - 'Templating': 'guide/templating/templating.md'
             - Shop templates:

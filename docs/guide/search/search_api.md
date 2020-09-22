@@ -1,7 +1,5 @@
 # Search API
 
-![](../img/search_6.png)
-
 ## Search interfaces
 
 The following interfaces represent the entry point for search:
@@ -24,48 +22,30 @@ The search context defines context information for the query which is not contai
 This can be, for example, data related to the SiteAccess (which was addressed by the HTTP request).
 This information can be used by the respective search service implementation.
 
-### SearchContextServiceInterface
+## Conditions API
 
-Implementations of `SearchContextServiceInterface` are used by the standard search controller to get the instance of the `SearchContext`.
+The conditions API offers the following Conditions:
 
-### SearchClauseInterface
+- `ContentTypesCondition` - filters results by Content Type. Valid Content Types are, for example, `ses_product`, `ses_category` or `ses_content`.
+- `SearchTermCondition` - filters results by phrase, potentially in a specific field. For example: search for `SE10000` in field `sku`:
 
-The `SearchClauseInterface` marker interface has no methods. It's used for `instanceof` checks and type hinting for all sub-interfaces or sub-classes.
+``` php
+$myQuery->addCondition(new SearchTermCondition(array(
+    'searchTerm' => 'SE10000',
+    'fieldRestrictions' => 'ses_product_ses_sku_value_s'
+)));
+```
 
-### ConditionInterface
+- `SectionCondition` - filters results by Section ID. Returns only elements that belong to the given Section.
+- `SubtreeCondition` - filters results by setting a path. Only elements under this path are fetched.
+- `VisibilityCondition` - filters results that are shown or hidden.
 
-`ConditionInterface` marker interface has no methods.
+### Boosting API
 
-### SortCriterionInterface
+- `FieldBoosting` - defines which fields should be boosted in search result. They have higher priority in search.
 
-`SortCriterionInterface` is the basic interface for all sort criteria.
+### Sorting API
 
-### FacetInterface
-
-`FacetInterface` is a setter/getter interface for facets.
-
-### FacetOptionInterface
-
-`FacetOptionInterface` is a setter/getter interface for facet options.
-
-### FacetServiceInterface
-
-The handling of facets can complicate controller and template code.
-The `FacetServiceInterface` interface collects complex correlations of the request and response processes of facets in one class.
-It is recommended to use only this interface for facet handling and create new implementations of it,
-if the current standard is not sufficient.
-
-### SearchClauseHandlerInterface
-
-`SearchClauseHandlerInterface` is the basic search clause handler interface.
-
-### EzSearchClauseHandlerInterface
-
-`EzSearchClauseHandlerInterface` is used for specific implementations which use the eZ Platform Search API for queries.
-
-### SortServiceInterface
-
-`SortServiceInterface` defines methods for setting the correct sort criteria for the search query.
-
-It is recommended to use only this interface for sorting and create new implementations of it,
-if the current standard is not sufficient.
+- `RelevanceSorting` - sorts the results by relevance, which is internal Solr implementation for the `score` field.
+- `ProductFieldSorting` - sorting for products. Supports sorting by name, SKU or price in a given direction.
+- `ContentNameSorting` - sorts the results by content Field name in a given direction.
