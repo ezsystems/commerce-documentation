@@ -15,7 +15,7 @@ $outputGetBasket->basket->clearAllMessages();
 $itemData = new ItemData(
     array(
         'quantity'    => '1',
-        'isVariant'   => false,
+        'isVariant'   => '',
         'variantCode' =>  '',
         'sku'         => '1000',
     )
