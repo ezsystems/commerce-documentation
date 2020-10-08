@@ -14,7 +14,7 @@ $outputGetBasket = $this->getBusinessApi()->call('basket.get_basket', $inputGetB
 $outputGetBasket->basket->clearAllMessages();
 $itemData = new ItemData(
     array(
-        'quantity'    => 1,
+        'quantity'    => '1',
         'isVariant'   => false,
         'variantCode' =>  '',
         'sku'         => '1000',
